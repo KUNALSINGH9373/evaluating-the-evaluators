@@ -126,6 +126,12 @@ details.tblview table { width: 100%; border-collapse: collapse; font-size: 12.5p
 details.tblview th, details.tblview td { text-align: left; padding: 3px 8px 3px 0; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
 details.tblview th { color: var(--muted); font-weight: 600; }
 
+.sankey-stage { opacity: 0; transform: translateX(-16px); transition: opacity .7s ease, transform .7s ease; }
+.sankey-stage.on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .sankey-stage { transition: none; opacity: 1; transform: none; }
+}
+
 #tooltip {
   position: fixed; z-index: 60; pointer-events: none; display: none;
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
@@ -191,6 +197,7 @@ footer.site a { color: var(--ink-2); }
     <span class="wordmark">Evaluating the Evaluators</span>
     <nav class="main">
       <a href="#insights">Insights</a>
+      <a href="#pipeline">Pipeline</a>
       <a href="#charts">Charts</a>
       <a href="#explorer">Explorer</a>
       <a href="#methodology">Methodology</a>
@@ -218,6 +225,20 @@ footer.site a { color: var(--ink-2); }
     <section id="insights">
       <h2>Key insights</h2>
       <div class="insights" id="insightList"></div>
+    </section>
+
+    <section id="pipeline">
+      <h2>The accountability pipeline</h2>
+      <p class="sectionlede">Where findings go — and where accountability leaks out. Every ribbon is an exact count
+        from the dataset; flows draw in stage by stage as you scroll.</p>
+      <div class="card wide">
+        <h3>From 281 published findings to 12 substantive responses</h3>
+        <div class="sub">Ribbon width = number of findings · hover any ribbon or node for detail</div>
+        <div class="plot" id="sankeyMount"></div>
+        <details class="tblview" id="sankeyTable">
+          <summary>Table view</summary>
+        </details>
+      </div>
     </section>
 
     <section id="charts">

@@ -568,7 +568,7 @@ const charts = [
   },
   {
     title: "The tag universe",
-    sub: "One sphere per tag, sized by the number of reports it appears in · dotted lines join tags that co-occur in ≥3 shared reports, and the layout pulls the most-connected tags to the centre · click a tag to filter the explorer",
+    sub: "One sphere per tag, sized by the number of reports it appears in · dotted lines join tags that co-occur in ≥3 shared reports · each cluster's most-connected tag sits at its centre · click a tag to filter the explorer",
     wide: true,
     legend: TAG_GROUPS.map((g, i) => ({ name: g, varName: CAT_VARS[i], shape: "rect" })),
     render(mount) {
@@ -620,8 +620,147 @@ for (const c of charts) {
   chartGrid.append(card);
 }
 
+/* ================= sankey: the accountability pipeline ================= */
+function sankeyModel() {
+  const emp = F.filter(f => f.evalT === "yes").length;
+  const cross = {};
+  for (const sev of ["C1", "C2"]) for (const a of ACTIONS) {
+    cross[sev + "|" + a] = TRACK.filter(f => f.sev === sev && f.action === a).length;
+  }
+  const c1 = TRACK.filter(f => f.sev === "C1").length;
+  const c2 = TRACK.filter(f => f.sev === "C2").length;
+  const nodes = [
+    { id: "all", col: 0, label: "All findings", value: F.length, cv: "--blue",
+      desc: "every finding in the dataset" },
+    { id: "emp", col: 1, label: "Empirical model findings", value: emp, cv: "--blue",
+      desc: "a model was actually tested" },
+    { id: "nonemp", col: 1, label: "Methodology, governance & trends", value: F.length - emp, cv: "--axis", exit: true,
+      desc: "no company response is expected" },
+    { id: "set", col: 2, label: "Accountability set", value: TRACK.length, cv: "--blue",
+      desc: "named company, concerning result — a response is reasonable to expect" },
+    { id: "excl", col: 2, label: "Not action-trackable", value: emp - TRACK.length, cv: "--axis", exit: true,
+      desc: "anonymised models, reassuring nulls, benchmark deltas, self-reports…" },
+    { id: "C1", col: 3, label: "C1 · threshold demonstrated", value: c1, cv: "--red",
+      desc: "a dangerous-capability threshold was demonstrated" },
+    { id: "C2", col: 3, label: "C2 · lower severity", value: c2, cv: "--blue",
+      desc: "partial capability or lower severity" },
+    ...ACTIONS.map((a, i) => ({
+      id: "act" + a, col: 4, label: a, value: cross["C1|" + a] + cross["C2|" + a],
+      cv: ORD_VARS[i], desc: "company response level",
+    })),
+  ];
+  const links = [
+    { s: "all", t: "emp", v: emp, cv: "--blue" },
+    { s: "all", t: "nonemp", v: F.length - emp, cv: "--axis" },
+    { s: "emp", t: "set", v: TRACK.length, cv: "--blue" },
+    { s: "emp", t: "excl", v: emp - TRACK.length, cv: "--axis" },
+    { s: "set", t: "C1", v: c1, cv: "--red" },
+    { s: "set", t: "C2", v: c2, cv: "--blue" },
+    ...["C1", "C2"].flatMap(sev => ACTIONS.map(a => ({
+      s: sev, t: "act" + a, v: cross[sev + "|" + a], cv: sev === "C1" ? "--red" : "--blue",
+    }))).filter(l => l.v > 0),
+  ];
+  return { nodes, links };
+}
+
+let sankeyRevealed = false;
+function renderSankey() {
+  const mount = document.getElementById("sankeyMount");
+  if (!mount) return;
+  const { nodes, links } = sankeyModel();
+  const byId = new Map(nodes.map(n => [n.id, n]));
+  const W = Math.max(560, mount.clientWidth);
+  const H = 400, padY = 16, nodeW = 12, gap = 16;
+  const labelPad = 6;
+  const cols = 5;
+  const colX = i => 8 + (i / (cols - 1)) * (W - 16 - nodeW);
+  const k = (H - 2 * padY - 3 * gap) / F.length; // px per finding, from the widest column
+
+  for (let c = 0; c < cols; c++) {
+    const colNodes = nodes.filter(n => n.col === c);
+    const total = colNodes.reduce((a, n) => a + n.value * k, 0) + gap * (colNodes.length - 1);
+    let y = (H - total) / 2;
+    for (const n of colNodes) {
+      n.x = colX(c); n.y = y; n.h = Math.max(2, n.value * k);
+      n.inY = n.y; n.outY = n.y;
+      y += n.h + gap;
+    }
+  }
+
+  const svg = s("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img" });
+  const stages = [0, 1, 2, 3].map(i => {
+    const g = s("g", { class: "sankey-stage" + (sankeyRevealed ? " on" : "") });
+    g.style.transitionDelay = (i * 0.22) + "s";
+    svg.append(g);
+    return g;
+  });
+
+  for (const l of links) {
+    const a = byId.get(l.s), b = byId.get(l.t);
+    const h = l.v * k;
+    const x0 = a.x + nodeW, x1 = b.x;
+    const y0 = a.outY, y1 = b.inY;
+    a.outY += h; b.inY += h;
+    const mx = (x0 + x1) / 2;
+    const path = s("path", {
+      d: `M${x0},${y0} C${mx},${y0} ${mx},${y1} ${x1},${y1} L${x1},${y1 + h} C${mx},${y1 + h} ${mx},${y0 + h} ${x0},${y0 + h} Z`,
+      fill: cvar(l.cv), opacity: l.cv === "--axis" ? 0.35 : 0.5,
+    });
+    path.addEventListener("pointerenter", () => path.setAttribute("opacity", l.cv === "--axis" ? 0.55 : 0.75));
+    path.addEventListener("pointerleave", () => path.setAttribute("opacity", l.cv === "--axis" ? 0.35 : 0.5));
+    hoverable(path, `${a.label} → ${b.label}`,
+      [{ color: cvar(l.cv), value: l.v, label: l.v === 1 ? "finding" : "findings" }]);
+    stages[a.col].append(path);
+  }
+
+  for (const n of nodes) {
+    const rect = s("rect", { x: n.x, y: n.y, width: nodeW, height: n.h, rx: 3, fill: cvar(n.cv) });
+    hoverable(rect, n.label, [
+      { color: cvar(n.cv), value: n.value, label: n.value === 1 ? "finding" : "findings" },
+      { value: pct(n.value, F.length) + "%", label: "of all findings" },
+      { value: n.desc, label: "" },
+    ]);
+    const lastCol = n.col === cols - 1;
+    const lx = lastCol ? n.x - labelPad : n.x + nodeW + labelPad;
+    const anchor = lastCol ? "end" : "start";
+    const cy = n.y + n.h / 2;
+    const g = stages[Math.max(0, n.col - 1)];
+    if (lastCol) {
+      const t = s("text", { x: lx, y: cy + 4, "text-anchor": anchor, "font-size": "12" });
+      const name = s("tspan", { fill: cvar("--ink"), "font-weight": "600" });
+      name.textContent = n.label + " ";
+      const count = s("tspan", { fill: cvar("--muted") });
+      count.textContent = String(n.value);
+      t.append(name, count);
+      g.append(rect, t);
+    } else {
+      g.append(rect,
+        s("text", { x: lx, y: cy - 1, "text-anchor": anchor, fill: cvar("--ink"), "font-size": "12", "font-weight": "600" }, n.label),
+        s("text", { x: lx, y: cy + 12, "text-anchor": anchor, fill: cvar("--muted"), "font-size": "11.5" }, String(n.value)));
+    }
+  }
+  // the first column's node belongs to stage 0 alongside its outgoing links
+  mount.replaceChildren(svg);
+
+  const tbl = document.getElementById("sankeyTable");
+  if (tbl && !tbl.querySelector("table")) {
+    tbl.append(h("table", null,
+      h("thead", null, h("tr", null, ...["From", "To", "Findings"].map(x => h("th", null, x)))),
+      h("tbody", null, ...links.map(l => h("tr", null,
+        h("td", null, byId.get(l.s).label), h("td", null, byId.get(l.t).label), h("td", null, String(l.v)))))));
+  }
+}
+
+new IntersectionObserver((entries, obs) => {
+  if (!entries.some(e => e.isIntersecting)) return;
+  sankeyRevealed = true;
+  document.querySelectorAll(".sankey-stage").forEach(g => g.classList.add("on"));
+  obs.disconnect();
+}, { threshold: 0.35 }).observe(document.getElementById("pipeline"));
+
 function renderAllCharts() {
   for (const { c, mount } of mounts) c.render(mount);
+  renderSankey();
 }
 renderAllCharts();
 let resizeT;
