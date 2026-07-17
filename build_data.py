@@ -75,6 +75,7 @@ def main():
             "date": r["Publication Date"].strip(),
             "q": quarter(r["Publication Date"].strip()),
             "dom": [d.strip() for d in r["Domain"].split(";") if d.strip()],
+            "tags": [t.strip().lower() for t in r["Tags"].split(";") if t.strip()],
             "models": r["Models / Systems"].strip(),
             "access": r["Access Type"].strip(),
             "url": r["Source URL"].strip(),

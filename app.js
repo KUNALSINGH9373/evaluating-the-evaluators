@@ -207,6 +207,63 @@ const instRows = [...countBy(F, f => f.instGroup)]
 const lagPoints = TRACK.filter(f => f.lag != null)
   .map(f => ({ f, lag: f.lag })).sort((a, b) => a.lag - b.lag);
 
+/* ---- tags: papers (distinct reports) and findings per tag ---- */
+const reportKey = f => f.rid || f.url || f.id;
+const ORG_TAGS = new Set([
+  "anthropic", "openai", "deepseek", "meta", "google", "google-deepmind", "deepmind",
+  "mistral", "xai", "alibaba", "moonshot-ai", "moonshot", "cohere", "microsoft", "amazon",
+  "uk-aisi", "us-caisi", "securebio", "apollo-research", "gray-swan", "thorn", "nist",
+  "imda", "sgaisi", "j-aisi", "k-aisi", "inesia", "peren", "eu-ai-office",
+]);
+const MODEL_RE = /^(gpt|claude|gemini|llama|grok|kimi|qwen|o[0-9]|deepseek-[rv]|mistral-(large|small|medium|nemo)|phi-|command|codestral|pixtral)/;
+function tagGroup(t) {
+  if (ORG_TAGS.has(t)) return "Companies & orgs";
+  if (MODEL_RE.test(t)) return "Models & systems";
+  return "Topics & techniques";
+}
+const TAG_GROUPS = ["Models & systems", "Companies & orgs", "Topics & techniques"];
+const tagMap = new Map();
+for (const f of F) for (const t of f.tags) {
+  if (!tagMap.has(t)) tagMap.set(t, { tag: t, group: tagGroup(t), papers: new Set(), findings: 0 });
+  const e = tagMap.get(t);
+  e.papers.add(reportKey(f));
+  e.findings++;
+}
+const tagStats = [...tagMap.values()]
+  .map(e => ({ tag: e.tag, group: e.group, papers: e.papers.size, findings: e.findings }))
+  .sort((a, b) => b.papers - a.papers || b.findings - a.findings);
+const TAG_QUOTA = { "Models & systems": 18, "Companies & orgs": 12, "Topics & techniques": 26 };
+const topTags = TAG_GROUPS.flatMap(g =>
+  tagStats.filter(t => t.group === g).slice(0, TAG_QUOTA[g]));
+
+const modelStats = tagStats.filter(t => t.group === "Models & systems");
+const modelRows = modelStats.slice(0, 15)
+  .sort((a, b) => b.findings - a.findings)
+  .map(t => ({ label: t.tag, value: t.findings, papers: t.papers }));
+document.getElementById("tiles").append(h("div", { class: "tile" },
+  h("div", { class: "label" }, "Named models evaluated"),
+  h("div", { class: "value" }, String(modelStats.length)),
+  h("div", { class: "sub" }, "distinct versions, from tags")));
+
+/* ---- reports per year, by institution group ---- */
+const YEAR_GROUPS = ["UK AISI", "US CAISI", "Joint / multi-party", "Other / not recorded"];
+const foldGroup = g => YEAR_GROUPS.includes(g) ? g : "Other / not recorded";
+const reportsSeen = new Map();
+for (const f of F) {
+  const k = reportKey(f);
+  if (!reportsSeen.has(k) && f.date) {
+    reportsSeen.set(k, { year: f.date.slice(0, 4), group: foldGroup(f.instGroup) });
+  }
+}
+const years = [...new Set([...reportsSeen.values()].map(r => r.year))].sort();
+const yearCols = years.map(y => ({
+  label: y,
+  segs: YEAR_GROUPS.map(g => ({
+    name: g,
+    value: [...reportsSeen.values()].filter(r => r.year === y && r.group === g).length,
+  })),
+}));
+
 /* ================= chart renderers ================= */
 const MB = { barH: 22, gap: 12, labelW: 210, valueW: 44, rx: 4 };
 
@@ -296,7 +353,8 @@ function relievedInk(hex) {
   return lum > 0.55 ? "#0b0b0b" : "#ffffff";
 }
 
-function renderColumns(mount, cols, colorVars, seriesNames) {
+function renderColumns(mount, cols, colorVars, xfmt) {
+  xfmt = xfmt || (lbl => { const [yy, qq] = lbl.split("-"); return `${qq} '${yy.slice(2)}`; });
   mount.replaceChildren();
   const colors = colorVars.map(cvar);
   const W = Math.max(320, mount.clientWidth);
@@ -335,16 +393,79 @@ function renderColumns(mount, cols, colorVars, seriesNames) {
     svg.append(hit);
     const every = slot > 46 ? 1 : 2;
     if (i % every === 0) {
-      const [yy, qq] = c.label.split("-");
       svg.append(s("text", {
         x: cx + colW / 2, y: H - 8, "text-anchor": "middle",
         fill: cvar("--muted"), "font-size": "10.5",
-      }, `${qq} '${yy.slice(2)}`));
+      }, xfmt(c.label)));
     }
   });
   svg.append(s("line", { x1: padL, y1: padT + plotH, x2: W - 8, y2: padT + plotH, stroke: cvar("--axis"), "stroke-width": 1 }));
   mount.append(svg);
-  void seriesNames;
+}
+
+/* packed-bubble cluster map: one bubble per tag, sized by paper count, clustered by group */
+function renderBubbles(mount, tags, groupVars) {
+  mount.replaceChildren();
+  const surface = cvar("--surface");
+  const W = Math.max(360, mount.clientWidth);
+  const rOf = v => 7 + 5.6 * Math.sqrt(v);
+
+  // greedy spiral packing per group
+  const clusters = TAG_GROUPS.map(g => {
+    const items = tags.filter(t => t.group === g).map(t => ({ ...t, r: rOf(t.papers) }));
+    const placed = [];
+    for (const it of items) {
+      if (!placed.length) { it.x = 0; it.y = 0; placed.push(it); continue; }
+      let a = 0, rad = placed[0].r + it.r;
+      for (let step = 0; step < 4000; step++) {
+        const x = Math.cos(a) * rad, y = Math.sin(a) * rad * 0.72;
+        if (placed.every(p => Math.hypot(p.x - x, p.y - y) >= p.r + it.r + 2.5)) {
+          it.x = x; it.y = y; placed.push(it); break;
+        }
+        a += 0.37; rad += 0.55;
+      }
+      if (it.x === undefined) { it.x = rad; it.y = 0; placed.push(it); }
+    }
+    const minX = Math.min(...placed.map(p => p.x - p.r)), maxX = Math.max(...placed.map(p => p.x + p.r));
+    const minY = Math.min(...placed.map(p => p.y - p.r)), maxY = Math.max(...placed.map(p => p.y + p.r));
+    return { g, placed, w: maxX - minX, hgt: maxY - minY, minX, minY };
+  });
+
+  const GAP = 34, padT = 10, labelH = 26;
+  const rawW = clusters.reduce((a, c) => a + c.w, 0) + GAP * (clusters.length - 1);
+  const k = Math.min(1, (W - 20) / rawW);
+  const H = Math.max(...clusters.map(c => c.hgt)) * k + padT + labelH + 8;
+  const svg = s("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img" });
+  let xCursor = (W - rawW * k) / 2;
+  clusters.forEach((c, gi) => {
+    const color = cvar(groupVars[gi]);
+    const midY = padT + (Math.max(...clusters.map(x => x.hgt)) * k) / 2;
+    for (const p of c.placed.slice().sort((a, b) => b.r - a.r)) {
+      const cx = xCursor + (p.x - c.minX) * k;
+      const cy = midY + (p.y - (c.minY + c.hgt / 2)) * k;
+      const r = p.r * k;
+      const dot = s("circle", { cx, cy, r, fill: color, stroke: surface, "stroke-width": 2 });
+      hoverable(dot, p.tag, [
+        { color, value: p.papers, label: p.papers === 1 ? "report" : "reports" },
+        { value: p.findings, label: p.findings === 1 ? "finding" : "findings" },
+        { value: c.g, label: "" },
+      ]);
+      svg.append(dot);
+      const name = p.tag;
+      if (name.length * 5.1 < r * 2) {
+        svg.append(s("text", {
+          x: cx, y: cy + 3.5, "text-anchor": "middle", "pointer-events": "none",
+          fill: relievedInk(color), "font-size": "10", "font-weight": "600",
+        }, name));
+      }
+    }
+    svg.append(s("text", {
+      x: xCursor + (c.w * k) / 2, y: H - 8, "text-anchor": "middle",
+      fill: cvar("--ink-2"), "font-size": "12", "font-weight": "600",
+    }, c.g));
+    xCursor += c.w * k + GAP;
+  });
+  mount.append(svg);
 }
 
 function renderDotPlot(mount, points, colorVar) {
@@ -409,7 +530,7 @@ const charts = [
     sub: "All 281 findings by the nature of the finding",
     wide: true,
     legend: NATURES.map((n, i) => ({ name: NATURE_LABEL[n], varName: CAT_VARS[i], shape: "rect" })),
-    render(mount) { renderColumns(mount, timelineCols, CAT_VARS, NATURES.map(n => NATURE_LABEL[n])); },
+    render(mount) { renderColumns(mount, timelineCols, CAT_VARS); },
     table: () => [["Quarter", ...NATURES.map(n => NATURE_LABEL[n])],
       ...timelineCols.map(c => [c.label, ...c.segs.map(x => x.value)])],
   },
@@ -427,6 +548,32 @@ const charts = [
     render(mount) { renderDotPlot(mount, lagPoints, "--aqua"); },
     table: () => [["Finding", "Lag (days)", "Action level"],
       ...lagPoints.map(p => [p.f.id, p.lag, p.f.action])],
+  },
+  {
+    title: "Reports released per year",
+    sub: `Distinct reports by evaluating institution · 2026 is partial (through ${M.dateMax.slice(0, 7)})`,
+    wide: false,
+    legend: YEAR_GROUPS.map((g, i) => ({ name: g, varName: CAT_VARS[i], shape: "rect" })),
+    render(mount) { renderColumns(mount, yearCols, CAT_VARS, y => y); },
+    table: () => [["Year", ...YEAR_GROUPS, "Total"],
+      ...yearCols.map(c => [c.label, ...c.segs.map(x => x.value),
+        c.segs.reduce((a, x) => a + x.value, 0)])],
+  },
+  {
+    title: "Most-evaluated models",
+    sub: `Findings per named model, from finding-level tags · ${modelStats.length} distinct named models in the dataset`,
+    wide: false,
+    render(mount) { renderHBars(mount, modelRows, "--magenta", "Findings"); },
+    table: () => [["Model", "Findings", "Reports"], ...modelRows.map(r => [r.label, r.value, r.papers])],
+  },
+  {
+    title: "The tag universe",
+    sub: "Top tags per cluster, bubble area = number of reports the tag appears in · hover for detail",
+    wide: true,
+    legend: TAG_GROUPS.map((g, i) => ({ name: g, varName: CAT_VARS[i], shape: "rect" })),
+    render(mount) { renderBubbles(mount, topTags, CAT_VARS); },
+    table: () => [["Tag", "Group", "Reports", "Findings"],
+      ...topTags.map(t => [t.tag, t.group, t.papers, t.findings])],
   },
   {
     title: "Findings by domain",
