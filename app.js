@@ -568,10 +568,14 @@ const charts = [
   },
   {
     title: "The tag universe",
-    sub: "Top tags per cluster, bubble area = number of reports the tag appears in · hover for detail",
+    sub: "One sphere per tag, sized by the number of reports it appears in · drag to orbit, scroll to zoom, right-drag to pan · click a tag to filter the explorer",
     wide: true,
     legend: TAG_GROUPS.map((g, i) => ({ name: g, varName: CAT_VARS[i], shape: "rect" })),
-    render(mount) { renderBubbles(mount, topTags, CAT_VARS); },
+    render(mount) {
+      mount.id = "tagUniverse3d";
+      if (window.TAGVIZ3D && window.TAGVIZ3D.active) { window.TAGVIZ3D.refresh(); return; }
+      renderBubbles(mount, topTags, CAT_VARS);
+    },
     table: () => [["Tag", "Group", "Reports", "Findings"],
       ...topTags.map(t => [t.tag, t.group, t.papers, t.findings])],
   },
@@ -653,7 +657,7 @@ const PAGE = 50;
 function matches(f) {
   const q = els.search.value.trim().toLowerCase();
   if (q) {
-    const hay = `${f.id} ${f.title} ${f.finding} ${f.models} ${f.inst} ${f.resp}`.toLowerCase();
+    const hay = `${f.id} ${f.title} ${f.finding} ${f.models} ${f.inst} ${f.resp} ${f.tags.join(" ")}`.toLowerCase();
     if (!hay.includes(q)) return false;
   }
   if (els.scope.value && f.scope !== els.scope.value) return false;
@@ -738,5 +742,17 @@ for (const el of [els.scope, els.inst, els.sev, els.action, els.domain, els.trac
 els.search.addEventListener("input", () => { shown = PAGE; openId = null; renderTable(); });
 els.more.addEventListener("click", () => { shown += PAGE; renderTable(); });
 renderTable();
+
+/* bridge for the 3D tag-universe module (tags3d.js) */
+window.TAGVIZ = {
+  topTags, TAG_GROUPS, groupColorVars: CAT_VARS, cvar,
+  showTip, moveTip, hideTip,
+  filterTag(tag) {
+    els.search.value = tag;
+    shown = PAGE; openId = null;
+    renderTable();
+    document.getElementById("explorer").scrollIntoView({ behavior: "smooth" });
+  },
+};
 
 })();
