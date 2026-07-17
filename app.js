@@ -568,7 +568,7 @@ const charts = [
   },
   {
     title: "The tag universe",
-    sub: "One sphere per tag, sized by the number of reports it appears in · drag to orbit, scroll to zoom, right-drag to pan · click a tag to filter the explorer",
+    sub: "One sphere per tag, sized by the number of reports it appears in · dotted lines join tags that co-occur in ≥3 shared reports, and the layout pulls the most-connected tags to the centre · click a tag to filter the explorer",
     wide: true,
     legend: TAG_GROUPS.map((g, i) => ({ name: g, varName: CAT_VARS[i], shape: "rect" })),
     render(mount) {
