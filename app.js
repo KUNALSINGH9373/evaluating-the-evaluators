@@ -102,7 +102,7 @@ document.getElementById("heroNum").textContent = noRespPct + "%";
 document.getElementById("heroCaption").textContent =
   `of trackable findings received no documented company response (${M.noResponse} of ${M.trackable})`;
 document.getElementById("asof").textContent =
-  `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)} · dataset v6, verified 2026-07-16`;
+  `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)} · dataset v9, verified 2026-07-20`;
 
 const tiles = [
   { label: "Findings tracked", value: M.totalFindings, sub: `${M.reports} reports` },
@@ -519,7 +519,7 @@ const charts = [
   },
   {
     title: "Severity vs. company response",
-    sub: "Accountability set (46 findings) — response level by demonstrated severity",
+    sub: `Accountability set (${M.trackable} findings) — response level by demonstrated severity`,
     wide: false,
     legend: ACTIONS.map((a, i) => ({ name: a, varName: ORD_VARS[i], shape: "rect" })),
     render(mount) { renderStackedH(mount, sevActionRows, ORD_VARS, "Response"); },
@@ -527,7 +527,7 @@ const charts = [
   },
   {
     title: "What government AISIs publish, by quarter",
-    sub: "All 281 findings by the nature of the finding",
+    sub: `All ${M.totalFindings} findings by the nature of the finding`,
     wide: true,
     legend: NATURES.map((n, i) => ({ name: NATURE_LABEL[n], varName: CAT_VARS[i], shape: "rect" })),
     render(mount) { renderColumns(mount, timelineCols, CAT_VARS); },

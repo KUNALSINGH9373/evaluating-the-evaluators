@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Convert aisi_v6.csv into data.js consumed by the dashboard.
+"""Convert aisi_v9.csv into data.js consumed by the dashboard.
 
 Run: python3 build_data.py
-Reads aisi_v6.csv in this directory, writes data.js.
+Reads aisi_v9.csv in this directory, writes data.js.
 """
 import csv
 import json
@@ -10,7 +10,7 @@ import statistics
 from pathlib import Path
 
 HERE = Path(__file__).parent
-SRC = HERE / "aisi_v6.csv"
+SRC = HERE / "aisi_v9.csv"
 OUT = HERE / "data.js"
 
 CONF_MAP = {"high": "High", "medium": "Medium", "med": "Medium", "low": "Low"}
