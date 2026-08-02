@@ -53,7 +53,7 @@ not open keyword search.
 
 ## 3. Window
 
-Each venue's first publication → **2026-07-09** (frozen corpus cutoff). Items after the
+Each venue's first publication → **2026-07-30** (frozen corpus cutoff). Items after the
 cutoff are logged as `POST-CUTOFF` (ledger only, not corpus) so the next version ingests them.
 
 ## 4. Screening categories (every enumerated item gets exactly one)
@@ -66,7 +66,7 @@ cutoff are logged as `POST-CUTOFF` (ledger only, not corpus) so the next version
 | `EXCLUDED — non-English` | Non-English-only output |
 | `EXCLUDED — out-of-scope org` | Publisher not on the roster and no roster co-author |
 | `EXCLUDED — duplicate/secondary` | Restates findings whose primary source is already INCLUDED (see §5) |
-| `POST-CUTOFF` | Qualifying but published after 2026-07-09 |
+| `POST-CUTOFF` | Qualifying but published after 2026-07-30 |
 
 ## 5. Dedup rule
 

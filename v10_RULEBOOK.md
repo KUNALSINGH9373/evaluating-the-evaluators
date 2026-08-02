@@ -1,6 +1,6 @@
 # Evaluating the Evaluators — Rulebook (v10)
 
-**Canonical dataset:** `~/Desktop/v10.csv` (345 findings · 153 reports · 40 columns · window Sep 2023 – 9 Jul 2026)
+**Canonical dataset:** `~/Desktop/v10.csv` (345 findings · 153 reports · 40 columns · window Sep 2023 – 30 Jul 2026)
 **Status:** living document — update whenever a rule changes; every change gets a Changelog entry.
 **Companions:** `SEARCH_PROTOCOL.md` (in the dashboard repo — full search/screening procedure), `run_severity_ensemble.py` (the frozen severity prompt), `screening_ledger.csv` (being built by the evidence sweep).
 **Last updated:** 2026-08-01
@@ -49,7 +49,7 @@ contain no findings.
 - **Venue = the org's own publication surfaces**: research/blog/publications index pages
   (paginated to the end; sitemap fallback), plus arXiv via the org's own publication list and
   citation-chasing — never open keyword search.
-- **Window:** each org's first publication → the frozen corpus cutoff (**2026-07-09**). Later
+- **Window:** each org's first publication → the frozen corpus cutoff (**2026-07-30**). Later
   qualifying items are logged `POST-CUTOFF` for the next version.
 - **Every enumerated item gets exactly one decision** (with a one-line reason, in the ledger):
   `INCLUDED` · `EXCLUDED — no findings` · `EXCLUDED — no named evaluator` ·
