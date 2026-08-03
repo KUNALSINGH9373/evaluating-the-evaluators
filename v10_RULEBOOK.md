@@ -1,9 +1,9 @@
 # Evaluating the Evaluators — Rulebook (v10)
 
-**Canonical dataset:** `~/Desktop/v10.csv` (345 findings · 153 reports · 40 columns · window Sep 2023 – 30 Jul 2026)
+**Canonical dataset:** `~/Desktop/v10.csv` (456 findings · 211 reports · 40 columns · window Sep 2023 – 31 Jul 2026)
 **Status:** living document — update whenever a rule changes; every change gets a Changelog entry.
 **Companions:** `SEARCH_PROTOCOL.md` (in the dashboard repo — full search/screening procedure), `run_severity_ensemble.py` (the frozen severity prompt), `screening_ledger.csv` (being built by the evidence sweep).
-**Last updated:** 2026-08-01
+**Last updated:** 2026-08-03
 
 ---
 
@@ -67,8 +67,8 @@ Every finding sits in exactly one tier, encoded by `Eval? (trackable)` + `Action
 
 | Tier | Encoding | Meaning | n (v10) |
 |---|---|---|---|
-| **A** | yes / yes | Accountability-relevant: named company/model + concerning + response reasonable to expect. The ONLY tier scored for proportionality. | 55 |
-| **B** | yes / no | Concerning but no accountable party: anonymised models, methodology findings, reassuring nulls, non-frontier, capability trends. | 185 |
+| **A** | yes / yes | Accountability-relevant: named company/model + concerning + response reasonable to expect. The ONLY tier scored for proportionality. | 111 |
+| **B** | yes / no | Concerning but no accountable party: anonymised models, methodology findings, reassuring nulls, non-frontier, capability trends. | 240 |
 | **C** | no / (blank) | Not an empirical model finding (methodology/framework/governance/milestone). | 105 |
 
 **Tier A test — ALL must hold:** (1) empirical model finding; (2) names a specific company or
@@ -108,7 +108,7 @@ capability"); non-frontier models; too-recent findings.
 - `n` — sequence number within report+domain. `[-sN]` — split suffix (§5).
 
 **Rules:**
-1. **Unique** across the sheet (v10: 345/345 ✓) — the primary key for the dashboard, the paper's
+1. **Unique** across the sheet (v10: 456/456 ✓) — the primary key for the dashboard, the paper's
    appendices, and the ledger.
 2. **Immutable.** IDs are keys, not semantics: if a row's Domain is later recoded, or a date is
    corrected, the ID does NOT change. (23 IDs carry domain codes that no longer match the revised
@@ -234,7 +234,7 @@ Legend: 🔑 identifier · 📋 descriptive · 📊 analysis input · 🧾 evide
 | 30 | Academic Citations | 🧾 | Verified citations/counts with sources (e.g. Semantic Scholar, dated). |
 | 31 | Social Highlights | 🧾 | Notable public discussion, with links. Log only. |
 | 32 | Channel C Verbatim | 🧾 | Quotes from third-party coverage. Log only. |
-| 33 | Proportionality | ⚙️ | **Formula, no discretion:** C1+Substantive → Proportionate · C1+Partial/Acknowledged → Under-response (gap) · C1+None → Accountability gap (no action) · C2 → Proportionate (Cat2) · too-recent → Too-recent (unobservable). Computed on Channel A only; policy uptake never substitutes. |
+| 33 | Proportionality | ⚙️ | **Formula, no discretion, severity-dependent (v10, revised 2026-08-03):** C1+Substantive → Proportionate · C1+Partial/Acknowledged → Under-response (gap) · C1+None → Accountability gap (no action) · C2+Substantive/Partial → Proportionate · C2+Acknowledged → Under-response (gap) · C2+None → Accountability gap (no action). Equivalently: C1 requires a Substantive response to pass; C2 requires at least a Partial response. No too-recent exception (the 3 rows carrying a `too-recent` Finding Type modifier are already excluded upstream at Action Trackable = no, so they never reach this formula). Computed on Channel A only, Tier A rows only (Action Trackable = yes ⇔ Action Level populated); policy uptake never substitutes. |
 | 34 | Notes | 🧾 | Audit trail: `[CLUBBED …]` `[SPLIT …]` `[RECLASSIFIED …]` `[Report tested: …]`, caveats. |
 | 35 | Key Quote | 🧾 | Short exact verbatim from the source report supporting the finding. Authoritative quote cell. |
 | 36 | Traceability Tag | 📋 | Legacy column (mixed vocabulary, overlaps Finding Type). Retained; do not extend — new rows may leave blank. |
@@ -280,6 +280,25 @@ Legend: 🔑 identifier · 📋 descriptive · 📊 analysis input · 🧾 evide
 
 ## Changelog
 
+- **2026-08-03 · Proportionality rule changed to severity-dependent; one row recoded.**
+  `APOLLO-2026-07-ALI2` (C2, Action Level=Partial) recoded from `Under-response (gap)` to
+  `Proportionate`, so that C2 findings require only a Partial response (not Substantive) to
+  pass — matching the rule: C1+Substantive / C2+Substantive-or-Partial → Proportionate;
+  C1+Partial-or-Acknowledged / C2+Acknowledged → Under-response (gap); None → Accountability
+  gap (no action) for both severities. This reverses the same-day "uniform across severity"
+  correction below — that entry now describes the *prior* state, kept for the audit trail.
+  Pre-edit CSV backed up to `v10_backup_before_prop_fix.csv`. Effect on headline stats: C1-only
+  gap unchanged (64/78 = 82.1%, the row is C2); all-Tier-A gap moves from 93/111 (83.8%) to
+  92/111 (82.9%).
+- **2026-08-03 · Stale headline counts corrected.** Header dataset stats, ID-uniqueness check
+  (§6), and Tier table (§4) still read 345 findings / 153 reports / Tier A=55 / Tier B=185 from
+  an earlier growth stage of the sheet; corrected throughout to the actual current `v10.csv`
+  state (456 findings / 211 reports / Tier A=111 / Tier B=240 / Tier C=105). §9 row 33
+  (Proportionality) also corrected: the documented formula still had the retired v9 rule
+  (C2 auto-pass to Proportionate regardless of Action Level; a "too-recent" carve-out) — the
+  actual sheet applies one uniform mapping (Substantive→Proportionate, Partial/Acknowledged→
+  Under-response, None→Accountability gap) identically to C1 and C2, and no row ever hits the
+  too-recent path because those rows are excluded upstream at Action Trackable=no.
 - **2026-08-01 · §8b added** — response-search protocol: fixed Channel A five-source battery
   with stop condition, Channel B jurisdiction battery, Channel C logging rules; quarterly
   re-sweep cadence for open rows.
