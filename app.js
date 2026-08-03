@@ -98,18 +98,19 @@ const pct = (a, b) => Math.round((a / b) * 100);
 
 /* ================= hero, tiles, insights ================= */
 const noRespPct = pct(M.noResponse, M.trackable);
-document.getElementById("heroNum").textContent = noRespPct + "%";
+const c1GapPct = pct(M.c1Gap, M.trackableC1);
+document.getElementById("heroNum").textContent = c1GapPct + "%";
 document.getElementById("heroCaption").textContent =
-  `of trackable findings received no documented company response (${M.noResponse} of ${M.trackable})`;
+  `of C1 (severe) findings drew no response or an inadequate one — a dangerous-capability threshold demonstrated (${M.c1Gap} of ${M.trackableC1})`;
 document.getElementById("asof").textContent =
   `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)} · dataset v10, verified 2026-08-02`;
 
 const tiles = [
   { label: "Findings tracked", value: M.totalFindings, sub: `${M.reports} reports` },
   { label: "Accountability set", value: M.trackable, sub: "trackable findings" },
-  { label: "No response", value: M.noResponse, sub: `${noRespPct}% of the set` },
+  { label: "C1 gap", value: M.c1Gap, sub: `${c1GapPct}% of ${M.trackableC1} severe findings` },
   { label: "Substantive responses", value: M.substantive, sub: `${pct(M.substantive, M.trackable)}% of the set` },
-  { label: "C1 unanswered", value: M.c1NoResponse, sub: `of ${M.trackableC1} severe findings` },
+  { label: "No response (all Tier A)", value: M.noResponse, sub: `${noRespPct}% of the set` },
 ];
 document.getElementById("tiles").append(
   ...tiles.map(t => h("div", { class: "tile" },
@@ -120,12 +121,11 @@ document.getElementById("tiles").append(
 
 const polTouched = F.filter(f => ["Binding requirement", "In guidance", "Cited"].includes(f.pol)).length;
 const ukCount = F.filter(f => f.instGroup === "UK AISI").length;
-const c1GapPct = pct(M.c1Gap, M.trackableC1);
 const insights = [
-  [`${M.noResponse} of ${M.trackable} accountability-set findings (${noRespPct}%) `,
-   "have no documented company response of any kind — no blog post, system-card note, or filing that engages with the finding."],
-  [`Restricting to the most severe findings, the gap widens: `,
+  [`Restricting to the most severe findings — the comparison that actually matters: `,
    `${M.c1Gap} of ${M.trackableC1} C1 findings (${c1GapPct}%) — a dangerous-capability threshold demonstrated — drew a response that fell short of proportionate, ${M.c1NoResponse} of those with no response at all.`],
+  [`Across the broader accountability set, not restricted by severity: `,
+   `${M.noResponse} of ${M.trackable} findings (${noRespPct}%) have no documented company response of any kind — no blog post, system-card note, or filing that engages with the finding.`],
   [`When companies do respond, they respond fast — median lag ${M.medianLag} days. `,
    "Most engagement happens pre-deployment, when companies see findings before publication (negative lags are genuine)."],
   [`Findings travel to policy more readily than to companies: `,
