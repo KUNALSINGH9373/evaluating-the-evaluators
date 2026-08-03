@@ -102,7 +102,7 @@ document.getElementById("heroNum").textContent = noRespPct + "%";
 document.getElementById("heroCaption").textContent =
   `of trackable findings received no documented company response (${M.noResponse} of ${M.trackable})`;
 document.getElementById("asof").textContent =
-  `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)} · dataset v9, verified 2026-07-20`;
+  `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)} · dataset v10, verified 2026-08-02`;
 
 const tiles = [
   { label: "Findings tracked", value: M.totalFindings, sub: `${M.reports} reports` },
@@ -121,11 +121,12 @@ document.getElementById("tiles").append(
 
 const polTouched = F.filter(f => ["Binding requirement", "In guidance", "Cited"].includes(f.pol)).length;
 const ukCount = F.filter(f => f.instGroup === "UK AISI").length;
+const c1GapPct = pct(M.c1Gap, M.trackableC1);
 const insights = [
   [`${M.noResponse} of ${M.trackable} accountability-set findings (${noRespPct}%) `,
    "have no documented company response of any kind — no blog post, system-card note, or filing that engages with the finding."],
-  [`Half of the most severe findings went unanswered: `,
-   `${M.c1NoResponse} of ${M.trackableC1} C1 findings (a dangerous-capability threshold demonstrated) drew no company response.`],
+  [`Restricting to the most severe findings, the gap widens: `,
+   `${M.c1Gap} of ${M.trackableC1} C1 findings (${c1GapPct}%) — a dangerous-capability threshold demonstrated — drew a response that fell short of proportionate, ${M.c1NoResponse} of those with no response at all.`],
   [`When companies do respond, they respond fast — median lag ${M.medianLag} days. `,
    "Most engagement happens pre-deployment, when companies see findings before publication (negative lags are genuine)."],
   [`Findings travel to policy more readily than to companies: `,
@@ -133,6 +134,12 @@ const insights = [
   [`UK AISI produced ${ukCount} of ${M.totalFindings} findings (${pct(ukCount, M.totalFindings)}%) `,
    "— half the public output of the entire government-AISI network."],
 ];
+if (M.sweep) {
+  insights.push([
+    `This dataset is a screened subset, not a sample: `,
+    `${M.sweep.enumerated.toLocaleString()} publications were enumerated across ${M.sweep.venues} evaluator organisations in a systematic census, of which ${M.sweep.screened.toLocaleString()} have been screened for evaluation-relevance to date (${M.sweep.pendingFetch.toLocaleString()} still pending full-text confirmation).`,
+  ]);
+}
 document.getElementById("insightList").append(
   ...insights.map(([strong, rest]) => h("div", { class: "insight" }, h("strong", null, strong), rest))
 );
@@ -172,7 +179,7 @@ const sevActionRows = ["C1", "C2"].map(sev => ({
   })),
 }));
 
-const PROP_ORDER = ["Accountability gap (no action)", "Under-response (gap)", "Proportionate", "Proportionate (Cat2)", "Too-recent (unobservable)"];
+const PROP_ORDER = ["Accountability gap (no action)", "Under-response (gap)", "Proportionate"];
 const propCounts = countBy(TRACK, f => f.prop || null);
 const propRows = PROP_ORDER.filter(p => propCounts.has(p))
   .map(p => ({ label: p, value: propCounts.get(p) }));
@@ -244,6 +251,12 @@ document.getElementById("tiles").append(h("div", { class: "tile" },
   h("div", { class: "label" }, "Named models evaluated"),
   h("div", { class: "value" }, String(modelStats.length)),
   h("div", { class: "sub" }, "distinct versions, from tags")));
+if (M.sweep) {
+  document.getElementById("tiles").append(h("div", { class: "tile" },
+    h("div", { class: "label" }, "Publications screened"),
+    h("div", { class: "value" }, M.sweep.screened.toLocaleString()),
+    h("div", { class: "sub" }, `of ${M.sweep.enumerated.toLocaleString()} found, ${M.sweep.venues} evaluator orgs`)));
+}
 
 /* ---- reports per year, by institution group ---- */
 const YEAR_GROUPS = ["UK AISI", "US CAISI", "Joint / multi-party", "Other / not recorded"];
@@ -830,6 +843,7 @@ function detailRow(f) {
   const meta = h("div", { class: "detail-grid" });
   const pairs = [
     ["Institution", f.inst || "Not recorded"],
+    ["Institution type", f.instType || "—"],
     ["Published", f.date || "—"],
     ["Domain", f.dom.join(", ") || "—"],
     ["Access", f.access || "—"],
@@ -838,7 +852,6 @@ function detailRow(f) {
     ["Attribution", f.attr || "—"],
     ["Policy level", f.pol || "—"],
     ["Proportionality", f.prop || "—"],
-    ["Confidence", f.conf || "—"],
   ];
   for (const [k, v] of pairs) meta.append(h("div", null, h("div", { class: "k" }, k), h("div", null, v)));
   td.append(meta);
