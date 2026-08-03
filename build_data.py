@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Convert aisi_v9.csv into data.js consumed by the dashboard.
+"""Convert v10.csv into data.js consumed by the dashboard.
 
 Run: python3 build_data.py
-Reads aisi_v9.csv in this directory, writes data.js.
+Reads v10.csv in this directory, writes data.js.
 """
 import csv
 import json
@@ -10,10 +10,9 @@ import statistics
 from pathlib import Path
 
 HERE = Path(__file__).parent
-SRC = HERE / "aisi_v9.csv"
+SRC = HERE / "v10.csv"
+SWEEP = HERE / "sweep_state"
 OUT = HERE / "data.js"
-
-CONF_MAP = {"high": "High", "medium": "Medium", "med": "Medium", "low": "Low"}
 
 
 def canon_institution(inst: str) -> str:
@@ -28,26 +27,39 @@ def canon_institution(inst: str) -> str:
     return "Other national AISI"
 
 
-def norm_sev(raw: str):
-    raw = raw.strip()
-    if not raw:
-        return None, False
-    provisional = "PROVISIONAL" in raw
-    return raw.split()[0].split("(")[0], provisional
-
-
-def norm_prop(raw: str) -> str:
-    raw = raw.strip()
-    if raw.startswith("Proportionate: C2"):
-        return "Proportionate (Cat2)"
-    return raw
-
-
 def quarter(date: str):
     if not date or len(date) < 7:
         return None
     y, m = date[:4], int(date[5:7])
     return f"{y}-Q{(m - 1) // 3 + 1}"
+
+
+def sweep_coverage():
+    """Pull the discovery-sweep census numbers from sweep_state/, if present.
+
+    These describe the search process (how many publications were found and
+    screened for evaluation-relevance), not the final dataset — kept separate
+    from `meta` findings-level stats and always reported with an honest
+    in-progress caveat rather than a false precision.
+    """
+    ledger = SWEEP / "master_ledger.csv"
+    if not ledger.exists():
+        return None
+    rows = list(csv.DictReader(ledger.open()))
+    decisions = {}
+    for r in rows:
+        decisions[r["decision"]] = decisions.get(r["decision"], 0) + 1
+    venues = set()
+    enum_path = SWEEP / "cached_enumerations.json"
+    if enum_path.exists():
+        venues = set(json.loads(enum_path.read_text()).keys())
+    return {
+        "enumerated": sum(len(v) for v in json.loads(enum_path.read_text()).values()) if enum_path.exists() else None,
+        "screened": len(rows),
+        "venues": len(venues),
+        "included": decisions.get("INCLUDED", 0),
+        "pendingFetch": decisions.get("PENDING-FETCH", 0),
+    }
 
 
 def main():
@@ -59,7 +71,7 @@ def main():
 
     findings = []
     for r in rows:
-        sev, prov = norm_sev(r["Severity (C1/C2) majority"])
+        sev = r["Severity (C1/C2) majority"].strip() or None
         lag_raw = r["Lag (days)"].strip()
         try:
             lag = float(lag_raw)
@@ -71,6 +83,7 @@ def main():
             "rid": r["Report ID"].strip(),
             "inst": r["Institution"].strip(),
             "instGroup": canon_institution(r["Institution"].strip()),
+            "instType": r["Institution Type"].strip(),
             "title": r["Report Title"].strip(),
             "date": r["Publication Date"].strip(),
             "q": quarter(r["Publication Date"].strip()),
@@ -81,16 +94,15 @@ def main():
             "url": r["Source URL"].strip(),
             "finding": r["Finding"].strip(),
             "sev": sev,
-            "sevProv": prov,
+            "sevProv": False,
             "action": r["Action Level"].strip(),
             "resp": r["Company Response"].strip(),
             "respDate": r["Response Date"].strip(),
             "lag": lag,
             "attr": r["Attribution"].strip(),
             "pol": r["Policy Level"].strip(),
-            "prop": norm_prop(r["Proportionality"]),
-            "conf": CONF_MAP.get(r["Confidence"].strip().lower(), r["Confidence"].strip()),
-            "quote": r["Key Quote"].strip(),
+            "prop": r["Proportionality"].strip(),
+            "quote": "",
             "ftype": [t.strip() for t in r["Finding Type"].split(";") if t.strip()],
             "scope": r["Scope"].strip(),
             "track": r["Action Trackable?"].strip(),
@@ -98,26 +110,33 @@ def main():
         })
 
     track = [f for f in findings if f["track"] == "yes"]
+    trackC1 = [f for f in track if f["sev"] == "C1"]
     lags = [f["lag"] for f in track if f["lag"] is not None]
     action_counts = {}
     for f in track:
         action_counts[f["action"]] = action_counts.get(f["action"], 0) + 1
+    action_counts_c1 = {}
+    for f in trackC1:
+        action_counts_c1[f["action"]] = action_counts_c1.get(f["action"], 0) + 1
 
     meta = {
         "totalFindings": len(findings),
         "droppedBlankRows": dropped_blank,
         "reports": len({f["rid"] for f in findings if f["rid"]}),
         "trackable": len(track),
-        "trackableC1": sum(1 for f in track if f["sev"] == "C1"),
+        "trackableC1": len(trackC1),
         "noResponse": action_counts.get("None", 0),
         "substantive": action_counts.get("Substantive", 0),
         "anyResponse": len(track) - action_counts.get("None", 0),
-        "c1NoResponse": sum(1 for f in track if f["sev"] == "C1" and f["action"] == "None"),
+        "c1NoResponse": action_counts_c1.get("None", 0),
+        "c1Substantive": action_counts_c1.get("Substantive", 0),
+        "c1Gap": action_counts_c1.get("None", 0) + action_counts_c1.get("Partial", 0) + action_counts_c1.get("Acknowledged", 0),
         "empirical": sum(1 for f in findings if f["evalT"] == "yes"),
         "medianLag": statistics.median(lags) if lags else None,
         "lagN": len(lags),
         "dateMin": min(f["date"] for f in findings if f["date"]),
         "dateMax": max(f["date"] for f in findings if f["date"]),
+        "sweep": sweep_coverage(),
     }
 
     payload = "window.AISI = " + json.dumps(
