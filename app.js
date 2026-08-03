@@ -110,7 +110,6 @@ const tiles = [
   { label: "No response", value: M.noResponse, sub: `${noRespPct}% of the set` },
   { label: "Substantive responses", value: M.substantive, sub: `${pct(M.substantive, M.trackable)}% of the set` },
   { label: "C1 unanswered", value: M.c1NoResponse, sub: `of ${M.trackableC1} severe findings` },
-  { label: "Median response lag", value: M.medianLag + " days", sub: `n = ${M.lagN} responses` },
 ];
 document.getElementById("tiles").append(
   ...tiles.map(t => h("div", { class: "tile" },
@@ -635,62 +634,86 @@ for (const c of charts) {
 
 /* ================= sankey: the accountability pipeline ================= */
 function sankeyModel() {
-  const emp = F.filter(f => f.evalT === "yes").length;
-  const cross = {};
+  const empItems = F.filter(f => f.evalT === "yes");
+  const nonEmpItems = F.filter(f => f.evalT !== "yes");
+  const setItems = TRACK;
+  const exclItems = empItems.filter(f => f.track !== "yes");
+  const c1Items = TRACK.filter(f => f.sev === "C1");
+  const c2Items = TRACK.filter(f => f.sev === "C2");
+  const actionItems = {};
   for (const sev of ["C1", "C2"]) for (const a of ACTIONS) {
-    cross[sev + "|" + a] = TRACK.filter(f => f.sev === sev && f.action === a).length;
+    actionItems[sev + "|" + a] = TRACK.filter(f => f.sev === sev && f.action === a);
   }
-  const c1 = TRACK.filter(f => f.sev === "C1").length;
-  const c2 = TRACK.filter(f => f.sev === "C2").length;
-  const nodes = [
-    { id: "all", col: 0, label: "All findings", value: F.length, cv: "--blue",
+
+  const hasSweep = !!M.sweep;
+  const baseCol = hasSweep ? 1 : 0;
+  const nodes = [];
+  if (hasSweep) {
+    nodes.push({
+      id: "screened", col: 0, label: "Publications screened", value: M.sweep.screened,
+      cv: "--axis", fullBleed: true, sweep: true,
+      desc: `systematic census across ${M.sweep.venues} evaluator organisations`,
+    });
+  }
+  nodes.push(
+    { id: "all", col: baseCol, label: "All findings", items: F, cv: "--blue",
       desc: "every finding in the dataset" },
-    { id: "emp", col: 1, label: "Empirical model findings", value: emp, cv: "--blue",
+    { id: "emp", col: baseCol + 1, label: "Empirical model findings", items: empItems, cv: "--blue",
       desc: "a model was actually tested" },
-    { id: "nonemp", col: 1, label: "Methodology, governance & trends", value: F.length - emp, cv: "--axis", exit: true,
+    { id: "nonemp", col: baseCol + 1, label: "Methodology, governance & trends", items: nonEmpItems, cv: "--axis", exit: true,
       desc: "no company response is expected" },
-    { id: "set", col: 2, label: "Accountability set", value: TRACK.length, cv: "--blue",
+    { id: "set", col: baseCol + 2, label: "Accountability set", items: setItems, cv: "--blue",
       desc: "named company, concerning result — a response is reasonable to expect" },
-    { id: "excl", col: 2, label: "Not action-trackable", value: emp - TRACK.length, cv: "--axis", exit: true,
+    { id: "excl", col: baseCol + 2, label: "Not action-trackable", items: exclItems, cv: "--axis", exit: true,
       desc: "anonymised models, reassuring nulls, benchmark deltas, self-reports…" },
-    { id: "C1", col: 3, label: "C1 · threshold demonstrated", value: c1, cv: "--red",
+    { id: "C1", col: baseCol + 3, label: "C1 · threshold demonstrated", items: c1Items, cv: "--red",
       desc: "a dangerous-capability threshold was demonstrated" },
-    { id: "C2", col: 3, label: "C2 · lower severity", value: c2, cv: "--blue",
+    { id: "C2", col: baseCol + 3, label: "C2 · lower severity", items: c2Items, cv: "--blue",
       desc: "partial capability or lower severity" },
     ...ACTIONS.map((a, i) => ({
-      id: "act" + a, col: 4, label: a, value: cross["C1|" + a] + cross["C2|" + a],
+      id: "act" + a, col: baseCol + 4, label: a,
+      items: [...actionItems["C1|" + a], ...actionItems["C2|" + a]],
       cv: ORD_VARS[i], desc: "company response level",
     })),
-  ];
-  const links = [
-    { s: "all", t: "emp", v: emp, cv: "--blue" },
-    { s: "all", t: "nonemp", v: F.length - emp, cv: "--axis" },
-    { s: "emp", t: "set", v: TRACK.length, cv: "--blue" },
-    { s: "emp", t: "excl", v: emp - TRACK.length, cv: "--axis" },
-    { s: "set", t: "C1", v: c1, cv: "--red" },
-    { s: "set", t: "C2", v: c2, cv: "--blue" },
+  );
+  for (const n of nodes) if (!n.sweep) n.value = n.items.length;
+
+  const links = [];
+  if (hasSweep) links.push({ s: "screened", t: "all", v: F.length, cv: "--blue" });
+  links.push(
+    { s: "all", t: "emp", v: empItems.length, cv: "--blue" },
+    { s: "all", t: "nonemp", v: nonEmpItems.length, cv: "--axis" },
+    { s: "emp", t: "set", v: setItems.length, cv: "--blue" },
+    { s: "emp", t: "excl", v: exclItems.length, cv: "--axis" },
+    { s: "set", t: "C1", v: c1Items.length, cv: "--red" },
+    { s: "set", t: "C2", v: c2Items.length, cv: "--blue" },
     ...["C1", "C2"].flatMap(sev => ACTIONS.map(a => ({
-      s: sev, t: "act" + a, v: cross[sev + "|" + a], cv: sev === "C1" ? "--red" : "--blue",
+      s: sev, t: "act" + a, v: actionItems[sev + "|" + a].length, cv: sev === "C1" ? "--red" : "--blue",
     }))).filter(l => l.v > 0),
-  ];
-  return { nodes, links };
+  );
+  return { nodes, links, cols: baseCol + 5 };
 }
 
 let sankeyRevealed = false;
 function renderSankey() {
   const mount = document.getElementById("sankeyMount");
   if (!mount) return;
-  const { nodes, links } = sankeyModel();
+  const { nodes, links, cols } = sankeyModel();
   const byId = new Map(nodes.map(n => [n.id, n]));
   const W = Math.max(560, mount.clientWidth);
   const H = 400, padY = 16, nodeW = 12, gap = 16;
   const labelPad = 6;
-  const cols = 5;
   const colX = i => 8 + (i / (cols - 1)) * (W - 16 - nodeW);
-  const k = (H - 2 * padY - 3 * gap) / F.length; // px per finding, from the widest column
+  const k = (H - 2 * padY - 3 * gap) / F.length; // px per finding, from the widest true-scale column
 
   for (let c = 0; c < cols; c++) {
     const colNodes = nodes.filter(n => n.col === c);
+    if (colNodes.length === 1 && colNodes[0].fullBleed) {
+      const n = colNodes[0];
+      n.x = colX(c); n.y = padY; n.h = H - 2 * padY;
+      n.inY = n.y; n.outY = n.y;
+      continue;
+    }
     const total = colNodes.reduce((a, n) => a + n.value * k, 0) + gap * (colNodes.length - 1);
     let y = (H - total) / 2;
     for (const n of colNodes) {
@@ -701,7 +724,7 @@ function renderSankey() {
   }
 
   const svg = s("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img" });
-  const stages = [0, 1, 2, 3].map(i => {
+  const stages = Array.from({ length: cols - 1 }, (_, i) => {
     const g = s("g", { class: "sankey-stage" + (sankeyRevealed ? " on" : "") });
     g.style.transitionDelay = (i * 0.22) + "s";
     svg.append(g);
@@ -721,18 +744,33 @@ function renderSankey() {
     });
     path.addEventListener("pointerenter", () => path.setAttribute("opacity", l.cv === "--axis" ? 0.55 : 0.75));
     path.addEventListener("pointerleave", () => path.setAttribute("opacity", l.cv === "--axis" ? 0.35 : 0.5));
-    hoverable(path, `${a.label} → ${b.label}`,
-      [{ color: cvar(l.cv), value: l.v, label: l.v === 1 ? "finding" : "findings" }]);
+    const linkRows = [{ color: cvar(l.cv), value: l.v, label: l.v === 1 ? "finding" : "findings" }];
+    if (!a.sweep) linkRows.push({ value: pct(l.v, a.value) + "%", label: `of ${a.label}` });
+    if (!b.sweep) linkRows.push({ value: pct(l.v, b.value) + "%", label: `of ${b.label}` });
+    hoverable(path, `${a.label} → ${b.label}`, linkRows);
     stages[a.col].append(path);
   }
 
   for (const n of nodes) {
     const rect = s("rect", { x: n.x, y: n.y, width: nodeW, height: n.h, rx: 3, fill: cvar(n.cv) });
-    hoverable(rect, n.label, [
-      { color: cvar(n.cv), value: n.value, label: n.value === 1 ? "finding" : "findings" },
-      { value: pct(n.value, F.length) + "%", label: "of all findings" },
-      { value: n.desc, label: "" },
-    ]);
+    let rows;
+    if (n.sweep) {
+      rows = [
+        { color: cvar(n.cv), value: n.value.toLocaleString(), label: "publications screened" },
+        { value: M.sweep.enumerated.toLocaleString(), label: "found in the census (46 orgs, nothing un-listed)" },
+        { value: M.sweep.pendingFetch.toLocaleString(), label: "still pending full-text confirmation" },
+        { value: pct(F.length, n.value) + "%", label: "made it into this dataset" },
+      ];
+    } else {
+      const reportSet = new Set(n.items.map(f => f.rid || f.url || f.id));
+      rows = [
+        { color: cvar(n.cv), value: n.value, label: n.value === 1 ? "finding" : "findings" },
+        { value: reportSet.size, label: reportSet.size === 1 ? "report" : "reports" },
+        { value: pct(n.value, F.length) + "%", label: "of all findings" },
+        { value: n.desc, label: "" },
+      ];
+    }
+    hoverable(rect, n.label, rows);
     const lastCol = n.col === cols - 1;
     const lx = lastCol ? n.x - labelPad : n.x + nodeW + labelPad;
     const anchor = lastCol ? "end" : "start";
@@ -749,7 +787,8 @@ function renderSankey() {
     } else {
       g.append(rect,
         s("text", { x: lx, y: cy - 1, "text-anchor": anchor, fill: cvar("--ink"), "font-size": "12", "font-weight": "600" }, n.label),
-        s("text", { x: lx, y: cy + 12, "text-anchor": anchor, fill: cvar("--muted"), "font-size": "11.5" }, String(n.value)));
+        s("text", { x: lx, y: cy + 12, "text-anchor": anchor, fill: cvar("--muted"), "font-size": "11.5" },
+          n.sweep ? n.value.toLocaleString() : String(n.value)));
     }
   }
   // the first column's node belongs to stage 0 alongside its outgoing links

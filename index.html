@@ -196,8 +196,8 @@ footer.site a { color: var(--ink-2); }
   <div class="container">
     <span class="wordmark">Evaluating the Evaluators</span>
     <nav class="main">
-      <a href="#insights">Insights</a>
       <a href="#pipeline">Pipeline</a>
+      <a href="#insights">Insights</a>
       <a href="#charts">Charts</a>
       <a href="#explorer">Explorer</a>
       <a href="#methodology">Methodology</a>
@@ -219,26 +219,29 @@ footer.site a { color: var(--ink-2); }
         <div class="hero-caption" id="heroCaption"></div>
       </div>
       <div class="asof" id="asof"></div>
-      <div class="tiles" id="tiles"></div>
     </div>
-
-    <section id="insights">
-      <h2>Key insights</h2>
-      <div class="insights" id="insightList"></div>
-    </section>
 
     <section id="pipeline">
       <h2>The accountability pipeline</h2>
       <p class="sectionlede">Where findings go — and where accountability leaks out. Every ribbon is an exact count
         from the dataset; flows draw in stage by stage as you scroll.</p>
       <div class="card wide">
-        <h3>From 456 published findings to 18 substantive responses</h3>
-        <div class="sub">Ribbon width = number of findings · hover any ribbon or node for detail</div>
+        <h3>From 6,498 screened publications to 18 substantive responses</h3>
+        <div class="sub">Ribbon width = number of findings · first stage is not to scale (6,498 vs. 456) — hover any ribbon or node for the exact counts</div>
         <div class="plot" id="sankeyMount"></div>
         <details class="tblview" id="sankeyTable">
           <summary>Table view</summary>
         </details>
       </div>
+    </section>
+
+    <section id="stats">
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <section id="insights">
+      <h2>Key insights</h2>
+      <div class="insights" id="insightList"></div>
     </section>
 
     <section id="charts">
