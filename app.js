@@ -634,6 +634,30 @@ const charts = [
       ["Third-party evaluator (165)", "Princeton HAL", 6], ["Third-party evaluator (165)", "Holistic AI", 5],
       ["Third-party evaluator (165)", "Other independent evaluators", 27]],
   },
+  {
+    title: "Institution tree, by Institution Type",
+    sub: "Government / Non-Profit (AIEF) / Non-Profit (Independent) / For-Profit — the split behind the response-rate gap between AIEF and other non-profits",
+    wide: true,
+    render(mount) {
+      mount.replaceChildren();
+      const img = h("img", {
+        src: "institution_type_tree.png",
+        alt: "Tree diagram: 456 findings by Institution Type - Government 290 (UK AISI 190, US CAISI 30, Joint/multi-party 58, Other national AISI 12), Non-Profit AIEF 63 (METR 23, SecureBio 18, Transluce 10, Princeton HAL 6, Other 6), Non-Profit Independent 53 (Palisade Research 18, Shanghai AI Lab 16, Apollo Research 14, Other 5), For-Profit 50 (Dreadnode 18, Scale AI 10, Holistic AI 5, Other 17)",
+        style: "width:100%;height:auto;border-radius:10px;display:block",
+      });
+      mount.append(img);
+    },
+    table: () => [["Institution Type", "Organisation", "Findings"],
+      ["Government (290)", "UK AISI", 190], ["Government (290)", "US CAISI", 30],
+      ["Government (290)", "Joint / multi-party", 58], ["Government (290)", "Other national AISI", 12],
+      ["Non-Profit AIEF (63)", "METR", 23], ["Non-Profit AIEF (63)", "SecureBio", 18],
+      ["Non-Profit AIEF (63)", "Transluce", 10], ["Non-Profit AIEF (63)", "Princeton HAL", 6],
+      ["Non-Profit AIEF (63)", "Other", 6],
+      ["Non-Profit Independent (53)", "Palisade Research", 18], ["Non-Profit Independent (53)", "Shanghai AI Lab", 16],
+      ["Non-Profit Independent (53)", "Apollo Research", 14], ["Non-Profit Independent (53)", "Other", 5],
+      ["For-Profit (50)", "Dreadnode", 18], ["For-Profit (50)", "Scale AI", 10],
+      ["For-Profit (50)", "Holistic AI", 5], ["For-Profit (50)", "Other (Gray Swan, LatticeFlow, etc.)", 17]],
+  },
 ];
 
 const chartGrid = document.getElementById("chartGrid");
