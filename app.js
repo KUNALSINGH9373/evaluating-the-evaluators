@@ -539,6 +539,25 @@ const charts = [
     table: () => [["Severity", ...ACTIONS], ...sevActionRows.map(r => [r.label, ...r.segs.map(x => x.value)])],
   },
   {
+    title: "How severity is classified: C1 vs. C2",
+    sub: "3-model ensemble, tested against 7 dangerous-capability domains, decided by majority vote",
+    wide: true,
+    render(mount) {
+      mount.replaceChildren();
+      const img = h("img", {
+        src: "severity_classification.png",
+        alt: "Flow diagram: a finding is evaluated independently by 3 cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) against 7 dangerous-capability domains (CBRN uplift, offensive cyber capability, autonomy/self-replication/AI-R&D automation, persuasion or societal harm at scale, deliberate deception or misalignment, deployed-safeguard failure, compromised evaluation integrity). Majority vote of the 3 models decides C1 (155 findings, threshold demonstrated) or C2 (301 findings, threshold not demonstrated). 415 of 456 (91%) were unanimous 3-0; the remaining 41 (9%) were decided 2-1.",
+        style: "width:100%;height:auto;border-radius:10px;display:block",
+      });
+      mount.append(img);
+    },
+    table: () => [["Outcome", "Findings", "Meaning"],
+      ["C1", 155, "Demonstrates ≥ 1 of 7 dangerous-capability domains"],
+      ["C2", 301, "Threshold not demonstrated (not the same as unimportant)"],
+      ["Unanimous 3–0 vote", 415, "91% of all 456 findings"],
+      ["Split 2–1 vote", 41, "9% of all 456 findings"]],
+  },
+  {
     title: "What government AISIs publish, by quarter",
     sub: `All ${M.totalFindings} findings by the nature of the finding`,
     wide: true,
