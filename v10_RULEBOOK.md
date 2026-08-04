@@ -1,6 +1,6 @@
 # Evaluating the Evaluators — Rulebook (v10)
 
-**Canonical dataset:** `~/Desktop/v10.csv` (456 findings · 211 reports · 40 columns · window Sep 2023 – 31 Jul 2026)
+**Canonical dataset:** `~/Desktop/v10.csv` (456 findings · 211 reports · 40 columns · window Sep 2023 – 30 Jul 2026 corpus cutoff, per §2)
 **Status:** living document — update whenever a rule changes; every change gets a Changelog entry.
 **Companions:** `SEARCH_PROTOCOL.md` (in the dashboard repo — full search/screening procedure), `run_severity_ensemble.py` (the frozen severity prompt), `screening_ledger.csv` (being built by the evidence sweep).
 **Last updated:** 2026-08-03
@@ -280,6 +280,11 @@ Legend: 🔑 identifier · 📋 descriptive · 📊 analysis input · 🧾 evide
 
 ## Changelog
 
+- **2026-08-03 · Header cutoff date corrected back to 2026-07-30.** The 2026-08-03 "stale
+  headline counts" fix below wrongly changed this to "31 Jul 2026" by reading the max
+  Publication Date actually present in the sheet, rather than the frozen corpus cutoff
+  already defined in §2 (2026-07-30). One row, `DREADNODE-2026-07-CYB2`, carries a Publication
+  Date one day past that cutoff; that's a data note, not a reason to move the cutoff itself.
 - **2026-08-03 · Proportionality rule changed to severity-dependent; one row recoded.**
   `APOLLO-2026-07-ALI2` (C2, Action Level=Partial) recoded from `Under-response (gap)` to
   `Proportionate`, so that C2 findings require only a Partial response (not Substantive) to
