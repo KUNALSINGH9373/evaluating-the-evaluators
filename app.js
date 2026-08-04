@@ -630,30 +630,6 @@ const charts = [
     table: () => [["Institution", "Findings"], ...instRows.map(r => [r.label, r.value])],
   },
   {
-    title: "Institution tree: government AISI vs. independent evaluators",
-    sub: "Every finding traces to exactly one reporting configuration — the full org-level breakdown behind the grouped chart above",
-    wide: true,
-    render(mount) {
-      mount.replaceChildren();
-      const img = h("img", {
-        src: "institution_tree.png",
-        alt: "Tree diagram: 456 findings split into 291 from government AISIs (190 UK AISI, 30 US CAISI, 58 Joint/multi-party, 13 other national AISIs) and 165 from independent third-party evaluators (METR 23, Palisade Research 18, SecureBio 18, Dreadnode 18, Shanghai AI Lab 16, Transluce 10, Scale AI 10, Apollo Research 14, Princeton HAL 6, Holistic AI 5, 27 other evaluator organisations)",
-        style: "width:100%;height:auto;border-radius:10px;display:block",
-      });
-      mount.append(img);
-    },
-    table: () => [["Branch", "Organisation", "Findings"],
-      ["Government AISI (291)", "UK AISI", 190], ["Government AISI (291)", "US CAISI", 30],
-      ["Government AISI (291)", "Joint / multi-party", 58],
-      ["Government AISI (291)", "Other national AISI (Japan, Korea, Singapore, Australia, France)", 13],
-      ["Third-party evaluator (165)", "METR", 23], ["Third-party evaluator (165)", "Palisade Research", 18],
-      ["Third-party evaluator (165)", "SecureBio", 18], ["Third-party evaluator (165)", "Dreadnode", 18],
-      ["Third-party evaluator (165)", "Shanghai AI Lab", 16], ["Third-party evaluator (165)", "Transluce", 10],
-      ["Third-party evaluator (165)", "Scale AI", 10], ["Third-party evaluator (165)", "Apollo Research", 14],
-      ["Third-party evaluator (165)", "Princeton HAL", 6], ["Third-party evaluator (165)", "Holistic AI", 5],
-      ["Third-party evaluator (165)", "Other independent evaluators", 27]],
-  },
-  {
     title: "Institution tree, by Institution Type",
     sub: "Government / Non-Profit (AIEF) / Non-Profit (Independent) / For-Profit — the split behind the response-rate gap between AIEF and other non-profits",
     wide: true,
