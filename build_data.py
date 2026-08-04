@@ -15,15 +15,27 @@ SWEEP = HERE / "sweep_state"
 OUT = HERE / "data.js"
 
 
-def canon_institution(inst: str) -> str:
+UK_AISI_ALIASES = {"UK AISI", "UK AI Security Institute (UK AISI)", "UK AI Security Institute"}
+US_CAISI_ALIASES = {"US CAISI", "US Center for AI Standards and Innovation (CAISI), NIST", "NIST/US CAISI"}
+
+
+def canon_institution(inst: str, scope: str) -> str:
+    """Broad institution-group bucket for the site's charts/filters.
+
+    Government-AISI and third-party-evaluator rows are kept structurally separate
+    (per `Scope`) rather than collapsed into one "Other national AISI" catch-all —
+    an evaluator like METR or SecureBio is not a national institute.
+    """
     if not inst:
         return "Not recorded"
-    if inst == "UK AISI":
+    if inst in UK_AISI_ALIASES:
         return "UK AISI"
-    if inst == "US CAISI":
+    if inst in US_CAISI_ALIASES:
         return "US CAISI"
-    if "+" in inst or "Joint" in inst or "Network" in inst:
+    if "+" in inst or "Joint" in inst or "Network" in inst or ";" in inst:
         return "Joint / multi-party"
+    if scope == "third-party-evaluator":
+        return "Third-party evaluator"
     return "Other national AISI"
 
 
@@ -82,7 +94,7 @@ def main():
             "id": r["Finding ID"].strip(),
             "rid": r["Report ID"].strip(),
             "inst": r["Institution"].strip(),
-            "instGroup": canon_institution(r["Institution"].strip()),
+            "instGroup": canon_institution(r["Institution"].strip(), r["Scope"].strip()),
             "instType": r["Institution Type"].strip(),
             "title": r["Report Title"].strip(),
             "date": r["Publication Date"].strip(),

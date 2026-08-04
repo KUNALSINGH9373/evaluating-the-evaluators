@@ -101,7 +101,7 @@ const noRespPct = pct(M.noResponse, M.trackable);
 const c1GapPct = pct(M.c1Gap, M.trackableC1);
 document.getElementById("heroNum").textContent = c1GapPct + "%";
 document.getElementById("heroCaption").textContent =
-  `of C1 (severe) findings drew no response or an inadequate one — a dangerous-capability threshold demonstrated (${M.c1Gap} of ${M.trackableC1})`;
+  `of ${M.trackableC1} C1 findings — dangerous-capability threshold demonstrated — lacked a publicly documented company response meeting our proportionality criteria (${M.c1Gap} of ${M.trackableC1})`;
 document.getElementById("asof").textContent =
   `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)} · dataset v10, verified 2026-08-02`;
 
@@ -119,7 +119,8 @@ document.getElementById("tiles").append(
     h("div", { class: "sub" }, t.sub)))
 );
 
-const polTouched = F.filter(f => ["Binding requirement", "In guidance", "Cited"].includes(f.pol)).length;
+const polTouched = F.filter(f => ["Non-binding policy uptake", "Binding policy action"].includes(f.pol)).length;
+const polBinding = F.filter(f => f.pol === "Binding policy action").length;
 const ukCount = F.filter(f => f.instGroup === "UK AISI").length;
 const insights = [
   [`Restricting to the most severe findings — the comparison that actually matters: `,
@@ -128,15 +129,15 @@ const insights = [
    `${M.noResponse} of ${M.trackable} findings (${noRespPct}%) have no documented company response of any kind — no blog post, system-card note, or filing that engages with the finding.`],
   [`When companies do respond, they respond fast — median lag ${M.medianLag} days. `,
    "Most engagement happens pre-deployment, when companies see findings before publication (negative lags are genuine)."],
-  [`Findings travel to policy more readily than to companies: `,
-   `${polTouched} findings were cited in or shaped official guidance or binding requirements, versus ${M.anyResponse} company responses in the accountability set.`],
+  [`The policy channel and the company-response channel reach different findings: `,
+   `${polTouched} of all ${M.totalFindings} findings (${pct(polTouched, M.totalFindings)}%) were cited in official policy records — ${polBinding} of those binding — while ${M.anyResponse} of the ${M.trackable} accountability-set findings (${pct(M.anyResponse, M.trackable)}%) drew a company response of any kind. Different denominators, so not a direct rate comparison.`],
   [`UK AISI produced ${ukCount} of ${M.totalFindings} findings (${pct(ukCount, M.totalFindings)}%) `,
    "— half the public output of the entire government-AISI network."],
 ];
 if (M.sweep) {
   insights.push([
-    `This dataset is a screened subset, not a sample: `,
-    `${M.sweep.enumerated.toLocaleString()} publications were enumerated across ${M.sweep.venues} evaluator organisations in a systematic census, of which ${M.sweep.screened.toLocaleString()} have been screened for evaluation-relevance to date (${M.sweep.pendingFetch.toLocaleString()} still pending full-text confirmation).`,
+    `This dataset is a screened subset of a still-growing census, not a sample: `,
+    `${M.sweep.enumerated.toLocaleString()} publications have been enumerated across ${M.sweep.venues} evaluator organisations, of which ${M.sweep.screened.toLocaleString()} have been screened for evaluation-relevance to date. Of those ${M.sweep.screened.toLocaleString()} already-screened rows, ${M.sweep.pendingFetch.toLocaleString()} are still pending full-text confirmation before an inclusion decision is finalised.`,
   ]);
 }
 document.getElementById("insightList").append(
@@ -548,7 +549,11 @@ const charts = [
   },
   {
     title: "Outcomes in the accountability set",
-    sub: "Proportionality of response, given severity",
+    sub: (() => {
+      const propN = propCounts.get("Proportionate") || 0;
+      const extra = propN - M.substantive;
+      return `Proportionality of response, given severity — the ${propN} Proportionate here is not the same count as "Substantive responses" (${M.substantive}) elsewhere on this page: Proportionate = ${M.substantive} raw Substantive responses plus ${extra} C2 finding(s) whose Partial response met the lower bar C2 requires. Not a data error — two different measures.`;
+    })(),
     wide: false,
     render(mount) { renderHBars(mount, propRows, "--violet", "Findings"); },
     table: () => [["Outcome", "Findings"], ...propRows.map(r => [r.label, r.value])],
@@ -605,15 +610,41 @@ const charts = [
     render(mount) { renderHBars(mount, instRows, "--orange", "Findings"); },
     table: () => [["Institution", "Findings"], ...instRows.map(r => [r.label, r.value])],
   },
+  {
+    title: "Institution tree: government AISI vs. independent evaluators",
+    sub: "Every finding traces to exactly one reporting configuration — the full org-level breakdown behind the grouped chart above",
+    wide: true,
+    render(mount) {
+      mount.replaceChildren();
+      const img = h("img", {
+        src: "institution_tree.png",
+        alt: "Tree diagram: 456 findings split into 291 from government AISIs (190 UK AISI, 30 US CAISI, 58 Joint/multi-party, 13 other national AISIs) and 165 from independent third-party evaluators (METR 23, Palisade Research 18, SecureBio 18, Dreadnode 18, Shanghai AI Lab 16, Transluce 10, Scale AI 10, Apollo Research 14, Princeton HAL 6, Holistic AI 5, 27 other evaluator organisations)",
+        style: "width:100%;height:auto;border-radius:10px;display:block",
+      });
+      mount.append(img);
+    },
+    table: () => [["Branch", "Organisation", "Findings"],
+      ["Government AISI (291)", "UK AISI", 190], ["Government AISI (291)", "US CAISI", 30],
+      ["Government AISI (291)", "Joint / multi-party", 58],
+      ["Government AISI (291)", "Other national AISI (Japan, Korea, Singapore, Australia, France)", 13],
+      ["Third-party evaluator (165)", "METR", 23], ["Third-party evaluator (165)", "Palisade Research", 18],
+      ["Third-party evaluator (165)", "SecureBio", 18], ["Third-party evaluator (165)", "Dreadnode", 18],
+      ["Third-party evaluator (165)", "Shanghai AI Lab", 16], ["Third-party evaluator (165)", "Transluce", 10],
+      ["Third-party evaluator (165)", "Scale AI", 10], ["Third-party evaluator (165)", "Apollo Research", 14],
+      ["Third-party evaluator (165)", "Princeton HAL", 6], ["Third-party evaluator (165)", "Holistic AI", 5],
+      ["Third-party evaluator (165)", "Other independent evaluators", 27]],
+  },
 ];
 
 const chartGrid = document.getElementById("chartGrid");
 const mounts = [];
+let chartIdx = 0;
 for (const c of charts) {
   const mount = h("div", { class: "plot" });
   mounts.push({ c, mount });
+  const titleId = `chart-title-${chartIdx++}`;
   const card = h("div", { class: "card" + (c.wide ? " wide" : "") },
-    h("h3", null, c.title),
+    h("h3", { id: titleId }, c.title),
     h("div", { class: "sub" }, c.sub));
   if (c.legend) {
     card.append(h("div", { class: "legend" }, ...c.legend.map(k =>
@@ -621,11 +652,12 @@ for (const c of charts) {
         h("span", { class: k.shape === "line" ? "linekey" : "swatch", style: `background:var(${k.varName})` }),
         k.name))));
   }
+  mount.dataset.titleId = titleId;
   card.append(mount);
   const tbl = c.table();
   const [head, ...body] = tbl;
   card.append(h("details", { class: "tblview" },
-    h("summary", null, "Table view"),
+    h("summary", null, `Table view: ${c.title}`),
     h("table", null,
       h("thead", null, h("tr", null, ...head.map(x => h("th", null, String(x))))),
       h("tbody", null, ...body.map(row => h("tr", null, ...row.map(x => h("td", null, String(x)))))))));
@@ -758,7 +790,7 @@ function renderSankey() {
       rows = [
         { color: cvar(n.cv), value: n.value.toLocaleString(), label: "publications screened" },
         { value: M.sweep.enumerated.toLocaleString(), label: "found in the census (46 orgs, nothing un-listed)" },
-        { value: M.sweep.pendingFetch.toLocaleString(), label: "still pending full-text confirmation" },
+        { value: M.sweep.pendingFetch.toLocaleString(), label: "of the screened rows, still pending full-text confirmation" },
         { value: pct(F.length, n.value) + "%", label: "made it into this dataset" },
       ];
     } else {
@@ -811,8 +843,20 @@ new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.35 }).observe(document.getElementById("pipeline"));
 
 function renderAllCharts() {
-  for (const { c, mount } of mounts) c.render(mount);
+  for (const { c, mount } of mounts) {
+    c.render(mount);
+    const svg = mount.querySelector("svg");
+    if (svg && mount.dataset.titleId) svg.setAttribute("aria-labelledby", mount.dataset.titleId);
+    const canvas = mount.querySelector("canvas");
+    if (canvas && mount.dataset.titleId) {
+      canvas.setAttribute("role", "img");
+      canvas.setAttribute("aria-labelledby", mount.dataset.titleId);
+    }
+  }
   renderSankey();
+  const sankeyMount = document.getElementById("sankeyMount");
+  const sankeySvg = sankeyMount && sankeyMount.querySelector("svg");
+  if (sankeySvg) sankeySvg.setAttribute("aria-label", "The accountability pipeline: findings flowing from publication through severity classification to company response outcome");
 }
 renderAllCharts();
 let resizeT;
@@ -836,7 +880,7 @@ function fillSelect(sel, label, values) {
   sel.append(h("option", { value: "" }, label));
   for (const v of values) sel.append(h("option", { value: v }, v));
 }
-fillSelect(els.scope, "All scopes", ["government-AISI", "third-party-evaluator", "company-self-report"]);
+fillSelect(els.scope, "All scopes", ["government-AISI", "third-party-evaluator"]);
 fillSelect(els.inst, "All institutions", instRows.map(r => r.label));
 fillSelect(els.sev, "All severities", ["C1", "C2", "Not coded"]);
 fillSelect(els.action, "All response levels", [...ACTIONS, "No response expected"]);
@@ -844,6 +888,7 @@ fillSelect(els.domain, "All domains", domCounts.map(([d]) => d));
 
 let shown = 50;
 const PAGE = 50;
+let gapOnly = false;
 
 function matches(f) {
   const q = els.search.value.trim().toLowerCase();
@@ -857,6 +902,7 @@ function matches(f) {
   if (els.action.value === "No response expected" ? f.action : (els.action.value && f.action !== els.action.value)) return false;
   if (els.domain.value && !f.dom.includes(els.domain.value)) return false;
   if (els.track.checked && f.track !== "yes") return false;
+  if (gapOnly && f.prop === "Proportionate") return false;
   return true;
 }
 
@@ -865,7 +911,7 @@ function sevPill(f) {
   return h("span", { class: "pill " + f.sev.toLowerCase() }, f.sev + (f.sevProv ? "*" : ""));
 }
 function actionPill(f) {
-  if (!f.action) return h("span", { class: "pill" }, "n/a");
+  if (!f.action) return h("span", { class: "pill" }, f.track === "yes" ? "Not assessed" : "Outside accountability set");
   return h("span", { class: "pill act-" + f.action }, f.action);
 }
 
@@ -904,12 +950,26 @@ function detailRow(f) {
 let openId = null;
 function renderTable() {
   const rows = F.filter(matches).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-  els.count.textContent = `${rows.length} of ${F.length} findings` +
+  els.count.replaceChildren();
+  els.count.append(document.createTextNode(
+    `${rows.length} of ${F.length} findings` +
     (els.track.checked ? " (accountability set)" : "") +
-    (rows.some(f => f.sevProv) ? " · * = provisional severity" : "");
+    (gapOnly ? " · gap only (excludes Proportionate)" : "") +
+    (rows.some(f => f.sevProv) ? " · * = provisional severity" : "")
+  ));
+  if (gapOnly) {
+    els.count.append(document.createTextNode(" — "));
+    els.count.append(h("a", { href: "#", onclick: e => { e.preventDefault(); gapOnly = false; renderTable(); } }, "clear"));
+  }
   els.tbody.replaceChildren();
   for (const f of rows.slice(0, shown)) {
-    const tr = h("tr", { class: "datarow" + (openId === f.id ? " open" : "") },
+    const isOpen = openId === f.id;
+    const tr = h("tr", {
+      class: "datarow" + (isOpen ? " open" : ""),
+      tabindex: "0", role: "button",
+      "aria-expanded": String(isOpen),
+      "aria-label": `${f.id}, ${f.date || "undated"}, ${f.instGroup} — show finding detail`,
+    },
       h("td", { style: "white-space:nowrap" }, f.date || "—"),
       h("td", null, f.instGroup),
       h("td", null,
@@ -918,12 +978,13 @@ function renderTable() {
       h("td", null, f.models ? (f.models.length > 40 ? f.models.slice(0, 37) + "…" : f.models) : "—"),
       h("td", null, sevPill(f)),
       h("td", null, actionPill(f)));
-    tr.addEventListener("click", () => {
-      openId = openId === f.id ? null : f.id;
-      renderTable();
+    const toggle = () => { openId = openId === f.id ? null : f.id; renderTable(); };
+    tr.addEventListener("click", toggle);
+    tr.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
     });
     els.tbody.append(tr);
-    if (openId === f.id) els.tbody.append(detailRow(f));
+    if (isOpen) els.tbody.append(detailRow(f));
   }
   els.more.style.display = rows.length > shown ? "block" : "none";
 }
@@ -933,6 +994,48 @@ for (const el of [els.scope, els.inst, els.sev, els.action, els.domain, els.trac
 els.search.addEventListener("input", () => { shown = PAGE; openId = null; renderTable(); });
 els.more.addEventListener("click", () => { shown += PAGE; renderTable(); });
 renderTable();
+
+/* ---- "View the N findings": jump from the hero straight to the exact reproducible filter ---- */
+const viewGapBtn = document.getElementById("viewGapBtn");
+if (viewGapBtn) {
+  viewGapBtn.textContent = `View the ${M.c1Gap} findings behind the headline result →`;
+  viewGapBtn.addEventListener("click", () => {
+    els.search.value = "";
+    els.scope.value = ""; els.inst.value = ""; els.domain.value = "";
+    els.sev.value = "C1";
+    els.action.value = "";
+    els.track.checked = true;
+    gapOnly = true;
+    shown = PAGE; openId = null;
+    renderTable();
+    document.getElementById("explorer").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+/* ---- CSV export of whatever is currently filtered (not just the paged-in rows) ---- */
+function csvEscape(v) {
+  const s = v == null ? "" : String(v);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+const CSV_COLS = [
+  ["id", "Finding ID"], ["rid", "Report ID"], ["date", "Publication Date"], ["inst", "Institution"],
+  ["instGroup", "Institution group"], ["models", "Models / Systems"], ["sev", "Severity"],
+  ["access", "Access Type"], ["finding", "Finding"], ["action", "Action Level"], ["attr", "Attribution"],
+  ["pol", "Policy Level"], ["prop", "Proportionality"], ["scope", "Scope"], ["url", "Source URL"],
+];
+document.getElementById("dlFiltered").addEventListener("click", () => {
+  const rows = F.filter(matches).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  const lines = [CSV_COLS.map(([, label]) => csvEscape(label)).join(",")];
+  for (const f of rows) lines.push(CSV_COLS.map(([key]) => csvEscape(f[key])).join(","));
+  const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `aisi-tracker-filtered-${rows.length}-findings.csv`;
+  document.body.append(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(a.href);
+});
 
 /* bridge for the 3D tag-universe module (tags3d.js) */
 window.TAGVIZ = {

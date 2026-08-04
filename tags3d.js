@@ -105,6 +105,9 @@ const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 mount.append(renderer.domElement);
 renderer.domElement.style.borderRadius = "10px";
+renderer.domElement.setAttribute("role", "img");
+renderer.domElement.setAttribute("aria-label",
+  "Interactive 3D tag universe: one sphere per tag, sized by report count and clustered by group (models, companies, topics). A 2D table view of the same data is available via the chart's table view toggle.");
 renderer.domElement.style.touchAction = "pan-y"; // one finger scrolls the page; two fingers orbit
 
 const hint = document.createElement("div");
@@ -117,7 +120,8 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.06;
 controls.minDistance = 90;
 controls.maxDistance = 800;
-controls.autoRotate = true;
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+controls.autoRotate = !reducedMotion;
 controls.autoRotateSpeed = 0.7;
 controls.touches.ONE = null;
 controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
