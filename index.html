@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Evaluating the Evaluators — AISI Accountability Tracker</title>
-<meta name="description" content="When government AI Safety Institutes publish findings about frontier AI models, do companies respond? A verified dataset of 456 findings from 211 reports.">
+<meta name="description" content="When government AI Safety Institutes and independent evaluators publish findings about frontier AI models, do companies respond? A verified dataset of 456 findings from 211 reports.">
 <style>
 :root {
   color-scheme: light;
@@ -55,12 +55,14 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; max-width: 100%; }
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--page);
   color: var(--ink);
   line-height: 1.55;
   font-size: 15px;
+  overflow-wrap: break-word;
 }
 a { color: var(--blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -81,11 +83,21 @@ nav.main a:hover { color: var(--ink); text-decoration: none; }
   border: 1px solid var(--border); background: var(--surface); color: var(--ink-2);
   border-radius: 8px; padding: 4px 10px; font-size: 12px; cursor: pointer;
 }
+@media (max-width: 640px) {
+  header.site .container { flex-wrap: wrap; height: auto; padding: 8px 16px; row-gap: 6px; }
+  .wordmark { font-size: 12.5px; }
+  nav.main {
+    margin-left: 0; order: 3; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    gap: 12px; padding-bottom: 4px;
+  }
+  nav.main a { white-space: nowrap; }
+  #themeToggle { margin-left: auto; order: 2; }
+}
 
 .hero { padding: 56px 0 34px; }
 .kicker { font-size: 12px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--blue); }
 .hero h1 { font-size: clamp(28px, 4.5vw, 44px); line-height: 1.12; margin: 10px 0 14px; letter-spacing: -0.015em; }
-.lede { color: var(--ink-2); max-width: 62ch; font-size: 16px; }
+.lede { color: var(--ink-2); max-width: 62ch; font-size: 16px; overflow-wrap: break-word; }
 .hero-figure { display: flex; align-items: baseline; gap: 16px; margin: 34px 0 8px; flex-wrap: wrap; }
 .hero-num { font-size: clamp(56px, 9vw, 92px); font-weight: 650; line-height: 1; letter-spacing: -0.02em; }
 .hero-caption { color: var(--ink-2); max-width: 34ch; font-size: 15px; padding-bottom: 8px; }
@@ -211,26 +223,28 @@ footer.site a { color: var(--ink-2); }
     <div class="hero">
       <div class="kicker">AISI accountability tracker</div>
       <h1>When government AI safety institutes flag a problem, do companies respond?</h1>
-      <p class="lede">A source-verified dataset tracking every public finding from government AI Safety Institutes
-        (UK AISI, US CAISI and the International Network) about frontier AI models — and whether a documented
-        company or policy response followed.</p>
+      <p class="lede">A source-verified dataset tracking public findings from government AI Safety Institutes
+        (UK AISI, US CAISI and the International Network) and independent third-party evaluators (METR, SecureBio,
+        Apollo Research and others) about frontier AI models — and whether a documented company or policy response
+        followed.</p>
       <div class="hero-figure">
         <div class="hero-num" id="heroNum">—</div>
         <div class="hero-caption" id="heroCaption"></div>
       </div>
+      <button id="viewGapBtn" class="loadmore" style="margin:2px 0 0;display:inline-block"></button>
       <div class="asof" id="asof"></div>
     </div>
 
     <section id="pipeline">
       <h2>The accountability pipeline</h2>
-      <p class="sectionlede">Where findings go — and where accountability leaks out. Every ribbon is an exact count
-        from the dataset; flows draw in stage by stage as you scroll.</p>
+      <p class="sectionlede">Where findings go — and where publicly documented follow-up is, and is not, observed.
+        Every ribbon is an exact count from the dataset; flows draw in stage by stage as you scroll.</p>
       <div class="card wide">
-        <h3>From 6,498 screened publications to 18 substantive responses</h3>
-        <div class="sub">Ribbon width = number of findings · first stage is not to scale (6,498 vs. 456) — hover any ribbon or node for the exact counts</div>
+        <h3>From 456 findings to the accountability gap</h3>
+        <div class="sub">Ribbon width = number of findings · the leftmost stage (publications screened) is not to scale relative to the rest — hover any ribbon or node for the exact counts</div>
         <div class="plot" id="sankeyMount"></div>
         <details class="tblview" id="sankeyTable">
-          <summary>Table view</summary>
+          <summary>Table view: The accountability pipeline</summary>
         </details>
       </div>
     </section>
@@ -263,6 +277,7 @@ footer.site a { color: var(--ink-2); }
         <label class="check"><input type="checkbox" id="fTrack"> Accountability set only</label>
       </div>
       <div class="count-note" id="countNote"></div>
+      <button class="loadmore" id="dlFiltered" style="margin:0 0 12px">⬇ Download filtered CSV</button>
       <div class="tablewrap">
         <table class="explorer">
           <thead>
@@ -291,8 +306,9 @@ footer.site a { color: var(--ink-2); }
         which a company response is reasonable to expect. Reassuring-null results, marginal benchmark uplifts,
         inconclusive results, comparative rankings and methodology studies are tracked but excluded.</p>
       <h3>What counts as a response</h3>
-      <p>A company action counts only if it is <strong>causally attributable</strong> to the finding — from the
-        company's own primary source (blog, system card, SEC filing, testimony). Pre-existing policy does not count.
+      <p>A company action counts only if it is <strong>explicitly attributable</strong> to the finding — the company's
+        own primary source (blog, system card, SEC filing, testimony) must draw the connection itself; this
+        establishes an explicit public link, not causation. Pre-existing policy does not count.
         News coverage quoting a company is never admitted as a company statement. Negative response lags are genuine:
         pre-deployment evaluators share findings with companies before publication.</p>
       <h3>Severity</h3>
