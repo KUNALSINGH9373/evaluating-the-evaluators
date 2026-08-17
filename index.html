@@ -200,6 +200,9 @@ blockquote.kq { border-left: 3px solid var(--axis); padding: 4px 12px; margin: 1
 
 footer.site { border-top: 1px solid var(--border); margin-top: 40px; padding: 26px 0 44px; color: var(--muted); font-size: 13px; }
 footer.site a { color: var(--ink-2); }
+dl.mini { margin: 0; font-size: 14px; }
+dl.mini dt { font-weight: 650; color: var(--fg); margin-top: 12px; }
+dl.mini dd { margin: 2px 0 0; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -260,14 +263,13 @@ footer.site a { color: var(--ink-2); }
 
     <section id="charts">
       <h2>The data in charts</h2>
-      <p class="sectionlede">Hover any mark for detail. Each chart includes a table view of the plotted values.</p>
       <div class="grid" id="chartGrid"></div>
     </section>
 
 
     <section id="figures">
       <h2>The figure set</h2>
-      <p class="sectionlede">All 26 figures from the paper, regenerated 2026-08-17 from the merged corpus. Headline: 118 of 147 significant-risk findings (80%) drew no proportionate response.</p>
+      <p class="sectionlede">118 of 147 significant-risk findings — 80% — drew no proportionate response.</p>
       <div class="grid">
         <figure class="card wide" style="margin:0">
           <img loading="lazy" src="charts/00_title_hero.jpg" alt="The pipeline end to end. A finding falls short when the response is weaker than its severity warrants."
@@ -403,7 +405,7 @@ footer.site a { color: var(--ink-2); }
     </section>
     <section id="explorer">
       <h2>Findings explorer</h2>
-      <p class="sectionlede">Search and filter all findings. Click a row for the full finding, key quote, company response and sources.</p>
+      <p class="sectionlede">Click a row for the full record.</p>
       <div class="filters" id="filters">
         <input type="search" id="fSearch" placeholder="Search findings, models, reports…" aria-label="Search findings">
         <select id="fScope" aria-label="Scope"></select>
@@ -432,36 +434,24 @@ footer.site a { color: var(--ink-2); }
         institute or third-party evaluator publishes a finding about a named model, does a documented company
         response follow? Every cell follows a strict evidentiary standard — <em>verified-real or deliberately
         empty</em>.</p>
-      <h3>Scope</h3>
-      <ul>
-        <li><strong>Government AISI:</strong> UK AISI, US CAISI/NIST, affiliated national AISIs (Japan, Singapore, Korea, France, EU AI Office) and any joint exercise including a government AISI.</li>
-        <li><strong>Third-party evaluator:</strong> independent research organisations and AI Evaluator Forum members (METR, Apollo Research, SecureBio, Transluce and others) publishing without a government co-author.</li>
-        <li>Company-published reports are included only where an external evaluator is named, and are filed under that evaluator. A company evaluating its own model with no external evaluator named is out of scope.</li>
-      </ul>
-      <h3>The accountability set</h3>
-      <p>A finding enters the accountability set only if it is an <strong>empirical model finding</strong> that
-        <strong>names a specific company or model</strong> and <strong>demonstrates a concerning result</strong> for
-        which a company response is reasonable to expect. Reassuring-null results, marginal benchmark uplifts,
-        inconclusive results, comparative rankings and methodology studies are tracked but excluded.</p>
-      <h3>What counts as a response</h3>
-      <p>Only the company's <strong>own primary document</strong> counts — blog, system card, deprecation notice,
-        filing. News coverage quoting a company is never admitted, and pre-existing policy does not count. The action
-        must <strong>address the identified problem</strong>: a general-purpose measure that would read identically
-        had the finding never been published does not qualify. Whether the company <em>credits</em> the evaluator is
-        recorded separately under Attribution — acting without saying why still counts as acting. Negative lags are
-        genuine: pre-deployment evaluators share findings before publication.</p>
-      <h3>Proportionality</h3>
-      <p>Outcome = severity × response strength, and the bar is <strong>severity-relative</strong>: for a
-        significant-risk finding only a substantive response is proportionate, whereas for the lower severity a
-        partial one is. Action Level scores the <em>content</em> of the public response — not whether it was
-        implemented, or whether it reduced risk.</p>
-      <h3>Severity</h3>
-      <p><strong>C1</strong>: a dangerous-capability threshold is demonstrated (CBRN, cyber, autonomy, persuasion,
-        deception, safeguard failure, eval integrity). <strong>C2</strong>: partial capability, benchmark deltas,
-        negations. Ensemble-coded by three cross-provider model votes with unanimity recorded.</p>
+      <dl class="mini">
+        <dt>Who</dt><dd>AI safety institutes and third-party evaluators. Company-published reports
+          count only where an external evaluator is named, and are filed under that evaluator.</dd>
+        <dt>Which findings</dt><dd>Empirical, names a specific company or model, and concerning enough
+          that a response is reasonable. Reassuring nulls, benchmark deltas with no threshold crossed,
+          comparative rankings and methodology studies are tracked but excluded.</dd>
+        <dt>What counts as a response</dt><dd>The company's own primary document, addressing the
+          identified problem. Whether it credits the evaluator is recorded separately — acting without
+          saying why still counts.</dd>
+        <dt>Proportionality</dt><dd>Severity × response strength, severity-relative: a significant-risk
+          finding needs a substantive response, a lesser one needs only a partial. Scores the content of
+          the response, not its implementation or effect.</dd>
+        <dt>Severity</dt><dd>Majority vote of three cross-provider models against seven
+          dangerous-capability domains.</dd>
+      </dl>
       <div class="dl">
-        <a href="v11.csv" download>⬇ Download dataset (CSV)</a>
-        <a href="v10_RULEBOOK.md">Read the full codebook</a>
+        <a href="dataset.csv" download>⬇ Download dataset (CSV)</a>
+        <a href="codebook.md">Read the codebook</a>
       </div>
     </section>
   </div>
@@ -470,7 +460,6 @@ footer.site a { color: var(--ink-2); }
 <footer class="site">
   <div class="container">
     Built by <a href="https://kunalsingh9373.github.io" rel="noopener">Kunal Singh</a> ·
-    Dataset v10, verified 2026-08-02 ·
     <a id="repoLink" href="https://github.com/KUNALSINGH9373/evaluating-the-evaluators" rel="noopener">Source &amp; data on GitHub</a>
   </div>
 </footer>

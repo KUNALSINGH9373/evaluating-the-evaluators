@@ -103,7 +103,7 @@ document.getElementById("heroNum").textContent = c1GapPct + "%";
 document.getElementById("heroCaption").textContent =
   `of ${M.trackableC1} C1 findings — dangerous-capability threshold demonstrated — lacked a publicly documented company response meeting our proportionality criteria (${M.c1Gap} of ${M.trackableC1})`;
 document.getElementById("asof").textContent =
-  `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)} · dataset v10, verified 2026-08-02`;
+  `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)}`;
 
 const tiles = [
   { label: "Findings tracked", value: M.totalFindings, sub: `${M.reports} reports` },
