@@ -7,10 +7,14 @@ Reads v10.csv in this directory, writes data.js.
 import csv
 import json
 import statistics
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
-SRC = HERE / "v10.csv"
+# Dataset CSV, derived from AISIEVAL.xlsx. Pass a path to override; v11 is the current
+# merged corpus and v10 is kept so older builds stay reproducible.
+SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else (
+    HERE / "v11.csv" if (HERE / "v11.csv").exists() else HERE / "v10.csv")
 SWEEP = HERE / "sweep_state"
 OUT = HERE / "data.js"
 
