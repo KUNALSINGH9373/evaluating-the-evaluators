@@ -203,6 +203,9 @@ footer.site a { color: var(--ink-2); }
 dl.mini { margin: 0; font-size: 14px; }
 dl.mini dt { font-weight: 650; color: var(--fg); margin-top: 12px; }
 dl.mini dd { margin: 2px 0 0; color: var(--muted); }
+h3.figgroup { font-size: 13px; font-weight: 650; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted); margin: 26px 0 12px; }
+h3.figgroup:first-of-type { margin-top: 6px; }
 </style>
 </head>
 <body>
@@ -268,83 +271,60 @@ dl.mini dd { margin: 2px 0 0; color: var(--muted); }
 
 
     <section id="figures">
-      <h2>The figure set</h2>
+      <h2>Key figures</h2>
       <p class="sectionlede">118 of 147 significant-risk findings — 80% — drew no proportionate response.</p>
+      <h3 class="figgroup">The headline</h3>
       <div class="grid">
         <figure class="card wide" style="margin:0">
-          <img loading="lazy" src="charts/00_title_hero.jpg" alt="The pipeline end to end. A finding falls short when the response is weaker than its severity warrants."
+          <img loading="lazy" src="charts/00_title_hero.jpg" alt="Every significant-risk finding, and whether the response matched its severity."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">The pipeline end to end. A finding <b>falls short</b> when the response is weaker than its severity warrants.</figcaption>
+          <figcaption class="sub" style="margin:8px 0 0">Every significant-risk finding, and whether the response matched its severity.</figcaption>
         </figure>
         <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/04_headline_outcome_distribution.jpg" alt="Outcome distribution across the headline population."
+          <img loading="lazy" src="charts/15b_shortfall_rate_by_year.jpg" alt="Shortfall by year, against the no-response-at-all rate — the two diverge."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Outcome distribution across the headline population.</figcaption>
+          <figcaption class="sub" style="margin:8px 0 0">Shortfall by year, against the no-response-at-all rate — the two diverge.</figcaption>
         </figure>
         <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/10_proportionality_by_severity.jpg" alt="Outcome composition by severity. The bar is severity-relative."
+          <img loading="lazy" src="charts/09_policy_level_distribution.jpg" alt="Policy uptake. One binding action in the whole corpus."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Outcome composition by severity. The bar is severity-relative.</figcaption>
+          <figcaption class="sub" style="margin:8px 0 0">Policy uptake. One binding action in the whole corpus.</figcaption>
+        </figure>
+      </div>
+      <h3 class="figgroup">Where the shortfall sits</h3>
+      <div class="grid">
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/19_gap_rate_by_developer.jpg" alt="By developer, n≥5. The smallest bars are fragile."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">By developer, n≥5. The smallest bars are fragile.</figcaption>
+        </figure>
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/16_gap_rate_by_access_type.jpg" alt="By how much access the evaluator had."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">By how much access the evaluator had.</figcaption>
         </figure>
         <figure class="card wide" style="margin:0">
-          <img loading="lazy" src="charts/20_accountability_pipeline_funnel.jpg" alt="Attrition from all findings through to policy uptake."
+          <img loading="lazy" src="charts/22_domain_x_outcome_heatmap.jpg" alt="By risk domain. Colour encodes magnitude only."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Attrition from all findings through to policy uptake.</figcaption>
+          <figcaption class="sub" style="margin:8px 0 0">By risk domain. Colour encodes magnitude only.</figcaption>
         </figure>
+      </div>
+      <h3 class="figgroup">The corpus</h3>
+      <div class="grid">
         <figure class="card" style="margin:0">
           <img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Accountability-relevant, evaluation-only, and out-of-scope splits."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
           <figcaption class="sub" style="margin:8px 0 0">Accountability-relevant, evaluation-only, and out-of-scope splits.</figcaption>
         </figure>
         <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/17_severity_classification.jpg" alt="Severity from the three-model ensemble majority."
+          <img loading="lazy" src="charts/12_evaluator_scope.jpg" alt="Safety institute versus third-party evaluator."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Severity from the three-model ensemble majority.</figcaption>
-        </figure>
-        <figure class="card wide" style="margin:0">
-          <img loading="lazy" src="charts/13_institution_type_tree.jpg" alt="Who reports findings, by institution type."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Who reports findings, by institution type.</figcaption>
+          <figcaption class="sub" style="margin:8px 0 0">Safety institute versus third-party evaluator.</figcaption>
         </figure>
         <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/01_findings_per_institution.jpg" alt="Findings per institution, top 18."
+          <img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Pre-deployment, post-deployment, or mixed access."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Findings per institution, top 18.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/12_evaluator_scope.jpg" alt="Government institute versus third-party evaluator."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Government institute versus third-party evaluator.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/11_domain_distribution.jpg" alt="Findings per risk domain. Multi-label, so bars sum above n."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Findings per risk domain. Multi-label, so bars sum above n.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/02_findings_per_model_developer.jpg" alt="Accountability-relevant findings per model developer."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Accountability-relevant findings per model developer.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Access the evaluator had: pre-deployment, post, or mixed."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Access the evaluator had: pre-deployment, post, or mixed.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/23_corpus_growth_by_tier.jpg" alt="Corpus growth by year and tier."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Corpus growth by year and tier.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/06_findings_per_year.jpg" alt="Findings per year. 2026 is partial — cutoff 31 July."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Findings per year. 2026 is partial — cutoff 31 July.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/08_action_level_distribution.jpg" alt="Strength of the documented company response."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Strength of the documented company response.</figcaption>
+          <figcaption class="sub" style="margin:8px 0 0">Pre-deployment, post-deployment, or mixed access.</figcaption>
         </figure>
         <figure class="card" style="margin:0">
           <img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Whether the company referenced the finding or its evaluator."
@@ -352,54 +332,9 @@ dl.mini dd { margin: 2px 0 0; color: var(--muted); }
           <figcaption class="sub" style="margin:8px 0 0">Whether the company referenced the finding or its evaluator.</figcaption>
         </figure>
         <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/14_response_lag_distribution.jpg" alt="Days from publication to response. Negative = pre-deployment."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Days from publication to response. Negative = pre-deployment.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
           <img loading="lazy" src="charts/05_pre_vs_post_deployment_response_rate.jpg" alt="Substantive response rate, pre- versus post-deployment."
                style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
           <figcaption class="sub" style="margin:8px 0 0">Substantive response rate, pre- versus post-deployment.</figcaption>
-        </figure>
-        <figure class="card wide" style="margin:0">
-          <img loading="lazy" src="charts/09_policy_level_distribution.jpg" alt="Policy uptake. Official government sources only; one binding action in the corpus."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Policy uptake. Official government sources only; one binding action in the corpus.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/19_gap_rate_by_developer.jpg" alt="By developer, n≥5. The smallest bars are fragile."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">By developer, n≥5. The smallest bars are fragile.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/16_gap_rate_by_access_type.jpg" alt="By access type, against the corpus average."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">By access type, against the corpus average.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/22_domain_x_outcome_heatmap.jpg" alt="Outcome composition by domain. Colour encodes magnitude only."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Outcome composition by domain. Colour encodes magnitude only.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/21_severity_x_action_heatmap.jpg" alt="Severity against response strength."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Severity against response strength.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/15b_shortfall_rate_by_year.jpg" alt="Shortfall by year versus the no-response-at-all rate — the two diverge."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Shortfall by year versus the no-response-at-all rate — the two diverge.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/15_gap_rate_by_year.jpg" alt="No-response-at-all rate by year."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">No-response-at-all rate by year.</figcaption>
-        </figure>
-        <figure class="card" style="margin:0">
-          <img loading="lazy" src="charts/24_evaluator_volume_vs_gap.jpg" alt="Evaluator volume against shortfall, n≥4."
-               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
-          <figcaption class="sub" style="margin:8px 0 0">Evaluator volume against shortfall, n≥4.</figcaption>
         </figure>
       </div>
     </section>
