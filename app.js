@@ -546,16 +546,16 @@ const charts = [
       mount.replaceChildren();
       const img = h("img", {
         src: "severity_classification.png",
-        alt: "Flow diagram: a finding is evaluated independently by 3 cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) against 7 dangerous-capability domains (CBRN uplift, offensive cyber capability, autonomy/self-replication/AI-R&D automation, persuasion or societal harm at scale, deliberate deception or misalignment, deployed-safeguard failure, compromised evaluation integrity). Majority vote of the 3 models decides C1 (270 findings, threshold demonstrated) or C2 (743 findings, threshold not demonstrated). 930 of 1,013 (92%) were unanimous 3-0; the remaining 83 (8%) were decided 2-1.",
+        alt: "Flow diagram: a finding is evaluated independently by 3 cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) against 7 dangerous-capability domains (CBRN uplift, offensive cyber capability, autonomy/self-replication/AI-R&D automation, persuasion or societal harm at scale, deliberate deception or misalignment, deployed-safeguard failure, compromised evaluation integrity). Majority vote of the 3 models decides C1 (270 findings, threshold demonstrated) or C2 (732 findings, threshold not demonstrated). 921 of 1,002 (92%) were unanimous 3-0; the remaining 81 (8%) were decided 2-1.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
     },
     table: () => [["Outcome", "Findings", "Meaning"],
       ["C1", 270, "Demonstrates ≥ 1 of 7 dangerous-capability domains"],
-      ["C2", 743, "Threshold not demonstrated (not the same as unimportant)"],
-      ["Unanimous 3–0 vote", 930, "92% of all 1,013 findings"],
-      ["Split 2–1 vote", 83, "8% of all 1,013 findings"]],
+      ["C2", 732, "Threshold not demonstrated (not the same as unimportant)"],
+      ["Unanimous 3–0 vote", 921, "92% of all 1,002 findings"],
+      ["Split 2–1 vote", 81, "8% of all 1,002 findings"]],
   },
   {
     title: "What government AISIs publish, by quarter",
@@ -637,7 +637,7 @@ const charts = [
       mount.replaceChildren();
       const img = h("img", {
         src: "institution_type_tree.png",
-        alt: "Left-to-right tree diagram: 1,013 findings by Institution Type - Government 309 (UK AISI 202, Joint UK AISI + US CAISI 35, US CAISI 33, Joint UK + US + Singapore AISIs (International Network) 5, Joint UK AISI + OpenAI (company-published) 4, Other 30); Non-Profit (AIEF) 254 (METR 110, SecureBio 36, Transluce 33, Princeton Holistic Agent Leaderboard (HAL) 33, Collective Intelligence Project (Weval) 31, Other 11); For-Profit 228 (Scale AI 145, Dreadnode 30, Holistic AI 12, Gray Swan AI 10, Cisco (Robust Intelligence / Foundation AI) 10, Other 21); Non-Profit (Independent) 222 (Apollo Research 49, FAR.AI 43, Center for AI Safety (CAIS) 41, Redwood Research 31, Shanghai AI Laboratory (AI45 Lab) 30, Other 28).",
+        alt: "Left-to-right tree diagram: 1,002 findings by Institution Type - Government 307 (UK AISI 200, Joint UK AISI + US CAISI 35, US CAISI 33, Joint UK + US + Singapore AISIs (International Network) 5, Joint UK AISI + OpenAI (company-published) 4, Other 30); Non-Profit (AIEF) 250 (METR 110, SecureBio 35, Transluce 32, Princeton Holistic Agent Leaderboard (HAL) 31, Collective Intelligence Project (Weval) 31, Other 11); For-Profit 224 (Scale AI 142, Dreadnode 30, Holistic AI 12, Gray Swan AI 10, Cisco (Robust Intelligence / Foundation AI) 10, Other 20); Non-Profit (Independent) 221 (Apollo Research 49, FAR.AI 43, Center for AI Safety (CAIS) 40, Redwood Research 31, Shanghai AI Laboratory (AI45 Lab) 30, Other 28).",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
