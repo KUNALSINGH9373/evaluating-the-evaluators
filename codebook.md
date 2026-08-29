@@ -1,9 +1,11 @@
-# Evaluating the Evaluators — Rulebook (v10)
+# Evaluating the Evaluators — Rulebook (v12)
 
-**Canonical dataset:** `~/Desktop/v10.csv` (456 findings · 211 reports · 38 columns · window Sep 2023 – 30 Jul 2026 corpus cutoff, per §2)
+**Canonical dataset:** the `AISIEVAL_V12` sheet of `AISI  Eval Findings.xlsx`, in this repo — read in place, never rewritten (1,001 findings · 438 reports · 47 evaluating institutions · 39 columns · window Jan 2023 – 30 Jul 2026 corpus cutoff, per §2; one row, `DREADNODE-2026-07-CYB2`, is dated 2026-07-31). `dataset.csv` in this repo is a generated export of that sheet, not a second source; `build_data.py` reads the workbook and writes both `dataset.csv` and `data.js`.
+
+> Historical note: sections written before V12 are dated and keep the counts current at the time of writing (the corpus grew from 456 rows in v10 to 1,001 in V12). Current-state figures are the ones in this header, §4 and §9.
 **Status:** living document — update whenever a rule changes; every change gets a Changelog entry.
 **Companions:** `SEARCH_PROTOCOL.md` (in the dashboard repo — full search/screening procedure), `run_severity_ensemble.py` (the frozen severity prompt), `screening_ledger.csv` (being built by the evidence sweep).
-**Last updated:** 2026-08-14
+**Last updated:** 2026-08-28
 
 ---
 
@@ -100,11 +102,11 @@ contain no findings.
 
 Every finding sits in exactly one tier, encoded by `Eval? (trackable)` + `Action Trackable?`:
 
-| Tier | Encoding | Meaning | n (v10) |
+| Tier | Encoding | Meaning | n (V12) |
 |---|---|---|---|
-| **A** | yes / yes | Accountability-relevant: named company/model + concerning + response reasonable to expect. The ONLY tier scored for proportionality. | 111 |
-| **B** | yes / no | Concerning but no accountable party: anonymised models, methodology findings, reassuring nulls, non-frontier, capability trends. | 240 |
-| **C** | no / (blank) | Not an empirical model finding (methodology/framework/governance/milestone). | 105 |
+| **A** | yes / yes | Accountability-relevant: named company/model + concerning + response reasonable to expect. The ONLY tier scored for proportionality. | 185 |
+| **B** | yes / no | Concerning but no accountable party: anonymised models, methodology findings, reassuring nulls, non-frontier, capability trends. | 467 |
+| **C** | no / (blank) | Not an empirical model finding (methodology/framework/governance/milestone). | 349 |
 
 **Tier A test — ALL must hold:** (1) empirical model finding; (2) names a specific company or
 model (company-level suffices; "anonymised" fails); (3) demonstrates a concerning result for which
@@ -143,7 +145,7 @@ capability"); non-frontier models; too-recent findings.
 - `n` — sequence number within report+domain. `[-sN]` — split suffix (§5).
 
 **Rules:**
-1. **Unique** across the sheet (v10: 456/456 ✓) — the primary key for the dashboard, the paper's
+1. **Unique** across the sheet (V12: 1,001/1,001 ✓) — the primary key for the dashboard, the paper's
    appendices, and the ledger.
 2. **Immutable.** IDs are keys, not semantics: if a row's Domain is later recoded, or a date is
    corrected, the ID does NOT change. (23 IDs carry domain codes that no longer match the revised
@@ -237,8 +239,10 @@ D5 — `CAIS-2026-07-ALI1` and `OPENAI-2025-07-SELF-ALI1` were first downgraded 
 then excluded entirely under this section.
 
 **Applied 2026-08-17 — 11 rows removed** (7 Tier A, 3 Tier B, 1 Tier C), corpus 1,013 → 1,002,
-Tier A 192 → 185, Tier B 470 → 467, Tier C 351 → 350. All were C2, so the C1 headline population is
-unchanged at 147. All are
+Tier A 192 → 185, Tier B 470 → 467, Tier C 351 → 350. All were C2, so the C1 headline population was
+unchanged by this rule. (Two later V12 corrections — one Tier C C2 row withdrawn, one Tier A row
+recoded C1 → C2 — bring the current state to corpus **1,001**, Tier A 185, Tier B 467, Tier C **349**,
+C1 **269**, C2 732, headline population Tier A ∩ C1 **146**.) All are
 preserved with every column in `logs/AISIEVAL_excluded_ordinary_accuracy.csv`:
 `CAIS-2026-07-ALI1`, `UKAISI-2026-03-CYB11`, `UKAISI-2025-07-HUM2`, `TRANSLUCE-2025-04-ALI1`,
 `HAL-2025-10-AUT3`, `HAL-2025-10-AUT3-s2`, `OPENAI-2025-07-SELF-ALI1`, `SCALEAI-2025-11b-ALI1`,
@@ -286,8 +290,9 @@ registered row keeps its raw ensemble votes untouched, is exempt from the vote-m
 must carry a `[SEVERITY OVERRIDE — D8 …]` note. The validator also flags any *unregistered* C2 row
 describing a model urging individual harm, so future cases surface rather than being coded silently.
 
-Currently registered: `TRANSLUCE-2026-07-SOC2`. Headline effect: population 147 → 148, gap
-91/147 = 61.9% → 92/148 = 62.2%.
+Currently registered: `TRANSLUCE-2026-07-SOC2`. Headline effect on the V12 corpus: population
+145 → **146**, no-response gap 89/145 = 61.4% → **90/146 = 61.6%**. (V12 carries two post-ensemble
+severity overrides in all: this D8 row, and `SECUREBIO-2026-04-BIO5` under §7c.)
 
 ### §7c — severity corrections after the frozen run (2026-08-17)
 
@@ -356,7 +361,14 @@ threads. The finding's own paper and the company's own posts are circular → ex
 channel is evidence, not measurement: nothing is computed from it except the documented-coverage
 share of no-response findings.
 
-## 9. Column reference (all 38 columns)
+## 9. Column reference
+
+> ⚠ The table below documents the **38-column v10 layout**. `AISIEVAL_V12` has **39 columns** in a
+> different order: it adds `Institution Type` (V12 col 4) and `Human` (V12 col 17 — the
+> post-ensemble severity override, §7b/§7c), drops `Notes`, renames `Sources Checked` to
+> `Sources Checked (channel A)`, and moves `Tags` to the end. The authoritative header is row 1 of
+> the sheet, mirrored verbatim in `dataset.csv`. The column *meanings* below still hold; the
+> numbering does not. Re-numbering this table against V12 is an open item.
 
 Legend: 🔑 identifier · 📋 descriptive · 📊 analysis input · 🧾 evidence/audit · ⚙️ derived (never hand-edit).
 

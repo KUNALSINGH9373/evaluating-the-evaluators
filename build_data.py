@@ -1,21 +1,41 @@
 #!/usr/bin/env python3
-"""Convert v10.csv into data.js consumed by the dashboard.
+"""Build the site's data files from the single source of truth.
+
+Source of truth: the `AISIEVAL_V12` sheet of `AISI  Eval Findings.xlsx`, read in
+place through the shared accessor `dataset_source.py`. Nothing else is ever read
+as data — `dataset.csv` is a *generated export* of that sheet, not an input.
+
+Writes:
+  dataset.csv  — all rows, all columns, header exactly as in AISIEVAL_V12
+  data.js      — `window.AISI = {meta, findings}` consumed by app.js
 
 Run: python3 build_data.py
-Reads v10.csv in this directory, writes data.js.
 """
 import csv
 import json
+import os
 import statistics
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
-# Dataset CSV, derived from the master workbook. Pass a path to override.
-SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else (
-    HERE / "dataset.csv")
+
+# The one accessor for the one workbook. Override the location with AISI_SCRIPTS
+# if the analysis repo lives somewhere else on this machine.
+_ACCESSOR_DIR = os.environ.get(
+    "AISI_SCRIPTS", os.path.expanduser("~/MATS/Research/AISI_Evals/scripts"))
+sys.path.insert(0, _ACCESSOR_DIR)
+try:
+    from dataset_source import SHEET, WORKBOOK, norm, sheet  # noqa: E402
+except ImportError as exc:  # pragma: no cover - operator-facing message
+    raise SystemExit(
+        f"cannot import dataset_source from {_ACCESSOR_DIR!r}: {exc}\n"
+        "Set AISI_SCRIPTS to the directory holding dataset_source.py."
+    )
+
 SWEEP = HERE / "sweep_state"
-OUT = HERE / "data.js"
+OUT_JS = HERE / "data.js"
+OUT_CSV = HERE / "dataset.csv"
 
 
 UK_AISI_ALIASES = {"UK AISI", "UK AI Security Institute (UK AISI)", "UK AI Security Institute"}
@@ -49,6 +69,27 @@ def quarter(date: str):
     return f"{y}-Q{(m - 1) // 3 + 1}"
 
 
+def read_v12():
+    """Every V12 row as an ordered dict, plus the sheet's header row."""
+    ws = sheet()
+    hdr = [norm(c.value) for c in ws[1]]
+    out = []
+    for r in range(2, ws.max_row + 1):
+        rec = {h: norm(ws.cell(r, i).value) for i, h in enumerate(hdr, 1)}
+        if rec.get("Finding ID"):
+            out.append(rec)
+    return hdr, out
+
+
+def write_csv(hdr, records):
+    with OUT_CSV.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=hdr, quoting=csv.QUOTE_MINIMAL,
+                           lineterminator="\n")
+        w.writeheader()
+        for rec in records:
+            w.writerow(rec)
+
+
 def sweep_coverage():
     """Pull the discovery-sweep census numbers from sweep_state/, if present.
 
@@ -78,11 +119,8 @@ def sweep_coverage():
 
 
 def main():
-    with SRC.open() as f:
-        raw_rows = list(csv.DictReader(f))
-
-    rows = [r for r in raw_rows if r["Finding ID"].strip()]
-    dropped_blank = len(raw_rows) - len(rows)
+    hdr, rows = read_v12()
+    write_csv(hdr, rows)
 
     findings = []
     for r in rows:
@@ -135,11 +173,16 @@ def main():
         action_counts_c1[f["action"]] = action_counts_c1.get(f["action"], 0) + 1
 
     meta = {
+        "source": f"{Path(WORKBOOK).name} · {SHEET}",
         "totalFindings": len(findings),
-        "droppedBlankRows": dropped_blank,
         "reports": len({f["rid"] for f in findings if f["rid"]}),
+        "institutions": len({f["inst"] for f in findings if f["inst"]}),
         "trackable": len(track),
         "trackableC1": len(trackC1),
+        "tierB": sum(1 for f in findings if f["evalT"] == "yes" and f["track"] != "yes"),
+        "tierC": sum(1 for f in findings if f["evalT"] != "yes"),
+        "c1": sum(1 for f in findings if f["sev"] == "C1"),
+        "c2": sum(1 for f in findings if f["sev"] == "C2"),
         "noResponse": action_counts.get("None", 0),
         "substantive": action_counts.get("Substantive", 0),
         "anyResponse": len(track) - action_counts.get("None", 0),
@@ -157,9 +200,11 @@ def main():
     payload = "window.AISI = " + json.dumps(
         {"meta": meta, "findings": findings}, ensure_ascii=False, separators=(",", ":")
     ) + ";\n"
-    OUT.write_text(payload)
-    print(f"wrote {OUT.name}: {len(findings)} findings, {meta['trackable']} trackable, "
-          f"{len(payload) // 1024} KB")
+    OUT_JS.write_text(payload, encoding="utf-8")
+    print(f"read {SHEET} from {WORKBOOK}")
+    print(f"wrote {OUT_CSV.name}: {len(rows)} rows x {len(hdr)} columns")
+    print(f"wrote {OUT_JS.name}: {len(findings)} findings, {meta['trackable']} trackable, "
+          f"{meta['trackableC1']} Tier A C1, {len(payload) // 1024} KB")
 
 
 if __name__ == "__main__":

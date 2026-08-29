@@ -95,10 +95,12 @@ function barTop(x, y, w, hgt, r) {
 
 /* ---------- number helpers ---------- */
 const pct = (a, b) => Math.round((a / b) * 100);
+/* one decimal, for the headline fraction where rounding to a whole point loses the half */
+const pct1 = (a, b) => String(Math.round((a / b) * 1000) / 10);
 
 /* ================= hero, tiles, insights ================= */
 const noRespPct = pct(M.noResponse, M.trackable);
-const c1GapPct = pct(M.c1Gap, M.trackableC1);
+const c1GapPct = pct1(M.c1Gap, M.trackableC1);
 document.getElementById("heroNum").textContent = c1GapPct + "%";
 document.getElementById("heroCaption").textContent =
   `of ${M.trackableC1} C1 findings — dangerous-capability threshold demonstrated — lacked a publicly documented company response meeting our proportionality criteria (${M.c1Gap} of ${M.trackableC1})`;
@@ -119,9 +121,10 @@ document.getElementById("tiles").append(
     h("div", { class: "sub" }, t.sub)))
 );
 
-const polTouched = F.filter(f => ["Non-binding policy uptake", "Binding policy action"].includes(f.pol)).length;
+const polTouched = F.filter(f => ["Non-binding policy-related uptake", "Binding policy action"].includes(f.pol)).length;
 const polBinding = F.filter(f => f.pol === "Binding policy action").length;
 const ukCount = F.filter(f => f.instGroup === "UK AISI").length;
+const govCount = F.filter(f => f.scope === "government-AISI").length;
 const insights = [
   [`Restricting to the most severe findings — the comparison that actually matters: `,
    `${M.c1Gap} of ${M.trackableC1} C1 findings (${c1GapPct}%) — a dangerous-capability threshold demonstrated — drew a response that fell short of proportionate, ${M.c1NoResponse} of those with no response at all.`],
@@ -132,7 +135,7 @@ const insights = [
   [`The policy channel and the company-response channel reach different findings: `,
    `${polTouched} of all ${M.totalFindings} findings (${pct(polTouched, M.totalFindings)}%) were cited in official policy records — ${polBinding} of those binding — while ${M.anyResponse} of the ${M.trackable} accountability-set findings (${pct(M.anyResponse, M.trackable)}%) drew a company response of any kind. Different denominators, so not a direct rate comparison.`],
   [`UK AISI produced ${ukCount} of ${M.totalFindings} findings (${pct(ukCount, M.totalFindings)}%) `,
-   "— half the public output of the entire government-AISI network."],
+   `— ${pct(ukCount, govCount)}% of the public output of the entire government-AISI network (${govCount} findings).`],
 ];
 if (M.sweep) {
   insights.push([
@@ -545,17 +548,17 @@ const charts = [
     render(mount) {
       mount.replaceChildren();
       const img = h("img", {
-        src: "severity_classification.png",
-        alt: "Flow diagram: a finding is evaluated independently by 3 cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) against 7 dangerous-capability domains (CBRN uplift, offensive cyber capability, autonomy/self-replication/AI-R&D automation, persuasion or societal harm at scale, deliberate deception or misalignment, deployed-safeguard failure, compromised evaluation integrity). Majority vote of the 3 models decides C1 (270 findings, threshold demonstrated) or C2 (732 findings, threshold not demonstrated). 921 of 1,002 (92%) were unanimous 3-0; the remaining 81 (8%) were decided 2-1.",
+        src: "severity_classification.jpg",
+        alt: "Flow diagram: a finding is evaluated independently by 3 cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) against 7 dangerous-capability domains (CBRN uplift, offensive cyber capability, autonomy/self-replication/AI-R&D automation, persuasion or societal harm at scale, deliberate deception or misalignment, deployed-safeguard failure, compromised evaluation integrity). Majority vote of the 3 models decides C1 (269 findings, threshold demonstrated) or C2 (732 findings, threshold not demonstrated). 920 of 1,001 (92%) were unanimous 3-0; the remaining 81 (8%) were decided 2-1.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
     },
     table: () => [["Outcome", "Findings", "Meaning"],
-      ["C1", 270, "Demonstrates ≥ 1 of 7 dangerous-capability domains"],
+      ["C1", 269, "Demonstrates ≥ 1 of 7 dangerous-capability domains"],
       ["C2", 732, "Threshold not demonstrated (not the same as unimportant)"],
-      ["Unanimous 3–0 vote", 921, "92% of all 1,002 findings"],
-      ["Split 2–1 vote", 81, "8% of all 1,002 findings"]],
+      ["Unanimous 3–0 vote", 920, "92% of all 1,001 findings"],
+      ["Split 2–1 vote", 81, "8% of all 1,001 findings"]],
   },
   {
     title: "What government AISIs publish, by quarter",
@@ -636,22 +639,25 @@ const charts = [
     render(mount) {
       mount.replaceChildren();
       const img = h("img", {
-        src: "institution_type_tree.png",
-        alt: "Left-to-right tree diagram: 1,002 findings by Institution Type - Government 307 (UK AISI 200, Joint UK AISI + US CAISI 35, US CAISI 33, Joint UK + US + Singapore AISIs (International Network) 5, Joint UK AISI + OpenAI (company-published) 4, Other 30); Non-Profit (AIEF) 250 (METR 110, SecureBio 35, Transluce 32, Princeton Holistic Agent Leaderboard (HAL) 31, Collective Intelligence Project (Weval) 31, Other 11); For-Profit 224 (Scale AI 142, Dreadnode 30, Holistic AI 12, Gray Swan AI 10, Cisco (Robust Intelligence / Foundation AI) 10, Other 20); Non-Profit (Independent) 221 (Apollo Research 49, FAR.AI 43, Center for AI Safety (CAIS) 40, Redwood Research 31, Shanghai AI Laboratory (AI45 Lab) 30, Other 28).",
+        src: "institution_type_tree.jpg",
+        alt: "Left-to-right tree diagram: 1,001 findings by Institution Type - Government 306 (UK AISI 199, Joint UK AISI + US CAISI 35, US CAISI 33, Joint UK + US + Singapore AISIs (International Network) 5, Joint UK AISI + OpenAI (company-published) 4, Other institutions 30); Non-Profit (AIEF) 250 (METR 110, SecureBio 35, Transluce 32, Princeton Holistic Agent Leaderboard (HAL) 31, Collective Intelligence Project (Weval) 31, Other institutions 11); For-Profit 224 (Scale AI 142, Dreadnode 30, Holistic AI 12, Gray Swan AI 10, Cisco (Robust Intelligence / Foundation AI) 10, Other institutions 20); Non-Profit (Independent) 221 (Apollo Research 49, FAR.AI 43, Center for AI Safety (CAIS) 40, Redwood Research 31, Shanghai AI Laboratory (AI45 Lab) 30, Other institutions 28).",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
     },
     table: () => [["Institution Type", "Organisation", "Findings"],
-      ["Government (290)", "UK AISI", 190], ["Government (290)", "US CAISI", 30],
-      ["Government (290)", "Joint / multi-party", 58], ["Government (290)", "Other national AISI", 12],
-      ["Non-Profit AIEF (63)", "METR", 23], ["Non-Profit AIEF (63)", "SecureBio", 18],
-      ["Non-Profit AIEF (63)", "Transluce", 10], ["Non-Profit AIEF (63)", "Princeton HAL", 6],
-      ["Non-Profit AIEF (63)", "Other", 6],
-      ["Non-Profit Independent (53)", "Palisade Research", 18], ["Non-Profit Independent (53)", "Shanghai AI Lab", 16],
-      ["Non-Profit Independent (53)", "Apollo Research", 14], ["Non-Profit Independent (53)", "Other", 5],
-      ["For-Profit (50)", "Dreadnode", 18], ["For-Profit (50)", "Scale AI", 10],
-      ["For-Profit (50)", "Holistic AI", 5], ["For-Profit (50)", "Other (Gray Swan, LatticeFlow, etc.)", 17]],
+      ["Government (306)", "UK AISI", 199], ["Government (306)", "Joint UK AISI + US CAISI", 35],
+      ["Government (306)", "US CAISI", 33], ["Government (306)", "Joint UK + US + SG AISIs", 5],
+      ["Government (306)", "Joint UK AISI + OpenAI", 4], ["Government (306)", "Other institutions", 30],
+      ["Non-Profit AIEF (250)", "METR", 110], ["Non-Profit AIEF (250)", "SecureBio", 35],
+      ["Non-Profit AIEF (250)", "Transluce", 32], ["Non-Profit AIEF (250)", "Princeton HAL", 31],
+      ["Non-Profit AIEF (250)", "Weval (CIP)", 31], ["Non-Profit AIEF (250)", "Other institutions", 11],
+      ["For-Profit (224)", "Scale AI", 142], ["For-Profit (224)", "Dreadnode", 30],
+      ["For-Profit (224)", "Holistic AI", 12], ["For-Profit (224)", "Gray Swan AI", 10],
+      ["For-Profit (224)", "Cisco", 10], ["For-Profit (224)", "Other institutions", 20],
+      ["Non-Profit Independent (221)", "Apollo Research", 49], ["Non-Profit Independent (221)", "FAR.AI", 43],
+      ["Non-Profit Independent (221)", "CAIS", 40], ["Non-Profit Independent (221)", "Redwood Research", 31],
+      ["Non-Profit Independent (221)", "Shanghai AI Lab", 30], ["Non-Profit Independent (221)", "Other institutions", 28]],
   },
 ];
 
@@ -808,7 +814,7 @@ function renderSankey() {
     if (n.sweep) {
       rows = [
         { color: cvar(n.cv), value: n.value.toLocaleString(), label: "publications screened" },
-        { value: M.sweep.enumerated.toLocaleString(), label: "found in the census (46 orgs, nothing un-listed)" },
+        { value: M.sweep.enumerated.toLocaleString(), label: `found in the census (${M.sweep.venues} orgs, nothing un-listed)` },
         { value: M.sweep.pendingFetch.toLocaleString(), label: "of the screened rows, still pending full-text confirmation" },
         { value: pct(F.length, n.value) + "%", label: "made it into this dataset" },
       ];
