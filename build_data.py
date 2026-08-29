@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Build the site's data files from the single source of truth.
 
-Source of truth: the `AISIEVAL_V12` sheet of `AISI  Eval Findings.xlsx`, read in
-place through the shared accessor `dataset_source.py`. Nothing else is ever read
-as data — `dataset.csv` is a *generated export* of that sheet, not an input.
+Source of truth: whatever sheet `dataset_source.py` points at — currently the
+`AISIEVAL_V13` sheet of `~/MATS/Research/AISI_Evals/dataset/AISIEVAL_V13.xlsx`,
+read in place. The version lives in the accessor and nowhere else, so a dataset
+generation bump needs no edit here. Nothing else is ever read as data —
+`dataset.csv` is a *generated export* of that sheet, not an input.
 
 Writes:
-  dataset.csv  — all rows, all columns, header exactly as in AISIEVAL_V12
+  dataset.csv  — all rows, all columns, header exactly as in the source sheet
   data.js      — `window.AISI = {meta, findings}` consumed by app.js
 
 Run: python3 build_data.py
@@ -70,7 +72,7 @@ def quarter(date: str):
 
 
 def read_v12():
-    """Every V12 row as an ordered dict, plus the sheet's header row."""
+    """Every source row as an ordered dict, plus the sheet's header row."""
     ws = sheet()
     hdr = [norm(c.value) for c in ws[1]]
     out = []

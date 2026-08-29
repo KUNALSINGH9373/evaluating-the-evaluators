@@ -1,8 +1,10 @@
-# Evaluating the Evaluators — Rulebook (v12)
+# Evaluating the Evaluators — Rulebook (v13)
 
-**Canonical dataset:** the `AISIEVAL_V12` sheet of `AISI  Eval Findings.xlsx`, in this repo — read in place, never rewritten (1,001 findings · 438 reports · 47 evaluating institutions · 39 columns · window Jan 2023 – 30 Jul 2026 corpus cutoff, per §2; one row, `DREADNODE-2026-07-CYB2`, is dated 2026-07-31). `dataset.csv` in this repo is a generated export of that sheet, not a second source; `build_data.py` reads the workbook and writes both `dataset.csv` and `data.js`.
+**Canonical dataset:** the `AISIEVAL_V13` sheet of `~/MATS/Research/AISI_Evals/dataset/AISIEVAL_V13.xlsx` — read in place, never rewritten (1,001 findings · 438 reports · 47 evaluating institutions · 39 columns · window Jan 2023 – 30 Jul 2026 corpus cutoff, per §2; one row, `DREADNODE-2026-07-CYB2`, is dated 2026-07-31). It is reached only through `scripts/dataset_source.py`, which every script imports so there is exactly one path and one sheet name in the project. `dataset.csv` in this repo is a generated export of that sheet, not a second source; `build_data.py` reads the workbook and writes both `dataset.csv` and `data.js`.
 
-> Historical note: sections written before V12 are dated and keep the counts current at the time of writing (the corpus grew from 456 rows in v10 to 1,001 in V12). Current-state figures are the ones in this header, §4 and §9.
+**Immediate predecessor:** the `AISIEVAL_V12` sheet of `AISI  Eval Findings.xlsx`, tracked in this repo, untouched. V13 = V12 with one adjudicated change: `APOLLO-2026-07-ALI4` re-tiered **Tier A → Tier C** (its finding is a process account of a red-team campaign, not an empirical model finding, so it fails §4 gate 1); its dependent response fields were cleared to the Tier C convention and its Finding Type moved `capability-finding` → `methodology`.
+
+> Historical note: sections written before V13 are dated and keep the counts current at the time of writing (the corpus grew from 456 rows in v10 to 1,001 in V12/V13). Current-state figures are the ones in this header, §4 and §9.
 **Status:** living document — update whenever a rule changes; every change gets a Changelog entry.
 **Companions:** `SEARCH_PROTOCOL.md` (in the dashboard repo — full search/screening procedure), `run_severity_ensemble.py` (the frozen severity prompt), `screening_ledger.csv` (being built by the evidence sweep).
 **Last updated:** 2026-08-28
@@ -102,11 +104,11 @@ contain no findings.
 
 Every finding sits in exactly one tier, encoded by `Eval? (trackable)` + `Action Trackable?`:
 
-| Tier | Encoding | Meaning | n (V12) |
+| Tier | Encoding | Meaning | n (V13) |
 |---|---|---|---|
-| **A** | yes / yes | Accountability-relevant: named company/model + concerning + response reasonable to expect. The ONLY tier scored for proportionality. | 185 |
+| **A** | yes / yes | Accountability-relevant: named company/model + concerning + response reasonable to expect. The ONLY tier scored for proportionality. | 184 |
 | **B** | yes / no | Concerning but no accountable party: anonymised models, methodology findings, reassuring nulls, non-frontier, capability trends. | 467 |
-| **C** | no / (blank) | Not an empirical model finding (methodology/framework/governance/milestone). | 349 |
+| **C** | no / (blank) | Not an empirical model finding (methodology/framework/governance/milestone). | 350 |
 
 **Tier A test — ALL must hold:** (1) empirical model finding; (2) names a specific company or
 model (company-level suffices; "anonymised" fails); (3) demonstrates a concerning result for which
@@ -241,8 +243,10 @@ then excluded entirely under this section.
 **Applied 2026-08-17 — 11 rows removed** (7 Tier A, 3 Tier B, 1 Tier C), corpus 1,013 → 1,002,
 Tier A 192 → 185, Tier B 470 → 467, Tier C 351 → 350. All were C2, so the C1 headline population was
 unchanged by this rule. (Two later V12 corrections — one Tier C C2 row withdrawn, one Tier A row
-recoded C1 → C2 — bring the current state to corpus **1,001**, Tier A 185, Tier B 467, Tier C **349**,
-C1 **269**, C2 732, headline population Tier A ∩ C1 **146**.) All are
+recoded C1 → C2 — took the corpus to 1,001 / Tier A 185 / Tier B 467 / Tier C 349; V13 then re-tiered
+`APOLLO-2026-07-ALI4` A → C. Current state: corpus **1,001**, Tier A **184**, Tier B 467,
+Tier C **350**, C1 **269**, C2 732, headline population Tier A ∩ C1 **146** — the re-tiered row is C2,
+so the headline is untouched.) All are
 preserved with every column in `logs/AISIEVAL_excluded_ordinary_accuracy.csv`:
 `CAIS-2026-07-ALI1`, `UKAISI-2026-03-CYB11`, `UKAISI-2025-07-HUM2`, `TRANSLUCE-2025-04-ALI1`,
 `HAL-2025-10-AUT3`, `HAL-2025-10-AUT3-s2`, `OPENAI-2025-07-SELF-ALI1`, `SCALEAI-2025-11b-ALI1`,
@@ -363,12 +367,12 @@ share of no-response findings.
 
 ## 9. Column reference
 
-> ⚠ The table below documents the **38-column v10 layout**. `AISIEVAL_V12` has **39 columns** in a
-> different order: it adds `Institution Type` (V12 col 4) and `Human` (V12 col 17 — the
-> post-ensemble severity override, §7b/§7c), drops `Notes`, renames `Sources Checked` to
-> `Sources Checked (channel A)`, and moves `Tags` to the end. The authoritative header is row 1 of
-> the sheet, mirrored verbatim in `dataset.csv`. The column *meanings* below still hold; the
-> numbering does not. Re-numbering this table against V12 is an open item.
+> ⚠ The table below documents the **38-column v10 layout**. `AISIEVAL_V13` has **39 columns** in a
+> different order — byte-identical header to V12, verified: it adds `Institution Type` (col 4) and
+> `Human` (col 17 — the post-ensemble severity override, §7b/§7c), drops `Notes`, renames
+> `Sources Checked` to `Sources Checked (channel A)`, and moves `Tags` to the end. The authoritative
+> header is row 1 of the sheet, mirrored verbatim in `dataset.csv`. The column *meanings* below still
+> hold; the numbering does not. Re-numbering this table against V13 is an open item.
 
 Legend: 🔑 identifier · 📋 descriptive · 📊 analysis input · 🧾 evidence/audit · ⚙️ derived (never hand-edit).
 
