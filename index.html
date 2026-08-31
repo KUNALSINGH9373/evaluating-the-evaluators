@@ -196,6 +196,14 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
 .deflist { display:grid; grid-template-columns:11rem 1fr; gap:var(--s2) var(--s4); margin-top:var(--s3);
   max-width:74ch; }
 .deflist dt { font-weight:600; color:var(--ink); font-size:var(--f-md); }
+/* bordered variant: each term/definition pair reads as a table row */
+.deflist.bordered { gap:0; border:1px solid var(--rule); border-radius:4px; overflow:hidden;
+  background:var(--paper); }
+.deflist.bordered dt { padding:var(--s2) var(--s3); border-top:1px solid var(--rule);
+  background:color-mix(in srgb,var(--paper-2) 60%,transparent); display:flex; align-items:center; }
+.deflist.bordered dd { padding:var(--s2) var(--s3); border-top:1px solid var(--rule); }
+.deflist.bordered dt:first-of-type, .deflist.bordered dt:first-of-type + dd { border-top:0; }
+@media (max-width:640px){ .deflist.bordered dd{ margin-bottom:0; } }
 .deflist dd { color:var(--ink-2); }
 @media (max-width:640px){ .deflist{ grid-template-columns:1fr; gap:2px var(--s3); }
   .deflist dd{ margin-bottom:var(--s3); } }
@@ -344,7 +352,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <p>Each finding is scored against eight dangerous-capability
           domains by three independent models — Claude Sonnet 5, GPT-5.5 and Gemini 3.1 — using one
           frozen prompt sent to all three. Majority vote decides.</p>
-        <dl class="deflist" style="grid-template-columns:6.5rem 1fr">
+        <dl class="deflist bordered" style="grid-template-columns:11rem 1fr">
           <dt><span class="b b-c1">Category&nbsp;1</span></dt><dd><b>Significant risk.</b> At least one of the eight domains is
             <em>demonstrated</em>: CBRN uplift · cyber operations · autonomy and self-replication ·
             persuasion at scale · deceptive alignment · safeguard failure · evaluation integrity ·
@@ -363,7 +371,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <p>The same five sources are checked for every finding. Only the
           company's own primary document counts — news reporting that quotes a company is not a
           response, and standing policy that shares a topic does not count.</p>
-        <dl class="deflist" style="grid-template-columns:6.5rem 1fr">
+        <dl class="deflist bordered" style="grid-template-columns:11rem 1fr">
           <dt><span class="b b-sub">Substantive</span></dt><dd>A specific, documented change, attributed to the finding.</dd>
           <dt><span class="b b-par">Partial</span></dt><dd>A change claimed but not verifiable, or incomplete.</dd>
           <dt><span class="b b-ack">Acknowledged</span></dt><dd>The finding is referenced, but no action follows.</dd>
@@ -400,12 +408,29 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       </div>
     </div>
 
-    <figure style="margin-top:var(--s5);max-width:640px">
-      <img loading="lazy" src="charts/10_proportionality_by_severity.jpg"
-           alt="Proportionality outcomes split by severity.">
-      <figcaption><b>The same result as outcomes.</b> Collapsing the matrix into the three verdicts,
-        split by severity.</figcaption>
-    </figure>
+    <div class="figside" style="margin-top:var(--s5)">
+      <figure>
+        <img loading="lazy" src="charts/10_proportionality_by_severity.jpg"
+             alt="Proportionality outcomes split by severity.">
+      </figure>
+      <div class="read">
+        <h4>The three verdicts</h4>
+        <p>The matrix collapses into these, split by severity. Only one of the three counts as the
+          system working.</p>
+        <dl class="deflist bordered" style="grid-template-columns:1fr">
+          <dt><span class="b b-sub">Proportionate</span></dt>
+          <dd>The response met the bar the finding's severity sets. The loop closed in public.</dd>
+          <dt><span class="b b-par">Under-response</span></dt>
+          <dd>The company engaged — referenced the finding, or claimed a change nobody can verify —
+            but did less than the risk called for.</dd>
+          <dt><span class="b b-none">Accountability gap</span></dt>
+          <dd>Nothing located after all five sources were checked. No public trace that the finding
+            was received, considered or acted on.</dd>
+        </dl>
+        <p><b>Under-response and accountability gap together are the shortfall</b> — the headline
+          figure counts only the second, which is the stricter reading.</p>
+      </div>
+    </div>
     <p style="margin-top:var(--s3);">
       <a href="#method" data-go="method">Full methodology — all eight domains defined, the tier
       test, and the five sources in order &rarr;</a></p>
