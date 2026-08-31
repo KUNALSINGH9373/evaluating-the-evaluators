@@ -268,7 +268,10 @@ li.r-none { background:color-mix(in srgb,var(--gap) 8%,transparent);    box-shad
 td.cell-c1  { font-weight:600; color:#7E2A1B; background:color-mix(in srgb,var(--gap) 12%,transparent); }
 td.cell-par { font-weight:600; color:#7A5710; background:color-mix(in srgb,var(--under) 15%,transparent); }
 td.cell-c2  { font-weight:600; color:#17527F; background:color-mix(in srgb,var(--blue) 11%,transparent); }
-.w-par { color:#7A5710; }
+.w-par { color:#7A5710; } .w-ok { color:#1D5C3E; }
+.read .cav { border-top:1px solid var(--rule); padding-top:var(--s3); color:var(--ink-3); }
+:root[data-theme="dark"] .w-ok{color:#7FC7A2}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .w-ok{color:#7FC7A2} }
 :root[data-theme="dark"] td.cell-c1{color:#F0A692} :root[data-theme="dark"] td.cell-par{color:#E8C57A}
 :root[data-theme="dark"] td.cell-c2{color:#9CC6EC} :root[data-theme="dark"] .w-par{color:#E8C57A}
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) td.cell-c1{color:#F0A692}
@@ -331,8 +334,9 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <div>
         <div class="phead" style="margin-bottom:0">
           <p class="lede">Safety institutes and independent evaluators test frontier models, find
-            problems, and publish them. That is the visible half of an accountability chain. This
-            measures the other half — whether the company named in a finding ever answers it.</p>
+            problems, and publish them. Everyone can see that much. What nobody had counted is what
+            happens next: when a report names a company, does that company ever publicly answer it?
+            This dataset counts the answers.</p>
           <p>When no answer comes, nothing in the public record closes the loop. The finding stands,
             the model stays deployed, and no outside party can tell whether the risk was addressed,
             judged unimportant, or simply missed. <a href="#problem" data-go="problem">More on the
@@ -424,14 +428,40 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
              alt="Severity against what the company published, every cell holding its finding count and outcome.">
       </figure>
       <div class="read">
-        <h4>Severity &times; company response</h4>
-        <p>Rows are how serious the finding is. Columns are what the company published. Each cell
-          holds the number of findings that landed on that pair.</p>
-        <p>Every row gets better left to right. The two rows differ in exactly one column —
-          <b class="w-par">Partial</b>, which is proportionate to a lower-risk finding but
-          an under-response to a significant-risk one.</p>
-        <p>That single difference is what makes the measure severity-relative rather than a flat
-          count of replies. <b>The largest cell is significant risk with no response.</b></p>
+        <h4>How to read this chart</h4>
+        <p><b>Each finding lands in exactly one cell.</b> Its row is how serious the finding is —
+          Category&nbsp;1 if it demonstrated one of the eight dangerous-capability domains,
+          Category&nbsp;2 otherwise. Its column is the strongest thing the company published in
+          response, after all five sources were checked. The number in the cell is how many
+          findings share that combination.</p>
+
+        <p><b>Reading the top row</b> tells you how the field handled its most serious results. Of
+          the significant-risk findings, only those in the leftmost column drew a substantive
+          response — a specific, documented change. Everything to the right of it fell short of
+          what the severity called for, and the rightmost cell drew nothing at all.</p>
+
+        <p><b>Reading the bottom row</b> is the control. These findings are real and verified but
+          did not cross a danger threshold, so a lighter response is a reasonable one. The bar they
+          have to clear is lower by design.</p>
+
+        <p><b>The two rows differ in exactly one column.</b> A <b class="w-par">Partial</b>
+          response — a change claimed but not verifiable, or an incomplete one — is
+          <b class="w-ok">proportionate</b> to a Category&nbsp;2 finding and an
+          <b class="w-par">under-response</b> to a Category&nbsp;1 finding. Nothing else in the
+          grid moves. That single asymmetry is the whole of what "severity-relative" means here:
+          the same company behaviour is judged against the risk it was answering, not against a
+          flat expectation that every finding gets a reply.</p>
+
+        <p><b>What the distribution shows.</b> The largest cell in the table is significant risk
+          with no response at all. That is the finding of this dataset stated as one number — not
+          that companies respond badly, but that for the most serious results the most common
+          outcome is silence. The cells that would represent a working accountability loop are the
+          smallest ones on the chart.</p>
+
+        <p class="cav"><b>What it does not show.</b> A cell counts what was published, not what was
+          done. A company may have fixed something privately, and that would land in the
+          no-response column here. This measures the public record, which is the only part an
+          outside party can check.</p>
       </div>
     </div>
 
@@ -503,7 +533,11 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           penalised in the outcome.</figcaption></figure>
     </div>
 
-    <div id="insightList" style="margin-top:var(--s6)"></div>
+    <div class="subhead">What stands out in the numbers</div>
+    <p style="max-width:74ch;margin-bottom:var(--s4)">Each line below is computed directly from the
+      dataset, with its denominator stated — several of these compare different populations, so the
+      denominator is the part to read carefully.</p>
+    <div id="insightList"></div>
   </div>
 </div>
 
@@ -848,10 +882,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js"></script>
-<script src="app.js"></script>
+<script src="data.js?v=d9da0ad"></script>
+<script src="app.js?v=d9da0ad"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js"></script>
+<script type="module" src="tags3d.js?v=d9da0ad"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */
