@@ -199,9 +199,39 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
 /* bordered variant: each term/definition pair reads as a table row */
 .deflist.bordered { gap:0; border:1px solid var(--rule); border-radius:4px; overflow:hidden;
   background:var(--paper); }
-.deflist.bordered dt { padding:var(--s2) var(--s3); border-top:1px solid var(--rule);
-  background:color-mix(in srgb,var(--paper-2) 60%,transparent); display:flex; align-items:center; }
-.deflist.bordered dd { padding:var(--s2) var(--s3); border-top:1px solid var(--rule); }
+.deflist.bordered dt { padding:var(--s3); border-top:1px solid var(--rule); font-weight:600;
+  display:flex; align-items:center; }
+.deflist.bordered dd { padding:var(--s3); border-top:1px solid var(--rule); }
+/* the row itself carries the meaning — term cell tinted, definition cell washed */
+.deflist.bordered dt.r-c1,   .deflist.bordered dt.r-none { color:#7E2A1B;
+  background:color-mix(in srgb,var(--gap) 16%,transparent); box-shadow:inset 3px 0 0 var(--gap); }
+.deflist.bordered dt.r-c1 + dd, .deflist.bordered dt.r-none + dd {
+  background:color-mix(in srgb,var(--gap) 5%,transparent); }
+.deflist.bordered dt.r-c2 { color:#17527F;
+  background:color-mix(in srgb,var(--blue) 14%,transparent); box-shadow:inset 3px 0 0 var(--blue); }
+.deflist.bordered dt.r-c2 + dd { background:color-mix(in srgb,var(--blue) 5%,transparent); }
+.deflist.bordered dt.r-sub { color:#1D5C3E;
+  background:color-mix(in srgb,var(--ok) 16%,transparent); box-shadow:inset 3px 0 0 var(--ok); }
+.deflist.bordered dt.r-sub + dd { background:color-mix(in srgb,var(--ok) 5%,transparent); }
+.deflist.bordered dt.r-par { color:#7A5710;
+  background:color-mix(in srgb,var(--under) 20%,transparent); box-shadow:inset 3px 0 0 var(--under); }
+.deflist.bordered dt.r-par + dd { background:color-mix(in srgb,var(--under) 6%,transparent); }
+.deflist.bordered dt.r-ack { color:#8A4413;
+  background:color-mix(in srgb,var(--orange) 17%,transparent); box-shadow:inset 3px 0 0 var(--orange); }
+.deflist.bordered dt.r-ack + dd { background:color-mix(in srgb,var(--orange) 5%,transparent); }
+:root[data-theme="dark"] .deflist.bordered dt.r-c1,
+:root[data-theme="dark"] .deflist.bordered dt.r-none { color:#F0A692; }
+:root[data-theme="dark"] .deflist.bordered dt.r-c2 { color:#9CC6EC; }
+:root[data-theme="dark"] .deflist.bordered dt.r-sub{ color:#7FC7A2; }
+:root[data-theme="dark"] .deflist.bordered dt.r-par{ color:#E8C57A; }
+:root[data-theme="dark"] .deflist.bordered dt.r-ack{ color:#EDA97E; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-c1,
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-none{ color:#F0A692; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-c2 { color:#9CC6EC; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-sub{ color:#7FC7A2; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-par{ color:#E8C57A; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-ack{ color:#EDA97E; } }
 .deflist.bordered dt:first-of-type, .deflist.bordered dt:first-of-type + dd { border-top:0; }
 @media (max-width:640px){ .deflist.bordered dd{ margin-bottom:0; } }
 .deflist dd { color:var(--ink-2); }
@@ -227,27 +257,24 @@ table.matrix th,table.matrix td { text-align:left; padding:var(--s2) var(--s3); 
 table.matrix th { font-weight:600; font-size:var(--f-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
 table.matrix td:last-child { font-weight:600; }
 .o-gap{color:var(--gap)} .o-under{color:var(--under)} .o-ok{color:var(--ok)}
-/* Badges reuse the chart palette so a colour means the same thing in prose,
-   in a table and in a figure. */
-.b { display:inline-block; font-size:var(--f-xs); font-weight:600; line-height:1.35;
-  padding:2px 10px; border-radius:999px; white-space:nowrap; border:1px solid transparent; }
-.b-c1   { color:#7E2A1B; background:color-mix(in srgb,var(--gap) 15%,transparent);   border-color:color-mix(in srgb,var(--gap) 35%,transparent); }
-.b-c2   { color:#17527F; background:color-mix(in srgb,var(--blue) 13%,transparent);  border-color:color-mix(in srgb,var(--blue) 32%,transparent); }
-.b-sub  { color:#1D5C3E; background:color-mix(in srgb,var(--ok) 15%,transparent);    border-color:color-mix(in srgb,var(--ok) 36%,transparent); }
-.b-par  { color:#7A5710; background:color-mix(in srgb,var(--under) 20%,transparent); border-color:color-mix(in srgb,var(--under) 42%,transparent); }
-.b-ack  { color:#8A4413; background:color-mix(in srgb,var(--orange) 16%,transparent);border-color:color-mix(in srgb,var(--orange) 36%,transparent); }
-.b-none { color:#7E2A1B; background:color-mix(in srgb,var(--gap) 15%,transparent);   border-color:color-mix(in srgb,var(--gap) 35%,transparent); }
-:root[data-theme="dark"] .b-c1,:root[data-theme="dark"] .b-none{ color:#F0A692; }
-:root[data-theme="dark"] .b-c2 { color:#9CC6EC; }
-:root[data-theme="dark"] .b-sub{ color:#7FC7A2; }
-:root[data-theme="dark"] .b-par{ color:#E8C57A; }
-:root[data-theme="dark"] .b-ack{ color:#EDA97E; }
-@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .b-c1,
-  :root:not([data-theme="light"]) .b-none{ color:#F0A692; }
-  :root:not([data-theme="light"]) .b-c2 { color:#9CC6EC; }
-  :root:not([data-theme="light"]) .b-sub{ color:#7FC7A2; }
-  :root:not([data-theme="light"]) .b-par{ color:#E8C57A; }
-  :root:not([data-theme="light"]) .b-ack{ color:#EDA97E; } }
+/* action levels as tinted list rows rather than pills */
+.sub ul li.r-sub, .sub ul li.r-par, .sub ul li.r-ack, .sub ul li.r-none {
+  list-style:none; margin-left:-1.15em; padding:var(--s2) var(--s3); border-radius:3px;
+  margin-block:6px; }
+li.r-sub  { background:color-mix(in srgb,var(--ok) 8%,transparent);     box-shadow:inset 3px 0 0 var(--ok); }
+li.r-par  { background:color-mix(in srgb,var(--under) 10%,transparent); box-shadow:inset 3px 0 0 var(--under); }
+li.r-ack  { background:color-mix(in srgb,var(--orange) 9%,transparent); box-shadow:inset 3px 0 0 var(--orange); }
+li.r-none { background:color-mix(in srgb,var(--gap) 8%,transparent);    box-shadow:inset 3px 0 0 var(--gap); }
+td.cell-c1  { font-weight:600; color:#7E2A1B; background:color-mix(in srgb,var(--gap) 12%,transparent); }
+td.cell-par { font-weight:600; color:#7A5710; background:color-mix(in srgb,var(--under) 15%,transparent); }
+td.cell-c2  { font-weight:600; color:#17527F; background:color-mix(in srgb,var(--blue) 11%,transparent); }
+.w-par { color:#7A5710; }
+:root[data-theme="dark"] td.cell-c1{color:#F0A692} :root[data-theme="dark"] td.cell-par{color:#E8C57A}
+:root[data-theme="dark"] td.cell-c2{color:#9CC6EC} :root[data-theme="dark"] .w-par{color:#E8C57A}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) td.cell-c1{color:#F0A692}
+  :root:not([data-theme="light"]) td.cell-par{color:#E8C57A}
+  :root:not([data-theme="light"]) td.cell-c2{color:#9CC6EC}
+  :root:not([data-theme="light"]) .w-par{color:#E8C57A} }
 
 .controls { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:var(--s3); }
 .controls input,.controls select { font:inherit; font-size:var(--f-sm); padding:8px 11px; color:var(--ink);
@@ -353,11 +380,11 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           domains by three independent models — Claude Sonnet 5, GPT-5.5 and Gemini 3.1 — using one
           frozen prompt sent to all three. Majority vote decides.</p>
         <dl class="deflist bordered" style="grid-template-columns:11rem 1fr">
-          <dt><span class="b b-c1">Category&nbsp;1</span></dt><dd><b>Significant risk.</b> At least one of the eight domains is
+          <dt class="r-c1">Category&nbsp;1</dt><dd><b>Significant risk.</b> At least one of the eight domains is
             <em>demonstrated</em>: CBRN uplift · cyber operations · autonomy and self-replication ·
             persuasion at scale · deceptive alignment · safeguard failure · evaluation integrity ·
             acute individual harm.</dd>
-          <dt><span class="b b-c2">Category&nbsp;2</span></dt><dd><b>Lower risk.</b> Everything else — reassuring nulls,
+          <dt class="r-c2">Category&nbsp;2</dt><dd><b>Lower risk.</b> Everything else — reassuring nulls,
             capability gaps, methodology contributions, governance observations, non-frontier models.</dd>
         </dl>
         <div class="detail" >The Category&nbsp;1 bar mirrors the thresholds
@@ -372,10 +399,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           company's own primary document counts — news reporting that quotes a company is not a
           response, and standing policy that shares a topic does not count.</p>
         <dl class="deflist bordered" style="grid-template-columns:11rem 1fr">
-          <dt><span class="b b-sub">Substantive</span></dt><dd>A specific, documented change, attributed to the finding.</dd>
-          <dt><span class="b b-par">Partial</span></dt><dd>A change claimed but not verifiable, or incomplete.</dd>
-          <dt><span class="b b-ack">Acknowledged</span></dt><dd>The finding is referenced, but no action follows.</dd>
-          <dt><span class="b b-none">None</span></dt><dd>Nothing located after all five sources were checked and logged.</dd>
+          <dt class="r-sub">Substantive</dt><dd>A specific, documented change, attributed to the finding.</dd>
+          <dt class="r-par">Partial</dt><dd>A change claimed but not verifiable, or incomplete.</dd>
+          <dt class="r-ack">Acknowledged</dt><dd>The finding is referenced, but no action follows.</dd>
+          <dt class="r-none">None</dt><dd>Nothing located after all five sources were checked and logged.</dd>
         </dl>
         <div class="detail" >Every proposed response is then challenged by
           an independent reviewer instructed to <strong>refute it by default</strong>. Only codings
@@ -401,7 +428,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <p>Rows are how serious the finding is. Columns are what the company published. Each cell
           holds the number of findings that landed on that pair.</p>
         <p>Every row gets better left to right. The two rows differ in exactly one column —
-          <span class="b b-par">Partial</span>, which is proportionate to a lower-risk finding but
+          <b class="w-par">Partial</b>, which is proportionate to a lower-risk finding but
           an under-response to a significant-risk one.</p>
         <p>That single difference is what makes the measure severity-relative rather than a flat
           count of replies. <b>The largest cell is significant risk with no response.</b></p>
@@ -418,12 +445,12 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <p>The matrix collapses into these, split by severity. Only one of the three counts as the
           system working.</p>
         <dl class="deflist bordered" style="grid-template-columns:1fr">
-          <dt><span class="b b-sub">Proportionate</span></dt>
+          <dt class="r-sub">Proportionate</dt>
           <dd>The response met the bar the finding's severity sets. The loop closed in public.</dd>
-          <dt><span class="b b-par">Under-response</span></dt>
+          <dt class="r-par">Under-response</dt>
           <dd>The company engaged — referenced the finding, or claimed a change nobody can verify —
             but did less than the risk called for.</dd>
-          <dt><span class="b b-none">Accountability gap</span></dt>
+          <dt class="r-none">Accountability gap</dt>
           <dd>Nothing located after all five sources were checked. No public trace that the finding
             was received, considered or acted on.</dd>
         </dl>
@@ -575,9 +602,9 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <table class="matrix" style="max-width:none">
           <thead><tr><th style="width:5rem">Tier</th><th style="width:7rem">Encoding</th><th>Meaning</th></tr></thead>
           <tbody>
-            <tr><td><span class="b b-c1">Tier A</span></td><td>yes / yes</td><td><b>Accountability-relevant.</b> Names a company or model, concerning, and a response is reasonable to expect. <strong>The only tier scored for proportionality</strong> — every headline number is computed over Tier A.</td></tr>
-            <tr><td><span class="b b-par">Tier B</span></td><td>yes / no</td><td><b>Concerning, but no accountable party.</b> Anonymised models, methodology findings, reassuring nulls, non-frontier subjects, capability trends.</td></tr>
-            <tr><td><span class="b b-c2">Tier C</span></td><td>no / blank</td><td><b>Not an empirical model finding.</b> Methodology, framework, governance or milestone work.</td></tr>
+            <tr><td class="cell-c1">Tier A</td><td>yes / yes</td><td><b>Accountability-relevant.</b> Names a company or model, concerning, and a response is reasonable to expect. <strong>The only tier scored for proportionality</strong> — every headline number is computed over Tier A.</td></tr>
+            <tr><td class="cell-par">Tier B</td><td>yes / no</td><td><b>Concerning, but no accountable party.</b> Anonymised models, methodology findings, reassuring nulls, non-frontier subjects, capability trends.</td></tr>
+            <tr><td class="cell-c2">Tier C</td><td>no / blank</td><td><b>Not an empirical model finding.</b> Methodology, framework, governance or milestone work.</td></tr>
           </tbody>
         </table>
       </div>
@@ -629,9 +656,9 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <div class="step2">
         <h3>Two categories, and what separates them</h3>
         <dl class="deflist">
-          <dt><span class="b b-c1">Category&nbsp;1</span></dt><dd><b>Significant risk.</b> Triggered if <em>any one</em> of the eight
+          <dt class="r-c1">Category&nbsp;1</dt><dd><b>Significant risk.</b> Triggered if <em>any one</em> of the eight
             dangerous-capability domains below is <strong>demonstrated</strong> in the evaluation described.</dd>
-          <dt><span class="b b-c2">Category&nbsp;2</span></dt><dd><b>Lower risk.</b> Everything else — reassuring or null results
+          <dt class="r-c2">Category&nbsp;2</dt><dd><b>Lower risk.</b> Everything else — reassuring or null results
             (capability below an expert threshold, &ldquo;no uplift&rdquo;, &ldquo;zero instances&rdquo;);
             capability-gap findings where the model fails a task; positive methodology or tooling
             contributions; pure process or governance observations; and findings about non-frontier
@@ -739,10 +766,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <div class="step2">
         <h3>Four response levels</h3>
         <ul>
-          <li><span class="b b-sub">Substantive</span> — a specific, documented change, attributed to the finding.</li>
-          <li><span class="b b-par">Partial</span> — a change claimed but not verifiable, or incomplete.</li>
-          <li><span class="b b-ack">Acknowledged</span> — the finding is referenced, but no action follows.</li>
-          <li><span class="b b-none">None</span> — nothing located after all five sources were checked.</li>
+          <li class="r-sub"><strong>Substantive</strong> — a specific, documented change, attributed to the finding.</li>
+          <li class="r-par"><strong>Partial</strong> — a change claimed but not verifiable, or incomplete.</li>
+          <li class="r-ack"><strong>Acknowledged</strong> — the finding is referenced, but no action follows.</li>
+          <li class="r-none"><strong>None</strong> — nothing located after all five sources were checked.</li>
         </ul>
         <div class="detail">Policy uptake is tracked separately, from official government sources
           only, and <strong>never substitutes for a company response.</strong> A regulator citing a
