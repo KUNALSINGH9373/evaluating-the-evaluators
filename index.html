@@ -194,8 +194,8 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     <div class="tabs" role="tablist">
       <button role="tab" data-tab="results" aria-selected="true">Results</button>
       <button role="tab" data-tab="problem" aria-selected="false">Problem</button>
-      <button role="tab" data-tab="data" aria-selected="false">Data</button>
       <button role="tab" data-tab="method" aria-selected="false">Methodology</button>
+      <button role="tab" data-tab="data" aria-selected="false">Data</button>
       <button id="themeToggle" type="button">Theme</button>
     </div>
   </div>
@@ -355,55 +355,6 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
   </div>
 </div>
 
-<!-- ══ DATA ═════════════════════════════════════════════════════════════ -->
-<div class="panel" id="p-data">
-  <div class="wrap">
-    <div class="phead">
-      <h1>The data</h1>
-      <p class="lede" id="countNote">Every row carries its source, its coded fields and the reasoning
-        behind its tier.</p>
-    </div>
-    <div class="controls">
-      <input id="fSearch" type="search" placeholder="Search findings, models, institutions…" aria-label="Search findings">
-      <select id="fScope" aria-label="Scope"></select>
-      <select id="fInst" aria-label="Institution"></select>
-      <select id="fSev" aria-label="Severity"></select>
-      <select id="fAction" aria-label="Action level"></select>
-      <select id="fDomain" aria-label="Domain"></select>
-      <label style="display:flex;align-items:center;gap:7px;font-size:.85rem;color:var(--ink-2)">
-        <input type="checkbox" id="fTrack"> Accountability set only</label>
-      <button class="btn" id="dlFiltered" type="button">Download CSV</button>
-    </div>
-    <div class="tablewrap">
-      <table class="explorer"><thead><tr>
-        <th>Date</th><th>Institution</th><th>Finding</th><th>Models</th><th>Severity</th><th>Response</th>
-      </tr></thead><tbody id="tbody"></tbody></table>
-    </div>
-    <div style="margin-top:var(--s3)"><button class="btn" id="loadMore" type="button">Show more</button></div>
-
-    <div class="subhead">The corpus itself</div>
-    <div class="g3">
-      <figure><img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Corpus split by tier.">
-        <figcaption><b>Tier split.</b> Only Tier A is scored for proportionality; the rest are real
-          findings that fail one of the two gates and are kept, not discarded.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Findings per access type.">
-        <figcaption><b>Most evaluation happens after release.</b> Pre-deployment access covers a
-          small share of the corpus.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Attribution of responses.">
-        <figcaption><b>Acting quietly still counts.</b> Whether a company credits the evaluator is
-          recorded separately, so a silent fix is not penalised.</figcaption></figure>
-    </div>
-
-    <div class="subhead">Charts drawn live from the dataset</div>
-    <div id="chartGrid" class="g2"></div>
-
-    <div style="margin-top:var(--s6);display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn" href="dataset.csv" download>Download the full dataset</a>
-      <a class="btn" href="codebook.md">Read the codebook</a>
-    </div>
-  </div>
-</div>
-
 <!-- ══ METHODOLOGY ══════════════════════════════════════════════════════ -->
 <div class="panel" id="p-method">
   <div class="wrap">
@@ -420,7 +371,6 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <button role="tab" data-sub="sev" aria-selected="false">Severity</button>
       <button role="tab" data-sub="resp" aria-selected="false">Finding the response</button>
       <button role="tab" data-sub="prop" aria-selected="false">Proportionality</button>
-      <button role="tab" data-sub="pipe" aria-selected="false">The pipeline</button>
     </div>
 
     <div class="sub" id="s-scope" data-active>
@@ -654,15 +604,54 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       </div>
     </div>
 
-    <div class="sub" id="s-pipe">
-      <div class="step2">
-        <h3>The whole method, drawn to scale</h3>
-        <p>Ribbon width is an exact count. Hover any ribbon or node for the underlying numbers. The
-          leftmost stage is not to scale against the rest — it would otherwise flatten everything
-          downstream.</p>
-        <p style="font-size:.9rem;color:var(--ink-3)">The flow diagram is on the
-          <a href="#results" data-go="results">Results</a> tab, where it frames the headline.</p>
       </div>
+</div>
+
+<!-- ══ DATA ═════════════════════════════════════════════════════════════ -->
+<div class="panel" id="p-data">
+  <div class="wrap">
+    <div class="phead">
+      <h1>The data</h1>
+      <p class="lede" id="countNote">Every row carries its source, its coded fields and the reasoning
+        behind its tier.</p>
+    </div>
+    <div class="controls">
+      <input id="fSearch" type="search" placeholder="Search findings, models, institutions…" aria-label="Search findings">
+      <select id="fScope" aria-label="Scope"></select>
+      <select id="fInst" aria-label="Institution"></select>
+      <select id="fSev" aria-label="Severity"></select>
+      <select id="fAction" aria-label="Action level"></select>
+      <select id="fDomain" aria-label="Domain"></select>
+      <label style="display:flex;align-items:center;gap:7px;font-size:.85rem;color:var(--ink-2)">
+        <input type="checkbox" id="fTrack"> Accountability set only</label>
+      <button class="btn" id="dlFiltered" type="button">Download CSV</button>
+    </div>
+    <div class="tablewrap">
+      <table class="explorer"><thead><tr>
+        <th>Date</th><th>Institution</th><th>Finding</th><th>Models</th><th>Severity</th><th>Response</th>
+      </tr></thead><tbody id="tbody"></tbody></table>
+    </div>
+    <div style="margin-top:var(--s3)"><button class="btn" id="loadMore" type="button">Show more</button></div>
+
+    <div class="subhead">The corpus itself</div>
+    <div class="g3">
+      <figure><img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Corpus split by tier.">
+        <figcaption><b>Tier split.</b> Only Tier A is scored for proportionality; the rest are real
+          findings that fail one of the two gates and are kept, not discarded.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Findings per access type.">
+        <figcaption><b>Most evaluation happens after release.</b> Pre-deployment access covers a
+          small share of the corpus.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Attribution of responses.">
+        <figcaption><b>Acting quietly still counts.</b> Whether a company credits the evaluator is
+          recorded separately, so a silent fix is not penalised.</figcaption></figure>
+    </div>
+
+    <div class="subhead">Charts drawn live from the dataset</div>
+    <div id="chartGrid" class="g2"></div>
+
+    <div style="margin-top:var(--s6);display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="dataset.csv" download>Download the full dataset</a>
+      <a class="btn" href="codebook.md">Read the codebook</a>
     </div>
   </div>
 </div>
@@ -712,7 +701,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
   window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
   show(location.hash.slice(1) || 'results');
 
-  var subs = ['scope','tier','sev','resp','prop','pipe'];
+  var subs = ['scope','tier','sev','resp','prop'];
   function showSub(name) {
     subs.forEach(function (k) {
       var el = document.getElementById('s-' + k);
