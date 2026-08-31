@@ -94,23 +94,29 @@ header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
 .headline .say { max-width:32ch; font-size:.96rem; }
 .meta { display:flex; flex-wrap:wrap; gap:7px 24px; font-size:.84rem; color:var(--ink-3); margin-top:var(--s3); }
 .meta b { font-weight:600; color:var(--ink-2); }
-.resultrow { display:grid; grid-template-columns:minmax(0,1fr) 290px; gap:var(--s6);
+.resultrow { display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,420px); gap:var(--s6);
   align-items:start; }
 @media (max-width:900px){ .resultrow{ grid-template-columns:1fr; gap:var(--s5); } }
-#tiles { display:flex; flex-direction:column; gap:var(--s2); }
+.statcol { display:flex; flex-direction:column; gap:var(--s4); }
+.statcol .headline { margin:0; display:block; }
+.statcol .headline .big { font-size:clamp(3.4rem,7vw,4.6rem); }
+.statcol .headline .say { max-width:none; margin-top:var(--s2); font-size:.92rem; }
+/* 3 across — seven tiles fill three rows, the last one short */
+#tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+@media (max-width:420px){ #tiles{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 #tiles .tile { background:var(--paper); border:1px solid var(--rule); border-radius:3px;
-  padding:var(--s3); display:grid; grid-template-columns:1fr auto; align-items:baseline;
-  gap:var(--s2) var(--s3);
+  padding:10px 11px; display:block;
   /* each tile rises in, staggered by --i, so the column reads top to bottom */
   opacity:0; transform:translateY(10px);
   animation:tilein .5s cubic-bezier(.2,.7,.3,1) forwards;
   animation-delay:calc(var(--i,0) * 70ms);
   transition:border-color .18s ease, transform .18s ease; }
 #tiles .tile:hover { border-color:var(--rule-2); transform:translateY(-1px); }
-#tiles .label { font-size:.8rem; color:var(--ink-2); line-height:1.35; }
-#tiles .value { font-size:1.5rem; font-weight:500; letter-spacing:-0.03em; justify-self:end;
-  font-variant-numeric:tabular-nums; }
-#tiles .sub { grid-column:1 / -1; font-size:.74rem; color:var(--ink-3); margin-top:-4px; }
+#tiles .label { font-size:.68rem; color:var(--ink-3); line-height:1.25; letter-spacing:.01em;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:1.7em; }
+#tiles .value { font-size:1.18rem; font-weight:600; letter-spacing:-0.02em; margin-top:3px;
+  font-variant-numeric:tabular-nums; color:var(--ink); }
+#tiles .sub { display:none; }   /* the per-tile footnote does not fit at this size */
 @keyframes tilein { to { opacity:1; transform:none; } }
 @media (prefers-reduced-motion:reduce){
   #tiles .tile{ opacity:1; transform:none; animation:none; }
@@ -175,6 +181,31 @@ table.matrix th,table.matrix td { text-align:left; padding:var(--s2) var(--s3); 
 table.matrix th { font-weight:600; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
 table.matrix td:last-child { font-weight:600; }
 .o-gap{color:var(--gap)} .o-under{color:var(--under)} .o-ok{color:var(--ok)}
+table.pmatrix { border-collapse:separate; border-spacing:6px; width:100%; max-width:820px; }
+table.pmatrix th, table.pmatrix td { text-align:left; }
+table.pmatrix thead th { padding:0 0 2px; font-weight:600; vertical-align:bottom; }
+table.pmatrix th.corner { font-size:.68rem; text-transform:uppercase; letter-spacing:.09em;
+  color:var(--ink-3); line-height:1.5; }
+table.pmatrix th.corner span { display:block; }
+table.pmatrix th.corner span:first-child::after { content:" \2193"; }
+table.pmatrix th.corner span:last-child::after { content:" \2192"; }
+table.pmatrix tbody th { padding:var(--s3) var(--s3) var(--s3) 0; white-space:nowrap; vertical-align:middle; }
+table.pmatrix tbody th em { display:block; font-style:normal; font-size:.76rem;
+  color:var(--ink-3); margin-top:4px; }
+table.pmatrix tbody td { padding:var(--s3) var(--s2); border-radius:4px; font-size:.88rem;
+  font-weight:600; text-align:center; border:1px solid transparent; }
+.c-ok    { color:#1D5C3E; background:color-mix(in srgb,var(--ok) 14%,transparent);
+           border-color:color-mix(in srgb,var(--ok) 34%,transparent); }
+.c-under { color:#7A5710; background:color-mix(in srgb,var(--under) 18%,transparent);
+           border-color:color-mix(in srgb,var(--under) 40%,transparent); }
+.c-gap   { color:#7E2A1B; background:color-mix(in srgb,var(--gap) 14%,transparent);
+           border-color:color-mix(in srgb,var(--gap) 34%,transparent); }
+:root[data-theme="dark"] .c-ok{color:#7FC7A2} :root[data-theme="dark"] .c-under{color:#E8C57A}
+:root[data-theme="dark"] .c-gap{color:#F0A692}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .c-ok{color:#7FC7A2}
+  :root:not([data-theme="light"]) .c-under{color:#E8C57A}
+  :root:not([data-theme="light"]) .c-gap{color:#F0A692} }
+@media (max-width:720px){ table.pmatrix{ display:block; overflow-x:auto; } }
 /* Badges reuse the chart palette so a colour means the same thing in prose,
    in a table and in a figure. */
 .b { display:inline-block; font-size:.8rem; font-weight:600; line-height:1.35;
@@ -265,7 +296,14 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           <span id="mWindow"></span>
         </div>
       </div>
-      <div id="tiles"></div>
+      <aside class="statcol">
+        <div class="headline">
+          <div class="big tnum" id="heroNum">—</div>
+          <p class="say" id="heroCaption">of significant-risk findings that name a company have no
+            documented public response.</p>
+        </div>
+        <div id="tiles"></div>
+      </aside>
     </div>
 
     <div class="subhead">What happens to a published finding</div>
@@ -277,12 +315,6 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         is the population every number below is computed over. Hover any ribbon for the counts.</figcaption>
       <details class="tblview" id="sankeyTable"><summary style="cursor:pointer">Table view</summary></details>
     </figure>
-
-    <div class="headline">
-      <div class="big tnum" id="heroNum">—</div>
-      <p class="say" id="heroCaption">of significant-risk findings that name a company have no
-        documented public response.</p>
-    </div>
 
     <div class="subhead">How a company response is measured</div>
     <div style="max-width:70ch">
@@ -335,19 +367,38 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <strong>substantive</strong> response to pass. A lower-risk finding needs at least a
       <strong>partial</strong> one. The same company behaviour therefore scores differently
       depending on what it was answering.</p>
-    <table class="matrix" style="margin-top:var(--s3)">
-      <thead><tr><th>Severity</th><th>What the company published</th><th>Outcome</th></tr></thead>
+    <table class="pmatrix" style="margin-top:var(--s3)">
+      <thead>
+        <tr>
+          <th class="corner"><span>severity</span><span>what the company published</span></th>
+          <th><span class="b b-sub">Substantive</span></th>
+          <th><span class="b b-par">Partial</span></th>
+          <th><span class="b b-ack">Acknowledged</span></th>
+          <th><span class="b b-none">None</span></th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-sub">Substantive</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
-        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-par">Partial</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
-        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
-        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
-        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-sub">Substantive</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
-        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-par">Partial</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
-        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
-        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
+        <tr>
+          <th scope="row"><span class="b b-c1">Category&nbsp;1</span><em>significant risk</em></th>
+          <td class="c-ok">Proportionate</td>
+          <td class="c-under">Under-response</td>
+          <td class="c-under">Under-response</td>
+          <td class="c-gap">Accountability gap</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="b b-c2">Category&nbsp;2</span><em>lower risk</em></th>
+          <td class="c-ok">Proportionate</td>
+          <td class="c-ok">Proportionate</td>
+          <td class="c-under">Under-response</td>
+          <td class="c-gap">Accountability gap</td>
+        </tr>
       </tbody>
     </table>
+    <p style="max-width:70ch;margin-top:var(--s3);font-size:.92rem">Read a row left to right and the
+      bar drops: the stronger the response, the better the outcome. Read the two rows against each
+      other and the only cell that differs is <b>Partial</b> — proportionate to a lower-risk
+      finding, an under-response to a significant-risk one. That single difference is what makes
+      the measure severity-relative rather than a flat count of replies.</p>
 
     <div class="g2" style="margin-top:var(--s5)">
       <figure><img loading="lazy" src="charts/21_severity_x_action_heatmap.jpg"
@@ -673,17 +724,9 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       </div>
       <div class="step2">
         <h3>The lookup</h3>
-        <table class="matrix">
-          <thead><tr><th>Severity</th><th>Response</th><th>Outcome</th></tr></thead>
-          <tbody>
-            <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-sub">Substantive</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
-            <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-par">Partial</span> <span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
-            <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
-            <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-sub">Substantive</span> <span class="b b-par">Partial</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
-            <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
-            <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
-          </tbody>
-        </table>
+        <p style="font-size:.92rem"><a href="#results" data-go="results">The matrix is on the
+          Results tab &rarr;</a> — rows are severity, columns are what the company published, and
+          each cell is the outcome that pair produces.</p>
         <div class="detail">A significant-risk finding needs a <strong>substantive</strong> response
           to pass. A lower-risk finding needs at least a <strong>partial</strong> one. Nothing else
           clears the bar, and no discretion enters at any point.</div>
