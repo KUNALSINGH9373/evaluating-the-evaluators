@@ -107,12 +107,17 @@ document.getElementById("heroCaption").textContent =
 document.getElementById("asof").textContent =
   `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)}`;
 
+/* The tiles must not restate what the hero already says. The header line carries
+   findings / reports / evaluators / window, and the big number carries the C1 gap,
+   so neither reappears here. "C1 gap" and "No response (all Tier A)" also collapsed
+   into one another whenever every Tier A gap was a C1 gap — the same figure printed
+   twice under two names — so the Tier A count is shown instead. */
 const tiles = [
-  { label: "Findings tracked", value: M.totalFindings, sub: `${M.reports} reports` },
-  { label: "Accountability set", value: M.trackable, sub: "trackable findings" },
-  { label: "C1 gap", value: M.c1Gap, sub: `${c1GapPct}% of ${M.trackableC1} severe findings` },
-  { label: "Substantive responses", value: M.substantive, sub: `${pct(M.substantive, M.trackable)}% of the set` },
-  { label: "No response (all Tier A)", value: M.noResponse, sub: `${noRespPct}% of the set` },
+  { label: "Accountability set", value: M.trackable, sub: "Tier A — a response is owed" },
+  { label: "Significant risk", value: M.trackableC1, sub: `of ${M.trackable} Tier A findings` },
+  { label: "Any response at all", value: M.anyResponse, sub: `${pct(M.anyResponse, M.trackable)}% of the set` },
+  { label: "Substantive responses", value: M.substantive, sub: "specific, documented, attributed" },
+  { label: "Median response lag", value: `${M.medianLag} d`, sub: `across ${M.lagN} responses` },
 ];
 document.getElementById("tiles").append(
   ...tiles.map(t => h("div", { class: "tile" },
