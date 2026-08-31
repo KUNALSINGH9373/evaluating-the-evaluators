@@ -206,12 +206,16 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <!-- ══ RESULTS ══════════════════════════════════════════════════════════ -->
 <div class="panel" id="p-results" data-active>
   <div class="wrap">
+
     <div class="phead">
       <h1>Do third-party frontier AI evaluations matter?</h1>
       <p class="lede">Safety institutes and independent evaluators test frontier models, find
         problems, and publish them. That is the visible half of an accountability chain. This
-        measures the other half — what happens after a finding is published, and whether it
-        changes anything.</p>
+        measures the other half — whether the company named in a finding ever answers it.</p>
+      <p>When no answer comes, nothing in the public record closes the loop. The finding stands,
+        the model stays deployed, and no outside party can tell whether the risk was addressed,
+        judged unimportant, or simply missed. <a href="#problem" data-go="problem">More on the
+        problem &rarr;</a></p>
     </div>
 
     <div class="meta tnum">
@@ -221,14 +225,13 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <span id="mWindow"></span>
     </div>
 
-    <!-- the Sankey leads: it is the flow, drawn to scale, and frames every number below -->
-    <figure style="margin-top:var(--s6)">
+    <div class="subhead">What happens to a published finding</div>
+    <figure>
       <div id="pipeline"><div id="sankeyMount" class="plot"></div></div>
       <figcaption><b>Every published finding, narrowed to the ones a company owes an answer for.</b>
         Ribbon width is an exact count. Most findings never reach the question — they are
         methodology, governance, or results with no named company to respond to. The final column
-        is the population every number on this page is computed over. Hover any ribbon for the
-        underlying counts.</figcaption>
+        is the population every number below is computed over. Hover any ribbon for the counts.</figcaption>
       <details class="tblview" id="sankeyTable"><summary style="cursor:pointer">Table view</summary></details>
     </figure>
 
@@ -238,66 +241,54 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         documented public response.</p>
     </div>
 
-    <div class="sowhat">
-      <h3>What happens next, and why it matters</h3>
-      <p>When a company does not respond, nothing in the public record closes the loop. The finding
-        stands, the model stays deployed, and no external party can tell whether the risk was
-        addressed, judged unimportant, or simply missed. The evaluation was performed and published
-        — and then absorbed.</p>
-      <p>That is the gap this dataset measures. Not whether evaluators are doing good work, but
-        whether the system they feed into does anything with it. If publishing a finding about a
-        named frontier model reliably produces no visible answer, then third-party evaluation is
-        functioning as documentation rather than as accountability — and the difference is
-        something regulators, funders and the institutes themselves need measured rather than
-        assumed.</p>
-    </div>
-
     <div id="tiles"></div>
 
-    <div class="subhead">Over time</div>
+    <div class="subhead">How a company response is measured</div>
+    <div style="max-width:70ch">
+      <p>Two inputs decide every outcome. <strong>Severity</strong> — how serious the finding is,
+        scored against eight dangerous-capability domains by three independent models.
+        <strong>Action level</strong> — what the company actually published, after the same five
+        sources are checked for every finding. Combining them gives
+        <strong>proportionality</strong>: whether the response matched the risk.</p>
+      <p>The combination is a fixed lookup with no discretion at any point, so no finding can be
+        argued into a better outcome than its evidence supports.</p>
+    </div>
+    <table class="matrix" style="margin-top:var(--s4)">
+      <thead><tr><th>Severity</th><th>What the company published</th><th>Outcome</th></tr></thead>
+      <tbody>
+        <tr><td>Significant risk</td><td>Substantive</td><td class="o-ok">Proportionate</td></tr>
+        <tr><td>Significant risk</td><td>Partial / Acknowledged</td><td class="o-under">Under-response</td></tr>
+        <tr><td>Significant risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
+        <tr><td>Lower risk</td><td>Substantive / Partial</td><td class="o-ok">Proportionate</td></tr>
+        <tr><td>Lower risk</td><td>Acknowledged</td><td class="o-under">Under-response</td></tr>
+        <tr><td>Lower risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:var(--s3);font-size:.9rem">
+      <a href="#method" data-go="method">Full methodology — the eight severity domains, the tier
+      test, and the five sources &rarr;</a></p>
+
+    <div class="subhead">What the outcomes look like</div>
     <div class="g2">
+      <figure><img loading="lazy" src="charts/16_gap_rate_by_access_type.jpg" alt="No-action rate by access type.">
+        <figcaption><b>Access predicts response.</b> Findings from pre-deployment access almost
+          always draw a documented response; those made after release mostly do not. This is the
+          largest effect in the dataset — and access is set by agreement, not by evaluator diligence.</figcaption></figure>
       <figure><img loading="lazy" src="charts/15b_shortfall_rate_by_year.jpg" alt="Shortfall rate by year.">
         <figcaption><b>No clean improvement over time.</b> Year-to-year movement is real but
-          non-monotonic, and the latest year is partly recency — those findings have had less time to draw a response.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/05_pre_vs_post_deployment_response_rate.jpg" alt="Substantive response rate, pre versus post deployment.">
-        <figcaption><b>Access changes the answer.</b> Pre-deployment access does not just produce
-          more responses — it produces more <em>substantive</em> ones.</figcaption></figure>
+          non-monotonic, and the latest year is partly recency — those findings have had less time
+          to draw a response.</figcaption></figure>
     </div>
-
-    <div class="subhead">Where the shortfall sits</div>
-    <div class="g3">
-      <figure><img loading="lazy" src="charts/16_gap_rate_by_access_type.jpg" alt="No-action rate by access type.">
-        <figcaption><b>Access predicts response.</b> Pre-deployment findings almost always draw a
-          documented response; post-deployment ones mostly do not. The largest effect in the dataset.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/12_evaluator_scope.jpg" alt="Outcome mix by evaluator type.">
-        <figcaption><b>Who reports it matters.</b> Government institutes fare better than third-party
-          evaluators — though the two also differ in access, so this is not cleanly separable.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/09_policy_level_distribution.jpg" alt="Policy uptake.">
-        <figcaption><b>Almost no binding policy action.</b> Government follow-up is tracked separately
-          and never substitutes for a company response.</figcaption></figure>
-    </div>
-
-    <div class="subhead">The corpus</div>
-    <div class="g3">
-      <figure><img loading="lazy" src="charts/00_title_hero.jpg" alt="Findings, severity and outcome at a glance.">
-        <figcaption><b>The same funnel as a static figure.</b> Useful for citation and for reading
-          the exact stage counts without hovering.</figcaption></figure>
+    <div class="g3" style="margin-top:var(--s4)">
       <figure><img loading="lazy" src="charts/22_domain_x_outcome_heatmap.jpg" alt="Outcome by risk domain.">
-        <figcaption><b>Not concentrated in one topic.</b> Jailbreaks, cyber, alignment, autonomy and
-          bio-chem all show substantial shortfall. Colour encodes magnitude only, never a verdict.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Corpus split by tier.">
-        <figcaption><b>Why most findings are not in the headline.</b> The rest are real findings that
-          fail one of the two gates. They are kept in the dataset, not discarded.</figcaption></figure>
-    </div>
-
-    <div class="subhead">Where the evaluation happened</div>
-    <div class="g2">
-      <figure><img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Findings per access type.">
-        <figcaption><b>Most evaluation happens after release.</b> Pre-deployment access covers a small
-          share of the corpus — which is what makes it a policy lever rather than a description.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Attribution of responses.">
-        <figcaption><b>Acting quietly still counts.</b> Whether a company credits the evaluator is
-          recorded separately, so a silent fix is not penalised in the outcome.</figcaption></figure>
+        <figcaption><b>Not one topic.</b> Jailbreaks, cyber, alignment, autonomy and bio-chem all
+          show substantial shortfall.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/12_evaluator_scope.jpg" alt="Outcome mix by evaluator type.">
+        <figcaption><b>Who reports it matters.</b> Government institutes fare better than
+          third-party evaluators — though they also tend to have better access.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/09_policy_level_distribution.jpg" alt="Policy uptake.">
+        <figcaption><b>Almost no binding policy action.</b> Government follow-up never substitutes
+          for a company response.</figcaption></figure>
     </div>
 
     <div id="insightList" style="margin-top:var(--s6)"></div>
@@ -377,6 +368,19 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       </tr></thead><tbody id="tbody"></tbody></table>
     </div>
     <div style="margin-top:var(--s3)"><button class="btn" id="loadMore" type="button">Show more</button></div>
+
+    <div class="subhead">The corpus itself</div>
+    <div class="g3">
+      <figure><img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Corpus split by tier.">
+        <figcaption><b>Tier split.</b> Only Tier A is scored for proportionality; the rest are real
+          findings that fail one of the two gates and are kept, not discarded.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Findings per access type.">
+        <figcaption><b>Most evaluation happens after release.</b> Pre-deployment access covers a
+          small share of the corpus.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Attribution of responses.">
+        <figcaption><b>Acting quietly still counts.</b> Whether a company credits the evaluator is
+          recorded separately, so a silent fix is not penalised.</figcaption></figure>
+    </div>
 
     <div class="subhead">Charts drawn live from the dataset</div>
     <div id="chartGrid" class="g2"></div>
