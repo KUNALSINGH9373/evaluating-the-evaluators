@@ -480,6 +480,14 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 
     <div class="sub" id="s-sev">
       <div class="step2">
+        <figure style="max-width:760px">
+          <img loading="lazy" src="charts/17_severity_classification.jpg"
+               alt="How findings divide between Category 1 and Category 2.">
+          <figcaption><b>How the corpus divides.</b> Every finding is scored against the eight
+            domains below; a finding is Category&nbsp;1 only if at least one is demonstrated.</figcaption>
+        </figure>
+      </div>
+      <div class="step2">
         <h3>Two categories, and what separates them</h3>
         <dl class="deflist">
           <dt>Category&nbsp;1</dt><dd><b>Significant risk.</b> Triggered if <em>any one</em> of the eight
@@ -605,7 +613,24 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 
     <div class="sub" id="s-prop">
       <div class="step2">
-        <h3>The outcome is a lookup, not a judgement</h3>
+        <h3>Proportionality is the final verdict on each finding</h3>
+        <p>Severity says how serious the finding is. Action Level says what the company did.
+          <strong>Proportionality is the two combined</strong> — whether the response matched the
+          risk. It is the only column the headline is computed from, and it is derived by lookup,
+          never assigned by hand.</p>
+        <div class="g2" style="margin-top:var(--s4)">
+          <figure><img loading="lazy" src="charts/10_proportionality_by_severity.jpg"
+                 alt="Proportionality outcomes split by severity.">
+            <figcaption><b>Outcomes by severity.</b> The same response counts differently depending
+              on how serious the finding was.</figcaption></figure>
+          <figure><img loading="lazy" src="charts/21_severity_x_action_heatmap.jpg"
+                 alt="Severity against action level, every cell labelled with its outcome.">
+            <figcaption><b>The rule, applied to the data.</b> Every cell is one severity-and-response
+              pair, and its outcome follows the table below with no exceptions.</figcaption></figure>
+        </div>
+      </div>
+      <div class="step2">
+        <h3>The lookup</h3>
         <table class="matrix">
           <thead><tr><th>Severity</th><th>Response</th><th>Outcome</th></tr></thead>
           <tbody>
