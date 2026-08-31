@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Evaluating the Evaluators — do third-party frontier AI evaluations matter?</title>
+<title>Do third-party frontier AI evaluations matter?</title>
 <meta name="description" content="When AI safety institutes and independent evaluators publish findings about named frontier models, does a documented company response follow? A source-verified dataset of the public accountability channel.">
 <style>
 /* ─────────────────────────────────────────────────────────────────────────
@@ -91,9 +91,8 @@ header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
 .headline .say { max-width:32ch; font-size:.96rem; }
 .meta { display:flex; flex-wrap:wrap; gap:7px 24px; font-size:.84rem; color:var(--ink-3); margin-top:16px; }
 .meta b { font-weight:600; color:var(--ink-2); }
-#tiles { display:grid; gap:1px; background:var(--rule); grid-template-columns:repeat(auto-fit,minmax(165px,1fr));
-  border:1px solid var(--rule); margin-top:34px; }
-#tiles>div { background:var(--paper); padding:18px 16px; }
+#tiles { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(168px,1fr)); margin-top:34px; }
+#tiles>div { background:var(--paper); border:1px solid var(--rule); border-radius:3px; padding:16px 16px; }
 #tiles .v { font-size:1.7rem; font-weight:500; letter-spacing:-0.03em; }
 #tiles .k { font-size:.76rem; color:var(--ink-3); margin-top:3px; }
 
@@ -187,7 +186,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div class="panel" id="p-results" data-active>
   <div class="wrap">
     <div class="phead">
-      <h1>Evaluating the evaluators: do third-party frontier AI evaluations matter?</h1>
+      <h1>Do third-party frontier AI evaluations matter?</h1>
       <p class="lede">Safety institutes and independent evaluators test frontier models, find
         problems, and publish them. That is the visible half of an accountability chain. This
         measures the other half — what happens after a finding is published, and whether it
@@ -201,13 +200,15 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <span id="mWindow"></span>
     </div>
 
-    <!-- the pipeline leads: it frames every number that follows -->
+    <!-- the Sankey leads: it is the flow, drawn to scale, and frames every number below -->
     <figure style="margin-top:34px">
-      <img src="charts/00_title_hero.jpg" alt="The pipeline from every published finding down to the outcomes.">
+      <div id="pipeline"><div id="sankeyMount" class="plot"></div></div>
       <figcaption><b>Every published finding, narrowed to the ones a company owes an answer for.</b>
-        Most findings never reach the question — they are methodology, governance, or results with
-        no named company to respond. The bar on the right is the population every number on this
-        page is computed over.</figcaption>
+        Ribbon width is an exact count. Most findings never reach the question — they are
+        methodology, governance, or results with no named company to respond to. The final column
+        is the population every number on this page is computed over. Hover any ribbon for the
+        underlying counts.</figcaption>
+      <details class="tblview" id="sankeyTable"><summary style="cursor:pointer">Table view</summary></details>
     </figure>
 
     <div class="headline">
@@ -256,7 +257,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     </div>
 
     <div class="subhead">The corpus</div>
-    <div class="g2">
+    <div class="g3">
+      <figure><img loading="lazy" src="charts/00_title_hero.jpg" alt="Findings, severity and outcome at a glance.">
+        <figcaption><b>The same funnel as a static figure.</b> Useful for citation and for reading
+          the exact stage counts without hovering.</figcaption></figure>
       <figure><img loading="lazy" src="charts/22_domain_x_outcome_heatmap.jpg" alt="Outcome by risk domain.">
         <figcaption><b>Not concentrated in one topic.</b> Jailbreaks, cyber, alignment, autonomy and
           bio-chem all show substantial shortfall. Colour encodes magnitude only, never a verdict.</figcaption></figure>
@@ -420,6 +424,30 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 
     <div class="sub" id="s-sev">
       <div class="step2">
+        <h3>The eight domains a finding is scored against</h3>
+        <p>Severity is not a judgement call about how alarming a finding sounds. A finding is
+          <strong>Category 1 (significant risk)</strong> only if it demonstrates at least one of
+          these eight dangerous-capability domains. Everything else is Category 2.</p>
+        <table class="matrix" style="max-width:none">
+          <thead><tr><th style="width:3rem">—</th><th style="width:15rem">Domain</th><th>What has to be demonstrated</th></tr></thead>
+          <tbody>
+            <tr><td>D1</td><td>CBRN / bio-chem uplift</td><td>Meaningful uplift toward chemical, biological, radiological or nuclear capability.</td></tr>
+            <tr><td>D2</td><td>Cyber operations</td><td>Offensive cyber capability — expert-level or novel-uplift hacking.</td></tr>
+            <tr><td>D3</td><td>Autonomy / AI R&amp;D</td><td>Autonomous replication, self-propagation, or automating AI R&amp;D and thereby accelerating scaling.</td></tr>
+            <tr><td>D4</td><td>Persuasion at scale</td><td>Systematically changing beliefs or behaviour at scale; societal-level manipulation.</td></tr>
+            <tr><td>D5</td><td>Deceptive alignment</td><td>Deliberate deception, scheming, sabotage, sandbagging or concealment. <strong>Deliberateness must be shown</strong> — a false output alone is not deception.</td></tr>
+            <tr><td>D6</td><td>Safeguard failure</td><td>A <em>deployed</em> safety mechanism — jailbreak defence, classifier, guardrail — defeated.</td></tr>
+            <tr><td>D7</td><td>Evaluation integrity</td><td>The evaluation itself undermined: the model detected it was being tested, gamed the benchmark, or was trained on the eval.</td></tr>
+            <tr><td>D8</td><td>Acute individual harm</td><td>Actively encouraging or coaching a user toward suicide or self-harm. Category 1 <strong>regardless of scale</strong> — one user is enough.</td></tr>
+          </tbody>
+        </table>
+        <div class="detail">Two rules keep this tight. <strong>D5 requires deliberateness to be
+          demonstrated</strong>, not inferred from a wrong answer — the words "faked" or
+          "fabricated" in an evaluator's write-up are their characterisation, not evidence of
+          intent. And a <strong>reassuring null</strong> — a model measured <em>below</em> a threshold —
+          is never Category 1, however dangerous the domain.</div>
+      </div>
+      <div class="step2">
         <h3>A three-model ensemble</h3>
         <p>Every finding is scored against eight dangerous-capability domains by three independent
           models — Claude Sonnet 5, GPT-5.5 and Gemini 3.1 — using one frozen prompt sent verbatim
@@ -490,12 +518,8 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <p>Ribbon width is an exact count. Hover any ribbon or node for the underlying numbers. The
           leftmost stage is not to scale against the rest — it would otherwise flatten everything
           downstream.</p>
-        <div id="pipeline">
-          <div id="sankeyMount" class="plot"></div>
-          <details class="tblview" id="sankeyTable">
-            <summary style="cursor:pointer">Table view</summary>
-          </details>
-        </div>
+        <p style="font-size:.9rem;color:var(--ink-3)">The flow diagram is on the
+          <a href="#results" data-go="results">Results</a> tab, where it frames the headline.</p>
       </div>
     </div>
   </div>
