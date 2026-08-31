@@ -180,7 +180,8 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
   font-weight:600; margin:var(--s6) 0 var(--s4); padding-bottom:var(--s2);
   border-bottom:1px solid var(--rule-2); }
 
-.subtabs { display:flex; flex-wrap:wrap; gap:4px; border-bottom:1px solid var(--rule); margin-bottom:var(--s5); }
+.subtabs { display:flex; flex-wrap:wrap; gap:4px; border-bottom:1px solid var(--rule);
+  margin-bottom:var(--s5); justify-content:center; }
 .subtabs button { font:inherit; font-size:var(--f-md); background:none; border:0; cursor:pointer; color:var(--ink-3);
   padding:9px 14px; border-bottom:2px solid transparent; margin-bottom:-1px; }
 .subtabs button:hover { color:var(--ink); }
@@ -188,17 +189,37 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
 .sub { display:none; } .sub[data-active] { display:block; }
 .sub h3 { margin-bottom:var(--s2); }
 .sub h4 { font-size:1.06rem; margin:var(--s4) 0 var(--s2); color:var(--ink); }
-.sub p,.sub ol,.sub ul { max-width:70ch; }
+.sub p,.sub ol,.sub ul { max-width:74ch; }
 .sub ol,.sub ul { margin:var(--s2) 0 0 1.15em; }
 .sub li { margin-block:var(--s1); color:var(--ink-2); }
 .sub p + p, .sub table + p, .sub p + table { margin-top:var(--s2); }
-.step2 { padding-block:var(--s5); border-top:1px solid var(--rule); }
+/* Problem and Methodology were a single left-hung column against empty space.
+   Centre the measure and justify the prose so the block reads as a document. */
+#p-problem .wrap > div, #p-method .sub { margin-inline:auto; }
+#p-problem p, #p-method .sub p, #p-method .sub dd, #p-method .sub li {
+  text-align:justify; hyphens:auto; -webkit-hyphens:auto; }
+#p-problem .phead, #p-method .phead { margin-inline:auto; }
+#p-problem .phead p, #p-method .phead p { text-align:left; hyphens:manual; }
+
+.step2 { padding-block:var(--s5); border-top:1px solid var(--rule); position:relative; }
 .step2:first-of-type { border-top:0; padding-top:0; }
+/* a numbered marker in the margin gives the sections a spine to read down */
+#p-problem .step2 { counter-increment:pstep; padding-left:3.4rem; }
+#p-problem { counter-reset:pstep; }
+#p-problem .step2::before {
+  content:counter(pstep,decimal-leading-zero);
+  position:absolute; left:0; top:var(--s5);
+  font-size:var(--f-xs); font-weight:700; letter-spacing:.1em; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; }
+#p-problem .step2:first-of-type::before { top:0; }
+@media (max-width:640px){ #p-problem .step2{ padding-left:0; }
+  #p-problem .step2::before{ position:static; display:block; margin-bottom:var(--s2); } }
+#p-problem .step2 h3, #p-method .sub h3 { text-align:left; }
 .detail { margin-top:var(--s3); padding:var(--s3) var(--s4); background:var(--paper-2);
-  border-left:2px solid var(--rule-2); color:var(--ink-2); max-width:70ch; }
+  border-left:2px solid var(--rule-2); color:var(--ink-2); max-width:74ch; margin-inline:auto; }
 /* definition rows: term on the left, meaning on the right, one rhythm throughout */
 .deflist { display:grid; grid-template-columns:11rem 1fr; gap:var(--s2) var(--s4); margin-top:var(--s3);
-  max-width:74ch; }
+  max-width:74ch; margin-inline:auto; }
 .deflist dt { font-weight:600; color:var(--ink); font-size:var(--f-md); }
 /* bordered variant: each term/definition pair reads as a table row */
 .deflist.bordered { gap:0; border:1px solid var(--rule); border-radius:4px; overflow:hidden;
@@ -242,7 +263,7 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
 @media (max-width:640px){ .deflist{ grid-template-columns:1fr; gap:2px var(--s3); }
   .deflist dd{ margin-bottom:var(--s3); } }
 .domain { border-top:1px solid var(--rule); padding-block:var(--s3); display:grid;
-  grid-template-columns:3.2rem 1fr; gap:var(--s4); max-width:76ch; }
+  grid-template-columns:3.2rem 1fr; gap:var(--s4); max-width:76ch; margin-inline:auto; }
 .domain:first-of-type { border-top:0; }
 .domain .code { font-weight:700; font-size:var(--f-md); color:var(--accent); }
 .domain .name { font-weight:600; font-size:1.02rem; color:var(--ink); margin-bottom:3px; }
@@ -538,13 +559,13 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 
 <!-- ══ PROBLEM ══════════════════════════════════════════════════════════ -->
 <div class="panel" id="p-problem">
-  <div class="wrap">
+  <div class="wrap" style="max-width:900px">
     <div class="phead">
       <h1>The problem</h1>
       <p class="lede">Frontier AI system evaluations have become a prominent component of AI
         governance. What happens to their findings has not been measured.</p>
     </div>
-    <div style="max-width:70ch">
+    <div style="max-width:74ch">
       <div class="step2">
         <h3>Evaluations produce evidence the public could not otherwise get</h3>
         <p>Government AI institutes and independent evaluators test advanced systems for dangerous
@@ -605,7 +626,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 
 <!-- ══ METHODOLOGY ══════════════════════════════════════════════════════ -->
 <div class="panel" id="p-method">
-  <div class="wrap">
+  <div class="wrap" style="max-width:960px">
     <div class="phead">
       <h1>Methodology</h1>
       <p class="lede">The outcome for each finding is derived, never judged. Two coded columns decide
@@ -896,10 +917,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js?v=7b81a89"></script>
-<script src="app.js?v=7b81a89"></script>
+<script src="data.js?v=79802ba"></script>
+<script src="app.js?v=79802ba"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js?v=7b81a89"></script>
+<script type="module" src="tags3d.js?v=79802ba"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */
