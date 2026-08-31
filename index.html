@@ -93,10 +93,27 @@ header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
 .headline .say { max-width:32ch; font-size:.96rem; }
 .meta { display:flex; flex-wrap:wrap; gap:7px 24px; font-size:.84rem; color:var(--ink-3); margin-top:var(--s3); }
 .meta b { font-weight:600; color:var(--ink-2); }
-#tiles { display:grid; gap:var(--s2); grid-template-columns:repeat(auto-fit,minmax(168px,1fr)); margin-top:var(--s6); }
-#tiles>div { background:var(--paper); border:1px solid var(--rule); border-radius:3px; padding:var(--s3); }
-#tiles .v { font-size:1.7rem; font-weight:500; letter-spacing:-0.03em; }
-#tiles .k { font-size:.76rem; color:var(--ink-3); margin-top:3px; }
+.resultrow { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:var(--s6);
+  align-items:start; margin-top:var(--s5); }
+@media (max-width:900px){ .resultrow{ grid-template-columns:1fr; gap:var(--s5); } }
+#tiles { display:flex; flex-direction:column; gap:var(--s2); }
+#tiles .tile { background:var(--paper); border:1px solid var(--rule); border-radius:3px;
+  padding:var(--s3); display:grid; grid-template-columns:1fr auto; align-items:baseline;
+  gap:var(--s2) var(--s3);
+  /* each tile rises in, staggered by --i, so the column reads top to bottom */
+  opacity:0; transform:translateY(10px);
+  animation:tilein .5s cubic-bezier(.2,.7,.3,1) forwards;
+  animation-delay:calc(var(--i,0) * 70ms);
+  transition:border-color .18s ease, transform .18s ease; }
+#tiles .tile:hover { border-color:var(--rule-2); transform:translateY(-1px); }
+#tiles .label { font-size:.8rem; color:var(--ink-2); line-height:1.35; }
+#tiles .value { font-size:1.5rem; font-weight:500; letter-spacing:-0.03em; justify-self:end;
+  font-variant-numeric:tabular-nums; }
+#tiles .sub { grid-column:1 / -1; font-size:.74rem; color:var(--ink-3); margin-top:-4px; }
+@keyframes tilein { to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){
+  #tiles .tile{ opacity:1; transform:none; animation:none; }
+  #tiles .tile:hover{ transform:none; } }
 
 /* fixed 2-up and 3-up chart grids */
 .g2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--s4); }
@@ -235,13 +252,16 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <details class="tblview" id="sankeyTable"><summary style="cursor:pointer">Table view</summary></details>
     </figure>
 
-    <div class="headline">
-      <div class="big tnum" id="heroNum">—</div>
-      <p class="say" id="heroCaption">of significant-risk findings that name a company have no
-        documented public response.</p>
+    <div class="resultrow">
+      <div>
+        <div class="headline">
+          <div class="big tnum" id="heroNum">—</div>
+          <p class="say" id="heroCaption">of significant-risk findings that name a company have no
+            documented public response.</p>
+        </div>
+      </div>
+      <div id="tiles"></div>
     </div>
-
-    <div id="tiles"></div>
 
     <div class="subhead">How a company response is measured</div>
     <div style="max-width:70ch">
@@ -758,6 +778,41 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
   document.querySelectorAll('.subtabs [data-sub]').forEach(function (b) {
     b.addEventListener('click', function () { showSub(b.dataset.sub); });
   });
+})();
+
+/* Stat tiles: stagger their entrance and count the numerals up. app.js appends
+   them in two passes, so this waits for the DOM to settle before wiring. */
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function wire() {
+    var tiles = document.querySelectorAll('#tiles .tile');
+    if (!tiles.length) return false;
+    tiles.forEach(function (el, i) {
+      el.style.setProperty('--i', i);
+      var v = el.querySelector('.value');
+      if (!v || reduce) return;
+      var raw = v.textContent.trim();
+      var target = parseFloat(raw.replace(/,/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var fmt = raw.indexOf(',') > -1;
+      var t0 = null, dur = 750, delay = i * 70;
+      v.textContent = '0';
+      requestAnimationFrame(function step(ts) {
+        if (t0 === null) t0 = ts;
+        var e = ts - t0 - delay;
+        if (e < 0) return requestAnimationFrame(step);
+        var p = Math.min(1, e / dur);
+        var n = Math.round(target * (1 - Math.pow(1 - p, 3)));   // ease-out
+        v.textContent = fmt ? n.toLocaleString() : String(n);
+        if (p < 1) requestAnimationFrame(step);
+      });
+    });
+    return true;
+  }
+  if (!wire()) {
+    var tries = 0;
+    var iv = setInterval(function () { if (wire() || ++tries > 40) clearInterval(iv); }, 50);
+  }
 })();
 
 /* Hero figures read from the dataset — never hardcoded. */
