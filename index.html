@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Evaluating the Evaluators</title>
+<title>Evaluating the Evaluators — do third-party frontier AI evaluations matter?</title>
 <meta name="description" content="When AI safety institutes and independent evaluators publish findings about named frontier models, does a documented company response follow? A source-verified dataset of the public accountability channel.">
 <style>
 /* ─────────────────────────────────────────────────────────────────────────
@@ -106,6 +106,10 @@ figure { margin:0; }
 figure img { width:100%; height:auto; display:block; background:#fff; border:1px solid var(--rule); border-radius:3px; }
 figcaption { margin-top:9px; font-size:.85rem; color:var(--ink-2); }
 figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2px; }
+.sowhat { max-width:70ch; margin-top:34px; padding:22px 24px; background:var(--paper-2);
+  border-left:2px solid var(--gap); }
+.sowhat h3 { margin-bottom:8px; }
+.sowhat p { font-size:.95rem; }
 .subhead { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3);
   font-weight:600; margin:44px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--rule); }
 
@@ -183,16 +187,13 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div class="panel" id="p-results" data-active>
   <div class="wrap">
     <div class="phead">
-      <h1>When an evaluator finds a problem, does anything happen?</h1>
-      <p class="lede">Safety institutes and independent evaluators publish findings about named
-        frontier models. Identifying a risk is not the same as reducing it.</p>
+      <h1>Evaluating the evaluators: do third-party frontier AI evaluations matter?</h1>
+      <p class="lede">Safety institutes and independent evaluators test frontier models, find
+        problems, and publish them. That is the visible half of an accountability chain. This
+        measures the other half — what happens after a finding is published, and whether it
+        changes anything.</p>
     </div>
 
-    <div class="headline">
-      <div class="big tnum" id="heroNum">—</div>
-      <p class="say" id="heroCaption">of significant-risk findings that name a company have no
-        documented public response.</p>
-    </div>
     <div class="meta tnum">
       <span><b id="mFindings">—</b> findings</span>
       <span><b id="mReports">—</b> reports</span>
@@ -200,16 +201,45 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <span id="mWindow"></span>
     </div>
 
+    <!-- the pipeline leads: it frames every number that follows -->
+    <figure style="margin-top:34px">
+      <img src="charts/00_title_hero.jpg" alt="The pipeline from every published finding down to the outcomes.">
+      <figcaption><b>Every published finding, narrowed to the ones a company owes an answer for.</b>
+        Most findings never reach the question — they are methodology, governance, or results with
+        no named company to respond. The bar on the right is the population every number on this
+        page is computed over.</figcaption>
+    </figure>
+
+    <div class="headline">
+      <div class="big tnum" id="heroNum">—</div>
+      <p class="say" id="heroCaption">of significant-risk findings that name a company have no
+        documented public response.</p>
+    </div>
+
+    <div class="sowhat">
+      <h3>What happens next, and why it matters</h3>
+      <p>When a company does not respond, nothing in the public record closes the loop. The finding
+        stands, the model stays deployed, and no external party can tell whether the risk was
+        addressed, judged unimportant, or simply missed. The evaluation was performed and published
+        — and then absorbed.</p>
+      <p>That is the gap this dataset measures. Not whether evaluators are doing good work, but
+        whether the system they feed into does anything with it. If publishing a finding about a
+        named frontier model reliably produces no visible answer, then third-party evaluation is
+        functioning as documentation rather than as accountability — and the difference is
+        something regulators, funders and the institutes themselves need measured rather than
+        assumed.</p>
+    </div>
+
     <div id="tiles"></div>
 
-    <div class="subhead">The headline</div>
+    <div class="subhead">Over time</div>
     <div class="g2">
-      <figure><img loading="lazy" src="charts/00_title_hero.jpg" alt="Pipeline from published findings to outcomes.">
-        <figcaption><b>The pipeline, end to end.</b> Only a minority of findings name a company in a way
-          that makes a response owed. The headline is computed over that final stage — not over everything published.</figcaption></figure>
       <figure><img loading="lazy" src="charts/15b_shortfall_rate_by_year.jpg" alt="Shortfall rate by year.">
         <figcaption><b>No clean improvement over time.</b> Year-to-year movement is real but
           non-monotonic, and the latest year is partly recency — those findings have had less time to draw a response.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/05_pre_vs_post_deployment_response_rate.jpg" alt="Substantive response rate, pre versus post deployment.">
+        <figcaption><b>Access changes the answer.</b> Pre-deployment access does not just produce
+          more responses — it produces more <em>substantive</em> ones.</figcaption></figure>
     </div>
 
     <div class="subhead">Where the shortfall sits</div>
@@ -226,26 +256,23 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     </div>
 
     <div class="subhead">The corpus</div>
-    <div class="g3">
+    <div class="g2">
       <figure><img loading="lazy" src="charts/22_domain_x_outcome_heatmap.jpg" alt="Outcome by risk domain.">
         <figcaption><b>Not concentrated in one topic.</b> Jailbreaks, cyber, alignment, autonomy and
           bio-chem all show substantial shortfall. Colour encodes magnitude only, never a verdict.</figcaption></figure>
       <figure><img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Corpus split by tier.">
         <figcaption><b>Why most findings are not in the headline.</b> The rest are real findings that
           fail one of the two gates. They are kept in the dataset, not discarded.</figcaption></figure>
+    </div>
+
+    <div class="subhead">Where the evaluation happened</div>
+    <div class="g2">
+      <figure><img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Findings per access type.">
+        <figcaption><b>Most evaluation happens after release.</b> Pre-deployment access covers a small
+          share of the corpus — which is what makes it a policy lever rather than a description.</figcaption></figure>
       <figure><img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Attribution of responses.">
         <figcaption><b>Acting quietly still counts.</b> Whether a company credits the evaluator is
           recorded separately, so a silent fix is not penalised in the outcome.</figcaption></figure>
-    </div>
-
-    <div class="subhead">Access and deployment</div>
-    <div class="g2">
-      <figure><img loading="lazy" src="charts/05_pre_vs_post_deployment_response_rate.jpg" alt="Substantive response rate, pre versus post deployment.">
-        <figcaption><b>The same split, by response strength.</b> Pre-deployment access does not just
-          produce more responses — it produces more <em>substantive</em> ones.</figcaption></figure>
-      <figure><img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Findings per access type.">
-        <figcaption><b>But most evaluation happens after release.</b> Pre-deployment access covers a
-          small share of the corpus, which is what makes it a policy lever rather than a description.</figcaption></figure>
     </div>
 
     <div id="insightList" style="margin-top:44px"></div>
@@ -479,7 +506,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <footer class="site">
   <div class="wrap">
     <p id="asof"></p>
-    <p style="margin-top:6px">Built by <a href="https://kunalsingh9373.github.io" rel="noopener">Kunal Singh</a> ·
+    <p style="margin-top:6px">Built by <a href="https://kunalssingh.com" rel="noopener">Kunal Singh</a> ·
       <a href="https://github.com/KUNALSINGH9373/evaluating-the-evaluators" rel="noopener">Source and data on GitHub</a></p>
   </div>
 </footer>
