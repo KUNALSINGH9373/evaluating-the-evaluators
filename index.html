@@ -60,9 +60,10 @@ body { background:var(--paper); color:var(--ink); font-size:16.5px; line-height:
 .wrap { max-width:1180px; margin-inline:auto; padding-inline:32px; }
 @media (max-width:640px){ .wrap{ padding-inline:18px; } }
 h1,h2,h3,h4 { font-weight:500; letter-spacing:-0.021em; text-wrap:balance; line-height:1.18; }
-h1 { font-size:clamp(1.9rem,4.4vw,2.9rem); letter-spacing:-0.03em; }
-h2 { font-size:clamp(1.3rem,2.4vw,1.7rem); }
-h3 { font-size:1.04rem; }
+h1 { font-size:clamp(2.1rem,4.8vw,3.1rem); letter-spacing:-0.032em; }
+h2 { font-size:clamp(1.55rem,2.8vw,2rem); }
+h3 { font-size:1.3rem; letter-spacing:-0.016em; }
+h4 { font-size:1.06rem; }
 p { color:var(--ink-2); } p+p { margin-top:.9em; }
 a { color:inherit; text-decoration-color:var(--rule-2); text-underline-offset:3px; }
 :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
@@ -73,7 +74,7 @@ header.site { position:sticky; top:0; z-index:50; background:var(--paper); borde
 header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
 .mark { font-weight:600; letter-spacing:-0.02em; text-decoration:none; font-size:.94rem; white-space:nowrap; }
 .tabs { margin-left:auto; display:flex; gap:4px; align-items:center; }
-.tabs button { font:inherit; font-size:.87rem; color:var(--ink-2); background:none; border:0; cursor:pointer;
+.tabs button { font:inherit; font-size:.92rem; color:var(--ink-2); background:none; border:0; cursor:pointer;
   padding:8px 14px; border-radius:4px; }
 .tabs button:hover { color:var(--ink); background:var(--paper-2); }
 .tabs button[aria-selected="true"] { color:var(--ink); font-weight:600; background:var(--paper-2); }
@@ -128,17 +129,17 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
   border-left:2px solid var(--gap); }
 .sowhat h3 { margin-bottom:8px; }
 .sowhat p { font-size:.95rem; }
-.subhead { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3);
+.subhead { font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3);
   font-weight:600; margin:var(--s6) 0 var(--s3); padding-bottom:var(--s2); border-bottom:1px solid var(--rule); }
 
 .subtabs { display:flex; flex-wrap:wrap; gap:4px; border-bottom:1px solid var(--rule); margin-bottom:var(--s5); }
-.subtabs button { font:inherit; font-size:.85rem; background:none; border:0; cursor:pointer; color:var(--ink-3);
+.subtabs button { font:inherit; font-size:.92rem; background:none; border:0; cursor:pointer; color:var(--ink-3);
   padding:9px 14px; border-bottom:2px solid transparent; margin-bottom:-1px; }
 .subtabs button:hover { color:var(--ink); }
 .subtabs button[aria-selected="true"] { color:var(--ink); font-weight:600; border-bottom-color:var(--ink); }
 .sub { display:none; } .sub[data-active] { display:block; }
 .sub h3 { margin-bottom:var(--s2); }
-.sub h4 { font-size:.92rem; margin:var(--s4) 0 var(--s1); color:var(--ink); }
+.sub h4 { font-size:1.06rem; margin:var(--s4) 0 var(--s2); color:var(--ink); }
 .sub p,.sub ol,.sub ul { max-width:70ch; }
 .sub ol,.sub ul { margin:var(--s2) 0 0 1.15em; font-size:.94rem; }
 .sub li { margin-block:var(--s1); color:var(--ink-2); }
@@ -148,17 +149,17 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
 .detail { margin-top:var(--s3); padding:var(--s3) var(--s4); background:var(--paper-2);
   border-left:2px solid var(--rule-2); font-size:.89rem; color:var(--ink-2); max-width:70ch; }
 /* definition rows: term on the left, meaning on the right, one rhythm throughout */
-.deflist { display:grid; grid-template-columns:9.5rem 1fr; gap:var(--s2) var(--s4); margin-top:var(--s3);
+.deflist { display:grid; grid-template-columns:11rem 1fr; gap:var(--s2) var(--s4); margin-top:var(--s3);
   max-width:74ch; font-size:.92rem; }
-.deflist dt { font-weight:600; color:var(--ink); }
+.deflist dt { font-weight:600; color:var(--ink); font-size:.95rem; }
 .deflist dd { color:var(--ink-2); }
 @media (max-width:640px){ .deflist{ grid-template-columns:1fr; gap:2px var(--s3); }
   .deflist dd{ margin-bottom:var(--s3); } }
 .domain { border-top:1px solid var(--rule); padding-block:var(--s3); display:grid;
   grid-template-columns:3.2rem 1fr; gap:var(--s4); max-width:76ch; }
 .domain:first-of-type { border-top:0; }
-.domain .code { font-weight:600; font-size:.86rem; color:var(--accent); }
-.domain .name { font-weight:600; font-size:.94rem; color:var(--ink); margin-bottom:3px; }
+.domain .code { font-weight:700; font-size:.95rem; color:var(--accent); }
+.domain .name { font-weight:600; font-size:1.02rem; color:var(--ink); margin-bottom:3px; }
 .domain p { font-size:.9rem; }
 .domain .ex { margin-top:var(--s2); font-size:.86rem; }
 .domain .ex span { display:block; margin-block:3px; }
@@ -167,13 +168,34 @@ figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2
 .detail strong { color:var(--ink); font-weight:600; }
 .gates { display:grid; gap:var(--s2); grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); margin-top:14px; max-width:70ch; }
 .gate { border:1px solid var(--rule); padding:var(--s3) var(--s3); }
-.gate .q { font-size:.71rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:600; }
-.gate p { font-size:.89rem; margin-top:5px; }
+.gate .q { font-size:.75rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:600; }
+.gate p { font-size:.95rem; margin-top:6px; }
 table.matrix { width:100%; max-width:640px; border-collapse:collapse; margin-top:var(--s3); font-size:.87rem; }
 table.matrix th,table.matrix td { text-align:left; padding:var(--s2) var(--s3); border-bottom:1px solid var(--rule); }
 table.matrix th { font-weight:600; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
 table.matrix td:last-child { font-weight:600; }
 .o-gap{color:var(--gap)} .o-under{color:var(--under)} .o-ok{color:var(--ok)}
+/* Badges reuse the chart palette so a colour means the same thing in prose,
+   in a table and in a figure. */
+.b { display:inline-block; font-size:.8rem; font-weight:600; line-height:1.35;
+  padding:2px 10px; border-radius:999px; white-space:nowrap; border:1px solid transparent; }
+.b-c1   { color:#7E2A1B; background:color-mix(in srgb,var(--gap) 15%,transparent);   border-color:color-mix(in srgb,var(--gap) 35%,transparent); }
+.b-c2   { color:#17527F; background:color-mix(in srgb,var(--blue) 13%,transparent);  border-color:color-mix(in srgb,var(--blue) 32%,transparent); }
+.b-sub  { color:#1D5C3E; background:color-mix(in srgb,var(--ok) 15%,transparent);    border-color:color-mix(in srgb,var(--ok) 36%,transparent); }
+.b-par  { color:#7A5710; background:color-mix(in srgb,var(--under) 20%,transparent); border-color:color-mix(in srgb,var(--under) 42%,transparent); }
+.b-ack  { color:#8A4413; background:color-mix(in srgb,var(--orange) 16%,transparent);border-color:color-mix(in srgb,var(--orange) 36%,transparent); }
+.b-none { color:#7E2A1B; background:color-mix(in srgb,var(--gap) 15%,transparent);   border-color:color-mix(in srgb,var(--gap) 35%,transparent); }
+:root[data-theme="dark"] .b-c1,:root[data-theme="dark"] .b-none{ color:#F0A692; }
+:root[data-theme="dark"] .b-c2 { color:#9CC6EC; }
+:root[data-theme="dark"] .b-sub{ color:#7FC7A2; }
+:root[data-theme="dark"] .b-par{ color:#E8C57A; }
+:root[data-theme="dark"] .b-ack{ color:#EDA97E; }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .b-c1,
+  :root:not([data-theme="light"]) .b-none{ color:#F0A692; }
+  :root:not([data-theme="light"]) .b-c2 { color:#9CC6EC; }
+  :root:not([data-theme="light"]) .b-sub{ color:#7FC7A2; }
+  :root:not([data-theme="light"]) .b-par{ color:#E8C57A; }
+  :root:not([data-theme="light"]) .b-ack{ color:#EDA97E; } }
 
 .controls { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:var(--s3); }
 .controls input,.controls select { font:inherit; font-size:.85rem; padding:8px 11px; color:var(--ink);
@@ -190,7 +212,7 @@ table.explorer tr:hover td { background:var(--paper-2); }
 .btn:hover { background:var(--ink); color:var(--paper); }
 /* app.js builds .card / .plot / .legend for the live charts */
 .card { border:1px solid var(--rule); padding:18px; border-radius:4px; background:var(--surface); }
-.card h3 { font-size:.98rem; }
+.card h3 { font-size:1.06rem; }
 .card .sub { display:block; font-size:.8rem; color:var(--ink-3); margin-top:3px; }
 .plot { margin-top:12px; }
 .legend { display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:10px; font-size:.78rem; color:var(--ink-2); }
@@ -277,11 +299,11 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           domains by three independent models — Claude Sonnet 5, GPT-5.5 and Gemini 3.1 — using one
           frozen prompt sent to all three. Majority vote decides.</p>
         <dl class="deflist" style="grid-template-columns:6.5rem 1fr">
-          <dt>Category&nbsp;1</dt><dd><b>Significant risk.</b> At least one of the eight domains is
+          <dt><span class="b b-c1">Category&nbsp;1</span></dt><dd><b>Significant risk.</b> At least one of the eight domains is
             <em>demonstrated</em>: CBRN uplift · cyber operations · autonomy and self-replication ·
             persuasion at scale · deceptive alignment · safeguard failure · evaluation integrity ·
             acute individual harm.</dd>
-          <dt>Category&nbsp;2</dt><dd><b>Lower risk.</b> Everything else — reassuring nulls,
+          <dt><span class="b b-c2">Category&nbsp;2</span></dt><dd><b>Lower risk.</b> Everything else — reassuring nulls,
             capability gaps, methodology contributions, governance observations, non-frontier models.</dd>
         </dl>
         <div class="detail" style="font-size:.86rem">The Category&nbsp;1 bar mirrors the thresholds
@@ -296,10 +318,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           company's own primary document counts — news reporting that quotes a company is not a
           response, and standing policy that shares a topic does not count.</p>
         <dl class="deflist" style="grid-template-columns:6.5rem 1fr">
-          <dt>Substantive</dt><dd>A specific, documented change, attributed to the finding.</dd>
-          <dt>Partial</dt><dd>A change claimed but not verifiable, or incomplete.</dd>
-          <dt>Acknowledged</dt><dd>The finding is referenced, but no action follows.</dd>
-          <dt>None</dt><dd>Nothing located after all five sources were checked and logged.</dd>
+          <dt><span class="b b-sub">Substantive</span></dt><dd>A specific, documented change, attributed to the finding.</dd>
+          <dt><span class="b b-par">Partial</span></dt><dd>A change claimed but not verifiable, or incomplete.</dd>
+          <dt><span class="b b-ack">Acknowledged</span></dt><dd>The finding is referenced, but no action follows.</dd>
+          <dt><span class="b b-none">None</span></dt><dd>Nothing located after all five sources were checked and logged.</dd>
         </dl>
         <div class="detail" style="font-size:.86rem">Every proposed response is then challenged by
           an independent reviewer instructed to <strong>refute it by default</strong>. Only codings
@@ -308,7 +330,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       </div>
     </div>
 
-    <h3 style="margin-top:var(--s6)">The two combined — the proportionality matrix</h3>
+    <h3 style="margin-top:var(--s6)">The proportionality matrix</h3>
     <p style="max-width:70ch;margin-top:var(--s2)">A significant-risk finding needs a
       <strong>substantive</strong> response to pass. A lower-risk finding needs at least a
       <strong>partial</strong> one. The same company behaviour therefore scores differently
@@ -316,22 +338,25 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     <table class="matrix" style="margin-top:var(--s3)">
       <thead><tr><th>Severity</th><th>What the company published</th><th>Outcome</th></tr></thead>
       <tbody>
-        <tr><td>Category 1 — significant risk</td><td>Substantive</td><td class="o-ok">Proportionate</td></tr>
-        <tr><td>Category 1 — significant risk</td><td>Partial</td><td class="o-under">Under-response</td></tr>
-        <tr><td>Category 1 — significant risk</td><td>Acknowledged</td><td class="o-under">Under-response</td></tr>
-        <tr><td>Category 1 — significant risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
-        <tr><td>Category 2 — lower risk</td><td>Substantive</td><td class="o-ok">Proportionate</td></tr>
-        <tr><td>Category 2 — lower risk</td><td>Partial</td><td class="o-ok">Proportionate</td></tr>
-        <tr><td>Category 2 — lower risk</td><td>Acknowledged</td><td class="o-under">Under-response</td></tr>
-        <tr><td>Category 2 — lower risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
+        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-sub">Substantive</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
+        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-par">Partial</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
+        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
+        <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
+        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-sub">Substantive</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
+        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-par">Partial</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
+        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
+        <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
       </tbody>
     </table>
 
     <div class="g2" style="margin-top:var(--s5)">
       <figure><img loading="lazy" src="charts/21_severity_x_action_heatmap.jpg"
              alt="Severity against what the company published, every cell labelled with its outcome.">
-        <figcaption><b>The matrix, applied to every finding.</b> Each cell is one
-          severity-and-response pair, carrying the count of findings that landed there.</figcaption></figure>
+        <figcaption><b>The matrix, filled in with real findings.</b> Rows are severity, columns are
+          what the company published, and each cell holds the number of findings that landed on
+          that pair. Reading across the top row shows how significant-risk findings were answered;
+          the bottom-left cell — significant risk, no response — is the accountability gap, and it
+          is the largest cell in the table.</figcaption></figure>
       <figure><img loading="lazy" src="charts/10_proportionality_by_severity.jpg"
              alt="Proportionality outcomes split by severity.">
         <figcaption><b>Why severity changes the verdict.</b> A partial response is proportionate to
@@ -463,9 +488,9 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <table class="matrix" style="max-width:none">
           <thead><tr><th style="width:5rem">Tier</th><th style="width:7rem">Encoding</th><th>Meaning</th></tr></thead>
           <tbody>
-            <tr><td><b>A</b></td><td>yes / yes</td><td><b>Accountability-relevant.</b> Names a company or model, concerning, and a response is reasonable to expect. <strong>The only tier scored for proportionality</strong> — every headline number is computed over Tier A.</td></tr>
-            <tr><td><b>B</b></td><td>yes / no</td><td><b>Concerning, but no accountable party.</b> Anonymised models, methodology findings, reassuring nulls, non-frontier subjects, capability trends.</td></tr>
-            <tr><td><b>C</b></td><td>no / blank</td><td><b>Not an empirical model finding.</b> Methodology, framework, governance or milestone work.</td></tr>
+            <tr><td><span class="b b-c1">Tier A</span></td><td>yes / yes</td><td><b>Accountability-relevant.</b> Names a company or model, concerning, and a response is reasonable to expect. <strong>The only tier scored for proportionality</strong> — every headline number is computed over Tier A.</td></tr>
+            <tr><td><span class="b b-par">Tier B</span></td><td>yes / no</td><td><b>Concerning, but no accountable party.</b> Anonymised models, methodology findings, reassuring nulls, non-frontier subjects, capability trends.</td></tr>
+            <tr><td><span class="b b-c2">Tier C</span></td><td>no / blank</td><td><b>Not an empirical model finding.</b> Methodology, framework, governance or milestone work.</td></tr>
           </tbody>
         </table>
       </div>
@@ -517,9 +542,9 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <div class="step2">
         <h3>Two categories, and what separates them</h3>
         <dl class="deflist">
-          <dt>Category&nbsp;1</dt><dd><b>Significant risk.</b> Triggered if <em>any one</em> of the eight
+          <dt><span class="b b-c1">Category&nbsp;1</span></dt><dd><b>Significant risk.</b> Triggered if <em>any one</em> of the eight
             dangerous-capability domains below is <strong>demonstrated</strong> in the evaluation described.</dd>
-          <dt>Category&nbsp;2</dt><dd><b>Lower risk.</b> Everything else — reassuring or null results
+          <dt><span class="b b-c2">Category&nbsp;2</span></dt><dd><b>Lower risk.</b> Everything else — reassuring or null results
             (capability below an expert threshold, &ldquo;no uplift&rdquo;, &ldquo;zero instances&rdquo;);
             capability-gap findings where the model fails a task; positive methodology or tooling
             contributions; pure process or governance observations; and findings about non-frontier
@@ -627,10 +652,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <div class="step2">
         <h3>Four response levels</h3>
         <ul>
-          <li><strong>Substantive</strong> — a specific, documented change, attributed to the finding.</li>
-          <li><strong>Partial</strong> — a change claimed but not verifiable, or incomplete.</li>
-          <li><strong>Acknowledged</strong> — the finding is referenced, but no action follows.</li>
-          <li><strong>None</strong> — nothing located after all five sources were checked.</li>
+          <li><span class="b b-sub">Substantive</span> — a specific, documented change, attributed to the finding.</li>
+          <li><span class="b b-par">Partial</span> — a change claimed but not verifiable, or incomplete.</li>
+          <li><span class="b b-ack">Acknowledged</span> — the finding is referenced, but no action follows.</li>
+          <li><span class="b b-none">None</span> — nothing located after all five sources were checked.</li>
         </ul>
         <div class="detail">Policy uptake is tracked separately, from official government sources
           only, and <strong>never substitutes for a company response.</strong> A regulator citing a
@@ -651,12 +676,12 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <table class="matrix">
           <thead><tr><th>Severity</th><th>Response</th><th>Outcome</th></tr></thead>
           <tbody>
-            <tr><td>Significant risk</td><td>Substantive</td><td class="o-ok">Proportionate</td></tr>
-            <tr><td>Significant risk</td><td>Partial / Acknowledged</td><td class="o-under">Under-response</td></tr>
-            <tr><td>Significant risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
-            <tr><td>Lower risk</td><td>Substantive / Partial</td><td class="o-ok">Proportionate</td></tr>
-            <tr><td>Lower risk</td><td>Acknowledged</td><td class="o-under">Under-response</td></tr>
-            <tr><td>Lower risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
+            <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-sub">Substantive</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
+            <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-par">Partial</span> <span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
+            <tr><td><span class="b b-c1">Category 1 · significant risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
+            <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-sub">Substantive</span> <span class="b b-par">Partial</span></td><td class="o-ok"><span class="b b-sub">Proportionate</span></td></tr>
+            <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-ack">Acknowledged</span></td><td class="o-under"><span class="b b-par">Under-response</span></td></tr>
+            <tr><td><span class="b b-c2">Category 2 · lower risk</span></td><td><span class="b b-none">None</span></td><td class="o-gap"><span class="b b-none">Accountability gap</span></td></tr>
           </tbody>
         </table>
         <div class="detail">A significant-risk finding needs a <strong>substantive</strong> response
