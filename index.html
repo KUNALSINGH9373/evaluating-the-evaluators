@@ -155,8 +155,12 @@ figure { margin:0; }
 figure img { width:100%; height:auto; display:block; background:#fff; border:1px solid var(--rule); border-radius:3px; }
 figcaption { margin-top:var(--s2); color:var(--ink-2); line-height:1.5; }
 figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2px; }
-.figside { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(260px,1fr); gap:var(--s5);
+.figside { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(300px,1fr); gap:var(--s5);
   align-items:start; margin-top:var(--s4); }
+/* the figure is sticky-topped against a taller text column rather than leaving a
+   block of dead space beneath it */
+.figside > figure { position:sticky; top:78px; }
+@media (max-width:900px){ .figside > figure { position:static; } }
 @media (max-width:900px){ .figside{ grid-template-columns:1fr; gap:var(--s4); } }
 .figside .read { border-left:2px solid var(--rule-2); padding-left:var(--s4); }
 .figside .read h4 { margin:0 0 var(--s2); }
@@ -269,6 +273,13 @@ td.cell-c1  { font-weight:600; color:#7E2A1B; background:color-mix(in srgb,var(-
 td.cell-par { font-weight:600; color:#7A5710; background:color-mix(in srgb,var(--under) 15%,transparent); }
 td.cell-c2  { font-weight:600; color:#17527F; background:color-mix(in srgb,var(--blue) 11%,transparent); }
 .w-par { color:#7A5710; } .w-ok { color:#1D5C3E; }
+.w-c1,.w-gap { color:#7E2A1B; } .w-c2 { color:#17527F; } .w-ack { color:#8A4413; }
+:root[data-theme="dark"] .w-c1,:root[data-theme="dark"] .w-gap{color:#F0A692}
+:root[data-theme="dark"] .w-c2{color:#9CC6EC} :root[data-theme="dark"] .w-ack{color:#EDA97E}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .w-c1,:root:not([data-theme="light"]) .w-gap{color:#F0A692}
+  :root:not([data-theme="light"]) .w-c2{color:#9CC6EC}
+  :root:not([data-theme="light"]) .w-ack{color:#EDA97E} }
 .read .cav { border-top:1px solid var(--rule); padding-top:var(--s3); color:var(--ink-3); }
 :root[data-theme="dark"] .w-ok{color:#7FC7A2}
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .w-ok{color:#7FC7A2} }
@@ -422,42 +433,41 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <strong>substantive</strong> response to pass. A lower-risk finding needs at least a
       <strong>partial</strong> one. The same company behaviour therefore scores differently
       depending on what it was answering.</p>
-
-
-    <div class="figside">
+    <div class="g2" style="margin-top:var(--s4);align-items:end">
       <figure>
         <img src="charts/21_severity_x_action_heatmap.jpg"
              alt="Severity against what the company published, every cell holding its finding count and outcome.">
+        <figcaption><b>Severity &times; company response.</b> Every Tier A finding, placed by how
+          serious it is and what the company published.</figcaption>
       </figure>
-      <div class="read">
-        <h4>How to read this chart</h4>
-        <p><b>Each finding lands in exactly one cell.</b> Its row is how serious the finding is —
-          Category&nbsp;1 if it demonstrated one of the eight dangerous-capability domains,
-          Category&nbsp;2 otherwise. Its column is the strongest thing the company published in
-          response, after all five sources were checked. The number in the cell is how many
-          findings share that combination.</p>
-
-        <p><b>Reading the top row</b> tells you how the field handled its most serious results. Of
-          the significant-risk findings, only those in the leftmost column drew a substantive
-          response — a specific, documented change. Everything to the right of it fell short of
-          what the severity called for, and the rightmost cell drew nothing at all.</p>
-
-        <p><b>Reading the bottom row</b> is the control. These findings are real and verified but
-          did not cross a danger threshold, so a lighter response is a reasonable one. The bar they
-          have to clear is lower by design.</p>
-
-      </div>
-    </div>
-
-    <div class="figside" style="margin-top:var(--s5)">
       <figure>
         <img loading="lazy" src="charts/10_proportionality_by_severity.jpg"
              alt="Proportionality outcomes split by severity.">
+        <figcaption><b>The same findings as verdicts.</b> The matrix collapsed into the three
+          outcomes, split by severity.</figcaption>
       </figure>
-      <div class="read">
+    </div>
+
+    <div class="g2" style="margin-top:var(--s5)">
+      <div class="readcol">
+        <h4>How to read the matrix</h4>
+        <p><b>Rows are severity.</b> The upper row is <b class="w-c1">C1 — significant risk</b>: the
+          finding demonstrated one of the eight dangerous-capability domains. The lower row is
+          <b class="w-c2">C2 — lower risk</b>: real, verified findings that crossed no danger
+          threshold.</p>
+        <p><b>Columns are action level</b> — the strongest thing the company published, left to
+          right from <b class="w-ok">Substantive</b> (a specific documented change) through
+          <b class="w-par">Partial</b> (claimed but unverifiable) and
+          <b class="w-ack">Acknowledged</b> (referenced, nothing done) to
+          <b class="w-gap">None</b> (nothing found after all five sources were checked).</p>
+        <p>Every finding sits in exactly one cell, and the number in it is how many share that
+          pair. <b>Cell colour is the outcome</b>, derived rather than assigned.</p>
+        <p><b>The C1 row is the one that matters.</b> Only its Substantive cell is proportionate.
+          <b>The C2 row sets the comparison</b> — its bar is lower by design, so Partial is enough.
+          Partial is the single column where the two rows disagree.</p>
+      </div>
+      <div class="readcol">
         <h4>The three verdicts</h4>
-        <p>The matrix collapses into these, split by severity. Only one of the three counts as the
-          system working.</p>
         <dl class="deflist bordered" style="grid-template-columns:1fr">
           <dt class="r-sub">Proportionate</dt>
           <dd>The response met the bar the finding's severity sets. The loop closed in public.</dd>
@@ -468,10 +478,11 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           <dd>Nothing located after all five sources were checked. No public trace that the finding
             was received, considered or acted on.</dd>
         </dl>
-        <p><b>Under-response and accountability gap together are the shortfall</b> — the headline
-          figure counts only the second, which is the stricter reading.</p>
+        <p style="margin-top:var(--s3)"><b>Under-response and accountability gap together are the
+          shortfall.</b> The headline counts only the second, the stricter of the two readings.</p>
       </div>
     </div>
+
     <p style="margin-top:var(--s3);">
       <a href="#method" data-go="method">Full methodology — all eight domains defined, the tier
       test, and the five sources in order &rarr;</a></p>
@@ -885,10 +896,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js?v=366263a"></script>
-<script src="app.js?v=366263a"></script>
+<script src="data.js?v=7b81a89"></script>
+<script src="app.js?v=7b81a89"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js?v=366263a"></script>
+<script type="module" src="tags3d.js?v=7b81a89"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */
