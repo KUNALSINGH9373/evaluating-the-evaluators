@@ -917,15 +917,27 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js?v=efd22e3"></script>
-<script src="app.js?v=efd22e3"></script>
+<script src="data.js?v=3c4cddb"></script>
+<script src="app.js?v=3c4cddb"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js?v=efd22e3"></script>
+<script type="module" src="tags3d.js?v=3c4cddb"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */
 (function () {
   var panels = { results:'p-results', problem:'p-problem', data:'p-data', method:'p-method' };
+
+  /* A chart in a hidden panel measures clientWidth 0, so revealing one needs a
+     re-render. app.js listens on resize and rebuilds EVERY chart on the site, which
+     is far too heavy to run on each tab switch. Charts keep their geometry once
+     drawn, so a panel only needs repainting the first time it is shown at a given
+     viewport width. */
+  var painted = {};
+  function paint(key) {
+    if (painted[key] === innerWidth) return;
+    painted[key] = innerWidth;
+    window.dispatchEvent(new Event('resize'));
+  }
   function show(name) {
     if (!panels[name]) name = 'results';
     Object.keys(panels).forEach(function (k) {
@@ -938,7 +950,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     });
     if (location.hash.slice(1) !== name) history.replaceState(null, '', '#' + name);
     window.scrollTo(0, 0);
-    window.dispatchEvent(new Event('resize'));
+    paint('p:' + name);
   }
   document.querySelectorAll('.tabs [data-tab]').forEach(function (b) {
     b.addEventListener('click', function () { show(b.dataset.tab); });
@@ -959,59 +971,68 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     document.querySelectorAll('.subtabs [data-sub]').forEach(function (b) {
       b.setAttribute('aria-selected', String(b.dataset.sub === name));
     });
-    window.dispatchEvent(new Event('resize'));
+    paint('s:' + name);
   }
   document.querySelectorAll('.subtabs [data-sub]').forEach(function (b) {
     b.addEventListener('click', function () { showSub(b.dataset.sub); });
   });
 
-  /* Advance the methodology sub-tabs by scrolling. Deliberately conservative: it only
-     fires once you are already at the very end of a panel AND keep scrolling in the
-     same direction, so ordinary scrolling inside a tab is never hijacked. A cooldown
-     stops one flick from skipping several tabs, and the last tab still scrolls
-     through to the footer normally. */
+  /* Advance the methodology sub-tabs by scrolling past the end of a panel.
+     Three things keep this off the scroll hot path: wheel deltas are only
+     accumulated in the listener and inspected once per animation frame (reading
+     scrollHeight per wheel event forces a synchronous layout and janks the
+     scroll); the jump is instant, because an animated scroll fights trackpad
+     momentum; and the cooldown is extended by any continued wheel input, so a
+     momentum tail cannot carry you through several tabs. */
   (function () {
-    var current = 0, cooling = false, over = 0;
-    var EDGE = 4;          // px tolerance for "at the end"
-    var PUSH = 90;         // extra scroll needed past the end before switching
-    var COOL = 550;        // ms before another switch can fire
+    var current = 0, over = 0, coolUntil = 0, last = 0, pending = 0, raf = 0;
+    var EDGE = 4;     // px tolerance for "at the end of the page"
+    var PUSH = 110;   // extra scroll past the end before a switch fires
+    var COOL = 500;   // ms of quiet required after a switch
+    var GAP  = 200;   // ms without wheel input that starts a fresh gesture
 
-    function active() { return document.getElementById('p-method').hasAttribute('data-active'); }
+    var method = document.getElementById('p-method');
+    function active() { return method && method.hasAttribute('data-active'); }
     function sync() {
-      subs.forEach(function (k, i) {
-        var el = document.getElementById('s-' + k);
-        if (el && el.hasAttribute('data-active')) current = i;
-      });
+      for (var i = 0; i < subs.length; i++) {
+        var el = document.getElementById('s-' + subs[i]);
+        if (el && el.hasAttribute('data-active')) { current = i; return; }
+      }
     }
     function go(dir) {
-      sync();
       var next = current + dir;
-      if (next < 0 || next >= subs.length) return false;
+      if (next < 0 || next >= subs.length) return;
       showSub(subs[next]);
       var strip = document.querySelector('.subtabs');
-      if (strip) strip.scrollIntoView({ block: 'start',
-        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-      cooling = true; over = 0;
-      setTimeout(function () { cooling = false; }, COOL);
-      return true;
+      if (strip) window.scrollTo(0, strip.getBoundingClientRect().top + window.scrollY - 70);
+      coolUntil = performance.now() + COOL;
+      over = 0;
     }
-    window.addEventListener('wheel', function (e) {
-      if (!active() || cooling) return;
+    function flush() {
+      raf = 0;
+      var d = pending; pending = 0;
+      if (!d || !active() || performance.now() < coolUntil) return;
+      var atEnd = innerHeight + scrollY >= document.documentElement.scrollHeight - EDGE;
+      var atTop = scrollY <= EDGE;
       sync();
-      var atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - EDGE;
-      var atTop = window.scrollY <= EDGE;
-      var last = current === subs.length - 1, first = current === 0;
-      // at the end of a middle tab, keep scrolling down -> next tab
-      if (e.deltaY > 0 && atBottom && !last) { over += e.deltaY; if (over > PUSH) go(1); }
-      else if (e.deltaY < 0 && atTop && !first) { over -= e.deltaY; if (over > PUSH) go(-1); }
-      else { over = 0; }
+      if (d > 0 && atEnd && current < subs.length - 1) { over += d; if (over > PUSH) go(1); }
+      else if (d < 0 && atTop && current > 0) { over -= d; if (over > PUSH) go(-1); }
+      else over = 0;
+    }
+    addEventListener('wheel', function (e) {
+      if (!active()) return;
+      var now = e.timeStamp;
+      if (now < coolUntil) { coolUntil = now + 120; over = 0; last = now; return; }
+      if (now - last > GAP) over = 0;          // new gesture, not a momentum tail
+      last = now;
+      pending += e.deltaY;
+      if (!raf) raf = requestAnimationFrame(flush);
     }, { passive: true });
 
-    // keyboard equivalent, so this is not mouse-only
-    window.addEventListener('keydown', function (e) {
-      if (!active() || cooling) return;
-      if (e.key === 'ArrowRight' && !/input|textarea|select/i.test((e.target.tagName || ''))) go(1);
-      if (e.key === 'ArrowLeft'  && !/input|textarea|select/i.test((e.target.tagName || ''))) go(-1);
+    addEventListener('keydown', function (e) {
+      if (!active() || /input|textarea|select/i.test(e.target.tagName || '')) return;
+      if (e.key === 'ArrowRight') { sync(); go(1); }
+      if (e.key === 'ArrowLeft')  { sync(); go(-1); }
     });
   })();
 })();
