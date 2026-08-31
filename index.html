@@ -93,8 +93,8 @@ header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
 .headline .say { max-width:32ch; font-size:.96rem; }
 .meta { display:flex; flex-wrap:wrap; gap:7px 24px; font-size:.84rem; color:var(--ink-3); margin-top:var(--s3); }
 .meta b { font-weight:600; color:var(--ink-2); }
-.resultrow { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:var(--s6);
-  align-items:start; margin-top:var(--s5); }
+.resultrow { display:grid; grid-template-columns:minmax(0,1fr) 290px; gap:var(--s6);
+  align-items:start; }
 @media (max-width:900px){ .resultrow{ grid-template-columns:1fr; gap:var(--s5); } }
 #tiles { display:flex; flex-direction:column; gap:var(--s2); }
 #tiles .tile { background:var(--paper); border:1px solid var(--rule); border-radius:3px;
@@ -224,22 +224,26 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div class="panel" id="p-results" data-active>
   <div class="wrap">
 
-    <div class="phead">
-      <h1>Do third-party frontier AI evaluations matter?</h1>
-      <p class="lede">Safety institutes and independent evaluators test frontier models, find
-        problems, and publish them. That is the visible half of an accountability chain. This
-        measures the other half — whether the company named in a finding ever answers it.</p>
-      <p>When no answer comes, nothing in the public record closes the loop. The finding stands,
-        the model stays deployed, and no outside party can tell whether the risk was addressed,
-        judged unimportant, or simply missed. <a href="#problem" data-go="problem">More on the
-        problem &rarr;</a></p>
-    </div>
-
-    <div class="meta tnum">
-      <span><b id="mFindings">—</b> findings</span>
-      <span><b id="mReports">—</b> reports</span>
-      <span><b id="mInst">—</b> evaluators</span>
-      <span id="mWindow"></span>
+    <div class="resultrow">
+      <div>
+        <div class="phead" style="margin-bottom:0">
+          <h1>Do third-party frontier AI evaluations matter?</h1>
+          <p class="lede">Safety institutes and independent evaluators test frontier models, find
+            problems, and publish them. That is the visible half of an accountability chain. This
+            measures the other half — whether the company named in a finding ever answers it.</p>
+          <p>When no answer comes, nothing in the public record closes the loop. The finding stands,
+            the model stays deployed, and no outside party can tell whether the risk was addressed,
+            judged unimportant, or simply missed. <a href="#problem" data-go="problem">More on the
+            problem &rarr;</a></p>
+        </div>
+        <div class="meta tnum">
+          <span><b id="mFindings">—</b> findings</span>
+          <span><b id="mReports">—</b> reports</span>
+          <span><b id="mInst">—</b> evaluators</span>
+          <span id="mWindow"></span>
+        </div>
+      </div>
+      <div id="tiles"></div>
     </div>
 
     <div class="subhead">What happens to a published finding</div>
@@ -252,15 +256,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       <details class="tblview" id="sankeyTable"><summary style="cursor:pointer">Table view</summary></details>
     </figure>
 
-    <div class="resultrow">
-      <div>
-        <div class="headline">
-          <div class="big tnum" id="heroNum">—</div>
-          <p class="say" id="heroCaption">of significant-risk findings that name a company have no
-            documented public response.</p>
-        </div>
-      </div>
-      <div id="tiles"></div>
+    <div class="headline">
+      <div class="big tnum" id="heroNum">—</div>
+      <p class="say" id="heroCaption">of significant-risk findings that name a company have no
+        documented public response.</p>
     </div>
 
     <div class="subhead">How a company response is measured</div>
