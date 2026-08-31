@@ -333,14 +333,16 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     <div class="resultrow">
       <div>
         <div class="phead" style="margin-bottom:0">
-          <p class="lede">Safety institutes and independent evaluators test frontier models, find
-            problems, and publish them. Everyone can see that much. What nobody had counted is what
-            happens next: when a report names a company, does that company ever publicly answer it?
-            This dataset counts the answers.</p>
-          <p>When no answer comes, nothing in the public record closes the loop. The finding stands,
-            the model stays deployed, and no outside party can tell whether the risk was addressed,
-            judged unimportant, or simply missed. <a href="#problem" data-go="problem">More on the
-            problem &rarr;</a></p>
+          <p class="lede">Government AI institutes and independent evaluators test advanced systems
+            for dangerous capabilities, safeguard failures and other risks — often with access and
+            technical expertise unavailable to the wider public. Yet identifying a risk is not the
+            same as reducing it.</p>
+          <p>An evaluation can document a serious vulnerability without compelling a developer
+            response, delaying deployment, triggering additional review, or verifying remediation.
+            This dataset asks a narrow question: <b>when an evaluator publishes a risk-relevant
+            finding about a named frontier system, does the public record document action
+            attributed to that finding and directed at mitigating the identified risk?</b>
+            <a href="#problem" data-go="problem">More on the problem &rarr;</a></p>
         </div>
         <div class="meta tnum">
           <span><b id="mFindings">—</b> findings</span>
@@ -546,44 +548,63 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
   <div class="wrap">
     <div class="phead">
       <h1>The problem</h1>
-      <p class="lede">A great deal of attention goes to AI evaluations being published. Almost none
-        goes to what happens next.</p>
+      <p class="lede">Frontier AI system evaluations have become a prominent component of AI
+        governance. What happens to their findings has not been measured.</p>
     </div>
     <div style="max-width:70ch">
       <div class="step2">
-        <h3>Publishing a finding is not the same as fixing it</h3>
-        <p>Government safety institutes and third-party evaluators exist so that claims about
-          frontier model safety do not rest on developer self-report. They test models, find
-          problems, and publish. That is the first half of an accountability chain — and the half
-          that gets measured.</p>
-        <p>The second half is whether anything follows. Nobody had measured, at corpus scale,
-          whether a published finding about a named model produces a documented response from the
-          company named in it.</p>
+        <h3>Evaluations produce evidence the public could not otherwise get</h3>
+        <p>Government AI institutes and independent evaluators test advanced systems for dangerous
+          capabilities, safeguard failures and other risks, often with access and technical
+          expertise unavailable to the wider public. These evaluations can provide evidence about
+          an AI system's risk that goes beyond frontier developers' own disclosures.</p>
+        <p>That independence is the point of the arrangement. A developer assessing its own model
+          has an interest in the result; an external evaluator does not.</p>
       </div>
+
       <div class="step2">
-        <h3>Why the public channel</h3>
-        <p>A company may act privately. But a regulator, journalist or researcher can only verify
-          what is public. This dataset measures the record an outside observer can actually check —
-          which is also the record that determines whether the evaluation ecosystem is visibly
-          working.</p>
+        <h3>Identifying a risk is not the same as reducing it</h3>
+        <p>An evaluation can document a serious vulnerability without compelling a developer
+          response, delaying deployment, triggering additional review, or verifying remediation.
+          Nothing in the arrangement obliges anyone to act on what it finds.</p>
+        <p>The practical value of an evaluation therefore depends partly on what happens after the
+          finding is communicated or published — and that half of the chain has not been measured
+          at corpus scale.</p>
       </div>
+
       <div class="step2">
-        <h3>What had to be pinned down first</h3>
-        <p>Three things, before any number meant anything: what counts as a finding, when a response
-          is genuinely owed, and what counts as a response. Each is defined in the methodology, and
-          each exclusion exists to stop the corpus being quietly incomplete.</p>
+        <h3>The question this dataset asks</h3>
+        <div class="leadbox">
+          <p>When a government or independent evaluator publishes a risk-relevant finding about a
+            <b>named frontier system</b>, does the public record document <b>action attributed to
+            that finding</b> and <b>directed at mitigating the identified risk</b>?</p>
+        </div>
+        <p style="margin-top:var(--s4)">Each clause narrows the question deliberately. <b>Named
+          frontier system</b> excludes findings with no identifiable party to answer them.
+          <b>Attributed to that finding</b> excludes standing policy and unrelated work that
+          happens to share a topic. <b>Directed at mitigating the risk</b> excludes acknowledgement
+          that changes nothing.</p>
       </div>
+
+      <div class="step2">
+        <h3>Why the public record</h3>
+        <p>A company may act privately, tell the evaluator directly, or fix a problem without
+          comment. None of that is visible here, by construction. What this measures is the record
+          a regulator, journalist or researcher can actually verify from outside — which is also
+          the record that determines whether the evaluation ecosystem is demonstrably working.</p>
+      </div>
+
       <div class="step2">
         <h3>What this does not measure</h3>
         <ul>
-          <li><strong>Private action.</strong> A fix made without public comment is invisible here, by construction.</li>
-          <li><strong>Effect.</strong> A substantive response means a specific documented change was published — not that it worked.</li>
-          <li><strong>Recency.</strong> Findings published near the cutoff may not have had time to draw a response. Outcomes are reported by year so this stays visible.</li>
+          <li><b>Private action.</b> A fix made without public comment is invisible to this method.</li>
+          <li><b>Effect.</b> A substantive response means a specific documented change was published — not that it was implemented well, or that it worked.</li>
+          <li><b>Recency.</b> Findings published near the cutoff may not have had time to draw a response. Outcomes are reported by year so this stays visible rather than buried.</li>
         </ul>
-        <div class="detail">Absence is measured, not assumed. <strong>"No response" means a
-          five-source search was run and logged with a date</strong> — not that nobody
-          looked. Where a source could not be retrieved, the row is recorded as unresolved rather
-          than counted as a negative.</div>
+        <div class="detail">Absence is measured, not assumed. <b>"No response" means the same five
+          sources were checked and logged with a date</b> — not that nobody looked. Where a source
+          could not be retrieved, the row is recorded as unresolved rather than counted as a
+          negative.</div>
       </div>
     </div>
   </div>
@@ -882,10 +903,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js?v=d9da0ad"></script>
-<script src="app.js?v=d9da0ad"></script>
+<script src="data.js?v=1768d58"></script>
+<script src="app.js?v=1768d58"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js?v=d9da0ad"></script>
+<script type="module" src="tags3d.js?v=1768d58"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */
