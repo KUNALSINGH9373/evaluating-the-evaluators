@@ -1,7 +1,48 @@
-# Evidence Sweep — State Snapshot (2026-08-01)
+# Evidence Sweep — State Snapshot (2026-08-01, revised 2026-08-14)
 
 Durable checkpoint of the census sweep so it survives session loss / usage limits.
 All files in this folder are the recoverable state.
+
+## ⚠ 2026-08-14 revisions — read before resuming
+
+**0. Roster corrections applied — 46 → 33 organisations. Ledger is now 6,579 rows,
+of which 2,116 belong to retired venues; the ACTIVE CORPUS is 4,463 and 597 rows are unresolved
+(86.6% resolved). `INCLUDED` unchanged at 219.**
+
+| | Retired / filtered | Effect |
+|---|---|---|
+| **A** | Ai2, UC Berkeley, Thorn, EPFL, Yale, Stanford, Oxford | Co-author affiliations mis-read as evaluators. 1,400 rows → `EXCLUDED - not a roster org` |
+| **B** | EU AI Office, Kenya, Canada, Australia, India, Germany | Zero-yield Network members. 716 rows → `EXCLUDED - venue retired` |
+| **C** | RAND format + topic gates | 397 rows → `EXCLUDED - out-of-scope format` (253) / `EXCLUDED - off-topic` (144). RAND 756 → 359 |
+| **D** | Backfill | 81 enumerated-but-never-ledgered items added as `PENDING-FETCH` |
+
+**Enumeration is NOT complete** — the earlier claim is withdrawn. 24 reports already in v10.csv were
+never enumerated (4 UK AISI, 4 Holistic AI, 5 Shanghai, 2 CIP/Weval…). Diagnose these *before*
+further screening; re-enumeration may change the corpus base.
+
+
+1. **Company self-reports are now a HARD DROP** (rulebook §1). A model developer's report on its
+   own model(s) with no external evaluator named is out of scope. Company venues stay on the
+   roster but use a **narrowed test**: "is an external evaluator named?" — not "does it contain a
+   finding?". 233 rows are now `PENDING-EVALUATOR-CHECK` (213 ex-`PENDING-FETCH`, 20
+   ex-`INCLUDED`); 1 confirmed solo self-eval is `EXCLUDED - company self-report`; 7 company-venue
+   items keep `INCLUDED` under the §1 carve-out with their Report IDs backfilled. This removes
+   226 rows from `eval_candidates_to_fetch.csv` (673 → 447) and makes the rest much cheaper.
+2. **The reconciliation key is STALE — rebuild it first.** `known_reports.json` holds 153 Report
+   IDs; v10.csv has **211**. The 59-ID gap made the dedup pass mislabel **34 already-present
+   reports as "genuinely new"**, and 31 of the 139 "candidate misses" are likewise already in v10.
+   Regenerate `known_reports.json` from v10.csv before any triage, and match by URL **and**
+   normalised title (Report IDs are absent on candidate-miss rows by definition).
+3. **Corrected new-material count:** of the 58 originally flagged "genuinely new" — 34 already in
+   v10, 16 removed as company self-reports (logged in `company_self_reports_excluded.json`),
+   leaving **8 third-party candidates** in `genuinely_new_dedup.json` (42 entries total after the
+   company removals; the remaining surplus over 8 is the already-in-v10 set still to be pruned
+   once the key is rebuilt).
+
+The decision counts in "Where things stand" below are the 2026-08-01 originals and are now
+superseded by `master_ledger.csv` (6,498 rows: 4,894 not-an-evaluation · 598 no-findings ·
+424 PENDING-FETCH · 233 PENDING-EVALUATOR-CHECK · 219 INCLUDED · 83 duplicate/secondary ·
+16 POST-CUTOFF · 15 no-named-evaluator · 15 out-of-scope · 1 company self-report).
 
 ## Where things stand
 
@@ -25,8 +66,8 @@ All files in this folder are the recoverable state.
 |---|---|
 | 17 venues fully fetch-screened (UK AISI, CAISI, J-AISI, Korea, Singapore, France, METR, SecureBio, Apollo, CAIS, Canada, Australia, India, Transluce, CIP, HAL, AVERI) | ✅ done (885 rows) |
 | Title-exclusion of 4,834 non-evaluations across the other 29 venues | ✅ done, logged |
-| Fetch-screen the ~651 PENDING eval-candidates | 🔄 in progress (workflow wef3k70ua; ~30 done) |
-| — of which the 4 COMPANY sources (OpenAI, Anthropic, GDM, Meta ≈ 226 items) | ⛔ highest-value, not yet confirmed screened |
+| Fetch-screen the remaining 424 PENDING-FETCH eval-candidates | 🔄 in progress (workflow wef3k70ua; ~30 done) |
+| — the 4 COMPANY sources (OpenAI, Anthropic, GDM, Meta) | ♻️ **rescoped 2026-08-14** — 233 rows now `PENDING-EVALUATOR-CHECK`, needing only the named-evaluator question, not a full screen. Cheap; do these first |
 | Reconciliation (all 153 Report IDs) + candidate-miss triage | ⛔ waits on fetch-screen |
 | PRISMA numbers for paper §3.1 | ⛔ waits on reconciliation |
 

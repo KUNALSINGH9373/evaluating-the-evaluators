@@ -917,10 +917,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js?v=79802ba"></script>
-<script src="app.js?v=79802ba"></script>
+<script src="data.js?v=efd22e3"></script>
+<script src="app.js?v=efd22e3"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js?v=79802ba"></script>
+<script type="module" src="tags3d.js?v=efd22e3"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */
@@ -964,6 +964,56 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
   document.querySelectorAll('.subtabs [data-sub]').forEach(function (b) {
     b.addEventListener('click', function () { showSub(b.dataset.sub); });
   });
+
+  /* Advance the methodology sub-tabs by scrolling. Deliberately conservative: it only
+     fires once you are already at the very end of a panel AND keep scrolling in the
+     same direction, so ordinary scrolling inside a tab is never hijacked. A cooldown
+     stops one flick from skipping several tabs, and the last tab still scrolls
+     through to the footer normally. */
+  (function () {
+    var current = 0, cooling = false, over = 0;
+    var EDGE = 4;          // px tolerance for "at the end"
+    var PUSH = 90;         // extra scroll needed past the end before switching
+    var COOL = 550;        // ms before another switch can fire
+
+    function active() { return document.getElementById('p-method').hasAttribute('data-active'); }
+    function sync() {
+      subs.forEach(function (k, i) {
+        var el = document.getElementById('s-' + k);
+        if (el && el.hasAttribute('data-active')) current = i;
+      });
+    }
+    function go(dir) {
+      sync();
+      var next = current + dir;
+      if (next < 0 || next >= subs.length) return false;
+      showSub(subs[next]);
+      var strip = document.querySelector('.subtabs');
+      if (strip) strip.scrollIntoView({ block: 'start',
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      cooling = true; over = 0;
+      setTimeout(function () { cooling = false; }, COOL);
+      return true;
+    }
+    window.addEventListener('wheel', function (e) {
+      if (!active() || cooling) return;
+      sync();
+      var atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - EDGE;
+      var atTop = window.scrollY <= EDGE;
+      var last = current === subs.length - 1, first = current === 0;
+      // at the end of a middle tab, keep scrolling down -> next tab
+      if (e.deltaY > 0 && atBottom && !last) { over += e.deltaY; if (over > PUSH) go(1); }
+      else if (e.deltaY < 0 && atTop && !first) { over -= e.deltaY; if (over > PUSH) go(-1); }
+      else { over = 0; }
+    }, { passive: true });
+
+    // keyboard equivalent, so this is not mouse-only
+    window.addEventListener('keydown', function (e) {
+      if (!active() || cooling) return;
+      if (e.key === 'ArrowRight' && !/input|textarea|select/i.test((e.target.tagName || ''))) go(1);
+      if (e.key === 'ArrowLeft'  && !/input|textarea|select/i.test((e.target.tagName || ''))) go(-1);
+    });
+  })();
 })();
 
 /* Stat tiles: stagger their entrance and count the numerals up. app.js appends

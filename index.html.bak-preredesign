@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evaluating the Evaluators — AISI Accountability Tracker</title>
+<meta name="description" content="When government AI Safety Institutes and independent evaluators publish findings about frontier AI models, do companies respond? A verified dataset of 1,001 findings from 438 reports.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11,11,11,0.10);
+  --blue: #2a78d6; --green: #008300; --magenta: #e87ba4; --yellow: #eda100;
+  --aqua: #1baf7a; --orange: #eb6834; --violet: #4a3aa7; --red: #e34948;
+  --ord1: #0d366b; --ord2: #1c5cab; --ord3: #3987e5; --ord4: #86b6ef;
+  --wash: rgba(42,120,214,0.08);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --muted: #898781;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255,255,255,0.10);
+  --blue: #3987e5; --green: #008300; --magenta: #d55181; --yellow: #c98500;
+  --aqua: #199e70; --orange: #d95926; --violet: #9085e9; --red: #e66767;
+  --ord1: #184f95; --ord2: #2a78d6; --ord3: #6da7ec; --ord4: #b7d3f6;
+  --wash: rgba(57,135,229,0.12);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255,255,255,0.10);
+    --blue: #3987e5; --green: #008300; --magenta: #d55181; --yellow: #c98500;
+    --aqua: #199e70; --orange: #d95926; --violet: #9085e9; --red: #e66767;
+    --ord1: #184f95; --ord2: #2a78d6; --ord3: #6da7ec; --ord4: #b7d3f6;
+    --wash: rgba(57,135,229,0.12);
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; max-width: 100%; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--page);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 15px;
+  overflow-wrap: break-word;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+header.site {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--page) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+header.site .container { display: flex; align-items: center; gap: 18px; height: 52px; }
+.wordmark { font-weight: 700; font-size: 14px; letter-spacing: .01em; white-space: nowrap; }
+nav.main { display: flex; gap: 14px; margin-left: auto; }
+nav.main a { color: var(--ink-2); font-size: 13px; }
+nav.main a:hover { color: var(--ink); text-decoration: none; }
+#themeToggle {
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink-2);
+  border-radius: 8px; padding: 4px 10px; font-size: 12px; cursor: pointer;
+}
+@media (max-width: 640px) {
+  header.site .container { flex-wrap: wrap; height: auto; padding: 8px 16px; row-gap: 6px; }
+  .wordmark { font-size: 12.5px; }
+  nav.main {
+    margin-left: 0; order: 3; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    gap: 12px; padding-bottom: 4px;
+  }
+  nav.main a { white-space: nowrap; }
+  #themeToggle { margin-left: auto; order: 2; }
+}
+
+.hero { padding: 56px 0 34px; }
+.kicker { font-size: 12px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--blue); }
+.hero h1 { font-size: clamp(28px, 4.5vw, 44px); line-height: 1.12; margin: 10px 0 14px; letter-spacing: -0.015em; }
+.lede { color: var(--ink-2); max-width: 62ch; font-size: 16px; overflow-wrap: break-word; }
+.hero-figure { display: flex; align-items: baseline; gap: 16px; margin: 34px 0 8px; flex-wrap: wrap; }
+.hero-num { font-size: clamp(56px, 9vw, 92px); font-weight: 650; line-height: 1; letter-spacing: -0.02em; }
+.hero-caption { color: var(--ink-2); max-width: 34ch; font-size: 15px; padding-bottom: 8px; }
+.asof { color: var(--muted); font-size: 12.5px; margin-top: 6px; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(133px, 1fr)); gap: 10px; margin: 26px 0 8px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.tile .label { font-size: 12px; color: var(--ink-2); }
+.tile .value { font-size: 26px; font-weight: 650; margin-top: 2px; }
+.tile .sub { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+
+section { padding: 30px 0; }
+section h2 { font-size: 22px; letter-spacing: -0.01em; margin-bottom: 6px; }
+section .sectionlede { color: var(--ink-2); max-width: 70ch; margin-bottom: 20px; }
+
+.insights { display: grid; gap: 10px; margin: 18px 0 4px; }
+.insight { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 10px; padding: 12px 16px; font-size: 14.5px; color: var(--ink-2); }
+.insight strong { color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid .wide { grid-column: 1 / -1; }
+@media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  padding: 18px 18px 12px; overflow: hidden;
+}
+.card h3 { font-size: 15px; margin-bottom: 2px; }
+.card .sub { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+.card .plot { width: 100%; }
+.card svg { display: block; width: 100%; height: auto; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 2px 0 10px; }
+.legend .key { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-2); }
+.legend .swatch { width: 11px; height: 11px; border-radius: 3px; flex: none; }
+.legend .linekey { width: 14px; height: 3px; border-radius: 2px; flex: none; }
+details.tblview { margin-top: 8px; border-top: 1px solid var(--grid); padding-top: 6px; }
+details.tblview summary { font-size: 12px; color: var(--muted); cursor: pointer; }
+details.tblview table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 6px; }
+details.tblview th, details.tblview td { text-align: left; padding: 3px 8px 3px 0; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+details.tblview th { color: var(--muted); font-weight: 600; }
+
+.sankey-stage { opacity: 0; transform: translateX(-16px); transition: opacity .7s ease, transform .7s ease; }
+.sankey-stage.on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .sankey-stage { transition: none; opacity: 1; transform: none; }
+}
+
+#tooltip {
+  position: fixed; z-index: 60; pointer-events: none; display: none;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 8px 11px; font-size: 12.5px; box-shadow: 0 4px 18px rgba(0,0,0,.14);
+  max-width: 300px;
+}
+#tooltip .t-title { color: var(--muted); font-size: 11.5px; margin-bottom: 3px; }
+#tooltip .t-row { display: flex; align-items: center; gap: 7px; }
+#tooltip .t-key { width: 12px; height: 3px; border-radius: 2px; flex: none; }
+#tooltip .t-val { font-weight: 650; }
+#tooltip .t-lbl { color: var(--ink-2); }
+
+.filters {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  margin-bottom: 12px;
+}
+.filters input[type="search"], .filters select {
+  background: var(--surface); color: var(--ink); border: 1px solid var(--border);
+  border-radius: 8px; padding: 7px 10px; font-size: 13px; font-family: inherit;
+}
+.filters input[type="search"] { min-width: 200px; flex: 1 1 200px; }
+.filters label.check { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+.count-note { font-size: 12.5px; color: var(--muted); margin-bottom: 8px; }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table.explorer { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 760px; }
+table.explorer th {
+  text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--grid);
+  position: sticky; top: 52px; background: var(--surface);
+}
+table.explorer td { padding: 9px 12px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+table.explorer tr.datarow { cursor: pointer; }
+table.explorer tr.datarow:hover { background: var(--wash); }
+table.explorer tr.open { background: var(--wash); }
+.pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--border); color: var(--ink-2); white-space: nowrap; }
+.pill.c1 { border-color: var(--red); color: var(--red); }
+.pill.c2 { border-color: var(--blue); color: var(--blue); }
+.pill.act-None { border-color: var(--red); color: var(--red); }
+.pill.act-Substantive { border-color: var(--green); color: var(--green); }
+tr.detail td { background: color-mix(in srgb, var(--surface) 60%, var(--page)); padding: 16px 18px; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px 20px; margin-top: 10px; font-size: 12.5px; }
+.detail-grid .k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+blockquote.kq { border-left: 3px solid var(--axis); padding: 4px 12px; margin: 10px 0; color: var(--ink-2); font-style: italic; }
+.loadmore { margin: 14px auto; display: block; border: 1px solid var(--border); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 8px 18px; font-size: 13px; cursor: pointer; }
+.loadmore:hover { background: var(--wash); }
+
+.method { max-width: 74ch; }
+.method h3 { font-size: 15px; margin: 18px 0 4px; }
+.method p, .method li { color: var(--ink-2); font-size: 14.5px; }
+.method ul { padding-left: 20px; margin: 6px 0; }
+.dl { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.dl a { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 8px 14px; font-size: 13px; }
+
+footer.site { border-top: 1px solid var(--border); margin-top: 40px; padding: 26px 0 44px; color: var(--muted); font-size: 13px; }
+footer.site a { color: var(--ink-2); }
+dl.mini { margin: 0; font-size: 14px; }
+dl.mini dt { font-weight: 650; color: var(--fg); margin-top: 12px; }
+dl.mini dd { margin: 2px 0 0; color: var(--muted); }
+h3.figgroup { font-size: 13px; font-weight: 650; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted); margin: 26px 0 12px; }
+h3.figgroup:first-of-type { margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <span class="wordmark">Evaluating the Evaluators</span>
+    <nav class="main">
+      <a href="#pipeline">Pipeline</a>
+      <a href="#insights">Insights</a>
+      <a href="#charts">Charts</a><a href="#figures">Figures</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#methodology">Methodology</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle color theme">◐ Theme</button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <div class="kicker">AISI accountability tracker</div>
+      <h1>When government AI safety institutes flag a problem, do companies respond?</h1>
+      <p class="lede">A source-verified dataset tracking public findings from government AI Safety Institutes
+        (UK AISI, US CAISI and the International Network) and independent third-party evaluators (METR, SecureBio,
+        Apollo Research and others) about frontier AI models — and whether a documented company or policy response
+        followed.</p>
+      <div class="hero-figure">
+        <div class="hero-num" id="heroNum">—</div>
+        <div class="hero-caption" id="heroCaption"></div>
+      </div>
+      <button id="viewGapBtn" class="loadmore" style="margin:2px 0 0;display:inline-block"></button>
+      <div class="asof" id="asof"></div>
+    </div>
+
+    <section id="pipeline">
+      <h2>The accountability pipeline</h2>
+      <p class="sectionlede">Where findings go — and where publicly documented follow-up is, and is not, observed.
+        Every ribbon is an exact count from the dataset; flows draw in stage by stage as you scroll.</p>
+      <div class="card wide">
+        <h3>From 1,001 findings to the accountability gap</h3>
+        <div class="sub">Ribbon width = number of findings · the leftmost stage (publications screened) is not to scale relative to the rest — hover any ribbon or node for the exact counts</div>
+        <div class="plot" id="sankeyMount"></div>
+        <details class="tblview" id="sankeyTable">
+          <summary>Table view: The accountability pipeline</summary>
+        </details>
+      </div>
+    </section>
+
+    <section id="stats">
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <section id="insights">
+      <h2>Key insights</h2>
+      <div class="insights" id="insightList"></div>
+    </section>
+
+    <section id="charts">
+      <h2>The data in charts</h2>
+      <div class="grid" id="chartGrid"></div>
+    </section>
+
+
+    <section id="figures">
+      <h2>Key figures</h2>
+      <p class="sectionlede">116 of 146 significant-risk findings — 79.5% — drew no proportionate response.</p>
+      <h3 class="figgroup">The headline</h3>
+      <div class="grid">
+        <figure class="card wide" style="margin:0">
+          <img loading="lazy" src="charts/00_title_hero.jpg" alt="Every significant-risk finding, and whether the response matched its severity."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Every significant-risk finding, and whether the response matched its severity.</figcaption>
+        </figure>
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/15b_shortfall_rate_by_year.jpg" alt="Shortfall by year, against the no-response-at-all rate — the two diverge."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Shortfall by year, against the no-response-at-all rate — the two diverge.</figcaption>
+        </figure>
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/09_policy_level_distribution.jpg" alt="Policy uptake. One binding action in the whole corpus."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Policy uptake. One binding action in the whole corpus.</figcaption>
+        </figure>
+      </div>
+      <h3 class="figgroup">Where the shortfall sits</h3>
+      <div class="grid">
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/16_gap_rate_by_access_type.jpg" alt="By how much access the evaluator had."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">By how much access the evaluator had.</figcaption>
+        </figure>
+        <figure class="card wide" style="margin:0">
+          <img loading="lazy" src="charts/22_domain_x_outcome_heatmap.jpg" alt="By risk domain. Colour encodes magnitude only."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">By risk domain. Colour encodes magnitude only.</figcaption>
+        </figure>
+      </div>
+      <h3 class="figgroup">The corpus</h3>
+      <div class="grid">
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Accountability-relevant, evaluation-only, and out-of-scope splits."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Accountability-relevant, evaluation-only, and out-of-scope splits.</figcaption>
+        </figure>
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/12_evaluator_scope.jpg" alt="Safety institute versus third-party evaluator."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Safety institute versus third-party evaluator.</figcaption>
+        </figure>
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Pre-deployment, post-deployment, or mixed access."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Pre-deployment, post-deployment, or mixed access.</figcaption>
+        </figure>
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Whether the company referenced the finding or its evaluator."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Whether the company referenced the finding or its evaluator.</figcaption>
+        </figure>
+        <figure class="card" style="margin:0">
+          <img loading="lazy" src="charts/05_pre_vs_post_deployment_response_rate.jpg" alt="Substantive response rate, pre- versus post-deployment."
+               style="width:100%;height:auto;border-radius:8px;display:block;background:#fff">
+          <figcaption class="sub" style="margin:8px 0 0">Substantive response rate, pre- versus post-deployment.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="explorer">
+      <h2>Findings explorer</h2>
+      <p class="sectionlede">Click a row for the full record.</p>
+      <div class="filters" id="filters">
+        <input type="search" id="fSearch" placeholder="Search findings, models, reports…" aria-label="Search findings">
+        <select id="fScope" aria-label="Scope"></select>
+        <select id="fInst" aria-label="Institution"></select>
+        <select id="fSev" aria-label="Severity"></select>
+        <select id="fAction" aria-label="Action level"></select>
+        <select id="fDomain" aria-label="Domain"></select>
+        <label class="check"><input type="checkbox" id="fTrack"> Accountability set only</label>
+      </div>
+      <div class="count-note" id="countNote"></div>
+      <button class="loadmore" id="dlFiltered" style="margin:0 0 12px">⬇ Download filtered CSV</button>
+      <div class="tablewrap">
+        <table class="explorer">
+          <thead>
+            <tr><th>Date</th><th>Institution</th><th>Finding</th><th>Models</th><th>Severity</th><th>Response</th></tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <button class="loadmore" id="loadMore">Show more</button>
+    </section>
+
+    <section id="methodology" class="method">
+      <h2>Methodology</h2>
+      <p>The dataset measures the <strong>public-channel accountability pipeline</strong>: when an AI safety
+        institute or third-party evaluator publishes a finding about a named model, does a documented company
+        response follow? Every cell follows a strict evidentiary standard — <em>verified-real or deliberately
+        empty</em>.</p>
+      <dl class="mini">
+        <dt>Who</dt><dd>AI safety institutes and third-party evaluators. Company-published reports
+          count only where an external evaluator is named, and are filed under that evaluator.</dd>
+        <dt>Which findings</dt><dd>Empirical, names a specific company or model, and concerning enough
+          that a response is reasonable. Reassuring nulls, benchmark deltas with no threshold crossed,
+          comparative rankings and methodology studies are tracked but excluded.</dd>
+        <dt>What counts as a response</dt><dd>The company's own primary document, addressing the
+          identified problem. Whether it credits the evaluator is recorded separately — acting without
+          saying why still counts.</dd>
+        <dt>Proportionality</dt><dd>Severity × response strength, severity-relative: a significant-risk
+          finding needs a substantive response, a lesser one needs only a partial. Scores the content of
+          the response, not its implementation or effect.</dd>
+        <dt>Severity</dt><dd>Majority vote of three cross-provider models against seven
+          dangerous-capability domains.</dd>
+      </dl>
+      <div class="dl">
+        <a href="dataset.csv" download>⬇ Download dataset (CSV)</a>
+        <a href="codebook.md">Read the codebook</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    Built by <a href="https://kunalsingh9373.github.io" rel="noopener">Kunal Singh</a> ·
+    <a id="repoLink" href="https://github.com/KUNALSINGH9373/evaluating-the-evaluators" rel="noopener">Source &amp; data on GitHub</a>
+  </div>
+</footer>
+
+<div id="tooltip" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+<script type="module" src="tags3d.js"></script>
+</body>
+</html>
