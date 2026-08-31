@@ -117,7 +117,6 @@ const tiles = [
   { label: "Significant risk", value: M.trackableC1, sub: `of ${M.trackable} Tier A findings` },
   { label: "Any response at all", value: M.anyResponse, sub: `${pct(M.anyResponse, M.trackable)}% of the set` },
   { label: "Substantive responses", value: M.substantive, sub: "specific, documented, attributed" },
-  { label: "Median response lag", value: `${M.medianLag} d`, sub: `across ${M.lagN} responses` },
 ];
 document.getElementById("tiles").append(
   ...tiles.map(t => h("div", { class: "tile" },
