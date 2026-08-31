@@ -102,10 +102,13 @@ header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
 .resultrow { display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,420px); gap:var(--s6);
   align-items:start; }
 @media (max-width:900px){ .resultrow{ grid-template-columns:1fr; gap:var(--s5); } }
-.statcol { display:flex; flex-direction:column; gap:var(--s4);
-  /* start level with the opening paragraph rather than the heading */
-  padding-top:calc(clamp(2.4rem,5.6vw,3.9rem) * 1.08 * 2 + var(--s4)); }
-@media (max-width:900px){ .statcol{ padding-top:0; } }
+.statcol { display:flex; flex-direction:column; gap:var(--s4); }
+/* The title spans the full width on a single line — sized off viewport width so it
+   scales rather than wrapping. white-space:nowrap would overflow on narrow screens,
+   so it is only enforced where there is room. */
+.pagetitle { margin-bottom:var(--s5); text-wrap:nowrap; }
+@media (min-width:901px){ .pagetitle{ font-size:min(3.4rem, 3.95vw); white-space:nowrap; } }
+@media (max-width:900px){ .pagetitle{ white-space:normal; text-wrap:balance; } }
 .statcol .headline { margin:0; display:block; }
 .statcol .headline .big { font-size:clamp(3.4rem,7vw,4.6rem); }
 .statcol .headline .say { max-width:none; margin-top:var(--s2); font-size:var(--f-md); }
@@ -274,10 +277,11 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div class="panel" id="p-results" data-active>
   <div class="wrap">
 
+    <h1 class="pagetitle">Do third-party frontier AI evaluations matter?</h1>
+
     <div class="resultrow">
       <div>
         <div class="phead" style="margin-bottom:0">
-          <h1>Do third-party frontier AI evaluations matter?</h1>
           <p class="lede">Safety institutes and independent evaluators test frontier models, find
             problems, and publish them. That is the visible half of an accountability chain. This
             measures the other half — whether the company named in a finding ever answers it.</p>
