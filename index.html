@@ -245,40 +245,82 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 
     <div class="subhead">How a company response is measured</div>
     <div style="max-width:70ch">
-      <p>Two inputs decide every outcome. <strong>Severity</strong> — how serious the finding is,
-        scored against eight dangerous-capability domains by three independent models.
-        <strong>Action level</strong> — what the company actually published, after the same five
-        sources are checked for every finding. Combining them gives
-        <strong>proportionality</strong>: whether the response matched the risk.</p>
-      <p>The combination is a fixed lookup with no discretion at any point, so no finding can be
-        argued into a better outcome than its evidence supports.</p>
+      <p>Every finding in the accountability set gets one verdict:
+        <strong>proportionality</strong> — did the response match the risk? It is computed from two
+        inputs, each measured separately before they are combined, and the combination is a fixed
+        lookup with no discretion at any point.</p>
     </div>
-    <table class="matrix" style="margin-top:var(--s4)">
+
+    <div class="g2" style="margin-top:var(--s5)">
+      <div>
+        <h3 style="margin-bottom:var(--s2)">Input 1 · Severity — how serious is the finding?</h3>
+        <p style="font-size:.94rem">Each finding is scored against eight dangerous-capability
+          domains by three independent models — Claude Sonnet 5, GPT-5.5 and Gemini 3.1 — using one
+          frozen prompt sent to all three. Majority vote decides.</p>
+        <dl class="deflist" style="grid-template-columns:6.5rem 1fr">
+          <dt>Category&nbsp;1</dt><dd><b>Significant risk.</b> At least one of the eight domains is
+            <em>demonstrated</em>: CBRN uplift · cyber operations · autonomy and self-replication ·
+            persuasion at scale · deceptive alignment · safeguard failure · evaluation integrity ·
+            acute individual harm.</dd>
+          <dt>Category&nbsp;2</dt><dd><b>Lower risk.</b> Everything else — reassuring nulls,
+            capability gaps, methodology contributions, governance observations, non-frontier models.</dd>
+        </dl>
+        <div class="detail" style="font-size:.86rem">The Category&nbsp;1 bar mirrors the thresholds
+          the developers publish for themselves — Anthropic's RSP Capability Thresholds, OpenAI's
+          Preparedness Framework, Google DeepMind's Frontier Safety Framework. <strong>A capability
+          must be shown, not discussed</strong>, and a model measured <em>below</em> a threshold is
+          never Category&nbsp;1.</div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:var(--s2)">Input 2 · Action level — what did the company publish?</h3>
+        <p style="font-size:.94rem">The same five sources are checked for every finding. Only the
+          company's own primary document counts — news reporting that quotes a company is not a
+          response, and standing policy that shares a topic does not count.</p>
+        <dl class="deflist" style="grid-template-columns:6.5rem 1fr">
+          <dt>Substantive</dt><dd>A specific, documented change, attributed to the finding.</dd>
+          <dt>Partial</dt><dd>A change claimed but not verifiable, or incomplete.</dd>
+          <dt>Acknowledged</dt><dd>The finding is referenced, but no action follows.</dd>
+          <dt>None</dt><dd>Nothing located after all five sources were checked and logged.</dd>
+        </dl>
+        <div class="detail" style="font-size:.86rem">Every proposed response is then challenged by
+          an independent reviewer instructed to <strong>refute it by default</strong>. Only codings
+          that survive that challenge stand. Policy uptake is tracked separately and never
+          substitutes for a company response.</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:var(--s6)">The two combined — the proportionality matrix</h3>
+    <p style="max-width:70ch;margin-top:var(--s2)">A significant-risk finding needs a
+      <strong>substantive</strong> response to pass. A lower-risk finding needs at least a
+      <strong>partial</strong> one. The same company behaviour therefore scores differently
+      depending on what it was answering.</p>
+    <table class="matrix" style="margin-top:var(--s3)">
       <thead><tr><th>Severity</th><th>What the company published</th><th>Outcome</th></tr></thead>
       <tbody>
-        <tr><td>Significant risk</td><td>Substantive</td><td class="o-ok">Proportionate</td></tr>
-        <tr><td>Significant risk</td><td>Partial / Acknowledged</td><td class="o-under">Under-response</td></tr>
-        <tr><td>Significant risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
-        <tr><td>Lower risk</td><td>Substantive / Partial</td><td class="o-ok">Proportionate</td></tr>
-        <tr><td>Lower risk</td><td>Acknowledged</td><td class="o-under">Under-response</td></tr>
-        <tr><td>Lower risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
+        <tr><td>Category 1 — significant risk</td><td>Substantive</td><td class="o-ok">Proportionate</td></tr>
+        <tr><td>Category 1 — significant risk</td><td>Partial</td><td class="o-under">Under-response</td></tr>
+        <tr><td>Category 1 — significant risk</td><td>Acknowledged</td><td class="o-under">Under-response</td></tr>
+        <tr><td>Category 1 — significant risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
+        <tr><td>Category 2 — lower risk</td><td>Substantive</td><td class="o-ok">Proportionate</td></tr>
+        <tr><td>Category 2 — lower risk</td><td>Partial</td><td class="o-ok">Proportionate</td></tr>
+        <tr><td>Category 2 — lower risk</td><td>Acknowledged</td><td class="o-under">Under-response</td></tr>
+        <tr><td>Category 2 — lower risk</td><td>None</td><td class="o-gap">Accountability gap</td></tr>
       </tbody>
     </table>
-    <div class="g2" style="margin-top:var(--s4)">
+
+    <div class="g2" style="margin-top:var(--s5)">
       <figure><img loading="lazy" src="charts/21_severity_x_action_heatmap.jpg"
              alt="Severity against what the company published, every cell labelled with its outcome.">
-        <figcaption><b>The lookup, applied to every finding.</b> Each cell is one
-          severity-and-response pair. The colour is the outcome the table above assigns it —
-          no cell is a judgement call.</figcaption></figure>
+        <figcaption><b>The matrix, applied to every finding.</b> Each cell is one
+          severity-and-response pair, carrying the count of findings that landed there.</figcaption></figure>
       <figure><img loading="lazy" src="charts/10_proportionality_by_severity.jpg"
              alt="Proportionality outcomes split by severity.">
         <figcaption><b>Why severity changes the verdict.</b> A partial response is proportionate to
-          a lower-risk finding and an under-response to a significant-risk one. The same company
-          behaviour scores differently depending on what it was answering.</figcaption></figure>
+          a lower-risk finding and an under-response to a significant-risk one.</figcaption></figure>
     </div>
     <p style="margin-top:var(--s3);font-size:.9rem">
-      <a href="#method" data-go="method">Full methodology — the eight severity domains, the tier
-      test, and the five sources &rarr;</a></p>
+      <a href="#method" data-go="method">Full methodology — all eight domains defined, the tier
+      test, and the five sources in order &rarr;</a></p>
 
     <div class="subhead">What the outcomes look like</div>
     <div class="g2">
