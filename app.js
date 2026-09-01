@@ -948,30 +948,58 @@ function detailRow(f) {
   const td = h("td", { colspan: "6" });
   td.append(h("div", null, h("strong", null, f.id + " — " + (f.title || "Untitled report"))));
   td.append(h("p", { style: "margin:8px 0 0" }, f.finding));
-  if (f.quote) td.append(h("blockquote", { class: "kq" }, "“" + f.quote + "”"));
-  if (f.resp) {
-    td.append(h("p", { style: "margin-top:10px" },
-      h("strong", null, "Company response: "), f.resp,
-      f.respDate ? ` (${f.respDate}${f.lag != null ? `, lag ${f.lag} days` : ""})` : ""));
-  }
+  if (f.quote) td.append(h("blockquote", { class: "kq" }, "\u201C" + f.quote + "\u201D"));
+
   const meta = h("div", { class: "detail-grid" });
+  const votes = [f.vS, f.vG, f.vM].filter(Boolean);
   const pairs = [
     ["Institution", f.inst || "Not recorded"],
-    ["Institution type", f.instType || "—"],
-    ["Published", f.date || "—"],
-    ["Domain", f.dom.join(", ") || "—"],
-    ["Access", f.access || "—"],
-    ["Finding type", f.ftype.join(", ") || "—"],
-    ["Scope", f.scope || "—"],
-    ["Attribution", f.attr || "—"],
-    ["Policy level", f.pol || "—"],
-    ["Proportionality", f.prop || "—"],
+    ["Institution type", f.instType || "\u2014"],
+    ["Published", f.date || "\u2014"],
+    ["Models / systems", f.models || "\u2014"],
+    ["Domain", f.dom.join(", ") || "\u2014"],
+    ["Access", f.access || "\u2014"],
+    ["Finding type", f.ftype.join(", ") || "\u2014"],
+    ["Scope", f.scope || "\u2014"],
+    ["Severity", f.sev + (votes.length ? "  (votes " + votes.join(" / ") + ")" : "")],
+    ["Action level", f.action || "\u2014"],
+    ["Attribution", f.attr || "\u2014"],
+    ["Policy level", f.pol || "\u2014"],
+    ["Proportionality", f.prop || "\u2014"],
+    ["Tags", (f.tags && f.tags.length ? f.tags.join(", ") : "\u2014")],
   ];
   for (const [k, v] of pairs) meta.append(h("div", null, h("div", { class: "k" }, k), h("div", null, v)));
   td.append(meta);
+
+  /* The three response channels, each shown only where the row carries evidence.
+     A blank channel and a recorded "not found" are different claims, so the
+     searched-and-empty text is printed rather than collapsed into silence. */
+  function channel(title, blocks) {
+    const live = blocks.filter(b => b[1]);
+    if (!live.length) return;
+    const box = h("div", { class: "chbox" });
+    box.append(h("div", { class: "chtitle" }, title));
+    for (const [label, val] of live) {
+      box.append(h("div", { class: "chrow" },
+        h("span", { class: "k" }, label), h("span", null, val)));
+    }
+    td.append(box);
+  }
+  channel("Channel A \u2014 company response", [
+    ["Response", f.resp + (f.respDate ? "  (" + f.respDate + (f.lag != null ? ", lag " + f.lag + " days" : "") + ")" : "")],
+    ["Verbatim", f.aVerb], ["Evidence", f.aEv], ["Sources checked", f.aSrc],
+  ]);
+  channel("Channel B \u2014 policy uptake", [
+    ["Response", f.polResp], ["Verbatim", f.bVerb], ["Evidence", f.bEv],
+  ]);
+  channel("Channel C \u2014 public traction", [
+    ["Media", f.media], ["Academic citations", f.acad],
+    ["Social", f.social], ["Verbatim", f.cVerb],
+  ]);
+
   if (f.url && /^https?:\/\//.test(f.url)) {
-    td.append(h("p", { style: "margin-top:10px" },
-      h("a", { href: f.url, target: "_blank", rel: "noopener noreferrer" }, "Source report ↗")));
+    td.append(h("p", { style: "margin-top:12px" },
+      h("a", { href: f.url, target: "_blank", rel: "noopener noreferrer" }, "Source report \u2197")));
   }
   return h("tr", { class: "detail" }, td);
 }
@@ -1047,10 +1075,17 @@ function csvEscape(v) {
   return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
 }
 const CSV_COLS = [
-  ["id", "Finding ID"], ["rid", "Report ID"], ["date", "Publication Date"], ["inst", "Institution"],
-  ["instGroup", "Institution group"], ["models", "Models / Systems"], ["sev", "Severity"],
-  ["access", "Access Type"], ["finding", "Finding"], ["action", "Action Level"], ["attr", "Attribution"],
-  ["pol", "Policy Level"], ["prop", "Proportionality"], ["scope", "Scope"], ["url", "Source URL"],
+  ["id", "Finding ID"], ["rid", "Report ID"], ["inst", "Institution"], ["instType", "Institution Type"],
+  ["title", "Report Title"], ["date", "Publication Date"], ["dom", "Domain"], ["models", "Models / Systems"],
+  ["access", "Access Type"], ["url", "Source URL"], ["finding", "Finding"], ["quote", "Finding Quote"],
+  ["sev", "Severity (C1/C2) majority"], ["vS", "Sonnet5 vote"], ["vG", "GPT-5.5 vote"], ["vM", "Gemini3.1 vote"],
+  ["attr", "Attribution"], ["resp", "Company Response"], ["aVerb", "Channel A Verbatim"],
+  ["respDate", "Response Date"], ["lag", "Lag (days)"], ["aEv", "Channel A Evidence"],
+  ["action", "Action Level"], ["aSrc", "Sources Checked (channel A)"], ["pol", "Policy Level"],
+  ["polResp", "Policy Response"], ["bVerb", "Channel B Verbatim"], ["bEv", "Channel B Evidence"],
+  ["media", "Media Outlets"], ["acad", "Academic Citations"], ["social", "Social Highlights"],
+  ["cVerb", "Channel C Verbatim"], ["prop", "Proportionality"], ["evalT", "Eval? (trackable)"],
+  ["track", "Action Trackable?"], ["ftype", "Finding Type"], ["tags", "Tags"], ["scope", "Scope"],
 ];
 document.getElementById("dlFiltered").addEventListener("click", () => {
   const rows = F.filter(matches).sort((a, b) => (b.date || "").localeCompare(a.date || ""));

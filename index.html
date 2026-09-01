@@ -30,6 +30,21 @@
   /* four text sizes; nothing outside this set */
   --f-xs:.76rem; --f-sm:.86rem; --f-md:.95rem; --f-lg:1.06rem;
 }
+
+/* Evidence channels in the Data-tab detail row. Each channel is a bordered block so a
+   reader can tell at a glance which of the three actually carries evidence. */
+.chbox { margin-top:var(--s3); border:1px solid var(--rule); border-radius:6px;
+  padding:var(--s2) var(--s3); background:var(--paper-2); }
+.chtitle { font-size:var(--f-sm); font-weight:650; letter-spacing:.02em; color:var(--ink);
+  margin-bottom:var(--s1); }
+.chrow { display:grid; grid-template-columns:150px 1fr; gap:var(--s2);
+  padding:5px 0; border-top:1px solid var(--rule); font-size:var(--f-sm);
+  line-height:1.5; overflow-wrap:anywhere; }
+.chrow:first-of-type { border-top:0; }
+.chrow .k { color:var(--ink-3); font-size:var(--f-xs); text-transform:uppercase;
+  letter-spacing:.04em; padding-top:2px; }
+@media (max-width:640px){ .chrow { grid-template-columns:1fr; gap:2px; } }
+
 :root[data-theme="dark"] {
   color-scheme: dark;
   --paper:#121211; --paper-2:#1C1B19; --ink:#F6F4EF; --ink-2:#BEB9AD; --ink-3:#8B8579;
@@ -917,10 +932,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js?v=3c4cddb"></script>
-<script src="app.js?v=3c4cddb"></script>
+<script src="data.js?v=6cb7efe"></script>
+<script src="app.js?v=6cb7efe"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js?v=3c4cddb"></script>
+<script type="module" src="tags3d.js?v=6cb7efe"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */

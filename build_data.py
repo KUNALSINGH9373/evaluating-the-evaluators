@@ -157,11 +157,27 @@ def main():
             "attr": r["Attribution"].strip(),
             "pol": r["Policy Level"].strip(),
             "prop": r["Proportionality"].strip(),
-            "quote": "",
+            "quote": r["Finding Quote"].strip(),
             "ftype": [t.strip() for t in r["Finding Type"].split(";") if t.strip()],
             "scope": r["Scope"].strip(),
             "track": r["Action Trackable?"].strip(),
             "evalT": r["Eval? (trackable)"].strip(),
+            # Full evidence record. The site publishes every coded column, so a reader can
+            # check any row without downloading the CSV. The three raw ensemble votes are
+            # included because the majority alone hides the 2-1 splits.
+            "vS": r["Sonnet5 vote"].strip(),
+            "vG": r["GPT-5.5 vote"].strip(),
+            "vM": r["Gemini3.1 vote"].strip(),
+            "aVerb": r["Channel A Verbatim"].strip(),
+            "aEv": r["Channel A Evidence"].strip(),
+            "aSrc": r["Sources Checked (channel A)"].strip(),
+            "polResp": r["Policy Response"].strip(),
+            "bVerb": r["Channel B Verbatim"].strip(),
+            "bEv": r["Channel B Evidence"].strip(),
+            "media": r["Media Outlets"].strip(),
+            "acad": r["Academic Citations"].strip(),
+            "social": r["Social Highlights"].strip(),
+            "cVerb": r["Channel C Verbatim"].strip(),
         })
 
     track = [f for f in findings if f["track"] == "yes"]
