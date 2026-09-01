@@ -104,6 +104,20 @@ def public(v):
     return v
 
 
+def public_quote(v):
+    """Verbatim fields: normalise only the empty-result wording. Brackets are left
+    alone - an editorial insertion inside a quotation, e.g. "[Claude Mythos 5]", is
+    part of the quote and deleting it would alter it."""
+    v = (v or "").strip()
+    if not v:
+        return ""
+    m = _NOTHING_FOUND.match(v)
+    if m:
+        rest = v[m.end():].strip(" .,:;-\u2013\u2014")
+        return NONE_FOUND + (" \u2014 " + rest if rest else "")
+    return v
+
+
 def quarter(date: str):
     if not date or len(date) < 7:
         return None
@@ -208,16 +222,16 @@ def main():
             "vS": r["Sonnet5 vote"].strip(),
             "vG": r["GPT-5.5 vote"].strip(),
             "vM": r["Gemini3.1 vote"].strip(),
-            "aVerb": r["Channel A Verbatim"].strip(),
+            "aVerb": public_quote(r["Channel A Verbatim"]),
             "aEv": public(r["Channel A Evidence"]),
             "aSrc": public(r["Sources Checked (channel A)"]),
             "polResp": public(r["Policy Response"]),
-            "bVerb": r["Channel B Verbatim"].strip(),
+            "bVerb": public_quote(r["Channel B Verbatim"]),
             "bEv": public(r["Channel B Evidence"]),
             "media": public(r["Media Outlets"]),
             "acad": public(r["Academic Citations"]),
             "social": public(r["Social Highlights"]),
-            "cVerb": r["Channel C Verbatim"].strip(),
+            "cVerb": public_quote(r["Channel C Verbatim"]),
         })
 
     track = [f for f in findings if f["track"] == "yes"]
