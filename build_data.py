@@ -14,6 +14,7 @@ Writes:
 Run: python3 build_data.py
 """
 import csv
+import re
 import json
 import os
 import statistics
@@ -62,6 +63,45 @@ def canon_institution(inst: str, scope: str) -> str:
     if scope == "third-party-evaluator":
         return "Third-party evaluator"
     return "Other national AISI"
+
+
+# ---------------------------------------------------------------------------
+# Site-facing cleanup. V13 stays the audit copy: it keeps the dated re-run
+# markers, the provenance notes and the coding rulings, which are what make the
+# dataset checkable. None of that is evidence about a company, so it is stripped
+# from what the site displays.
+_PROCESS_NOTE = re.compile(
+    r"\[\s*(?:"
+    r"ADDED\b|RE-?RUN\b|CHANNEL\s+[ABC]\b|Channel\s+[ABC]\s+(?:re-run|searched|battery)|"
+    r"Moved\s+from|moved\s+from|Tier\s+justification|RE-VERIFIED|superseding|repointed|"
+    r"SEVERITY\s+OVERRIDE|publication_date|term\b"
+    r")[^\]]*\]",
+    re.I)
+
+# Four spellings of the same claim in the sheet; one on the site.
+_NOTHING_FOUND = re.compile(
+    r"^(?:Not\s+found|None\s+located|None\s+found|No\s+coverage\s+located|"
+    r"Not\s+located|None\s+identified)\b[\s.,:;-]*", re.I)
+
+NONE_FOUND = "None found"
+
+
+def public(v):
+    """Strip internal process notes and normalise the empty result to one wording."""
+    v = (v or "").strip()
+    if not v:
+        return ""
+    v = _PROCESS_NOTE.sub("", v)
+    v = re.sub(r"\s*;\s*;\s*", "; ", v)
+    v = re.sub(r"\s{2,}", " ", v).strip(" ;-\u2013\u2014")
+    if not v:
+        return ""
+    # "Not found — <battery that was run>" keeps the battery, relabelled.
+    m = _NOTHING_FOUND.match(v)
+    if m:
+        rest = v[m.end():].strip(" .,:;-\u2013\u2014")
+        return NONE_FOUND + (" \u2014 " + rest if rest else "")
+    return v
 
 
 def quarter(date: str):
@@ -169,14 +209,14 @@ def main():
             "vG": r["GPT-5.5 vote"].strip(),
             "vM": r["Gemini3.1 vote"].strip(),
             "aVerb": r["Channel A Verbatim"].strip(),
-            "aEv": r["Channel A Evidence"].strip(),
-            "aSrc": r["Sources Checked (channel A)"].strip(),
-            "polResp": r["Policy Response"].strip(),
+            "aEv": public(r["Channel A Evidence"]),
+            "aSrc": public(r["Sources Checked (channel A)"]),
+            "polResp": public(r["Policy Response"]),
             "bVerb": r["Channel B Verbatim"].strip(),
-            "bEv": r["Channel B Evidence"].strip(),
-            "media": r["Media Outlets"].strip(),
-            "acad": r["Academic Citations"].strip(),
-            "social": r["Social Highlights"].strip(),
+            "bEv": public(r["Channel B Evidence"]),
+            "media": public(r["Media Outlets"]),
+            "acad": public(r["Academic Citations"]),
+            "social": public(r["Social Highlights"]),
             "cVerb": r["Channel C Verbatim"].strip(),
         })
 

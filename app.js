@@ -962,8 +962,17 @@ function detailRow(f) {
     body.append(h("tr", { class: "rdsec" }, h("th", { colspan: "2" }, label)));
   }
   function row(label, value, opts) {
-    if (value == null || value === "") return;
+    const empty = value == null || value === "";
+    // A channel that was searched and came back empty is a result, not a blank: the
+    // coded level already carries that claim, so show it rather than hiding the row.
+    // "Sources checked" is the log of where we looked, so an empty one means the log
+    // was not recorded - a different statement, and labelled differently.
+    if (empty) {
+      if (!opts || !opts.showEmpty) return;
+      value = opts.emptyText || "None found";
+    }
     const cell = h("td");
+    if (empty) cell.className = "rdempty";
     if (opts && opts.quote) cell.className = "rdquote";
     if (opts && opts.mono) cell.className = "rdmono";
     // linkify bare URLs so evidence is clickable rather than copy-pasted
@@ -1010,19 +1019,19 @@ function detailRow(f) {
   row("Verbatim", f.aVerb, { quote: true });
   row("Response date", f.respDate);
   row("Lag (days)", f.lag == null ? "" : String(f.lag));
-  row("Evidence", f.aEv);
-  row("Sources checked", f.aSrc);
+  row("Evidence", f.aEv, { showEmpty: true });
+  row("Sources checked", f.aSrc, { showEmpty: true, emptyText: "Not recorded" });
 
   section("Channel B — policy uptake");
   row("Policy level", f.pol);
   row("Policy response", f.polResp);
   row("Verbatim", f.bVerb, { quote: true });
-  row("Evidence", f.bEv);
+  row("Evidence", f.bEv, { showEmpty: true });
 
   section("Channel C — public traction");
-  row("Media outlets", f.media);
-  row("Academic citations", f.acad);
-  row("Social highlights", f.social);
+  row("Media outlets", f.media, { showEmpty: true });
+  row("Academic citations", f.acad, { showEmpty: true });
+  row("Social highlights", f.social, { showEmpty: true });
   row("Verbatim", f.cVerb, { quote: true });
 
   section("Outcome");
