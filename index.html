@@ -31,19 +31,40 @@
   --f-xs:.76rem; --f-sm:.86rem; --f-md:.95rem; --f-lg:1.06rem;
 }
 
-/* Evidence channels in the Data-tab detail row. Each channel is a bordered block so a
-   reader can tell at a glance which of the three actually carries evidence. */
-.chbox { margin-top:var(--s3); border:1px solid var(--rule); border-radius:6px;
-  padding:var(--s2) var(--s3); background:var(--paper-2); }
-.chtitle { font-size:var(--f-sm); font-weight:650; letter-spacing:.02em; color:var(--ink);
-  margin-bottom:var(--s1); }
-.chrow { display:grid; grid-template-columns:150px 1fr; gap:var(--s2);
-  padding:5px 0; border-top:1px solid var(--rule); font-size:var(--f-sm);
-  line-height:1.5; overflow-wrap:anywhere; }
-.chrow:first-of-type { border-top:0; }
-.chrow .k { color:var(--ink-3); font-size:var(--f-xs); text-transform:uppercase;
-  letter-spacing:.04em; padding-top:2px; }
-@media (max-width:640px){ .chrow { grid-template-columns:1fr; gap:2px; } }
+/* Expanded row in the Data tab. Rendered as a real Field | Value table: with 38
+   columns a grid of loose divs gave the eye no column edge to track, so labels and
+   values ran together. The ruled left column fixes that. */
+.rowdetail > .rdcell { padding:0 !important; background:var(--paper-2);
+  border-bottom:2px solid var(--rule-2); }
+.rdhead { padding:var(--s3) var(--s4) var(--s2); border-bottom:1px solid var(--rule); }
+.rdid { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:var(--f-xs);
+  letter-spacing:.03em; color:var(--accent); }
+.rdtitle { font-size:var(--f-lg); font-weight:600; color:var(--ink); margin-top:3px;
+  line-height:1.35; }
+.rdwrap { overflow-x:auto; padding:0 var(--s4) var(--s3); }
+table.rd { width:100%; border-collapse:collapse; margin-top:var(--s2);
+  font-size:var(--f-sm); min-width:0; }
+table.rd th, table.rd td { text-align:left; vertical-align:top; padding:8px 14px;
+  border-bottom:1px solid var(--rule); line-height:1.55; }
+table.rd > tbody > tr > th { width:11.5rem; min-width:11.5rem; color:var(--ink-3);
+  font-weight:500; font-size:var(--f-xs); text-transform:uppercase; letter-spacing:.045em;
+  border-right:1px solid var(--rule); background:transparent; padding-top:10px; }
+table.rd td { color:var(--ink-2); overflow-wrap:anywhere; }
+table.rd tr.rdsec > th { width:auto; min-width:0; border-right:0; padding:16px 14px 6px;
+  color:var(--ink); font-weight:650; font-size:var(--f-sm); text-transform:none;
+  letter-spacing:0; border-bottom:1px solid var(--rule-2); }
+table.rd tr.rdsec:first-child > th { padding-top:6px; }
+table.rd td.rdquote { color:var(--ink); font-style:italic;
+  border-left:2px solid var(--rule-2); padding-left:12px; }
+table.rd td.rdmono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:var(--f-xs); }
+table.rd a { color:var(--accent); overflow-wrap:anywhere; }
+@media (max-width:700px){
+  table.rd > tbody > tr > th { width:auto; min-width:0; display:block; border-right:0;
+    border-bottom:0; padding-bottom:0; }
+  table.rd > tbody > tr > td { display:block; padding-top:2px; }
+  table.rd tr.rdsec > th { display:block; }
+}
 
 :root[data-theme="dark"] {
   color-scheme: dark;
@@ -932,10 +953,10 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
 <div id="tooltip" role="status" aria-live="polite"></div>
 <button id="viewGapBtn" type="button" hidden></button>
 
-<script src="data.js?v=923cb56"></script>
-<script src="app.js?v=923cb56"></script>
+<script src="data.js?v=52a5db2"></script>
+<script src="app.js?v=52a5db2"></script>
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
-<script type="module" src="tags3d.js?v=923cb56"></script>
+<script type="module" src="tags3d.js?v=52a5db2"></script>
 <script>
 /* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
    is dispatched on reveal — app.js debounces that into a full re-render. */

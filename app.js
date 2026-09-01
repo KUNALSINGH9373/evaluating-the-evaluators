@@ -945,63 +945,92 @@ function actionPill(f) {
 }
 
 function detailRow(f) {
-  const td = h("td", { colspan: "6" });
-  td.append(h("div", null, h("strong", null, f.id + " — " + (f.title || "Untitled report"))));
-  td.append(h("p", { style: "margin:8px 0 0" }, f.finding));
-  if (f.quote) td.append(h("blockquote", { class: "kq" }, "\u201C" + f.quote + "\u201D"));
+  const td = h("td", { colspan: "6", class: "rdcell" });
 
-  const meta = h("div", { class: "detail-grid" });
-  const votes = [f.vS, f.vG, f.vM].filter(Boolean);
-  const pairs = [
-    ["Institution", f.inst || "Not recorded"],
-    ["Institution type", f.instType || "\u2014"],
-    ["Published", f.date || "\u2014"],
-    ["Models / systems", f.models || "\u2014"],
-    ["Domain", f.dom.join(", ") || "\u2014"],
-    ["Access", f.access || "\u2014"],
-    ["Finding type", f.ftype.join(", ") || "\u2014"],
-    ["Scope", f.scope || "\u2014"],
-    ["Severity", f.sev + (votes.length ? "  (votes " + votes.join(" / ") + ")" : "")],
-    ["Action level", f.action || "\u2014"],
-    ["Attribution", f.attr || "\u2014"],
-    ["Policy level", f.pol || "\u2014"],
-    ["Proportionality", f.prop || "\u2014"],
-    ["Tags", (f.tags && f.tags.length ? f.tags.join(", ") : "\u2014")],
-  ];
-  for (const [k, v] of pairs) meta.append(h("div", null, h("div", { class: "k" }, k), h("div", null, v)));
-  td.append(meta);
+  const head = h("div", { class: "rdhead" });
+  head.append(h("div", { class: "rdid" }, f.id));
+  head.append(h("div", { class: "rdtitle" }, f.title || "Untitled report"));
+  td.append(head);
 
-  /* The three response channels, each shown only where the row carries evidence.
-     A blank channel and a recorded "not found" are different claims, so the
-     searched-and-empty text is printed rather than collapsed into silence. */
-  function channel(title, blocks) {
-    const live = blocks.filter(b => b[1]);
-    if (!live.length) return;
-    const box = h("div", { class: "chbox" });
-    box.append(h("div", { class: "chtitle" }, title));
-    for (const [label, val] of live) {
-      box.append(h("div", { class: "chrow" },
-        h("span", { class: "k" }, label), h("span", null, val)));
+  /* One table, Field | Value, with section rows dividing the record. A grid of loose
+     divs was unreadable at this width: with 38 fields the reader needs a ruled column
+     edge to track which value belongs to which label. */
+  const tbl = h("table", { class: "rd" });
+  const body = h("tbody");
+
+  function section(label) {
+    body.append(h("tr", { class: "rdsec" }, h("th", { colspan: "2" }, label)));
+  }
+  function row(label, value, opts) {
+    if (value == null || value === "") return;
+    const cell = h("td");
+    if (opts && opts.quote) cell.className = "rdquote";
+    if (opts && opts.mono) cell.className = "rdmono";
+    // linkify bare URLs so evidence is clickable rather than copy-pasted
+    const parts = String(value).split(/(https?:\/\/[^\s,;)\]]+)/g);
+    for (const p of parts) {
+      if (/^https?:\/\//.test(p)) {
+        cell.append(h("a", { href: p, target: "_blank", rel: "noopener noreferrer" }, p));
+      } else if (p) {
+        cell.append(document.createTextNode(p));
+      }
     }
-    td.append(box);
+    body.append(h("tr", null, h("th", null, label), cell));
   }
-  channel("Channel A \u2014 company response", [
-    ["Response", f.resp + (f.respDate ? "  (" + f.respDate + (f.lag != null ? ", lag " + f.lag + " days" : "") + ")" : "")],
-    ["Verbatim", f.aVerb], ["Evidence", f.aEv], ["Sources checked", f.aSrc],
-  ]);
-  channel("Channel B \u2014 policy uptake", [
-    ["Response", f.polResp], ["Verbatim", f.bVerb], ["Evidence", f.bEv],
-  ]);
-  channel("Channel C \u2014 public traction", [
-    ["Media", f.media], ["Academic citations", f.acad],
-    ["Social", f.social], ["Verbatim", f.cVerb],
-  ]);
 
-  if (f.url && /^https?:\/\//.test(f.url)) {
-    td.append(h("p", { style: "margin-top:12px" },
-      h("a", { href: f.url, target: "_blank", rel: "noopener noreferrer" }, "Source report \u2197")));
-  }
-  return h("tr", { class: "detail" }, td);
+  section("The finding");
+  row("Finding", f.finding);
+  row("Finding quote", f.quote, { quote: true });
+  row("Models / systems", f.models);
+  row("Source URL", f.url);
+
+  section("Provenance");
+  row("Finding ID", f.id, { mono: true });
+  row("Report ID", f.rid, { mono: true });
+  row("Report title", f.title);
+  row("Institution", f.inst);
+  row("Institution type", f.instType);
+  row("Published", f.date);
+  row("Domain", f.dom && f.dom.length ? f.dom.join(", ") : "");
+  row("Access type", f.access);
+  row("Finding type", f.ftype && f.ftype.length ? f.ftype.join(", ") : "");
+  row("Scope", f.scope);
+  row("Tags", f.tags && f.tags.length ? f.tags.join(", ") : "");
+
+  section("Severity");
+  row("Majority", f.sev);
+  row("Claude Sonnet 5 vote", f.vS);
+  row("GPT-5.5 vote", f.vG);
+  row("Gemini 3.1 vote", f.vM);
+
+  section("Channel A — company response");
+  row("Action level", f.action);
+  row("Attribution", f.attr);
+  row("Company response", f.resp);
+  row("Verbatim", f.aVerb, { quote: true });
+  row("Response date", f.respDate);
+  row("Lag (days)", f.lag == null ? "" : String(f.lag));
+  row("Evidence", f.aEv);
+  row("Sources checked", f.aSrc);
+
+  section("Channel B — policy uptake");
+  row("Policy level", f.pol);
+  row("Policy response", f.polResp);
+  row("Verbatim", f.bVerb, { quote: true });
+  row("Evidence", f.bEv);
+
+  section("Channel C — public traction");
+  row("Media outlets", f.media);
+  row("Academic citations", f.acad);
+  row("Social highlights", f.social);
+  row("Verbatim", f.cVerb, { quote: true });
+
+  section("Outcome");
+  row("Proportionality", f.prop);
+
+  tbl.append(body);
+  td.append(h("div", { class: "rdwrap" }, tbl));
+  return h("tr", { class: "rowdetail" }, td);
 }
 
 let openId = null;
