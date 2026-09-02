@@ -36,7 +36,7 @@ except ImportError as exc:  # pragma: no cover - operator-facing message
         "Set AISI_SCRIPTS to the directory holding dataset_source.py."
     )
 
-SWEEP = HERE / "sweep_state"
+SWEEP = HERE / "research" / "sweep"   # the screening ledger moved under research/ in the repo reorganisation
 OUT_JS = HERE / "data.js"
 OUT_CSV = HERE / "dataset.csv"
 

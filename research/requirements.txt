@@ -1,0 +1,14 @@
+# Reproduction dependencies for "Evaluating the Evaluators".
+# Python 3.9 or newer. Install with:  python3 -m pip install -r requirements.txt
+#
+# Required to reproduce every number and figure in the paper:
+openpyxl>=3.1        # reads the dataset workbook (scripts/dataset_source.py)
+matplotlib>=3.7      # all 28 figures
+numpy>=1.24          # figure layout and the statistics in scripts/all_stats.py
+#
+# Required only to re-run source verification and the response-channel sweep,
+# both of which fetch from the live web and are not needed to reproduce the tables:
+requests>=2.31
+beautifulsoup4>=4.12
+pypdf>=4.0
+pdfminer.six>=20221105
