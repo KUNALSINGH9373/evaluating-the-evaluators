@@ -61,6 +61,26 @@ table.rd td.rdmono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
 table.rd a { color:var(--accent); overflow-wrap:anywhere; }
 table.rd td.rdempty { color:var(--ink-3); font-style:italic; }
 
+/* Collapsible detail section. The corpus breakdown is needed to check the work but is not a
+   result, so it is folded away by default rather than competing with the findings above it. */
+details.foldout { margin:var(--s5) 0 var(--s4); border:1px solid var(--rule);
+  border-radius:6px; background:var(--paper-2); }
+details.foldout > summary { cursor:pointer; list-style:none; padding:var(--s3) var(--s4);
+  display:block; }
+details.foldout > summary::-webkit-details-marker { display:none; }
+details.foldout > summary::before { content:"\25B8"; float:left; margin:2px var(--s2) 0 0;
+  color:var(--ink-3); transition:transform .15s ease; }
+details.foldout[open] > summary::before { transform:rotate(90deg); }
+details.foldout > summary:hover .fold-t { color:var(--accent); }
+details.foldout > summary:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.fold-t { display:block; font-size:1.22rem; font-weight:650; color:var(--ink);
+  line-height:1.3; overflow:hidden; }
+.fold-s { display:block; margin-top:5px; font-size:var(--f-sm); color:var(--ink-2);
+  max-width:74ch; line-height:1.55; overflow:hidden; }
+details.foldout > .g3 { padding:0 var(--s4) var(--s4); }
+@media (prefers-reduced-motion: reduce){ details.foldout > summary::before { transition:none; } }
+
+
 @media (max-width:700px){
   table.rd > tbody > tr > th { width:auto; min-width:0; display:block; border-right:0;
     border-bottom:0; padding-bottom:0; }
@@ -435,26 +455,35 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     <figure>
       <div id="pipeline"><div id="sankeyMount" class="plot"></div></div>
       <figcaption><b>Every published finding, narrowed to the ones a company owes an answer for.</b>
-        Ribbon width is an exact count. Most findings never reach the question — they are
-        methodology, governance, or results with no named company to respond to. The final column
-        is the population every number below is computed over. Hover any ribbon for the counts.</figcaption>
+        Read it left to right. Every finding in the dataset enters on the left, and each ribbon
+        carries findings from one stage to the next; the width of a ribbon is drawn in proportion
+        to how many findings it carries, so a ribbon twice as thick is carrying twice as many.
+        Most findings drop out before the end, and that is the point of the diagram: they are
+        methodology papers, governance commentary, or results with no named company that could
+        answer for them, so no response is owed and none is counted as missing. What survives to
+        the final column is the population every number on this page is computed over. Hover any
+        ribbon to see the exact count it represents.</figcaption>
       <details class="tblview" id="sankeyTable"><summary style="cursor:pointer">Table view</summary></details>
     </figure>
 
     <div class="subhead">How a company response is measured</div>
     <div class="leadbox">
       <p>Every finding in the accountability set gets one verdict:
-        <strong>proportionality</strong> — did the response match the risk? It is computed from two
-        inputs, each measured separately before they are combined, and the combination is a fixed
-        lookup with no discretion at any point.</p>
+        <strong>proportionality</strong> — did the response match the risk? Answering it takes two
+        separate questions, asked and answered independently of each other so that neither can
+        colour the other. Only once both have an answer are they combined, and that combination is
+        a fixed lookup: the same pair of answers always produces the same verdict, with no
+        judgement exercised at the final step.</p>
     </div>
 
     <div class="g2" style="margin-top:var(--s5)">
       <div class="inputbox">
-        <h3 style="margin-bottom:var(--s2)">Input 1 · Severity — how serious is the finding?</h3>
+        <h3 style="margin-bottom:var(--s2)">Question 1 · Severity — how serious is the finding?</h3>
         <p>Each finding is scored against eight dangerous-capability
           domains by three independent models — Claude Sonnet 5, GPT-5.5 and Gemini 3.1 — using one
-          frozen prompt sent to all three. Majority vote decides.</p>
+          frozen prompt sent to all three. Each model returns its own category, and the one that
+          at least two of the three agree on becomes the finding's severity. Using three models
+          rather than one means a single model's misreading cannot decide a case on its own.</p>
         <dl class="deflist bordered" style="grid-template-columns:11rem 1fr">
           <dt class="r-c1">Category&nbsp;1</dt><dd><b>Significant risk.</b> At least one of the eight domains is
             <em>demonstrated</em>: CBRN uplift · cyber operations · autonomy and self-replication ·
@@ -470,7 +499,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           never Category&nbsp;1.</div>
       </div>
       <div class="inputbox">
-        <h3 style="margin-bottom:var(--s2)">Input 2 · Action level — what did the company publish?</h3>
+        <h3 style="margin-bottom:var(--s2)">Question 2 · Action level — what did the company publish?</h3>
         <p>The same five sources are checked for every finding. Only the
           company's own primary document counts — news reporting that quotes a company is not a
           response, and standing policy that shares a topic does not count.</p>
@@ -570,8 +599,14 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           separately and never substitutes for a company response.</figcaption></figure>
     </div>
 
-    <div class="subhead">What the corpus is made of</div>
-    <div class="g3">
+    <details class="foldout">
+      <summary>
+        <span class="fold-t">What the corpus is made of</span>
+        <span class="fold-s">Three breakdowns behind the headline — how the corpus splits by tier,
+          when in a model's life the evaluation happened, and whether responding companies name the
+          evaluator. Detail rather than result; open if you want to check the composition.</span>
+      </summary>
+<div class="g3">
       <figure><img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Corpus split by tier.">
         <figcaption><b>Only Tier A is scored.</b> The rest are real, source-verified findings that
           fail one of the two gates — methodology, governance, or results with no named company to
@@ -586,6 +621,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           the evaluator, but not always. Attribution is a separate field so a silent fix is never
           penalised in the outcome.</figcaption></figure>
     </div>
+    </details>
 
     <div class="subhead">What stands out in the numbers</div>
     <p style="max-width:74ch;margin-bottom:var(--s4)">Each line below is computed directly from the
@@ -843,8 +879,11 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
         <h3>How the score is produced</h3>
         <p>Three independent models — <strong>Claude Sonnet 5, GPT-5.5 and Gemini 3.1</strong> — each
           score every finding against all eight domains, using one frozen prompt sent verbatim to
-          all three. Majority vote decides. All three votes are stored and never overwritten, so a
-          split decision stays visible in the data rather than collapsing into the majority.</p>
+          all three. Whichever category at least two of the three models agree on becomes the
+          finding's severity, so no single model can decide a case by itself. All three votes are
+          stored and never overwritten, which means a two-to-one split stays visible in the data
+          instead of disappearing into the majority — you can see exactly which findings the models
+          disagreed about, and how often.</p>
         <div class="detail">Agreement is reported as <strong>Fleiss&rsquo; κ</strong>. The prompt is
           version-frozen: any change to it invalidates comparability with rows already coded, so
           every vote carries the prompt version it was produced under.</div>
