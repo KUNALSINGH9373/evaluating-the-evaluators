@@ -79,7 +79,7 @@ NLEAF = sum(len(lv) for _, _, lv in groups)
 UNIT_IN = 0.56
 GAP = 0.95                    # between the last leaf of a branch and the first of the next
 TITLE = 2.55                  # title block above the first heading
-FOOT = 0.85                   # footnote below the last bar
+FOOT = 1.95                   # footnote below the last bar — two lines at FS_FOOT, not one at 16pt
 BH = 0.74                     # bar height, in row units
 RX, RW = 0.0, 11.5            # root node
 SPINE = 13.5                  # vertical connector, root out to the branches
@@ -90,6 +90,10 @@ FS_NAME, FS_NUM = 24, 26
 FS_BIG = 32                   # the count line inside a root or branch node
 FS_BRANCH = 24                # the branch's type name — sized to read, not as a caption
 FS_SMALL = 19                 # "all findings", under the root count
+FS_FOOT = 22                  # the footnote. Was 16 — the only element on the figure below 19, and
+                              # illegible once the 20in canvas was scaled to a page. It cannot simply
+                              # be enlarged: the note is ~140 characters, which at 22pt needs about
+                              # 25in on one line, so it is split across two and FOOT widened to suit.
 FIG_W = 20.0
 WIRE_C = "#C9D6E0"
 
@@ -184,10 +188,10 @@ for (k, cnt, leaves, y0, y1), mid in zip(blocks, mids):
             ax.text(BX + w + 0.9 + text_w(str(v), FS_NUM, "bold") + 1.3, ly, nm,
                     ha="left", va="center", fontsize=FS_NAME, color="#1A1A1A")
 
-ax.text(0, total - 0.15,
-        f'Institution Type field; compound values (e.g. "Government;Lab") fold into their primary '
-        f'type, so the four branches sum to {len(R):,}.',
-        fontsize=16, color="#4A4A4A", va="baseline", ha="left")
+ax.text(0, total - FOOT + 0.55,
+        f'Institution Type field; compound values (e.g. "Government;Lab") fold into\n'
+        f'their primary type, so the four branches sum to {len(R):,}.',
+        fontsize=FS_FOOT, color="#333333", va="top", ha="left", linespacing=1.45)
 
 p = os.path.join(OUT, "13_institution_type_tree.png")
 fig.savefig(p, bbox_inches="tight", pad_inches=0.22)
