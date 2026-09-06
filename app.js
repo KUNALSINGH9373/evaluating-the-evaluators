@@ -552,7 +552,7 @@ const charts = [
     render(mount) {
       mount.replaceChildren();
       const img = h("img", {
-        src: "severity_classification.jpg",
+        src: "charts/17_severity_classification.jpg",
         alt: "Flow diagram: a finding is evaluated independently by 3 cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) against 7 dangerous-capability domains (CBRN uplift, offensive cyber capability, autonomy/self-replication/AI-R&D automation, persuasion or societal harm at scale, deliberate deception or misalignment, deployed-safeguard failure, compromised evaluation integrity). Majority vote of the 3 models decides C1 (269 findings, threshold demonstrated) or C2 (732 findings, threshold not demonstrated). 920 of 1,001 (92%) were unanimous 3-0; the remaining 81 (8%) were decided 2-1.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
@@ -643,7 +643,7 @@ const charts = [
     render(mount) {
       mount.replaceChildren();
       const img = h("img", {
-        src: "institution_type_tree.jpg",
+        src: "charts/13_institution_type_tree.jpg",
         alt: "Left-to-right tree diagram: 1,001 findings by Institution Type - Government 306 (UK AISI 199, Joint UK AISI + US CAISI 35, US CAISI 33, Joint UK + US + Singapore AISIs (International Network) 5, Joint UK AISI + OpenAI (company-published) 4, Other institutions 30); Non-Profit (AIEF) 250 (METR 110, SecureBio 35, Transluce 32, Princeton Holistic Agent Leaderboard (HAL) 31, Collective Intelligence Project (Weval) 31, Other institutions 11); For-Profit 224 (Scale AI 142, Dreadnode 30, Holistic AI 12, Gray Swan AI 10, Cisco (Robust Intelligence / Foundation AI) 10, Other institutions 20); Non-Profit (Independent) 221 (Apollo Research 49, FAR.AI 43, Center for AI Safety (CAIS) 40, Redwood Research 31, Shanghai AI Laboratory (AI45 Lab) 30, Other institutions 28).",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
