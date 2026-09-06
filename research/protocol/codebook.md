@@ -1,6 +1,6 @@
 # Evaluating the Evaluators — Rulebook (v10)
 
-**Canonical dataset:** `~/MATS/Research/AISI_Evals/dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read only through `scripts/dataset_source.py` (1,169 findings · 484 reports · 47 institutions · 39 columns · window 2020-05-29 – 2026-08-27). Superseded paths (`~/Desktop/v10.csv`, `v10 revised.xlsx`, `v11_FINAL.xlsx`) are dead — do not read them.
+**Canonical dataset:** `~/MATS/Research/AISI_Evals/dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read only through `scripts/dataset_source.py` (1,144 findings · 474 reports · 46 institutions · 39 columns · window 2022-11-16 – 2026-08-27 · Tier A 231 · B 599 · C 314 · headline 150/188 = 79.8% falling short, 112/188 = 59.6% with no located response). Superseded paths (`~/Desktop/v10.csv`, `v10 revised.xlsx`, `v11_FINAL.xlsx`) are dead — do not read them.
 **Status:** living document — update whenever a rule changes; every change gets a Changelog entry.
 **Companions:** `SEARCH_PROTOCOL.md` (in the dashboard repo — full search/screening procedure), `run_severity_ensemble.py` (the frozen severity prompt), `screening_ledger.csv` (being built by the evidence sweep).
 **Last updated:** 2026-08-14

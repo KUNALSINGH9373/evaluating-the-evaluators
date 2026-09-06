@@ -3,8 +3,9 @@
 > **This document describes the v10 build (456 findings, 2026-07-30 cutoff) and is kept as the
 > historical record of how that corpus was constructed. It is not the current dataset.** The live
 > corpus is `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read only through
-> `scripts/dataset_source.py`: **1,169 findings · 484 reports · 47 institutions · 39 columns ·
-> window 2020-05-29 – 2026-08-27 · Tier A 231 · B 607 · C 331 · headline 113/188 = 60.1%.**
+> `scripts/dataset_source.py`: **1,144 findings · 474 reports · 46 institutions · 39 columns ·
+> window 2022-11-16 – 2026-08-27 · Tier A 231 · B 599 · C 314 · headline 150/188 = 79.8%
+> falling short, 112/188 = 59.6% with no located response.**
 > Counts in the body below are v10-era and are correct only for that snapshot.
 
 **Dataset this document describes:** `v10.csv` — 456 findings · 211 reports · 40 columns *(superseded)*

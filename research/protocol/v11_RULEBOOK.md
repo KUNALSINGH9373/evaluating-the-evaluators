@@ -3,12 +3,14 @@
 **Project question:** Do third-party AI evaluations matter?
 
 **Corpus cutoff:** 2026-08-29 (moved from 2026-07-30 by the window-extension sweep). **Eligible
-publication period:** no lower-date boundary; the report must have been publicly available on or
-before the cutoff. The earliest publication actually held is 2020-05-29, the latest 2026-08-27.
+publication period:** no lower-date boundary is applied. A report is eligible if it was publicly
+available on or before the cutoff. The earliest publication actually held is 2022-11-16 and the
+latest 2026-08-27; that range describes the corpus, not an eligibility rule.
 
 **Current file — there is exactly one.** `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read
-only through `scripts/dataset_source.py`. **1,169 findings · 484 reports · 47 institutions ·
-39 columns · Tier A 231 · B 607 · C 331 · headline 113/188 = 60.1%.**
+only through `scripts/dataset_source.py`. **1,144 findings · 474 reports · 46 institutions ·
+39 columns · Tier A 231 · B 599 · C 314 · headline 150/188 = 79.8% falling short, of which
+112/188 = 59.6% with no located response.**
 
 The merge this section used to describe is done. `v10 revised.xlsx` (455-finding base) and
 `v11_FINAL.xlsx` (558-finding audited additions) were reconciled into V12 and then V13; both source
@@ -33,6 +35,22 @@ then newest-to-oldest within each tier.
 
 The dataset measures the public accountability pipeline after an external evaluator publishes a
 finding about a frontier AI model or developer.
+
+**The frontier condition is a scope gate, not a tiering condition.** A finding must concern a
+frontier AI lab, company or model to be in the dataset at all. If it does not, it is excluded to
+the screening ledger and receives no tier. Three consequences follow, and they are frequently
+confused:
+
+- **Anonymised is not non-frontier.** A finding that evaluates frontier systems without naming
+  which ones satisfies this gate. It fails Tier A on the *named* requirement and is Tier B — a
+  frontier-related adverse finding that cannot be traced to an accountable company.
+- **Model size does not decide it.** Any model from a frontier developer is in scope at any scale;
+  an 8B open-weight release from a frontier lab qualifies, and NVIDIA, Meta, Alibaba, DeepSeek,
+  Moonshot and Zhipu are frontier developers for this purpose.
+- **The evaluator's own constructs are out.** A model the evaluator built, fine-tuned or
+  backdoored for the study has no accountable developer and fails the gate, as does a finding whose
+  subject is a benchmark, a software library, an evaluation apparatus, or human baseliners rather
+  than a model.
 
 - `government-AISI`: government AI safety/security institutes and joint exercises containing one.
 - `third-party-evaluator`: independent non-government evaluators, retained as a separate stratum.
@@ -84,7 +102,7 @@ Each row belongs to exactly one tier:
 | Tier | Encoding | Rule | Use |
 |---|---|---|---|
 | A | `Eval? = yes`; `Action Trackable? = yes` | Empirical finding about a named frontier company/model, concerning, and a company response is reasonable to assess. | Channel A/B/C and proportionality analysis. |
-| B | `Eval? = yes`; `Action Trackable? = no` | Empirical, but fails at least one Tier-A condition: anonymised model, reassuring/null result, bare score or ranking without a concerning threshold, non-frontier system, capability trend, inconclusive result, or company response is not reasonably assessable. | Descriptive analysis only. |
+| B | `Eval? = yes`; `Action Trackable? = no` | Empirical and in scope under §1, but fails at least one Tier-A condition: anonymised model, reassuring/null result, bare score or ranking without a concerning threshold, capability trend, inconclusive result, or company response is not reasonably assessable. | Descriptive analysis only. |
 | C | `Eval? = no`; `Action Trackable? = blank` | Methodology, framework, governance/process, tooling, milestone, or other non-empirical-model finding. | Descriptive analysis only. |
 
 Tier A requires **all** of the following:
@@ -314,3 +332,24 @@ counts as corpus headline statistics.
   the 39-column schema; initially enforced the then-stated September 2023 lower bound (superseded
   later the same day); recorded v10/v11 version continuity; and prohibited a 100%-verified claim
   while audit blockers remain.
+
+- **2026-09-05 · frontier scope gate clarified; corpus corrected to 1,144.** §1 now states that the
+  frontier condition is a scope gate rather than a tiering condition, and the Tier B row no longer
+  lists "non-frontier system" as a Tier B reason. Those two statements contradicted each other: a
+  row cannot both fail the scope gate and be admitted as Tier B, and the contradiction is what
+  allowed non-frontier rows into earlier versions. §1 also now distinguishes anonymised from
+  non-frontier, states that model size does not decide the gate, and excludes the evaluator's own
+  constructs.
+
+  Applied to the corpus: 23 rows removed as out of scope — eight where the evaluated model was
+  built or fine-tuned by the evaluator (RAND's own A3C/TRPO/PPO agents, Redwood's password-locked
+  models, Palisade's constructed backdoors), fourteen whose subject is not a model (human
+  baseliners, benchmark reviews, evaluation apparatus, an open-source library audit), and one
+  product from a developer that is not a frontier lab. A further 2 rows were removed as duplicates
+  found by comparing Models/Systems and Finding semantically rather than by verbatim text: the same
+  MultiNRC claim entered through both a paper's PDF and its landing page, and a text-only
+  leaderboard that was an 86% subset of the same evaluation.
+
+  Anonymised frontier evaluations were retained. Corpus 1,169 → 1,144 · reports 484 → 474 ·
+  institutions 47 → 46 · Tier B 607 → 599 · Tier C 331 → 314. Tier A unchanged at 231 and the
+  headline unchanged, since nothing removed was Tier A. Earliest publication now 2022-11-16.
