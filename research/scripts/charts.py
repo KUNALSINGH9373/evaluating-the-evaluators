@@ -282,9 +282,18 @@ save(fig,"16_gap_rate_by_access_type.png")
 
 # ---------------------------------------------------------------- 17 severity
 c=collections.Counter(r.get("Severity (C1/C2) majority") for r in ROWS)
+# §7 lets severity stay unresolved: a row split under §5 has never been through the ensemble, and
+# an ERR ensemble has no majority. Those rows have no bar here, so the denominator has to be the
+# classified count - using len(ROWS) made the title claim rows the bars did not contain.
+_ncls = c["C1"] + c["C2"]
+_unres = len(ROWS) - _ncls
 fig,ax=plt.subplots(figsize=(15,10.5))
-vbar(ax,["C1\nsignificant risk","C2\nlow risk"],[c["C1"],c["C2"]],colours_for(SEV,["C1","C2"]),len(ROWS),fs=29)
-ax.set_title(f"Severity Classification — 3-model ensemble majority (n={len(ROWS):,})",pad=26,fontsize=35)
+vbar(ax,["C1\nsignificant risk","C2\nlow risk"],[c["C1"],c["C2"]],colours_for(SEV,["C1","C2"]),_ncls,fs=29)
+ax.set_title(f"Severity Classification — 3-model ensemble majority (n={_ncls:,})",pad=26,fontsize=35)
+if _unres:
+    ax.text(0.5,-0.145,f"{_unres} further finding{'s' if _unres>1 else ''} await severity "
+            f"adjudication under §7 and are not plotted.",transform=ax.transAxes,
+            ha="center",va="top",fontsize=22,color="#555555")
 ax.set_ylabel("Findings")
 save(fig,"17_severity_classification.png")
 

@@ -128,7 +128,14 @@ def ident(label, a, b):
     if not okk: bad(f"identity failed: {label} ({a} != {b})")
 
 ident("tiers sum to corpus", T['A']+T['B']+T['C'], len(R))
-ident("severity sums to corpus", sev['C1']+sev['C2'], len(R))
+# Severity may legitimately be unresolved (§7): a §5 split row has not been through the
+# ensemble, and an ERR ensemble has no majority. The identity is therefore C1 + C2 +
+# unresolved = corpus, not C1 + C2 = corpus, which failed as soon as one row was split.
+_unres = [r['Finding ID'] for r in R if not (r['Severity (C1/C2) majority'] or '').strip()]
+if _unres:
+    print(f"  severity unresolved  {len(_unres)} row(s) awaiting §7 adjudication: {_unres}")
+ident("severity sums to corpus (C1 + C2 + unresolved)",
+      sev['C1']+sev['C2']+len(_unres), len(R))
 ident("outcomes sum to headline population", gap+und+ok, len(H))
 ident("action levels sum to Tier A", sum(al.values()), len(A))
 ident("attribution sums to Tier A", sum(at.values()), len(A))
@@ -160,7 +167,8 @@ def block(name, pairs, total=None):
         if not okk: bad(f"{name}: series sums to {s}, expected {total}")
 
 block("07_tier_distribution", [(k, T[k]) for k in "ABC"], len(R))
-block("17_severity_classification", [("C1", sev["C1"]), ("C2", sev["C2"])], len(R))
+block("17_severity_classification", [("C1", sev["C1"]), ("C2", sev["C2"])],
+      sev["C1"]+sev["C2"])   # classified rows only - see the identity note above
 block("04_headline_outcome_distribution",
       [("Accountability gap (no action)", gap), ("Under-response (gap)", und), ("Proportionate", ok)], len(H))
 block("08_action_level_distribution", al.most_common(), len(A))

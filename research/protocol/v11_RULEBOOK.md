@@ -8,8 +8,8 @@ available on or before the cutoff. The earliest publication actually held is 202
 latest 2026-08-27; that range describes the corpus, not an eligibility rule.
 
 **Current file — there is exactly one.** `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read
-only through `scripts/dataset_source.py`. **1,140 findings · 458 reports · 46 institutions ·
-39 columns · Tier A 231 · B 597 · C 312 · headline 150/188 = 79.8% falling short, of which
+only through `scripts/dataset_source.py`. **1,142 findings · 458 reports · 46 institutions ·
+39 columns · Tier A 233 · B 597 · C 312 · headline 150/188 = 79.8% falling short, of which
 112/188 = 59.6% with no located response.**
 
 The merge this section used to describe is done. `v10 revised.xlsx` (455-finding base) and
@@ -401,3 +401,56 @@ counts as corpus headline statistics.
   (Shanghai AI Lab 26, Scale AI 18, UK AISI 5, and ten others). Their author lists have not been
   checked against the credited institution; the founding-date sweep and domain census that caught
   the two removals above cannot settle these, only reading affiliations can.
+
+- **2026-09-07 (second pass) · §5 enforced on the accountable-company rule; corpus 1,142.** A
+  systematic check of every row naming models from more than one developer: 220 of 1,140 rows do
+  so, but most are legitimate under §5 — a comparator or tested baseline may be named in the row,
+  and 187 rows are explicitly anonymised and so have no accountable company to separate. Nine were
+  Tier A, where the rule actually bites because that is where a response is owed; all nine were read
+  by hand.
+
+  Eight were compliant. `TRANSLUCE-2026-08-ALI1/ALI2` name GPT-5.6 Sol only under an explicit
+  "Instruments (not subjects)" label. `HOLISTIC-2025-02-JAI1` names o1 as a comparator that scored
+  98%/100%, and `SHANGHAIAILAB-2024-02-JAI1` names Claude2/GPT-4/GPT-3.5 as comparators showing
+  *less* degradation than the subject, Gemini. `FARAI-2025-02a-JAI1` names one model whose title
+  carries two developers' names, DeepSeek R1-Distill-Llama-70B. The two SecureBio rows and
+  `SECUREBIO-2025-04-BIO1` each track one accountable company — OpenAI, which responded in both
+  cases — over an aggregate the source declines to attribute model-by-model; that aggregation is a
+  property of the source, so there is no per-company claim to split. It does mean the other
+  developers in those aggregates are never counted, which belongs in Limitations, not here.
+
+  One genuine breach. `TRANSLUCE-2024-10-JAI1` asserted three separate per-company results — a
+  95.5% attack success rate against Meta's Llama-3.1 405B, 65.8% against OpenAI's GPT-4o, 22.6%
+  against Anthropic's Claude 3.5 Sonnet — in a single row that no one response could address. Split
+  into `-s1` (Meta), `-s2` (OpenAI) and `-s3` (Anthropic), keeping the common report identity per
+  §5. The 2026-08-16 five-source battery had covered OpenAI alone; Meta and Anthropic rested on a
+  2026-08-02 pass its own note recorded as "not fully earned", so both batteries were re-run on
+  2026-09-07 and no admissible §8b primary document was found for either. Anthropic's
+  Constitutional Classifiers work was considered and rejected — it addresses universal jailbreaks
+  generally without referencing this finding — as was Anthropic's use of Transluce's Docent, a
+  different product.
+
+  `-s2` and `-s3` are left with **severity unresolved** under §7. The parent's C1 majority was
+  justified on the Llama-3.1-405B result, which is now `-s1`; carrying that vote onto the transfer
+  results would present a vote taken on the combined claim as a majority on a claim the ensemble
+  never saw. Both rows are Tier A with severity unresolved and sit outside the C1 population until a
+  fresh ensemble run or documented human adjudication. `verify_charts.py` fails while they stand,
+  by design.
+
+  Two checks were wrong in the same way and are fixed: chart 17 titled itself `n=len(ROWS)` while
+  its bars only ever summed C1+C2, and the verifier asserted `C1 + C2 = corpus`. Severity may
+  legitimately be unresolved, so the identity is now `C1 + C2 + unresolved = corpus` and the figure
+  states how many rows await adjudication.
+
+  Corpus 1,140 → **1,142** findings · Tier A 231 → **233** · reports, institutions, Tier B and
+  Tier C unchanged. Tier A ∩ C1 unchanged at **188** and the headline unchanged at **150/188 =
+  79.8%**, because `-s1` carries the parent's classification and the two new rows are unclassified.
+
+  **Open.** §5 has been enforced by hand on Tier A only. 150 Tier B and 61 Tier C rows name more
+  than one developer and have not been read individually. At the Tier A hit rate — one breach in
+  nine — perhaps twenty of them are genuine breaches. Splitting those would change Tier B and Tier C
+  counts and the corpus total, but not the headline, which is computed on Tier A ∩ C1 alone.
+
+  **Schema note.** §7 requires a human severity override to be recorded "in Notes", but V13's
+  39-column schema has no Notes column; the split and adjudication trail is written to
+  `Sources Checked (channel A)` instead. §7 should be reworded to name the column that exists.
