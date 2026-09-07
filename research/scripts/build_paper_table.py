@@ -13,8 +13,13 @@ Three kinds of removal, and nothing else:
   3. search apparatus inside evidence cells (query strings, API names, HTTP statuses,
      dates checked) and the many spellings of "nothing found", normalised to one form
 """
-import sys, re, csv, collections
-sys.path.insert(0, '/Users/kunalsingh/MATS/Research/AISI_Evals/scripts')
+import os, sys, re, csv, collections
+# Resolve everything from this file's own location, so the published artifact runs wherever it
+# is unpacked. The hardcoded home paths here meant the script only ever ran on one machine.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.dirname(_HERE)
+_OUT  = os.environ.get('AISIEVAL_PAPER_DIR', os.path.join(_ROOT, 'paper'))
+sys.path.insert(0, _HERE)
 import dataset_source as ds
 import openpyxl
 
@@ -103,8 +108,9 @@ wb = openpyxl.Workbook(); ws = wb.active; ws.title = 'TierA_paper'
 ws.append(cols)
 for r in out: ws.append([r[c] for c in cols])
 ws.freeze_panes = 'A2'
-wb.save('/Users/kunalsingh/MATS/Research/AISI_Evals/paper/TierA_paper_table.xlsx')
-with open('/Users/kunalsingh/MATS/Research/AISI_Evals/paper/TierA_paper_table.csv','w',newline='') as f:
+os.makedirs(_OUT, exist_ok=True)
+wb.save(os.path.join(_OUT, 'TierA_paper_table.xlsx'))
+with open(os.path.join(_OUT, 'TierA_paper_table.csv'), 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(out)
 
 print(f"Tier A publication table: {len(out)} rows x {len(cols)} columns")
