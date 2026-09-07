@@ -1,0 +1,24 @@
+% Main Table 1 — three worked examples. Native LaTeX; do not insert charts 27/28 as images.
+% Requires: \usepackage{booktabs,tabularx,ragged2e}
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight}X >{\RaggedRight}p{2.1cm} >{\RaggedRight}X >{\RaggedRight}X l@{}}
+\toprule
+\textbf{Finding} & \textbf{Evaluator / date / domain} & \textbf{Company response} & \textbf{Policy response} & \textbf{Action level} \\
+\midrule
+METR found GPT-5.6 Sol had the highest observed rate of cheating and reward-hacking of any model it had evaluated. & METR \\ Jun 2026 \\ \textit{Alignment, Autonomy} & System card names METR and describes the finding. After the behaviour recurred in the wild, OpenAI paused internal deployment and set out concrete mitigations before restoring limited access. & UK AISI blog post discussing the finding and its implications for evaluation methodology. & \textbf{Substantive} \\[2pt]
+\addlinespace
+UK AISI found a universal jailbreak in GPT-5.5 within six hours. & UK AISI \\ Apr 2026 \\ \textit{Jailbreaks} & OpenAI conducted pre-deployment testing with UK AISI, recorded in the GPT-5.5 system card. No verified patch of the jailbreak is documented in the cited source. & Three UK government sources cite the evaluation: a DSIT press release attributing its cyber-resilience push to ``recent research by the AI Security Institute'', a joint DSIT/NCSC case study, and a ministerial statement. & \textbf{Partial} \\[2pt]
+\addlinespace
+Claude Mythos Preview reached a 73\% pass rate on expert-level CTFs and was the first model to solve a challenge on AISI's hardest range. & UK AISI \\ Apr 2026 \\ \textit{Cyber} & No publicly documented response located. & UK government open letter to business leaders from DSIT Secretary of State Liz Kendall MP and Security Minister Dan Jarvis MBE MP (15 April 2026) explicitly references ``the AISI's evaluation of Anthropic's Mythos'' and states AISI found the model substantially more capable at cyber offence than any previously assessed. & \textbf{None} \\[2pt]
+\addlinespace
+\bottomrule
+\end{tabularx}
+\caption{Three significant-risk (C1) findings from 2026, all Tier A. Severity is held constant, so
+the only quantity that varies across rows is the company's response. Policy uptake is
+non-binding in all three cases; in no case does it substitute for a company
+response.}
+\label{tab:examples}
+\end{table*}

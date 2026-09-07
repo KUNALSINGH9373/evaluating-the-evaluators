@@ -1,0 +1,24 @@
+% Main Table 2 — institutional comparison, reduced from seven design features to the five that
+% correspond to the links in the accountability chain the paper proposes.
+% Requires: \usepackage{booktabs}
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}l ccccccc l@{}}
+\toprule
+\textbf{Design feature} & \textbf{FDA} & \textbf{NRC} & \textbf{NTSB} & \textbf{PCAOB} & \textbf{ONR} & \textbf{FCA} & \textbf{CAA} & \textbf{AISI / CAISI} \\
+\midrule
+Guaranteed access & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ \; \footnotesize access is voluntary and company-granted \\
+Required disclosure & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ \; \footnotesize the company controls publication rights \\
+Right to verify remediation & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ \; \footnotesize AISI could not verify the GPT-5.5 fix before deployment \\
+Pathway to enforcement & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ \; \footnotesize no pathway to any body with enforcement authority \\
+Tracked follow-up & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ \; \footnotesize no systematic tracking of whether findings were acted on \\
+\bottomrule
+\end{tabular}
+\caption{Five design features, one per link in the chain from finding to closure, compared across
+seven established oversight bodies and the AI safety institutes. $\bullet$ present,
+$\circ\!\!\!\bullet$ partial, $\circ$ absent. Every comparator holds all five; the institutes hold
+none. Reduced from the seven-feature comparison in Appendix~\ref{app:institutions}.}
+\label{tab:institutions}
+\end{table*}
