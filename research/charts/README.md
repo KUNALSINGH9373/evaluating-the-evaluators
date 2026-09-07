@@ -10,8 +10,8 @@ Source of truth is `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read only 
 
 ## Current corpus (2026-09-07)
 
-**1,147 findings · 458 reports · 458 source URLs · 46 institutions · 2023-03-17 to 2026-08-27**
-Tier A 233 · Tier B 599 · Tier C 315 · Tier A ∩ C1 (headline population) 190
+**1,146 findings · 457 reports · 457 source URLs · 46 institutions · 2023-03-17 to 2026-08-27**
+Tier A 233 · Tier B 599 · Tier C 314 · Tier A ∩ C1 (headline population) 190
 
 **HEADLINE: 152/190 = 80.0%** (Wilson 74–85%) of significant-risk findings drew a response falling
 short of one proportionate to their severity. **114/190 = 60.0%** (53–67%) drew no documented

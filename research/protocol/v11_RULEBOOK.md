@@ -8,8 +8,8 @@ available on or before the cutoff. The earliest publication actually held is 202
 latest 2026-08-27; that range describes the corpus, not an eligibility rule.
 
 **Current file — there is exactly one.** `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read
-only through `scripts/dataset_source.py`. **1,147 findings · 458 reports · 46 institutions ·
-39 columns · Tier A 233 · B 599 · C 315 · headline 152/190 = 80.0% falling short, of which
+only through `scripts/dataset_source.py`. **1,146 findings · 457 reports · 46 institutions ·
+39 columns · Tier A 233 · B 599 · C 314 · headline 152/190 = 80.0% falling short, of which
 114/190 = 60.0% with no located response.**
 
 The merge this section used to describe is done. `v10 revised.xlsx` (455-finding base) and
@@ -494,3 +494,64 @@ counts as corpus headline statistics.
   institutions unchanged at 458 and 46 · Tier A unchanged at **233**. Tier A ∩ C1 **190** and the
   headline **152/190 = 80.0%** (Wilson 74–85%), of which **114/190 = 60.0%** unanswered — both moved
   by the severity decision above, not by the Tier B/C splits, which touched no Tier A row.
+
+- **2026-09-07 (fourth pass) · authorship audit begun; source-URL sweep; corpus 1,146.**
+
+  **Authorship.** 15 of the 59 reports carrying an academic-paper signature on their institution's
+  own surface were verified against their author lists. FAR.AI, the institution the earlier pass
+  implicated, is now checked in full: all 14 of its reports. One removal —
+  `FARAI-2025-02b`, *Universal Sparse Autoencoders* (1 row, Tier C / C2), logged with its reasons
+  in `logs/deleted_attribution_20260907.csv`. It fails §1 three ways: the subject is "multiple
+  pretrained **vision** models", not a frontier developer's model, so it fails the scope gate; the
+  finding is that the authors' own Universal SAE method recovers coherent concepts, which "the
+  evaluator's own constructs are out" excludes; and no author is a FAR.AI researcher. **The third
+  reason is the weakest of the three and is recorded as uncertain:** Matthew Kowal appears on both
+  this paper and FAR.AI's February 2026 persuasion paper, so he may have joined FAR.AI between
+  them, exactly the timing question that decided `FARAI-2022-11`. The removal rests on the first
+  two grounds, which are independent of authorship.
+
+  A useful discriminator emerged. FAR.AI splits its site into `/blog/`, which carries its own
+  writing, and `/research/`, an index that also lists work by affiliated researchers. All 9 `/blog/`
+  reports are genuine; 2 of 5 `/research/` reports were not. The same test should be applied to any
+  institution that maintains a publications index.
+
+  Verified compliant, with the reason: `ANTHROPIC-2026-05-SELF-SLEIGHT` and
+  `ANTHROPIC-2025-06-SELF-SHADE` name Redwood Research (and Scale AI) in their bylines, and §1
+  makes the Institution the external evaluator rather than the model developer, so omitting
+  Anthropic is the rule working as intended, not a defect. FAR.AI's `FARAI-2024-08`,
+  `-2025-04`, `-2026-02`, `-2026-02b` and `-2026-02-PERSUASION` all carry FAR.AI authors (Gleave,
+  Pelrine, Garriga-Alonso, Taufeeque, Cundy, Bowen). `CAIS-2026-04` is stamped "© 2026 Center for
+  AI Safety". Shanghai AI Laboratory's reports resolve into two verified lab groups — Jing Shao's
+  safety group (`SALAD-Bench`, `OASIS`) and Chaochao Lu's causal group (`Beyond Surface
+  Structure`) — plus five hosted on the lab's own domain.
+
+  **A caution on method.** A page that does not print affiliations is not evidence of external
+  authorship. An automated summary reported FAR.AI's prefill-jailbreak paper as
+  "externally-authored, no FAR.AI affiliation" when its authors include Adam Gleave, FAR.AI's
+  co-founder. The test is author identity against the institution's roster, never whether the page
+  displays an affiliation line.
+
+  **Source-URL sweep.** All 457 distinct Source URLs were probed. 444 return 200 and 6 redirect.
+  Three openai.com URLs return 403, which is the documented block behind `fetch.py`'s ladder and
+  not a death. Four are genuinely broken and need replacement links, since §2 requires a working
+  primary Source URL and these cannot currently be verified by a reader:
+  `NETWORK-2025-07` (404, **5 findings**), `SCALEAI-2026-07-FRONTIERBENCH` (404, 2),
+  `SCALEAI-2025-11` (404, 1) and `META-2026-07-MUSESPARK` (400).
+
+  The sweep also fixed `FARAI-2026-02`, found because its URL 404'd: the link now resolves, the
+  title is the full *The Obfuscation Atlas: Mapping Where Honesty Emerges in RLVR with Deception
+  Probes* rather than "Obfuscation atlas", and the date is 2026-02-16 as the page states, not
+  2026-02-17.
+
+  Corpus 1,147 → **1,146** findings · reports 458 → **457** · Source URLs 458 → **457**, still
+  equal to the report count · Tier C 315 → **314** · C2 807 → **806**. Tier A unchanged at 233,
+  Tier A ∩ C1 unchanged at 190, clustering denominator unchanged at 102 C1 reports, and the
+  headline unchanged at **152/190 = 80.0%** (Wilson 73.7–85.1%) with **114/190 = 60.0%** unanswered.
+  The removal was Tier C, so no analytical quantity moved.
+
+  **Open.** 44 of the 59 reports still need individual author verification: about twenty Shanghai
+  AI Laboratory arXiv and venue papers, currently attributed to the two verified lab groups by
+  cluster rather than checked one by one; CAIS 2; METR 2; Princeton HAL 2; SecureBio 1; and the
+  17-report low-risk block (Scale AI, UK AISI, Dreadnode), whose surfaces are institutional
+  publication pages rather than indexes of others' work. The four broken source links above are
+  also open.
