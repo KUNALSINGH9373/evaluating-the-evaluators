@@ -4,12 +4,12 @@
 
 **Corpus cutoff:** 2026-08-29 (moved from 2026-07-30 by the window-extension sweep). **Eligible
 publication period:** no lower-date boundary is applied. A report is eligible if it was publicly
-available on or before the cutoff. The earliest publication actually held is 2022-11-16 and the
+available on or before the cutoff. The earliest publication actually held is 2023-03-17 and the
 latest 2026-08-27; that range describes the corpus, not an eligibility rule.
 
 **Current file — there is exactly one.** `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read
-only through `scripts/dataset_source.py`. **1,144 findings · 474 reports · 46 institutions ·
-39 columns · Tier A 231 · B 599 · C 314 · headline 150/188 = 79.8% falling short, of which
+only through `scripts/dataset_source.py`. **1,140 findings · 458 reports · 46 institutions ·
+39 columns · Tier A 231 · B 597 · C 312 · headline 150/188 = 79.8% falling short, of which
 112/188 = 59.6% with no located response.**
 
 The merge this section used to describe is done. `v10 revised.xlsx` (455-finding base) and
@@ -27,7 +27,7 @@ preserved in `Notes` as legacy audit data.
 **Schema:** one sheet named `v11 final`; 39 named columns; rows sorted Tier A, Tier B, Tier C and
 then newest-to-oldest within each tier.
 
-**Last updated:** 2026-08-16.
+**Last updated:** 2026-09-07.
 
 ---
 
@@ -353,3 +353,51 @@ counts as corpus headline statistics.
   Anonymised frontier evaluations were retained. Corpus 1,169 → 1,144 · reports 484 → 474 ·
   institutions 47 → 46 · Tier B 607 → 599 · Tier C 331 → 314. Tier A unchanged at 231 and the
   headline unchanged, since nothing removed was Tier A. Earliest publication now 2022-11-16.
+
+- **2026-09-07 · attribution and report-identity audit; corpus corrected to 1,140 findings in 458
+  reports.** Two failures of the same kind: a check keyed on where a document was *found* rather
+  than on who *asserted* it.
+
+  **Attribution.** §1 already said that "merely developing a benchmark, hosting a report, or being
+  cited by another evaluator is insufficient", but nothing enforced it, because no column records
+  authorship and §3 directs the search to enumerate each organisation's own publication surfaces —
+  so a paper hosted on an evaluator's site was credited to that evaluator by construction. Two
+  reports removed, logged in full to `logs/deleted_attribution_20260907.csv`:
+
+  - `FARAI-2022-11` (2 rows, Tier B). *Training Language Models with Language Feedback* is by an
+    NYU-centred group; neither arXiv nor FAR.AI's own page states any FAR.AI affiliation. FAR AI
+    was founded in July 2022 and incorporated in October 2022, while the paper was published in
+    April 2022 and presented at an ACL 2022 workshop — it predates the institution credited with
+    it. The 2022-11-16 date was the arXiv v4 revision, which §3 excludes as publication evidence.
+  - `UKAISI-2024-01` (2 rows, Tier C). A *TIME* article about UK AISI, not a UK AISI publication:
+    secondary journalism (§1, §2.1), resting on "sources indicate" rather than a measured result
+    (§2.2), and dated 2024-01-01 when its URL places it in the Davos 2025 collection (§3).
+
+  A census of all 55 source domains found no other news, media or social sources; SecureBio's
+  Substack is that evaluator's own surface and was retained.
+
+  **Report identity.** Fourteen papers had reached the sheet under two Report IDs each. The
+  existing reverse check matched on Source URL, so it caught only a report re-filed under the same
+  link; these pairs carried two different links — an arXiv page and the institution's write-up, or
+  a blog post and a later research page. Two ingestion passes had produced two ID conventions
+  (`INST-YYYY-MM[letter]` and `INST-YYYY-MM-<abbreviated title>`), and the v12→v13 reconciliation
+  preserved both because it asserted that no row was *missing* and never that none was
+  *duplicated*. `scripts/audit_v13.py` now also matches on normalised Report Title, venue tags
+  stripped; the check reports 14 on the pre-fix workbook and 0 after.
+
+  No finding was duplicated — every one of the 14 pairs scored 0 overlapping findings above 0.60
+  similarity, so the pairs were single papers whose distinct findings had been split across two
+  IDs. The correction therefore removes double-counted *reports*, not findings.
+
+  Corpus 1,144 → 1,140 findings · reports 474 → 458 · Source URLs 473 → 458, now equal to the
+  report count · Tier B 599 → 597 · Tier C 314 → 312 · institutions unchanged at 46. Tier A
+  unchanged at 231, Tier A C1 unchanged at 188, and the headline unchanged at 150/188 = 79.8%
+  (Wilson 73–85%) with 112/188 = 59.6% unanswered. The clustering denominator is unchanged at 102
+  C1 reports, so ICC 0.62, design effect 1.52 and effective n ≈ 124 all stand. Earliest
+  publication now 2023-03-17 (METR, *Update on ARC's recent eval efforts*), verified against the
+  live source for date, authorship and all three verbatim quotes.
+
+  **Open.** 67 reports carry an academic-paper signature on their institution's own surface
+  (Shanghai AI Lab 26, Scale AI 18, UK AISI 5, and ten others). Their author lists have not been
+  checked against the credited institution; the founding-date sweep and domain census that caught
+  the two removals above cannot settle these, only reading affiliations can.
