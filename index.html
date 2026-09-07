@@ -1170,12 +1170,14 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
       .toLocaleDateString('en-GB', { month:'short', year:'numeric' }); };
     set('mWindow', f(m.dateMin) + ' – ' + f(m.dateMax));
   }
-  if (m.trackableC1 && m.c1NoResponse != null) {
-    set('heroNum', Math.round(m.c1NoResponse / m.trackableC1 * 100) + '%');
-    var c = document.getElementById('heroCaption');
-    if (c) c.innerHTML = 'of the <b>' + m.trackableC1 +
-      '</b> significant-risk findings that name a company have no documented public response.';
-  }
+  /* heroNum and heroCaption are owned by app.js, which sets them to the shortfall
+     figure the paper leads with (150/188 = 79.8%). This block used to overwrite both
+     with the stricter no-response figure (112/188 = 60%). Because inline scripts at the
+     end of <body> run after app.js, 60% won — so the dashboard headlined 60% while the
+     paper headlined 80%, which reads as one of them being wrong. Both are correct and
+     measure different things; the shortfall figure is the one the proportionality matrix
+     produces, so it leads in both places and the no-response figure sits beneath it.
+     Do not set heroNum here. */
   if (m.dateMax) set('asof', 'Corpus cutoff ' + m.dateMax + '.');
 })();
 </script>
