@@ -132,8 +132,11 @@ ident("tiers sum to corpus", T['A']+T['B']+T['C'], len(R))
 # ensemble, and an ERR ensemble has no majority. The identity is therefore C1 + C2 +
 # unresolved = corpus, not C1 + C2 = corpus, which failed as soon as one row was split.
 _unres = [r['Finding ID'] for r in R if not (r['Severity (C1/C2) majority'] or '').strip()]
+# §7 permits severity to sit unresolved, but the corpus is not allowed to ship that way: every
+# row must carry a majority. Fail on any blank anywhere, not only on Tier A, so a Tier B or C
+# blank cannot slip through the tier-specific checks below.
 if _unres:
-    print(f"  severity unresolved  {len(_unres)} row(s) awaiting §7 adjudication: {_unres}")
+    bad(f"severity blank on {len(_unres)} row(s) - every row must carry a majority: {_unres}")
 ident("severity sums to corpus (C1 + C2 + unresolved)",
       sev['C1']+sev['C2']+len(_unres), len(R))
 ident("outcomes sum to headline population", gap+und+ok, len(H))

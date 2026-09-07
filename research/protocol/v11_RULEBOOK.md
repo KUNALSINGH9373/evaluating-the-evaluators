@@ -8,9 +8,9 @@ available on or before the cutoff. The earliest publication actually held is 202
 latest 2026-08-27; that range describes the corpus, not an eligibility rule.
 
 **Current file — there is exactly one.** `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read
-only through `scripts/dataset_source.py`. **1,142 findings · 458 reports · 46 institutions ·
-39 columns · Tier A 233 · B 597 · C 312 · headline 150/188 = 79.8% falling short, of which
-112/188 = 59.6% with no located response.**
+only through `scripts/dataset_source.py`. **1,147 findings · 458 reports · 46 institutions ·
+39 columns · Tier A 233 · B 599 · C 315 · headline 152/190 = 80.0% falling short, of which
+114/190 = 60.0% with no located response.**
 
 The merge this section used to describe is done. `v10 revised.xlsx` (455-finding base) and
 `v11_FINAL.xlsx` (558-finding audited additions) were reconciled into V12 and then V13; both source
@@ -454,3 +454,43 @@ counts as corpus headline statistics.
   **Schema note.** §7 requires a human severity override to be recorded "in Notes", but V13's
   39-column schema has no Notes column; the split and adjudication trail is written to
   `Sources Checked (channel A)` instead. §7 should be reworded to name the column that exists.
+
+- **2026-09-07 (third pass) · split-row severity settled; §5 extended to Tier B and C; corpus
+  1,147.** Two decisions, both recorded here because both changed published numbers.
+
+  **Severity on split rows.** `TRANSLUCE-2024-10-JAI1-s2` and `-s3` had been left unresolved. They
+  now carry the parent's classification — C1, votes C1/C1/C1, Human C1 — on the ground that a §5
+  split divides one finding by accountable company without changing what was found, so the parent's
+  assessment applies to each part. This is a documented human decision under §7, not a fresh
+  ensemble run, and the parent's raw votes are preserved on each row. Proportionality recomputed
+  from the §9 matrix: C1 × Action Level None = Accountability gap. The corpus now carries **no
+  unresolved severity**, and `verify_charts.py` treats a blank majority as a hard failure anywhere
+  in the corpus rather than only on Tier A, so a Tier B or C blank cannot slip past the
+  tier-specific checks.
+
+  **§5 on Tier B and C.** 211 Tier B/C rows name models from more than one developer. Screening
+  reduced these to 35 needing individual reading; all 35 were read. Three classes emerged.
+  Thirteen are **instrument or method findings** — the subject is the evaluator's own technique,
+  detector, grader, monitor or scaffold, and the models are substrate or explicitly tagged
+  comparators; these are the instrument class the project retains. About fifteen are **comparative
+  leaderboards** whose claim is the ranking or the aggregate pattern, with per-model numbers as its
+  evidence; §5 clubs results warranting one common response, so these stay in one row. Three were
+  genuine per-company adverse breakdowns whose verbatim quote supports a per-company slice, and
+  were split: `UKAISI-2024-10-JAI8` into three (OpenAI, Anthropic, Mistral),
+  `UKAISI-2024-10-JAI9` into two (OpenAI, Anthropic), and `UKAISI-2025-07-JAI5` into three
+  (Google — whose three Gemini variants are one company and so remain one row — Cohere, Meta).
+
+  Four rows that look like the same class were deliberately **not** split, and the reason is the
+  quote rather than the finding text. `SHANGHAIAILAB-2025-02-JAI1` is quoted as "Success rates ...
+  as high as 96%, 86% and 98% respectively", which does not attribute a figure to a model;
+  `SHANGHAIAILAB-2026-01-JAI1` covers 20 models across seven developers under an aggregate claim;
+  `CISCO-2025-11-JAI1` asserts that multi-turn attacks beat single-turn across eight models; and
+  `SHANGHAIAILAB-2024-02-JAI2` reports a distribution over 36 LLMs. In each the claim is the
+  comparison, not a per-company result, so §5 clubs them. Splitting the last would also mint rows
+  for Vicuna, TuluV2 and Zephyr, which have no frontier developer and would immediately fail the
+  §1 scope gate — the rule would create rows only to delete them.
+
+  Corpus 1,142 → **1,147** findings · Tier B 597 → **599** · Tier C 312 → **315** · reports and
+  institutions unchanged at 458 and 46 · Tier A unchanged at **233**. Tier A ∩ C1 **190** and the
+  headline **152/190 = 80.0%** (Wilson 74–85%), of which **114/190 = 60.0%** unanswered — both moved
+  by the severity decision above, not by the Tier B/C splits, which touched no Tier A row.

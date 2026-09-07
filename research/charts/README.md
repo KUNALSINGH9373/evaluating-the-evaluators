@@ -10,11 +10,11 @@ Source of truth is `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read only 
 
 ## Current corpus (2026-09-07)
 
-**1,140 findings · 458 reports · 458 source URLs · 46 institutions · 2023-03-17 to 2026-08-27**
-Tier A 231 · Tier B 597 · Tier C 312 · Tier A ∩ C1 (headline population) 188
+**1,147 findings · 458 reports · 458 source URLs · 46 institutions · 2023-03-17 to 2026-08-27**
+Tier A 233 · Tier B 599 · Tier C 315 · Tier A ∩ C1 (headline population) 190
 
-**HEADLINE: 150/188 = 79.8%** (Wilson 73–85%) of significant-risk findings drew a response falling
-short of one proportionate to their severity. **112/188 = 59.6%** (52–66%) drew no documented
+**HEADLINE: 152/190 = 80.0%** (Wilson 74–85%) of significant-risk findings drew a response falling
+short of one proportionate to their severity. **114/190 = 60.0%** (53–67%) drew no documented
 response at all — the stricter subset, not an alternative headline. Both figures appear in the
 paper and on the dashboard, the shortfall figure leading in each.
 
@@ -22,7 +22,7 @@ paper and on the dashboard, the shortfall figure leading in each.
 the bar is severity-relative: for C1 only `Substantive` qualifies, whereas for C2 `Partial` also
 counts. It is a reporting label, not a rulebook term — define it once on first use.
 
-Clustering: the 188 findings sit in 102 reports, ICC 0.62, design effect 1.52, effective n ≈ 124.
+Clustering: the 190 findings sit in 102 reports, ICC 0.62, design effect 1.52, effective n ≈ 124.
 
 ## Layout
 
