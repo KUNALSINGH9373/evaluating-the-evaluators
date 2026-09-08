@@ -205,9 +205,18 @@ documented uptake, not whether the finding caused the policy response.
 ### Evidentiary exception for unpublished binding instruments
 
 The source classes above define where Channel B *searches*. Where an instrument is unambiguously
-binding but is lawfully not published — a single-company regulatory directive issued by letter,
-which by convention does not appear in a public register — it may be coded `Binding policy action`
-on the regulated recipient's own disclosure together with contemporaneous independent reporting.
+binding but is lawfully not published — for example a single-company regulatory directive issued
+by letter, or any order that by convention does not appear in a public register — it may be coded
+`Binding policy action` on the regulated recipient's own disclosure together with contemporaneous
+independent reporting. The form of the instrument is immaterial; what matters is that it is
+enforceable, that it imposes a mandatory requirement, and that its non-publication is lawful rather
+than a gap in the search.
+
+This exception concerns **evidence**, not the definition of `Binding policy action`. The boundary
+between the two positive levels remains enforceability: a government action taken to mitigate the
+risk, but creating no mandatory requirement — guidance, a warning, a consultation, a voluntary
+undertaking, a funding decision — is `Non-binding policy-related uptake`, however consequential it
+proves. Nothing in this exception moves such an action up a level.
 
 A row invoking this exception must carry an evidence note naming the instrument, the issuing
 authority, the mandatory requirement imposed, and every corroborating source, and must state
@@ -217,6 +226,13 @@ explicitly that no official publication was located and where it was sought.
 evidentiary bar would record `No policy uptake identified` for the one case in the corpus where a
 government actually compelled a frontier developer to act — understating exactly what the dataset
 measures.
+
+That row qualifies on two independent grounds. The order itself imposed a prohibition that took
+both models offline globally for eighteen days. Separately, the controls were lifted on continuing
+conditions — that the developer proactively detect and address security risks, work with the
+government on standards for future models, and report malicious activity — which are imposed
+obligations outlasting the suspension and are themselves a mandatory requirement under this
+section.
 
 **A related instrument does not substitute for an explicit link.** Executive Order 14409,
 *Promoting Advanced Artificial Intelligence Innovation and Security* (signed 2 June 2026, 91 FR
