@@ -202,6 +202,35 @@ link to the finding, report, evaluation, or result.
 Rows without a completed Channel-B search are missing, not negative. Policy Level measures
 documented uptake, not whether the finding caused the policy response.
 
+### Evidentiary exception for unpublished binding instruments
+
+The source classes above define where Channel B *searches*. Where an instrument is unambiguously
+binding but is lawfully not published — a single-company regulatory directive issued by letter,
+which by convention does not appear in a public register — it may be coded `Binding policy action`
+on the regulated recipient's own disclosure together with contemporaneous independent reporting.
+
+A row invoking this exception must carry an evidence note naming the instrument, the issuing
+authority, the mandatory requirement imposed, and every corroborating source, and must state
+explicitly that no official publication was located and where it was sought.
+
+**Invoked once, for `USCAISI-2026-06-CYB2`.** Reading the "official sources" clause as a strict
+evidentiary bar would record `No policy uptake identified` for the one case in the corpus where a
+government actually compelled a frontier developer to act — understating exactly what the dataset
+measures.
+
+**A related instrument does not substitute for an explicit link.** Executive Order 14409,
+*Promoting Advanced Artificial Intelligence Innovation and Security* (signed 2 June 2026, 91 FR
+34565), is the published federal AI-security authority in force days before that order. It is
+**not** admissible as Channel B evidence for this finding: it names no company or model, and it
+predates the finding, so it cannot explicitly reference it. It is the "general policy activity on
+the same topic" this section excludes. Such context belongs in narrative, never in the Policy Level
+cell.
+
+**Direction of the resulting bias.** Because the Channel B battery searches official sources rather
+than company disclosures, comparable binding orders documented only by recipient disclosure would
+probably not have been located. The exception can therefore only undercount binding uptake, never
+overcount it.
+
 ## 10. Channel C — public and academic coverage
 
 Channel C logs independent media, academic citations, and notable public discussion. It does not
