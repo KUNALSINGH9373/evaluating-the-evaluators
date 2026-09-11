@@ -107,9 +107,7 @@ if lags:
 
 print("\n"+"="*78); print("BY COMPANY (headline population, n>=4)"); print("="*78)
 import re
-DEV=[("Anthropic",r"claude|opus|sonnet|haiku|mythos|fable"),("OpenAI",r"gpt|o1|o3|o4|chatgpt|codex"),
-     ("Google",r"gemini|gemma"),("Meta",r"llama|muse"),("xAI",r"grok"),("DeepSeek",r"deepseek"),
-     ("Alibaba",r"qwen"),("Mistral",r"mistral"),("Zhipu",r"glm")]
+DEV=ds.DEVELOPER_PATTERNS   # single source of truth, shared with fig_developer.py
 for name,pat in DEV:
     S=[r for r in H if re.search(pat,(r["Models / Systems"] or ""),re.I)]
     if len(S)>=4: print(f"  {name:<12} n={len(S):>3}  no action {pc(sum(1 for r in S if isgap(r)), len(S))}")

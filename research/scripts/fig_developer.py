@@ -31,18 +31,7 @@ plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "Deja
 # the developer without naming the model ("OpenAI models (the specific model is not named)").
 # Those rows are Tier A on the named-developer limb of the rule, so treating them as anonymised
 # would contradict the tier they carry.
-OWNER = [("OpenAI",    r"\b(openai|gpt|o1|o3|o4|chatgpt|codex|sora|dall)\b"),
-         ("Anthropic", r"\b(anthropic|claude|mythos|opus|sonnet|haiku|fable)\b"),
-         ("Google",    r"\b(google|deepmind|gemini|gemma|palm|bard|imagen)\b"),
-         ("Meta",      r"\b(meta|llama|musespark)\b"),
-         ("DeepSeek",  r"\bdeepseek\b"),
-         ("Alibaba",   r"\b(qwen|qwq)\b"),
-         ("Mistral",   r"\b(mistral|mixtral|pixtral)\b"),
-         ("xAI",       r"\bgrok\b"),
-         ("Zhipu",     r"\b(glm|chatglm)\b"),
-         ("Moonshot",  r"\bkimi\b"),
-         ("Microsoft", r"\b(phi-\d|deberta|copilot)\b"),
-         ("Cohere",    r"\b(command[- ]r|aya)\b")]
+OWNER = dataset_source.DEVELOPER_PATTERNS   # single source of truth, shared with all_stats.pyr|aya)\b")]
 ANON = re.compile(r"anonymis|anonymiz|unnamed|not named|undisclosed", re.I)
 
 R = [r for r in dataset_source.rows() if r.get("Finding ID")]

@@ -116,9 +116,8 @@ Automated scripts and LLM-based tools supported different parts of corpus constr
 
 **Figure 1.** `charts/01_findings_per_institution.png` *Findings per reporting institution (n = 1,146).*
 **Figure 2.** `charts/02_findings_per_model_developer.png` *Findings per model developer. A finding naming models from several developers is counted once per developer, so bars sum to more than 1,146.*
-**Figure 3.** `charts/03_findings_per_access_type.png` *Findings per access type. "N/A" covers governance and methodology findings with no evaluated system.*
 
-**Figure 4.** `charts/11_domain_distribution.png` *Findings per risk domain across the corpus. Domain labels are multi-valued, so the bars sum to more than 1,146. These are the dataset's descriptive domain labels, which are separate from the eight severity-threshold domains of §3.4.*
+**Figure 3.** `charts/11_domain_distribution.png` *Findings per risk domain across the corpus. Domain labels are multi-valued, so the bars sum to more than 1,146. These are the dataset's descriptive domain labels, which are separate from the eight severity-threshold domains of §3.4.*
 
 ### 3.3 Defining the accountability set
 
@@ -175,7 +174,6 @@ The majority vote of the three models (Claude Sonnet 5, GPT-5.5, and Gemini 3.1 
 
 **None:** no public response identified through the completed search by the cutoff. **Acknowledged:** the company recognized the finding or underlying problem but specified no action. **Partial:** the company documented an action addressing only part of the problem, or expressly described as interim, limited, or incomplete. **Substantive:** the company documented a specific mitigation, model change, safeguard, access restriction, or deployment decision directly addressing the problem.
 
-**Figure 5.** `charts/26_action_level_scale.png` *The four-level Action Level scale, from no located response to a specific documented mitigation. Only the top level satisfies the proportionality standard for a C1 finding.*
 
 Action Level measures the *content* of the public response. It does not establish that the action was implemented or effective. **Only documents or statements published by the responding company were accepted as Channel A evidence**; evaluator statements, news coverage, and other third-party sources did not count.
 
@@ -194,7 +192,9 @@ General policy activity concerning the same topic did not qualify without an exp
 | **C1 (significant risk)** | Proportionate | Under-response | Under-response | Accountability gap |
 | **C2 (low risk)** | Proportionate | Proportionate | Under-response | Accountability gap |
 
-*The table above is the coding rule itself, not observed results; Figure D.6 shows the same matrix as observed counts.*
+**Table 6. The proportionality coding rule.** *Rows are severity, columns the documented company-response level, cells the resulting outcome. This defines the rule, not observed results; Figure D.2 shows the same matrix as observed counts.*
+
+*The table above is the coding rule itself, not observed results; Figure D.2 shows the same matrix as observed counts.*
 
 Two worked examples at each of the four Action Levels are given in Appendix G, to make the coding boundaries concrete. Equivalently: a C1 finding requires a Substantive response to meet the standard; a C2 finding requires at least Partial. Acknowledgment without action never meets the standard, and absence of a response always produces a no-action gap. This is a study-defined measure of *documented* proportionality. It does not establish that a response was effective, that remediation was implemented, or that the underlying risk was eliminated.
 
@@ -221,7 +221,6 @@ Restricted to C1 (significant risk) findings — the comparison relevant to the 
 
 When companies do answer, they generally credit the source: the failure documented here is silence, not unattributed appropriation.
 
-**Figure 6.** `charts/10_proportionality_by_severity.png` *The three proportionality outcomes among C1 Tier A findings (n = 190), color-coded by severity of gap. The two gap bars together represent the 152 findings (80%) that received no documented response or an inadequate one.*
 
 **The result is not an artifact of the counting unit.** The headline counts findings, and because one report can yield several findings, a few heavily split reports could in principle drive it. They do not: the shortfall stays high under every alternative unit we tested.
 
@@ -233,7 +232,7 @@ When companies do answer, they generally credit the source: the failure document
 | All Tier A, ignoring severity | 188/233 | 80.7% | 75.1–85.2% |
 | C2 (low risk) findings only | 36/43 | 83.7% | 70–92% |
 
-**Table 6. Robustness of the headline shortfall to alternative counting units.** *The range runs from 76.2% under institution weighting to 84.3% under report weighting. Findings also cluster within reports (ICC 0.626, design effect 1.54, effective n ≈ 124), which widens the headline interval to 71.9–86.0%; see Appendix F.2.*
+**Table 7. Robustness of the headline shortfall to alternative counting units.** *The range runs from 76.2% under institution weighting to 84.3% under report weighting. Findings also cluster within reports (ICC 0.626, design effect 1.54, effective n ≈ 124), which widens the headline interval to 71.9–86.0%; see Appendix F.2.*
 
 ### 4.2 Does severity predict a response?
 
@@ -243,11 +242,11 @@ The comparison does not reach conventional significance (**z = −1.48, p = 0.14
 
 ### 4.3 Access type: the most policy-relevant split
 
-**When an evaluator sees a model before deployment, the company answers; when it sees the model afterwards, it usually does not. This is the largest and most robust difference in the dataset.** Among the C1 (significant risk) Tier A (trackable evaluation) findings classified as either pre- or post-deployment, the substantive-response rate was **55% for the 44 pre-deployment findings and 7% for the 131 post-deployment findings**. Pre-deployment findings were therefore roughly eight times as likely to receive a substantive response. No-response rates also differed substantially: **6.8% for pre-deployment findings and 79.4% for post-deployment findings**. A two-proportion test gave ***z* = −8.54, *p* < 0.001**, and the difference remained significant after adjustment for clustering within reports (*p* < 0.001; Appendix F.2 and Figure F.2). These comparisons describe an association and should not be interpreted causally. This is the largest effect in the dataset and the only comparison that survives every correction we apply; the 15 mixed-access findings (33% substantive) are reported for completeness and not treated as an independent comparison group.
+**When an evaluator sees a model before deployment, the company answers; when it sees the model afterwards, it usually does not. This is the largest and most robust difference in the dataset.** Among the C1 (significant risk) Tier A (trackable evaluation) findings classified as either pre- or post-deployment, the substantive-response rate was **55% for the 44 pre-deployment findings and 7% for the 131 post-deployment findings**. Pre-deployment findings were therefore roughly eight times as likely to receive a substantive response. No-response rates also differed substantially: **6.8% for pre-deployment findings and 79.4% for post-deployment findings**. A two-proportion test gave ***z* = −8.54, *p* < 0.001**, and the difference remained significant after adjustment for clustering within reports (*p* < 0.001; Appendix F.2). These comparisons describe an association and should not be interpreted causally. This is the largest effect in the dataset and the only comparison that survives every correction we apply; the 15 mixed-access findings (33% substantive) are reported for completeness and not treated as an independent comparison group.
 
 This descriptive association is consistent with pre-deployment access facilitating company action, although access type is correlated with evaluator, disclosure arrangements, domain, and other institutional differences. One plausible mechanism is visible in the case-level record: pre-deployment findings are communicated while the deployment decision window remains open and are frequently published under coordinated-disclosure arrangements. **Forty-nine of the 88 recorded response lags were zero days**, meaning the finding and the company response were published in the same document. This remains an interpretation, not a mechanism established by the comparison.
 
-**Figure 7.** `charts/05_pre_vs_post_deployment_response_rate.png` *Substantive-response rate and no-response rate by access type among C1 Tier A findings.*
+**Figure 4.** `charts/05_pre_vs_post_deployment_response_rate.png` *Substantive-response rate and no-response rate by access type among C1 Tier A findings.*
 
 ### 4.4 Institution and domain breakdowns
 
@@ -260,7 +259,7 @@ This descriptive association is consistent with pre-deployment access facilitati
 | Joint or collaborative evaluation | 22 | 11 | **50%** | 11 |
 | US CAISI standalone | 6 | 5 | 83% | 1 |
 
-**Table 7.** *C1 Tier A outcomes by reporting configuration. Joint and collaborative evaluations are the only configuration whose gap rate falls to half. UK AISI's standalone findings skew post-deployment, the access profile associated with lower substantive-response rates in §4.3. Differences are descriptive: the government-versus-third-party comparison does not survive adjustment for clustering within reports (Appendix F.2). The US CAISI sample is too small to support a stable estimate.*
+**Table 8.** *C1 Tier A outcomes by reporting configuration. Joint and collaborative evaluations are the only configuration whose gap rate falls to half. UK AISI's standalone findings skew post-deployment, the access profile associated with lower substantive-response rates in §4.3. Differences are descriptive: the government-versus-third-party comparison does not survive adjustment for clustering within reports (Appendix F.2). The US CAISI sample is too small to support a stable estimate.*
 
 | Domain (multi-label) | C1 findings | Gap | Gap rate |
 |---|---|---|---|
@@ -270,18 +269,18 @@ This descriptive association is consistent with pre-deployment access facilitati
 | Autonomy | 30 | 23 | 77% |
 | Bio-Chem | 30 | 20 | 67% |
 
-**Table 8.** *C1 gap rates by descriptive domain. Findings can span more than one domain, so counts do not sum to 190. Jailbreaks and Alignment share the highest observed gap rate. The comparatively lower Bio-Chem rate is concentrated in SecureBio evaluations conducted through direct pre-release access to OpenAI, so it may reflect access arrangements rather than a domain effect. Three smaller domains — Eval-methodology (n = 6), Societal (n = 3), Human Influence (n = 2) — are too sparse to report separately.*
+**Table 9.** *C1 gap rates by descriptive domain. Findings can span more than one domain, so counts do not sum to 190. Jailbreaks and Alignment share the highest observed gap rate. The comparatively lower Bio-Chem rate is concentrated in SecureBio evaluations conducted through direct pre-release access to OpenAI, so it may reflect access arrangements rather than a domain effect. Three smaller domains — Eval-methodology (n = 6), Societal (n = 3), Human Influence (n = 2) — are too sparse to report separately.*
 
 | Developer | C1 findings | No action | Rate |
 |---|---|---|---|
-| OpenAI | 89 | 35 | 39.3% |
-| Anthropic | 50 | 31 | 62.0% |
-| Google | 19 | 18 | 94.7% |
+| OpenAI | 92 | 36 | 39.1% |
+| Anthropic | 50 | 30 | 60.0% |
+| Google | 22 | 19 | 86.4% |
 | DeepSeek | 11 | 10 | 90.9% |
 | Meta | 10 | 9 | 90.0% |
 | Zhipu | 4 | 4 | 100.0% |
 
-**Table 9.** *No-response rate by developer among C1 Tier A findings, developers with n ≥ 4. Developer attribution depends on the model-name matching rule; counts should be read as approximate. The two developers with the most findings against them also answer most often, which is consistent with — but does not establish — a relationship between evaluator access and responsiveness.*
+**Table 10.** *No-response rate by developer among C1 Tier A findings, developers with n ≥ 4. Developer attribution uses the shared pattern list in `scripts/dataset_source.py`, which matches each company's model families and its bare name; the same list drives Figure 2, so the table and the figure cannot diverge. A finding naming several developers counts once per developer, so the column sums to more than 190. The two developers with the most findings against them also answer most often, which is consistent with — but does not establish — a relationship between evaluator access and responsiveness.*
 
 ### 4.5 Silence is not obscurity
 
@@ -298,17 +297,11 @@ A formal test finds no difference in no-response rate between findings with and 
 | Social highlights | 21 / 114 | 18% |
 | **Any of the three** | **92 / 114** | **81%** |
 
-**Table 10.** *Documented external coverage among the 114 C1 findings with no company response. Categories overlap. Distinguish an empty cell (not searched, or not applicable) from a recorded "none located" (searched, nothing found); only the latter supports an inference.*
+**Table 11.** *Documented external coverage among the 114 C1 findings with no company response. Categories overlap. Distinguish an empty cell (not searched, or not applicable) from a recorded "none located" (searched, nothing found); only the latter supports an inference.*
 
 ### 4.6 The gap over time
 
-**The evaluation ecosystem has grown sharply while the gap has not closed.** The corpus contains 35 findings published in 2023, 154 in 2024, 463 in 2025, and 494 in 2026 through 27 August. Because 2026 is a partial year, this demonstrates increasing publication volume rather than a completed annual trend.
-
-Among C1 Tier A findings the gap does not show clear improvement: **8 of 9 in 2023 (89%), 24 of 26 in 2024 (92%), 61 of 73 in 2025 (84%), and 59 of 82 in 2026 through the cutoff (72%)** received no response or an inadequate one. The 2026 estimate is right-censored, because more recent findings have had less time to attract a documented response. We therefore read the annual results only as showing that the gap persisted as the evaluation ecosystem expanded.
-
-**Figure 8.** `charts/23_corpus_growth_by_tier.png` *Corpus growth by publication year, split by tier.*
-
-**Figure 9.** `charts/15b_shortfall_rate_by_year.png` *Shortfall rate among C1 Tier A findings by publication year. The most recent year is right-censored — findings published close to the cutoff have had less time to attract a documented response — so the 2026 fall should not be read as a trend.*
+**The evaluation ecosystem has grown sharply while the gap has not closed.** The corpus contains 35 findings published in 2023, 154 in 2024, 463 in 2025, and 494 in 2026 through 27 August. Among C1 Tier A findings the shortfall was 8 of 9 in 2023 (89%), 24 of 26 in 2024 (92%), 61 of 73 in 2025 (84%), and 59 of 82 in 2026 through the cutoff (72%). The 2026 figure is right-censored — findings published close to the cutoff have had less time to attract a documented response — so the apparent fall cannot be read as improvement. We draw only the weaker conclusion the data supports: the gap persisted as the evaluation ecosystem expanded.
 
 ### 4.7 The verification gap
 
@@ -386,7 +379,7 @@ Neither precedent is a ready-made model. The NTSB cannot force adoption of its r
 | Defined pathway to enforcement or another authority | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | **✗** |
 | Systematic post-finding follow-up and status tracking | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | **✗** |
 
-**Table 11.** *Institutional design comparison. ✓ = formally present; ✗ = absent; ~ = partial or conditional. PCAOB authority applies to registered audit firms, not the public companies they audit. NTSB tracks and evaluates responses but cannot compel implementation. UK AISI and US CAISI can sometimes examine remediation through voluntary or negotiated access, but neither has a uniform right to do so. The two institutes are combined only for this high-level comparison; their legal arrangements differ. Coding draws on official descriptions of the FDA warning-letter process [23], NRC inspections [24], ONR regulation [25], FCA supervision [26], and CAA oversight and enforcement [27, 28]. Supporting detail is in Appendix H.*
+**Table 12.** *Institutional design comparison. ✓ = formally present; ✗ = absent; ~ = partial or conditional. PCAOB authority applies to registered audit firms, not the public companies they audit. NTSB tracks and evaluates responses but cannot compel implementation. UK AISI and US CAISI can sometimes examine remediation through voluntary or negotiated access, but neither has a uniform right to do so. The two institutes are combined only for this high-level comparison; their legal arrangements differ. Coding draws on official descriptions of the FDA warning-letter process [23], NRC inspections [24], ONR regulation [25], FCA supervision [26], and CAA oversight and enforcement [27, 28]. Supporting detail is in Appendix H.*
 
 **Binding enforcement is not the only route to observable follow-up.** Although the NTSB cannot require implementation, it identifies recipients, evaluates responses, tracks status, and keeps unresolved recommendations public. Other comparators add compulsory access, remediation, verification, or enforcement referral. Official UK AISI and US CAISI mandate descriptions cover research, evaluation, guidance, standards, and voluntary collaboration, but not a uniform process requiring responses, assigning follow-up, or publishing unresolved status [3, 4]. Case-specific negotiated arrangements can still permit responses or remediation checks.
 
@@ -426,13 +419,13 @@ The public record currently provides limited grounds for confidence that governm
 
 **Language and access.** Non-English outputs without a reliable English version were excluded, and some Channel C sources were rate-limited or inaccessible in our environment.
 
-**Developer-level counts are approximate**, since they depend on a model-name matching rule (Table 8).
+**Developer-level counts are approximate**, since they depend on a model-name matching rule (Table 9).
 
 ## Broader impacts
 
 This study measures whether published safety findings are acted upon. Documenting a large accountability gap could be read as an argument against third-party evaluation; we intend the opposite. The evidence indicates that evaluation currently lacks the institutional follow-through that makes findings consequential, not that evaluation is unnecessary.
 
-Two risks deserve naming. First, per-developer results (Table 8) could be read as a responsiveness ranking. They should not be: sample sizes differ by an order of magnitude, access arrangements differ, and a company evaluated more often has more opportunities to answer. Second, publishing a corpus of unremediated safety findings concentrates pointers to known weaknesses. We mitigate this by including only findings already public at the cutoff, adding no new technical detail, and reproducing no exploit content; every quoted item is available in its cited source.
+Two risks deserve naming. First, per-developer results (Table 9) could be read as a responsiveness ranking. They should not be: sample sizes differ by an order of magnitude, access arrangements differ, and a company evaluated more often has more opportunities to answer. Second, publishing a corpus of unremediated safety findings concentrates pointers to known weaknesses. We mitigate this by including only findings already public at the cutoff, adding no new technical detail, and reproducing no exploit content; every quoted item is available in its cited source.
 
 The intended positive impact is to give evaluators, developers, and policymakers a measurable baseline for follow-through, and a reusable coding framework for tracking it as the ecosystem grows.
 
@@ -488,6 +481,8 @@ The intended positive impact is to give evaluators, developers, and policymakers
 
 ## Appendix A — Sampling frame and source eligibility
 
+### A.1 Eligibility and source scope
+
 The 1,146 findings include outputs from the UK AI Security Institute, the US Center for AI Standards and Innovation, national and joint evaluation initiatives involving France, Japan, Singapore, and South Korea, and exercises conducted through the International Network for Advanced AI Measurement, Evaluation and Science. The frame also included third-party evaluators such as METR, SecureBio, Apollo Research, Palisade Research, Transluce, FAR.AI, and other non-profit, academic, and commercial organizations.
 
 **Roster derivation.** The initial screening roster was derived from three sources: national institutes and initiatives identified through the International Network for Advanced AI Measurement, Evaluation and Science; members of the AI Evaluators Forum plus evaluator organizations already represented in the developing corpus; and frontier-developer release sites, searched **only** for material explicitly attributed to an external evaluator. Organizations later found to be co-author affiliations rather than publishing evaluators, together with national institutes that produced no qualifying report, remain in Table A.1 and the screening ledger as zero-yield records — "swept N items, 0 included" is itself a census result.
@@ -530,7 +525,6 @@ The 1,146 findings include outputs from the UK AI Security Institute, the US Cen
 
 ### A.2 Unit of analysis: clubbing, splitting, and comparators
 
-**Figure A.1.** `charts/25_what_is_a_finding.png` *What counts as one finding. A report yields as many findings as there are claims that could receive distinct responses, and never fewer than the number of accountable companies it implicates.*
 
 Results are combined when they concern the same company, describe the same issue, and would reasonably call for a common response. They are coded separately when they describe substantively different issues or would reasonably call for different responses. Results concerning multiple models from one company may be combined when they document the same issue and would call for the same response.
 
@@ -596,7 +590,6 @@ All 114 C1 (significant risk) findings coded `None` have a dated Channel A searc
 
 Every shortlisted finding was assigned to one of three mutually exclusive tiers, derived rather than labeled by hand. **Tier A** contains concerning empirical findings about a named frontier model or developer for which a company response can reasonably be assessed. **Tier B** contains empirical findings failing at least one Tier A condition — anonymized, reassuring, null, inconclusive, bare-score, or capability-trend results. **Tier C** contains methodology, framework, governance or process, tooling, milestone, and other non-empirical findings. Only Tier A enters the response analysis.
 
-**Figure C.1.** `charts/07_tier_distribution.png` *The three-tier taxonomy across the 1,146-finding corpus: Tier A 233 (20.3%), Tier B 599 (52.3%), Tier C 314 (27.4%).*
 
 ### C.1 The frontier scope gate, and where the severity domains come from
 
@@ -834,14 +827,10 @@ The corpus contains 46 distinct reporting-institution labels, including separate
 | International Network of AI Safety Institutes | 7 | UL Research Institutes (DSRI) | 1 |
 
 **Figure D.1.** `charts/13_institution_type_tree.png` *Reporting volume by institution type across all 1,146 findings, on one common scale, showing the five largest institutions in each of the four groups with the remainder combined. Institution Type follows the dataset field; compound values fold into their primary type, so the four branches sum to 1,146.*
-**Figure D.4.** `charts/17_severity_classification.png` *Severity classification by the three-model ensemble.*
-**Figure D.5.** `charts/08_action_level_distribution.png` *Action Level across all 233 Tier A findings: None 145, Substantive 44, Partial 22, Acknowledged 22.*
-**Figure D.6.** `charts/21_severity_x_action_heatmap.png` *Severity × Action Level as observed counts — the proportionality matrix of §3.5.5 shown as data rather than rule. The top-left cell (C1 with no response) is the accountability gap and is the largest cell in the table.*
-**Figure D.7.** `charts/18_attribution_distribution.png` *Attribution across Tier A: no response located 145 (62.2%), explicit attribution 75 (32.2%), no explicit attribution 13 (5.6%).*
-**Figure D.8.** `charts/09_policy_level_distribution.png` *Policy Level across Tier A: no uptake 186, non-binding 46, binding 1.*
-**Figure D.9.** `charts/22_domain_x_outcome_heatmap.png` *Risk domain × outcome. Read across rows, not down columns: domains carry very different sample sizes.*
-**Figure D.10.** `charts/14_response_lag_distribution.png` *Distribution of response lag. The mass at zero is coordinated disclosure.*
-**Figure D.11.** `charts/24_evaluator_volume_vs_gap.png` *Evaluator volume against gap rate. Each point is a reporting institution. There is no visible relationship between publication volume and how often an evaluator is answered.*
+**Figure D.2.** `charts/21_severity_x_action_heatmap.png` *Severity × Action Level as observed counts — the proportionality matrix of §3.5.5 shown as data rather than rule. The top-left cell (C1 with no response) is the accountability gap and is the largest cell in the table.*
+**Figure D.3.** `charts/22_domain_x_outcome_heatmap.png` *Risk domain × outcome. Read across rows, not down columns: domains carry very different sample sizes.*
+**Figure D.4.** `charts/14_response_lag_distribution.png` *Distribution of response lag. The mass at zero is coordinated disclosure.*
+**Figure D.5.** `charts/24_evaluator_volume_vs_gap.png` *Evaluator volume against gap rate. Each point is a reporting institution. There is no visible relationship between publication volume and how often an evaluator is answered.*
 
 ## Appendix E — Response evidence and data access
 
@@ -857,7 +846,7 @@ The five-unit robustness comparison is reported in the body as Table 6, because 
 
 ### F.2 Uncertainty and subgroup comparisons
 
-The headline describes an enumerated public record rather than a sample estimate, so we attach no significance test to it; Table 6 reports it under five counting units with Wilson intervals. Two subgroup comparisons support claims in the body and are reported with their limits.
+The headline describes an enumerated public record rather than a sample estimate, so we attach no significance test to it; Table 7 reports it under five counting units with Wilson intervals. Two subgroup comparisons support claims in the body and are reported with their limits.
 
 **Access type.** Among C1 Tier A findings, 3 of 44 pre-deployment findings received no response (6.8%) versus 104 of 131 post-deployment (79.4%); the 15 mixed findings are excluded. Two-proportion test: **z = −8.54, p < 0.001**, remaining below 0.001 after adjustment for clustering within reports.
 
@@ -868,13 +857,12 @@ The headline describes an enumerated public record rather than a sample estimate
 **Two descriptive comparisons.** Government AISI findings fell short in 42 of 59 cases (71.2%) versus 110 of 131 (84.0%) for third-party evaluators; the naive test gives p = 0.042, but the difference does not remain below 0.05 after the clustering adjustment. Among C1 Tier A findings, 92 of 158 with documented public traction received no response (58.2%) versus 22 of 32 without (68.8%); z = −1.11, p = 0.268, inconclusive.
 
 **Figure F.1.** `charts/12_evaluator_scope.png` *Outcome composition by evaluator type among the 190 C1 Tier A findings.*
-**Figure F.2.** `charts/16_gap_rate_by_access_type.png` *Access type in the full corpus (left) and no-response rates within C1 Tier A findings (right).*
 
 ### F.3 Outcome composition by descriptive domain
 
-The labels in Figure D.9 come from the dataset's descriptive Domain field and are **separate** from the eight severity-threshold domains of §3.4. They are multi-valued, so row totals exceed 233 Tier A findings. The largest domains all carry substantial accountability-gap shares; the smallest have too few findings for stable comparison. The figure is descriptive and is not a ranking of domain importance.
+The labels in Figure D.3 come from the dataset's descriptive Domain field and are **separate** from the eight severity-threshold domains of §3.4. They are multi-valued, so row totals exceed 233 Tier A findings. The largest domains all carry substantial accountability-gap shares; the smallest have too few findings for stable comparison. The figure is descriptive and is not a ranking of domain importance.
 
-*The domain × outcome matrix is Figure D.9.*
+*The domain × outcome matrix is Figure D.3.*
 
 ### F.4 Channel C — traction among no-response findings
 
@@ -925,6 +913,8 @@ Two findings at each Action Level, to make the coding boundaries concrete. These
 
 *Both carry Explicit attribution. The first shows an architectural response, the second a targeted fix — the two shapes a Substantive response takes. A third, `JOINT-2025-09-CYB1`, reads simply: "These attacks were immediately reported to OpenAI, and fixed by OpenAI within one business day."*
 
+**Table G.1. Substantive worked examples — a specific, documented, attributed change.** *Text abridged for layout; complete rows and evidence are in the published dataset.*
+
 ### G.2 Partial — action documented but incomplete, interim, or unverifiable (n = 21 of 190)
 
 | Finding ID | Institution | Finding | Company response |
@@ -932,12 +922,16 @@ Two findings at each Action Level, to make the coding boundaries concrete. These
 | `OPENAI-2026-08-CYB1`<br>[evidence source](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/) | Irregular | Irregular notified OpenAI on 29 July 2026 of an incident during external cybersecurity testing in which an evaluation agent acted on a real third-party website. | "In the coming weeks, we will review our own approach to third-party testing, including how we identify higher-risk evaluations…" — a stated intention, not a completed mitigation. |
 | `UKAISI-2026-08-AUT1`<br>[evidence source](https://www.anthropic.com/aug-2026-risk-report) | UK AISI | In an AISI cyber-range exercise, Mythos 5 agents running in separate concurrent isolated samples discovered one another and coordinated. | Anthropic's risk report notes the AISI publication and describes the behavior, without documenting a specific mitigation addressing it. |
 
+**Table G.2. Partial worked examples — action documented but incomplete, interim, or unverifiable.** *Text abridged for layout; complete rows and evidence are in the published dataset.*
+
 ### G.3 Acknowledged — the finding is referenced; no action described (n = 17 of 190)
 
 | Finding ID | Institution | Finding | Company response |
 |---|---|---|---|
 | `SECUREBIO-2023-06-BIO1`<br>[evidence source](https://openai.com/index/building-an-early-warning-system-for-llm-aided-biological-threat-creation/) | SecureBio | In a one-hour classroom exercise at MIT, non-scientist students prompted public chatbots, which suggested four potential pandemic pathogens and explained how they could be generated from synthetic DNA. | "Existing research on AI-enabled biological threats has shown that models like GPT-4 can be prompted or red-teamed to share information related to biological threat creation…" — recognition, no described action. |
 | `SECUREBIO-2023-06-JAI1`<br>[evidence source](https://openai.com/index/building-an-early-warning-system-for-llm-aided-biological-threat-creation/) | SecureBio | The chatbots' biosecurity safeguards were bypassed trivially: most harmful responses were offered freely with at most minimal prompting. | Same OpenAI source; the finding is referenced without a corresponding mitigation being described. |
+
+**Table G.3. Acknowledged worked examples — the finding is referenced; no action described.** *Text abridged for layout; complete rows and evidence are in the published dataset.*
 
 ### G.4 None — nothing located by the search cutoff (n = 114 of 190)
 
@@ -948,11 +942,13 @@ Two findings at each Action Level, to make the coding boundaries concrete. These
 
 *The distinction that matters most in practice is Partial versus Substantive: a company may document a response while the evaluator remains unable to verify that the mitigation addressed the vulnerability. See §4.7.*
 
+**Table G.4. No-response worked examples — nothing located by the search cutoff.** *Text abridged for layout; complete rows and evidence are in the published dataset.*
+
 ## Appendix H — Institutional comparison, annotated
 
 In this appendix NTSB denotes the National Transportation Safety Board; PCAOB the Public Company Accounting Oversight Board; FDA the Food and Drug Administration; NRC the Nuclear Regulatory Commission; ONR the Office for Nuclear Regulation; FCA the Financial Conduct Authority; and CAA the Civil Aviation Authority.
 
-Table 11 in §6 records only whether a formal function exists, not whether the bodies possess identical powers or operate identically. Coding draws on official descriptions of the FDA warning-letter process [23], NRC inspections [24], ONR regulation [25], FCA supervision [26], and CAA oversight and enforcement [27, 28], together with the NTSB statutory response requirement [18, 19] and the PCAOB remediation process [20, 21, 22].
+Table 12 in §6 records only whether a formal function exists, not whether the bodies possess identical powers or operate identically. Coding draws on official descriptions of the FDA warning-letter process [23], NRC inspections [24], ONR regulation [25], FCA supervision [26], and CAA oversight and enforcement [27, 28], together with the NTSB statutory response requirement [18, 19] and the PCAOB remediation process [20, 21, 22].
 
 **Qualifications.** PCAOB authority applies to registered audit firms, not to the public companies they audit — the analogy to AI evaluation is supervision *of evaluators*, not of developers. NTSB tracks and evaluates responses but cannot compel implementation, which is precisely why it is the closest precedent for a non-regulatory technical body. UK AISI and US CAISI can sometimes examine remediation through voluntary or negotiated access, recorded as partial rather than present, because neither holds a uniform right to do so. The two institutes are combined only for this high-level comparison; their legal and institutional arrangements differ materially.
 
