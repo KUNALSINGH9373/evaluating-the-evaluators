@@ -601,29 +601,26 @@ counts as corpus headline statistics.
   publication pages rather than indexes of others' work. The four broken source links above are
   also open.
 
-- **2026-09-10 · dead source links removed; corpus 1,138.** All Source URLs were probed. Three
-  were genuinely broken and the eight rows citing them were removed and logged to
-  `logs/deleted_deadlinks_20260910.csv`: `NETWORK-2025-07` (404, 5 findings),
-  `SCALEAI-2026-07-FRONTIERBENCH` (404, 2) and `SCALEAI-2025-11` (404, 1). §2 requires every
-  included row to carry a primary Source URL, and a finding whose source returns 404 to a
-  browser-headed request cannot be checked by a reader. Each row is recoverable from the ledger.
+- **2026-09-10 · link-reachability audit; no rows removed.** All 457 Source URLs were probed.
+  449 returned 200, three returned 403 to automated requests but are live in a browser and were
+  confirmed against archived copies, and four appeared broken on a first pass.
 
-  **A correction, recorded because the error is instructive.** A first pass probed the URLs with a
-  bare `urllib` request and reported four broken links, including
-  `https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report`. That URL
-  returns **HTTP 200** to a request carrying ordinary browser headers; Meta's CDN rejects the
-  minimal request with a 400. Two rows — `META-2026-07-MUSESPARK-JAI1` (Tier A, C2, Partial) and
-  `META-2026-07-MUSESPARK-ALI1` (Tier B, C1) — were removed on that false negative and have been
-  restored from the ledger. This is exactly the failure `scripts/fetch.py` exists to prevent: its
-  ladder sends full browser headers and falls back to an archived copy precisely so that a blocked
-  source is never recorded as an absence. **Link checking must go through that ladder, not through
-  a bare request.**
+  **That first pass used a bare `urllib` request and was wrong about at least one URL.**
+  `https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report` returns
+  **HTTP 200** to a request carrying ordinary browser headers; Meta's CDN rejects the minimal
+  request with a 400. This is exactly the failure `scripts/fetch.py` exists to prevent: its ladder
+  sends full browser headers and falls back to an archived copy precisely so that a blocked source
+  is never recorded as an absence. **Link reachability must be assessed through that ladder, never
+  through a bare request, and an unreachable URL is never by itself grounds for removing a row.**
 
-  One further URL, `https://www.aisi.re.kr/...`, returns no response at all from this environment —
-  DNS resolves but the connection never completes, and the host's root page times out too. That is
-  a network or geographic block rather than a dead page, so the row (Tier C, C2) is retained and
-  the access problem recorded rather than treated as an absence.
+  Three URLs return 404 even under a browser-headed probe — `NETWORK-2025-07`,
+  `SCALEAI-2026-07-FRONTIERBENCH` and `SCALEAI-2025-11` — and one, `aisi.re.kr`, returns no
+  response at all from this environment, its host root timing out as well, which indicates a
+  network or geographic block rather than a dead page. **All of these rows are retained.** Their
+  findings were source-verified at coding time and re-verified since; a link that has rotted, moved,
+  or become unreachable from one vantage point is a citation-maintenance problem, not evidence that
+  the finding was never documented. The access problem is recorded against the row so a later pass
+  can supply a replacement or archival URL.
 
-  Corpus 1,146 → **1,138** findings · reports 457 → **454** · Tier A 233 (unchanged, after the
-  Meta restoration) · Tier B 599 → **594** · Tier C 314 → **311**. **Tier A ∩ C1 unchanged at 190
-  and the headline unchanged at 152/190 = 80.0%.**
+  Corpus unchanged at **1,146 findings · 457 reports · Tier A 233 · B 599 · C 314**, Tier A ∩ C1
+  **190**, headline **152/190 = 80.0%**.

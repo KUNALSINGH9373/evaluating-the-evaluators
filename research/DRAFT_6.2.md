@@ -8,7 +8,7 @@ Kunal Singh¹\*, Max Kamachee¹, Jonas Raedler¹, Stephen Casper²·³·¹
 
 > **Anonymization note.** This block, and the study-materials links in Appendices C, E and J, identify the authors. Both must be removed or replaced with an anonymized mirror before any double-blind submission.
 
-**Dataset:** AISIEVAL V13 — 1,138 findings · 454 reports · 454 source URLs · 46 institutions · 17 March 2023 – 27 August 2026 · corpus cutoff 29 August 2026.
+**Dataset:** AISIEVAL V13 — 1,146 findings · 457 reports · 457 source URLs · 46 institutions · 17 March 2023 – 27 August 2026 · corpus cutoff 29 August 2026.
 **Status of numbers:** every figure below was recomputed from the workbook on 10 September 2026. Structural validator PASS (0 violations); duplicate suite 0 duplicates; `verify_charts.py` PASS across all 38 figures.
 **Changes from Draft 6.1:** corpus corrected (attribution audit, report-identity merge, §5 accountable-company splits); window opens 2023-03-17 rather than 2020; headline 150/188 → **152/190**; Tier B/C redefined; NIST AI 600-1 removed from severity provenance; policy-record binding case corrected; AI-assisted search disclosed (Appendix B); response-search protocol published.
 
@@ -18,7 +18,7 @@ Kunal Singh¹\*, Max Kamachee¹, Jonas Raedler¹, Stephen Casper²·³·¹
 
 Government AI institutes and independent evaluators study frontier AI systems to identify, evaluate, and better understand potential risks. Yet identifying and evaluating a risk does not itself mitigate it. We examine whether companies act on published findings from third-party evaluations of their frontier AI systems. The analysis covers publicly documented findings from government AI institutes and independent evaluation organizations from 2023 to August 2026. We trace downstream responses through three channels: company responses and model updates; parliamentary and regulatory action; and documented media and academic coverage.
 
-The corpus contains 1,138 findings, of which 233 concerned adverse empirical results about named systems for which a company response could reasonably be expected. Of the 190 that met our predefined significant-risk threshold, 152 (80%) lacked a specific publicly documented company response meeting our proportionality criteria; 114 (60%) had no located company response of any kind. The shortfall persists under every alternative counting unit we tested — from 76.2% weighting by institution to 84.3% weighting by report — and after adjusting for the clustering of findings within reports. One finding in the entire corpus was connected to binding policy action.
+The corpus contains 1,146 findings, of which 233 concerned adverse empirical results about named systems for which a company response could reasonably be expected. Of the 190 that met our predefined significant-risk threshold, 152 (80%) lacked a specific publicly documented company response meeting our proportionality criteria; 114 (60%) had no located company response of any kind. The shortfall persists under every alternative counting unit we tested — from 76.2% weighting by institution to 84.3% weighting by report — and after adjusting for the clustering of findings within reports. One finding in the entire corpus was connected to binding policy action.
 
 Taken together, these results suggest that, based on publicly available information, there is only limited reason to trust that third-party evaluations of frontier AI systems consistently lead to proportionate, attributable, and verifiable responses. Comparing the accountability structures currently in place for frontier AI systems with those established by oversight bodies in other industries, including food, drugs, energy, transportation, and finance, we conclude that formal mechanisms for access, response, remediation, verification, and follow-up inspired by governance in these other sectors could increase the consistency with which AI evaluations translate to meaningful action.
 
@@ -34,7 +34,7 @@ Taken together, these results suggest that, based on publicly available informat
 
 *Rows 1 and 2 together comprise the 152-of-190 (80.0%) accountability gap analyzed in §4.1. Responses were searched through 29 August 2026. Partial (21) and Acknowledged (17) are combined in row 2; the full four-level breakdown is in Table 5.*
 
-**Figure 0.** `charts/20_accountability_pipeline_funnel.png` *Accountability pipeline: from 1,138 public evaluation findings to the 233 Tier A accountability set, the severity classification to 190 C1 findings, and the response outcome for each. A finding counts toward the gap when the named company shows no located public response, or only a partial or acknowledged one.*
+**Figure 0.** `charts/20_accountability_pipeline_funnel.png` *Accountability pipeline: from 1,146 public evaluation findings to the 233 Tier A accountability set, the severity classification to 190 C1 findings, and the response outcome for each. A finding counts toward the gap when the named company shows no located public response, or only a partial or acknowledged one.*
 
 ---
 
@@ -86,7 +86,7 @@ Independent evaluators are defined as non-government organizations — including
 
 ### 3.1 Data collection
 
-**The corpus is every publicly documented frontier-AI evaluation finding we could locate from 46 evaluating organizations, screened from 6,684 publications: 1,138 findings in 454 reports.** We identified 46 government bodies and independent evaluators that conducted frontier-AI evaluations and publicly reported their methods and results; the full frame, with publications screened and reports included for each organization, is in Appendix A. We screened 6,684 publications and identified 454 reports containing sufficiently documented evaluations of advanced AI systems. The earliest included report was published on 17 March 2023, and the final search was conducted on 29 August 2026. From these reports, we identified 1,138 distinct findings and recorded each as a separate dataset entry before assigning its tier, severity, and response variables.
+**The corpus is every publicly documented frontier-AI evaluation finding we could locate from 46 evaluating organizations, screened from 6,684 publications: 1,146 findings in 457 reports.** We identified 46 government bodies and independent evaluators that conducted frontier-AI evaluations and publicly reported their methods and results; the full frame, with publications screened and reports included for each organization, is in Appendix A. We screened 6,684 publications and identified 457 reports containing sufficiently documented evaluations of advanced AI systems. The earliest included report was published on 17 March 2023, and the final search was conducted on 29 August 2026. From these reports, we identified 1,146 distinct findings and recorded each as a separate dataset entry before assigning its tier, severity, and response variables.
 
 **No lower-date eligibility boundary was applied.** A report is eligible if it was publicly available on or before the cutoff. 17 March 2023 is simply the earliest publication that survived screening; that date describes the corpus, not a rule.
 
@@ -104,39 +104,39 @@ Automated scripts and LLM-based tools supported different parts of corpus constr
 
 | Dimension | Distribution |
 |---|---|
-| **Scope** | third-party evaluator 821 (72.1%) · government AISI 317 (27.9%) |
-| **Access type** | post-deployment 828 (72.8%) · pre-deployment 150 (13.2%) · N/A 92 (8.1%) · mixed 68 (6.0%) |
-| **Institution type** | Non-Profit AIEF 335 (29.4%) · Government 308 (27.1%) · Non-Profit Independent 246 (21.6%) · For-Profit 232 (20.4%) |
-| **Finding type** | `capability-finding` 499 (43.8%) · `methodology` 231 (20.3%) · `capability-finding;anonymised-model` 89 (7.8%) · `governance` 59 (5.2%) · `capability-trend` 48 (4.2%) |
-| **Density** | 2.51 findings per report (median 2, max 12); 454 reports across 46 institutions |
+| **Scope** | third-party evaluator 824 (71.9%) · government AISI 322 (28.1%) |
+| **Access type** | post-deployment 831 (72.5%) · pre-deployment 150 (13.1%) · N/A 97 (8.5%) · mixed 68 (5.9%) |
+| **Institution type** | Non-Profit AIEF 335 (29.2%) · Government 313 (27.3%) · Non-Profit Independent 246 (21.5%) · For-Profit 235 (20.5%) |
+| **Finding type** | `capability-finding` 504 (44.0%) · `methodology` 234 (20.4%) · `capability-finding;anonymised-model` 89 (7.8%) · `governance` 59 (5.1%) · `capability-trend` 48 (4.2%) |
+| **Density** | 2.51 findings per report (median 2, max 12); 457 reports across 46 institutions |
 
-**Table 2.** *Corpus composition across the 1,138 findings. Post-deployment evaluation dominates the public record; pre-deployment access — the condition §4.3 shows is associated with substantive responses — covers about one-eighth of findings.*
+**Table 2.** *Corpus composition across the 1,146 findings. Post-deployment evaluation dominates the public record; pre-deployment access — the condition §4.3 shows is associated with substantive responses — covers about one-eighth of findings.*
 
-**Top reporting institutions by findings:** UK AISI 205 · Scale AI 149 · METR 113 · Collective Intelligence Project (Weval) 78 · Shanghai AI Laboratory (AI45 Lab) 74 · SecureBio 48 · Apollo Research 46 · Transluce 41 · FAR.AI 39 · Joint UK AISI + US CAISI 37 · US CAISI 34 · Center for AI Safety 32. The complete 46-label list is in Appendix D.
+**Top reporting institutions by findings:** UK AISI 205 · Scale AI 152 · METR 113 · Collective Intelligence Project (Weval) 78 · Shanghai AI Laboratory (AI45 Lab) 74 · SecureBio 48 · Apollo Research 46 · Transluce 41 · FAR.AI 39 · Joint UK AISI + US CAISI 37 · US CAISI 34 · Center for AI Safety 32. The complete 46-label list is in Appendix D.
 
-**Figure 1.** `charts/01_findings_per_institution.png` *Findings per reporting institution (n = 1,138).*
-**Figure 2.** `charts/02_findings_per_model_developer.png` *Findings per model developer. A finding naming models from several developers is counted once per developer, so bars sum to more than 1,138.*
+**Figure 1.** `charts/01_findings_per_institution.png` *Findings per reporting institution (n = 1,146).*
+**Figure 2.** `charts/02_findings_per_model_developer.png` *Findings per model developer. A finding naming models from several developers is counted once per developer, so bars sum to more than 1,146.*
 **Figure 3.** `charts/03_findings_per_access_type.png` *Findings per access type. "N/A" covers governance and methodology findings with no evaluated system.*
 
-**Figure 4.** `charts/11_domain_distribution.png` *Findings per risk domain across the corpus. Domain labels are multi-valued, so the bars sum to more than 1,138. These are the dataset's descriptive domain labels, which are separate from the eight severity-threshold domains of §3.4.*
+**Figure 4.** `charts/11_domain_distribution.png` *Findings per risk domain across the corpus. Domain labels are multi-valued, so the bars sum to more than 1,146. These are the dataset's descriptive domain labels, which are separate from the eight severity-threshold domains of §3.4.*
 
 ### 3.3 Defining the accountability set
 
-**Only one finding in five can be held to account: 233 of 1,138 name an adverse result against an identifiable developer, and those alone carry the response analysis.** We assigned each finding to one of three mutually exclusive tiers based on whether it reported an adverse or safety-relevant result and permitted developer-specific response analysis. **The tier is never labeled by hand:** it is derived from two coded columns — whether the finding is a trackable evaluation result, and whether an action is trackable against a named accountable party.
+**Only one finding in five can be held to account: 233 of 1,146 name an adverse result against an identifiable developer, and those alone carry the response analysis.** We assigned each finding to one of three mutually exclusive tiers based on whether it reported an adverse or safety-relevant result and permitted developer-specific response analysis. **The tier is never labeled by hand:** it is derived from two coded columns — whether the finding is a trackable evaluation result, and whether an action is trackable against a named accountable party.
 
 **Tier A (Trackable evaluation findings).** A finding entered Tier A when it: (1) reported a specific adverse or safety-relevant result; (2) identified a named model, system, or developer rather than only an anonymized placeholder; and (3) concerned an issue within the developer's capacity to address, such that a company response could reasonably be assessed. These 233 findings constitute the accountability set and are the only findings included in the Action Level and proportionality analysis.
 
 **Tier B (Non-trackable evaluation findings).** Empirical findings that did not meet at least one Tier A condition. These include anonymized-system results, reassuring or null results, bare scores or rankings without a concerning threshold, non-frontier systems, capability trends, inconclusive results, and findings for which a company response could not reasonably be assessed.
 
-**Tier C (Non-empirical findings).** Methodology, framework, governance or process, tooling, milestone, and other findings that did not report empirical model behavior or capability. Tier C is almost entirely non-empirical: 223 of its 311 rows are typed `methodology` and 59 `governance`, with two exceptions.
+**Tier C (Non-empirical findings).** Methodology, framework, governance or process, tooling, milestone, and other findings that did not report empirical model behavior or capability. Tier C is almost entirely non-empirical: 223 of its 314 rows are typed `methodology` and 59 `governance`, with two exceptions.
 
 All three tiers remain in the descriptive corpus. Only Tier A enters the company-response and proportionality analysis.
 
 | Tier | n | % of corpus | What it is |
 |---|---|---|---|
-| **Tier A** (trackable evaluation findings) | **233** | 20.5% | Adverse finding about a named model or developer for which a company response can be assessed |
-| **Tier B** (non-trackable evaluation findings) | **594** | 52.2% | Empirical finding failing at least one Tier A condition |
-| **Tier C** (non-empirical findings) | **311** | 27.3% | Methodology, governance, tooling, process, milestone |
+| **Tier A** (trackable evaluation findings) | **233** | 20.3% | Adverse finding about a named model or developer for which a company response can be assessed |
+| **Tier B** (non-trackable evaluation findings) | **599** | 52.3% | Empirical finding failing at least one Tier A condition |
+| **Tier C** (non-empirical findings) | **314** | 27.4% | Methodology, governance, tooling, process, milestone |
 
 **Table 3. The three-tier taxonomy.** *Anonymized findings are structurally unaccountable: nobody can be silent about a finding that names nobody.*
 
@@ -154,10 +154,10 @@ The majority vote of the three models (Claude Sonnet 5, GPT-5.5, and Gemini 3.1 
 
 | Subset | n | Unanimous | Split | Agreement |
 |---|---|---|---|---|
-| All findings | 1,138 | 1,025 | 113 | **90.1%** |
+| All findings | 1,146 | 1,032 | 114 | **90.1%** |
 | Tier A only | 233 | 194 | 39 | **83.3%** |
 
-**Table 4. Raw ensemble agreement before human review.** *After review the corpus contained **338 C1** and **800 C2** findings. Within Tier A: **190 C1** and **43 C2** — an 81.5% C1 share, far higher than outside the accountability set, which is expected because the Tier A gate already selects for adverse findings about named systems.*
+**Table 4. Raw ensemble agreement before human review.** *After review the corpus contained **340 C1** and **806 C2** findings. Within Tier A: **190 C1** and **43 C2** — an 81.5% C1 share, far higher than outside the accountability set, which is expected because the Tier A gate already selects for adverse findings about named systems.*
 
 ### 3.5 Response evidence and outcome coding
 
@@ -302,7 +302,7 @@ A formal test finds no difference in no-response rate between findings with and 
 
 ### 4.6 The gap over time
 
-**The evaluation ecosystem has grown sharply while the gap has not closed.** The corpus contains 35 findings published in 2023, 154 in 2024, 457 in 2025, and 492 in 2026 through 27 August. Because 2026 is a partial year, this demonstrates increasing publication volume rather than a completed annual trend.
+**The evaluation ecosystem has grown sharply while the gap has not closed.** The corpus contains 35 findings published in 2023, 154 in 2024, 463 in 2025, and 494 in 2026 through 27 August. Because 2026 is a partial year, this demonstrates increasing publication volume rather than a completed annual trend.
 
 Among C1 Tier A findings the gap does not show clear improvement: **8 of 9 in 2023 (89%), 24 of 26 in 2024 (92%), 61 of 73 in 2025 (84%), and 59 of 82 in 2026 through the cutoff (72%)** received no response or an inadequate one. The 2026 estimate is right-censored, because more recent findings have had less time to attract a documented response. We therefore read the annual results only as showing that the gap persisted as the evaluation ecosystem expanded.
 
@@ -356,7 +356,7 @@ We code this Substantive because OpenAI publicly attributes implemented pre-depl
 
 ### 5.3 Policy-record responses
 
-**Findings reach the official record reasonably often but almost never bind anyone: 47 of 1,138 appear in a policy document, and one of those is connected to an enforceable requirement.** We searched parliamentary, congressional, regulatory, and other official government records for explicit references to corpus findings between 2024 and 2026, classifying an appearance as **Type A** when the evidence explicitly connected the finding to binding action, and **Type B** when it connected the finding to a non-binding response such as guidance, research funding, an official statement, or a voluntary commitment. Temporal proximity alone was insufficient.
+**Findings reach the official record reasonably often but almost never bind anyone: 47 of 1,146 appear in a policy document, and one of those is connected to an enforceable requirement.** We searched parliamentary, congressional, regulatory, and other official government records for explicit references to corpus findings between 2024 and 2026, classifying an appearance as **Type A** when the evidence explicitly connected the finding to binding action, and **Type B** when it connected the finding to a non-binding response such as guidance, research funding, an official statement, or a voluntary commitment. Temporal proximity alone was insufficient.
 
 We also searched for **Type C** cases in which an institute's existence or evaluation work was cited as a reason to defer legislation. No confirmed Type C case was identified. This is an observation about the searched public record, not evidence that such arguments never occur.
 
@@ -488,7 +488,7 @@ The intended positive impact is to give evaluators, developers, and policymakers
 
 ## Appendix A — Sampling frame and source eligibility
 
-The 1,138 findings include outputs from the UK AI Security Institute, the US Center for AI Standards and Innovation, national and joint evaluation initiatives involving France, Japan, Singapore, and South Korea, and exercises conducted through the International Network for Advanced AI Measurement, Evaluation and Science. The frame also included third-party evaluators such as METR, SecureBio, Apollo Research, Palisade Research, Transluce, FAR.AI, and other non-profit, academic, and commercial organizations.
+The 1,146 findings include outputs from the UK AI Security Institute, the US Center for AI Standards and Innovation, national and joint evaluation initiatives involving France, Japan, Singapore, and South Korea, and exercises conducted through the International Network for Advanced AI Measurement, Evaluation and Science. The frame also included third-party evaluators such as METR, SecureBio, Apollo Research, Palisade Research, Transluce, FAR.AI, and other non-profit, academic, and commercial organizations.
 
 **Roster derivation.** The initial screening roster was derived from three sources: national institutes and initiatives identified through the International Network for Advanced AI Measurement, Evaluation and Science; members of the AI Evaluators Forum plus evaluator organizations already represented in the developing corpus; and frontier-developer release sites, searched **only** for material explicitly attributed to an external evaluator. Organizations later found to be co-author affiliations rather than publishing evaluators, together with national institutes that produced no qualifying report, remain in Table A.1 and the screening ledger as zero-yield records — "swept N items, 0 included" is itself a census result.
 
@@ -526,7 +526,7 @@ The 1,138 findings include outputs from the UK AI Security Institute, the US Cen
 | Citadel AI | 86 | 1 | Meridian Labs | 7 | 0 |
 | SecureBio | 84 | 11 | Gray Swan AI + UK AISI (joint) | 2 | 2 |
 
-*The ledger contains 6,684 screened publication records and 490 organization–report inclusion entries. After deduplicating joint reports credited to more than one screened organization and applying final corpus exclusions, these correspond to the 454 reports analyzed. Organizations with zero included reports remain listed so the frame records unsuccessful as well as successful searches. **Note:** several network members — Australia, Canada, Kenya, India, the EU AI Office — were swept and yielded zero qualifying reports, so the paper does not claim to have drawn findings from every Network member.*
+*The ledger contains 6,684 screened publication records and 490 organization–report inclusion entries. After deduplicating joint reports credited to more than one screened organization and applying final corpus exclusions, these correspond to the 457 reports analyzed. Organizations with zero included reports remain listed so the frame records unsuccessful as well as successful searches. **Note:** several network members — Australia, Canada, Kenya, India, the EU AI Office — were swept and yielded zero qualifying reports, so the paper does not claim to have drawn findings from every Network member.*
 
 ### A.2 Unit of analysis: clubbing, splitting, and comparators
 
@@ -596,7 +596,7 @@ All 114 C1 (significant risk) findings coded `None` have a dated Channel A searc
 
 Every shortlisted finding was assigned to one of three mutually exclusive tiers, derived rather than labeled by hand. **Tier A** contains concerning empirical findings about a named frontier model or developer for which a company response can reasonably be assessed. **Tier B** contains empirical findings failing at least one Tier A condition — anonymized, reassuring, null, inconclusive, bare-score, or capability-trend results. **Tier C** contains methodology, framework, governance or process, tooling, milestone, and other non-empirical findings. Only Tier A enters the response analysis.
 
-**Figure C.1.** `charts/07_tier_distribution.png` *The three-tier taxonomy across the 1,138-finding corpus: Tier A 233 (20.5%), Tier B 594 (52.2%), Tier C 311 (27.3%).*
+**Figure C.1.** `charts/07_tier_distribution.png` *The three-tier taxonomy across the 1,146-finding corpus: Tier A 233 (20.3%), Tier B 599 (52.3%), Tier C 314 (27.4%).*
 
 ### C.1 The frontier scope gate, and where the severity domains come from
 
@@ -610,7 +610,7 @@ The frozen severity prompt (version 1.1) tests eight domains: (D1) CBRN and bio-
 
 Each finding was independently classified by Claude Sonnet 5, GPT-5.5, and Gemini 3.1 Pro. Their majority vote produced the provisional C1/C2 label. Two authors then independently reviewed every finding and the model rationales and, where warranted, overrode the majority; the agreed human-reviewed label is final. Model votes, retained rationales, and final labels are published with the study materials.
 
-**Version control.** Prompt version 1.0 covered seven domains; version 1.1 added D8 (acute individual harm). Version 1.0 is preserved verbatim and every vote is tagged with the version that produced it. Where the ensemble returns no majority, severity and Proportionality remain **unresolved** until re-run or documented human adjudication; a human override must be identified, state its rationale, and preserve all raw votes, and must not be described as a model majority. **The corpus currently contains no unresolved severity: 338 C1 + 800 C2 = 1,138.**
+**Version control.** Prompt version 1.0 covered seven domains; version 1.1 added D8 (acute individual harm). Version 1.0 is preserved verbatim and every vote is tagged with the version that produced it. Where the ensemble returns no majority, severity and Proportionality remain **unresolved** until re-run or documented human adjudication; a human override must be identified, state its rationale, and preserve all raw votes, and must not be described as a model majority. **The corpus currently contains no unresolved severity: 340 C1 + 806 C2 = 1,146.**
 
 ### C.3 Complete severity prompt (version 1.1)
 
@@ -833,7 +833,7 @@ The corpus contains 46 distinct reporting-institution labels, including separate
 | France PEReN/INESIA | 9 | UK AISI + Anthropic + Theorem + MATS | 1 |
 | International Network of AI Safety Institutes | 7 | UL Research Institutes (DSRI) | 1 |
 
-**Figure D.1.** `charts/13_institution_type_tree.png` *Reporting volume by institution type across all 1,138 findings, on one common scale, showing the five largest institutions in each of the four groups with the remainder combined. Institution Type follows the dataset field; compound values fold into their primary type, so the four branches sum to 1,138.*
+**Figure D.1.** `charts/13_institution_type_tree.png` *Reporting volume by institution type across all 1,146 findings, on one common scale, showing the five largest institutions in each of the four groups with the remainder combined. Institution Type follows the dataset field; compound values fold into their primary type, so the four branches sum to 1,146.*
 **Figure D.4.** `charts/17_severity_classification.png` *Severity classification by the three-model ensemble.*
 **Figure D.5.** `charts/08_action_level_distribution.png` *Action Level across all 233 Tier A findings: None 145, Substantive 44, Partial 22, Acknowledged 22.*
 **Figure D.6.** `charts/21_severity_x_action_heatmap.png` *Severity × Action Level as observed counts — the proportionality matrix of §3.5.5 shown as data rather than rule. The top-left cell (C1 with no response) is the accountability gap and is the largest cell in the table.*
@@ -976,7 +976,7 @@ Every number in this paper is regenerated from a single workbook by script; none
 
 | Artifact | What it is |
 |---|---|
-| `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13` | The dataset: 1,138 findings × 39 columns. Read only through `scripts/dataset_source.py`, so there is exactly one path and one sheet name in the project. `AISIEVAL_WORKBOOK` overrides the path. |
+| `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13` | The dataset: 1,146 findings × 39 columns. Read only through `scripts/dataset_source.py`, so there is exactly one path and one sheet name in the project. `AISIEVAL_WORKBOOK` overrides the path. |
 | `dataset/AISIEVAL_validate.py` | Structural validator: identifiers, controlled vocabularies, date coherence, the proportionality formula, the Attribution invariant. **Currently PASS, 0 violations.** |
 | `scripts/audit_v13.py` | Full-sheet audit: identifiers, report identity in both directions (one Report ID → one title/URL/date, and one title or URL → one Report ID), dates, links, verbatims, cross-column coherence. |
 | `scripts/all_stats.py` | Recomputes every reported quantity — corpus, headline, channels, proportionality, robustness, subgroup tests, clustering, lag, and the by-developer, by-year and by-domain breakdowns. |
