@@ -38,14 +38,13 @@ done
 # that, not to $0 again. Running `bash scripts/build_charts.sh` from the project root
 # used to fail here after every figure had already been drawn.
 cd "../charts" || exit 1
-for pair in "05:fig3_pre_vs_post" "12:fig4_evaluator_scope" "25:figA1_what_is_a_finding" \
-            "23:figA3_corpus_growth" "15b:figA4_shortfall_by_year" "13:figA5_institutions" \
-            "22:figA6_domain_x_outcome"; do
-  n="${pair%%:*}"; dst="${pair##*:}"
-  src=$(ls ${n}_*.png 2>/dev/null | head -1)
-  [ -n "$src" ] && cp "$src" "neurips/$dst.png" || echo "  !! no source for $n"
-done
-echo "  neurips set refreshed (3 generated + 7 copied)"
+# The copy loop that used to duplicate seven charts into neurips/ under paper-figure names is
+# gone: those files were byte-identical to the numbered originals in this folder, so the same
+# image lived at two paths under two names. Nothing referenced the aliases. The three genuinely
+# paper-specific renderings (fig1_pipeline, fig2_severity_x_action, figA2_access_type) are still
+# drawn directly into neurips/ by their own scripts, because they are different renderings rather
+# than copies.
+echo "  neurips: 3 paper-specific renderings + 2 hand-written .tex tables"
 cd - >/dev/null || exit 1
 echo "$(ls -1 "$AISIEVAL_CHARTS_OUT"/*.png | wc -l | tr -d ' ') figures"
 [ -n "${FAILED:-}" ] && { echo "ONE OR MORE GENERATORS FAILED — figures are stale"; exit 1; }
