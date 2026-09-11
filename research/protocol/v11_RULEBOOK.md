@@ -601,21 +601,29 @@ counts as corpus headline statistics.
   publication pages rather than indexes of others' work. The four broken source links above are
   also open.
 
-- **2026-09-10 · dead source links removed; corpus 1,136.** All 457 distinct Source URLs were
-  probed from a browser-headed request. 449 resolved, three returned 403 to automated requests
-  but are live in a browser and were confirmed against archived copies, and **four were genuinely
-  broken**. §2 requires every included row to carry a primary Source URL, and a finding whose
-  source returns 404 cannot be checked by a reader, so the ten rows citing them were removed and
-  logged in full to `logs/deleted_deadlinks_20260910.csv`:
-  `NETWORK-2025-07` (404, 5 findings), `META-2026-07-MUSESPARK` (400, 2),
-  `SCALEAI-2026-07-FRONTIERBENCH` (404, 2) and `SCALEAI-2025-11` (404, 1). The reports were real
-  when coded; the links rotted. Each row is recoverable from the ledger if a replacement or
-  archival URL is located.
+- **2026-09-10 · dead source links removed; corpus 1,138.** All Source URLs were probed. Three
+  were genuinely broken and the eight rows citing them were removed and logged to
+  `logs/deleted_deadlinks_20260910.csv`: `NETWORK-2025-07` (404, 5 findings),
+  `SCALEAI-2026-07-FRONTIERBENCH` (404, 2) and `SCALEAI-2025-11` (404, 1). §2 requires every
+  included row to carry a primary Source URL, and a finding whose source returns 404 to a
+  browser-headed request cannot be checked by a reader. Each row is recoverable from the ledger.
 
-  Corpus 1,146 → **1,136** findings · reports 457 → **453** · Source URLs 453, still equal to the
-  report count · Tier A 233 → **232** · Tier B 599 → **593** · Tier C 314 → **311** · corpus
-  severity 340/806 → **337 C1 / 799 C2**. Only one removed row was Tier A and it was C2, so
-  **Tier A ∩ C1 is unchanged at 190 and the headline is unchanged at 152/190 = 80.0%**. Two
-  secondary figures moved because the Tier A C2 denominator fell from 43 to 42: the severity
-  comparison is now 31/42 = 73.8% (z = −1.67, p = 0.094) and the C2-only robustness row 36/42 =
-  85.7%. Validator PASS, 0 duplicates, `verify_charts` PASS, 0 broken links remaining.
+  **A correction, recorded because the error is instructive.** A first pass probed the URLs with a
+  bare `urllib` request and reported four broken links, including
+  `https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report`. That URL
+  returns **HTTP 200** to a request carrying ordinary browser headers; Meta's CDN rejects the
+  minimal request with a 400. Two rows — `META-2026-07-MUSESPARK-JAI1` (Tier A, C2, Partial) and
+  `META-2026-07-MUSESPARK-ALI1` (Tier B, C1) — were removed on that false negative and have been
+  restored from the ledger. This is exactly the failure `scripts/fetch.py` exists to prevent: its
+  ladder sends full browser headers and falls back to an archived copy precisely so that a blocked
+  source is never recorded as an absence. **Link checking must go through that ladder, not through
+  a bare request.**
+
+  One further URL, `https://www.aisi.re.kr/...`, returns no response at all from this environment —
+  DNS resolves but the connection never completes, and the host's root page times out too. That is
+  a network or geographic block rather than a dead page, so the row (Tier C, C2) is retained and
+  the access problem recorded rather than treated as an absence.
+
+  Corpus 1,146 → **1,138** findings · reports 457 → **454** · Tier A 233 (unchanged, after the
+  Meta restoration) · Tier B 599 → **594** · Tier C 314 → **311**. **Tier A ∩ C1 unchanged at 190
+  and the headline unchanged at 152/190 = 80.0%.**

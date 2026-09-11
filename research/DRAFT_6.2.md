@@ -8,7 +8,7 @@ Kunal Singh¹\*, Max Kamachee¹, Jonas Raedler¹, Stephen Casper²·³·¹
 
 > **Anonymization note.** This block, and the study-materials links in Appendices C, E and J, identify the authors. Both must be removed or replaced with an anonymized mirror before any double-blind submission.
 
-**Dataset:** AISIEVAL V13 — 1,136 findings · 453 reports · 453 source URLs · 46 institutions · 17 March 2023 – 27 August 2026 · corpus cutoff 29 August 2026.
+**Dataset:** AISIEVAL V13 — 1,138 findings · 454 reports · 454 source URLs · 46 institutions · 17 March 2023 – 27 August 2026 · corpus cutoff 29 August 2026.
 **Status of numbers:** every figure below was recomputed from the workbook on 10 September 2026. Structural validator PASS (0 violations); duplicate suite 0 duplicates; `verify_charts.py` PASS across all 38 figures.
 **Changes from Draft 6.1:** corpus corrected (attribution audit, report-identity merge, §5 accountable-company splits); window opens 2023-03-17 rather than 2020; headline 150/188 → **152/190**; Tier B/C redefined; NIST AI 600-1 removed from severity provenance; policy-record binding case corrected; AI-assisted search disclosed (Appendix B); response-search protocol published.
 
@@ -18,7 +18,7 @@ Kunal Singh¹\*, Max Kamachee¹, Jonas Raedler¹, Stephen Casper²·³·¹
 
 Government AI institutes and independent evaluators study frontier AI systems to identify, evaluate, and better understand potential risks. Yet identifying and evaluating a risk does not itself mitigate it. We examine whether companies act on published findings from third-party evaluations of their frontier AI systems. The analysis covers publicly documented findings from government AI institutes and independent evaluation organizations from 2023 to August 2026. We trace downstream responses through three channels: company responses and model updates; parliamentary and regulatory action; and documented media and academic coverage.
 
-The corpus contains 1,136 findings, of which 232 concerned adverse empirical results about named systems for which a company response could reasonably be expected. Of the 190 that met our predefined significant-risk threshold, 152 (80%) lacked a specific publicly documented company response meeting our proportionality criteria; 114 (60%) had no located company response of any kind. The shortfall persists under every alternative counting unit we tested — from 76.2% weighting by institution to 84.3% weighting by report — and after adjusting for the clustering of findings within reports. One finding in the entire corpus was connected to binding policy action.
+The corpus contains 1,138 findings, of which 233 concerned adverse empirical results about named systems for which a company response could reasonably be expected. Of the 190 that met our predefined significant-risk threshold, 152 (80%) lacked a specific publicly documented company response meeting our proportionality criteria; 114 (60%) had no located company response of any kind. The shortfall persists under every alternative counting unit we tested — from 76.2% weighting by institution to 84.3% weighting by report — and after adjusting for the clustering of findings within reports. One finding in the entire corpus was connected to binding policy action.
 
 Taken together, these results suggest that, based on publicly available information, there is only limited reason to trust that third-party evaluations of frontier AI systems consistently lead to proportionate, attributable, and verifiable responses. Comparing the accountability structures currently in place for frontier AI systems with those established by oversight bodies in other industries, including food, drugs, energy, transportation, and finance, we conclude that formal mechanisms for access, response, remediation, verification, and follow-up inspired by governance in these other sectors could increase the consistency with which AI evaluations translate to meaningful action.
 
@@ -34,13 +34,15 @@ Taken together, these results suggest that, based on publicly available informat
 
 *Rows 1 and 2 together comprise the 152-of-190 (80.0%) accountability gap analyzed in §4.1. Responses were searched through 29 August 2026. Partial (21) and Acknowledged (17) are combined in row 2; the full four-level breakdown is in Table 5.*
 
-**Figure 0.** `charts/20_accountability_pipeline_funnel.png` *Accountability pipeline: from 1,136 public evaluation findings to the 232 Tier A accountability set, the severity classification to 190 C1 findings, and the response outcome for each. A finding counts toward the gap when the named company shows no located public response, or only a partial or acknowledged one.*
+**Figure 0.** `charts/20_accountability_pipeline_funnel.png` *Accountability pipeline: from 1,138 public evaluation findings to the 233 Tier A accountability set, the severity classification to 190 C1 findings, and the response outcome for each. A finding counts toward the gap when the named company shows no located public response, or only a partial or acknowledged one.*
 
 ---
 
 ## 1 Introduction
 
 Frontier AI system evaluations have become a prominent component of AI governance. Government AI institutes and independent evaluators test advanced systems for dangerous capabilities, safeguard failures, and other risks, often with access and technical expertise unavailable to the general public. These evaluations can provide evidence about an AI system's risk beyond the boundaries of the developers' own disclosures [1]. However, identifying a risk is not the same as reducing it. An evaluation can document a serious vulnerability without prompting a developer's response, which could lead to delay in deployment, additional review, or verification of remediation. Therefore, the practical value of the evaluation depends partly on what happens after the finding is communicated or published.
+
+This paper asks a narrow question: when a government or independent evaluator publishes a risk-relevant finding about a named frontier system, does the public record document action attributed to that finding and directed at mitigating the identified risk?
 
 Across the 190 significant-risk findings for which a company response could be assessed, 152 (80%) had no publicly documented response meeting our proportionality criteria, while only 38 (20%) received a proportionate response (Table 1). The shortfall appeared among findings reported by both government institutes and independent evaluators and was substantially greater for post-deployment than pre-deployment evaluations. An absence of a publicly documented response does not establish that no action occurred or that the finding was of less importance. Preventive, private, and unattributed company actions may leave no public trace, so our results describe the public record rather than companies' internal conduct.
 
@@ -63,7 +65,19 @@ The different institutional structures suggest that government AI institutes do 
 
 ### 2.2 Independent AI system evaluators and third-party auditing
 
-Independent evaluators are defined as non-government organizations — including non-profit organizations, for-profit evaluation firms, and academic research groups — that are institutionally separate from the developer whose system they evaluate, and that conduct and publicly report frontier-AI evaluations. These include generalist evaluators such as METR and Apollo Research and domain-specific organizations such as SecureBio. Independent evaluators also test frontier systems for dangerous capabilities, safeguard failures, and other risks, but differ from government institutes in institutional status, funding, access arrangements, and public responsibilities. Their access may depend on voluntary developer cooperation, contractual arrangements, application programming interfaces, or publicly available models, allowing some to conduct pre-deployment evaluations while limiting others to post-deployment testing. At the same time, independent evaluators can provide specialized expertise and scrutiny outside both government and frontier-model developers. Recent work therefore treats evaluator independence, system access, methodological rigour, reporting arrangements, and audit standards as important dimensions of third-party auditing [7, 8, 9, 10]. This paper treats government institutes and independent evaluators as distinct institutional categories while applying the same public-record response framework to eligible findings from both. An extended discussion of prior work is given in Appendix I.
+Independent evaluators are defined as non-government organizations — including non-profit organizations, for-profit evaluation firms, and academic research groups — that are institutionally separate from the developer whose system they evaluate, and that conduct and publicly report frontier-AI evaluations. These include generalist evaluators such as METR and Apollo Research and domain-specific organizations such as SecureBio. Independent evaluators also test frontier systems for dangerous capabilities, safeguard failures, and other risks, but differ from government institutes in institutional status, funding, access arrangements, and public responsibilities. Their access may depend on voluntary developer cooperation, contractual arrangements, application programming interfaces, or publicly available models, allowing some to conduct pre-deployment evaluations while limiting others to post-deployment testing. At the same time, independent evaluators can provide specialized expertise and scrutiny outside both government and frontier-model developers. Recent work therefore treats evaluator independence, system access, methodological rigour, reporting arrangements, and audit standards as important dimensions of third-party auditing [7, 8, 9, 10]. This paper treats government institutes and independent evaluators as distinct institutional categories while applying the same public-record response framework to eligible findings from both.
+
+### 2.3 Prior work
+
+**The literature explains why evaluations matter and how rigorous audits should be designed, but does not measure whether particular published findings are followed by action.** Prior work addresses three questions adjacent to this study.
+
+*How evaluations and audits should be designed.* Raji et al. [29] propose an end-to-end framework for internal algorithmic auditing; Mökander et al. [30] a three-layered framework combining governance, model, and application audits. Anderljung et al. [31] identify six requirements for effective external scrutiny of frontier systems — access, a searching attitude, proportionality to risk, independence, resources, and expertise. Drawing on financial, environmental, and health regulation, Raji et al. [32] argue that third-party audits require a supporting institutional ecosystem to produce accountability. Brundage et al. [9] define frontier AI auditing as rigorous third-party verification of developers' safety and security claims and propose four AI Assurance Levels, and Staufer et al. [33] propose "audit cards" documenting auditor identity, scope, methodology, and review mechanisms. The *International AI Safety Report 2026* [34] documents an upstream complication: some models distinguish evaluation from deployment settings and exploit shortcuts in evaluation objectives.
+
+*Whether audits produce observable change.* Raji and Buolamwini [35] provide the closest methodological precedent, re-testing commercial facial-analysis products after the public Gender Shades audit to see whether named companies had improved their systems. Wang et al. [36] assess 16 companies against their eight 2023 voluntary commitments to the White House, reporting an average compliance score of 53%. Both measure product changes or compliance with prior commitments; the present study instead traces responses to independently produced findings.
+
+*How the institutional environment shapes accountability.* Rost [37] rates the UK AISI as failing on corrigibility and voluntary company commitments as failing on accountability, presenting these as hypotheses requiring validation. Falco et al. [7] and Costanza-Chock et al. [8] examine the independent-audit ecosystem and who audits the auditors; Birhane et al. [10] examine when AI audits translate into accountability outcomes.
+
+**To our knowledge, no prior study systematically tracks, finding by finding, the publicly documented company, policy, and ecosystem responses to frontier AI evaluations conducted by government institutes and independent evaluators.** That is the gap this paper addresses. Appendix I gives a fuller treatment.
 
 
 ---
@@ -72,11 +86,11 @@ Independent evaluators are defined as non-government organizations — including
 
 ### 3.1 Data collection
 
-**The corpus is every publicly documented frontier-AI evaluation finding we could locate from 46 evaluating organizations, screened from 6,684 publications: 1,136 findings in 453 reports.** We identified 46 government bodies and independent evaluators that conducted frontier-AI evaluations and publicly reported their methods and results; the full frame, with publications screened and reports included for each organization, is in Appendix A. We screened 6,684 publications and identified 453 reports containing sufficiently documented evaluations of advanced AI systems. The earliest included report was published on 17 March 2023, and the final search was conducted on 29 August 2026. From these reports, we identified 1,136 distinct findings and recorded each as a separate dataset entry before assigning its tier, severity, and response variables.
+**The corpus is every publicly documented frontier-AI evaluation finding we could locate from 46 evaluating organizations, screened from 6,684 publications: 1,138 findings in 454 reports.** We identified 46 government bodies and independent evaluators that conducted frontier-AI evaluations and publicly reported their methods and results; the full frame, with publications screened and reports included for each organization, is in Appendix A. We screened 6,684 publications and identified 454 reports containing sufficiently documented evaluations of advanced AI systems. The earliest included report was published on 17 March 2023, and the final search was conducted on 29 August 2026. From these reports, we identified 1,138 distinct findings and recorded each as a separate dataset entry before assigning its tier, severity, and response variables.
 
 **No lower-date eligibility boundary was applied.** A report is eligible if it was publicly available on or before the cutoff. 17 March 2023 is simply the earliest publication that survived screening; that date describes the corpus, not a rule.
 
-The corpus is broader than the set used for company-response analysis. It includes adverse findings about named systems or anonymized systems, reassuring or null results, capability trends, and methodology or governance findings. Section 3.3 places them in three tiers. Only the 232 Tier A (trackable evaluation) findings — adverse findings about a named model or developer — enter the response and proportionality analyses. The corpus data and the 46 reporting-institution labels, including separate labels for joint evaluations, are listed in Appendices A and D.
+The corpus is broader than the set used for company-response analysis. It includes adverse findings about named systems or anonymized systems, reassuring or null results, capability trends, and methodology or governance findings. Section 3.3 places them in three tiers. Only the 233 Tier A (trackable evaluation) findings — adverse findings about a named model or developer — enter the response and proportionality analyses. The corpus data and the 46 reporting-institution labels, including separate labels for joint evaluations, are listed in Appendices A and D.
 
 **The unit of analysis is an individual finding, not a report, and every finding names at most one accountable company.** A finding is one discrete, evidence-backed, independently codeable claim. It must be asserted by the evaluator and supported by a measured result, observed behavior, or documented process fact; opinions, recommendations, announcements, and plans are excluded. Results concerning different companies are always coded as separate findings, even when one report identifies the same problem in several companies' models, because no single response could address them together. Each finding receives a unique Finding ID; findings from the same report share a Report ID. The full clubbing and splitting rules, and the treatment of comparators, are in Appendix A.3.
 
@@ -90,27 +104,27 @@ Automated scripts and LLM-based tools supported different parts of corpus constr
 
 | Dimension | Distribution |
 |---|---|
-| **Scope** | third-party evaluator 819 (72.1%) · government AISI 317 (27.9%) |
-| **Access type** | post-deployment 828 (72.9%) · pre-deployment 148 (13.0%) · N/A 92 (8.1%) · mixed 68 (6.0%) |
-| **Institution type** | Non-Profit AIEF 335 (29.5%) · Government 308 (27.1%) · Non-Profit Independent 245 (21.6%) · For-Profit 231 (20.3%) |
-| **Finding type** | `capability-finding` 499 (43.9%) · `methodology` 231 (20.3%) · `capability-finding;anonymised-model` 89 (7.8%) · `governance` 59 (5.2%) · `capability-trend` 48 (4.2%) |
-| **Density** | 2.51 findings per report (median 2, max 12); 453 reports across 46 institutions |
+| **Scope** | third-party evaluator 821 (72.1%) · government AISI 317 (27.9%) |
+| **Access type** | post-deployment 828 (72.8%) · pre-deployment 150 (13.2%) · N/A 92 (8.1%) · mixed 68 (6.0%) |
+| **Institution type** | Non-Profit AIEF 335 (29.4%) · Government 308 (27.1%) · Non-Profit Independent 246 (21.6%) · For-Profit 232 (20.4%) |
+| **Finding type** | `capability-finding` 499 (43.8%) · `methodology` 231 (20.3%) · `capability-finding;anonymised-model` 89 (7.8%) · `governance` 59 (5.2%) · `capability-trend` 48 (4.2%) |
+| **Density** | 2.51 findings per report (median 2, max 12); 454 reports across 46 institutions |
 
-**Table 2.** *Corpus composition across the 1,136 findings. Post-deployment evaluation dominates the public record; pre-deployment access — the condition §4.3 shows is associated with substantive responses — covers about one-eighth of findings.*
+**Table 2.** *Corpus composition across the 1,138 findings. Post-deployment evaluation dominates the public record; pre-deployment access — the condition §4.3 shows is associated with substantive responses — covers about one-eighth of findings.*
 
 **Top reporting institutions by findings:** UK AISI 205 · Scale AI 149 · METR 113 · Collective Intelligence Project (Weval) 78 · Shanghai AI Laboratory (AI45 Lab) 74 · SecureBio 48 · Apollo Research 46 · Transluce 41 · FAR.AI 39 · Joint UK AISI + US CAISI 37 · US CAISI 34 · Center for AI Safety 32. The complete 46-label list is in Appendix D.
 
-**Figure 1.** `charts/01_findings_per_institution.png` *Findings per reporting institution (n = 1,136).*
-**Figure 2.** `charts/02_findings_per_model_developer.png` *Findings per model developer. A finding naming models from several developers is counted once per developer, so bars sum to more than 1,136.*
+**Figure 1.** `charts/01_findings_per_institution.png` *Findings per reporting institution (n = 1,138).*
+**Figure 2.** `charts/02_findings_per_model_developer.png` *Findings per model developer. A finding naming models from several developers is counted once per developer, so bars sum to more than 1,138.*
 **Figure 3.** `charts/03_findings_per_access_type.png` *Findings per access type. "N/A" covers governance and methodology findings with no evaluated system.*
 
-**Figure 4.** `charts/11_domain_distribution.png` *Findings per risk domain across the corpus. Domain labels are multi-valued, so the bars sum to more than 1,136. These are the dataset's descriptive domain labels, which are separate from the eight severity-threshold domains of §3.4.*
+**Figure 4.** `charts/11_domain_distribution.png` *Findings per risk domain across the corpus. Domain labels are multi-valued, so the bars sum to more than 1,138. These are the dataset's descriptive domain labels, which are separate from the eight severity-threshold domains of §3.4.*
 
 ### 3.3 Defining the accountability set
 
-**Only one finding in five can be held to account: 232 of 1,136 name an adverse result against an identifiable developer, and those alone carry the response analysis.** We assigned each finding to one of three mutually exclusive tiers based on whether it reported an adverse or safety-relevant result and permitted developer-specific response analysis. **The tier is never labeled by hand:** it is derived from two coded columns — whether the finding is a trackable evaluation result, and whether an action is trackable against a named accountable party.
+**Only one finding in five can be held to account: 233 of 1,138 name an adverse result against an identifiable developer, and those alone carry the response analysis.** We assigned each finding to one of three mutually exclusive tiers based on whether it reported an adverse or safety-relevant result and permitted developer-specific response analysis. **The tier is never labeled by hand:** it is derived from two coded columns — whether the finding is a trackable evaluation result, and whether an action is trackable against a named accountable party.
 
-**Tier A (Trackable evaluation findings).** A finding entered Tier A when it: (1) reported a specific adverse or safety-relevant result; (2) identified a named model, system, or developer rather than only an anonymized placeholder; and (3) concerned an issue within the developer's capacity to address, such that a company response could reasonably be assessed. These 232 findings constitute the accountability set and are the only findings included in the Action Level and proportionality analysis.
+**Tier A (Trackable evaluation findings).** A finding entered Tier A when it: (1) reported a specific adverse or safety-relevant result; (2) identified a named model, system, or developer rather than only an anonymized placeholder; and (3) concerned an issue within the developer's capacity to address, such that a company response could reasonably be assessed. These 233 findings constitute the accountability set and are the only findings included in the Action Level and proportionality analysis.
 
 **Tier B (Non-trackable evaluation findings).** Empirical findings that did not meet at least one Tier A condition. These include anonymized-system results, reassuring or null results, bare scores or rankings without a concerning threshold, non-frontier systems, capability trends, inconclusive results, and findings for which a company response could not reasonably be assessed.
 
@@ -120,9 +134,9 @@ All three tiers remain in the descriptive corpus. Only Tier A enters the company
 
 | Tier | n | % of corpus | What it is |
 |---|---|---|---|
-| **Tier A** (trackable evaluation findings) | **232** | 20.4% | Adverse finding about a named model or developer for which a company response can be assessed |
-| **Tier B** (non-trackable evaluation findings) | **593** | 52.2% | Empirical finding failing at least one Tier A condition |
-| **Tier C** (non-empirical findings) | **311** | 27.4% | Methodology, governance, tooling, process, milestone |
+| **Tier A** (trackable evaluation findings) | **233** | 20.5% | Adverse finding about a named model or developer for which a company response can be assessed |
+| **Tier B** (non-trackable evaluation findings) | **594** | 52.2% | Empirical finding failing at least one Tier A condition |
+| **Tier C** (non-empirical findings) | **311** | 27.3% | Methodology, governance, tooling, process, milestone |
 
 **Table 3. The three-tier taxonomy.** *Anonymized findings are structurally unaccountable: nobody can be silent about a finding that names nobody.*
 
@@ -140,10 +154,10 @@ The majority vote of the three models (Claude Sonnet 5, GPT-5.5, and Gemini 3.1 
 
 | Subset | n | Unanimous | Split | Agreement |
 |---|---|---|---|---|
-| All findings | 1,136 | 1,023 | 113 | **90.1%** |
-| Tier A only | 232 | 193 | 39 | **83.2%** |
+| All findings | 1,138 | 1,025 | 113 | **90.1%** |
+| Tier A only | 233 | 194 | 39 | **83.3%** |
 
-**Table 4. Raw ensemble agreement before human review.** *After review the corpus contained **337 C1** and **799 C2** findings. Within Tier A: **190 C1** and **42 C2** — an 81.9% C1 share, far higher than outside the accountability set, which is expected because the Tier A gate already selects for adverse findings about named systems.*
+**Table 4. Raw ensemble agreement before human review.** *After review the corpus contained **338 C1** and **800 C2** findings. Within Tier A: **190 C1** and **43 C2** — an 81.5% C1 share, far higher than outside the accountability set, which is expected because the Tier A gate already selects for adverse findings about named systems.*
 
 ### 3.5 Response evidence and outcome coding
 
@@ -201,9 +215,9 @@ We first report company-response outcomes among the 190 C1 findings in Tier A, t
 | Proportionate | 38 | 20.0% | A specific, documented, attributable response meeting the criteria |
 | **Gap total (rows 1 + 2)** | **152** | **80.0%** | **The central result of this paper** |
 
-**Table 5.** *Outcomes among the 190 C1 Tier A findings. Raw Action Level across all 232 Tier A findings: None 145, Substantive 44, Partial 21, Acknowledged 22. Within the 190 C1 findings: None 114, Substantive 38, Partial 21, Acknowledged 17.*
+**Table 5.** *Outcomes among the 190 C1 Tier A findings. Raw Action Level across all 233 Tier A findings: None 145, Substantive 44, Partial 22, Acknowledged 22. Within the 190 C1 findings: None 114, Substantive 38, Partial 21, Acknowledged 17.*
 
-Restricted to C1 (significant risk) findings — the comparison relevant to the paper's central accountability question — **152 of 190 findings (80.0%; Wilson 95% CI 74–85%)** received either no publicly documented company response or an inadequate one. This combined figure, rather than the 62.5% no-response rate across all 232 Tier A (trackable evaluation) findings, is the paper's central result. Because it is calculated only over C1 findings, it is not mechanically affected by the number of C2 (low risk) findings included in the corpus. Of the 76 C1 findings with a located company response, 64 had explicit attribution and 12 did not. In Channel B (policy uptake), 41 C1 findings received non-binding policy uptake, one received binding policy action, and 148 had no identified policy uptake. Robustness checks and subgroup tests are reported in Appendix F; the complete finding-level rows and their supporting evidence are available as described in Appendix E.
+Restricted to C1 (significant risk) findings — the comparison relevant to the paper's central accountability question — **152 of 190 findings (80.0%; Wilson 95% CI 74–85%)** received either no publicly documented company response or an inadequate one. This combined figure, rather than the 62.2% no-response rate across all 233 Tier A (trackable evaluation) findings, is the paper's central result. Because it is calculated only over C1 findings, it is not mechanically affected by the number of C2 (low risk) findings included in the corpus. Of the 76 C1 findings with a located company response, 64 had explicit attribution and 12 did not. In Channel B (policy uptake), 41 C1 findings received non-binding policy uptake, one received binding policy action, and 148 had no identified policy uptake. Robustness checks and subgroup tests are reported in Appendix F; the complete finding-level rows and their supporting evidence are available as described in Appendix E.
 
 When companies do answer, they generally credit the source: the failure documented here is silence, not unattributed appropriation.
 
@@ -216,16 +230,16 @@ When companies do answer, they generally credit the source: the failure document
 | **Finding-weighted (headline)** | **152/190** | **80.0%** | **73.7–85.1%** |
 | Report-weighted (a report counts once) | 86/102 | 84.3% | 76–90% |
 | Institution-weighted (mean of per-institution rates, n = 25) | — | 76.2% | — |
-| All Tier A, ignoring severity | 188/232 | 81.0% | 75.5–85.6% |
-| C2 (low risk) findings only | 36/42 | 85.7% | 72–93% |
+| All Tier A, ignoring severity | 188/233 | 80.7% | 75.1–85.2% |
+| C2 (low risk) findings only | 36/43 | 83.7% | 70–92% |
 
 **Table 6. Robustness of the headline shortfall to alternative counting units.** *The range runs from 76.2% under institution weighting to 84.3% under report weighting. Findings also cluster within reports (ICC 0.626, design effect 1.54, effective n ≈ 124), which widens the headline interval to 71.9–86.0%; see Appendix F.2.*
 
 ### 4.2 Does severity predict a response?
 
-**It does not — and if anything the more severe findings were answered slightly less often, though the corpus cannot resolve the difference.** Section 4.1 measures the gap among C1 findings; the prior question is whether severity makes any difference to whether a company answers at all. Across Tier A, C1 findings went unanswered in **114 of 190 cases (60.0%)** and C2 findings in **31 of 42 (73.8%)** — a 14-point difference in the direction opposite to the one an accountability system should produce, with the *less* severe findings answered less often.
+**It does not — and if anything the more severe findings were answered slightly less often, though the corpus cannot resolve the difference.** Section 4.1 measures the gap among C1 findings; the prior question is whether severity makes any difference to whether a company answers at all. Across Tier A, C1 findings went unanswered in **114 of 190 cases (60.0%)** and C2 findings in **31 of 43 (72.1%)** — a 12-point difference in the direction opposite to the one an accountability system should produce, with the *less* severe findings answered less often.
 
-The comparison does not reach conventional significance (**z = −1.67, p = 0.094**), but it is underpowered rather than null: with only 42 C2 findings the test has low power against a difference of this size. What the corpus supports is therefore a negative claim of a limited kind — **it produces no evidence that more dangerous findings are answered more often** — rather than a demonstration that severity is irrelevant.
+The comparison does not reach conventional significance (**z = −1.48, p = 0.140**), but it is underpowered rather than null: with only 43 C2 findings the test has low power against a difference of this size. What the corpus supports is therefore a negative claim of a limited kind — **it produces no evidence that more dangerous findings are answered more often** — rather than a demonstration that severity is irrelevant.
 
 ### 4.3 Access type: the most policy-relevant split
 
@@ -288,7 +302,7 @@ A formal test finds no difference in no-response rate between findings with and 
 
 ### 4.6 The gap over time
 
-**The evaluation ecosystem has grown sharply while the gap has not closed.** The corpus contains 35 findings published in 2023, 154 in 2024, 457 in 2025, and 490 in 2026 through 27 August. Because 2026 is a partial year, this demonstrates increasing publication volume rather than a completed annual trend.
+**The evaluation ecosystem has grown sharply while the gap has not closed.** The corpus contains 35 findings published in 2023, 154 in 2024, 457 in 2025, and 492 in 2026 through 27 August. Because 2026 is a partial year, this demonstrates increasing publication volume rather than a completed annual trend.
 
 Among C1 Tier A findings the gap does not show clear improvement: **8 of 9 in 2023 (89%), 24 of 26 in 2024 (92%), 61 of 73 in 2025 (84%), and 59 of 82 in 2026 through the cutoff (72%)** received no response or an inadequate one. The 2026 estimate is right-censored, because more recent findings have had less time to attract a documented response. We therefore read the annual results only as showing that the gap persisted as the evaluation ecosystem expanded.
 
@@ -342,7 +356,7 @@ We code this Substantive because OpenAI publicly attributes implemented pre-depl
 
 ### 5.3 Policy-record responses
 
-**Findings reach the official record reasonably often but almost never bind anyone: 47 of 1,136 appear in a policy document, and one of those is connected to an enforceable requirement.** We searched parliamentary, congressional, regulatory, and other official government records for explicit references to corpus findings between 2024 and 2026, classifying an appearance as **Type A** when the evidence explicitly connected the finding to binding action, and **Type B** when it connected the finding to a non-binding response such as guidance, research funding, an official statement, or a voluntary commitment. Temporal proximity alone was insufficient.
+**Findings reach the official record reasonably often but almost never bind anyone: 47 of 1,138 appear in a policy document, and one of those is connected to an enforceable requirement.** We searched parliamentary, congressional, regulatory, and other official government records for explicit references to corpus findings between 2024 and 2026, classifying an appearance as **Type A** when the evidence explicitly connected the finding to binding action, and **Type B** when it connected the finding to a non-binding response such as guidance, research funding, an official statement, or a voluntary commitment. Temporal proximity alone was insufficient.
 
 We also searched for **Type C** cases in which an institute's existence or evaluation work was cited as a reason to defer legislation. No confirmed Type C case was identified. This is an observation about the searched public record, not evidence that such arguments never occur.
 
@@ -384,7 +398,7 @@ The comparative lesson is institutional rather than sector-specific. **Governmen
 
 Government AI institutes and independent evaluators increasingly provide evidence about frontier systems that would otherwise remain available only through developer self-reporting. The findings in this paper do not question the value of that technical work. They examine whether the public record shows that alarming findings concerning named systems were followed by responses proportionate to the identified risk.
 
-**Among the 190 significant-risk (C1) findings in the accountability set, 114 had no publicly documented company response, 21 received only a partial response, 17 were acknowledged without described action, and 38 drew a response meeting our proportionality criteria. Thus 152 of 190 (80.0%; Wilson 95% CI 73.7–85.1%) lacked a proportionate, publicly documented response.** The shortfall held under every alternative counting unit we tested, from 76.2% weighting by institution to 84.3% weighting by report, and after adjusting for the clustering of findings within reports (71.9–86.0%). Across all 232 Tier A findings, pre-deployment evaluations were roughly eight times as likely to draw a substantive response as post-deployment ones (55% versus 7%), the largest and most robust difference in the dataset. **Only one finding in the corpus was connected to binding policy action**, and in that case the finding entered an existing export-control pathway rather than creating a new enforcement mechanism.
+**Among the 190 significant-risk (C1) findings in the accountability set, 114 had no publicly documented company response, 21 received only a partial response, 17 were acknowledged without described action, and 38 drew a response meeting our proportionality criteria. Thus 152 of 190 (80.0%; Wilson 95% CI 73.7–85.1%) lacked a proportionate, publicly documented response.** The shortfall held under every alternative counting unit we tested, from 76.2% weighting by institution to 84.3% weighting by report, and after adjusting for the clustering of findings within reports (71.9–86.0%). Across all 233 Tier A findings, pre-deployment evaluations were roughly eight times as likely to draw a substantive response as post-deployment ones (55% versus 7%), the largest and most robust difference in the dataset. **Only one finding in the corpus was connected to binding policy action**, and in that case the finding entered an existing export-control pathway rather than creating a new enforcement mechanism.
 
 The two cases in Section 5 suggest that findings produce observable consequences through one of two routes: a collaborative pre-deployment relationship in which the developer acts voluntarily, or an existing legal instrument through which another body can require or condition action. Neither applies consistently across frontier-system evaluations.
 
@@ -474,7 +488,7 @@ The intended positive impact is to give evaluators, developers, and policymakers
 
 ## Appendix A — Sampling frame and source eligibility
 
-The 1,136 findings include outputs from the UK AI Security Institute, the US Center for AI Standards and Innovation, national and joint evaluation initiatives involving France, Japan, Singapore, and South Korea, and exercises conducted through the International Network for Advanced AI Measurement, Evaluation and Science. The frame also included third-party evaluators such as METR, SecureBio, Apollo Research, Palisade Research, Transluce, FAR.AI, and other non-profit, academic, and commercial organizations.
+The 1,138 findings include outputs from the UK AI Security Institute, the US Center for AI Standards and Innovation, national and joint evaluation initiatives involving France, Japan, Singapore, and South Korea, and exercises conducted through the International Network for Advanced AI Measurement, Evaluation and Science. The frame also included third-party evaluators such as METR, SecureBio, Apollo Research, Palisade Research, Transluce, FAR.AI, and other non-profit, academic, and commercial organizations.
 
 **Roster derivation.** The initial screening roster was derived from three sources: national institutes and initiatives identified through the International Network for Advanced AI Measurement, Evaluation and Science; members of the AI Evaluators Forum plus evaluator organizations already represented in the developing corpus; and frontier-developer release sites, searched **only** for material explicitly attributed to an external evaluator. Organizations later found to be co-author affiliations rather than publishing evaluators, together with national institutes that produced no qualifying report, remain in Table A.1 and the screening ledger as zero-yield records — "swept N items, 0 included" is itself a census result.
 
@@ -512,7 +526,7 @@ The 1,136 findings include outputs from the UK AI Security Institute, the US Cen
 | Citadel AI | 86 | 1 | Meridian Labs | 7 | 0 |
 | SecureBio | 84 | 11 | Gray Swan AI + UK AISI (joint) | 2 | 2 |
 
-*The ledger contains 6,684 screened publication records and 490 organization–report inclusion entries. After deduplicating joint reports credited to more than one screened organization and applying final corpus exclusions, these correspond to the 453 reports analyzed. Organizations with zero included reports remain listed so the frame records unsuccessful as well as successful searches. **Note:** several network members — Australia, Canada, Kenya, India, the EU AI Office — were swept and yielded zero qualifying reports, so the paper does not claim to have drawn findings from every Network member.*
+*The ledger contains 6,684 screened publication records and 490 organization–report inclusion entries. After deduplicating joint reports credited to more than one screened organization and applying final corpus exclusions, these correspond to the 454 reports analyzed. Organizations with zero included reports remain listed so the frame records unsuccessful as well as successful searches. **Note:** several network members — Australia, Canada, Kenya, India, the EU AI Office — were swept and yielded zero qualifying reports, so the paper does not claim to have drawn findings from every Network member.*
 
 ### A.2 Unit of analysis: clubbing, splitting, and comparators
 
@@ -564,15 +578,15 @@ The table below states what each channel searched and what it admits as evidence
 
 | Measure | Recorded value |
 |---|---|
-| Tier A findings | 232 |
-| Rows with a dated Channel A search log | 216 |
+| Tier A findings | 233 |
+| Rows with a dated Channel A search log | 217 |
 | Distinct search dates | 129 |
 | Logs enumerating searched sources | 119 |
 | Logs recording a re-attempt after an access failure | 58 |
 | Channel A log length — mean / median / max | 867 / 700 / 2,300 characters |
 | Total logged search prose | 202,190 characters |
-| Rows with Channel B evidence recorded | 232 (100%) |
-| Rows with any Channel C field populated | 199 (85.8%) |
+| Rows with Channel B evidence recorded | 233 (100%) |
+| Rows with any Channel C field populated | 200 (85.8%) |
 
 **Table B.2. Documented response-search effort for Tier A findings.**
 
@@ -582,7 +596,7 @@ All 114 C1 (significant risk) findings coded `None` have a dated Channel A searc
 
 Every shortlisted finding was assigned to one of three mutually exclusive tiers, derived rather than labeled by hand. **Tier A** contains concerning empirical findings about a named frontier model or developer for which a company response can reasonably be assessed. **Tier B** contains empirical findings failing at least one Tier A condition — anonymized, reassuring, null, inconclusive, bare-score, or capability-trend results. **Tier C** contains methodology, framework, governance or process, tooling, milestone, and other non-empirical findings. Only Tier A enters the response analysis.
 
-**Figure C.1.** `charts/07_tier_distribution.png` *The three-tier taxonomy across the 1,136-finding corpus: Tier A 232 (20.4%), Tier B 593 (52.2%), Tier C 311 (27.4%).*
+**Figure C.1.** `charts/07_tier_distribution.png` *The three-tier taxonomy across the 1,138-finding corpus: Tier A 233 (20.5%), Tier B 594 (52.2%), Tier C 311 (27.3%).*
 
 ### C.1 The frontier scope gate, and where the severity domains come from
 
@@ -596,7 +610,7 @@ The frozen severity prompt (version 1.1) tests eight domains: (D1) CBRN and bio-
 
 Each finding was independently classified by Claude Sonnet 5, GPT-5.5, and Gemini 3.1 Pro. Their majority vote produced the provisional C1/C2 label. Two authors then independently reviewed every finding and the model rationales and, where warranted, overrode the majority; the agreed human-reviewed label is final. Model votes, retained rationales, and final labels are published with the study materials.
 
-**Version control.** Prompt version 1.0 covered seven domains; version 1.1 added D8 (acute individual harm). Version 1.0 is preserved verbatim and every vote is tagged with the version that produced it. Where the ensemble returns no majority, severity and Proportionality remain **unresolved** until re-run or documented human adjudication; a human override must be identified, state its rationale, and preserve all raw votes, and must not be described as a model majority. **The corpus currently contains no unresolved severity: 337 C1 + 799 C2 = 1,136.**
+**Version control.** Prompt version 1.0 covered seven domains; version 1.1 added D8 (acute individual harm). Version 1.0 is preserved verbatim and every vote is tagged with the version that produced it. Where the ensemble returns no majority, severity and Proportionality remain **unresolved** until re-run or documented human adjudication; a human override must be identified, state its rationale, and preserve all raw votes, and must not be described as a model majority. **The corpus currently contains no unresolved severity: 338 C1 + 800 C2 = 1,138.**
 
 ### C.3 Complete severity prompt (version 1.1)
 
@@ -819,12 +833,12 @@ The corpus contains 46 distinct reporting-institution labels, including separate
 | France PEReN/INESIA | 9 | UK AISI + Anthropic + Theorem + MATS | 1 |
 | International Network of AI Safety Institutes | 7 | UL Research Institutes (DSRI) | 1 |
 
-**Figure D.1.** `charts/13_institution_type_tree.png` *Reporting volume by institution type across all 1,136 findings, on one common scale, showing the five largest institutions in each of the four groups with the remainder combined. Institution Type follows the dataset field; compound values fold into their primary type, so the four branches sum to 1,136.*
+**Figure D.1.** `charts/13_institution_type_tree.png` *Reporting volume by institution type across all 1,138 findings, on one common scale, showing the five largest institutions in each of the four groups with the remainder combined. Institution Type follows the dataset field; compound values fold into their primary type, so the four branches sum to 1,138.*
 **Figure D.4.** `charts/17_severity_classification.png` *Severity classification by the three-model ensemble.*
-**Figure D.5.** `charts/08_action_level_distribution.png` *Action Level across all 232 Tier A findings: None 145, Substantive 44, Partial 21, Acknowledged 22.*
+**Figure D.5.** `charts/08_action_level_distribution.png` *Action Level across all 233 Tier A findings: None 145, Substantive 44, Partial 22, Acknowledged 22.*
 **Figure D.6.** `charts/21_severity_x_action_heatmap.png` *Severity × Action Level as observed counts — the proportionality matrix of §3.5.5 shown as data rather than rule. The top-left cell (C1 with no response) is the accountability gap and is the largest cell in the table.*
-**Figure D.7.** `charts/18_attribution_distribution.png` *Attribution across Tier A: no response located 145 (62.5%), explicit attribution 74 (31.9%), no explicit attribution 13 (5.6%).*
-**Figure D.8.** `charts/09_policy_level_distribution.png` *Policy Level across Tier A: no uptake 185, non-binding 46, binding 1.*
+**Figure D.7.** `charts/18_attribution_distribution.png` *Attribution across Tier A: no response located 145 (62.2%), explicit attribution 75 (32.2%), no explicit attribution 13 (5.6%).*
+**Figure D.8.** `charts/09_policy_level_distribution.png` *Policy Level across Tier A: no uptake 186, non-binding 46, binding 1.*
 **Figure D.9.** `charts/22_domain_x_outcome_heatmap.png` *Risk domain × outcome. Read across rows, not down columns: domains carry very different sample sizes.*
 **Figure D.10.** `charts/14_response_lag_distribution.png` *Distribution of response lag. The mass at zero is coordinated disclosure.*
 **Figure D.11.** `charts/24_evaluator_volume_vs_gap.png` *Evaluator volume against gap rate. Each point is a reporting institution. There is no visible relationship between publication volume and how often an evaluator is answered.*
@@ -839,7 +853,7 @@ Core corpus statistics were independently recomputed from the workbook; the repr
 
 ### F.1 Is the headline an artifact of the counting unit?
 
-The five-unit robustness comparison is reported in the body as Table 6, because the abstract and conclusion both rely on it. In summary: finding-weighted 80.0%, report-weighted 84.3%, institution-weighted 76.2%, all Tier A 81.0%, C2 only 85.7% — a range of 76.2% to 84.3%. Definitions of each unit and the clustering adjustment follow in F.2.
+The five-unit robustness comparison is reported in the body as Table 6, because the abstract and conclusion both rely on it. In summary: finding-weighted 80.0%, report-weighted 84.3%, institution-weighted 76.2%, all Tier A 80.7%, C2 only 83.7% — a range of 76.2% to 84.3%. Definitions of each unit and the clustering adjustment follow in F.2.
 
 ### F.2 Uncertainty and subgroup comparisons
 
@@ -847,7 +861,7 @@ The headline describes an enumerated public record rather than a sample estimate
 
 **Access type.** Among C1 Tier A findings, 3 of 44 pre-deployment findings received no response (6.8%) versus 104 of 131 post-deployment (79.4%); the 15 mixed findings are excluded. Two-proportion test: **z = −8.54, p < 0.001**, remaining below 0.001 after adjustment for clustering within reports.
 
-**Severity.** C1 findings received no response in 114 of 190 cases (60.0%) versus 31 of 42 C2 (73.8%); **z = −1.67, p = 0.094**. This is not evidence of no difference; the corpus cannot resolve whether severity predicts response.
+**Severity.** C1 findings received no response in 114 of 190 cases (60.0%) versus 31 of 43 C2 (72.1%); **z = −1.48, p = 0.140**. This is not evidence of no difference; the corpus cannot resolve whether severity predicts response.
 
 **Clustering.** The 190 C1 findings sit in 102 reports, and outcomes cluster because findings from one report usually share evaluator, disclosure arrangement, and developer. Kish mean cluster size 1.86; estimated intra-cluster correlation **0.626**; design effect **1.54**, reducing effective sample size from 190 to about **124**. The design-effect-adjusted interval for the 80.0% headline is **71.9–86.0%**. Two-proportion tests treating findings as independent can therefore overstate significance; comparisons near the conventional threshold are reported descriptively.
 
@@ -858,7 +872,7 @@ The headline describes an enumerated public record rather than a sample estimate
 
 ### F.3 Outcome composition by descriptive domain
 
-The labels in Figure D.9 come from the dataset's descriptive Domain field and are **separate** from the eight severity-threshold domains of §3.4. They are multi-valued, so row totals exceed 232 Tier A findings. The largest domains all carry substantial accountability-gap shares; the smallest have too few findings for stable comparison. The figure is descriptive and is not a ranking of domain importance.
+The labels in Figure D.9 come from the dataset's descriptive Domain field and are **separate** from the eight severity-threshold domains of §3.4. They are multi-valued, so row totals exceed 233 Tier A findings. The largest domains all carry substantial accountability-gap shares; the smallest have too few findings for stable comparison. The figure is descriptive and is not a ranking of domain importance.
 
 *The domain × outcome matrix is Figure D.9.*
 
@@ -944,7 +958,7 @@ Table 11 in §6 records only whether a formal function exists, not whether the b
 
 ## Appendix I — Extended prior work
 
-Prior work addresses three questions adjacent to this study: how frontier AI evaluations and audits should be designed, whether audits and voluntary commitments are followed by observable changes, and how the institutional and political environment shapes accountability.
+This appendix expands §2.3. Prior work addresses three questions adjacent to this study: how frontier AI evaluations and audits should be designed, whether audits and voluntary commitments are followed by observable changes, and how the institutional and political environment shapes accountability.
 
 **Evaluation and audit design.** Raji et al. [29] propose an end-to-end framework for internal algorithmic auditing embedding accountability across the development life cycle. Mökander et al. [30] propose a three-layered framework combining governance, model, and application audits. Anderljung et al. [31] identify six requirements for effective external scrutiny of frontier systems: access, a searching attitude, proportionality to risk, independence, resources, and expertise. Drawing on financial, environmental, and health regulation, Raji et al. [32] argue that third-party audits require a supporting institutional ecosystem to produce accountability. Brundage et al. [9] define frontier AI auditing as rigorous third-party verification of developers' safety and security claims and propose four AI Assurance Levels. Staufer et al. [33] propose "audit cards" documenting auditor identity, evaluation scope, methodology, resource access, process integrity, and review mechanisms. Collectively this literature identifies conditions for credible evaluation but does not empirically measure whether particular published findings subsequently produce company or policy action.
 
@@ -954,7 +968,7 @@ The *International AI Safety Report 2026* [34] documents behaviors complicating 
 
 **Institutional and political environment.** Rost [37] applies a six-dimensional political-theory framework to six existing AI-governance arrangements, rating the UK AISI as failing on corrigibility and voluntary company commitments as failing on accountability, while presenting cross-case patterns as hypotheses requiring validation. Falco et al. [7] and Costanza-Chock et al. [8] examine the independent-audit ecosystem and who audits the auditors; Birhane et al. [10] examine when AI audits translate into accountability outcomes.
 
-To our knowledge no prior study systematically tracks, finding by finding, the publicly documented company, policy, and ecosystem responses to frontier AI system evaluations conducted by government institutes and independent evaluators.
+Taken together, this literature explains why evaluations matter, how rigorous audits might be designed, and why disclosure may not reliably produce accountability — but none of it measures downstream response finding by finding, which is the gap stated in §2.3.
 
 ## Appendix J — Reproducibility
 
@@ -962,7 +976,7 @@ Every number in this paper is regenerated from a single workbook by script; none
 
 | Artifact | What it is |
 |---|---|
-| `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13` | The dataset: 1,136 findings × 39 columns. Read only through `scripts/dataset_source.py`, so there is exactly one path and one sheet name in the project. `AISIEVAL_WORKBOOK` overrides the path. |
+| `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13` | The dataset: 1,138 findings × 39 columns. Read only through `scripts/dataset_source.py`, so there is exactly one path and one sheet name in the project. `AISIEVAL_WORKBOOK` overrides the path. |
 | `dataset/AISIEVAL_validate.py` | Structural validator: identifiers, controlled vocabularies, date coherence, the proportionality formula, the Attribution invariant. **Currently PASS, 0 violations.** |
 | `scripts/audit_v13.py` | Full-sheet audit: identifiers, report identity in both directions (one Report ID → one title/URL/date, and one title or URL → one Report ID), dates, links, verbatims, cross-column coherence. |
 | `scripts/all_stats.py` | Recomputes every reported quantity — corpus, headline, channels, proportionality, robustness, subgroup tests, clustering, lag, and the by-developer, by-year and by-domain breakdowns. |
@@ -995,7 +1009,7 @@ python3 scripts/all_stats.py             # every reported statistic
 bash    scripts/build_charts.sh          # all 38 figures
 python3 scripts/verify_charts.py         # re-derives each plotted quantity — expect PASS
 python3 scripts/find_duplicates.py       # expect 0 duplicates
-python3 scripts/build_paper_table.py     # the 232 × 34 publication table
+python3 scripts/build_paper_table.py     # the 233 × 34 publication table
 ```
 
 Set `AISIEVAL_WORKBOOK` to run the whole pipeline against a different copy of the workbook.
