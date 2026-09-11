@@ -8,8 +8,8 @@ available on or before the cutoff. The earliest publication actually held is 202
 latest 2026-08-27; that range describes the corpus, not an eligibility rule.
 
 **Current file — there is exactly one.** `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read
-only through `scripts/dataset_source.py`. **1,146 findings · 457 reports · 46 institutions ·
-39 columns · Tier A 233 · B 599 · C 314 · headline 152/190 = 80.0% falling short, of which
+only through `scripts/dataset_source.py`. **1,136 findings · 453 reports · 46 institutions ·
+39 columns · Tier A 232 · B 593 · C 311 · headline 152/190 = 80.0% falling short, of which
 114/190 = 60.0% with no located response.**
 
 The merge this section used to describe is done. `v10 revised.xlsx` (455-finding base) and
@@ -600,3 +600,22 @@ counts as corpus headline statistics.
   17-report low-risk block (Scale AI, UK AISI, Dreadnode), whose surfaces are institutional
   publication pages rather than indexes of others' work. The four broken source links above are
   also open.
+
+- **2026-09-10 · dead source links removed; corpus 1,136.** All 457 distinct Source URLs were
+  probed from a browser-headed request. 449 resolved, three returned 403 to automated requests
+  but are live in a browser and were confirmed against archived copies, and **four were genuinely
+  broken**. §2 requires every included row to carry a primary Source URL, and a finding whose
+  source returns 404 cannot be checked by a reader, so the ten rows citing them were removed and
+  logged in full to `logs/deleted_deadlinks_20260910.csv`:
+  `NETWORK-2025-07` (404, 5 findings), `META-2026-07-MUSESPARK` (400, 2),
+  `SCALEAI-2026-07-FRONTIERBENCH` (404, 2) and `SCALEAI-2025-11` (404, 1). The reports were real
+  when coded; the links rotted. Each row is recoverable from the ledger if a replacement or
+  archival URL is located.
+
+  Corpus 1,146 → **1,136** findings · reports 457 → **453** · Source URLs 453, still equal to the
+  report count · Tier A 233 → **232** · Tier B 599 → **593** · Tier C 314 → **311** · corpus
+  severity 340/806 → **337 C1 / 799 C2**. Only one removed row was Tier A and it was C2, so
+  **Tier A ∩ C1 is unchanged at 190 and the headline is unchanged at 152/190 = 80.0%**. Two
+  secondary figures moved because the Tier A C2 denominator fell from 43 to 42: the severity
+  comparison is now 31/42 = 73.8% (z = −1.67, p = 0.094) and the C2-only robustness row 36/42 =
+  85.7%. Validator PASS, 0 duplicates, `verify_charts` PASS, 0 broken links remaining.

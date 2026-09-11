@@ -23,7 +23,7 @@ fi
 mkdir -p "$AISIEVAL_CHARTS_OUT"
 echo "building into $AISIEVAL_CHARTS_OUT"
 
-for s in charts.py charts2.py hero.py tree.py fig12_scope.py fig15b.py fig_finding.py fig_action_level.py fig_examples.py fig_examples2.py; do
+for s in charts.py charts2.py hero.py tree.py fig_developer.py fig12_scope.py fig15b.py fig_finding.py fig_action_level.py fig_examples.py fig_examples2.py; do
   printf '  %-16s ' "$s"
   if python3 "$s" >/dev/null 2>/tmp/cb_err; then echo ok; else echo "FAILED"; sed 's/^/      /' /tmp/cb_err; FAILED=1; fi
 done
