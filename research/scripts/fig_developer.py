@@ -46,7 +46,7 @@ for r in R:
     # not named)" names the accountable developer and is Tier A on that basis, so it must not
     # be counted as anonymised merely because the phrase "not named" appears.
     if ANON.search(m) and not hits:
-        hits.append("Anonymised /\nunspecified")
+        hits.append("Anonymized /\nunspecified")
     for h in hits:
         tot[h] += 1
         if tier(r) == "A":
@@ -67,18 +67,37 @@ for i, k in enumerate(order):
     ax.text(tot[k] + mx * 0.012, i, f"{tot[k]}   (Tier A {tierA[k]} · C1 {c1[k]})",
             va="center", ha="left", fontsize=21, fontweight="bold", color="#1A1A1A")
 ax.set_yticks(y); ax.set_yticklabels(order, fontsize=23); ax.invert_yaxis()
-ax.set_xlim(0, mx * 1.42); ax.grid(axis="y", visible=False)
-ax.set_xlabel("Findings", fontsize=23)
+# Sizing the x-limit so the longest annotation fits is self-referential if done in data units:
+# the data-unit width of a fixed-pixel string depends on the very limit being chosen. Solve it in
+# pixels instead. With an axes W px wide showing L data units, the label starts at (mx/L)*W and
+# needs T px, so the fit condition is (mx/L)*W + gap + T <= W, giving L >= mx*W/(W - gap - T).
+longest = max((f"{tot[k]}   (Tier A {tierA[k]} · C1 {c1[k]})" for k in order), key=len)
+fig.canvas.draw()
+rend = fig.canvas.get_renderer()
+probe = ax.text(0, 0, longest, fontsize=21, fontweight="bold", alpha=0)
+T = probe.get_window_extent(renderer=rend).width
+probe.remove()
+W = ax.get_window_extent(renderer=rend).width
+gap = 0.014 * W
+ax.set_xlim(0, mx * W / max(W - gap - T, 1.0) * 1.02)
+ax.grid(axis="y", visible=False)
+ax.set_xlabel("Findings", fontsize=23, labelpad=10)
 ax.set_title(f"Whose models the findings are about (n = {len(R):,} findings)",
              pad=24, fontsize=33, fontweight="bold")
 ax.legend(fontsize=21, loc="lower right", frameon=False)
-ax.text(0, len(order) - 0.25,
-        "A finding naming several developers counts once per developer, so bars sum to more than "
-        f"{len(R):,}.\nMatching is by model-family name; see scripts/fig_developer.py for the rule.",
-        fontsize=18, color="#555555", va="top", ha="left", linespacing=1.4)
 
 p = os.path.join(OUT, "02_findings_per_model_developer.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.22)
+# The note goes BELOW the axes in figure coordinates. Placed inside the axes it landed on top of
+# the x tick labels and the axis title, because the bottom of the data area is exactly where the
+# axis furniture lives. bbox_inches="tight" expands the canvas to include it.
+fig.text(0.5, -0.035,
+         "A finding naming several developers counts once per developer, so bars sum to more than "
+         f"{len(R):,}.  Matching is by model-family name and bare company name;\n"
+         "the pattern list is DEVELOPER_PATTERNS in scripts/dataset_source.py, shared with the "
+         "developer table so the two cannot disagree.",
+         fontsize=18, color="#555555", va="top", ha="center", linespacing=1.5,
+         transform=fig.transFigure)
+fig.savefig(p, bbox_inches="tight", pad_inches=0.3)
 plt.close(fig)
 print(f"wrote {p}")
 for k in order:
