@@ -105,7 +105,7 @@ def render(fig_h):
             y += em(fs) * lead
         return y
 
-    ax.text(2.0, em(34) * 0.84, "How company response strength is measured",
+    ax.text(2.0, em(34) * 0.84, "The Action Level Scale",
             fontsize=34, fontweight="bold", color=INK, va="baseline")
     ax.text(2.0, em(34) * 0.84 + em(19) * 1.70,
             "Action Level — the strength of the located company response, with a Tier A example "

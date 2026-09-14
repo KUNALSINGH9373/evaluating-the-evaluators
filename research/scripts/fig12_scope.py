@@ -82,9 +82,9 @@ ax.grid(axis="x", color=GRID, zorder=0)
 for s in ("top", "right", "left"):
     ax.spines[s].set_visible(False)
 ax.set_xlabel("Share of the evaluator's significant-risk findings", fontsize=21, labelpad=14)
-ax.set_title("Who reports it does not change what happens next",
+ax.set_title("Outcome by Evaluator Type (Tier A, C1)",
              fontsize=33, color="#111111", pad=48, loc="left")
-ax.text(0, 1.055, "Outcome mix by evaluator type — significant-risk findings that name a company "
+ax.text(0, 1.055, "Significant-risk findings that name a company "
         f"(n={len(H)})", transform=ax.transAxes, fontsize=17, color=MUTED, va="bottom")
 
 hand = [plt.Rectangle((0, 0), 1, 1, facecolor=col) for _, _, col in OUT]

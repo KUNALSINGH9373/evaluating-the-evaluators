@@ -128,7 +128,7 @@ def render(fig_h):
                 fontweight="bold", color=ACCENT, va="baseline", zorder=3)
 
     x = X0 + PADX
-    ax.text(X0, em(42) * 0.80, "What counts as a finding", fontsize=42, fontweight="bold",
+    ax.text(X0, em(42) * 0.80, "Finding Eligibility Criteria", fontsize=42, fontweight="bold",
             color=INK, va="baseline", zorder=3)
     TOP = em(42) * 0.80 + u(0.30)
     HEAD = u(0.30) + em(26) * 0.72 + em(26) * 1.30   # panel title row

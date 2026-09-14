@@ -111,7 +111,7 @@ c.pop("Other / unnamed",None)
 c=c.most_common(12)
 fig,ax=plt.subplots(figsize=(18,12))
 hbar(ax,[k for k,_ in c],[v for _,v in c],ramp(len(c)),len(A))
-ax.set_title(f"Tier A Findings per Model Developer (n={len(A)})",pad=26); ax.set_xlabel("Tier A findings")
+ax.set_title(f"Tier A Findings by Model Developer (n={len(A)})",pad=26); ax.set_xlabel("Tier A findings")
 # WITHDRAWN 2026-08-18: this figure attributes findings to a developer via a regex over
 # "Models / Systems" + "Report Title". Two reasonable regexes disagreed on 7 of 147 headline
 # rows, 11 rows name multiple vendors and were silently assigned to the first match, and report
@@ -135,7 +135,7 @@ c=collections.Counter(r.get("Proportionality") for r in H)
 fig,ax=plt.subplots(figsize=(18,11))
 vbar(ax,["Proportionate","Under-response\n(gap)","Accountability gap\n(no action)"],
      [c.get(k,0) for k in order],[PROP_C[k] for k in order],len(H))
-ax.set_title(f"Headline Outcome Distribution — Tier A, C1 Findings (n={len(H)})",pad=26)
+ax.set_title(f"Outcome Distribution (Tier A, C1; n={len(H)})",pad=26)
 ax.set_ylabel("Findings")
 save(fig,"04_headline_outcome_distribution.png")
 
@@ -152,7 +152,7 @@ ax.set_xticks(range(len(labs))); ax.set_xticklabels(labs,fontsize=28)
 for i,(v,n) in enumerate(zip(vals,ns)):
     ax.text(i,v+max(vals)*0.03,f"{v:.0%}\n({n} findings)",ha="center",va="bottom",fontsize=29,fontweight="bold",linespacing=1.4)
 ax.set_ylim(0,max(vals)*1.34); ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-ax.set_title("Substantive Response Rate: Pre- vs Post-Deployment\nTier A, C1 findings",pad=26,fontsize=36)
+ax.set_title("Substantive Response Rate by Deployment Stage (Tier A, C1)",pad=26,fontsize=36)
 ax.set_ylabel("Substantive response rate"); ax.grid(axis="x",visible=False)
 save(fig,"05_pre_vs_post_deployment_response_rate.png")
 
@@ -161,7 +161,7 @@ c=collections.Counter(r.get("Publication Date","")[:4] for r in ROWS)
 yrs=sorted(k for k in c if k)
 fig,ax=plt.subplots(figsize=(16,10.5))
 vbar(ax,yrs,[c[y] for y in yrs],ramp(len(yrs)),len(ROWS))
-ax.set_title(f"Findings per Publication Year (n={len(ROWS):,})",pad=26); ax.set_ylabel("Findings")
+ax.set_title(f"Findings by Publication Year (n={len(ROWS):,})",pad=26); ax.set_ylabel("Findings")
 save(fig,"06_findings_per_year.png")
 
 # ---------------------------------------------------------------- 07 tier distribution
@@ -216,7 +216,7 @@ c=d.most_common()
 fig,ax=plt.subplots(figsize=(18,14))
 pal=[BLUE,ORANGE,TEAL,PURPLE,GREEN,MAGENTA,AMBER,SKY,LIME,RED]
 hbar(ax,[k for k,_ in c],[v for _,v in c],[pal[i%len(pal)] for i in range(len(c))],len(ROWS))
-ax.set_title("Findings per Risk Domain  (multi-label; total exceeds n)",pad=26); ax.set_xlabel("Findings")
+ax.set_title("Findings by Risk Domain (multi-label)",pad=26); ax.set_xlabel("Findings")
 save(fig,"11_domain_distribution.png")
 
 # ---------------------------------------------------------------- 12 scope
@@ -245,9 +245,8 @@ ax.axvline(0,color=RED,linewidth=4,linestyle="--",zorder=4)
 ax.text(-60,max(n)*0.86,"publication\ndate  ",color=RED,fontsize=24,fontweight="bold",
         ha="right",va="center",linespacing=1.35)
 ax.set_ylim(0,max(n)*1.18); ax.grid(axis="x",visible=False)
-ax.set_title(f"Response Lag Distribution (Tier A, n={len(lags)})\nnegative = company documented before the finding was published",
-             pad=24,fontsize=34)
-ax.set_xlabel("Days between publication and company response (symlog)"); ax.set_ylabel("Findings")
+ax.set_title(f"Response Lag Distribution (Tier A, n={len(lags)})",pad=24,fontsize=34)
+ax.set_xlabel("Days between publication and company response (symlog); negative = the company\ndocumented before the finding was published"); ax.set_ylabel("Findings")
 save(fig,"14_response_lag_distribution.png")
 
 # ---------------------------------------------------------------- 15 gap rate by year
@@ -262,7 +261,7 @@ ax.set_xticks(range(len(yrs))); ax.set_xticklabels([f"{y}\n(n={n})" for y,n in z
 for i,(v,n) in enumerate(zip(vals,ns)):
     ax.text(i,v+0.02,f"{v:.0%}",ha="center",va="bottom",fontsize=30,fontweight="bold")
 ax.set_ylim(0,1.0); ax.yaxis.set_major_formatter(PercentFormatter(1.0)); ax.grid(axis="x",visible=False)
-ax.set_title("Accountability Gap Rate by Year (Tier A, C1)",pad=26); ax.set_ylabel("Share with no documented action")
+ax.set_title("Accountability Gap Rate by Publication Year (Tier A, C1)",pad=26); ax.set_ylabel("Share with no documented action")
 save(fig,"15_gap_rate_by_year.png")
 
 # ---------------------------------------------------------------- 16 gap rate by access type
@@ -289,7 +288,7 @@ _ncls = c["C1"] + c["C2"]
 _unres = len(ROWS) - _ncls
 fig,ax=plt.subplots(figsize=(15,10.5))
 vbar(ax,["C1\nsignificant risk","C2\nlow risk"],[c["C1"],c["C2"]],colours_for(SEV,["C1","C2"]),_ncls,fs=29)
-ax.set_title(f"Severity Classification — 3-model ensemble majority (n={_ncls:,})",pad=26,fontsize=35)
+ax.set_title(f"Severity Classification (n={_ncls:,})",pad=26,fontsize=35)
 if _unres:
     ax.text(0.5,-0.145,f"{_unres} further finding{'s' if _unres>1 else ''} await severity "
             f"adjudication under §7 and are not plotted.",transform=ax.transAxes,
@@ -344,7 +343,7 @@ ax.set_yticks(y); ax.set_yticklabels([s for s,_ in stages],fontsize=27); ax.inve
 for i,n in enumerate(v):
     ax.text(n+len(ROWS)*0.012,i,f"{n}   ({n/len(ROWS):.1%})",va="center",ha="left",fontsize=28,fontweight="bold")
 ax.set_xlim(0,len(ROWS)*1.24); ax.grid(axis="y",visible=False)
-ax.set_title("The Accountability Pipeline — attrition at each stage",pad=26)
+ax.set_title("The Accountability Pipeline (Tier A, C1)",pad=26)
 ax.set_xlabel("Findings")
 save(fig,"20_accountability_pipeline_funnel.png")
 print(f"\n{len(os.listdir(OUT))} files in {OUT}")

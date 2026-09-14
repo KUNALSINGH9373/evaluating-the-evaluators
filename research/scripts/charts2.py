@@ -48,7 +48,7 @@ for yy,vv in zip(y,v): ax.text(vv+4,yy,f"{vv}",va="center",fontsize=24,fontweigh
 ax.set_yticks(y); ax.set_yticklabels([short_inst(k) for k,_ in c],fontsize=23)
 ax.set_ylim(-0.75,len(c)-0.25)
 ax.set_xlim(0,max(v)*1.13); ax.grid(axis="y",visible=False)
-ax.set_title(f"Findings per Evaluating Institution (top 18 of {len({r['Institution'] for r in R})})",pad=22)
+ax.set_title(f"Findings by Evaluating Institution (top 18 of {len({r['Institution'] for r in R})})",pad=22)
 ax.set_xlabel("Findings")
 save(fig,"01_findings_per_institution.png")
 
@@ -65,7 +65,7 @@ ax.scatter(v,y,s=560,color=[pal[i%len(pal)] for i in range(len(c))],zorder=3,edg
 for yy,vv in zip(y,v): ax.text(vv+5,yy,f"{vv}",va="center",fontsize=23,fontweight="bold")
 ax.set_yticks(y); ax.set_yticklabels([k for k,_ in c],fontsize=23)
 ax.set_xlim(0,max(v)*1.13); ax.grid(axis="y",visible=False)
-ax.set_title("Findings per Risk Domain   (multi-label; total exceeds n)",pad=22); ax.set_xlabel("Findings")
+ax.set_title("Findings by Risk Domain (multi-label)",pad=22); ax.set_xlabel("Findings")
 save(fig,"11_domain_distribution.png")
 
 # ---- 10 100% STACKED: proportionality by severity -------------------------
@@ -107,7 +107,7 @@ for i,(v,n) in enumerate(zip(rate,ns)):
                 fontsize=29,fontweight="bold",color=RED)
 ax.set_xticks(range(len(yrs))); ax.set_xticklabels([f"{y_}\n(n={n})" for y_,n in zip(yrs,ns)],fontsize=26)
 ax.set_ylim(0,1.02); ax.yaxis.set_major_formatter(PercentFormatter(1.0)); ax.grid(axis="x",visible=False)
-ax.set_title("Accountability Gap Rate over Time (Tier A, C1)",pad=22)
+ax.set_title("Accountability Gap Rate by Publication Year (Tier A, C1)",pad=22)
 ax.set_ylabel("Share with no documented action")
 save(fig,"15_gap_rate_by_year.png")
 
@@ -208,7 +208,7 @@ for i in range(len(doms)):
     for j in range(3):
         ax.text(j,i,f"{int(M[i,j])}\n{Mp[i,j]:.0%}",ha="center",va="center",fontsize=21,fontweight="bold",
                 color="white" if Mp[i,j]>0.55 else INK,linespacing=1.3)
-ax.set_title("Outcome Composition by Risk Domain (Tier A)",pad=22,fontsize=34); ax.grid(False)
+ax.set_title("Outcome by Risk Domain (Tier A)",pad=22,fontsize=34); ax.grid(False)
 save(fig,"22_domain_x_outcome_heatmap.png")
 
 # ---- 23 STACKED AREA: findings per year by tier --------------------------
@@ -222,7 +222,7 @@ for i,v in enumerate(tot): ax.text(i,v+12,str(v),ha="center",fontsize=25,fontwei
 ax.set_xticks(range(len(yrs))); ax.set_xticklabels(yrs,fontsize=27)
 ax.set_ylim(0,max(tot)*1.16); ax.grid(axis="x",visible=False)
 ax.legend(loc="upper left",fontsize=23,frameon=False)
-ax.set_title("Corpus Growth by Publication Year and Tier",pad=22)
+ax.set_title("Corpus Growth by Publication Year",pad=22)
 ax.set_ylabel("Findings")
 save(fig,"23_corpus_growth_by_tier.png")
 
@@ -247,7 +247,7 @@ fig.canvas.draw()
 placed=[]
 # The title is an obstacle like any other: "Holistic AI" sits at 100% on the left and its label
 # printed straight through the title until the title's own box was seeded into the placed list.
-_ttl=ax.set_title("Evaluator Volume vs Accountability Gap Rate (Tier A, C1; n≥4)",pad=22,fontsize=33)
+_ttl=ax.set_title("Accountability Gap Rate by Evaluator (Tier A, C1; n≥4)",pad=22,fontsize=33)
 fig.canvas.draw(); placed.append(_ttl.get_window_extent().expanded(1.02,1.30))
 
 # The markers are obstacles too. Checking labels only against other labels let "US CAISI" print

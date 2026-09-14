@@ -82,9 +82,10 @@ gap = 0.014 * W
 ax.set_xlim(0, mx * W / max(W - gap - T, 1.0) * 1.02)
 ax.grid(axis="y", visible=False)
 ax.set_xlabel("Findings", fontsize=23, labelpad=10)
-# "...the findings are about (n = 1,146 findings)" said "findings" twice in one line.
-ax.set_title(f"Whose models the findings concern  (n = {len(R):,})",
-             pad=24, fontsize=33, fontweight="bold")
+# The title is a label, not a sentence: "Whose models the findings concern" editorialised where
+# every other figure in the set simply names its axes.
+ax.set_title(f"Findings by Model Developer (n={len(R):,})",
+             pad=24, fontsize=33)
 ax.legend(fontsize=21, loc="lower right", frameon=False)
 
 p = os.path.join(OUT, "02_findings_per_model_developer.png")

@@ -60,7 +60,7 @@ for x, y in zip(years, noact):
                 ha="center", fontsize=19, color=GREY_LINE)
 ax.set_ylim(0, 112)
 ax.set_ylabel("share of significant-risk findings", fontsize=22)
-ax.set_title("Shortfall is narrowing, but remains the norm", fontsize=31, color="#111111", pad=22)
+ax.set_title("Shortfall Rate by Publication Year (Tier A, C1)", fontsize=31, color="#111111", pad=22)
 ax.tick_params(labelsize=25)
 ax.grid(axis="y", color=GRID, zorder=0)
 for s in ("top", "right"):

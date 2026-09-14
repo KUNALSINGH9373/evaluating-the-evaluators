@@ -108,7 +108,7 @@ for yv in (ybot, ytop):
 ax.text(BRX + 1.6, (ytop + ybot) / 2, f"{short/len(H):.0%}\nfall short", ha="left", va="center",
         fontsize=22.1, fontweight="bold", color=RED, linespacing=1.3)
 
-ax.text(2.0, 97.0, "From published finding to documented response",
+ax.text(2.0, 97.0, "The Accountability Pipeline (Tier A, C1)",
         fontsize=34.5, fontweight="bold", color=INK, va="top")
 ax.text(2.0, 86.5, f"{gap} of {len(H)} significant-risk findings about named frontier systems "
         f"drew no documented company response.", fontsize=20.0, color=SOFT, va="top")

@@ -57,7 +57,7 @@ fig = plt.figure(figsize=(16.0, 9.0))
 ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(100, 0); ax.axis("off")
 
 L, TOPY, CW, CH = 18.0, 29.0, 19.5, 23.0
-ax.text(2.0, 9.0, "Severity × company response determines the outcome",
+ax.text(2.0, 9.0, "The Proportionality Matrix",
         fontsize=33.5, fontweight="bold", color=INK, va="baseline")
 ax.text(2.0, 16.5, "Proportionality is a function of these two columns and nothing else. "
         "The bar is severity-relative: C1 needs a substantive response, C2 needs at least a partial one.",

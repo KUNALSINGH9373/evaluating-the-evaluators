@@ -133,14 +133,14 @@ def text_w(s, fs, weight="normal"):
     return abs(inv.transform((bb.width, 0))[0] - inv.transform((0, 0))[0])
 
 
-ax.text(0, 0.92, "Findings by institution type",
+ax.text(0, 0.92, "Findings by Institution Type",
         fontsize=FS_TITLE, color="#111111", fontweight="bold", va="baseline", ha="left")
 # Kept short on purpose: a full sentence at this weight runs wider than the figure.
 _sub = (f"Bar length = findings, on one scale across all four branches  ·  "
         f"top {TOPN} institutions per type")
 ax.text(0, 1.90, _sub, fontsize=FS_SUB, color="#4A4A4A", fontweight="bold",
         va="baseline", ha="left")
-assert text_w("Findings by institution type", FS_TITLE, "bold") <= XMAX, "title overflows the canvas"
+assert text_w("Findings by Institution Type", FS_TITLE, "bold") <= XMAX, "title overflows the canvas"
 assert text_w(_sub, FS_SUB, "bold") <= XMAX, "subtitle overflows the canvas"
 
 # vertical extent of each branch's block of leaves
