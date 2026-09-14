@@ -76,7 +76,15 @@ SHORT_INST = {"Princeton Holistic Agent Leaderboard (HAL)": "Princeton HAL",
               "Cisco (Robust Intelligence / Foundation AI)": "Cisco",
               "Center for AI Safety (CAIS)": "CAIS",
               "Joint UK + US + Singapore AISIs (International Network)": "Joint UK + US + SG AISIs",
-              "Joint UK AISI + OpenAI (company-published)": "Joint UK AISI + OpenAI"}
+              "Joint UK AISI + OpenAI (company-published)": "Joint UK AISI + OpenAI",
+              # 44 characters, and the longest label on the institution tree by a wide margin:
+              # it alone forced the figure ~4in wider than every other bar needed.
+              "International Network of AI Safety Institutes": "International Network of AISIs",
+              "US Center for AI Standards and Innovation (US CAISI)": "US CAISI",
+              "UK AI Safety Institute (UK AISI)": "UK AISI",
+              "AI Verification and Evaluation Research Institute (AVERI)": "AVERI",
+              "UL Research Institutes (DSRI)": "UL DSRI",
+              "Singapore AI Safety Institute (SGAISI) / IMDA": "Singapore AISI / IMDA"}
 
 
 def short_inst(name):

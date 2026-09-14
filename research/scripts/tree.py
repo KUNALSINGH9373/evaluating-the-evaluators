@@ -12,6 +12,12 @@ from poster distance.
 Leaves are proportional bars: bar LENGTH is the finding count on one scale shared across all four
 branches, the institution NAME sits inside its bar where it fits, and the count is always
 labelled outside the bar's end.
+
+The figure was 20in wide, which forced it to a small size on the page and left the text unreadable
+there. It is now 14.5in. Everything horizontal was re-cut to pay for that: the root and branch
+nodes are narrower, the branch name wraps at its bracket instead of running on one line, the two
+connector columns are pulled in, and the title, subtitle and footnote are sized to fit inside the
+narrower canvas. Widths that must hold text are asserted against measured text, not estimated.
 """
 import os, collections, datetime
 import matplotlib
@@ -76,25 +82,32 @@ VMAX = max(v for _, _, leaves in groups for _, v, _ in leaves)
 NLEAF = sum(len(lv) for _, _, lv in groups)
 
 # ---- geometry, in row units; one row unit is UNIT_IN inches tall ---------------------------
-UNIT_IN = 0.56
+UNIT_IN = 0.46
 GAP = 0.95                    # between the last leaf of a branch and the first of the next
-TITLE = 2.55                  # title block above the first heading
+TITLE = 2.70                  # title block above the first heading
 FOOT = 1.95                   # footnote below the last bar — two lines at FS_FOOT, not one at 16pt
 BH = 0.74                     # bar height, in row units
-RX, RW = 0.0, 11.5            # root node
-SPINE = 13.5                  # vertical connector, root out to the branches
-TX, TW = 15.5, 26.0           # branch node — wide enough for "Non-Profit (Independent)" at FS_BRANCH
-LSPINE = 43.5                 # vertical connector, branch out to its leaves
-BX, BW = 46.0, 46.0           # bars start here; BW is the length of a full-scale bar
-FS_NAME, FS_NUM = 24, 26
-FS_BIG = 32                   # the count line inside a root or branch node
-FS_BRANCH = 24                # the branch's type name — sized to read, not as a caption
-FS_SMALL = 19                 # "all findings", under the root count
-FS_FOOT = 22                  # the footnote. Was 16 — the only element on the figure below 19, and
-                              # illegible once the 20in canvas was scaled to a page. It cannot simply
-                              # be enlarged: the note is ~140 characters, which at 22pt needs about
-                              # 25in on one line, so it is split across two and FOOT widened to suit.
-FIG_W = 20.0
+RX, RW = 0.0, 12.5            # root node
+SPINE = 14.6                  # vertical connector, root out to the branches
+TX, TW = 16.4, 19.5           # branch node — the type name wraps at its bracket to fit this width
+NODE_H = 3.9                  # branch node height — room for a count line plus a two-line name
+LSPINE = 37.5                 # vertical connector, branch out to its leaves
+BX, BW = 39.5, 39.0           # bars start here; BW is the length of a full-scale bar
+FS_NAME, FS_NUM = 20, 21
+FS_BIG = 28                   # the count line inside a root or branch node
+FS_BRANCH = 21                # the branch's type name — sized to read, not as a caption
+FS_SMALL = 16                 # "all findings", under the root count
+FS_FOOT = 18                  # the footnote. Was 16 — the only element on the figure below 19, and
+                              # illegible once the canvas was scaled to a page. Held large here and
+                              # split across two lines, which is what FOOT is widened for.
+FS_TITLE, FS_SUB = 34, 17     # both were cut with the canvas: at the old 48/26 the title ran past
+                              # the right edge of a 14.5in figure and bbox_inches="tight" then
+                              # padded the width straight back out again.
+XMAX = 84.0                   # the drawing ends near 80 data units; carrying the old 100 kept an
+                              # empty band down the right-hand side that tight-bbox could not trim,
+                              # because an invisible axes still contributes its own extent.
+FIG_W = 12.2                  # XMAX and FIG_W move together: their ratio fixes the inches-per-unit
+                              # scale, so cropping the band does not resize anything drawn in it.
 WIRE_C = "#C9D6E0"
 
 total = TITLE + NLEAF + GAP * (len(groups) - 1) + FOOT
@@ -103,7 +116,7 @@ fig, ax = plt.subplots(figsize=(FIG_W, total * UNIT_IN))
 # the oversized title overflowed to the right, and bbox_inches="tight" then padded the canvas out
 # to fit it — which is where the empty right-hand band came from.
 fig.subplots_adjust(left=0.010, right=0.997, top=0.997, bottom=0.006)
-ax.set_xlim(0, 100)
+ax.set_xlim(0, XMAX)
 ax.set_ylim(total, 0)         # inverted: y grows downward
 ax.axis("off")
 
@@ -120,12 +133,15 @@ def text_w(s, fs, weight="normal"):
     return abs(inv.transform((bb.width, 0))[0] - inv.transform((0, 0))[0])
 
 
-ax.text(0, 0.80, "Findings by institution type",
-        fontsize=48, color="#111111", fontweight="bold", va="baseline", ha="left")
+ax.text(0, 0.92, "Findings by institution type",
+        fontsize=FS_TITLE, color="#111111", fontweight="bold", va="baseline", ha="left")
 # Kept short on purpose: a full sentence at this weight runs wider than the figure.
-ax.text(0, 1.78, f"Bar length = findings, on one scale across all four branches  ·  "
-        f"top {TOPN} institutions per type",
-        fontsize=26, color="#4A4A4A", fontweight="bold", va="baseline", ha="left")
+_sub = (f"Bar length = findings, on one scale across all four branches  ·  "
+        f"top {TOPN} institutions per type")
+ax.text(0, 1.90, _sub, fontsize=FS_SUB, color="#4A4A4A", fontweight="bold",
+        va="baseline", ha="left")
+assert text_w("Findings by institution type", FS_TITLE, "bold") <= XMAX, "title overflows the canvas"
+assert text_w(_sub, FS_SUB, "bold") <= XMAX, "subtitle overflows the canvas"
 
 # vertical extent of each branch's block of leaves
 y, blocks = TITLE, []
@@ -144,6 +160,7 @@ ax.text(RX + RW / 2, root_mid - 0.28, f"{len(R):,}", ha="center", va="center",
         fontsize=FS_BIG, color="#111111", fontweight="bold")
 ax.text(RX + RW / 2, root_mid + 0.72, "all findings", ha="center", va="center",
         fontsize=FS_SMALL, color=MUTED)
+assert text_w("all findings", FS_SMALL) + 1.2 <= RW, "root label overflows its node"
 ax.plot([SPINE, SPINE], [min(mids), max(mids)], color=WIRE_C, lw=2.2)
 ax.plot([RX + RW, SPINE], [root_mid, root_mid], color=WIRE_C, lw=2.2)
 
@@ -151,14 +168,18 @@ ax.plot([RX + RW, SPINE], [root_mid, root_mid], color=WIRE_C, lw=2.2)
 for (k, cnt, leaves, y0, y1), mid in zip(blocks, mids):
     col, ink = COL[k], shade(COL[k], 0.30)
     ax.plot([SPINE, TX], [mid, mid], color=col, lw=2.6)
-    ax.add_patch(FancyBboxPatch((TX, mid - 1.55), TW, 3.1,
+    ax.add_patch(FancyBboxPatch((TX, mid - NODE_H / 2), TW, NODE_H,
                                 boxstyle="round,pad=0,rounding_size=0.26",
                                 facecolor=col, edgecolor="none"))
-    ax.text(TX + 1.2, mid - 0.40, f"{cnt}", ha="left", va="center",
+    # "Non-Profit (Independent)" on one line is what set the old node width. Breaking it at the
+    # bracket costs a row of node height and buys back a third of the figure's horizontal budget.
+    name = k.replace(" (", "\n(")
+    ax.text(TX + 1.2, mid - 1.00, f"{cnt}", ha="left", va="center",
             fontsize=FS_BIG, color="white", fontweight="bold")
-    ax.text(TX + 1.2, mid + 0.80, k, ha="left", va="center",
-            fontsize=FS_BRANCH, color="white")
-    assert text_w(k, FS_BRANCH) + 2.4 <= TW, f"branch label overflows its node: {k}"
+    ax.text(TX + 1.2, mid + 0.95, name, ha="left", va="center",
+            fontsize=FS_BRANCH, color="white", linespacing=1.3)
+    for line in name.split("\n"):
+        assert text_w(line, FS_BRANCH) + 2.4 <= TW, f"branch label overflows its node: {line}"
 
     lys = [y0 + i + 0.5 for i in range(len(leaves))]
     ax.plot([LSPINE, LSPINE], [min(lys), max(lys)], color=col, lw=2.0, alpha=0.5)
@@ -188,6 +209,8 @@ for (k, cnt, leaves, y0, y1), mid in zip(blocks, mids):
             ax.text(BX + w + 0.9 + text_w(str(v), FS_NUM, "bold") + 1.3, ly, nm,
                     ha="left", va="center", fontsize=FS_NAME, color="#1A1A1A")
 
+_foot_l1 = 'Institution Type field; compound values (e.g. "Government;Lab") fold into'
+assert text_w(_foot_l1, FS_FOOT) <= XMAX, "footnote line overflows the canvas"
 ax.text(0, total - FOOT + 0.55,
         f'Institution Type field; compound values (e.g. "Government;Lab") fold into\n'
         f'their primary type, so the four branches sum to {len(R):,}.',

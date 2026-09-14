@@ -245,25 +245,52 @@ ax.set_xlim(0,max(xs)*1.22); ax.set_ylim(-0.05,1.16)
 # collides with nothing already placed, measuring real rendered text boxes.
 fig.canvas.draw()
 placed=[]
-CAND=[(0,26),(0,-34),(14,14),(-14,14),(14,-24),(-14,-24),(0,46),(0,-54),(26,0),(-26,0)]
+# The title is an obstacle like any other: "Holistic AI" sits at 100% on the left and its label
+# printed straight through the title until the title's own box was seeded into the placed list.
+_ttl=ax.set_title("Evaluator Volume vs Accountability Gap Rate (Tier A, C1; n≥4)",pad=22,fontsize=33)
+fig.canvas.draw(); placed.append(_ttl.get_window_extent().expanded(1.02,1.30))
+
+# The markers are obstacles too. Checking labels only against other labels let "US CAISI" print
+# straight across two dots in the 85-90% cluster, which reads as though the text were a data point.
+from matplotlib.transforms import Bbox
+_dpi=fig.get_dpi()
+for _,n,g in pts:
+    r=(( (80+n*26)/3.14159 )**0.5)*_dpi/72*1.25      # marker radius, points -> pixels, plus halo
+    px,py=ax.transData.transform((n,g))
+    placed.append(Bbox.from_bounds(px-r,py-r,2*r,2*r))
+
+# Offsets that displace a label far from its marker make it ambiguous which point it names, so
+# anything past the first candidate gets a hairline leader drawn back to its marker. The leader is
+# a separate artist: an arrowprops on the label itself makes get_window_extent cover marker AND
+# text, which over-rejects candidates and dumps labels into the unchecked fallback, where they
+# overprint each other ("Palisade Research" through "Weval").
+CAND=[(0,24),(0,-32),(16,10),(-16,10),(16,-20),(-16,-20),(0,44),(0,-52),(30,0),(-30,0),(0,64),(0,-72)]
 for inst,n,g in pts:
     label=short_inst(inst).split("(")[0].strip()
     best=None
-    for dx,dy in CAND:
+    for k,(dx,dy) in enumerate(CAND):
         ha="center" if dx==0 else ("left" if dx>0 else "right")
         tx=ax.annotate(label,(n,g),textcoords="offset points",xytext=(dx,dy),
-                       ha=ha,fontsize=18,color=INK,zorder=4)
+                       ha=ha,va="bottom" if dy>0 else ("top" if dy<0 else "center"),
+                       fontsize=18,color=INK,zorder=4)
         fig.canvas.draw()
         bb=tx.get_window_extent().expanded(1.04,1.18)
         if not any(bb.overlaps(b) for b in placed):
-            placed.append(bb); best=tx; break
+            placed.append(bb); best=(tx,dx,dy,k); break
         tx.remove()
     if best is None:            # every candidate collided — keep it, offset furthest out
-        best=ax.annotate(label,(n,g),textcoords="offset points",xytext=(0,62),
-                         ha="center",fontsize=18,color=INK,zorder=4)
-        fig.canvas.draw(); placed.append(best.get_window_extent().expanded(1.04,1.18))
+        tx=ax.annotate(label,(n,g),textcoords="offset points",xytext=(0,88),
+                       ha="center",va="bottom",fontsize=18,color=INK,zorder=4)
+        fig.canvas.draw(); placed.append(tx.get_window_extent().expanded(1.04,1.18))
+        best=(tx,0,88,99)
+    _,dx,dy,k=best
+    if k:                       # not the default offset — tether it
+        ax.annotate("",xy=(n,g),xycoords="data",xytext=(dx,dy*0.82),
+                    textcoords="offset points",zorder=2,
+                    arrowprops=dict(arrowstyle="-",color=MUTED,linewidth=1.1,alpha=0.5,
+                                    shrinkA=0,shrinkB=7))
+
 ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-ax.set_title("Evaluator Volume vs Accountability Gap Rate (Tier A, C1; n≥4)",pad=22,fontsize=33)
 ax.set_xlabel("Tier A C1 findings published"); ax.set_ylabel("Share with no documented action")
 save(fig,"24_evaluator_volume_vs_gap.png")
 print(f"\n{len(os.listdir(OUT))} files in {OUT}")
