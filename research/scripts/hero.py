@@ -29,9 +29,10 @@ gap,und,pro=c["Accountability gap (no action)"],c["Under-response (gap)"],c["Pro
 nrep=len({r["Report ID"] for r in R if r.get("Report ID")}); ninst=len({r["Institution"] for r in R})
 
 # ---------------------------------------------------------------- HERO
-fig,ax=plt.subplots(figsize=(20,8.6)); ax.set_xlim(0,100); ax.set_ylim(0,100); ax.axis("off")
-ax.text(2,97,f"From {len(R):,} public findings to the accountability gap",
-        fontsize=31,color="#111111",va="top")
+# No heading inside the figure. A title baked into the image duplicates the caption wherever the
+# figure is placed, and the two then have to be kept in sync by hand; the y-range is reclaimed so
+# the diagram fills the canvas instead of leaving a band of white where the heading was.
+fig,ax=plt.subplots(figsize=(20,7.6)); ax.set_xlim(0,100); ax.set_ylim(0,88); ax.axis("off")
 # Plain-language labels throughout: no tier letters, no severity codes.
 # The span was hard-coded "Jan 2023 - Jul 2026" and contradicted both the extended corpus window
 # and this figure's own cutoff footer. Derive it from the data so it cannot drift again.
