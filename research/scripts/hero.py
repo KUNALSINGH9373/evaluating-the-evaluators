@@ -52,7 +52,7 @@ for x,big,sub,col,txt,foot in BOX:
     ax.text(x+W/2,Y+Hh*0.64,big,ha="center",va="center",fontsize=40,color=txt)
     ax.text(x+W/2,Y+Hh*0.24,sub,ha="center",va="center",fontsize=18,color=txt,linespacing=1.3)
     ax.text(x+W/2,Y-3.6,foot,ha="center",va="top",fontsize=15,color=INK_2,linespacing=1.55)
-for x0,lab in ((20.3,"filter"),(41.3,"severity")):
+for x0,lab in ((20.3,"filter"),(41.3,"severity of risk")):
     ax.add_patch(FancyArrowPatch((x0,Y+Hh/2),(x0+2.4,Y+Hh/2),arrowstyle="-|>",mutation_scale=26,
                  linewidth=2.4,color=MUTED))
     ax.text(x0+1.2,Y+Hh+2.4,lab,ha="center",va="bottom",fontsize=15,color=INK_2)
@@ -69,7 +69,7 @@ for n,col,lab in ((pro,GREEN,"Proportionate"),(und,AMBER,"Under-response"),(gap,
     ax.text(BX+BW/2,y+h/2,str(n),ha="center",va="center",fontsize=24,color="white")
     ax.text(BX+BW+1.4,y+h/2,lab,ha="left",va="center",fontsize=18,color=col)
     y+=h
-ax.text(BX+BW/2,BY+BH+2.6,f"outcomes (n = {tot})",ha="center",fontsize=18,color="#111111")
+ax.text(BX+BW/2,BY+BH+2.6,f"response outcomes (n = {tot})",ha="center",fontsize=18,color="#111111")
 # bracket over the two segments that fall short, labelled with the percentage only
 gy0=BY+BH*pro/tot
 ax.plot([88.6,90.1,90.1,88.6],[gy0,gy0,BY+BH,BY+BH],color=RED,linewidth=2.4,solid_joinstyle="miter")
@@ -78,8 +78,7 @@ ax.text(91.4,(gy0+BY+BH)/2+7.5,"FALLS SHORT\nOF THE\nSTANDARD",ha="left",va="cen
 ax.text(91.4,(gy0+BY+BH)/2-8.0,f"{(gap+und)/tot:.0%}",ha="left",va="center",
         fontsize=36,color=RED,fontweight="bold")
 ax.text(2,10.5,"Boxes are schematic (not to scale); the outcome bar is proportional. A finding falls short when the named company\n"
-        "shows no located public response (red) or only a partial / acknowledged one (orange). "
-        "Corpus cutoff 29 August 2026.",
+        "shows no located public response (red) or only a partial / acknowledged one (orange).",
         fontsize=15.5,color=INK_2,va="top",linespacing=1.6)
 fig.savefig(os.path.join(OUT,"00_title_hero.png"),bbox_inches="tight",pad_inches=0.35); plt.close(fig)
 print("  00_title_hero.png  (schematic funnel)")

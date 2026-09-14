@@ -72,8 +72,8 @@ for i, (big, mid, sub, col) in enumerate(BOXES):
     if i < len(BOXES) - 1:
         ax.add_patch(FancyArrowPatch((x + BW + 0.8, Y + BH / 2), (x + BW + GAP0 - 0.8, Y + BH / 2),
                                      arrowstyle="-|>", mutation_scale=20, lw=2.0, color="#9AA7B2"))
-        ax.text(x + BW + GAP0 / 2, Y + BH / 2 + 4.2, ["filter", "severity"][i], ha="center",
-                fontsize=15.2, color=FAINT, style="italic")
+        ax.text(x + BW + GAP0 / 2, Y + BH / 2 + 4.2, ["filter", "severity\nof risk"][i], ha="center",
+                fontsize=13.4, color=FAINT, style="italic", linespacing=1.25)
     x += BW + GAP0
 
 # outcome bar — proportional, replacing figure 04
@@ -97,7 +97,7 @@ for n, col, lab in seg:
             fontweight="bold", color="white")
     ax.text(BX + 7.4, yy + h / 2, lab.replace("\n", " "), ha="left", va="center",
             fontsize=15.2, color="white")
-ax.text(BX, top + 1.6, f"outcomes  (n = {len(H)})", fontsize=16.6, color=SOFT)
+ax.text(BX, top + 1.6, f"response outcomes  (n = {len(H)})", fontsize=16.6, color=SOFT)
 
 # the fall-short bracket spans the top two segments, at the far right so it clears the arrow
 BRX = BX + BWID + 1.8
