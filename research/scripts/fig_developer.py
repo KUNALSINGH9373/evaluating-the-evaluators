@@ -82,21 +82,19 @@ gap = 0.014 * W
 ax.set_xlim(0, mx * W / max(W - gap - T, 1.0) * 1.02)
 ax.grid(axis="y", visible=False)
 ax.set_xlabel("Findings", fontsize=23, labelpad=10)
-ax.set_title(f"Whose models the findings are about (n = {len(R):,} findings)",
+# "...the findings are about (n = 1,146 findings)" said "findings" twice in one line.
+ax.set_title(f"Whose models the findings concern  (n = {len(R):,})",
              pad=24, fontsize=33, fontweight="bold")
 ax.legend(fontsize=21, loc="lower right", frameon=False)
 
 p = os.path.join(OUT, "02_findings_per_model_developer.png")
-# The note goes BELOW the axes in figure coordinates. Placed inside the axes it landed on top of
-# the x tick labels and the axis title, because the bottom of the data area is exactly where the
-# axis furniture lives. bbox_inches="tight" expands the canvas to include it.
-fig.text(0.5, -0.035,
-         "A finding naming several developers counts once per developer, so bars sum to more than "
-         f"{len(R):,}.  Matching is by model-family name and bare company name;\n"
-         "the pattern list is DEVELOPER_PATTERNS in scripts/dataset_source.py, shared with the "
-         "developer table so the two cannot disagree.",
-         fontsize=18, color="#555555", va="top", ha="center", linespacing=1.5,
-         transform=fig.transFigure)
+# One line, below the axes in figure coordinates. Inside the axes it printed on top of the x
+# tick labels and the axis title. The matching rule used to be spelled out here too; it lives in
+# the figure caption in the paper instead, which is where a reader looks for it.
+fig.text(0.5, -0.02,
+         f"A finding naming several developers counts once per developer, so bars sum to more "
+         f"than {len(R):,}.",
+         fontsize=19, color="#555555", va="top", ha="center", transform=fig.transFigure)
 fig.savefig(p, bbox_inches="tight", pad_inches=0.3)
 plt.close(fig)
 print(f"wrote {p}")
