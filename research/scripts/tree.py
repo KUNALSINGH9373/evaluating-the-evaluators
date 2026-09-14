@@ -120,7 +120,7 @@ def text_w(s, fs, weight="normal"):
     return abs(inv.transform((bb.width, 0))[0] - inv.transform((0, 0))[0])
 
 
-ax.text(0, 0.80, "Who reports findings, by institution type",
+ax.text(0, 0.80, "Findings by institution type",
         fontsize=48, color="#111111", fontweight="bold", va="baseline", ha="left")
 # Kept short on purpose: a full sentence at this weight runs wider than the figure.
 ax.text(0, 1.78, f"Bar length = findings, on one scale across all four branches  ·  "
