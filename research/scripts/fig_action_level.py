@@ -109,7 +109,7 @@ def render(fig_h):
             fontsize=34, fontweight="bold", color=INK, va="baseline")
     ax.text(2.0, em(34) * 0.84 + em(19) * 1.70,
             "Action Level — the strength of the located company response, with a Tier A example "
-            "of each.", fontsize=19, color=SOFT, va="baseline")
+            "of each.", fontsize=22, color=SOFT, va="baseline")
 
     BX, BW = 2.0, 25.0        # level block: name and meaning
     FX, FW = 29.5, 33.5       # the finding
@@ -118,9 +118,9 @@ def render(fig_h):
     GAP = u(0.11)
 
     head = em(34) * 0.84 + em(19) * 1.70 + u(0.34)
-    ax.text(FX, head, "THE FINDING", fontsize=13, fontweight="bold", color=FAINT,
+    ax.text(FX, head, "THE FINDING", fontsize=16, fontweight="bold", color=FAINT,
             va="baseline", zorder=3)
-    ax.text(CX, head, "WHAT THE COMPANY DID", fontsize=13, fontweight="bold", color=FAINT,
+    ax.text(CX, head, "WHAT THE COMPANY DID", fontsize=16, fontweight="bold", color=FAINT,
             va="baseline", zorder=3)
     top = head + u(0.16)
 
@@ -128,26 +128,32 @@ def render(fig_h):
     for name, desc, fid, finding, company in LEVELS:
         col = ACTION[name]
         # measure all three columns, then give the row the height the tallest one needs
-        nb = len(wrap(desc, 15, "normal", BW - 3.4))
-        hb = em(26) * 1.08 + em(15) * 1.32 * nb + 2 * PADB
-        ht = max(len(wrap(finding, 16, "normal", FW)),
-                 len(wrap(company, 16, "normal", CW))) * em(16) * 1.32 + 2 * PADB
+        # "Acknowledged" is four characters longer than any other level name and ran past the
+        # right edge of its block once the names were enlarged. Fit the name to the block instead
+        # of setting every name to the size the shortest one can carry.
+        fs_name = 28
+        while fs_name > 18 and tw(name, fs_name, "bold") > BW - 3.0:
+            fs_name -= 0.5
+        nb = len(wrap(desc, 19, "normal", BW - 3.4))
+        hb = em(fs_name) * 1.08 + em(19) * 1.32 * nb + 2 * PADB
+        ht = max(len(wrap(finding, 20, "normal", FW)),
+                 len(wrap(company, 20, "normal", CW))) * em(20) * 1.32 + 2 * PADB
         h = max(hb, ht, u(0.85))
 
         ax.add_patch(FancyBboxPatch((BX, y), BW, h,
                                     boxstyle="round,pad=0,rounding_size=0.55",
                                     facecolor=col, edgecolor="none", zorder=1, clip_on=False))
-        block_h = em(26) * 1.08 + em(15) * 1.32 * nb
-        by = y + (h - block_h) / 2 + em(26) * 0.78
-        ax.text(BX + 1.5, by, name, fontsize=26, fontweight="bold", color="white",
+        block_h = em(fs_name) * 1.08 + em(19) * 1.32 * nb
+        by = y + (h - block_h) / 2 + em(fs_name) * 0.78
+        ax.text(BX + 1.5, by, name, fontsize=fs_name, fontweight="bold", color="white",
                 va="baseline", zorder=3)
-        para(BX + 1.5, by + em(26) * 1.00, desc, 15, "normal", "#FFFFFF", BW - 3.0, 1.32)
+        para(BX + 1.5, by + em(fs_name) * 1.00, desc, 19, "normal", "#FFFFFF", BW - 3.0, 1.32)
 
         # centre each column's own block of lines: the row is as tall as its tallest element,
         # and dumping the shorter columns at the top is what read as wasted space
         for x, s, wdt in ((FX, finding, FW), (CX, company, CW)):
-            n = len(wrap(s, 16, "normal", wdt))
-            para(x, y + (h - n * em(16) * 1.32) / 2 + em(16) * 0.80, s, 16, "normal", INK,
+            n = len(wrap(s, 20, "normal", wdt))
+            para(x, y + (h - n * em(20) * 1.32) / 2 + em(20) * 0.80, s, 20, "normal", INK,
                  wdt, 1.32)
         y += h + GAP
 
@@ -155,7 +161,7 @@ def render(fig_h):
                 arrowprops=dict(arrowstyle="-|>", color="#C3CAD2", lw=3.0,
                                 shrinkA=0, shrinkB=0, mutation_scale=24))
     ax.text(0.15, (top + y) / 2, "W E A K E R", rotation=90, ha="center", va="center",
-            fontsize=12, color=FAINT, fontweight="bold")
+            fontsize=15, color=FAINT, fontweight="bold")
     return fig, (y - GAP) * fig_h / 100.0
 
 

@@ -82,25 +82,25 @@ VMAX = max(v for _, _, leaves in groups for _, v, _ in leaves)
 NLEAF = sum(len(lv) for _, _, lv in groups)
 
 # ---- geometry, in row units; one row unit is UNIT_IN inches tall ---------------------------
-UNIT_IN = 0.46
-GAP = 0.95                    # between the last leaf of a branch and the first of the next
-TITLE = 2.70                  # title block above the first heading
+UNIT_IN = 0.50
+GAP = 0.85                    # between the last leaf of a branch and the first of the next
+TITLE = 2.55                  # title block above the first heading
 FOOT = 1.95                   # footnote below the last bar — two lines at FS_FOOT, not one at 16pt
 BH = 0.74                     # bar height, in row units
 RX, RW = 0.0, 12.5            # root node
 SPINE = 14.6                  # vertical connector, root out to the branches
-TX, TW = 16.4, 19.5           # branch node — the type name wraps at its bracket to fit this width
-NODE_H = 3.9                  # branch node height — room for a count line plus a two-line name
-LSPINE = 37.5                 # vertical connector, branch out to its leaves
-BX, BW = 39.5, 39.0           # bars start here; BW is the length of a full-scale bar
-FS_NAME, FS_NUM = 20, 21
+TX, TW = 16.4, 17.9           # branch node — the type name wraps at its bracket to fit this width
+NODE_H = 3.7                  # branch node height — room for a count line plus a two-line name
+LSPINE = 35.9                 # vertical connector, branch out to its leaves
+BX, BW = 37.9, 39.0           # bars start here; BW is the length of a full-scale bar
+FS_NAME, FS_NUM = 24, 25
 FS_BIG = 28                   # the count line inside a root or branch node
 FS_BRANCH = 21                # the branch's type name — sized to read, not as a caption
 FS_SMALL = 16                 # "all findings", under the root count
-FS_FOOT = 18                  # the footnote. Was 16 — the only element on the figure below 19, and
+FS_FOOT = 22                  # the footnote. Was 16 — the only element on the figure below 19, and
                               # illegible once the canvas was scaled to a page. Held large here and
                               # split across two lines, which is what FOOT is widened for.
-FS_TITLE, FS_SUB = 34, 17     # both were cut with the canvas: at the old 48/26 the title ran past
+FS_TITLE, FS_SUB = 34, 19     # both were cut with the canvas: at the old 48/26 the title ran past
                               # the right edge of a 14.5in figure and bbox_inches="tight" then
                               # padded the width straight back out again.
 XMAX = 84.0                   # the drawing ends near 80 data units; carrying the old 100 kept an
@@ -136,8 +136,7 @@ def text_w(s, fs, weight="normal"):
 ax.text(0, 0.92, "Findings by Institution Type",
         fontsize=FS_TITLE, color="#111111", fontweight="bold", va="baseline", ha="left")
 # Kept short on purpose: a full sentence at this weight runs wider than the figure.
-_sub = (f"Bar length = findings, on one scale across all four branches  ·  "
-        f"top {TOPN} institutions per type")
+_sub = f"Bar length = findings, on one scale  ·  top {TOPN} institutions per type"
 ax.text(0, 1.90, _sub, fontsize=FS_SUB, color="#4A4A4A", fontweight="bold",
         va="baseline", ha="left")
 assert text_w("Findings by Institution Type", FS_TITLE, "bold") <= XMAX, "title overflows the canvas"
@@ -206,8 +205,9 @@ for (k, cnt, leaves, y0, y1), mid in zip(blocks, mids):
             ax.text(BX + 0.9, ly, nm, ha="left", va="center", fontsize=FS_NAME,
                     color="white", fontweight="bold")
         else:
-            ax.text(BX + w + 0.9 + text_w(str(v), FS_NUM, "bold") + 1.3, ly, nm,
-                    ha="left", va="center", fontsize=FS_NAME, color="#1A1A1A")
+            lx = BX + w + 0.9 + text_w(str(v), FS_NUM, "bold") + 1.3
+            ax.text(lx, ly, nm, ha="left", va="center", fontsize=FS_NAME, color="#1A1A1A")
+            assert lx + text_w(nm, FS_NAME) <= XMAX, f"leaf label runs off the canvas: {nm}"
 
 _foot_l1 = 'Institution Type field; compound values (e.g. "Government;Lab") fold into'
 assert text_w(_foot_l1, FS_FOOT) <= XMAX, "footnote line overflows the canvas"
