@@ -8,8 +8,8 @@ available on or before the cutoff. The earliest publication actually held is 202
 latest 2026-08-27; that range describes the corpus, not an eligibility rule.
 
 **Current file — there is exactly one.** `dataset/AISIEVAL_V13.xlsx`, sheet `AISIEVAL_V13`, read
-only through `scripts/dataset_source.py`. **1,136 findings · 453 reports · 46 institutions ·
-39 columns · Tier A 232 · B 593 · C 311 · headline 152/190 = 80.0% falling short, of which
+only through `scripts/dataset_source.py`. **1,146 findings · 457 reports · 46 institutions ·
+39 columns · Tier A 233 · B 599 · C 314 · headline 152/190 = 80.0% falling short, of which
 114/190 = 60.0% with no located response.**
 
 The merge this section used to describe is done. `v10 revised.xlsx` (455-finding base) and

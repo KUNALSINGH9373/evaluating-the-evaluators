@@ -1,0 +1,176 @@
+[
+  {
+    "url": "https://link.springer.com/article/10.1007/s00146-022-01417-y",
+    "title": "Separating facts and evaluation: motivation, account, and learnings from a novel approach to evaluating the human impacts of machine learning (AI & SOCIETY 38(4))",
+    "institution": "California Polytechnic State University; Northwestern University; University of California, Santa Cruz (funded by Underwriters Laboratories Inc. via the Center for Advancing Safety of Machine Intelligence)",
+    "decision": "EXCLUDED",
+    "rule_cited": "§1 hard drop (university-only authorship with no registered evaluator) + FRONTIER-MODEL RULE (no named frontier AI model or system)",
+    "exclusion_reason": "Source verification changes the authorship picture the earlier extraction assumed. The Springer article names four authors, all university-affiliated: Ryan Jenkins (Philosophy Department, California Polytechnic State University), Kristian Hammond and Sarah Spurlock (Computer Science Department, Northwestern University) and Leilani Gilpin (Computer Science and Engineering Department, University of California, Santa Cruz). UL Research Institutes / DSRI is NOT an author or contributing evaluator: Underwriters Laboratories appears only as a partner in the framing sentence ('In partnership with Underwriters Laboratories Inc.') and as the funder in the Acknowledgements ('The funding for this research was provided by Underwriters Laboratories Inc. through the Center for Advancing Safety of Machine Intelligence, as well as through National Science Foundation award 1917707'). Under §1 this is university-only authorship with no registered evaluator, so it is a hard drop and cannot be filed under UL/DSRI. Independently, the FRONTIER-MODEL RULE also excludes it: the paper is a general AI-ethics evaluation framework piloted on domain case studies (Law, Journalism, Medicine, Business, Manufacturing, Robotics) and names no frontier AI model or system anywhere — the only concrete systems mentioned are generic 'machine-learning systems' and a passing reference to Facebook's recommendation algorithms. Both previously extracted findings are process facts about a 2020 workshop, not findings about a named frontier model. Note the earlier extraction's quotes do check out verbatim ('In our brief workshops, we were not realistically able to arrive at such a consensus. Instead, we demonstrated a proof of concept that, given such goals and values, we could make meaningful criticisms of particular machine-learning systems.' and 'This tension surfaced as a major hurdle during our workshops.') — the report fails on scope, not on evidence.",
+    "resolved_date": "2022-03-16",
+    "date_source": "Springer Nature Link article page masthead: 'Published: 16 March 2022'. (Issue assignment is Volume 38, pages 1415-1428, 2023; the day-precision publication date is the 2022 online-first date.)",
+    "findings": []
+  },
+  {
+    "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+    "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+    "institution": "OpenAI (post author); study by researchers at Bocconi University in collaboration with OpenAI Economic Research",
+    "decision": "EXCLUDED",
+    "rule_cited": "§1 hard drop (company self-report; §1 carve-out not satisfied — Bocconi University is not a registered evaluator, and §1 also hard-drops university-only authorship with no registered evaluator) + §2 (not asserted by an in-scope evaluator in this report) + FRONTIER-MODEL RULE",
+    "exclusion_reason": "The live page is an OpenAI company blog post, bylined 'Author: OpenAI', dated August 27, 2026, describing a study it attributes to 'researchers at Bocconi University, in collaboration with OpenAI Economic Research'. Three independent grounds for exclusion. (1) §1: the venue is the model developer's own site and the only named non-OpenAI party is Bocconi University. The §1 carve-out rescues a company-published item only where a named EXTERNAL EVALUATOR contributed the section; §1 separately hard-drops 'university-only authorship with no registered evaluator', and the 2026-08-14 roster correction retired exactly this class of body (Ai2, UC Berkeley, Thorn, EPFL, Yale, Stanford, Oxford) as 'not a roster org'. Bocconi is not a government AISI, not an AI Evaluators Forum member, and not grandfathered into the dataset, so the carve-out does not fire and the item is EXCLUDED - company self-report. (2) §2 criterion 1: OpenAI's post is a summary of someone else's paper (it links out to 'Read the paper'), not a claim asserted by an in-scope evaluator in this report. (3) FRONTIER-MODEL RULE: what is measured is human undergraduate output under a randomised access treatment — rubric scores, idea counts, similarity to expert submissions — with GPT-4o serving as the treatment/instrument. There is no empirical finding about a named model's behaviour. The two previously extracted quotes do verify verbatim against the live page ('The students who had access to ChatGPT scored almost a full point higher on the five-point scale.' and 'Students who completed the exercise explained more clearly why their ideas might work and when they might fail, but did not score higher on the grading rubric') — the report fails on scope, not on evidence. The earlier extraction also mis-stated Scope, writing prose into that field and asserting the §1 carve-out applied; it does not.",
+    "resolved_date": "2026-08-27",
+    "date_source": "Dateline on the OpenAI post itself: 'August 27, 2026' (corroborated by the 'Keep reading' rail dating a sibling post 'Aug 27, 2026'). Within the 2026-08-29 corpus cutoff.",
+    "findings": []
+  },
+  {
+    "url": "https://arxiv.org/pdf/2501.12612",
+    "title": "T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation (CVPR 2025)",
+    "institution": "Shanghai Artificial Intelligence Laboratory",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 in scope (third-party-evaluator: Shanghai Artificial Intelligence Laboratory is first affiliation and corresponding-author institution, registered prefix SHANGHAIAILAB); §2 satisfied (measured benchmark results asserted by the authors); §4b not engaged (findings are toxic-content generation, demographic bias and privacy leakage, not ordinary accuracy/hallucination); FRONTIER-MODEL RULE satisfied (named multimodal text-to-image generative models, incl. Stable Diffusion v3-mid and Tencent's HunyuanDiT)",
+    "resolved_date": "2025-01-22",
+    "date_source": "arXiv abs page submission history: '[v1] Wed, 22 Jan 2025 03:29:43 UTC'. (v2 2025-02-20, v3 2025-07-25; earliest public version used per §3 dedup 'earliest, fullest source wins'. Comments field: 'Accepted at CVPR 2025'.) Matches the date already on the input record.",
+    "findings": [
+      {
+        "finding": "Evaluating 12 prominent diffusion text-to-image models (plus three unified multimodal models) on the T2ISafety benchmark - 2,669 prompts across 3 domains, 12 tasks and 44 categories, scored by the authors' ImageGuard evaluator - revealed persistent racial-fairness problems, a tendency to generate toxic content, and significant variation in privacy protection, none of which was removed by concept-erasing defences.",
+        "finding_quote": "We evaluate 12 prominent diffusion models on T2ISafety and reveal several concerns including persistent issues with racial fairness, a tendency to generate toxic content, and significant variation in privacy protection across the models, even with defense methods like concept erasing.",
+        "models_systems": "SD-v1.4, SD-v1.5, SD-v2.1, SDXL, SDXL-Turbo, SDXL-Lightening, SD-v3-mid, Kandinsky 2.2, Kandinsky 3, Playground-v2.5, Pixart-alpha, HunyuanDiT (plus unified multimodal models LlamaGen, Show-o, Vila-u)",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Societal",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: measured safety rates and normalized-KL-divergence fairness scores over named models (Table 4). Gate 2 (a) yes, (b) fails as asserted: the headline claim is made over an aggregate of 12 models spanning several developers, so no single company response is addressable from this row; (c) also fails under the Tier A exclusion for benchmark-score results with no dangerous threshold crossed. Tier B. Corrections to the earlier extraction: it wrote 'wide variation' where the source says 'significant variation', and its quote was truncated mid-sentence at 'a tendency to generate' - the full sentence is restored here from the arXiv abstract page (the PDF text of the same sentence is interrupted by the arXiv stamp, so the abs page is the clean copy).",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "HunyuanDiT (Tencent) was the worst performer on demographic bias in the T2ISafety fairness evaluation, showing substantial gender bias alongside Kandinsky 2.2 and the highest or near-highest normalized KL divergence on age and race (gender 0.339, age 0.266, race 0.752, where lower is fairer).",
+        "finding_quote": "HunyuanDiT also presents significant fairness in both age and race, raising serious concerns about its broader social impact.",
+        "models_systems": "HunyuanDiT",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Societal",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: measured NKL-Div scores in Table 4. Gate 2 (a) yes, (b) yes - HunyuanDiT names Tencent - but (c) fails: this is a demographic-bias benchmark score and a comparative ranking against 14 other models, with no dangerous threshold crossed, both of which the Tier A test explicitly excludes. Tier B. Note on wording: the paper uses 'fairness' where it plainly means unfairness/bias (its metric is a divergence from a fair distribution, lower being better); the quote is reproduced exactly as printed and the paraphrase states the direction the numbers actually carry. Split from the aggregate row under §5 because it names a specific developer's model and would warrant its own response.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "In the T2ISafety toxicity evaluation, SDXL-Turbo (Stability AI) was among the models most likely to produce toxic imagery, particularly sexual content and hate speech, with an average toxicity safety rate of 0.511 against SDXL's benchmark-leading 0.826.",
+        "finding_quote": "On the other hand, models such as SDXL-Turbo and Pixart-α are more susceptible to generating toxic content, especially in categories like sexual content and hate speech.",
+        "models_systems": "SDXL-Turbo",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Societal",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: measured average toxicity safety rate, Table 4 (SDXL-Turbo 0.511; SDXL 0.826; SD-v1.5 0.527). Gate 2 (a) yes, (b) yes - SDXL-Turbo names Stability AI - but (c) fails: a benchmark safety-rate score presented as a relative comparison against the best-performing model in the same family, no dangerous threshold demonstrated, no specific harmful output shown. Tier B. Split under §5 from the Pixart-α row because different companies never share a row, even though both are named in the same source sentence; the quote is retained in full so the split is auditable.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Pixart-α was among the weakest models across all three T2ISafety domains: the worst racial-fairness score of any model tested (NKL-Div 0.833), the lowest average toxicity safety rate (0.501) with particular susceptibility to sexual content and hate speech, and among the weakest privacy safety rates (0.356).",
+        "finding_quote": "On the other hand, models such as SDXL-Turbo and Pixart-α are more susceptible to generating toxic content, especially in categories like sexual content and hate speech.",
+        "models_systems": "Pixart-alpha",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Societal",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: three measured scores read directly from Table 4 (race 0.833, toxicity average 0.501, privacy average 0.356). Gate 2 (a) yes, (b) partially - the model is named but Pixart-α is a research-scale academic T2I model rather than a frontier developer's flagship, so it attracts the Tier A 'non-frontier' exclusion; (c) also fails as a benchmark-score/comparative result with no dangerous threshold crossed. Tier B. The paraphrase's fairness and privacy numbers come from Table 4, not from the quoted sentence, which covers toxicity only; the corresponding privacy sentence in §5.2 ('models such as SD-v3-mid and Pixart- α exhibit weaker performance in privacy-related aspects') is not used as the quote because the source prints a stray space inside 'Pixart- α' there and it must not be repaired.",
+        "finding_type": "capability-finding; non-frontier",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Applying four concept-erasing defences (UCE, SLD, ESD, MACE) to SD-v1.5 raised the toxicity safety rate across every category - MACE lifting the overall rate from 0.527 to 0.799 - but the methods still failed on humiliation and violence, so concept erasing mitigated rather than closed the safety gap.",
+        "finding_quote": "This indicates that concept erasing is feasible to enhance the safety of T2I models, particularly when dealing with malicious prompts.",
+        "models_systems": "SD-v1.5 with UCE, SLD, ESD and MACE concept-erasing defences",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Eval-methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 fails: the subject is a set of academic mitigation techniques applied to a base model, not a deployed system's own safeguard, so this is a methodology/tooling finding rather than an empirical model finding. Tier C, action_trackable BLANK. Numbers verified against Table 5 (SD-v1.5 overall 0.527; MACE 0.799; UCE 0.711; SLD 0.687; ESD 0.642). The sentence stating the residual limitation ('However, these concept-erasing methods still exhibit limitations in specific areas ( e.g., hu- miliation and violence)...') is NOT used as the quote because 'hu- miliation' is hyphenated across a line break in the source and the evidentiary standard forbids repairing it; the clean adjacent sentence is quoted instead and the limitation is carried in the paraphrase only.",
+        "finding_type": "methodology",
+        "access_type": "N/A"
+      }
+    ]
+  },
+  {
+    "url": "https://arxiv.org/pdf/2402.05044",
+    "title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models (ACL Findings)",
+    "institution": "Shanghai Artificial Intelligence Laboratory",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 in scope (third-party-evaluator: Shanghai Artificial Intelligence Laboratory, first affiliation and corresponding author, registered prefix SHANGHAIAILAB); §2 satisfied; §4b not engaged (jailbreak robustness and safety-rate failures, not ordinary accuracy); FRONTIER-MODEL RULE satisfied (named frontier LLMs: Gemini Pro, GPT-4, GPT-3.5, Claude2, Llama-2/3, Qwen, Mistral, Gemma)",
+    "resolved_date": "2024-02-07",
+    "date_source": "arXiv abs page submission history: '[v1] Wed, 7 Feb 2024 17:33:54 UTC'. (v2 2024-02-08, v3 2024-03-04, v4 2024-06-07; earliest version used per §3. Comments field: 'Accepted at ACL 2024 Findings'.) Matches the date already on the input record.",
+    "findings": [
+      {
+        "finding": "Google's Gemini Pro scored 88.32% safety on SALAD-Bench's base set but collapsed to 19.98% on the attack-enhanced subset - meaning roughly four in five attack-enhanced queries elicited an unsafe response - the sharpest degradation of any black-box model tested, against 80.28% for GPT-4 and 88.02% for Claude2.",
+        "finding_quote": "Claude2 leads in performance across both sets, while Gemini’s performance notably declines to approximately 20% in the attack-enhanced subset.",
+        "models_systems": "Gemini Pro",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "yes",
+        "tier": "A",
+        "tier_reasoning": "Gate 1 yes: measured safety rates, Table 5 (Gemini base 88.32, attack-enhanced 19.98) and Figure 5 caption. Gate 2 (a) empirical; (b) names Gemini and therefore Google; (c) an ~80% unsafe-response rate once standard attack templates are applied is a demonstrated safeguard-robustness failure in a deployed black-box model, not merely a benchmark score or a ranking, so a developer response is reasonable to expect. Tier A. The Tier A exclusions were checked and do not bite: it is not a reassuring null, not a capability trend, not a non-frontier model, and the model is the subject of the evaluation rather than an instrument of a methodology study. Corrections to the earlier extraction: it put 'Google DeepMind' in the Institution field, which is the developer, not the evaluator - Institution must be the evaluating body (§9 col 3), so it is corrected to Shanghai Artificial Intelligence Laboratory and Google's model moves to Models/Systems. It also gave no base-set figure; the 88.32% base rate is added from Table 5. The comparator clause about Claude2 in the quoted caption is retained verbatim but is not carried as an Anthropic row (§5: comparators are never rows; different companies never share a row).",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Across the 36 LLMs evaluated, safety rates fell sharply from SALAD-Bench's base set to its attack-enhanced subset, with most open-source models dropping below 25% and several below 5% (Mistral-7B-v0.1 2.44%, Vicuna-13B 3.66%, Vicuna-33B 3.84%, TuluV2-7B 4.7%, Qwen-7B 6.14%), while only GPT-4, Claude2 and the larger Llama-2/Llama-3 variants stayed above 60%.",
+        "finding_quote": "There is a significant drop in safety rates when comparing the base set to the attack-enhanced set.",
+        "models_systems": "36 LLMs incl. ChatGLM3, InternLM/InternLM2, Llama-2, Llama-3, Mistral, Mixtral, Qwen/Qwen1.5, Gemma, TuluV2, Vicuna, Yi, GPT-4, GPT-3.5, Claude2, Gemini",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: measured safety rates for every model in Table 5. Gate 2 (a) yes, (b) fails as asserted - the claim is a cross-model aggregate spanning many developers, so no single company response is addressable from this row; (c) additionally reads as a comparative ranking across the field. Tier B. Split under §5 from the Gemini row because the field-wide degradation and one named model's collapse would warrant different responses. Note the paper's own text states 'GPT-3.5 scores the lowest at 88.62% among black-box LLMs', which its own Table 5 contradicts (Gemini base 88.32%); that internal inconsistency is recorded here and is deliberately NOT reproduced in the finding text.",
+        "finding_type": "capability-finding; anonymised-model",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Benchmarking six attack methods against Llama-2-7B-Chat, human-designed jailbreak prompts were by far the most effective, reaching 95% attack success rate on SALAD-Bench base questions and 89.5% on the defense-enhanced questions (14.3% and 11% averaged over prompts), well ahead of GPTFuzzer (46.5%/34%), GCG suffixes (42%/25.5%) and AutoDAN (16.5%/11%).",
+        "finding_quote": "Among all attack methods, human-designed jailbreak prompts achieve the highest ASR",
+        "models_systems": "Llama-2-7B-Chat (attack target)",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: measured attack success rates, Table 6. Gate 2 (a) yes, (b) yes - Llama-2-7B-Chat names Meta - but (c) fails on the explicit Tier A exclusion for findings where a named model is the instrument of a methodology study rather than its subject: every attack method here uses Llama-2-7B-Chat as the single fixed target, so the subject under study is the attack methods, not Meta's model. Tier B. The quote is truncated at a clean word boundary because the source continues 'be-' / 'cause' and 'jail-' / 'break' across line breaks, and hyphenation must not be repaired; the numbers come from Table 6, values outside parentheses being maximised and inside parentheses averaged over prompts.",
+        "finding_type": "methodology",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "The fine-tuned MD-Judge safety evaluator outscored keyword matching, GPT-3.5, GPT-4 and LlamaGuard on all five test sets, reaching F1 0.818 on SALAD-Base-Test and 0.873 on SALAD-Enhance-Test against GPT-4's 0.785/0.827 and LlamaGuard's 0.585/0.085, and held up out of distribution (83.72% on HarmBench, 79.27% on Lifetox).",
+        "finding_quote": "MD-Judge markedly surpasses its counterparts on both our proprietary test set and the publicly available safety test set",
+        "models_systems": "MD-Judge (fine-tuned from Mistral-7B)",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Eval-tooling",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 fails: the subject is the evaluation instrument the authors built, not a model under test. Tier C, action_trackable BLANK. Numbers verified against Tables 3 and 4. The quote is started mid-sentence after 'The compre-' / 'hensive outcomes reveal that' because 'comprehensive' is hyphenated across a line break in the source and must not be repaired. LlamaGuard's near-total failure on the attack-enhanced test set (F1 0.085) is a striking safety-classifier result but is a baseline/comparator for MD-Judge under §2 criterion 1 and §5, so it is logged here rather than carried as a Meta row.",
+        "finding_type": "methodology",
+        "access_type": "N/A"
+      },
+      {
+        "finding": "Human verification of SALAD-Bench's LLM-based auto-labelling pipeline (consensus of Mixtral-8x7B-Instruct, Mistral-7B-Instruct and TuluV2-dpo-70B) found 94.3% consistency with three-annotator ground-truth taxonomy labels, and a separate annotation check found 96.7% of the benchmark's questions were genuinely unsafe.",
+        "finding_quote": "The consistency rate between auto labeling and human labels achieves 94.3%.",
+        "models_systems": "SALAD-Bench auto-labeling pipeline (Mixtral-8x7B-Instruct, Mistral-7B-Instruct, TuluV2-dpo-70B)",
+        "institution": "Shanghai Artificial Intelligence Laboratory",
+        "domain": "Eval-methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 fails: a property of the benchmark-construction process, not an empirical finding about a model under test. Tier C, action_trackable BLANK. IMPORTANT CORRECTION to the earlier extraction, which attributed the 94.3% figure to MD-Judge: the source does not. The 94.3% is the consistency between the dataset's category-level AUTO LABELING toolkit (Section 2.2, a unanimous-consensus vote of Mixtral-8x7B-Instruct, Mistral-7B-Instruct and TuluV2-dpo-70B) and human ground-truth taxonomy labels - MD-Judge is a separate QA-pair evaluator scored by F1 in Table 3, and no 94.3% figure is reported for it anywhere in the paper. The quote itself was character-exact and is retained; the subject and Models/Systems fields are fixed. The 96.7% unsafe rate is from the appendix human-validation passage ('the unsafe ... rate of our questions is 96.7%'), which is interrupted by a figure caption in the extracted text and is therefore paraphrased rather than quoted.",
+        "finding_type": "methodology",
+        "access_type": "N/A"
+      }
+    ]
+  }
+]

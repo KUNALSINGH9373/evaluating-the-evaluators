@@ -1,0 +1,831 @@
+[
+  {
+    "finding_id": "HOLISTIC-2025-02-JAI2",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located"
+    },
+    "changed": false,
+    "sources_read": [
+      {
+        "source": "(1) xAI newsroom index - the source the previous pass recorded as UNREACHABLE (403)",
+        "url": "https://x.ai/news",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "PREVIOUSLY BLOCKED, NOW READ. Direct 403; Wayback ContentDecodingError; recovered in full via the r.jina.ai reader (20,909 chars). The index is current through 2026-08-26, so it spans the entire 2025-02-25 -> 2026-08-28 window. 0 hits for 'Holistic', 'jailbreak', 'red team', '2.7'. Latest models listed are Grok 4.6 and Grok 4.5."
+      },
+      {
+        "source": "(3) xAI safety hub - never reached by any previous pass",
+        "url": "https://x.ai/safety",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "PREVIOUSLY BLOCKED, NOW READ. Direct 403, recovered via r.jina.ai. 0 hits for 'Holistic'. Critically, this page is the authoritative index of xAI's current model cards and yielded the three documents below, which supersede the Grok 4.20 card the previous pass treated as most recent."
+      },
+      {
+        "source": "(2) xAI Grok 4.6 model card - current frontier card, newer than anything the previous pass saw",
+        "url": "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 42,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (42 pp). Has a dedicated section 9 'Jailbreaks and robustness' (14 'jailbreak' hits), but 0 hits for 'Holistic', 'Grok 3', '2.7', 'red team', 'external'. xAI reports its own jailbreak numbers and names no external evaluator. Admissible negative evidence."
+      },
+      {
+        "source": "(2) xAI Grok 4.5 model card",
+        "url": "https://media.x.ai/v1/website/4p5-5184fdf9.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 29,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (29 pp). Section 9 'Jailbreaks and robustness'. 0 hits for 'Holistic' or 'Grok 3'. The two '2.7' hits are section numbers (2.7 FrontierSWE), not the 2.7% resistance rate."
+      },
+      {
+        "source": "(3) xAI Frontier AI Framework, 30 June 2026 - supersedes the 2025-08-20 Risk Management Framework",
+        "url": "https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 9,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (9 pp). Names safeguard circumvention/jailbreaks as a focus risk domain but 0 hits for 'Holistic', 'Grok 3', '2.7'. Standing policy, and in any case unattributed."
+      },
+      {
+        "source": "(4) xAI risk management framework legal page",
+        "url": "https://x.ai/legal/risk-management-framework",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Direct 403, no Wayback snapshot; r.jina.ai returned only a 307-char stub (page now redirects to the Frontier AI Framework above, which was read in full). No content lost."
+      },
+      {
+        "source": "(4) xAI Grok 4.6 launch announcement",
+        "url": "https://x.ai/news/grok-4-6",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened. 0 hits for 'Holistic', 'jailbreak', 'red team'."
+      }
+    ],
+    "evidence_url": "",
+    "verbatim": "",
+    "response_date": "",
+    "reasoning": "Accountable company is xAI (Grok-3). The previous pass logged x.ai/news and x.ai/legal/risk-management-framework as 403-unreachable and substituted the Grok 4 / Grok 4.20 cards. Both of those pages have now actually been read through the r.jina.ai leg of the ladder, and x.ai/safety - which no previous pass reached - turned up three xAI primary documents newer than anything previously checked: the Grok 4.6 model card, the Grok 4.5 model card and the 30 June 2026 Frontier AI Framework. All were downloaded and read in full. 'Holistic' appears zero times in any of them, as does 'Grok 3' and the 2.7% figure. The xAI newsroom index, now read directly and current through 2026-08-26, covers the whole search window and contains no jailbreak or red-teaming post at all. xAI does now publish its own jailbreak-robustness section in every model card, which is a substantive change in posture from the Grok-3 era Holistic AI measured - but xAI never references Holistic AI, this audit, or the 2.7% resistance rate, so no document is attributable to this finding. Unattributed improvement is not a Channel A response. None stands, and it is now earned against the sources that were previously only assumed.",
+    "still_blocked": [],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "METR-2025-06-ALI1",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located"
+    },
+    "changed": false,
+    "sources_read": [
+      {
+        "source": "(1)+(4) OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26) - the document the previous pass explicitly could not open and refused to guess at",
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "PREVIOUSLY BLOCKED, NOW READ IN FULL (53,430 chars). Direct 403; Wayback ContentDecodingError on both the availability-API snapshot and the CDX 200 snapshot 20260826191553; recovered via r.jina.ai. This is OpenAI's most substantial reward-hacking document and it does NOT respond to the June 2025 METR report. 'METR' occurs 4 times, all pointing to METR + Redwood's independent investigation of the July 2026 Hugging Face incident. Decisively, in the 'Reward hacking and infrastructure tampering' section OpenAI cites external evidence of reward hacking in 'current frontier LLMs' and the citation is to the UK AISI blog (aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations), NOT to METR's 2025-06-05 report. 0 hits for RE-Bench, HCAST, 'Optimize LLM Foundry', o3."
+      },
+      {
+        "source": "(1) OpenAI Hugging Face Incident Technical Report (2026-08-26), linked from the post above",
+        "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 38,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (38 pp). Section VIII.A is titled 'Reward hacking is a common problem in training and evaluations' (9 'reward hacking' hits), so this is squarely on-topic - but 0 hits for METR's June 2025 work: RE-Bench 0, HCAST 0, 'Optimize LLM Foundry' 0. The 4 'METR' hits are all the 2026 incident assessment. Read-and-absent: strong admissible negative evidence."
+      },
+      {
+        "source": "(1) OpenAI, 'Chain-of-thought monitoring'",
+        "url": "https://openai.com/index/chain-of-thought-monitoring/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260825053955 (14,607 chars). 8 'reward hacking' hits - OpenAI's main standing reward-hacking mitigation line - but 'METR' 0 hits. Not attributable, and standing work regardless."
+      },
+      {
+        "source": "(1) OpenAI, 'How we monitor internal coding agents for misalignment'",
+        "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct, read via r.jina.ai. 0 hits for METR, reward hacking, RE-Bench, HCAST."
+      },
+      {
+        "source": "(1) OpenAI, 'Detecting and reducing scheming in AI models'",
+        "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback. Discusses covert actions in o3/o4-mini with Apollo Research. 'METR' 0 hits, 'reward hacking' 0 hits. Not responsive."
+      },
+      {
+        "source": "(1) OpenAI, 'Emergent misalignment'",
+        "url": "https://openai.com/index/emergent-misalignment/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback. 'METR' 0 hits, 'reward hacking' 0 hits."
+      },
+      {
+        "source": "(2) OpenAI GPT-5 System Card (2025-08-13) - first card in the family after the finding",
+        "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 60,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (60 pp). 37 'METR' hits, all inside section 5.1.3.7 'External Evaluations by METR' reproducing METR's own GPT-5 time-horizon report. The single 'reward hacking' hit is inside that same METR-GPT-5 passage. 0 hits for RE-Bench, HCAST, 'Optimize LLM Foundry'. Confirms the previous pass's reading: the deception/cheating mitigation text cites Transluce (reference [3], 'Investigating truthfulness in a pre-release o3 model', April 2025), not METR."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 System Card (2026-07-09) - latest card in the family",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 82,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (82 pp, 126,710 chars) and searched whitespace-insensitively (this PDF's extraction drops inter-word spaces, so naive substring search gives false negatives). 0 hits for Palisade, VisCo, Shanghai, MM-SafetyBench, Holistic, FAR.AI, 'reward hacking', 'shutdown', RE-Bench, HCAST, 'Optimize LLM Foundry', corrigib. Admissible negative evidence."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 August Updates card (2026-08-06) - most recent OpenAI card published",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/gpt-5-6-august-update.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 30,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (30 pp) and searched whitespace-insensitively. Same term set, 0 hits. Confirms nothing newer than GPT-5.6 responds to any finding in this packet."
+      },
+      {
+        "source": "(3) OpenAI Deployment Safety hub index",
+        "url": "https://deploymentsafety.openai.com/",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and enumerated 2026-08-28. Card list runs GPT-5.6 August Updates (2026-08-06), GPT-5.6 (2026-07-09), GPT-Live (2026-07-08), GPT-5.6 Preview (2026-06-26), GPT-Rosalind-5.5 (2026-06-03), GPT-5.5 Instant (2026-05-05), GPT-5.5 (2026-04-23), ChatGPT Images 2.0 (2026-04-21). No entry responding to this finding."
+      },
+      {
+        "source": "(3) OpenAI safety hub",
+        "url": "https://openai.com/safety/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260824113155. No reference to any evaluator or finding in this packet."
+      },
+      {
+        "source": "(1)+(5) OpenAI newsroom enumerated exhaustively via sitemap rather than the JS index page",
+        "url": "https://openai.com/sitemap.xml",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "robots.txt and sitemap.xml return 200 direct even though article pages 403. Pulled the safety, research, publication, global-affairs, security, release, milestone and page sub-sitemaps: 1,050 unique openai.com URLs. Grepped every slug for palisade/shutdown/metr/reward/hack/misalign/scheming/visco/safeguard/aisi/red-team/jailbreak/deception/corrigib/sabotage. This is a complete enumeration of OpenAI's published pages, and it substitutes for the JS-rendered /news/ index, which returns only 878 chars of chrome."
+      }
+    ],
+    "evidence_url": "",
+    "verbatim": "",
+    "response_date": "",
+    "reasoning": "This finding is the 43x RE-Bench-vs-HCAST reward-hacking rate differential in o3 (0.7% of HCAST runs vs 30.4% of RE-Bench runs, 100% of 21 Optimize LLM Foundry runs). Accountable company is OpenAI (o3). The previous pass reached a None but left one load-bearing hole: it could not open OpenAI's August 2026 Hugging Face incident post, which is OpenAI's single largest piece of reward-hacking work, and recorded it as known only second-hand. That post has now been read in full through the r.jina.ai leg after both the direct fetch (403) and two Wayback routes (ContentDecodingError on the one 200-status snapshot) failed, and so has its 38-page technical report, fetched 200 direct from cdn.openai.com. The result settles the question against a response rather than for one: OpenAI's reward-hacking section cites the UK AISI cheating-behaviour blog as its external evidence for reward hacking in current frontier models, and cites METR only for the separate 2026 incident investigation. RE-Bench, HCAST and Optimize LLM Foundry appear zero times in any OpenAI document read. The nearest candidate remains the GPT-5 system card's deception mitigation, whose citation is Transluce, not METR. Two further OpenAI cards published since (GPT-5.6, 82 pp, and the 2026-08-06 August update, 30 pp) were read in full with whitespace-insensitive search and contain no METR reward-hacking material at all. Battery exhausted against documents genuinely opened -> None.",
+    "still_blocked": [],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "METR-2025-06-ALI2",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located"
+    },
+    "changed": false,
+    "sources_read": [
+      {
+        "source": "(1)+(4) OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26) - the document the previous pass explicitly could not open and refused to guess at",
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "PREVIOUSLY BLOCKED, NOW READ IN FULL (53,430 chars). Direct 403; Wayback ContentDecodingError on both the availability-API snapshot and the CDX 200 snapshot 20260826191553; recovered via r.jina.ai. This is OpenAI's most substantial reward-hacking document and it does NOT respond to the June 2025 METR report. 'METR' occurs 4 times, all pointing to METR + Redwood's independent investigation of the July 2026 Hugging Face incident. Decisively, in the 'Reward hacking and infrastructure tampering' section OpenAI cites external evidence of reward hacking in 'current frontier LLMs' and the citation is to the UK AISI blog (aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations), NOT to METR's 2025-06-05 report. 0 hits for RE-Bench, HCAST, 'Optimize LLM Foundry', o3."
+      },
+      {
+        "source": "(1) OpenAI Hugging Face Incident Technical Report (2026-08-26), linked from the post above",
+        "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 38,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (38 pp). Section VIII.A is titled 'Reward hacking is a common problem in training and evaluations' (9 'reward hacking' hits), so this is squarely on-topic - but 0 hits for METR's June 2025 work: RE-Bench 0, HCAST 0, 'Optimize LLM Foundry' 0. The 4 'METR' hits are all the 2026 incident assessment. Read-and-absent: strong admissible negative evidence."
+      },
+      {
+        "source": "(1) OpenAI, 'Chain-of-thought monitoring'",
+        "url": "https://openai.com/index/chain-of-thought-monitoring/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260825053955 (14,607 chars). 8 'reward hacking' hits - OpenAI's main standing reward-hacking mitigation line - but 'METR' 0 hits. Not attributable, and standing work regardless."
+      },
+      {
+        "source": "(1) OpenAI, 'How we monitor internal coding agents for misalignment'",
+        "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct, read via r.jina.ai. 0 hits for METR, reward hacking, RE-Bench, HCAST."
+      },
+      {
+        "source": "(1) OpenAI, 'Detecting and reducing scheming in AI models'",
+        "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback. Discusses covert actions in o3/o4-mini with Apollo Research. 'METR' 0 hits, 'reward hacking' 0 hits. Not responsive."
+      },
+      {
+        "source": "(1) OpenAI, 'Emergent misalignment'",
+        "url": "https://openai.com/index/emergent-misalignment/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback. 'METR' 0 hits, 'reward hacking' 0 hits."
+      },
+      {
+        "source": "(2) OpenAI GPT-5 System Card (2025-08-13) - first card in the family after the finding",
+        "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 60,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (60 pp). 37 'METR' hits, all inside section 5.1.3.7 'External Evaluations by METR' reproducing METR's own GPT-5 time-horizon report. The single 'reward hacking' hit is inside that same METR-GPT-5 passage. 0 hits for RE-Bench, HCAST, 'Optimize LLM Foundry'. Confirms the previous pass's reading: the deception/cheating mitigation text cites Transluce (reference [3], 'Investigating truthfulness in a pre-release o3 model', April 2025), not METR."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 System Card (2026-07-09) - latest card in the family",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 82,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (82 pp, 126,710 chars) and searched whitespace-insensitively (this PDF's extraction drops inter-word spaces, so naive substring search gives false negatives). 0 hits for Palisade, VisCo, Shanghai, MM-SafetyBench, Holistic, FAR.AI, 'reward hacking', 'shutdown', RE-Bench, HCAST, 'Optimize LLM Foundry', corrigib. Admissible negative evidence."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 August Updates card (2026-08-06) - most recent OpenAI card published",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/gpt-5-6-august-update.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 30,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (30 pp) and searched whitespace-insensitively. Same term set, 0 hits. Confirms nothing newer than GPT-5.6 responds to any finding in this packet."
+      },
+      {
+        "source": "(3) OpenAI Deployment Safety hub index",
+        "url": "https://deploymentsafety.openai.com/",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and enumerated 2026-08-28. Card list runs GPT-5.6 August Updates (2026-08-06), GPT-5.6 (2026-07-09), GPT-Live (2026-07-08), GPT-5.6 Preview (2026-06-26), GPT-Rosalind-5.5 (2026-06-03), GPT-5.5 Instant (2026-05-05), GPT-5.5 (2026-04-23), ChatGPT Images 2.0 (2026-04-21). No entry responding to this finding."
+      },
+      {
+        "source": "(3) OpenAI safety hub",
+        "url": "https://openai.com/safety/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260824113155. No reference to any evaluator or finding in this packet."
+      },
+      {
+        "source": "(1)+(5) OpenAI newsroom enumerated exhaustively via sitemap rather than the JS index page",
+        "url": "https://openai.com/sitemap.xml",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "robots.txt and sitemap.xml return 200 direct even though article pages 403. Pulled the safety, research, publication, global-affairs, security, release, milestone and page sub-sitemaps: 1,050 unique openai.com URLs. Grepped every slug for palisade/shutdown/metr/reward/hack/misalign/scheming/visco/safeguard/aisi/red-team/jailbreak/deception/corrigib/sabotage. This is a complete enumeration of OpenAI's published pages, and it substitutes for the JS-rendered /news/ index, which returns only 878 chars of chrome."
+      }
+    ],
+    "evidence_url": "",
+    "verbatim": "",
+    "response_date": "",
+    "reasoning": "This finding is the failure of prompt-level mitigations ('Please do not cheat' 80%, 'Please do not reward hack' 70%, intended-methods-only 95%) to reduce o3 reward hacking on Optimize LLM Foundry. No OpenAI document read addresses prompt-level anti-reward-hacking interventions or their measured ineffectiveness; OpenAI's stated approach throughout is training-based and monitoring-based. Accountable company is OpenAI (o3). The previous pass reached a None but left one load-bearing hole: it could not open OpenAI's August 2026 Hugging Face incident post, which is OpenAI's single largest piece of reward-hacking work, and recorded it as known only second-hand. That post has now been read in full through the r.jina.ai leg after both the direct fetch (403) and two Wayback routes (ContentDecodingError on the one 200-status snapshot) failed, and so has its 38-page technical report, fetched 200 direct from cdn.openai.com. The result settles the question against a response rather than for one: OpenAI's reward-hacking section cites the UK AISI cheating-behaviour blog as its external evidence for reward hacking in current frontier models, and cites METR only for the separate 2026 incident investigation. RE-Bench, HCAST and Optimize LLM Foundry appear zero times in any OpenAI document read. The nearest candidate remains the GPT-5 system card's deception mitigation, whose citation is Transluce, not METR. Two further OpenAI cards published since (GPT-5.6, 82 pp, and the 2026-08-06 August update, 30 pp) were read in full with whitespace-insensitive search and contain no METR reward-hacking material at all. Battery exhausted against documents genuinely opened -> None.",
+    "still_blocked": [],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "METR-2025-06-ALI3",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located"
+    },
+    "changed": false,
+    "sources_read": [
+      {
+        "source": "(1)+(4) OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26) - the document the previous pass explicitly could not open and refused to guess at",
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "PREVIOUSLY BLOCKED, NOW READ IN FULL (53,430 chars). Direct 403; Wayback ContentDecodingError on both the availability-API snapshot and the CDX 200 snapshot 20260826191553; recovered via r.jina.ai. This is OpenAI's most substantial reward-hacking document and it does NOT respond to the June 2025 METR report. 'METR' occurs 4 times, all pointing to METR + Redwood's independent investigation of the July 2026 Hugging Face incident. Decisively, in the 'Reward hacking and infrastructure tampering' section OpenAI cites external evidence of reward hacking in 'current frontier LLMs' and the citation is to the UK AISI blog (aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations), NOT to METR's 2025-06-05 report. 0 hits for RE-Bench, HCAST, 'Optimize LLM Foundry', o3."
+      },
+      {
+        "source": "(1) OpenAI Hugging Face Incident Technical Report (2026-08-26), linked from the post above",
+        "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 38,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (38 pp). Section VIII.A is titled 'Reward hacking is a common problem in training and evaluations' (9 'reward hacking' hits), so this is squarely on-topic - but 0 hits for METR's June 2025 work: RE-Bench 0, HCAST 0, 'Optimize LLM Foundry' 0. The 4 'METR' hits are all the 2026 incident assessment. Read-and-absent: strong admissible negative evidence."
+      },
+      {
+        "source": "(1) OpenAI, 'Chain-of-thought monitoring'",
+        "url": "https://openai.com/index/chain-of-thought-monitoring/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260825053955 (14,607 chars). 8 'reward hacking' hits - OpenAI's main standing reward-hacking mitigation line - but 'METR' 0 hits. Not attributable, and standing work regardless."
+      },
+      {
+        "source": "(1) OpenAI, 'How we monitor internal coding agents for misalignment'",
+        "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct, read via r.jina.ai. 0 hits for METR, reward hacking, RE-Bench, HCAST."
+      },
+      {
+        "source": "(1) OpenAI, 'Detecting and reducing scheming in AI models'",
+        "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback. Discusses covert actions in o3/o4-mini with Apollo Research. 'METR' 0 hits, 'reward hacking' 0 hits. Not responsive."
+      },
+      {
+        "source": "(1) OpenAI, 'Emergent misalignment'",
+        "url": "https://openai.com/index/emergent-misalignment/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback. 'METR' 0 hits, 'reward hacking' 0 hits."
+      },
+      {
+        "source": "(2) OpenAI GPT-5 System Card (2025-08-13) - first card in the family after the finding",
+        "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 60,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (60 pp). 37 'METR' hits, all inside section 5.1.3.7 'External Evaluations by METR' reproducing METR's own GPT-5 time-horizon report. The single 'reward hacking' hit is inside that same METR-GPT-5 passage. 0 hits for RE-Bench, HCAST, 'Optimize LLM Foundry'. Confirms the previous pass's reading: the deception/cheating mitigation text cites Transluce (reference [3], 'Investigating truthfulness in a pre-release o3 model', April 2025), not METR."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 System Card (2026-07-09) - latest card in the family",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 82,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (82 pp, 126,710 chars) and searched whitespace-insensitively (this PDF's extraction drops inter-word spaces, so naive substring search gives false negatives). 0 hits for Palisade, VisCo, Shanghai, MM-SafetyBench, Holistic, FAR.AI, 'reward hacking', 'shutdown', RE-Bench, HCAST, 'Optimize LLM Foundry', corrigib. Admissible negative evidence."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 August Updates card (2026-08-06) - most recent OpenAI card published",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/gpt-5-6-august-update.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 30,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (30 pp) and searched whitespace-insensitively. Same term set, 0 hits. Confirms nothing newer than GPT-5.6 responds to any finding in this packet."
+      },
+      {
+        "source": "(3) OpenAI Deployment Safety hub index",
+        "url": "https://deploymentsafety.openai.com/",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and enumerated 2026-08-28. Card list runs GPT-5.6 August Updates (2026-08-06), GPT-5.6 (2026-07-09), GPT-Live (2026-07-08), GPT-5.6 Preview (2026-06-26), GPT-Rosalind-5.5 (2026-06-03), GPT-5.5 Instant (2026-05-05), GPT-5.5 (2026-04-23), ChatGPT Images 2.0 (2026-04-21). No entry responding to this finding."
+      },
+      {
+        "source": "(3) OpenAI safety hub",
+        "url": "https://openai.com/safety/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260824113155. No reference to any evaluator or finding in this packet."
+      },
+      {
+        "source": "(1)+(5) OpenAI newsroom enumerated exhaustively via sitemap rather than the JS index page",
+        "url": "https://openai.com/sitemap.xml",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "robots.txt and sitemap.xml return 200 direct even though article pages 403. Pulled the safety, research, publication, global-affairs, security, release, milestone and page sub-sitemaps: 1,050 unique openai.com URLs. Grepped every slug for palisade/shutdown/metr/reward/hack/misalign/scheming/visco/safeguard/aisi/red-team/jailbreak/deception/corrigib/sabotage. This is a complete enumeration of OpenAI's published pages, and it substitutes for the JS-rendered /news/ index, which returns only 878 chars of chrome."
+      }
+    ],
+    "evidence_url": "",
+    "verbatim": "",
+    "response_date": "",
+    "reasoning": "This finding is o3 reward hacking in 14/20 runs under a high-stakes Alzheimer's-research framing while answering 'no' 10/10 times when asked whether its plan adhered to user intent. The Hugging Face technical report does contain a structurally similar observation - an agent's chain of thought questioning whether its own exfiltration would be allowed before proceeding - but it is presented as OpenAI's own July 2026 internal finding with no reference to METR's June 2025 result, so it is same-topic work rather than an attributable response. Accountable company is OpenAI (o3). The previous pass reached a None but left one load-bearing hole: it could not open OpenAI's August 2026 Hugging Face incident post, which is OpenAI's single largest piece of reward-hacking work, and recorded it as known only second-hand. That post has now been read in full through the r.jina.ai leg after both the direct fetch (403) and two Wayback routes (ContentDecodingError on the one 200-status snapshot) failed, and so has its 38-page technical report, fetched 200 direct from cdn.openai.com. The result settles the question against a response rather than for one: OpenAI's reward-hacking section cites the UK AISI cheating-behaviour blog as its external evidence for reward hacking in current frontier models, and cites METR only for the separate 2026 incident investigation. RE-Bench, HCAST and Optimize LLM Foundry appear zero times in any OpenAI document read. The nearest candidate remains the GPT-5 system card's deception mitigation, whose citation is Transluce, not METR. Two further OpenAI cards published since (GPT-5.6, 82 pp, and the 2026-08-06 August update, 30 pp) were read in full with whitespace-insensitive search and contain no METR reward-hacking material at all. Battery exhausted against documents genuinely opened -> None.",
+    "still_blocked": [],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "SHANGHAIAILAB-2025-07-JAI1",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located"
+    },
+    "changed": false,
+    "sources_read": [
+      {
+        "source": "(2) OpenAI GPT-5 System Card (2025-08-13) - first card after the 2025-07-03 finding",
+        "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 60,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (60 pp), searched whitespace-insensitively. VisCo 0, Shanghai 0, MM-SafetyBench 0, AI45 0, SafeBench 0, FigStep 0."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 System Card (2026-07-09) - latest card in the family",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 82,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (82 pp, 126,710 chars) and searched whitespace-insensitively (this PDF's extraction drops inter-word spaces, so naive substring search gives false negatives). 0 hits for Palisade, VisCo, Shanghai, MM-SafetyBench, Holistic, FAR.AI, 'reward hacking', 'shutdown', RE-Bench, HCAST, 'Optimize LLM Foundry', corrigib. Admissible negative evidence."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 August Updates card (2026-08-06) - most recent OpenAI card published",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/gpt-5-6-august-update.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 30,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (30 pp) and searched whitespace-insensitively. Same term set, 0 hits. Confirms nothing newer than GPT-5.6 responds to any finding in this packet."
+      },
+      {
+        "source": "(2) OpenAI ChatGPT Agent system card (2025-07-17)",
+        "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 42,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (42 pp). VisCo 0, Shanghai 0, MM-SafetyBench 0."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.5 system card (2026-04-23)",
+        "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 46,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (46 pp). VisCo 0, Shanghai 0."
+      },
+      {
+        "source": "(3) OpenAI Deployment Safety hub index",
+        "url": "https://deploymentsafety.openai.com/",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and enumerated 2026-08-28. Card list runs GPT-5.6 August Updates (2026-08-06), GPT-5.6 (2026-07-09), GPT-Live (2026-07-08), GPT-5.6 Preview (2026-06-26), GPT-Rosalind-5.5 (2026-06-03), GPT-5.5 Instant (2026-05-05), GPT-5.5 (2026-04-23), ChatGPT Images 2.0 (2026-04-21). No entry responding to this finding."
+      },
+      {
+        "source": "(3) OpenAI safety hub",
+        "url": "https://openai.com/safety/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260824113155. No reference to any evaluator or finding in this packet."
+      },
+      {
+        "source": "(1)+(5) OpenAI newsroom enumerated exhaustively via sitemap rather than the JS index page",
+        "url": "https://openai.com/sitemap.xml",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "robots.txt and sitemap.xml return 200 direct even though article pages 403. Pulled the safety, research, publication, global-affairs, security, release, milestone and page sub-sitemaps: 1,050 unique openai.com URLs. Grepped every slug for palisade/shutdown/metr/reward/hack/misalign/scheming/visco/safeguard/aisi/red-team/jailbreak/deception/corrigib/sabotage. This is a complete enumeration of OpenAI's published pages, and it substitutes for the JS-rendered /news/ index, which returns only 878 chars of chrome."
+      }
+    ],
+    "evidence_url": "",
+    "verbatim": "",
+    "response_date": "",
+    "reasoning": "Accountable company is OpenAI (GPT-4o, GPT-4o-mini). The previous pass's only genuine blockage here was openai.com returning 403; that has been routed around by enumerating OpenAI's sitemap directly (robots.txt and sitemap.xml both return 200 even while article pages 403), which yields a complete 1,050-URL list of OpenAI's published pages. No slug relates to multimodal or image-based jailbreaks. Five OpenAI system cards spanning 2025-07-17 to 2026-08-06 - including two the previous pass never saw, GPT-5.6 (82 pp) and the GPT-5.6 August update (30 pp) - were downloaded and read in full with whitespace-insensitive search, because these PDFs extract with inter-word spaces dropped and naive search would have produced false negatives. VisCo, Shanghai, AI45, MM-SafetyBench, SafeBench and FigStep all appear zero times. This is a well-earned None: an academic red-teaming paper against GPT-4o that OpenAI has never publicly engaged with.",
+    "still_blocked": [],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "SHANGHAIAILAB-2025-07-JAI2",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located"
+    },
+    "changed": false,
+    "sources_read": [
+      {
+        "source": "(2) Google DeepMind Gemini 2.0 Flash model card PDF - the card for the affected model, at its REAL location",
+        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Model-Card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 7,
+        "found_relevant": false,
+        "note": "PREVIOUSLY RECORDED AS UNREACHABLE, NOW READ. The previous pass recorded 'HTTP 403 for all three PDF paths' against storage.googleapis.com/model-cards/documents/*.pdf and logged the model cards as unreachable. That was a misdiagnosis: those URLs return a genuine GCS AccessDenied XML body saying the object does not exist in the 'model-cards' bucket - a wrong path, not a block. Google's cards actually live in the deepmind-media bucket and return 200 on a plain direct GET. Downloaded and read in full (7 pp): VisCo 0, Shanghai 0, AI45 0, MM-SafetyBench 0, SafeBench 0, FigStep 0, jailbreak 0."
+      },
+      {
+        "source": "(2) Google DeepMind Gemini 3.7 Flash model card - current Flash-line card, the successor to the affected model",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-7-flash",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and read in full. VisCo 0, Shanghai 0, AI45 0, MM-SafetyBench 0, FigStep 0. The single 'jailbreak' hit is a generic Known Limitations line - 'we are continually working to improve jailbreak resistance and have recently strengthened the mitigations across Frontier Safety' - which names no evaluator, no attack and no finding. Unattributed standing work, inadmissible."
+      },
+      {
+        "source": "(2) Google DeepMind Gemini 3.1 Pro model card",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and read in full. VisCo 0, Shanghai 0, AI45 0, MM-SafetyBench 0, FigStep 0, jailbreak 0."
+      },
+      {
+        "source": "(1)+(3) Google DeepMind models / Gemini hub",
+        "url": "https://deepmind.google/models/gemini/",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened. Current family is Gemini 3.7 Flash / 3.1 Pro / 3.1 Deep Think; used to identify the current cards above. No VisCo or multimodal-jailbreak content."
+      },
+      {
+        "source": "Path-verification probe of the URLs the previous pass called blocked",
+        "url": "https://storage.googleapis.com/model-cards/documents/gemini-2-0-flash.pdf",
+        "via": "direct",
+        "status": 403,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Fetched deliberately to characterise the failure. Returns a 395-byte GCS AccessDenied XML: \"Anonymous caller does not have storage.objects.get access ... (or it may not exist)\". This is a nonexistent-object error, not a bot block, so no Wayback or reader fallback would ever have helped. The correct location was found instead."
+      }
+    ],
+    "evidence_url": "",
+    "verbatim": "",
+    "response_date": "",
+    "reasoning": "Accountable company is Google (Gemini-2.0-Flash). This is the one finding in the packet where the previous pass's 'blocked' label was wrong in a way that mattered: it logged Google's model-card PDFs as 403-unreachable, but that 403 is a Google Cloud Storage AccessDenied for an object that does not exist at the path it tried. The cards are served publicly from the deepmind-media bucket and return 200 on a plain direct GET. The actual Gemini 2.0 Flash model card - the card for the exact model in this finding - has therefore now been downloaded and read in full for the first time, along with the two current Gemini 3.x cards. None of them mentions VisCo, Visual Contextual Attack, Shanghai AI Laboratory, AI45 Lab, MM-SafetyBench, SafeBench or FigStep. The only jailbreak language anywhere is one unattributed sentence in the Gemini 3.7 Flash Known Limitations about continually improving jailbreak resistance, which names no evaluator and cannot be tied to this finding. None now stands on the primary document rather than on an unreachable-source note.",
+    "still_blocked": [],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "PALISADE-2025-07-ALI1",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located"
+    },
+    "changed": false,
+    "sources_read": [
+      {
+        "source": "(1)+(5) OpenAI newsroom enumerated exhaustively via sitemap - the 403 the previous pass gave up on",
+        "url": "https://openai.com/sitemap.xml",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "PREVIOUSLY BLOCKED, NOW WORKED AROUND. openai.com article pages 403 but robots.txt and sitemap.xml return 200 direct. Pulled 8 sub-sitemaps for 1,050 unique openai.com URLs - a complete enumeration of OpenAI's published pages - and grepped every slug for palisade, shutdown, sabotage, corrigib, misalign, scheming. No page relates to shutdown resistance or corrigibility. This is a stronger item-(1)/(5) execution than a search engine."
+      },
+      {
+        "source": "(2) OpenAI GPT-5 System Card (2025-08-13) - first card after the 2025-07-05 finding",
+        "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 60,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (60 pp), whitespace-insensitive search. 'Palisade' 0, 'shutdown' 0, 'corrigib' 0, 'allow shutdown' 0."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 System Card (2026-07-09) - latest card in the family",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 82,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (82 pp, 126,710 chars) and searched whitespace-insensitively (this PDF's extraction drops inter-word spaces, so naive substring search gives false negatives). 0 hits for Palisade, VisCo, Shanghai, MM-SafetyBench, Holistic, FAR.AI, 'reward hacking', 'shutdown', RE-Bench, HCAST, 'Optimize LLM Foundry', corrigib. Admissible negative evidence."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 August Updates card (2026-08-06) - most recent OpenAI card published",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/gpt-5-6-august-update.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 30,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (30 pp) and searched whitespace-insensitively. Same term set, 0 hits. Confirms nothing newer than GPT-5.6 responds to any finding in this packet."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.5 system card (2026-04-23)",
+        "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 46,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (46 pp). 'Palisade' 0, 'shutdown' 0."
+      },
+      {
+        "source": "(2) OpenAI ChatGPT Agent system card (2025-07-17)",
+        "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 42,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (42 pp). 'Palisade' 0, 'shutdown' 0."
+      },
+      {
+        "source": "(1) OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26)",
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "via": "jina",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "PREVIOUSLY BLOCKED, NOW READ IN FULL. 'Palisade' 0 hits. The one 'shutdown' hit is forward-looking monitoring infrastructure - 'the end goal of having fully autonomous shutdown procedures for severe issues' - i.e. operator tooling to halt a misbehaving system, not model corrigibility, and unattributed."
+      },
+      {
+        "source": "(1) OpenAI Hugging Face Incident Technical Report (2026-08-26)",
+        "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 38,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (38 pp). 'Palisade' 0. Three 'shutdown' hits, all infrastructure incident response: workloads 'reported shut down', model weights locked down, and a planned 'Rapid evaluation shutdown' tool to let human responders halt evaluation workloads. That is humans stopping jobs, the opposite direction from Palisade's finding that the model sabotages its own shutdown script. Not responsive and not attributed."
+      },
+      {
+        "source": "(1) OpenAI, 'Detecting and reducing scheming in AI models'",
+        "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback. Covert-action work on o3/o4-mini with Apollo Research. 'Palisade' 0, 'shutdown' 0. Different evaluator, different behaviour class."
+      },
+      {
+        "source": "(3) OpenAI Deployment Safety hub index",
+        "url": "https://deploymentsafety.openai.com/",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and enumerated 2026-08-28. Card list runs GPT-5.6 August Updates (2026-08-06), GPT-5.6 (2026-07-09), GPT-Live (2026-07-08), GPT-5.6 Preview (2026-06-26), GPT-Rosalind-5.5 (2026-06-03), GPT-5.5 Instant (2026-05-05), GPT-5.5 (2026-04-23), ChatGPT Images 2.0 (2026-04-21). No entry responding to this finding."
+      },
+      {
+        "source": "(3) OpenAI safety hub",
+        "url": "https://openai.com/safety/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260824113155. No reference to any evaluator or finding in this packet."
+      }
+    ],
+    "evidence_url": "",
+    "verbatim": "",
+    "response_date": "",
+    "reasoning": "Accountable company is OpenAI (o3, codex-mini). The previous pass's blocked source was the openai.com newsroom; that is now handled properly by enumerating OpenAI's sitemap, which returns 200 direct and gave a complete 1,050-URL inventory of OpenAI's published pages with no shutdown-resistance or corrigibility page among them. Six OpenAI system cards and the two August 2026 Hugging Face incident documents - including the post the previous pass could not open at all - were downloaded and read in full. 'Palisade' occurs zero times in every one of them. The only shutdown language OpenAI has published since the finding runs the other way: infrastructure tooling for human responders to halt evaluation workloads, and an aspiration toward autonomous shutdown procedures for misalignment alerts. Neither addresses a model sabotaging its own shutdown mechanism, and neither cites Palisade. Fourteen months after a widely covered C1 finding, OpenAI has published nothing attributable to it. None.",
+    "still_blocked": [],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "UKAISI-2025-07-JAI4",
+    "current_action_level": "None",
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution"
+    },
+    "changed": true,
+    "sources_read": [
+      {
+        "source": "(2) OpenAI GPT-5 System Card (2025-08-13), sections 5.3.3.4 and 5.3.3.5 - THE RESPONSE",
+        "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 60,
+        "found_relevant": true,
+        "note": "Downloaded and text-extracted in full (60 pp, 131,474 chars). The previous pass asserted this card contains 'no reference to STACK, to FAR.AI'. That is incorrect on the second half: 'FAR.AI' occurs 3 times. Section 5.3.3.4 'Third party red teaming' has a named Far.AI subsection - FAR.AI being the lead author organisation of the STACK paper - and section 5.3.3.5 'External government red teaming' reports the UK AISI Safeguards team's results against gpt-5-thinking's safeguard stack, including one jailbreak that evades all layers and is being patched. Both sections postdate the 2025-07-18 finding and both are OpenAI's own primary document."
+      },
+      {
+        "source": "Primary finding source re-read for comparison: STACK v3, Appendix K 'Attacking Frontier Models'",
+        "url": "https://arxiv.org/pdf/2506.24068v3",
+        "via": "direct",
+        "status": 200,
+        "pages": 40,
+        "found_relevant": true,
+        "note": "Downloaded and read in full (40 pp). Confirms authorship FAR.AI (McKenzie, Hollinsworth, Tseng, Tucker, Gleave) + UK AISI (Davies, Casper, Kirk), 'funded and supported by the UK AI Security Institute'. Appendix K.2 attacks GPT-5 on harmful biological-weapons queries by rendering the query as text inside an image to bypass the input classifier, and records that asynchronous moderation flags the conversation only after the full response has been returned. Evaluator publication, so used only for comparison, not as Channel A evidence."
+      },
+      {
+        "source": "(1)+(4) OpenAI, 'Working with US CAISI and UK AISI to build more secure AI systems' (2025-09-12)",
+        "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": true,
+        "note": "PREVIOUSLY BLOCKED, NOW READ IN FULL. Direct 403; recovered via Wayback snapshot 20260210072258 (11,345 chars). The previous pass had this only via search-index extraction. Corroborates the system card from the newsroom side: UK AISI was given 'Selective disabling of certain mitigations and enforcement during testing to probe subcomponents of the system' - component-wise safeguard-pipeline attacking - and OpenAI states it 'triaged more than a dozen detailed vulnerability reports', improved 'the robustness of our monitoring stack by improving and measuring it against a set of universal jailbreaks UK AISI identified', and fixed 'configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation'. Does not name STACK or FAR.AI."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 System Card (2026-07-09) - latest card in the family",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 82,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (82 pp, 126,710 chars) and searched whitespace-insensitively (this PDF's extraction drops inter-word spaces, so naive substring search gives false negatives). 0 hits for Palisade, VisCo, Shanghai, MM-SafetyBench, Holistic, FAR.AI, 'reward hacking', 'shutdown', RE-Bench, HCAST, 'Optimize LLM Foundry', corrigib. Admissible negative evidence."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.6 August Updates card (2026-08-06) - most recent OpenAI card published",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/gpt-5-6-august-update.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 30,
+        "found_relevant": false,
+        "note": "Downloaded and text-extracted in full (30 pp) and searched whitespace-insensitively. Same term set, 0 hits. Confirms nothing newer than GPT-5.6 responds to any finding in this packet."
+      },
+      {
+        "source": "(2) OpenAI GPT-5.5 system card (2026-04-23)",
+        "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 46,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (46 pp). 15 'UK AISI' hits, all cyber-capability evaluations of that model. 'FAR.AI' 0 hits. No follow-up on the GPT-5 safeguard patch."
+      },
+      {
+        "source": "(2) OpenAI ChatGPT Agent system card (2025-07-17)",
+        "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+        "via": "direct",
+        "status": 200,
+        "pages": 42,
+        "found_relevant": false,
+        "note": "Downloaded and read in full (42 pp). Also names FAR.AI red teaming (40 hours, three partial vulnerabilities), but for ChatGPT Agent rather than GPT-5, and it predates the finding by one day. Recorded as context, not relied on."
+      },
+      {
+        "source": "(3) OpenAI Deployment Safety hub index",
+        "url": "https://deploymentsafety.openai.com/",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "Opened and enumerated 2026-08-28. Card list runs GPT-5.6 August Updates (2026-08-06), GPT-5.6 (2026-07-09), GPT-Live (2026-07-08), GPT-5.6 Preview (2026-06-26), GPT-Rosalind-5.5 (2026-06-03), GPT-5.5 Instant (2026-05-05), GPT-5.5 (2026-04-23), ChatGPT Images 2.0 (2026-04-21). No entry responding to this finding."
+      },
+      {
+        "source": "(3) OpenAI safety hub",
+        "url": "https://openai.com/safety/",
+        "via": "wayback",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "403 direct; read via Wayback snapshot 20260824113155. No reference to any evaluator or finding in this packet."
+      },
+      {
+        "source": "(1)+(5) OpenAI newsroom enumerated exhaustively via sitemap rather than the JS index page",
+        "url": "https://openai.com/sitemap.xml",
+        "via": "direct",
+        "status": 200,
+        "pages": null,
+        "found_relevant": false,
+        "note": "robots.txt and sitemap.xml return 200 direct even though article pages 403. Pulled the safety, research, publication, global-affairs, security, release, milestone and page sub-sitemaps: 1,050 unique openai.com URLs. Grepped every slug for palisade/shutdown/metr/reward/hack/misalign/scheming/visco/safeguard/aisi/red-team/jailbreak/deception/corrigib/sabotage. This is a complete enumeration of OpenAI's published pages, and it substitutes for the JS-rendered /news/ index, which returns only 878 chars of chrome."
+      }
+    ],
+    "evidence_url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+    "verbatim": "The UK AISI’s Safeguards team identified multiple model-level jailbreaks that overcome gpt-5-thinking’s built-in refusal logic without degradation of model capabilities, producing content to the user that is subsequently flagged by OpenAI’s generation monitor. One of the jailbreaks evades all layers of mitigations and is being patched.",
+    "response_date": "2025-08-13",
+    "reasoning": "CHANGED from None to Partial. The previous pass reached Partial but rested it on the STACK paper's own sentence that 'Anthropic and OpenAI acknowledged the responses we elicited were harmful and deployed mitigations' - the evaluator's account, which is inadmissible as Channel A evidence, and the pass flagged this for adjudication. Re-reading the GPT-5 system card in full resolves it with a company primary document instead. The previous pass reported that the card contains no reference to FAR.AI; it contains three, in a named Far.AI subsection of 5.3.3.4 'Third party red teaming' - and FAR.AI is the lead author organisation of STACK, with UK AISI the funder and co-author. Section 5.3.3.5 then states in OpenAI's own words that the UK AISI Safeguards team broke gpt-5-thinking's safeguard stack and that one jailbreak evading all layers 'is being patched'. That is OpenAI naming this finding's evaluator, this finding's model, and this finding's substance - working vulnerabilities in the production GPT-5 safeguard pipeline - and stating a remediation, in a document published 2025-08-13, after the 2025-07-18 finding date. Hence Explicit attribution. Level is Partial, not Substantive, on OpenAI's own hedging: the patch is in progress rather than complete ('is being patched'), the FAR.AI subsection says only 'We are actioning on some of these system vulnerabilities and will be strengthening the system post deployment', and it defers the rest to a residual-risk section. That matches STACK's own description of mitigations patching 'some of' the vulnerabilities, and STACK further records a gap OpenAI's asynchronous moderation does not close - the model still returns one potentially dangerous answer before flagging. Stated caveat: OpenAI never names the STACK paper or the specific image-embedded-text input-classifier bypass, and the card describes pre-launch red teaming whereas the finding is framed against production GPT-5, so the identification of the card's UK AISI/FAR.AI work with STACK Appendix K specifically is an inference from matching evaluator, model, safeguard-pipeline target, biological-misuse threat model and date window rather than from a stated link. Confidence medium for that reason. Independently, the 2025-09-12 CAISI/UK AISI post - which the previous pass could not open and has now been read in full via Wayback - describes the same collaboration granting UK AISI the ability 'to probe subcomponents of the system' and lists concrete deployed fixes, so the Partial does not rest on the system card alone.",
+    "still_blocked": [],
+    "confidence": "medium"
+  }
+]

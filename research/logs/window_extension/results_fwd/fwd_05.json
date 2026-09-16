@@ -1,0 +1,200 @@
+[
+ {
+  "venue": "Collective Intelligence Project (Weval)",
+  "surfaces_checked": [
+   {
+    "url": "https://blog.cip.org/api/v1/archive?sort=new&limit=12&offset=0 (and offsets 12, 24) - complete reverse-chronological archive behind https://blog.cip.org/p",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 22
+   },
+   {
+    "url": "https://www.cip.org/blog",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 20
+   },
+   {
+    "url": "https://www.cip.org/sitemap.xml (full enumeration of /blog and /research entries)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 114
+   },
+   {
+    "url": "https://weval.org/cards",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 24
+   },
+   {
+    "url": "https://weval.org/ (full evaluation index) and https://weval.org/api/homepage-summary (all 198 blueprint configs with every run timestamp)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 198
+   }
+  ],
+  "items": [
+   {
+    "title": "People want to expand their democratic agency. AI can help them get there.",
+    "url": "https://blog.cip.org/p/people-want-to-expand-their-democratic",
+    "date": "2026-08-25",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§2 (unit of analysis: a finding must be an empirical model finding, a methodology/tooling finding, or a governance/process finding); §1 scope",
+    "reason": "Reports Global Dialogues Round 9, a structured public-opinion survey of 1,103 human participants across 69 countries about attitudes to AI in democratic processes. Every measured quantity (48.7% feel their view will not change anything; 77.2% more likely to participate given an AI-generated household impact report; 70.6% say AI should never set a criminal sentence) is a fact about human respondents, not about any AI model, evaluation method or governance process. No AI system is tested and no model is named, so none of the three qualifying kinds of finding is present.",
+    "findings": []
+   }
+  ],
+  "zero_yield": true,
+  "unreadable": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "surfaces_checked": [
+   {
+    "url": "https://ai45.shlab.org.cn/research/index.xml (English RSS, complete post list)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 8
+   },
+   {
+    "url": "https://ai45.shlab.org.cn/research/index.json (English full-content index)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 8
+   },
+   {
+    "url": "https://ai45.shlab.org.cn/research/en/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 8
+   },
+   {
+    "url": "https://ai45.shlab.org.cn/research/zh/index.xml (Chinese RSS)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 8
+   },
+   {
+    "url": "https://ai45.shlab.org.cn/AllPublicationList.json (the JSON the AI45 SPA loads to render its own Publication list)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 8
+   },
+   {
+    "url": "https://ai45.shlab.org.cn/PublicationList.json",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 3
+   },
+   {
+    "url": "https://ai45.shlab.org.cn/ (SPA shell) and /assets/index-d7d466a1.js (bundle inspected for the data endpoints behind the Publication/News/Blog panels)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 0
+   },
+   {
+    "url": "https://ai45lab.github.io/",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 0
+   },
+   {
+    "url": "https://research.ai45.shlab.org.cn/Blog_pics",
+    "via": "direct",
+    "status": 404,
+    "items_seen": 0
+   }
+  ],
+  "items": [],
+  "zero_yield": true,
+  "unreadable": [
+   {
+    "url": "https://research.ai45.shlab.org.cn/",
+    "status": "403 direct; Wayback ladder returned 'no snapshot' - surface could not be read. Recorded as unreadable, NOT as a clean zero."
+   }
+  ]
+ },
+ {
+  "venue": "Gray Swan AI",
+  "surfaces_checked": [
+   {
+    "url": "https://www.grayswan.ai/research",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 35
+   },
+   {
+    "url": "https://www.grayswan.ai/blog",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 11
+   },
+   {
+    "url": "https://www.grayswan.ai/news",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 8
+   }
+  ],
+  "items": [
+   {
+    "title": "Gray Swan Integrates with TrueFoundry",
+    "url": "https://www.grayswan.ai/news/gray-swan-integrates-with-truefoundry",
+    "date": "2026-07-31",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§2 (announcements and partnership news contain no findings)",
+    "reason": "Product/partnership announcement that Gray Swan's Cygnal runtime monitor is now available inside TrueFoundry's AI Gateway. It describes product configuration (observe-only mode, fail-open, tool-output hook) and quotes two executives; the only quantity given ('~100-200ms' screening latency) is a product specification, not a measured evaluation result reported with a method. No model is evaluated.",
+    "findings": []
+   },
+   {
+    "title": "7 Deadly Signs of AI Security Snake Oil: A Developer's Field Guide",
+    "url": "https://www.grayswan.ai/blog/7-deadly-signs-of-ai-security-snake-oil-a-developers-field-guide",
+    "date": "2026-08-17",
+    "decision": "EXCLUDED - no findings",
+    "rule_cited": "§2 condition 2 (opinions and recommendations are NOT findings)",
+    "reason": "An opinion/marketing field guide arguing that AI-security vendors who sell OWASP Top 10 / MITRE ATLAS 'framework coverage' are selling snake oil. It is entirely normative ('the first question vendors ask should be...'), contains no measured result, no observed model behaviour and no documented process fact, and names no model or evaluated system.",
+    "findings": []
+   }
+  ],
+  "zero_yield": true,
+  "unreadable": []
+ },
+ {
+  "venue": "Apollo Research",
+  "surfaces_checked": [
+   {
+    "url": "https://www.apolloresearch.ai/science (incl. pagination ?717f2ceb_page=2 and =3, and the embedded pre-deployment 'findings' index of model assessments)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 26
+   },
+   {
+    "url": "https://www.apolloresearch.ai/governance",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 16
+   },
+   {
+    "url": "https://www.apolloresearch.ai/blog",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 9
+   },
+   {
+    "url": "https://www.apolloresearch.ai/monitoring (additional publication surface found via sitemap; enumerated for completeness)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 6
+   },
+   {
+    "url": "https://www.apolloresearch.ai/sitemap.xml (used to enumerate every /science/, /governance/, /blog/ and /monitoring/ URL, each of which was then fetched for its 'Published on' date)",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 57
+   }
+  ],
+  "items": [],
+  "zero_yield": true,
+  "unreadable": []
+ }
+]

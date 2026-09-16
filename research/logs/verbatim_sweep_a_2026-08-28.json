@@ -1,0 +1,611 @@
+[
+ {
+  "finding_id": "ANTHROPIC-2026-07-OPUS5-CYB1",
+  "verdict": "exact",
+  "footer_signature": true,
+  "url": "https://www.anthropic.com/claude-opus-5-system-card",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Given that Claude Opus 5 demonstrates stronger capabilities than Opus 4.8, and in some cases approaches the capabilities"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO1",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological an"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO2",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological an"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO3",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological an"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO5",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological an"
+ },
+ {
+  "finding_id": "UKAISI-2026-07-ALI2",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "\"We found vulnerabilities in every monitor version we tested, driving an iterative improvement cycle in which our best a"
+ },
+ {
+  "finding_id": "JOINT-2026-07-JAI1",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "As of launch, OpenAI has worked to reproduce and mitigate the specific jailbreaks reported by UK AISI. However, UK AISI "
+ },
+ {
+  "finding_id": "META-2026-07-MUSESPARK-JAI1",
+  "verdict": "unfetchable",
+  "footer_signature": false,
+  "url": "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report",
+  "via": null,
+  "detail": {
+   "status": 400,
+   "attempts": [
+    {
+     "via": "direct",
+     "status": 400
+    }
+   ]
+  },
+  "quote_head": "We maintain a continuous program to improve model robustness, including adversarial training with adaptive and automated"
+ },
+ {
+  "finding_id": "USCAISI-2026-06-CYB2",
+  "verdict": "exact-modulo-typography",
+  "footer_signature": false,
+  "url": "https://www.anthropic.com/news/redeploying-fable-5",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Researchers from the US Department of Commerce's Center for AI Standards and Innovation (CAISI) have tested both our pri"
+ },
+ {
+  "finding_id": "OPENAI-2026-06-SELF-CYB1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "As we did for GPT-5.3-Codex, GPT-5.4 Thinking, and GPT-5.5 Thinking, we are treating GPT-5.6 Sol as High capability in t"
+ },
+ {
+  "finding_id": "UKAISI-2026-06-GOV1",
+  "verdict": "exact-modulo-typography",
+  "footer_signature": true,
+  "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Overall, whereas we agree that Mythos 5 is likely harder to monitor than recent Opus models, our results suggest that it"
+ },
+ {
+  "finding_id": "UKAISI-2026-06-JAI2",
+  "verdict": "not-found",
+  "footer_signature": false,
+  "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+  "via": "direct",
+  "detail": {
+   "matched_chars": 6
+  },
+  "quote_head": "This testing is ongoing at time of release. We plan to iterate on this system over time and will continue to work with t"
+ },
+ {
+  "finding_id": "ANTHROPIC-2026-05-SELF-ALI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://anthropic.com/aug-2026-risk-report",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "The current Opus 4.8 based-monitor has higher recall against the strong strategies known about from red-teaming the Opus"
+ },
+ {
+  "finding_id": "UKAISI-2026-04-CYB11",
+  "verdict": "diverges",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/cybersecurity",
+  "via": "direct",
+  "detail": {
+   "matched_chars": 114,
+   "quote_continues": "..should currently be controlled through our Trusted Access for Cyber program"
+  },
+  "quote_head": "we have added additional protections around scaled agentic vulnerability research and exploit-chaining techniques...shou"
+ },
+ {
+  "finding_id": "UKAISI-2026-04-CYB3",
+  "verdict": "exact",
+  "footer_signature": true,
+  "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Claude Mythos 5 demonstrates the strongest overall cyber capabilities of any model we have ever evaluated. Across our in"
+ },
+ {
+  "finding_id": "UKAISI-2026-04-JAI1",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/cybersecurity",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We collaborated with the UK AI Security Institute (UK AISI) on pre-deployment testing for cyber capabilities (and safegu"
+ },
+ {
+  "finding_id": "APOLLO-2026-04-ALI5",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluations-for-sandbagging---apollo-research",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Apollo did not find evidence that the evaluated checkpoint poses substantially elevated risk of catastrophic harm via sc"
+ },
+ {
+  "finding_id": "OPENAI-2026-04-SELF-CYB1",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain"
+ },
+ {
+  "finding_id": "OPENAI-2026-04-SELF-CYB2",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain"
+ },
+ {
+  "finding_id": "OPENAI-2026-04-SELF-CYB4",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "On static evaluations measuring expert-level biology and biosecurity-relevant knowledge, it was the highest-performing, "
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO2",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Prepared"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO3",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/bio-safeguards-testing",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "The models consistently recognized high-risk prompts and refused to provide in-depth, practical assistance in favor of s"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO5",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Prepared"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO7",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Prepared"
+ },
+ {
+  "finding_id": "APOLLO-2026-03-ALI2",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://alignment.openai.com/metagaming",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "OpenAI is collaborating with Apollo Research to study the general principles behind metagaming emergence and how to miti"
+ },
+ {
+  "finding_id": "OPENAI-2026-03-SELF-ALI2",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "5.2 Research Category Update: Sandbagging External Evaluations by Apollo Research. Apollo Research evaluated a near-fina"
+ },
+ {
+  "finding_id": "OPENAI-2026-03-SELF-CYB1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "As we did for gpt-5.3-codex, we are treating gpt-5.4-thinking as High capability in the Cybersecurity domain, and applie"
+ },
+ {
+  "finding_id": "UKAISI-2026-02-JAI1",
+  "verdict": "diverges",
+  "footer_signature": true,
+  "url": "https://www.anthropic.com/aug-2026-risk-report",
+  "via": "direct",
+  "detail": {
+   "matched_chars": 122,
+   "quote_continues": "fiers to search for strings that would universally jailbreak classifiers and obtain harmfu"
+  },
+  "quote_head": "Boundary Point Jailbreaking (BPJ) is an automated methodology developed by UK AISI that optimizes against black-box clas"
+ },
+ {
+  "finding_id": "JOINT-2026-02-ALI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Because our current monitoring is asynchronous, it does not protect against harm or prevent the subversion of other safe"
+ },
+ {
+  "finding_id": "JOINT-2026-02-ALI2",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "These efforts span training, evaluation, and system-level safeguards, including work to align and train the values in ou"
+ },
+ {
+  "finding_id": "JOINT-2026-02-JAI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We believe this risk to be sufficiently minimized primarily because discovering such jailbreaks will be challenging, use"
+ },
+ {
+  "finding_id": "JOINT-2026-02-JAI3",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Based on the nature of the jailbreaks identified, and the depth of safeguards in place for this launch, these are not bl"
+ },
+ {
+  "finding_id": "OPENAI-2025-12b-SELF-CYB1",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "While the model's cybersecurity capabilities are stronger than its predecessors, it does not reach our threshold for Hig"
+ },
+ {
+  "finding_id": "OPENAI-2025-12-SELF-CYB1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/gpt-5-2",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "For cybersecurity and AI self-improvement, evaluations of final checkpoints indicate that, like their predecessor models"
+ },
+ {
+  "finding_id": "ANTHROPIC-2025-09-SELF-ALI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://www.anthropic.com/claude-sonnet-4-5-system-card",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Informed by the testing described here, we have deployed Claude Sonnet 4.5 under the AI Safety Level 3 Standard."
+ },
+ {
+  "finding_id": "JOINT-2025-09-BIO1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://www.anthropic.com/news/strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Rather than simply patching this individual exploit, the discovery prompted us to fundamentally restructure our safeguar"
+ },
+ {
+  "finding_id": "JOINT-2025-09-CYB1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "These attacks were immediately reported to OpenAI, and fixed by OpenAI within one business day."
+ },
+ {
+  "finding_id": "JOINT-2025-09-JAI2",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "OpenAI made a range of improvements to our product configuration to fix a set of configuration vulnerabilities that UK A"
+ },
+ {
+  "finding_id": "APOLLO-2025-08-ALI2",
+  "verdict": "exact-modulo-typography",
+  "footer_signature": false,
+  "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We've taken steps to reduce gpt-5-thinking's propensity to deceive, cheat, or hack problems, though our mitigations are "
+ },
+ {
+  "finding_id": "JOINT-2025-08-JAI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "OpenAI improved the robustness of our monitoring stack by improving and measuring it against a set of universal jailbrea"
+ },
+ {
+  "finding_id": "OPENAI-2025-07-SELF-BIO2",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/chatgpt-agent",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We have decided to treat this launch as High capability in the Biological and Chemical domain under our Preparedness Fra"
+ },
+ {
+  "finding_id": "OPENAI-2025-07-SELF-BIO3",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://deploymentsafety.openai.com/chatgpt-agent",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "We have decided to treat this launch as High capability in the Biological and Chemical domain under our Preparedness Fra"
+ },
+ {
+  "finding_id": "OPENAI-2025-07-SELF-JAI1",
+  "verdict": "exact",
+  "footer_signature": true,
+  "url": "https://deploymentsafety.openai.com/chatgpt-agent",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "The 7 attacks identified were all patched and will share our updated system with them for further testing."
+ },
+ {
+  "finding_id": "JOINT-2025-05-ALI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://www.anthropic.com/claude-4-system-card",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "we believe\u2014based on similar scenarios that we explored with the automatic behavioral audit tool, among others\u2014that its b"
+ },
+ {
+  "finding_id": "METR-2025-04-ALI1",
+  "verdict": "exact-modulo-typography",
+  "footer_signature": true,
+  "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "To address the reward hacking tendencies observed in Claude Sonnet 3.7-which were particularly pronounced compared to Cl"
+ },
+ {
+  "finding_id": "SCALEAI-2025-02b-JAI3",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/introducing-gpt-oss-safeguard/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "Safety Reasoner has become a core component of our safety stack."
+ },
+ {
+  "finding_id": "FARAI-2025-02a-JAI2",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create "
+ },
+ {
+  "finding_id": "JOINT-2025-01-JAI1",
+  "verdict": "diverges",
+  "footer_signature": false,
+  "url": "https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf",
+  "via": "direct",
+  "detail": {
+   "matched_chars": 127,
+   "quote_continues": "and we strongly support continued investment in this line of research, including efforts t"
+  },
+  "quote_head": "CAISI has already made important contributions here, including the January 2025 technical work on agent hijacking evalua"
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Black-box interrogation training. We add an extra dialogue turn which asks the model about its reasons for compliance, a"
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI2",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Black-box interrogation training. We add an extra dialogue turn which asks the model about its reasons for compliance, a"
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI3",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Black-box interrogation training. We add an extra dialogue turn which asks the model about its reasons for compliance, a"
+ },
+ {
+  "finding_id": "PALISADE-2024-12-JAI1",
+  "verdict": "exact-modulo-linebreaks",
+  "footer_signature": false,
+  "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "Update on May 8, 2026: OpenAI is winding down the fine-tuning platform. The platform is no longer accessible to new user"
+ },
+ {
+  "finding_id": "JOINT-2024-11-BIO2",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+ },
+ {
+  "finding_id": "JOINT-2024-11-JAI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://www-cdn.anthropic.com/c7822cdc35ad788ec87e14b3a9d45010f1f86c38.pdf",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+ },
+ {
+  "finding_id": "FARAI-2024-10-ALI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create "
+ },
+ {
+  "finding_id": "FARAI-2024-10-JAI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create "
+ },
+ {
+  "finding_id": "SCALEAI-2024-10-JAI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/operator-system-card/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "To address these risks, we have implemented a multi-layered approach to safety, including proactive refusals of high-ris"
+ },
+ {
+  "finding_id": "FARAI-2024-08-JAI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create "
+ },
+ {
+  "finding_id": "CISCO-2024-07-JAI1",
+  "verdict": "unfetchable",
+  "footer_signature": false,
+  "url": "https://ai.meta.com/blog/ai-defenders-program-llama-protection-tools/",
+  "via": null,
+  "detail": {
+   "status": 400,
+   "attempts": [
+    {
+     "via": "direct",
+     "status": 400
+    }
+   ]
+  },
+  "quote_head": "Llama Prompt Guard 2: Prompt Guard 2 86M, an update to our Llama Prompt Guard classifier model, improves on its performa"
+ },
+ {
+  "finding_id": "APOLLO-2023-11-ALI1",
+  "verdict": "diverges",
+  "footer_signature": false,
+  "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/",
+  "via": "wayback",
+  "detail": {
+   "matched_chars": 182,
+   "quote_continues": "| We\u2019ve put significant effort into studying and mitigating deception and have made meanin"
+  },
+  "quote_head": "Together with Apollo Research, we developed evaluations for hidden misalignment (\u201cscheming\u201d) and found behaviors consist"
+ },
+ {
+  "finding_id": "CAIS-2023-07-JAI1",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://openai.com/index/deliberative-alignment/",
+  "via": "wayback",
+  "detail": null,
+  "quote_head": "We used deliberative alignment to align OpenAI\u2019s o-series models, enabling them to use chain-of-thought (CoT) reasoning "
+ },
+ {
+  "finding_id": "CAIS-2023-07-JAI3",
+  "verdict": "exact",
+  "footer_signature": false,
+  "url": "https://www.anthropic.com/news/constitutional-classifiers",
+  "via": "direct",
+  "detail": null,
+  "quote_head": "A prototype version of the method was robust to thousands of hours of human red teaming for universal jailbreaks, albeit"
+ },
+ {
+  "finding_id": "METR-2023-03-ALI1",
+  "verdict": "diverges",
+  "footer_signature": false,
+  "url": "https://cdn.openai.com/papers/gpt-4-system-card.pdf",
+  "via": "direct",
+  "detail": {
+   "matched_chars": 111,
+   "quote_continues": "fforts in order to enable their team to assess risks from power-seeking behavior. | The mo"
+  },
+  "quote_head": "We granted the Alignment Research Center (ARC) early access to the models as a part of our expert red teaming efforts in"
+ }
+]

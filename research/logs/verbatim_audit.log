@@ -1,0 +1,15 @@
+  300/1300
+  500/1300
+  800/1300
+  900/1300
+  1300/1300
+1300 verbatim/source pairs to check across 543 distinct URLs
+
+RESULT
+    740  EXACT
+    219  NOT FOUND (full doc fetched)
+    195  exact after punctuation/hyphen normalisation
+    101  NOT FOUND (thin fetch <8k, inconclusive)
+     45  source unreachable
+
+detail -> logs/verbatim_audit.json (560 non-exact)

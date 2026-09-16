@@ -1,0 +1,333 @@
+[
+ {
+  "venue": "Holistic AI",
+  "title": "Algorithm Auditing: Managing the Legal, Ethical, and Technological Risks of Artificial Intelligence, Machine Learning, and Associated Algorithms",
+  "url": "https://www.holisticai.com/papers/algorithm-auditing-managing-legal-ethical-technological-risks",
+  "date": "2022-04-08",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — conceptual taxonomy proposal, not an evidence-backed measured result",
+  "reason": "Landing page gates an IEEE Computer cover feature (Koshiyama, Kazim, Treleaven) proposing an algorithm-auditing taxonomy (verticals plus seven levels of auditor access); full PDF read (11 pp, 42,243 chars) contains no audit of any system, only a forward-looking framework for an envisaged assurance industry.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 903,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Avoiding Risk in Computer Vision Models",
+  "url": "https://www.robustintelligence.com/blog-posts/avoiding-risk-in-computer-vision-models",
+  "date": "2022-06-07",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — substantive claims summarise others' work; the demo is vendor product marketing, not an evaluation",
+  "reason": "Vendor blog post: the named-system examples (Twitter photo cropping, Gender Shades on IBM/Microsoft) are summaries of other people's studies, and the only original content is a self-trained ResNet-18 on Animals with Attributes 2 used to illustrate the Robust Intelligence product, closing with 'Request a demo'.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 14398,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "An external stability audit framework to test the validity of personality prediction in AI hiring (Data Mining and Knowledge Discovery 36(6))",
+  "url": "https://link.springer.com/article/10.1007/s10618-022-00861-0",
+  "date": "2022-09",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 stratified — named third-party evaluators; §2 all three tests met",
+  "reason": "Genuine external black-box audit of two named commercial AI hiring systems (Humantic AI, Crystal) by a named academic evaluator team, with measured, evaluator-asserted, independently codeable results; note the corpus venue attribution to UL/DSRI is not borne out by the paper, whose authors are NYU Center for Responsible AI (plus MITRE), so the evaluator is recorded under its real name per §10.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 110379,
+   "pages": null
+  },
+  "findings": [
+   {
+    "finding": "External black-box stability audit found Humantic AI's personality scores to be substantially unstable with respect to job-irrelevant facets: correlations between de-identified resumes and the same resumes with a LinkedIn URL embedded ranged from 0.077 (Extraversion) to 0.688 (Calculativeness); cross-source correlations fell as low as 0.090 (Dominance); LinkedIn scores across 7-9 months of participant-time ranged from 0.225 (Dominance) to 0.768 (Emotional Stability), all below the 0.90 threshold; and results were not perfectly reproducible even when identical resumes were run back-to-back.",
+    "finding_quote": "We discovered substantial instability with regard to URL-embedding in resumes in Humantic AI. Correlations between de-identified resumes and the same resumes with LinkedIn URLs embedded into them ranged from 0.077 (Extraversion) to 0.688 (Calculativeness).",
+    "models_systems": "Humantic AI (algorithmic personality prediction for hiring; DiSC and Big Five outputs from resumes, LinkedIn profiles and Twitter accounts)",
+    "institution": "NYU Center for Responsible AI / Center for Data Science (Rhea, Markey, D'Arinzo, Schellmann, Sloane, Squires, Arif Khan, Stoyanovich); D'Arinzo also MITRE Corporation",
+    "domain": "Algorithmic hiring — construct validity and output stability of a high-stakes decision system",
+    "eval_trackable": "Yes",
+    "action_trackable": "Yes",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 PASSES: measured empirical result on a deployed system (rank-order correlations, Bonferroni/Benjamini-Hochberg locational tests over 84 participants). Gate 2 PASSES: names the company/product Humantic AI, so a vendor response could reasonably be expected. Tier A condition (1) passes and condition (2) passes; condition (3) FAILS on the load-bearing non-frontier-model exclusion — Humantic AI is a commercial hiring tool, not a frontier model — so the row falls to Tier B despite the result being concerning (the authors conclude the tool 'cannot be considered valid instruments in high-stakes decisions'). §4b considered and held not to apply: this is construct validity of a high-stakes decision system, not ordinary factual accuracy or hallucination.",
+    "finding_type": "third-party evaluation (peer-reviewed, open access)",
+    "scope": "third-party evaluator (stratified, §1)",
+    "source_url": "https://link.springer.com/article/10.1007/s10618-022-00861-0",
+    "access_type": "External black-box audit with no vendor cooperation; nine months of Humantic AI basic organizational membership purchased for $2,250; query access only, via the product UI, over an IRB-approved participant dataset"
+   },
+   {
+    "finding": "The same external audit found Crystal's personality scores unstable with respect to resume file format and input source: rank-order correlations across file format fell to 0.822 (Dominance) and 0.826 (Influence), below the 0.90 minimum, and correlations between PDF resumes and LinkedIn profiles ranged from 0.233 (Dominance) to 0.526 (Influence); participant-time correlations over 8-10 months ranged from 0.531 to 0.868, with reliability for male participants particularly low (N=53, r=0.232). Crystal's output was also discontinuous, so a format change alone could roughly double or halve a candidate's Steadiness score.",
+    "finding_quote": "Crystal's overall stability across the file format facet fails to meet Nunnally and Bernstein's preferred standard of 0.95 for Steadiness (0.918) and Conscientiousness (0.911), and falls below the minimum limit of 0.90 for Dominance (0.822) and Influence (0.826).",
+    "models_systems": "Crystal (algorithmic personality prediction for hiring; DiSC outputs from resumes and LinkedIn profiles)",
+    "institution": "NYU Center for Responsible AI / Center for Data Science (Rhea, Markey, D'Arinzo, Schellmann, Sloane, Squires, Arif Khan, Stoyanovich); D'Arinzo also MITRE Corporation",
+    "domain": "Algorithmic hiring — construct validity and output stability of a high-stakes decision system",
+    "eval_trackable": "Yes",
+    "action_trackable": "Yes",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 PASSES: measured rank-order and locational stability results on a deployed commercial system. Gate 2 PASSES: names the company/product Crystal. Separate row from Humantic AI per §5 — different companies never share a row. Tier A conditions (1) and (2) pass; condition (3) FAILS on the non-frontier-model exclusion (Crystal is a commercial hiring tool, not a frontier model), so Tier B. §4b considered and held not to apply for the same reason as the Humantic AI row.",
+    "finding_type": "third-party evaluation (peer-reviewed, open access)",
+    "scope": "third-party evaluator (stratified, §1)",
+    "source_url": "https://link.springer.com/article/10.1007/s10618-022-00861-0",
+    "access_type": "External black-box audit with no vendor cooperation; monthly and annual Crystal memberships purchased for a total of $753.82; query access only, via the product UI"
+   },
+   {
+    "finding": "Investigative linkage experiments documented a privacy and data-integrity defect in Humantic AI distinct from its score instability: the system permanently links any email address it sees alongside a LinkedIn URL, thereafter returning the same LinkedIn-derived profile for that email regardless of the resume submitted (including, in one observed case, linking a job reference's email to the participant's LinkedIn); the linkage is bidirectional and can be used adversarially to alter a LinkedIn-derived score by submitting a resume containing the keywords 'sneaky' and 'adversarial'; and the advertised opt-out feature did not work, with profiles persisting and new profiles being created even from deactivated LinkedIn accounts.",
+    "finding_quote": "Investigative linkage experiments revealed that when Humantic AI encounters a document that contains a LinkedIn URL and an email address, the resulting profile will have a 100% confidence score, and it will contain information found only on LinkedIn (including name, profile picture, and job descriptions and dates). Furthermore, the Humantic AI model produces the same personality profile whenever it encounters that email address in the future.",
+    "models_systems": "Humantic AI (personality prediction for hiring)",
+    "institution": "NYU Center for Responsible AI / Center for Data Science (Rhea, Markey, D'Arinzo, Schellmann, Sloane, Squires, Arif Khan, Stoyanovich); D'Arinzo also MITRE Corporation",
+    "domain": "Privacy, data protection and adversarial manipulability of a deployed hiring system",
+    "eval_trackable": "Yes",
+    "action_trackable": "Yes",
+    "tier": "B",
+    "tier_reasoning": "Split from the Humantic AI stability row per §5 — an unfixable identity linkage plus an inoperable opt-out is a different defect class requiring a different remedy (data handling and deletion), analogous to the capability-vs-safeguard split, and the authors themselves flag a possible California Consumer Privacy Act right-to-delete violation. Gate 1 PASSES: directly observed system behaviour. Gate 2 PASSES: names Humantic AI. Tier A condition (3) FAILS on the non-frontier-model exclusion, so Tier B.",
+    "finding_type": "third-party evaluation (peer-reviewed, open access)",
+    "scope": "third-party evaluator (stratified, §1)",
+    "source_url": "https://link.springer.com/article/10.1007/s10618-022-00861-0",
+    "access_type": "External black-box probing using researchers' own Humantic AI accounts and their own or synthetic email addresses; no vendor cooperation"
+   },
+   {
+    "finding": "The audit team developed and released a reusable socio-technical stability-audit framework, together with an open-source software library implementing its technical components (ADS object, treatment generator, auditor), designed to work under query access to a black-box system only, and demonstrated it on three audits (Humantic AI, Crystal, and a synthetic dataset) published on GitHub.",
+    "finding_quote": "Our main contribution is the development of a socio-technical framework for auditing the stability of algorithmic systems. This contribution is supplemented with an open-source software library that implements the technical components of the audit, and can be used to conduct similar stability audits of algorithmic systems.",
+    "models_systems": "",
+    "institution": "NYU Center for Responsible AI / Center for Data Science (Rhea, Markey, D'Arinzo, Schellmann, Sloane, Squires, Arif Khan, Stoyanovich)",
+    "domain": "Audit methodology and tooling for external stability audits",
+    "eval_trackable": "No",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 FAILS: this is a methodology/tooling contribution, not an empirical model finding, so it is Tier C and Action Trackable? is left blank per §4. It still qualifies as a finding under §2 as a documented process fact (framework built, library released, three audits instantiated), and is independently codeable from the two vendor-specific rows.",
+    "finding_type": "third-party evaluation (peer-reviewed, open access)",
+    "scope": "third-party evaluator (stratified, §1)",
+    "source_url": "https://link.springer.com/article/10.1007/s10618-022-00861-0",
+    "access_type": "Open-source release; framework designed for query-only black-box access"
+   }
+  ]
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Introducing Citadel Lens for Images: Automated AI Testing and Synthetic Test Data Generation",
+  "url": "https://citadel-ai.com/news/2022/10/13/citadel-lens-image-version",
+  "date": "2022-10-13",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — 'Announcements, partnership news, opinion pieces and plans contain no findings'",
+  "reason": "Beta-release product announcement for Citadel Lens for Images; the only quantitative claim ('test models 95% faster') is a marketing comparison against a METI AI Guidebook time estimate, and no AI system is evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6402,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Operational Feasibility of Adversarial Attacks Against Artificial Intelligence",
+  "url": "https://www.rand.org/pubs/research_reports/RRA866-1.html",
+  "date": "2022-12-12",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 stratified — named third-party evaluator; §2 all three tests met; §4 Gate 2 fails, so Tier B",
+  "reason": "Peer-reviewed RAND research report containing the evaluators' own measured adversarial-robustness experiments (digital attacks on a CIFAR-10 CNN, physical patches against three overhead detectors, corner reflectors against a SAR RetinaNet); findings are evidence-backed and independently codeable, but name no company or model, so every row is Tier B.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 97568,
+   "pages": 28
+  },
+  "findings": [
+   {
+    "finding": "In a controlled experiment on a three-layer CNN trained to 73% accuracy on CIFAR-10, adversarial attacks stayed highly effective as attacker knowledge was stripped away: a white-box attack cut accuracy by 65 percentage points (73% to 8%), while a full black-box attack in which the attacker knew neither the architecture nor the training data still cut accuracy by 55 percentage points.",
+    "finding_quote": "Our analysis reveals that Red can develop effective adversarial attacks even without knowledge of Blue's model.",
+    "models_systems": "Three-layer convolutional neural network trained by RAND on CIFAR-10, plus attacker proxy models of varying architecture and training data",
+    "institution": "RAND Corporation, National Security Research Division (Zhang, Hartnett, Aguirre, Lohn, Khan, Herron, O'Connell); sponsored by the Office of the Secretary of Defense",
+    "domain": "Adversarial robustness of computer-vision AI in defence applications",
+    "eval_trackable": "Yes",
+    "action_trackable": "No",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 PASSES: a measured empirical model result (accuracy deltas across five attack scenarios). Gate 2 FAILS: no specific company or model is named — the systems tested are architectures RAND trained itself for the experiment, so no company response could reasonably be expected. Per §4, failing Gate 2 sends this to TIER B; Tier A is unreachable because condition (2) fails.",
+    "finding_type": "third-party evaluation report",
+    "scope": "third-party evaluator (stratified, §1)",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA800/RRA866-1/RAND_RRA866-1.pdf",
+    "access_type": "White-box; models trained in-house by the evaluators specifically for the experiment"
+   },
+   {
+    "finding": "The same team found that adversarial patches that worked digitally did not transfer to an operational setting: digital attacks drove object-detection rates to nearly zero across all three detection models (trained on xView, Cars Overhead with Context, and the RAND Humvee dataset), but printed patches affixed to a real Jeep filmed from a drone only disrupted localisation at low altitude and stopped having any effect above roughly 100 feet.",
+    "finding_quote": "The presence of patches distracted the algorithm from localizing the Jeep correctly, but the distraction was highly dependent on drone altitude and, consequently, the scale of the Jeep in the image.",
+    "models_systems": "Three object-detection models trained by RAND on the xView, Cars Overhead with Context, and RAND Humvee datasets; physical adversarial patches on a Jeep imaged by drone",
+    "institution": "RAND Corporation, National Security Research Division (Zhang, Hartnett, Aguirre, Lohn, Khan, Herron, O'Connell)",
+    "domain": "Physical-world adversarial robustness of overhead object detection",
+    "eval_trackable": "Yes",
+    "action_trackable": "No",
+    "tier": "B",
+    "tier_reasoning": "Split from the digital-attack row per §5: the digital result and the physical-transfer result point in opposite directions and would warrant separate responses. Gate 1 PASSES (measured detection outcomes in a physical trial). Gate 2 FAILS — self-trained models, no company or product named — so TIER B. This is also a reassuring null for the physical attack vector, which §4 condition (3) excludes from Tier A independently.",
+    "finding_type": "third-party evaluation report",
+    "scope": "third-party evaluator (stratified, §1)",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA800/RRA866-1/RAND_RRA866-1.pdf",
+    "access_type": "White-box; models trained in-house, physical trial with drone footage"
+   },
+   {
+    "finding": "Against synthetic aperture radar object recognition, simulated corner reflectors placed on vehicles cut a RetinaNet model's mean average precision from 57% to 32% (randomly placed reflectors had no statistical effect), but retraining the model with centred corner reflectors present restored mAP to 56%, so the countermeasure was recoverable by a software update.",
+    "finding_quote": "We were able to update (retrain) the Blue model to correctly localize and identify vehicles under the presence of a centered corner reflector (to a mAP of 56 percent), thereby rendering this tactic ineffective.",
+    "models_systems": "RetinaNet object-recognition model trained by RAND on the MSTAR in Context SAR dataset",
+    "institution": "RAND Corporation, National Security Research Division (Zhang, Hartnett, Aguirre, Lohn, Khan, Herron, O'Connell)",
+    "domain": "Adversarial robustness of SAR object recognition",
+    "eval_trackable": "Yes",
+    "action_trackable": "No",
+    "tier": "B",
+    "tier_reasoning": "Separate row from the electro-optical experiments per §5: a different sensor modality, a different attack and a different mitigation conclusion. Gate 1 PASSES (mAP measurements before, during and after retraining). Gate 2 FAILS — the RetinaNet model was trained by the evaluators and no company or product is named — so TIER B. Tier A condition (3) would also fail: the degradation is a benchmark-score movement that the evaluators show is fully recoverable.",
+    "finding_type": "third-party evaluation report",
+    "scope": "third-party evaluator (stratified, §1)",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA800/RRA866-1/RAND_RRA866-1.pdf",
+    "access_type": "White-box; model trained in-house by the evaluators on a public dataset"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "How Might Artificial Intelligence Affect the Risk of Nuclear War?",
+  "url": "https://www.rand.org/pubs/perspectives/PE296.html",
+  "date": "2018-04-24",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — expert-opinion synthesis and forecasting to 2040, not evidence-backed measured results",
+  "reason": "A RAND Perspective that 'characterizes the range of expert opinions' from a workshop series and reasons about strategic-stability scenarios through 2040; no AI system is tested and §4 explicitly places capability trends and forecasts outside the finding set.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4451,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "How Artificial Intelligence Could Increase the Risk of Nuclear War",
+  "url": "https://www.rand.org/pubs/articles/2018/how-artificial-intelligence-could-increase-the-risk.html",
+  "date": "2018-04-24",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins",
+  "reason": "A RAND magazine feature published the same day that narrates and quotes the PE296 Perspective ('the premise behind a new paper from RAND Corporation'); it is a secondary write-up and adds no finding that is absent from the primary, which is itself excluded.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 11806,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Provable Defenses Against Adversarial Examples Via the Convex Outer Adversarial Polytope",
+  "url": "https://www.grayswan.ai/research/provable-defenses-against-adversarial-examples-via-the-convex-outer-adversarial-polytope",
+  "date": "2018-06",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is present in the fetched report",
+  "reason": "Gray Swan research page is a stub that reproduces no results ('This research is currently only available at its source'); the underlying work is a pre-company academic image-classifier methods paper naming no company or deployed model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 621,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Safety-first AI for autonomous data centre cooling and industrial control",
+  "url": "https://deepmind.google/blog/safety-first-ai-for-autonomous-data-centre-cooling-and-industrial-control",
+  "date": "2018-08",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 company-venue carve-out — the screening test is 'IS AN EXTERNAL EVALUATOR NAMED?', and none is",
+  "reason": "Company-venue post authored by DeepMind's own Chris Gamble and Jim Gao reporting DeepMind's AI controlling Google's own data centre cooling (~30% energy savings, eight in-house safety mechanisms); the only other person named, Dan Fuenffinger, is a Google data centre operator, so there is no named external evaluator and the carve-out does not open.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5810,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Artificial Intelligence Applications to Support K–12 Teachers and Teaching: A Review of Promising Applications, Challenges, and Risks",
+  "url": "https://www.rand.org/pubs/perspectives/PE315.html",
+  "date": "2019-01-23",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 tests 1 and 2 — a review of others' work with no evaluator-asserted measured result",
+  "reason": "Single-author RAND 'Expert Insights' review discussing intelligent tutoring systems, automated essay scoring and early-warning systems as promising applications; it evaluates no system and reports no measurement of its own.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3355,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Using Pre-Training Can Improve Model Robustness and Uncertainty",
+  "url": "https://www.grayswan.ai/research/using-pre-training-can-improve-model-robustness-and-uncertainty",
+  "date": "2019-05",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is present in the fetched report",
+  "reason": "Gray Swan research page is a stub that reproduces no results ('This research is currently only available at its source'); the underlying work is a pre-company academic image-classifier methods paper naming no company or deployed model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 585,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Using Self-Supervised Learning Can Improve Model Robustness and Uncertainty",
+  "url": "https://www.grayswan.ai/research/using-self-supervised-learning-can-improve-model-robustness-and-uncertainty",
+  "date": "2019-06",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is present in the fetched report",
+  "reason": "Gray Swan research page is a stub that reproduces no results ('This research is currently only available at its source'); the underlying work is a pre-company academic image-classifier methods paper naming no company or deployed model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 627,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Natural Adversarial Examples",
+  "url": "https://www.grayswan.ai/research/natural-adversarial-examples",
+  "date": "2019-07",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is present in the fetched report",
+  "reason": "Gray Swan research page is a stub that reproduces no results ('This research is currently only available at its source'); the underlying work is a pre-company academic image-classifier methods paper naming no company or deployed model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 547,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Fast Is Better Than Free: Revisiting Adversarial Training",
+  "url": "https://www.grayswan.ai/research/fast-is-better-than-free-revisiting-adversarial-training",
+  "date": "2020-01",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is present in the fetched report",
+  "reason": "Gray Swan research page is a stub that reproduces no results ('This research is currently only available at its source'); the underlying work is a pre-company academic image-classifier methods paper naming no company or deployed model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 575,
+   "pages": null
+  },
+  "findings": []
+ }
+]

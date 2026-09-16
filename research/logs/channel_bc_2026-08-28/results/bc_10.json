@@ -1,0 +1,2840 @@
+[
+ {
+  "finding_id": "UKAISI-2026-06-HUM3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, 'RealityTest', 2026-05-29→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=RealityTest&queryParameters.startDate=2026-05-29&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI identity\"'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22AI%20identity%22&queryParameters.startDate=2026-05-29&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"' (51 results) — every contribution read",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22&queryParameters.startDate=2026-05-29&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "51 contributions read in full; all concern AISI as an institution, sovereign AI, and Mythos/Fable cyber risk. None mentions RealityTest, AI-identity disclosure, GPT-4o or GPT-5.1 disclosure rates"
+      },
+      {
+       "name": "Hansard written contributions, 'RealityTest' / '\"AI identity\"'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Written.json?queryParameters.searchTerm=RealityTest&queryParameters.startDate=2026-05-29&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "gov.uk search API, 'AI model discloses AI identity chatbot' and 'RealityTest AI disclosure'",
+       "url": "https://www.gov.uk/api/search.json?q=AI%20model%20discloses%20AI%20identity%20chatbot&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only generic AI-governance material (AI Playbook, Agentic AI and consumers, Data and AI Ethics Framework) — none references the study"
+      },
+      {
+       "name": "UK Parliament committees API — publications search 'artificial intelligence' / 'AI safety', filtered to ≥2026-05-01",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=artificial%20intelligence&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no committee report or correspondence referencing the study"
+      },
+      {
+       "name": "NCSC all-content RSS feed (news, guidance, blogs)",
+       "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing on AI-identity disclosure"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term '\"RealityTest\"', 2026-05-29→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22RealityTest%22&conditions[publication_date][gte]=2026-05-29",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"AI Security Institute\"', 2026-05-29→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22AI%20Security%20Institute%22&conditions[publication_date][gte]=2026-05-29",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'artificial intelligence disclosure chatbot', 2026-05-29→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=artificial%20intelligence%20disclosure%20chatbot&conditions[publication_date][gte]=2026-05-29",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-05-29→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-05-29",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-05-29→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for RealityTest, AI Security Institute, GPT-4o, GPT-5.1, 'AI identity', disclosure — no hit. (Only genuine AI-lab hits in the whole window were Sen. Warner on 'the release of Mythos', 2026-07-21, S4179-80, and philanthropic/'fabless' false positives.)"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'RealityTest'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=RealityTest&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'RealityTest'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=RealityTest&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against sources that were actually fetched and read (Hansard full text via the parliamentary search API; the complete US Congressional Record for the window; the Federal Register full-text API; EC press corner and EUR-Lex). Nothing anywhere refers to RealityTest, to the 13%/86% disclosure gap, or to AI-identity disclosure as a policy question tied to this study. The one EU document that cites UK AISI at all (COM/2026/577) cites a different piece of AISI cyber research.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex: 'RealityTest: How People Probe AI Identity and Whether Models Disclose It' (arXiv:2606.00168), published 2026-05-29 — cited_by_count 0 as of 2026-08-28",
+     "url": "https://api.openalex.org/works/doi:10.48550/arxiv.2606.00168"
+    }
+   ],
+   "discussion": [],
+   "note": "Hacker News (Algolia full-archive API) returns 0 stories or comments for 'RealityTest AI identity'. Google Scholar returns 4 results, all the paper itself/its mirrors. No independent media coverage located. Note the evaluator's own publication (aisi.gov.uk/blog/realitytest-do-ai-systems-disclose-their-identity-when-asked) is excluded as circular. This finding drew an Action Level of None and, on the searches available to me, essentially no ecosystem attention either."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-06-BIO3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, '\"Scale AI\"', 2026-06-04→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22Scale%20AI%22&queryParameters.startDate=2026-06-04&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 spoken results; 1 written-statement hit which is an unrelated false positive on the words 'scale' and 'AI'"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"drug discovery\" AI model' and 'Anthropic' (22 results, all read)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=Anthropic&queryParameters.startDate=2026-06-04&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "22 contributions read; all about export controls, sovereign AI and Mythos cyber risk. Nothing on refusals, over-refusal or drug-discovery task declines"
+      },
+      {
+       "name": "gov.uk search API, 'Scale AI coding agents drug discovery'",
+       "url": "https://www.gov.uk/api/search.json?q=Scale%20AI%20coding%20agents%20drug%20discovery&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only generic AI-adoption publications"
+      },
+      {
+       "name": "UK Parliament committees API publications ≥2026-05-01",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=artificial%20intelligence&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing referencing the report"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term '\"Scale AI\"', 2026-06-04→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Scale%20AI%22&conditions[publication_date][gte]=2026-06-04",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-04→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-04",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"drug discovery\" artificial intelligence', 2026-06-04→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22drug%20discovery%22%20artificial%20intelligence&conditions[publication_date][gte]=2026-06-04",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Claude Code\"', 2026-06-04→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Claude%20Code%22&conditions[publication_date][gte]=2026-06-04",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-04→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for 'Scale AI', 'Claude Code', 'drug discovery' + AI, 'content policy', 'over-refusal' — no hit referencing the report. The single Federal Register 'Scale AI' hit (2026-06-25 SES rule) is a false positive on the ordinary words."
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'Scale AI coding agents drug discovery'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Scale%20AI%20coding%20agents%20drug%20discovery&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'Scale AI coding agents drug discovery'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Scale%20AI%20coding%20agents%20drug%20discovery&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Over-refusal / unjustified content-policy declines on legitimate scientific tasks is a live policy theme, but no official UK, US or EU source read in this pass cites Scale AI's coding-agents drug-discovery evaluation or its 5-of-66 refusal result. Negative confirmed against full-text Hansard, the complete Congressional Record for the window, the Federal Register API, EC press corner and EUR-Lex.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex full-text search for the report title and for 'coding agents drug discovery Scale AI' returns no record of this Labs blog post; Google Scholar not indexed under the exact title (re-checked)",
+     "url": "https://api.openalex.org/works?search=coding%20agents%20drug%20discovery%20Scale%20AI&per-page=5&filter=from_publication_date:2026-05-01"
+    }
+   ],
+   "discussion": [],
+   "note": "Hacker News Algolia: 0 hits for 'Scale AI coding agents drug discovery' and for the refusal angle. No independent coverage located. Channel C is descriptive only and does not affect any score."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2026-06-ALI6",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, 'Mythos' (27 results), 2026-06-09→2026-08-28 — every contribution read in full",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=Mythos&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "27 contributions read"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"Claude Fable\"' (1 result)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22Claude%20Fable%22&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution (Baroness Shields, Lords, 2026-07-23) — about the US export-control directive, not AISI's results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'jailbreak' (1 result)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=jailbreak&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution: Baroness Stowell of Beeston, Lords, 2026-06-16"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"' (51 results) and 'Anthropic' (22 results) — all read",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full"
+      },
+      {
+       "name": "Full text of the Lords PNQ 'Artificial Intelligence: National Security Implications', 16 June 2026 (Hansard debate API, 24 items)",
+       "url": "https://hansard-api.parliament.uk/debates/debate/8DB2F2D7-B6BD-4418-89B1-DECF1E4C6F0F.json",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full"
+      },
+      {
+       "name": "gov.uk search API, '\"AI Security Institute\" Mythos' / '\"AI Security Institute\" Fable 5'",
+       "url": "https://www.gov.uk/api/search.json?q=%22AI%20Security%20Institute%22%20Mythos&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; AISI org page, Frontier AI Trends factsheet and the 2026-05-14 guidance 'AI, open code and vulnerability risk in the public sector' (which cites AISI's Mythos Preview *cyber* evaluation of 13 April 2026, a different report)"
+      },
+      {
+       "name": "UK Parliament Treasury Committee correspondence with the FCA and the Bank of England on frontier AI models (25 June / 9 July 2026) — all four letters downloaded and read in full",
+       "url": "https://committees-api.parliament.uk/api/Publications/54212/Document/301631/OriginalFormat",
+       "via": "direct",
+       "status": 200,
+       "result": "read; cite Mythos cyber risk, AISI's cyber-capability-doubling estimate and AISI's April 2026 GPT-5.5 evaluation — not the Fable 5 / Mythos 5 system card results"
+      },
+      {
+       "name": "NCSC all-content RSS + NCSC statement on frontier-AI evaluation incidents (4 Aug 2026)",
+       "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+       "via": "direct",
+       "status": 200,
+       "result": "read; concerns unsanctioned agent behaviour on the open internet, not the system-card results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"sabotage\"' / 'safety research' within the AI debates, 2026-06-09→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=safety%20research&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "no contribution referring to a model sabotaging or continuing to compromise safety research"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'Mythos', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Mythos&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Claude Fable\"', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Claude%20Fable%22&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"AI Security Institute\"', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22AI%20Security%20Institute%22&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-09→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for Mythos, Fable, Anthropic, 'AI Security Institute', 'sabotage', 'safety research' — the only genuine hit in the window is Sen. Warner (2026-07-21, S4179-80) invoking 'the release of Mythos' in support of his Secure AI Development Act; he does not cite AISI's sabotage result or any system-card figure"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'Claude Mythos'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Claude%20Mythos&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'Claude Mythos'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Claude%20Mythos&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Parliament engaged heavily with Mythos 5 / Fable 5 in June-July 2026, and the 16 June Lords PNQ turns directly on UK AISI's pre-launch testing of these two models. But the only *specific result* any member states is safeguard circumvention (see UKAISI-2026-06-JAI2). No source in any jurisdiction states, alludes to, or acts on the finding that Mythos 5 actively continues compromising safety research 14% of the time versus 1-2% for the comparison models. The Minister's reply ('the AI Security Institute did test Mythos and Fable before they were launched … we gave advice to our companies … with the NCSC') references the evaluator's testing programme rather than this result, which under the strict admissibility rule is not uptake of this finding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Zvi Mowshowitz, 'Don't Worry About the Vase' — 'Claude Fable 5 and Mythos 5: The System Card'",
+     "url": "https://thezvi.substack.com/p/claude-fable-5-and-mythos-5-the-system",
+     "date": "2026-06-12"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "Existing media entry re-fetched and verified live (200 direct, dated 12 June 2026). Independent commentary on the system card exists (Zvi Mowshowitz; third-party analyses at endorlabs.com and isaacus.com surfaced via the Hacker News full-archive API), but nothing I could reach singles out the 14% safety-research-sabotage number. The system card PDF was submitted to Hacker News on 2026-06-09; the Algolia record did not carry a resolvable item id, so no thread URL is logged."
+  },
+  "still_blocked": [],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2026-06-GOV1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, 'Mythos' (27 results), 2026-06-09→2026-08-28 — every contribution read in full",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=Mythos&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "27 contributions read"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"Claude Fable\"' (1 result)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22Claude%20Fable%22&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution (Baroness Shields, Lords, 2026-07-23) — about the US export-control directive, not AISI's results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'jailbreak' (1 result)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=jailbreak&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution: Baroness Stowell of Beeston, Lords, 2026-06-16"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"' (51 results) and 'Anthropic' (22 results) — all read",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full"
+      },
+      {
+       "name": "Full text of the Lords PNQ 'Artificial Intelligence: National Security Implications', 16 June 2026 (Hansard debate API, 24 items)",
+       "url": "https://hansard-api.parliament.uk/debates/debate/8DB2F2D7-B6BD-4418-89B1-DECF1E4C6F0F.json",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full"
+      },
+      {
+       "name": "gov.uk search API, '\"AI Security Institute\" Mythos' / '\"AI Security Institute\" Fable 5'",
+       "url": "https://www.gov.uk/api/search.json?q=%22AI%20Security%20Institute%22%20Mythos&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; AISI org page, Frontier AI Trends factsheet and the 2026-05-14 guidance 'AI, open code and vulnerability risk in the public sector' (which cites AISI's Mythos Preview *cyber* evaluation of 13 April 2026, a different report)"
+      },
+      {
+       "name": "UK Parliament Treasury Committee correspondence with the FCA and the Bank of England on frontier AI models (25 June / 9 July 2026) — all four letters downloaded and read in full",
+       "url": "https://committees-api.parliament.uk/api/Publications/54212/Document/301631/OriginalFormat",
+       "via": "direct",
+       "status": 200,
+       "result": "read; cite Mythos cyber risk, AISI's cyber-capability-doubling estimate and AISI's April 2026 GPT-5.5 evaluation — not the Fable 5 / Mythos 5 system card results"
+      },
+      {
+       "name": "NCSC all-content RSS + NCSC statement on frontier-AI evaluation incidents (4 Aug 2026)",
+       "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+       "via": "direct",
+       "status": 200,
+       "result": "read; concerns unsanctioned agent behaviour on the open internet, not the system-card results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'ControlArena' and 'monitor' in AI debates",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=ControlArena&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for ControlArena; no contribution refers to side-task success rates or monitor AUROC"
+      },
+      {
+       "name": "UK AISI publication index (checked because ControlArena is AISI's own library, to see whether any *other* government body picked the result up)",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "read; AISI's own Control Red Team post discusses monitor stress-testing and Mythos Preview, but AISI is the evaluator here so its own output is not uptake"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'Mythos', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Mythos&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Claude Fable\"', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Claude%20Fable%22&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"AI Security Institute\"', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22AI%20Security%20Institute%22&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-09→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for ControlArena, 'side task', 'AUROC', monitorability, Mythos, Fable — no hit"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'ControlArena'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=ControlArena&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'ControlArena'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=ControlArena&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Same position as ALI6. ControlArena, side-task success and monitorability (AUROC) appear nowhere in Hansard, the Congressional Record, the Federal Register, Commission statements or EUR-Lex in the window. The heavy parliamentary traffic on Mythos 5 / Fable 5 is about export controls, sovereignty and cyber capability, not about AI-control evaluation results.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Zvi Mowshowitz, 'Don't Worry About the Vase' — 'Claude Fable 5 and Mythos 5: The System Card'",
+     "url": "https://thezvi.substack.com/p/claude-fable-5-and-mythos-5-the-system",
+     "date": "2026-06-12"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "Existing media entry verified live. No academic citation located (OpenAlex has no record of a ControlArena Mythos 5 write-up in the window). Hacker News: 0 relevant hits for 'ControlArena'."
+  },
+  "still_blocked": [],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2026-06-JAI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, 'Mythos' (27 results), 2026-06-09→2026-08-28 — every contribution read in full",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=Mythos&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "27 contributions read"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"Claude Fable\"' (1 result)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22Claude%20Fable%22&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution (Baroness Shields, Lords, 2026-07-23) — about the US export-control directive, not AISI's results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'jailbreak' (1 result)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=jailbreak&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution: Baroness Stowell of Beeston, Lords, 2026-06-16"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"' (51 results) and 'Anthropic' (22 results) — all read",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22&queryParameters.startDate=2026-06-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full"
+      },
+      {
+       "name": "Full text of the Lords PNQ 'Artificial Intelligence: National Security Implications', 16 June 2026 (Hansard debate API, 24 items)",
+       "url": "https://hansard-api.parliament.uk/debates/debate/8DB2F2D7-B6BD-4418-89B1-DECF1E4C6F0F.json",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full"
+      },
+      {
+       "name": "gov.uk search API, '\"AI Security Institute\" Mythos' / '\"AI Security Institute\" Fable 5'",
+       "url": "https://www.gov.uk/api/search.json?q=%22AI%20Security%20Institute%22%20Mythos&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; AISI org page, Frontier AI Trends factsheet and the 2026-05-14 guidance 'AI, open code and vulnerability risk in the public sector' (which cites AISI's Mythos Preview *cyber* evaluation of 13 April 2026, a different report)"
+      },
+      {
+       "name": "UK Parliament Treasury Committee correspondence with the FCA and the Bank of England on frontier AI models (25 June / 9 July 2026) — all four letters downloaded and read in full",
+       "url": "https://committees-api.parliament.uk/api/Publications/54212/Document/301631/OriginalFormat",
+       "via": "direct",
+       "status": 200,
+       "result": "read; cite Mythos cyber risk, AISI's cyber-capability-doubling estimate and AISI's April 2026 GPT-5.5 evaluation — not the Fable 5 / Mythos 5 system card results"
+      },
+      {
+       "name": "NCSC all-content RSS + NCSC statement on frontier-AI evaluation incidents (4 Aug 2026)",
+       "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+       "via": "direct",
+       "status": 200,
+       "result": "read; concerns unsanctioned agent behaviour on the open internet, not the system-card results"
+      },
+      {
+       "name": "Hansard debate API — full text of the Lords Private Notice Question 'Artificial Intelligence: National Security Implications', 16 June 2026, all 24 items",
+       "url": "https://hansard-api.parliament.uk/debates/debate/8DB2F2D7-B6BD-4418-89B1-DECF1E4C6F0F.json",
+       "via": "direct",
+       "status": 200,
+       "result": "HIT — Lord Clement-Jones states what AISI found on Fable 5 and Mythos before public launch and demands statutory power for AISI; the Minister responds on the record"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'Mythos', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Mythos&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Claude Fable\"', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Claude%20Fable%22&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"AI Security Institute\"', 2026-06-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22AI%20Security%20Institute%22&conditions[publication_date][gte]=2026-06-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-09→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for Mythos, Fable, 'AI Security Institute', jailbreak, red team — no US source references AISI's pre-launch safeguard-circumvention result"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'Claude Fable jailbreak'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Claude%20Fable%20jailbreak&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'Claude Fable jailbreak'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Claude%20Fable%20jailbreak&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://hansard.parliament.uk/Lords/2026-06-16/debates/8DB2F2D7-B6BD-4418-89B1-DECF1E4C6F0F/ArtificialIntelligenceNationalSecurityImplications",
+   "verbatim": "Lord Clement-Jones (LD), House of Lords, 16 June 2026: \"My Lords, the Minister has mentioned the AI Security Institute. It identified ways to circumvent the safety guardrails of Fable 5 and Mythos before their public launch, including vulnerabilities that could allow the extraction of instructions for producing dangerous substances, yet the model was released by Anthropic regardless. Will the Minister now accept that voluntary co-operation with safety institutes is wholly insufficient at this level of capability and bring forward legislation giving the AI Security Institute the statutory power, where necessary, to delay or prevent the launch of dangerous frontier AI models in the UK?\" — Ministerial reply, Baroness Lloyd of Effra (Parliamentary Under-Secretary of State, DBT/DSIT): \"The AI Security Institute did test Mythos and Fable before they were launched. In light of the risks that they potentially posed—Mythos in particular—we also gave advice to our companies. We worked carefully with the National Cyber Security Centre to provide advice to companies and regulators on what needed to be done…\"",
+   "policy_response": "UK Parliament (Lords) engaged directly with UK AISI's pre-launch red-teaming result on Claude Fable 5 / Mythos 5 — that AISI found ways to circumvent the models' safety guardrails before public launch and that Anthropic released anyway — and used it as the basis for a demand that AISI be given statutory power to delay or prevent frontier-model launches. The responding DSIT/DBT minister confirmed on the record that AISI tested both models pre-launch and that, in light of the risks, the Government issued advice to companies and regulators jointly with the NCSC. This is official parliamentary and ministerial engagement with the finding; it created no enforceable obligation (the Government declined to legislate and restated reliance on sector regulators), so it is non-binding.",
+   "reasoning": "Upgrade from 'No policy uptake identified'. The previous pass recorded a clean UK negative; that is wrong. The 16 June 2026 Lords PNQ contains a member explicitly stating the substance of AISI's safeguard-circumvention result on the two named systems ('identified ways to circumvent the safety guardrails of Fable 5 and Mythos before their public launch'), which is precisely this finding's subject matter — AISI red-teamers breaking Fable 5's safeguards within hours of access. It clears the strict admissibility bar because it references the evaluator's specific result on the named system, not AI risk in general or AISI as an organisation. The domain Lord Clement-Jones highlights (dangerous-substance instructions) is a sibling result in the same AISI safeguards section of the system card as the cyberoffensive jailbreak, which is why I record this as medium rather than high confidence. No binding instrument followed: the Minister declined the legislative ask.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Zvi Mowshowitz, 'Don't Worry About the Vase' — 'Claude Fable 5 and Mythos 5: The System Card'",
+     "url": "https://thezvi.substack.com/p/claude-fable-5-and-mythos-5-the-system",
+     "date": "2026-06-12"
+    },
+    {
+     "outlet": "The Register — \"Feds freaked over Fable 5 after 'fix this code', not jailbreak, say researchers\"",
+     "url": "https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827",
+     "date": "2026-06-15"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "Hansard, House of Lords — Lord Clement-Jones and Baroness Stowell of Beeston both press ministers on the Fable 5 jailbreak",
+     "url": "https://hansard.parliament.uk/Lords/2026-06-16/debates/8DB2F2D7-B6BD-4418-89B1-DECF1E4C6F0F/ArtificialIntelligenceNationalSecurityImplications",
+     "date": "2026-06-16"
+    }
+   ],
+   "note": "The Register piece was located via the Hacker News full-archive API and distinguishes the jailbreak from the simpler prompt that reportedly triggered the US response; it is independent of both evaluator and evaluated company. Note the parliamentary exchange is logged here as discussion as well as being the Channel B evidence — Channel C is descriptive only and does not affect any score."
+  },
+  "still_blocked": [],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-06b-BIO2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken + written contributions, 'SecureBio', 2026-06-10→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=SecureBio&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'ABC-Bench'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=ABC-Bench&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'DNA' / 'biosecurity' in the window",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=biosecurity&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only general DNA-database and biosecurity remarks (e.g. Lord Taylor of Warwick on the 1997 DNA database) — nothing on AI-assisted viral DNA assembly benchmarks"
+      },
+      {
+       "name": "gov.uk search API, 'SecureBio DNA assembly' and 'ABC-Bench viral DNA'",
+       "url": "https://www.gov.uk/api/search.json?q=SecureBio%20DNA%20assembly&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only generic synthetic-genomics and engineering-biology publications"
+      },
+      {
+       "name": "gov.uk publication 'Biosecurity Frontiers' (8 July 2026) and its attachments",
+       "url": "https://www.gov.uk/government/publications/biosecurity-frontiers",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no reference to SecureBio, ABC-Bench or the models named"
+      },
+      {
+       "name": "UK Parliament committees API publications ≥2026-05-01",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AI%20safety&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing referencing the report"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'SecureBio', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=SecureBio&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"ABC-Bench\"', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22ABC-Bench%22&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'nucleic acid synthesis artificial intelligence', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=nucleic%20acid%20synthesis%20artificial%20intelligence&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-10→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for SecureBio, ABC-Bench, 'DNA assembly', 'liquid handling', OpenTrons, plasmid + AI — no hit in any of the 46 sitting days"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'SecureBio'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SecureBio&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'SecureBio'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=SecureBio&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched on the evaluator (SecureBio), the benchmark (ABC-Bench), the report title, the named systems and the finding's specific claim (Claude Sonnet 4.6 / Claude Opus 4.6 perfect scores) across full-text Hansard, the gov.uk search API, UK committee publications, the complete Congressional Record for 2026-06-10→2026-08-28, the Federal Register full-text API, NIST/CAISI, the European Commission press corner and EUR-Lex. Nothing referencing this benchmark, this result or this evaluator's report was found in any jurisdiction. EUR-Lex's three 'SecureBio' hits are false positives on the words in Biotech Act documents. This is a C1-severity biosecurity result with no company response and, on these searches, no policy pickup at all.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex: 'ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity' (arXiv:2606.11150), 2026-06-09 — cited_by_count 0 as of 2026-08-28 (evaluator's own companion paper; baseline only)",
+     "url": "https://api.openalex.org/works?search=ABC-Bench%20Agentic%20Bio-Capabilities%20Benchmark&per-page=3"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Hacker News — 'Our position on open-weights models' thread, in which ABC-Bench is raised in comments",
+     "url": "https://news.ycombinator.com/item?id=49078163",
+     "date": "2026-07-28"
+    }
+   ],
+   "note": "Hacker News full-archive API: the only hits are the companion arXiv preprint itself and an Anthropic open-weights position post that name-checks the benchmark; no independent media coverage located. OpenAlex records the companion paper 'ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity' (arXiv:2606.11150, 2026-06-09, SecureBio authors incl. Seth Donoughe) with cited_by_count 0 as of 2026-08-28. The paper is the evaluator's own output and is therefore logged only as the citation baseline, not as coverage."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-06b-BIO3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken + written contributions, 'SecureBio', 2026-06-10→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=SecureBio&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'ABC-Bench'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=ABC-Bench&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'DNA' / 'biosecurity' in the window",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=biosecurity&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only general DNA-database and biosecurity remarks (e.g. Lord Taylor of Warwick on the 1997 DNA database) — nothing on AI-assisted viral DNA assembly benchmarks"
+      },
+      {
+       "name": "gov.uk search API, 'SecureBio DNA assembly' and 'ABC-Bench viral DNA'",
+       "url": "https://www.gov.uk/api/search.json?q=SecureBio%20DNA%20assembly&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only generic synthetic-genomics and engineering-biology publications"
+      },
+      {
+       "name": "gov.uk publication 'Biosecurity Frontiers' (8 July 2026) and its attachments",
+       "url": "https://www.gov.uk/government/publications/biosecurity-frontiers",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no reference to SecureBio, ABC-Bench or the models named"
+      },
+      {
+       "name": "UK Parliament committees API publications ≥2026-05-01",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AI%20safety&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing referencing the report"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'SecureBio', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=SecureBio&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"ABC-Bench\"', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22ABC-Bench%22&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'nucleic acid synthesis artificial intelligence', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=nucleic%20acid%20synthesis%20artificial%20intelligence&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-10→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for SecureBio, ABC-Bench, 'DNA assembly', 'liquid handling', OpenTrons, plasmid + AI — no hit in any of the 46 sitting days"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'SecureBio'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SecureBio&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'SecureBio'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=SecureBio&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched on the evaluator (SecureBio), the benchmark (ABC-Bench), the report title, the named systems and the finding's specific claim (Gemini 3.1 Pro Preview liquid-handling-robot task) across full-text Hansard, the gov.uk search API, UK committee publications, the complete Congressional Record for 2026-06-10→2026-08-28, the Federal Register full-text API, NIST/CAISI, the European Commission press corner and EUR-Lex. Nothing referencing this benchmark, this result or this evaluator's report was found in any jurisdiction. EUR-Lex's three 'SecureBio' hits are false positives on the words in Biotech Act documents. This is a C1-severity biosecurity result with no company response and, on these searches, no policy pickup at all.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex: 'ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity' (arXiv:2606.11150), 2026-06-09 — cited_by_count 0 as of 2026-08-28 (evaluator's own companion paper; baseline only)",
+     "url": "https://api.openalex.org/works?search=ABC-Bench%20Agentic%20Bio-Capabilities%20Benchmark&per-page=3"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Hacker News — 'Our position on open-weights models' thread, in which ABC-Bench is raised in comments",
+     "url": "https://news.ycombinator.com/item?id=49078163",
+     "date": "2026-07-28"
+    }
+   ],
+   "note": "Hacker News full-archive API: the only hits are the companion arXiv preprint itself and an Anthropic open-weights position post that name-checks the benchmark; no independent media coverage located. OpenAlex records the companion paper 'ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity' (arXiv:2606.11150, 2026-06-09, SecureBio authors incl. Seth Donoughe) with cited_by_count 0 as of 2026-08-28. The paper is the evaluator's own output and is therefore logged only as the citation baseline, not as coverage."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-06b-BIO5",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken + written contributions, 'SecureBio', 2026-06-10→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=SecureBio&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'ABC-Bench'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=ABC-Bench&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'DNA' / 'biosecurity' in the window",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=biosecurity&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only general DNA-database and biosecurity remarks (e.g. Lord Taylor of Warwick on the 1997 DNA database) — nothing on AI-assisted viral DNA assembly benchmarks"
+      },
+      {
+       "name": "gov.uk search API, 'SecureBio DNA assembly' and 'ABC-Bench viral DNA'",
+       "url": "https://www.gov.uk/api/search.json?q=SecureBio%20DNA%20assembly&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; only generic synthetic-genomics and engineering-biology publications"
+      },
+      {
+       "name": "gov.uk publication 'Biosecurity Frontiers' (8 July 2026) and its attachments",
+       "url": "https://www.gov.uk/government/publications/biosecurity-frontiers",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no reference to SecureBio, ABC-Bench or the models named"
+      },
+      {
+       "name": "UK Parliament committees API publications ≥2026-05-01",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AI%20safety&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing referencing the report"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'SecureBio', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=SecureBio&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"ABC-Bench\"', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22ABC-Bench%22&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'nucleic acid synthesis artificial intelligence', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=nucleic%20acid%20synthesis%20artificial%20intelligence&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-10→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for SecureBio, ABC-Bench, 'DNA assembly', 'liquid handling', OpenTrons, plasmid + AI — no hit in any of the 46 sitting days"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'SecureBio'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SecureBio&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'SecureBio'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=SecureBio&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched on the evaluator (SecureBio), the benchmark (ABC-Bench), the report title, the named systems and the finding's specific claim (GPT-o4-mini-high wet-lab validation, three successful DNA assemblies) across full-text Hansard, the gov.uk search API, UK committee publications, the complete Congressional Record for 2026-06-10→2026-08-28, the Federal Register full-text API, NIST/CAISI, the European Commission press corner and EUR-Lex. Nothing referencing this benchmark, this result or this evaluator's report was found in any jurisdiction. EUR-Lex's three 'SecureBio' hits are false positives on the words in Biotech Act documents. This is a C1-severity biosecurity result with no company response and, on these searches, no policy pickup at all.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex: 'ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity' (arXiv:2606.11150), 2026-06-09 — cited_by_count 0 as of 2026-08-28 (evaluator's own companion paper; baseline only)",
+     "url": "https://api.openalex.org/works?search=ABC-Bench%20Agentic%20Bio-Capabilities%20Benchmark&per-page=3"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Hacker News — 'Our position on open-weights models' thread, in which ABC-Bench is raised in comments",
+     "url": "https://news.ycombinator.com/item?id=49078163",
+     "date": "2026-07-28"
+    }
+   ],
+   "note": "Hacker News full-archive API: the only hits are the companion arXiv preprint itself and an Anthropic open-weights position post that name-checks the benchmark; no independent media coverage located. OpenAlex records the companion paper 'ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity' (arXiv:2606.11150, 2026-06-09, SecureBio authors incl. Seth Donoughe) with cited_by_count 0 as of 2026-08-28. The paper is the evaluator's own output and is therefore logged only as the citation baseline, not as coverage."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2026-06-ALI3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken + written contributions, 'prefill', 2026-06-10→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=prefill&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"' (51 results) — all read",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22&queryParameters.startDate=2026-06-10&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "no contribution refers to prefill awareness, prefill tampering or Claude Opus 4.5"
+      },
+      {
+       "name": "gov.uk search API, 'prefill awareness language models'",
+       "url": "https://www.gov.uk/api/search.json?q=prefill%20awareness%20language%20models&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no relevant result"
+      },
+      {
+       "name": "UK Parliament committees API publications ≥2026-05-01; Treasury Committee / FCA / Bank of England frontier-AI correspondence read in full",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=frontier%20AI&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing referencing prefill awareness"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'prefill', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=prefill&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"AI Security Institute\"', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22AI%20Security%20Institute%22&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Claude Opus\"', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Claude%20Opus%22&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'artificial intelligence alignment evaluation', 2026-06-10→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=artificial%20intelligence%20alignment%20evaluation&conditions[publication_date][gte]=2026-06-10",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-10→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for 'prefill', 'Claude Opus', 'AI Security Institute' — no hit"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'prefill awareness large language models'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=prefill%20awareness%20large%20language%20models&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'prefill awareness large language models'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=prefill%20awareness%20large%20language%20models&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "A technical alignment/evaluation-methodology result with no policy surface. Nothing in Hansard, the Congressional Record, the Federal Register, gov.uk, UK committee papers, Commission statements or EUR-Lex refers to prefill awareness, prefill tampering, or the 9-35% detection figure for Claude Opus 4.5.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex: 'Prefill Awareness in Large Language Models' (arXiv:2606.12747), published 2026-06-10 — cited_by_count 0 as of 2026-08-28",
+     "url": "https://api.openalex.org/works/doi:10.48550/arxiv.2606.12747"
+    }
+   ],
+   "discussion": [],
+   "note": "Hacker News Algolia: no hits for 'prefill awareness' relating to this work. Semantic Scholar's graph API returned HTTP 429 on both attempts, so the citation count is taken from OpenAlex instead; the two agree at zero on every paper in this packet where both were reachable. No independent media coverage located."
+  },
+  "still_blocked": [
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2606.12747?fields=title,citationCount",
+    "status": 429,
+    "what_it_would_have_shown": "an independent second citation count for the companion paper; OpenAlex was used instead and reports 0"
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "DREADNODE-2026-06-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken + written contributions, 'Dreadnode', 2026-06-16→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=Dreadnode&queryParameters.startDate=2026-06-16&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, 'jailbreak' (1 result in the whole window)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=jailbreak&queryParameters.startDate=2026-06-16&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "the single hit is Baroness Stowell on the Fable 5 jailbreak (2026-06-16), not Dreadnode or Llama 4 Scout"
+      },
+      {
+       "name": "gov.uk search API, 'Dreadnode red teaming'",
+       "url": "https://www.gov.uk/api/search.json?q=Dreadnode%20red%20teaming&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no relevant result"
+      },
+      {
+       "name": "UK Parliament committees API publications ≥2026-05-01",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=frontier%20AI&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing referencing the demonstration"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'Dreadnode', 2026-06-16→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Dreadnode&conditions[publication_date][gte]=2026-06-16",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Llama 4\"', 2026-06-16→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Llama%204%22&conditions[publication_date][gte]=2026-06-16",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Tree of Attacks\"', 2026-06-16→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Tree%20of%20Attacks%22&conditions[publication_date][gte]=2026-06-16",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'jailbreak', 2026-06-16→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=jailbreak&conditions[publication_date][gte]=2026-06-16",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-16→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for Dreadnode, 'Llama 4 Scout', 'Tree of Attacks', Crescendo, jailbreak — no hit"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'Dreadnode'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Dreadnode&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'Dreadnode'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Dreadnode&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "No official source in any of the three jurisdictions references Dreadnode, the live red-teaming demonstration, Llama 4 Scout, or the 100%-ASR-in-2-trials result. 'Dreadnode' returns literally zero in Hansard and zero in the Federal Register, and does not appear in any of the 46 Congressional Record sitting days in the window.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex full-text search for the report title and its method terms surfaces no citing work; nearest related item is 'Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours' (2026-05-05, cited 0), which predates this demonstration",
+     "url": "https://api.openalex.org/works?search=AI%20red%20teaming%20Tree%20of%20Attacks%20Pruning%20Llama%20Scout&per-page=5&filter=from_publication_date:2026-05-01"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Hacker News — Dreadnode research is submitted periodically (e.g. 'Every Model Cheats', 2026-08-20); no submission or comment thread for this particular live-demo report",
+     "url": "https://dreadnode.io/research/every-model-cheats-prompt-level-mitigation-of-cheating-on-offensive-cyber-tasks/",
+     "date": "2026-08-20"
+    }
+   ],
+   "note": "No independent media coverage located. The one adjacent public-discussion signal is that Dreadnode's later research does get submitted to Hacker News, which makes the silence around this report a real absence rather than an artefact of the evaluator being unknown."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "RAND-2026-06-CYB1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken + written contributions, '\"RAND Europe\"', 2026-06-25→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22RAND%20Europe%22&queryParameters.startDate=2026-06-25&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"Capture the Flag\"'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22Capture%20the%20Flag%22&queryParameters.startDate=2026-06-25&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"', 'Anthropic', 'Mythos' — all read for the window",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=Anthropic&queryParameters.startDate=2026-06-25&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "read; the cyber-uplift discussion in the Lords and Commons cites AISI and Mythos, never RAND Europe's CTF re-test"
+      },
+      {
+       "name": "gov.uk search API, '\"RAND Europe\" offensive cyber AI agents'",
+       "url": "https://www.gov.uk/api/search.json?q=%22RAND%20Europe%22%20offensive%20cyber%20AI%20agents&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; RAND Europe appears only as an Armed Forces Covenant business entry and in unrelated old evaluations"
+      },
+      {
+       "name": "UK Parliament Treasury Committee / FCA / Bank of England frontier-AI correspondence (25 June and 9 July 2026), read in full",
+       "url": "https://committees-api.parliament.uk/api/Publications/54210/Document/301629/OriginalFormat",
+       "via": "direct",
+       "status": 200,
+       "result": "read; the FCA and the Bank both discuss AI-driven vulnerability discovery and novice uplift as a theme but cite AISI's work, not RAND Europe's report"
+      },
+      {
+       "name": "NCSC all-content RSS feed",
+       "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no NCSC item cites the report"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term '\"RAND Europe\"', 2026-06-25→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22RAND%20Europe%22&conditions[publication_date][gte]=2026-06-25",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Claude Code\"', 2026-06-25→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Claude%20Code%22&conditions[publication_date][gte]=2026-06-25",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Capture the Flag\"', 2026-06-25→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Capture%20the%20Flag%22&conditions[publication_date][gte]=2026-06-25",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-25→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-25",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-25→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for 'RAND Europe', 'Claude Code', 'capture the flag', 'Opus 4.6' — no hit"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'RAND Europe offensive cyber AI agents'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=RAND%20Europe%20offensive%20cyber%20AI%20agents&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'RAND Europe offensive cyber AI agents'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=RAND%20Europe%20offensive%20cyber%20AI%20agents&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "This is the closest of the 'no uptake' findings to a live policy conversation — UK ministers, the Treasury Committee, the FCA, the Bank of England and the European Commission were all actively discussing AI cyber uplift in exactly this window — and it is still a clean negative, because every one of those sources cites UK AISI's cyber-capability work rather than RAND Europe's novice-uplift CTF re-test. Under the strict rule, general discussion of AI cyber uplift is not uptake of this finding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "ThinkTankWeekly (aggregator), report summary",
+     "url": "https://thinktankweekly.strataperture.net/reports/rand/4aa4f40c-ai-agents-put-offensive-cyber-within-reach-of-novices-comparing-the-performance-/",
+     "date": "2026-06-25"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "OpenAlex: no work in the window cites the report; searches on the title and on 'AI agents offensive cyber novices RAND' return only unrelated AI-governance papers",
+     "url": "https://api.openalex.org/works?search=AI%20agents%20offensive%20cyber%20novices%20RAND&per-page=5&filter=from_publication_date:2026-05-01"
+    }
+   ],
+   "discussion": [],
+   "note": "Existing ThinkTankWeekly entry re-fetched and verified live (200 direct). Hacker News Algolia: 0 hits. No mainstream media pickup located — which is notable for a C1 cyber finding published by RAND Europe."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "METR-2026-06-ALI1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "UK AI Security Institute (DSIT) blog, 'Cheating behaviour in frontier model evaluations', 21 July 2026 — fetched and read in full (11,045 chars)",
+       "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+       "via": "direct",
+       "status": 200,
+       "result": "HIT — explicitly cites METR's evaluation of GPT-5.6 Sol"
+      },
+      {
+       "name": "Hansard spoken + written contributions, 'METR', 2026-06-26→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=METR&queryParameters.startDate=2026-06-26&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"reward hacking\"' and '\"GPT-5.6\"' (2 results, both read)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22GPT-5.6%22&queryParameters.startDate=2026-06-26&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "the two GPT-5.6 contributions (Baroness Berger, Lords, 2026-07-22 and 2026-07-23) concern the autonomous cyber incident, not METR's cheating measurement"
+      },
+      {
+       "name": "gov.uk search API, 'METR reward hacking evaluation'",
+       "url": "https://www.gov.uk/api/search.json?q=METR%20reward%20hacking%20evaluation&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no departmental publication cites METR's evaluation"
+      },
+      {
+       "name": "UK Parliament committees API publications ≥2026-05-01",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AI%20safety&Take=40",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing citing METR"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'METR', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=METR&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"reward hacking\"', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22reward%20hacking%22&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"GPT-5.6\"', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22GPT-5.6%22&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'artificial intelligence evaluation cheating', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=artificial%20intelligence%20evaluation%20cheating&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-26→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for METR, 'reward hacking', 'GPT-5.6', 'time horizon' — no hit. NIST site search for 'METR' returns only a Paul Christiano staff-page reference, and CAISI's own 'Cheating On AI Agent Evaluations' blog predates this finding by six months"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'METR GPT-5.6 cheating'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=METR%20GPT-5.6%20cheating&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'METR GPT-5.6 cheating'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=METR%20GPT-5.6%20cheating&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+   "verbatim": "UK AI Security Institute, 'Cheating behaviour in frontier model evaluations', 21 July 2026: \"Cheating also creates additional verification work in AISI's capability evaluations, which slows down the production of reliable results and, in the worst case, can invalidate them entirely: METR's evaluation of GPT-5.6 Sol was significantly affected in this way.\" And on remedy: \"A more fundamental fix would be to train the models not to cheat in the first place – but given this kind of behaviour was reported in frontier models more than a year ago, robustly aligning it away may not be easy.\"",
+   "policy_response": "The UK AI Security Institute — a directorate of the Department for Science, Innovation and Technology, and so an official UK government source — published a research post on 21 July 2026 that explicitly names METR's GPT-5.6 Sol evaluation as an instance where cheating behaviour materially degraded a third-party evaluation, uses it to argue that self-report and chain-of-thought are not reliable detectors, and recommends that developers train models not to cheat. Official engagement with the finding; no enforceable obligation created.",
+   "reasoning": "Confirmed unchanged. I re-fetched the AISI post and read it end to end rather than relying on the prior pass's note; the METR citation is present and specific to the GPT-5.6 Sol evaluation. AISI is a third party relative to METR, so this is not a circular self-citation. Re-checked the US and EU jurisdictions from scratch (complete Congressional Record for the window, Federal Register API, NIST/CAISI, EC press corner, EUR-Lex) and found no further uptake and, in particular, nothing binding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Transformer News — 'GPT-5.6 cheats so much its testers couldn't measure it'",
+     "url": "https://www.transformernews.ai/p/openai-gpt-56-sol-cheating-scheming-metr",
+     "date": "2026-07-01"
+    },
+    {
+     "outlet": "The Decoder",
+     "url": "https://the-decoder.com/",
+     "date": "2026-06-27"
+    },
+    {
+     "outlet": "Ars Technica",
+     "url": "https://arstechnica.com/",
+     "date": "2026-07-22"
+    },
+    {
+     "outlet": "TechCrunch",
+     "url": "https://techcrunch.com/",
+     "date": "2026-07-27"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "UK AISI, 'Cheating behaviour in frontier model evaluations' (21 July 2026) explicitly cites METR's GPT-5.6 Sol evaluation",
+     "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Hacker News — 'Previewing GPT-5.6 Sol: a next-generation model'",
+     "url": "https://news.ycombinator.com/item?id=48692734",
+     "date": "2026-06-26"
+    },
+    {
+     "where": "Hacker News — 'GPT-5.6'",
+     "url": "https://news.ycombinator.com/item?id=48854300",
+     "date": "2026-07-10"
+    }
+   ],
+   "note": "The Transformer News item and the two Hacker News threads were located this pass via the Hacker News full-archive API and are new relative to the previous record. The existing outlet list (Decoder, Transformer, R&D World, latesthackingnews, Tech Times, Ars Technica, TechCrunch) is carried forward; I verified the dates were already recorded but did not re-fetch every outlet URL, since the prior pass recorded outlet+date rather than URLs for most of them."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "OPENAI-2026-06-SELF-CYB1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, '\"GPT-5.6\"' (2 results), 2026-06-26→2026-08-28 — both read in full",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22GPT-5.6%22&queryParameters.startDate=2026-06-26&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "Baroness Berger, Lords, 2026-07-22 and 2026-07-23; both concern the autonomous cyber incident involving GPT-5.6 Sol, not Irregular's FrontierCyber zero-day results"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"zero-day\"' (1 result)",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22zero-day%22&queryParameters.startDate=2026-06-26&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "Luke Pollard, Commons, 2026-06-15, Defence Investment Plan — unrelated"
+      },
+      {
+       "name": "Hansard spoken contributions, 'OpenAI' (12 results) — all read",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=OpenAI&queryParameters.startDate=2026-06-26&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "sovereignty and incident discussion only; no reference to FrontierCyber or Irregular"
+      },
+      {
+       "name": "gov.uk search API, 'GPT-5.6 cyber evaluation'",
+       "url": "https://www.gov.uk/api/search.json?q=GPT-5.6%20cyber%20evaluation&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no relevant departmental publication"
+      },
+      {
+       "name": "Treasury Committee / FCA / Bank of England frontier-AI correspondence, read in full",
+       "url": "https://committees-api.parliament.uk/api/Publications/54212/Document/301631/OriginalFormat",
+       "via": "direct",
+       "status": 200,
+       "result": "read; cites AISI's April 2026 GPT-5.5 cyber evaluation, not Irregular's GPT-5.6 FrontierCyber results"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'Irregular FrontierCyber', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Irregular%20FrontierCyber&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"GPT-5.6\"', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22GPT-5.6%22&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"zero-day\"', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22zero-day%22&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Center for AI Standards and Innovation\"', 2026-06-26→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Center%20for%20AI%20Standards%20and%20Innovation%22&conditions[publication_date][gte]=2026-06-26",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-26→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for FrontierCyber, Irregular (as an evaluator name), 'GPT-5.6', 'zero-day' — no hit; all 'irregular' matches are the ordinary adjective"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      },
+      {
+       "name": "GPT-5.6 Preview system card (the source document) — fetched and read for any government attribution",
+       "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "read (77pp): says only 'As part of our ongoing engagement with the U.S. government, we previewed our plans and the models' capabilities ahead of today's launch. At their request, we are starting with a limited preview…' — it names no agency and does not tie the request to Irregular's FrontierCyber results. A company-published statement, not an official government source"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'GPT-5.6 FrontierCyber'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=GPT-5.6%20FrontierCyber&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'GPT-5.6 FrontierCyber'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=GPT-5.6%20FrontierCyber&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Confirmed unchanged, and worth stating why despite the surrounding government activity. The 2026-06-26 preview was restricted at the US government's request, but that request is documented only in OpenAI's own system card, which names no agency and attributes the request to the models' capabilities in general rather than to Irregular's FrontierCyber zero-day results. No official US, UK or EU source read in this pass mentions Irregular, FrontierCyber, or the 19/197 result. 'No policy uptake identified' therefore stands for this finding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "The Hacker News — 'OpenAI Previews GPT-5.6 Sol With Restricted Access and Stronger Cyber Safeguards'",
+     "url": "https://thehackernews.com/2026/06/openai-limits-gpt-56-rollout-as-sol.html",
+     "date": "2026-06-27"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "Hacker News — 'Previewing GPT-5.6 Sol: a next-generation model'",
+     "url": "https://news.ycombinator.com/item?id=48692734",
+     "date": "2026-06-26"
+    },
+    {
+     "where": "Hacker News — 'FrontierCyber: Bringing Offensive Cyber Evaluations to Real Systems' (Irregular's own benchmark write-up, submitted 2026-06-22; logged for context, excluded as evaluator-owned)",
+     "url": "https://www.irregular.com/research/frontiercyber",
+     "date": "2026-06-22"
+    }
+   ],
+   "note": "Existing Hacker News (thehackernews.com) media entry re-fetched and verified live. The two HN discussion threads are new this pass, located via the Algolia full-archive API. Irregular's own benchmark page is flagged and excluded from coverage as the evaluator's own publication."
+  },
+  "still_blocked": [
+   {
+    "url": "https://openai.com/index/gpt-5-6-preview/",
+    "status": 403,
+    "what_it_would_have_shown": "OpenAI's public announcement of the restricted preview, which may name the specific US offices that made the request; direct fetch 403 and the Wayback Machine has no snapshot. It would in any case be a company source, not an official government one"
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "USCAISI-2026-06-CYB2",
+  "current_policy_level": "Binding policy action",
+  "proposed_policy_level": "Binding policy action",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term 'Anthropic', 2026-06-12→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-12",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Claude Fable\"', 2026-06-12→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Claude%20Fable%22&conditions[publication_date][gte]=2026-06-12",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'Mythos', 2026-06-12→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Mythos&conditions[publication_date][gte]=2026-06-12",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Center for AI Standards and Innovation\"', 2026-06-12→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Center%20for%20AI%20Standards%20and%20Innovation%22&conditions[publication_date][gte]=2026-06-12",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-06-12→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped all 46 sitting days: the genuine hit is Sen. Warner, 2026-07-21 (Cong. Rec. S4179-80): 'many of my friends inside the administration are recognizing this after the release of Mythos', introducing his Secure AI Development Act. No text of the export-control order appears in the Record"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, 'Anthropic' and 'artificial intelligence export control model weights', 2026-06-01→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=Anthropic&conditions[publication_date][gte]=2026-06-01",
+       "via": "direct",
+       "status": 200,
+       "result": "3 documents, none the export-control order. Read Executive Order 14409 'Promoting Advanced Artificial Intelligence Innovation and Security' (2 June 2026, 91 FR 34565) in full — it establishes classified benchmarking, an AI cybersecurity clearinghouse and a trusted-partner early-access regime, but names no company or model. The 12 June order was issued by letter under the EAR and was not published in the Federal Register"
+      },
+      {
+       "name": "NIST / CAISI site search, '\"Fable 5\"' and '\"Claude Mythos\"'; CAISI news index and research blog read in full",
+       "url": "https://www.nist.gov/search?s=%22Fable%205%22",
+       "via": "direct",
+       "status": 200,
+       "result": "'No results'. CAISI has published no write-up of its Fable 5 / Mythos 5 classifier testing"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, 'Mythos' (27), '\"Claude Fable\"' (1), 'Anthropic' (22), '\"export control\"' (2) — all read in full",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=Mythos&queryParameters.startDate=2026-06-12&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "HIT — the US export-control action on Fable 5 and Mythos 5 is on the record repeatedly in both Houses"
+      },
+      {
+       "name": "Hansard debate API, Commons Topical Questions 16 June 2026 and the Lords PNQ of the same day, both read in full",
+       "url": "https://hansard-api.parliament.uk/debates/debate/8FD94D58-D3C9-4AB3-A2BE-91F40E405DCA.json",
+       "via": "direct",
+       "status": 200,
+       "result": "Seema Malhotra: 'Anthropic's Fable 5 and Mythos 5 models have been withdrawn worldwide, including in the US. We respect that this is a decision for the US Government…'"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'Anthropic export control'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Anthropic%20export%20control&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'Anthropic export control'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Anthropic%20export%20control&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://hansard.parliament.uk/Lords/2026-07-23/debates/0AD8A0A1-BA91-4F7A-BF32-58A2C4022746/DigitalAndTechnologyPolicyNationalSovereignty",
+   "verbatim": "Baroness Shields (Con), House of Lords, 23 July 2026: \"We saw this explicitly on 12 June, when the US Department of Commerce directive forced Anthropic to suspend access to its most advanced model, Claude Fable, for foreign nationals worldwide, including its own foreign national researchers. They were unable to touch the model they had built because of the passport they held. Access was restored on 1 July.\" And Lord Clement-Jones (LD), same debate: \"Last month, the US Government placed export controls on Anthropic's newest models. President Trump gave the company less than 90 minutes to cut off non-US citizens. This restriction was lifted on 1 July…\"",
+   "policy_response": "Unchanged. The US Department of Commerce issued a binding export-control order under the Export Administration Regulations on 12 June 2026 prohibiting access to Claude Fable 5 and Mythos 5 by any foreign national, taking both models offline globally for roughly 18 days; controls were lifted on 30 June 2026 after CAISI tested Anthropic's prior and new cybersecurity classifiers and rated both extraordinarily strong, and the models were redeployed on 1 July 2026. This is an enforceable instrument imposing a mandatory requirement.",
+   "reasoning": "Confirmed unchanged, and now corroborated from official government sources rather than only from the evaluated company's announcement. The order itself was issued by letter and does not appear in the Federal Register (searched: 'Anthropic', 'Claude Fable', 'Mythos', export-control terms, 2026-06-01→2026-08-28) or in the Congressional Record, so I could not read the instrument. But the existence, date, scope and lifting of the binding measure are stated on the record in the UK Parliament by multiple members and confirmed by two ministers (Baroness Lloyd of Effra, Lords, 16 June: 'it is not for me to talk about what the US Government do in terms of their export control decisions'; Seema Malhotra, Commons, 16 June). Extensive independent media corroboration also verified live.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "CNBC",
+     "url": "https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html",
+     "date": "2026-06-30"
+    },
+    {
+     "outlet": "The Register — \"Feds freaked over Fable 5 after 'fix this code', not jailbreak, say researchers\"",
+     "url": "https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827",
+     "date": "2026-06-15"
+    },
+    {
+     "outlet": "CSIS analysis",
+     "url": "https://www.csis.org/analysis/department-commerce-restricted-access-anthropics-latest-models-what-comes-next",
+     "date": "2026-06"
+    },
+    {
+     "outlet": "Fortune",
+     "url": "https://fortune.com/2026/06/14/how-a-warning-from-amazon-led-the-white-house-to-shut-down-anthropics-mythos-model/",
+     "date": "2026-06-14"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "US Senate floor — Sen. Warner, Congressional Record 2026-07-21 (S4179-80), citing 'the release of Mythos' in support of his Secure AI Development Act",
+     "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21.pdf"
+    },
+    {
+     "where": "Hacker News — Anthropic status/statement threads on the suspension",
+     "url": "https://www.anthropic.com/news/fable-mythos-access",
+     "date": "2026-06-13"
+    },
+    {
+     "where": "Third-party commentary: isaacus.com, 'Our response to the US ban on Fable 5 and Mythos 5'",
+     "url": "https://isaacus.com/blog/our-response-to-the-us-ban-on-fable-5-and-mythos-5",
+     "date": "2026-06-13"
+    }
+   ],
+   "note": "CNBC and CSIS entries re-fetched and verified live (200 direct). The Register piece and the isaacus.com response are new this pass, located via the Hacker News full-archive API; The Register's angle — that the trigger was a simple 'fix this code' prompt rather than a jailbreak — is a substantive independent challenge to the framing and is worth keeping in the record. Channel C is descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=Anthropic+export+control",
+    "status": 403,
+    "what_it_would_have_shown": "congressional keyword search; substituted by grepping the full text of all 46 Congressional Record sitting days in the window, which is a superset for floor proceedings but does not cover committee documents not yet printed"
+   },
+   {
+    "url": "https://www.bis.gov/newsroom",
+    "status": 404,
+    "what_it_would_have_shown": "the Bureau of Industry and Security newsroom, which might carry the 12 June order or a press statement; the URL 404s and Commerce's own newsroom is only reachable through the Wayback Machine"
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "JOINT-2026-07-CYB1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, '\"GPT-5.6\"' (2 results) — both read in full",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22GPT-5.6%22&queryParameters.startDate=2026-07-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "Baroness Berger, Lords, 2026-07-22 and 2026-07-23, both on the autonomous cyber incident; neither mentions AISI's CTF scores"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"' (51 results) and '\"Capture the Flag\"'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22Capture%20the%20Flag%22&queryParameters.startDate=2026-07-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for Capture the Flag; none of the 51 AISI contributions cites the GPT-5.6 CTF result"
+      },
+      {
+       "name": "gov.uk search API, 'GPT-5.6 cyber evaluation'",
+       "url": "https://www.gov.uk/api/search.json?q=GPT-5.6%20cyber%20evaluation&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no departmental publication cites the result"
+      },
+      {
+       "name": "UK AISI publication index and blog (checked to see whether AISI itself published the CTF result separately)",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "read; AISI's GPT-5.5 cyber evaluation is published but no GPT-5.6 CTF post. AISI is a co-author of the finding, so its own output would not be uptake in any case"
+      },
+      {
+       "name": "Treasury Committee / FCA / Bank of England frontier-AI correspondence, read in full",
+       "url": "https://committees-api.parliament.uk/api/Publications/54210/Document/301629/OriginalFormat",
+       "via": "direct",
+       "status": 200,
+       "result": "read; cites AISI's April 2026 GPT-5.5 evaluation, not the GPT-5.6 result"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term '\"GPT-5.6\"', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22GPT-5.6%22&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"AI Security Institute\"', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22AI%20Security%20Institute%22&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"Center for AI Standards and Innovation\"', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22Center%20for%20AI%20Standards%20and%20Innovation%22&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"National Cyber Director\"', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22National%20Cyber%20Director%22&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-07-09→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for 'GPT-5.6', 'AI Security Institute', CAISI, 'National Cyber Director', OSTP, 'capture the flag' — no hit tying any government action to the AISI CTF result"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      },
+      {
+       "name": "GPT-5.6 and GPT-5.6 Preview system cards, both downloaded and read (82pp and 77pp)",
+       "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "read; the only government reference is the preview card's 'As part of our ongoing engagement with the U.S. government … At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government'. Neither card names ONCD, OSTP, CAISI or Commerce, and neither attributes the request to AISI's CTF results"
+      },
+      {
+       "name": "NIST / CAISI site search and the full CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "read; CAISI has published nothing on GPT-5.6. Its only 2026 joint publication with UK AISI in the window is the Kimi K3 assessment (23 July 2026)"
+      },
+      {
+       "name": "White House OSTP and ONCD pages",
+       "url": "https://www.whitehouse.gov/oncd/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no statement on GPT-5.6 access"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'GPT-5.6 cyber'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=GPT-5.6%20cyber&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'GPT-5.6 cyber'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=GPT-5.6%20cyber&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Proposed downgrade from 'Non-binding policy-related uptake' to 'No policy uptake identified', on admissibility grounds rather than on new negative evidence about the underlying events. Channel B admits only official government sources that explicitly reference the finding, the report, the evaluator or the specific result. The recorded policy response — a limited preview restricted at the request of the Office of the National Cyber Director and OSTP, plus additional CAISI testing — rests, as far as I can reconstruct it, entirely on OpenAI's own system card and on press reporting. I read both system cards in full: they document a US-government-requested limited preview but name no agency and do not connect the request to UK AISI's CTF results. I found no official source naming ONCD, OSTP or CAISI in connection with GPT-5.6: nothing in the Congressional Record for any of the 46 sitting days, nothing in the Federal Register, nothing on nist.gov or the CAISI indexes, nothing on whitehouse.gov, and nothing in Hansard. Separately, even taken at face value the recorded response is a request complied with voluntarily, which the level definitions expressly exclude from 'binding'. I flag this as a difference rather than assert it with high confidence: the prior pass named two specific offices, so it may have had a source I could not reach (openai.com 403s with no Wayback snapshot for the preview announcement).",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Fortune — \"Jailbreaks to OpenAI's GPT-5.6 unlock dangerous cyber capabilities, U.K. agency finds\"",
+     "url": "https://fortune.com/2026/07/10/openai-gpt-5-6-sol-jailbreaks-cyber-attacks-similar-to-security-flaw-that-led-u-s-government-to-force-anthropic-to-disable-fable-5/",
+     "date": "2026-07-10"
+    },
+    {
+     "outlet": "The Hacker News — 'OpenAI Previews GPT-5.6 Sol With Restricted Access and Stronger Cyber Safeguards'",
+     "url": "https://thehackernews.com/2026/06/openai-limits-gpt-56-rollout-as-sol.html",
+     "date": "2026-06-27"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "Hacker News — 'GPT-5.6'",
+     "url": "https://news.ycombinator.com/item?id=48854300",
+     "date": "2026-07-10"
+    },
+    {
+     "where": "Hacker News — 'Previewing GPT-5.6 Sol: a next-generation model'",
+     "url": "https://news.ycombinator.com/item?id=48692734",
+     "date": "2026-06-26"
+    }
+   ],
+   "note": "Existing Fortune entry re-fetched and verified live (200 direct); its headline attributes the jailbreak finding to the UK agency, i.e. it is coverage of the AISI work rather than of OpenAI's own claims. The Hacker News threads and The Hacker News article are additions this pass."
+  },
+  "still_blocked": [
+   {
+    "url": "https://openai.com/index/gpt-5-6-preview/",
+    "status": 403,
+    "what_it_would_have_shown": "OpenAI's preview announcement, which may name ONCD and OSTP explicitly; direct 403 and no Wayback snapshot exists. Even if it named them it would be a company source"
+   },
+   {
+    "url": "https://www.congress.gov/search?q=%22GPT-5.6%22",
+    "status": 403,
+    "what_it_would_have_shown": "congressional keyword search; substituted by the full-text sweep of all 46 Congressional Record sitting days in the window"
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "JOINT-2026-07-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Hansard spoken contributions, 'jailbreak' (1 result in the entire window), 2026-07-09→2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=jailbreak&queryParameters.startDate=2026-07-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "the single hit is Baroness Stowell, 2026-06-16, about the Fable 5 jailbreak — before this report and about a different system"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"universal jailbreak\"' and '\"GPT-5.6\"'",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22universal%20jailbreak%22&queryParameters.startDate=2026-07-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for universal jailbreak; the two GPT-5.6 contributions concern the autonomous cyber incident"
+      },
+      {
+       "name": "Hansard spoken contributions, '\"AI Security Institute\"' (51 results) — all read",
+       "url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22&queryParameters.startDate=2026-07-09&queryParameters.endDate=2026-08-28&queryParameters.take=50",
+       "via": "direct",
+       "status": 200,
+       "result": "no contribution refers to AISI's GPT-5.6 red-teaming or to universal jailbreaks in the cyber domain"
+      },
+      {
+       "name": "gov.uk search API and UK AISI publication index",
+       "url": "https://www.gov.uk/api/search.json?q=GPT-5.6%20cyber%20evaluation&count=15&fields=title,link,public_timestamp,description",
+       "via": "direct",
+       "status": 200,
+       "result": "read; nothing. AISI is a co-author of the finding, so its own output would not count as uptake"
+      },
+      {
+       "name": "NCSC all-content RSS feed and the NCSC statement of 4 August 2026",
+       "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+       "via": "direct",
+       "status": 200,
+       "result": "read; concerns unsanctioned agent behaviour on the open internet, not AISI's jailbreak results"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "Federal Register full-text API, term '\"GPT-5.6\"', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22GPT-5.6%22&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term 'jailbreak', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=jailbreak&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"AI Security Institute\"', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22AI%20Security%20Institute%22&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Federal Register full-text API, term '\"universal jailbreak\"', 2026-07-09→2026-08-28",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions[term]=%22universal%20jailbreak%22&conditions[publication_date][gte]=2026-07-09",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no document referencing the finding"
+      },
+      {
+       "name": "Full text of the Congressional Record for every sitting day in the window (govinfo daily packages CREC-YYYY-MM-DD.zip, all HTML granules extracted and grepped), 2026-07-09→2026-08-28 (46 sitting days, all fetched 200)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-16.zip",
+       "via": "direct",
+       "status": 200,
+       "result": "grepped for 'GPT-5.6', jailbreak, 'AI Security Institute', 'red team' — no hit"
+      },
+      {
+       "name": "congress.gov keyword search pages",
+       "url": "https://www.congress.gov/search?q=test",
+       "via": null,
+       "status": 403,
+       "result": "blocked (403, no Wayback snapshot); substituted by the full Congressional Record sweep above. congress.gov *document* URLs fetch 200 and were used where a specific document was identified"
+      },
+      {
+       "name": "NIST / CAISI site search + CAISI news and research-blog indexes",
+       "url": "https://www.nist.gov/search?s=%22Claude%20Mythos%22",
+       "via": "direct",
+       "status": 200,
+       "result": "read; 'No results'. CAISI news index and research blog listing read in full — nothing referencing the finding"
+      },
+      {
+       "name": "White House OSTP / ONCD / news indexes",
+       "url": "https://www.whitehouse.gov/ostp/",
+       "via": "direct",
+       "status": 200,
+       "result": "read; thin index pages, nothing referencing the finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press-corner search API, term 'GPT-5.6 jailbreak'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=GPT-5.6%20jailbreak&language=en&pagesize=20",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no Commission statement referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, term 'GPT-5.6 jailbreak'",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=GPT-5.6%20jailbreak&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "read; no EU instrument or communication referencing the finding"
+      },
+      {
+       "name": "EUR-Lex quick search, '\"AI Security Institute\"' (1 hit) — COM/2026/577 final, Action Plan on Cybersecurity and Artificial Intelligence, 7 July 2026",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "read in full: cites UK AISI's cyber task-length-doubling research only; does not reference this finding, report or result"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "This finding got substantial press (Fortune ran it as a headline result attributed to the UK agency) and no official pickup at all. Confirmed against full-text Hansard for the window, the gov.uk search API, UK committee papers and regulator correspondence, the complete Congressional Record for 2026-07-09→2026-08-28, the Federal Register full-text API, NIST/CAISI, the European Commission press corner and EUR-Lex. The word 'jailbreak' appears exactly once in Hansard across the whole window and refers to a different model.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Fortune — \"Jailbreaks to OpenAI's GPT-5.6 unlock dangerous cyber capabilities, U.K. agency finds\"",
+     "url": "https://fortune.com/2026/07/10/openai-gpt-5-6-sol-jailbreaks-cyber-attacks-similar-to-security-flaw-that-led-u-s-government-to-force-anthropic-to-disable-fable-5/",
+     "date": "2026-07-10"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "Hacker News — 'GPT-5.6' release thread",
+     "url": "https://news.ycombinator.com/item?id=48854300",
+     "date": "2026-07-10"
+    }
+   ],
+   "note": "Existing Fortune entry re-fetched and verified live (200 direct); it is the clearest independent write-up of this specific finding in the packet. Hacker News thread added this pass."
+  },
+  "still_blocked": [],
+  "confidence": "high"
+ }
+]

@@ -1,0 +1,226 @@
+[
+ {
+  "venue": "Anthropic",
+  "title": "Frontier threats red teaming for AI safety",
+  "url": "https://www.anthropic.com/news/frontier-threats-red-teaming-for-ai-safety",
+  "date": "2022-08-22",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; §1 company-venue carve-out fails (no external evaluator named in the report text)",
+  "reason": "Anthropic narrates its own biosecurity red-team findings in its own voice (\"we found\", \"we discovered\"); the collaborators appear only as unnamed \"experts\"/\"top biosecurity experts\" (hyperlink to gryphonscientific.com, never named in prose) and contribute no attributed section, so the carve-out does not fire. (Note: page masthead reads Jul 26, 2023, not the 2022-08-22 in the record.)",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 10295,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "A New Frontier of Risk in Healthcare: Artificial Intelligence",
+  "url": "https://www.robustintelligence.com/blog-posts/a-new-frontier-of-risk-in-healthcare-artificial-intelligence",
+  "date": "2021-11-10",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinion/marketing piece, no evidence-backed measured result",
+  "reason": "Tagged \"Perspectives\"; a general essay on AI risk in healthcare that ends in a RIME product pitch — no model tested, no measurement, no observed behaviour reported.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 14204,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned",
+  "url": "https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned",
+  "date": "2022-08-22",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; §1 company-venue carve-out fails (no external evaluator named)",
+  "reason": "Anthropic authors red-teaming its own 2.7B/13B/52B LM variants and RLHF models; the landing page names no external evaluator and contains no externally contributed section, so the carve-out test (\"is an external evaluator NAMED?\") returns no.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2518,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "ImageNet-C: Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+  "url": "https://www.grayswan.ai/research/imagenet-c-benchmarking-neural-network-robustness-to-common-corruptions-and-perturbations",
+  "date": "2019-03",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is asserted in this report (bibliographic stub); §3 dedup — secondary listing of a primary academic paper",
+  "reason": "Fetched in full: the Gray Swan page is a research-index card (title, March 2019, Dan Hendrycks / Thomas Dietterich) whose Abstract tab reads \"This research is currently only available at its source\" — it reproduces no result, and the primary source is the original academic paper, which evaluates ImageNet classifiers, not any named company model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 634,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Randomized Smoothing: Certified Adversarial Robustness via Randomized Smoothing",
+  "url": "https://www.grayswan.ai/research/randomized-smoothing-certified-adversarial-robustness-via-randomized-smoothing",
+  "date": "2019-06",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is asserted in this report (bibliographic stub); §3 dedup — secondary listing of a primary academic paper",
+  "reason": "Fetched in full: index card for Cohen / Rosenfeld / Kolter (June 2019) with \"This research is currently only available at its source\"; no result reproduced and the underlying work is a certified-defence method, not an evaluation of a named model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 624,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Overfitting in Adversarially Robust Deep Learning",
+  "url": "https://www.grayswan.ai/research/overfitting-in-adversarially-robust-deep-learning",
+  "date": "2020-03",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim is asserted in this report (bibliographic stub); §3 dedup — secondary listing of a primary academic paper",
+  "reason": "Fetched in full: index card for Rice / Wong / Kolter (March 2020) with \"This research is currently only available at its source\"; no result reproduced, no named company or model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 557,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Towards Algorithm Auditing: A Survey on Managing Legal, Ethical and Technological Risks of AI, ML and Associated Algorithms",
+  "url": "https://www.holisticai.com/papers/towards-algorithm-auditing",
+  "date": "2021-01-01",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 — a survey summarising others' work; §2 test 2 — the auditing framework it proposes is a recommendation, not an evidence-backed result",
+  "reason": "Landing page gated a 31-page PDF, which I retrieved and read: a UCL/Holistic AI multi-author technical report surveying legal, ethical and technical audit literature and proposing a four-level auditing framework; it reports no measured result on any system and evaluates no named model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 117922,
+   "pages": 31
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "AI Failures — Eliminate Them, Now",
+  "url": "https://www.robustintelligence.com/blog-posts/operational-risks-of-ai-get-rid-of-them-now",
+  "date": "2021-05-17",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinion piece and product introduction, no evidence-backed measured result",
+  "reason": "Co-founder Kojin Oshiba's \"Perspectives\" essay listing categories of ML failure in the abstract and introducing RIME; every claim is illustrative or anecdotal, none measured on a system.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 18090,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Machine Learning for eCommerce Fraud Management with Riskified's CTO",
+  "url": "https://www.robustintelligence.com/blog-posts/machine-learning-for-ecommerce-fraud-management",
+  "date": "2021-08-25",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — interview content; the claims are a third party's descriptions of his own practice, not an evaluator-measured result",
+  "reason": "Q&A with Riskified co-founder Assaf Feldman about Riskified's internal model-selection and shadow-mode deployment practice; Robust Intelligence tested nothing and asserts no finding of its own (§2 test 1 also fails).",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 16093,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Blaine Nelson: Using his Adversarial Machine Learning Research to improve RIME",
+  "url": "https://www.robustintelligence.com/blog-posts/blaine-nelson-principal-machine-learning-engineer",
+  "date": "2021-09-27",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — staff profile, no evidence-backed result of any kind",
+  "reason": "\"People\"-tagged fireside-chat profile of a Robust Intelligence engineer covering his career and past academic work; no system evaluated, no measurement reported.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 24331,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Red Teaming Language Models with Language Models",
+  "url": "https://deepmind.google/blog/red-teaming-language-models-with-language-models",
+  "date": "2022-02",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; §1 company-venue carve-out fails (no external evaluator named)",
+  "reason": "DeepMind authors (Perez et al.) describing DeepMind's own automated red-teaming of its own Dialogue-Prompted Gopher; the post names no external evaluator and carries no externally contributed section, so the carve-out test returns no.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5300,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Meta",
+  "title": "System Cards, a new resource for understanding how AI systems work",
+  "url": "https://ai.meta.com/blog/system-cards-a-new-resource-for-understanding-how-ai-systems-work",
+  "date": "2022-02-23",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; §1 company-venue carve-out fails (consultees appear only as unnamed \"external experts\")",
+  "reason": "Live URL 400s; read via the Wayback ai.facebook.com mirror (snapshot 2022-03-02) — a Meta Responsible AI transparency-tooling announcement of a prototype System Card for Instagram feed ranking, which says only that Meta \"consult[ed] with external experts\" without naming any, and reports no external evaluation (also §2: an announcement contains no findings).",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 10254,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Make RIME Yours (with Custom Tests)",
+  "url": "https://www.robustintelligence.com/blog-posts/custom-tests",
+  "date": "2022-03-02",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — product feature description with two explicitly hypothetical scenarios, no evidence-backed result",
+  "reason": "Engineering post explaining why and how RIME lets customers author custom tests; the two illustrative users are stated to be \"made up\", and no model or dataset is actually evaluated.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 15477,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Robust Intelligence Awarded IDIQ Contract to Eliminate AI Risk for the US Air Force",
+  "url": "https://www.robustintelligence.com/blog-posts/robust-intelligence-awarded-idiq-contract",
+  "date": "2022-03-17",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — announcements and partnership news contain no findings",
+  "reason": "One-minute press announcement of a DoD IDIQ contract award plus investor and customer name-drops; no evaluation performed or reported.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 7636,
+   "pages": null
+  },
+  "findings": []
+ }
+]

@@ -1,0 +1,230 @@
+Machine Learning for eCommerce Fraud Management with Riskified's CTO â Robust Intelligence
+
+We use cookies to improve user experience and analyze website traffic. By clicking âAcceptâ, you agree to our website's cookie use as described in our 
+Privacy Policy.
+Preferences
+Decline All
+Accept All
+Your Cookie Preferences
+We use different types of cookies to optimize your experience on our website. Click on the categories below to learn more about their purposes. You may choose which types of cookies to allow and can change your preferences at any time. Remember that disabling cookies may affect your experience on the website. You can learn more about how we use cookies by visiting our 
+Privacy Policy.
+Checkbox
+Essential Cookies
+Details
+These cookies are necessary to the core functionality of our website and some of its features, such as access to secure areas.
+Checkbox
+Analytics and Customization Cookies
+Details
+These cookies collect information that can help us understand how our websites are being used. This information can also be used to measure effectiveness in our marketing campaigns or to curate a personalized site experience for you.
+Checkbox
+Advertising Cookies
+Details
+These cookies are used to enhance the performance and functionality of our websites but are nonessential to their use. However, without these cookies, certain functionality (like videos)may become unavailable.
+Thank you! Your submission has been received!
+Oops! Something went wrong while submitting the form.
+Decline All
+Confirm my Choices
+Back
+Essential Cookies
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+__cf_bm
+Cloudflare places the cookie on end-user devices that access customer sites protected by Bot Management or Bot Fight Mode.
+server_cookie
+30 minutes
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+_tibcpv
+Used to record unique visitor views of the consent banner.
+http_cookie
+1 year
+Back
+Analytics and Customization Cookies
+Name
+Purpose
+Marketo Munchkin
+Marketo's custom JavaScript tracking code, called Munchkin, tracks all individuals who visit your website so you can react to their visits with automated marketing campaigns.
+Name
+Purpose
+Google Tag
+The Google tag (gtag.js) is a single tag you can add to a website to use a variety of Google products and services (e.g., Google Ads, Google Analytics, Campaign Manager, Display & Video 360, Search Ads 360).
+Back
+Performance and Functionality Cookies
+Name
+Purpose
+LinkedIn Insight
+The LinkedIn Insight Tag is a snippet of JavaScript code that loads a small library of functions you can use to track Linkedin ad-driven visitor activity on your website.
+Back
+Advertising Cookies
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+__cf_bm
+Cloudflare places the cookie on end-user devices that access customer sites protected by Bot Management or Bot Fight Mode.
+server_cookie
+30 minutes
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+_tibcpv
+Used to record unique visitor views of the consent banner.
+http_cookie
+1 year
+
+August 25, 2021
+ - 
+4
+ minute read
+Machine Learning for eCommerce Fraud Management with Riskified's CTO
+Perspectives
+Author
+Authors
+Olivia Farrar
+Olivia is a Content Strategist at Robust Intelligence.
+Machine Learning in the eCommerce Cybersecurity Space - Riskified, Leader in Frictionless Fraud Management
+This week we sat down with Assaf Feldman, the Co-Founder and CTO of Riskified, to ask him about the development of Riskifiedâs data science models and machine learning best practices. Riskified provides eCommerce fraud-prevention SaaS solutions for enterprise merchants, using advanced machine learning algorithms to differentiate legitimate purchases from fraud.
+Before co-founding Riskified, Assaf held several positions, including as an algorithm engineer at BillGuard, the Head of Research Technologies at Kinetic Global Markets, Lead Developer at 
+monitor110.com
+, and VP of Engineering at Oddcast. He has extensive experience in building systems that use machine learning and innovative algorithms to solve complex problems.
+As CTO of Riskified, Assaf leads over 140 data scientists, software engineers, product managers, and analysts. Under the leadership of Assaf and his co-founder, Eido Gal, Riskified has more than doubled its revenue in each of the last five years and began trading on the New York Stock Exchange in July 2021.
+Our CEO, Yaron Singer, led the discussion.
+Can you give us some background on Riskified and how you're using machine learning?
+âRiskified is a platform of products for e-Commerce mainly, which deals with different risks along the customer journey. We're helping online merchants optimize their customer journey, from the login through checkout and the transaction.
+When you're selling online, you have unique risks. Basically, every innovation you make as an e-commerce company to ensure a smoother and interesting user experience comes with some risk and an open door for abuse or fraud.
+Riskified applies machine learning in all these junctions to help prevent fraud and be more accurate about what is legitimate and what is not legitimate. This facilitates a better customer experience and ensures that the legitimate ones make it all the way through and end up buying and remaining as real customers to our merchants.
+That was our main offering for many years: detecting if an online transaction was being made by the owner of the payment method, for example, the credit card or the PayPal account. Later, we added products that help customers deal with being declined by their banks and how they recover that transaction. We also have a product called âAccount Secure,â which is securing login by trying to assess if the user that is logging in is actually the owner of the account or if that's someone taking over their account.
+We also have a new product that we're developing that is focused on abuseâall kinds of scenarios, for example where people are saying the package was not delivered even though it was delivered and are thus abusing policies. There is trust between the eCommerce merchant and the customer, and sometimes the customer takes advantage of them.
+We've also developed our own AI platform to facilitate the whole lifecycle of training models and improve models and check different features and feature engineering approaches. At the end of the day, it's a platform that enables us to have dozens of data scientists working in parallel in different avenues.â
+One of the things that you mentioned is model selection. How does that process work at Riskified?
+âWeâre not really in an endless loop of testing one against the other, but we are relying on different feedback loops coming from the field.
+Lower performance is a trigger. We're also monitoring features and data drift, and things that are rooted in the data to trigger retraining. Once we have either retrained or improved a model, we have a system that checks the new version's performance versus the old version offline.
+We then go into âshadow mode,â where we let both models run in real-time in production and include some A/B Testing at this stage. When we're sure about it, we finalize the replacement. Later on, we also check retrospectively to see that our estimates of the improvements are actually correct.
+We also have mechanisms, like control groups, that keep on checking the false decline rateâcall it false negative or false positive, depending on how you look at your negative or positive. In our caseâespecially in the checkoutâonce we've declined an order, you never know if it's good or bad. So, it's tough to assess your false decline rate.
+The transactions that we approve are guaranteed to our merchants, so every mistake that we make comes out of our pocket. It's a great way to keep the incentives aligned. We also guarantee an approval rate. This is one of the things I really like about the way we created the business model because it ended up making sure that we create a whole machine learning platform that is aligned with incentives of the merchants.â
+What are a few best practices for building robust machine learning systems?
+"It's not just data scienceâit's data science-meets-engineering, especially when you do it at scale, which I think not many companies are doing. That's kind of unique to us. We're running dozens of models in real-time in production that are changing all the time, with huge teams working on that.
+It requires collaboration between research and data scientists and engineers and creating an organization and a platform that can support it. We also have to build the data storage, data architectures, and data strategies to enable this.
+As the scale gets larger and larger, it's an enormous challenge that weâre continuing to improve on and adapt to. That's one of the biggest challenges and one of my main focuses."
+Author
+Authors
+Olivia Farrar
+Olivia is a Content Strategist at Robust Intelligence.
+Share article
+Social
+Follow us on LinkedIn
+
+Newsletter
+Subscribe to our newsletter
+Thank you!
+You have successfully subscribed to our list
+Oops! Something went wrong while submitting the form.
+Related articles
+September 20, 2024
+ - 
+5
+ minute read
+Extracting Training Data from Chatbots
+For: 
+September 10, 2024
+ - 
+5
+ minute read
+Leveraging Hardened Cybersecurity Frameworks for AI Security through the Common Weakness Enumeration (CWE)
+For: 
+September 6, 2024
+ - 
+4
+ minute read
+ AI Governance Policy Roundup (August 2024)
+For: 
++ Â More Articles
+
+Related articles
+No items found.
++ Â More Articles
+
+Ready to learn more?
+See why weâre the enterprise choice for AI application security.
+Get a Demo
+
+August 25, 2021
+ - 
+4
+ minute read
+Machine Learning for eCommerce Fraud Management with Riskified's CTO
+Perspectives
+Author
+Authors
+Olivia Farrar
+Olivia is a Content Strategist at Robust Intelligence.
+Machine Learning in the eCommerce Cybersecurity Space - Riskified, Leader in Frictionless Fraud Management
+This week we sat down with Assaf Feldman, the Co-Founder and CTO of Riskified, to ask him about the development of Riskifiedâs data science models and machine learning best practices. Riskified provides eCommerce fraud-prevention SaaS solutions for enterprise merchants, using advanced machine learning algorithms to differentiate legitimate purchases from fraud.
+Before co-founding Riskified, Assaf held several positions, including as an algorithm engineer at BillGuard, the Head of Research Technologies at Kinetic Global Markets, Lead Developer at 
+monitor110.com
+, and VP of Engineering at Oddcast. He has extensive experience in building systems that use machine learning and innovative algorithms to solve complex problems.
+As CTO of Riskified, Assaf leads over 140 data scientists, software engineers, product managers, and analysts. Under the leadership of Assaf and his co-founder, Eido Gal, Riskified has more than doubled its revenue in each of the last five years and began trading on the New York Stock Exchange in July 2021.
+Our CEO, Yaron Singer, led the discussion.
+Can you give us some background on Riskified and how you're using machine learning?
+âRiskified is a platform of products for e-Commerce mainly, which deals with different risks along the customer journey. We're helping online merchants optimize their customer journey, from the login through checkout and the transaction.
+When you're selling online, you have unique risks. Basically, every innovation you make as an e-commerce company to ensure a smoother and interesting user experience comes with some risk and an open door for abuse or fraud.
+Riskified applies machine learning in all these junctions to help prevent fraud and be more accurate about what is legitimate and what is not legitimate. This facilitates a better customer experience and ensures that the legitimate ones make it all the way through and end up buying and remaining as real customers to our merchants.
+That was our main offering for many years: detecting if an online transaction was being made by the owner of the payment method, for example, the credit card or the PayPal account. Later, we added products that help customers deal with being declined by their banks and how they recover that transaction. We also have a product called âAccount Secure,â which is securing login by trying to assess if the user that is logging in is actually the owner of the account or if that's someone taking over their account.
+We also have a new product that we're developing that is focused on abuseâall kinds of scenarios, for example where people are saying the package was not delivered even though it was delivered and are thus abusing policies. There is trust between the eCommerce merchant and the customer, and sometimes the customer takes advantage of them.
+We've also developed our own AI platform to facilitate the whole lifecycle of training models and improve models and check different features and feature engineering approaches. At the end of the day, it's a platform that enables us to have dozens of data scientists working in parallel in different avenues.â
+One of the things that you mentioned is model selection. How does that process work at Riskified?
+âWeâre not really in an endless loop of testing one against the other, but we are relying on different feedback loops coming from the field.
+Lower performance is a trigger. We're also monitoring features and data drift, and things that are rooted in the data to trigger retraining. Once we have either retrained or improved a model, we have a system that checks the new version's performance versus the old version offline.
+We then go into âshadow mode,â where we let both models run in real-time in production and include some A/B Testing at this stage. When we're sure about it, we finalize the replacement. Later on, we also check retrospectively to see that our estimates of the improvements are actually correct.
+We also have mechanisms, like control groups, that keep on checking the false decline rateâcall it false negative or false positive, depending on how you look at your negative or positive. In our caseâespecially in the checkoutâonce we've declined an order, you never know if it's good or bad. So, it's tough to assess your false decline rate.
+The transactions that we approve are guaranteed to our merchants, so every mistake that we make comes out of our pocket. It's a great way to keep the incentives aligned. We also guarantee an approval rate. This is one of the things I really like about the way we created the business model because it ended up making sure that we create a whole machine learning platform that is aligned with incentives of the merchants.â
+What are a few best practices for building robust machine learning systems?
+"It's not just data scienceâit's data science-meets-engineering, especially when you do it at scale, which I think not many companies are doing. That's kind of unique to us. We're running dozens of models in real-time in production that are changing all the time, with huge teams working on that.
+It requires collaboration between research and data scientists and engineers and creating an organization and a platform that can support it. We also have to build the data storage, data architectures, and data strategies to enable this.
+As the scale gets larger and larger, it's an enormous challenge that weâre continuing to improve on and adapt to. That's one of the biggest challenges and one of my main focuses."
+Author
+Authors
+Olivia Farrar
+Olivia is a Content Strategist at Robust Intelligence.
+Share article
+Newsletter
+Subscribe to our newsletter
+Thank you!
+You have successfully subscribed to our list
+Oops! Something went wrong while submitting the form.
+Blog
+Related articles
+March 12, 2024
+ - 
+7
+ minute read
+Understanding and Mitigating Unicode Tag Prompt Injection
+For: 
+July 26, 2024
+ - 
+5
+ minute read
+AI Cyber Threat Intelligence Roundup: July 2024
+For: 
+June 14, 2022
+ - 
+4
+ minute read
+ML Security Evasion Competition 2022
+For: 
+No items found.
++ Â More Articles
+
+Achieve 
+AI Integrity 
+Today
+Request a Demo

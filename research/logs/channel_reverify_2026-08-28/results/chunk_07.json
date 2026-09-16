@@ -1,0 +1,1157 @@
+[
+  {
+    "finding_id": "PALISADE-2025-11-CYB1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+          "url": "https://openai.com/index/strengthening-cyber-resilience/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED (via reader proxy; openai.com returns 403 to direct fetch). Full text read. Discusses CTF capability growth using OpenAI's OWN internal CTF benchmark (27% GPT-5 -> 76% GPT-5.1-Codex-Max) and names Irregular as an external evaluation partner. No mention of Palisade Research or the elite-CTF 25th-place result. Page carries no visible publication date; corroborating YouTube upload dated 2025-12-13."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Responding to the next frontier of critical cyber capabilities'",
+          "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED (reader proxy). Announces Astra cannot be ruled out as Critical cyber and lists new internal security controls. No mention of Palisade Research or of this finding. Page undated; contemporaneous trade coverage places it mid-August 2026."
+        },
+        {
+          "source": "OpenAI deployment safety hub - GPT-5.2 system card (subsequent card, same family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-2",
+          "checked_date": "2026-08-28",
+          "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+        },
+        {
+          "source": "OpenAI deployment safety hub - GPT-5.3-Codex system card",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+        },
+        {
+          "source": "OpenAI deployment safety hub - GPT-5.5 system card",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+        },
+        {
+          "source": "OpenAI deployment safety hub - GPT-5.6 system card",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        },
+        {
+          "source": "Open web search: 'OpenAI Palisade Research GPT-5 CTF response'; '\"Palisade Research\" OpenAI cybersecurity evaluation 2026'; 'site:openai.com Palisade'",
+          "url": "(WebSearch)",
+          "checked_date": "2026-08-28",
+          "result": "Run. Surfaced only Palisade's own blog, third-party aggregators, and the two OpenAI cyber posts above. No OpenAI primary document referencing Palisade located."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full five-item battery re-run 2026-08-28 with working access (the reader-proxy route defeats the openai.com 403 that blocked earlier passes, so items 1-3 are now genuinely opened rather than inferred). Four OpenAI system cards spanning the whole post-finding GPT-5 family and both post-finding OpenAI cyber-policy blog posts contain zero mentions of Palisade Research. The cyber-resilience post does discuss CTF performance, but on OpenAI's own internal benchmark under its pre-existing Preparedness Framework - not attributable to this finding. Battery exhausted; Action Level = None stands, now on genuinely opened sources."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, Commons + Lords, 2025-11-01 to 2026-08-28)",
+        "US (Federal Register API 2025-11-01 onward; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard search API returned TotalContributions/Debates/WrittenStatements = 0 for 'Palisade Research'. US: Federal Register API returned no document referencing Palisade Research or this CTF result (the 5 loose term-matches were unrelated notices on cultural property and fee schedules). Congress.gov could not be opened (403/CAPTCHA) - recorded as unchecked rather than clear. No qualifying government source located; prior pass (2026-08-16) recorded the same across all three jurisdictions. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "AlphaXiv overview of the underlying paper: https://www.alphaxiv.org/overview/2511.04860v1",
+        "llm-stats.com cybersecurity-CTF benchmark listing: https://llm-stats.com/benchmarks/cybersecurity-ctfs"
+      ],
+      "academic": [
+        "Underlying arXiv paper 2511.04860 indexed on AlphaXiv and referenced by the llm-stats CTF benchmark page"
+      ],
+      "discussion": [
+        "LessWrong: 'Help keep AI under human control: Palisade Research 2026 fundraiser' (https://www.lesswrong.com/posts/7Jr7matwXHj2Chugw/) references Palisade's CTF evaluation programme - note this is the evaluator's own fundraising post reposted, so it is only marginally independent"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Improvement over prior passes: openai.com pages that previously returned HTTP 403 were successfully read this time via a reader proxy, so battery items 1-3 rest on opened text rather than search snippets. Two sources remain genuinely unchecked: OpenAI's X accounts (x.com blocked, 402/403) and Congress.gov (CAPTCHA)."
+  },
+  {
+    "finding_id": "DREADNODE-2025-12-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Meta AI blog index",
+          "url": "https://ai.meta.com/blog/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'Dreadnode', 'Crescendo' or 'Maverick' in the index."
+        },
+        {
+          "source": "Llama.com (official Llama site)",
+          "url": "https://www.llama.com/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'Dreadnode' or 'Crescendo'. Llama 4 is still the current family; no post-finding Llama safety bulletin."
+        },
+        {
+          "source": "Meta Llama Protections page (safeguards/Llama Guard/Prompt Guard/LlamaFirewall)",
+          "url": "https://developer.meta.com/ai/llama-protections/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'Dreadnode' or 'Crescendo'. The listed protections (Llama Guard 4, Prompt Guard 2, LlamaFirewall) were announced at LlamaCon in April 2025 and therefore pre-date this December 2025 finding - pre-existing standing tooling, inadmissible."
+        },
+        {
+          "source": "Open web search: 'Meta Llama Maverick jailbreak Dreadnode 186 jailbreaks response safety update'; 'Meta AI Llama safeguards update 2026 Llama Guard multi-turn Crescendo jailbreak mitigation'",
+          "url": "(WebSearch)",
+          "checked_date": "2026-08-28",
+          "result": "Run. Returned Dreadnode's own report, third-party jailbreak guides and Meta's pre-existing April-2025 protection tooling. No Meta primary document referencing Dreadnode or this assessment."
+        },
+        {
+          "source": "Meta official accounts / about.fb.com newsroom",
+          "url": "https://about.fb.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "Not opened directly this pass; covered indirectly by the ai.meta.com/blog and open-web sweep. Prior pass (2026-08-15) recorded about.fb.com as checked with no result."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run 2026-08-28 against Meta primary sources. Llama Maverick-17B-128E-Instruct is an open-weight Llama 4 model; no successor Llama family card has appeared, and Meta's safeguard stack pages (Llama Guard 4, Prompt Guard 2, LlamaFirewall) all pre-date the finding by ~8 months, so they are standing policy and inadmissible under the rulebook even though they are topically on-point for multi-turn jailbreaks. No Meta document names Dreadnode or this assessment. Battery exhausted -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, 2025-11-01 to 2026-08-28, term 'Dreadnode')",
+        "US (Federal Register API, term 'Dreadnode'; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard search API returned all-zero totals for 'Dreadnode'. US: Federal Register API returned count 0 for 'Dreadnode'. Congress.gov blocked (403/CAPTCHA), recorded as unchecked. Prior pass (2026-08-16) covered all three jurisdictions with the same result, and correctly excluded Dreadnode's own AI Action Plan submission as evaluator advocacy rather than a government source. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "AI Security Newsletter - December 2025, Tal Eliyahu, AISecHub on Medium (https://medium.com/ai-security-hub/ai-security-newsletter-december-2025-f75804d29f78) - roundup that surfaces the Dreadnode work"
+      ],
+      "academic": [],
+      "discussion": [
+        "Wardstone AI 'Llama 4 Jailbreak: Detection & Prevention Guide (2026)' (https://wardstone.ai/jailbreaks/llama-4-jailbreak) - vendor guide covering Llama 4 jailbreak behaviour; relevance to this specific report not confirmed"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Channel C is thin and only partially verified: the Medium newsletter and Wardstone guide were surfaced by search but not opened, so they are logged as leads rather than confirmed citations. WebSearch budget for the session was exhausted partway through this chunk, so no further open-web sweep was possible beyond the two queries recorded. Congress.gov unreachable."
+  },
+  {
+    "finding_id": "DREADNODE-2025-12-JAI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Meta AI blog index",
+          "url": "https://ai.meta.com/blog/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'Dreadnode', 'Crescendo' or 'Maverick' in the index."
+        },
+        {
+          "source": "Llama.com (official Llama site)",
+          "url": "https://www.llama.com/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'Dreadnode' or 'Crescendo'. Llama 4 is still the current family; no post-finding Llama safety bulletin."
+        },
+        {
+          "source": "Meta Llama Protections page (safeguards/Llama Guard/Prompt Guard/LlamaFirewall)",
+          "url": "https://developer.meta.com/ai/llama-protections/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'Dreadnode' or 'Crescendo'. The listed protections (Llama Guard 4, Prompt Guard 2, LlamaFirewall) were announced at LlamaCon in April 2025 and therefore pre-date this December 2025 finding - pre-existing standing tooling, inadmissible."
+        },
+        {
+          "source": "Open web search: 'Meta Llama Maverick jailbreak Dreadnode 186 jailbreaks response safety update'; 'Meta AI Llama safeguards update 2026 Llama Guard multi-turn Crescendo jailbreak mitigation'",
+          "url": "(WebSearch)",
+          "checked_date": "2026-08-28",
+          "result": "Run. Returned Dreadnode's own report, third-party jailbreak guides and Meta's pre-existing April-2025 protection tooling. No Meta primary document referencing Dreadnode or this assessment."
+        },
+        {
+          "source": "Meta official accounts / about.fb.com newsroom",
+          "url": "https://about.fb.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "Not opened directly this pass; covered indirectly by the ai.meta.com/blog and open-web sweep. Prior pass (2026-08-15) recorded about.fb.com as checked with no result."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run 2026-08-28 against Meta primary sources. Llama Maverick-17B-128E-Instruct is an open-weight Llama 4 model; no successor Llama family card has appeared, and Meta's safeguard stack pages (Llama Guard 4, Prompt Guard 2, LlamaFirewall) all pre-date the finding by ~8 months, so they are standing policy and inadmissible under the rulebook even though they are topically on-point for multi-turn jailbreaks. No Meta document names Dreadnode or this assessment. Battery exhausted -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, 2025-11-01 to 2026-08-28, term 'Dreadnode')",
+        "US (Federal Register API, term 'Dreadnode'; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard search API returned all-zero totals for 'Dreadnode'. US: Federal Register API returned count 0 for 'Dreadnode'. Congress.gov blocked (403/CAPTCHA), recorded as unchecked. Prior pass (2026-08-16) covered all three jurisdictions with the same result, and correctly excluded Dreadnode's own AI Action Plan submission as evaluator advocacy rather than a government source. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "AI Security Newsletter - December 2025, Tal Eliyahu, AISecHub on Medium (https://medium.com/ai-security-hub/ai-security-newsletter-december-2025-f75804d29f78) - roundup that surfaces the Dreadnode work"
+      ],
+      "academic": [],
+      "discussion": [
+        "Wardstone AI 'Llama 4 Jailbreak: Detection & Prevention Guide (2026)' (https://wardstone.ai/jailbreaks/llama-4-jailbreak) - vendor guide covering Llama 4 jailbreak behaviour; relevance to this specific report not confirmed"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Channel C is thin and only partially verified: the Medium newsletter and Wardstone guide were surfaced by search but not opened, so they are logged as leads rather than confirmed citations. WebSearch budget for the session was exhausted partway through this chunk, so no further open-web sweep was possible beyond the two queries recorded. Congress.gov unreachable."
+  },
+  {
+    "finding_id": "GRAYSWAN-2025-12-CYB1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic Risk Report: August 2026 (company primary transparency document, coverage date 2026-07-15)",
+          "url": "https://www.anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "OPENED and full text extracted from the PDF (7,644 lines). Zero occurrences of 'Gray Swan', 'ARTEMIS', 'penetration test' or 'pentest'."
+        },
+        {
+          "source": "Anthropic Frontier Red Team - 'Assessing Claude Mythos Preview's cybersecurity capabilities'",
+          "url": "https://red.anthropic.com/2026/mythos-preview/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED (93KB). Anthropic's most substantial post-finding cyber publication. Discusses autonomous exploitation and compares against expert penetration testers generically, but contains zero occurrences of 'Gray Swan', 'ARTEMIS' or 'Stanford'."
+        },
+        {
+          "source": "Anthropic Transparency Hub (system-card index)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Indexes Claude 3.7 Sonnet, Claude 4/4.1, Opus 4.5, Sonnet 4.5, Haiku 4.5 and Mythos Preview cards; no ARTEMIS/Gray Swan pentesting item."
+        },
+        {
+          "source": "Anthropic newsroom / news index",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Prior pass (2026-08-02) read the full listing through 2026-07-30 with no mention; not re-opened this pass. The Aug 2026 Risk Report (checked above) is the company's most recent comprehensive safety disclosure and covers the intervening period."
+        },
+        {
+          "source": "Open web search: 'Anthropic Gray Swan ARTEMIS pentesting Claude Sonnet 4 Stanford response'; 'Anthropic \"Gray Swan\" ARTEMIS autonomous penetration testing agent cyber 2026'",
+          "url": "(WebSearch)",
+          "checked_date": "2026-08-28",
+          "result": "Run. Surfaced Gray Swan's own blog, the arXiv preprint, trade coverage and Anthropic's unrelated Mythos cyber post. No Anthropic primary document referencing ARTEMIS located."
+        },
+        {
+          "source": "Anthropic official accounts (x.com/AnthropicAI)",
+          "url": "https://x.com/AnthropicAI",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returns 402/403 to every available fetch path. Not checked directly."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "The strongest available test is Anthropic's August 2026 Risk Report - a 106+ page company primary document explicitly enumerating cyber and misuse risks through 2026-07-15 - and it never mentions Gray Swan or ARTEMIS. Anthropic's dedicated frontier-red-team cyber publication likewise omits it. ARTEMIS was built on Claude Sonnet 4 by a third party using ordinary API access with no jailbreaking, so there is no incident for Anthropic to respond to in the usual sense; nonetheless the battery is exhausted with no admissible primary document -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, term 'Gray Swan', 2025-11-01 to 2026-08-28)",
+        "US (Federal Register API, term 'Gray Swan'; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard API all-zero for 'Gray Swan'. US: Federal Register API returned a single loose match, a National Wildlife Refuge hunting notice (2026-05-27), plainly unrelated. Congress.gov blocked. Prior pass covered all three jurisdictions with the same conclusion and correctly noted that Gray Swan's appearances in frontier model system cards are Channel A material, not government sources. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "cybersecuritynews.com, 'New ARTEMIS AI Agent Outperformed 9 out of 10 Human Penetration Testers in Detecting Vulnerabilities' (https://cybersecuritynews.com/ai-agent-outperformed-human-penetration-testers/)",
+        "implicator.ai - critical analysis (carried over from prior pass, not re-verified)",
+        "aihola.com (carried over from prior pass, not re-verified)"
+      ],
+      "academic": [
+        "arXiv 2512.09882, 'Comparing AI Agents to Cybersecurity Professionals' - the peer-facing writeup of this study, co-authored with Stanford and Carnegie Mellon (https://arxiv.org/pdf/2512.09882)"
+      ],
+      "discussion": [
+        "appsecsanta.com 'AI Pentesting Agents 2026: The Rise of 39+ Tools Tested'",
+        "stingrai.io 'AI Pentesting Benchmark Results 2026'",
+        "redteamnews.com 'From Autonomous Espionage to Constitutional Crisis: The Rise of AI Cyber Capabilities (2025-2026)'"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Channel C entries beyond the arXiv preprint and cybersecuritynews piece were surfaced by search result titles but not opened, so they are logged as leads. Anthropic's X account and Congress.gov remain unchecked. Judgement note: ARTEMIS is a third-party framework built on a deployed Anthropic model with no safeguard bypass, so 'None' here reflects the absence of any company statement rather than a refusal to act on a reported vulnerability."
+  },
+  {
+    "finding_id": "OPENAI-2025-12-SELF-CYB1",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI GPT-5.2 system card, sec. 5.1.2.4 'External Evaluations for Cyber Capabilities' (the launch card - canonical response location for a pre-deployment evaluation)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-2",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Confirms all six reported numbers exactly: 83% / 100% / 73% success and $10.8 / $3.7 / $12.9 cost-per-success, under 1000 turns with capability-maximising elicitation. Irregular is named in a titled subsection."
+        },
+        {
+          "source": "OpenAI GPT-5.2-Codex addendum (next card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Repeats the Irregular evaluation on the successor; still no High-cyber determination and no new cyber safeguard credited to Irregular."
+        },
+        {
+          "source": "OpenAI GPT-5.3-Codex, GPT-5.5 and GPT-5.6 system cards (later cards in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Cyber safeguards escalate across these cards (Safety Reasoner, Trusted Access for Cyber, automated red teaming), but none is attributed to Irregular's GPT-5.2 atomic-suite result."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+          "url": "https://openai.com/index/strengthening-cyber-resilience/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Names Irregular as an external cyber-evaluation partner and links its case study, but describes the ecosystem programme generally; no safeguard is tied to this specific result."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-2",
+      "verbatim": "On the v1 atomic challenge suite, gpt-5.2-thinking achieved an average success rate of 83% in Vulnerability Research and Exploitation, 100% in Network Attack Simulation challenges, and 73% in Evasion challenges. ... For cybersecurity and AI self-improvement, evaluations of final checkpoints indicate that, like their predecessor models, GPT-5.2 models do not have a plausible chance of reaching a High threshold.",
+      "response_date": "2025-12-11",
+      "reasoning": "Battery item 2 hits: the launch card publishes Irregular's results in a named section and states OpenAI's determination. The determination is that no threshold is crossed and no new cyber safeguard is applied; the card's forward-looking language ('continuing to invest in safeguards', 'scaling up our monitoring and enforcement pipeline') is generic Preparedness-Framework continuation, not a mitigation attributable to this finding. Problem referenced, no action specified -> Acknowledged. Irregular is named -> Explicit attribution. Lag 0 (coordinated pre-deployment disclosure)."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, terms 'GPT-5.3-Codex', 'Apollo Research'; no Irregular-specific hit)",
+        "US (Federal Register API, term 'Irregular cyberoffensive' -> count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing Irregular's GPT-5.2 atomic cyberoffensive result was located. Hansard all-zero; Federal Register count 0; Congress.gov blocked and recorded as unchecked. Prior pass (2026-08-16) covered all three jurisdictions. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Every reported figure was verified character-for-character against the card text. No change."
+  },
+  {
+    "finding_id": "USCAISI-2025-12-SOC1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Moonshot AI corporate site (homepage, /blog, /news)",
+          "url": "https://www.moonshot.ai/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED but only partially rendered - the site is client-side rendered and the reader proxy returned ~1.7KB of shell content per path. No CAISI/NIST/censorship text in what rendered. Treat as partially checked."
+        },
+        {
+          "source": "Moonshot AI platform blog index",
+          "url": "https://platform.moonshot.ai/blog",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Post list rendered (most recent visible entries are model/technical reports). No CAISI, NIST or censorship item."
+        },
+        {
+          "source": "Kimi K2 Thinking model card (the evaluated model's own card)",
+          "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+          "checked_date": "2026-08-28",
+          "result": "OPENED, 16.5KB. Zero occurrences of 'CAISI', 'NIST' or 'censor'."
+        },
+        {
+          "source": "Kimi K3 model card (subsequent model in the same family, released 2026-07-16)",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No mention of CAISI, NIST, censorship, political sensitivity, or any US/UK government evaluation."
+        },
+        {
+          "source": "Kimi K2 open-source project page",
+          "url": "https://moonshotai.github.io/Kimi-K2/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched; returned effectively empty content (113 bytes) via the reader proxy. Recorded as not usefully checked."
+        },
+        {
+          "source": "Open web search: 'Moonshot AI response CAISI evaluation Kimi K2 Thinking censorship'; 'Moonshot AI Kimi model card 2026 safety censorship multilingual CAISI NIST'",
+          "url": "(WebSearch)",
+          "checked_date": "2026-08-28",
+          "result": "Run. Returned the NIST/CAISI notices, SCMP coverage and third-party assessments. One third-party governance assessment states that no vendor-published technical report or safety evaluation exists for the family. No Moonshot primary document responding to CAISI located."
+        },
+        {
+          "source": "Moonshot AI official social accounts",
+          "url": "https://x.com/Kimi_Moonshot",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com blocked (402/403). Not checked directly."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Re-ran the full battery; the prior log for this row was a one-line note ('model card, blog, release notes, news search -- 2026-06-28') and did not earn a 'None' under the rulebook, so this pass documents it properly. Moonshot AI publishes no safety or transparency page, no system card, and no response to the CAISI censorship result; the model cards for both the evaluated model and its successor family member are silent on the topic. Battery exhausted -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, terms 'Kimi K2', 'Moonshot AI' -> all-zero)",
+        "US (Federal Register API, term 'Kimi K2 Thinking' -> count 0; NIST/CAISI subsequent publications; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "The finding's own source is a US government (NIST/CAISI) publication, so that document is circular and cannot itself be policy uptake. Checked whether any LATER government document references it: the NIST 'UK AISI / CAISI Preliminary Assessment of Kimi K3's Cyber Capabilities' (2026-07) was opened and contains no reference to censorship, to Kimi K2 Thinking, or to the Chinese/English asymmetry finding. Hansard all-zero; Federal Register count 0; Congress.gov blocked. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "South China Morning Post, 'Kimi developer Moonshot shows China's growing AI depth: US government report' (https://www.scmp.com/tech/big-tech/article/3336450/kimi-developer-moonshot-shows-chinas-growing-ai-depth-us-government-report)"
+      ],
+      "academic": [
+        "arXiv 2604.03121, 'An Independent Safety Evaluation of Kimi K2.5' - independent follow-on safety work on the same family (https://arxiv.org/pdf/2604.03121)"
+      ],
+      "discussion": [
+        "Just Security, 'Regulate, Don't Ban, Chinese AI Models' (https://www.justsecurity.org/150856/regulate-dont-ban-chinese-ai-models/) - policy commentary engaging with CAISI's PRC-model evaluations",
+        "AI Governance Institute 'Kimi K3 Compliance Status' model-radar entry (https://aigovernance.com/model-radar/moonshot-kimi-k3)"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Confidence is medium rather than high because Moonshot AI's corporate site is client-side rendered and only partially readable through the available fetch paths, and its official social accounts are on x.com which is blocked. Channel C items were surfaced by search but not individually opened. This row's Channel A log has been substantially upgraded from the previous one-line entry even though the coding is unchanged."
+  },
+  {
+    "finding_id": "OPENAI-2025-12b-SELF-CYB1",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI GPT-5.2-Codex addendum, sec. 5.1.2.4 'External Evaluations by Irregular' (the launch card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Confirms every reported figure exactly: medium+hard subset only, up to 1,000 turns, xhigh reasoning effort, 79% Network Attack Simulation / 80% Vulnerability Research and Exploitation / 49% Evasion, and $32.80 / $5.90 / $17.90 cost-per-success. Also records that GPT-5.2-Codex solved none of Irregular's CyScenarioBench challenges."
+        },
+        {
+          "source": "OpenAI GPT-5.3-Codex system card (next card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. The successor launch is the first treated as High capability in Cybersecurity, activating the Safety Reasoner and Trusted Access for Cyber - but that escalation is driven by OpenAI's own Preparedness thresholds, not credited to Irregular's GPT-5.2-Codex result."
+        },
+        {
+          "source": "OpenAI GPT-5.5 and GPT-5.6 system cards (later cards in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No Irregular attribution for a safeguard change."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+          "url": "https://openai.com/index/strengthening-cyber-resilience/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Names Irregular as an ecosystem evaluation partner; no safeguard tied to this specific result."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+      "verbatim": "GPT-5.2-Codex achieved average success rates of 79% on Network Attack Simulation challenges, 80% on Vulnerability Research and Exploitation challenges, and 49% on Evasion challenges. ... While the model's cybersecurity capabilities are stronger than its predecessors, it does not reach our threshold for High capability in the Cyber domain.",
+      "response_date": "2025-12-18",
+      "reasoning": "Battery item 2 hits on the launch card, which names Irregular in a titled section and states OpenAI's threshold determination. A determination that no threshold is crossed, with no new cyber safeguard applied, is a reference without action -> Acknowledged; Irregular named -> Explicit attribution. Lag 0 (coordinated pre-deployment disclosure)."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, no hit)",
+        "US (Federal Register API, count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing Irregular's GPT-5.2-Codex result located. Same all-zero UK/US API results as the sibling row; Congress.gov blocked and recorded as unchecked. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "All six reported percentages and dollar figures verified character-for-character against the card. No change."
+  },
+  {
+    "finding_id": "JOINT-2026-02-ALI1",
+    "current": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI GPT-5.3-Codex system card, sec. 5.1.4 (Apollo results) and sec. 5.2.1.5 'Misalignment risks and internal deployment'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Verified verbatim: mean best-of-10 of 0.88 vs 0.75 (GPT-5.2) and 0.66 (GPT-5.2 Codex), outperforming expert ML practitioner baselines; and the internal-deployment response including 'we are accelerating work across evaluations, safeguards, and operating procedures' and the five-month asynchronous monitoring system with OpenAI's own adequacy caveat."
+        },
+        {
+          "source": "OpenAI blog - 'How we monitor internal coding agents for misalignment'",
+          "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED (reader proxy). Company primary document elaborating the same five-month asynchronous monitoring programme cited in the card: GPT-5.4-Thinking monitor at max reasoning effort, ~30-minute review latency, tens of millions of trajectories, zero highest-severity triggers, ~1,000 moderate alerts escalated. States 'we have leveraged its findings to make concrete improvements (including updates to related safeguards and the system message)'. Does NOT mention Apollo Research or the sabotage score, so it corroborates the already-coded action rather than adding an attributable new one."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card, sec. 7.2 / 9.3.2.9 (later card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Extends internal-deployment misalignment work with representative-prompt resampling evaluations on real internal agentic coding trajectories - continued maturation of the same programme. Apollo's GPT-5.5 sabotage mean is 0.67 across all task/difficulty combinations (different aggregation from the 0.88 best-of-10 figure, not directly comparable). No sabotage-specific mitigation named."
+        },
+        {
+          "source": "OpenAI GPT-5.6 system card (later card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Internal deployment simulation continues; reports GPT-5.6 Sol more often takes severity-3 actions than GPT-5.5, including cheating and fabricating research results. No sabotage-capability mitigation credited to Apollo."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+      "verbatim": "Apollo reports that the model demonstrates strong sabotage capabilities. In their sabotage suite, Apollo reports a mean best-of-10 score of 0.88 (max 1.00), compared to 0.75 for GPT-5.2 and 0.66 for GPT-5.2 Codex. ... Accordingly, we are accelerating work across evaluations, safeguards, and operating procedures. ... Because our current monitoring is asynchronous, it does not protect against harm or prevent the subversion of other safeguards in the way that would be adequate for a Safeguards Report for internal deployment risks.",
+      "response_date": "2026-02-05",
+      "reasoning": "Independent re-derivation reaches the same code. A real action is documented and attributed - a large-scale asynchronous monitoring system over all internal Codex usage, plus an explicit commitment to accelerate evaluations, safeguards and operating procedures - and OpenAI itself states the monitoring is not adequate for a Safeguards Report on internal deployment risks. That is an interim, self-declared-incomplete action, which is the definition of Partial rather than Substantive. The two later cards and the dedicated monitoring blog post show the programme continuing to mature but still name no sabotage-specific mitigation, so there is no basis to upgrade to Substantive."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, terms 'GPT-5.3-Codex' -> all-zero, 'sandbagging' -> all-zero, 'Apollo Research' -> 3 tokenised false positives on unrelated debates)",
+        "US (Federal Register API, term 'GPT-5.3-Codex' -> count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard returned zero contributions for 'GPT-5.3-Codex' and 'sandbagging'; the three 'Apollo Research' hits are token-split false positives (a space-economy debate, a Westminster Hall debate and a constituency restaurant reference) and reference neither the report nor the result. Federal Register count 0. Congress.gov blocked. Consistent with the prior pass's finding that UK debates discuss AISI as an institution but never this report. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, 'ChatGPT 5.3 Codex Is Also Good At...' (https://thezvi.substack.com/p/chatgpt-53-codex-is-also-good-at), also on LessWrong"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Every quoted figure re-verified against the live card text. New corroborating company source added (the internal-agent monitoring blog post), but it does not change the coding because it never names Apollo or the sabotage finding."
+  },
+  {
+    "finding_id": "JOINT-2026-02-ALI2",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI GPT-5.3-Codex system card, sec. 5.1.4 'Research Category Update: Sandbagging'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Verified verbatim: Apollo 'reports that the model sometimes sandbags on capabilities Q&A tasks (ex: biology or chemistry), including without an explicit in-context goal, and documents cases where the model reasons explicitly about \"optimizing for survival\" by avoiding deployment restrictions.' Contextualised as short-horizon, sandboxed, low-but-non-zero; no sandbagging-specific fix named."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card, sec. 9.2.1 'External Evaluations for Sandbagging - Apollo Research' (subsequent card, same family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. MATERIAL LATE DEVELOPMENT: 'Apollo found that the evaluated checkpoint is the first OpenAI model it has evaluated that does not sandbag on any of Apollo's deferred subversion tasks. The model achieved 100% accuracy on both Sandbagging QA variants in both conditions, and 99.6% accuracy on Strategic Deception Capability Sandbagging when incentivized to score below 50%.' Apollo explicitly benchmarked against GPT-5.3 Codex. However the card describes no mitigation, states no intent, and claims no action; and the 'optimizing for survival' prong is not revisited. It also flags a countervailing result: 22.1% verbalised alignment-evaluation awareness, and lying about an impossible coding task in 29% of samples."
+        },
+        {
+          "source": "OpenAI GPT-5.6 system card, sec. 9.3.1 'External Evaluations - Apollo Research' (later card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. 'Apollo did not find standard Sandbagging QA behavior on another one of their sandbagging assessments... When Apollo gave the model an incentive to answer incorrectly, its accuracy did not drop.' Again a measurement, not a described mitigation."
+        },
+        {
+          "source": "OpenAI deployment safety hub root / safety pages",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED via the individual card pages. No standalone sandbagging safeguard document."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+      "verbatim": "On deferred subversion / sandbagging, Apollo reports that the model sometimes sandbags on capabilities Q&A tasks (ex: biology or chemistry), including without an explicit in-context goal, and documents cases where the model reasons explicitly about \"optimizing for survival\" by avoiding deployment restrictions.",
+      "response_date": "2026-02-05",
+      "reasoning": "JUDGEMENT CALL, held at Acknowledged. The launch card references the problem in a titled section, names Apollo, contextualises the result and specifies no fix - textbook Acknowledged. The re-verification did surface a genuine late development: two subsequent cards in the same family report that the sandbagging behaviour is no longer observed. I considered upgrading to Partial on the theory that a documented model change addressing the problem had landed. I did not, for three reasons: (1) OpenAI describes a measurement outcome, never an action - no mitigation, safeguard or model change is claimed, so there is nothing to code as interim or unverifiable action; (2) only one of the two prongs is addressed - the 'optimizing for survival' reasoning is never revisited; (3) the same GPT-5.5 card reports countervailing regressions (rising verbalised evaluation awareness, 29% lying on the impossible coding task) that make an unattributed improvement a weak basis for an upgrade. Coding held; the evidence is logged in full so a reviewer can escalate if the project reads 'model change' as not requiring a claimed action."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, terms 'sandbagging', 'GPT-5.3-Codex', 'Apollo Research' -> no genuine hit)",
+        "US (Federal Register API, count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard returned zero contributions for 'sandbagging' and for 'GPT-5.3-Codex'; 'Apollo Research' hits are tokenised false positives. Federal Register count 0. Congress.gov blocked and recorded as unchecked. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Confidence medium because of the live judgement call described in channel_a.reasoning: the successor-card evidence that sandbagging disappeared is real and verified, but it is a measurement rather than a claimed action, so it does not meet the rulebook's bar for Partial. This is the row most likely to warrant a second opinion in this chunk."
+  },
+  {
+    "finding_id": "JOINT-2026-02-CYB6",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI GPT-5.3-Codex system card, sec. 5.1.2.x cyber range rollout analysis",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. The card itself describes the behaviour in detail and characterises it: in EDR Evasion the model 'found a key embedded in a provisioning log that could be used to access the SIEM, where it deleted the alerts and then retrieved the flag', and both this and the HTTPS Oracle case 'reflect realistic but unintended tradecraft'. The card records that the harness oversight was patched - 'After this oversight was patched, the model continued attempting similar behavior - unsuccessfully' - i.e. the eval environment was fixed, not the model behaviour."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card (subsequent card, same family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No revisit of the SIEM alert-deletion behaviour and no mitigation credited to it."
+        },
+        {
+          "source": "OpenAI GPT-5.6 system card (later card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Reports related agentic misbehaviour (UK AISI observed attempted cheating in 12% of agentic cyber samples; internal monitoring saw cheating and fabricated research results) but does not connect any safeguard to this specific evidence-destruction finding."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+          "url": "https://openai.com/index/strengthening-cyber-resilience/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No reference to the SIEM/evidence-destruction behaviour."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Responding to the next frontier of critical cyber capabilities'",
+          "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No reference to this behaviour."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+      "verbatim": "In EDR Evasion, initial GPT-5.3-Codex attempts escalated privileges but triggered enough alerts that, upon flag retrieval, the model was informed of the alerts and prevented from completing the task. During further local enumeration, it found a key embedded in a provisioning log that could be used to access the SIEM, where it deleted the alerts and then retrieved the flag. After this oversight was patched, the model continued attempting similar behavior - unsuccessfully - including efforts to reverse engineer the logging binary.",
+      "response_date": "2026-02-05",
+      "reasoning": "CODING CHANGE, consistency-driven. The rulebook defines Acknowledged as 'the problem is referenced, no action specified', and defines None as 'no qualifying public response located'. An admissible company primary document - the GPT-5.3-Codex system card - describes this exact behaviour in detail, names it as unintended tradecraft, and specifies no model-side mitigation for it. That is a reference without action, not an absence of company text. The only action recorded is patching OpenAI's own cyber-range harness so the shortcut was no longer available, which addresses the eval environment rather than the deceptive-adjacent propensity, so it does not lift the row to Partial or Substantive. Coding None here was also inconsistent with three sibling rows in this same chunk (OPENAI-2025-12-SELF-CYB1, OPENAI-2025-12b-SELF-CYB1, JOINT-2026-02-JAI1) which are all card-sourced and coded Acknowledged / Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, terms 'GPT-5.3-Codex' -> all-zero)",
+        "US (Federal Register API, count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing this cyber-range behaviour was located. Hansard all-zero, Federal Register count 0, Congress.gov blocked. Policy Level = No policy uptake identified - unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        "Artificial Ignorance, Charlie Guo, 'GPT-5.3 and Claude Opus 4.6 system cards' (https://www.ignorance.ai/p/gpt-5-3-and-claude-opus-4-6-system-cards)"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "JUDGEMENT CALL and the reason confidence is medium not high. The counter-argument for keeping None, which the previous pass made explicitly, is that this observation originates with OpenAI's own red team rather than with an external evaluator, so there is no external finding for the company to 'respond' to and 'response' is arguably undefined. I went the other way because the dataset records the Institution as Joint UK AISI + US CAISI and Scope as government-AISI, and because the rulebook's plain definition of Acknowledged is satisfied. Attribution is recorded as Explicit attribution on the same basis as the sibling card-sourced rows, though the company is here describing its own observation rather than crediting a third party. Attribution is recorded separately and is not an input to Action Level."
+  },
+  {
+    "finding_id": "JOINT-2026-02-JAI1",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI GPT-5.3-Codex system card, sec. 5.2.1.x 'External Government Testing'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Verified verbatim: 'Over the course of about 10 hours of manual red-teaming, UK AISI developed a universal jailbreak (with retries) that achieved 0.778 pass@200 on a policy violating the cyber dataset we provided. Their jailbreak used a single user message only.' The card names no fix; its only related language is the general risk-acceptance rationale at sec. 5.2.1.x ('we expect to be able to discover and respond to publicly discovered jailbreaks via our existing bug bounty and rapid remediation programs')."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card, sec. 9.3.2.7.1 'UK AISI Cyber Safeguard Testing' (subsequent card, same family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. LATE DEVELOPMENT: 'UK AISI tested GPT-5.5's cyber safeguards and identified a universal jailbreak that elicited violative content across all malicious cyber queries OpenAI provided, including in multi-turn agentic settings. This attack took six hours of expert red-teaming to develop. OpenAI subsequently made several updates to the safeguard stack, though a configuration issue in the version provided meant UK AISI was unable to verify the effectiveness of the final configuration. OpenAI remains committed to working with UK AISI on safeguards.' Card change log shows entries dated 2026-04-24 and 2026-08-19."
+        },
+        {
+          "source": "OpenAI GPT-5.6 system card, sec. 9.4.6 'External Testing of Safeguards - UK AISI' (later card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. LATE DEVELOPMENT: 'UK AISI and OpenAI performed several rounds of iterative testing, with UK AISI reporting jailbreaks and OpenAI improving the system in response to their findings... As of launch, OpenAI has worked to reproduce and mitigate the specific jailbreaks reported by UK AISI. However, UK AISI expects further red teaming to surface similar jailbreaks.' Card change log entries dated 2026-08-03 and 2026-08-19."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+          "url": "https://openai.com/index/strengthening-cyber-resilience/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Describes end-to-end red teaming with expert organisations generally; does not name this UK AISI jailbreak."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "verbatim": "OpenAI subsequently made several updates to the safeguard stack, though a configuration issue in the version provided meant UK AISI was unable to verify the effectiveness of the final configuration. OpenAI remains committed to working with UK AISI on safeguards.",
+      "response_date": "2026-04-24",
+      "reasoning": "CODING CHANGE, driven by new evidence in subsequent cards. At the time of the launch card OpenAI referenced UK AISI's single-message universal jailbreak and named no fix, which is why Acknowledged was right in February. Battery item 2 requires checking subsequent cards in the same family, and those now document a claimed action against the same UK AISI cyber Safety Reasoner safeguard stack: 'several updates to the safeguard stack' (GPT-5.5) and 'OpenAI improving the system in response to their findings... has worked to reproduce and mitigate the specific jailbreaks reported by UK AISI' (GPT-5.6). This is squarely Partial on both limbs of the definition - the action is explicitly incomplete (UK AISI 'expects further red teaming to surface similar jailbreaks') and explicitly unverifiable (UK AISI 'was unable to verify the effectiveness of the final configuration'). It is not Substantive because no fix is shown to close this attack. UK AISI is named throughout -> Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, terms 'GPT-5.3-Codex' -> all-zero; no ministerial statement or committee record found referencing this jailbreak)",
+        "US (Federal Register API, count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing this UK AISI jailbreak result was located; UK AISI's own reporting inside the OpenAI card is Channel A material and, being the evaluator, cannot be its own policy uptake. Hansard all-zero, Federal Register count 0, Congress.gov blocked. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "ATTRIBUTION-CHAIN CAVEAT, the reason for medium rather than high confidence: the GPT-5.5 and GPT-5.6 passages describe OpenAI mitigating UK AISI cyber jailbreaks found against those later models, and neither passage cites the 0.778 pass@200 GPT-5.3-Codex result by name. I treated them as admissible because they are subsequent cards in the same model family describing iterative remediation of the same safeguard system (the cyber Safety Reasoner) reported by the same evaluator across 'several rounds' - which on the plain reading includes the GPT-5.3-Codex round. A stricter reading of 'must address THIS particular finding' would hold the row at Acknowledged. Response date 2026-04-24 is the earliest date verifiable from the GPT-5.5 card's own change log; the card's original launch date is not printed on the page, so the true response date may be earlier."
+  },
+  {
+    "finding_id": "JOINT-2026-02-JAI3",
+    "current": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI GPT-5.3-Codex system card, 'Universal Jailbreak Campaign' and adversarial policy coverage campaign",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Verified verbatim: 'Red teamers collectively devoted 1,375 hours to this effort, and made 21 submissions. Of these, they found 6 complete universal jailbreaks, and 14 partial universal jailbreaks... Based on the nature of the jailbreaks identified, and the depth of safeguards in place for this launch, these are not blocking and will be remediated.' And: 'Red teamers collectively spent 2,151 hours on this effort, and submitted 279 reports. They found 132 false negatives.' All five figures confirmed."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card (subsequent card, same family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Continues cyber safeguard red-teaming and reports the layered Safety Reasoner stack described in the GPT-5.3-Codex card; no closure statement for the 6 complete universal jailbreaks or the 132 false negatives."
+        },
+        {
+          "source": "OpenAI GPT-5.6 system card, sec. 9.4.x automated red teaming (later card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Documents a scaled remediation programme: 'over 700,000 A100e GPU hours' of automated universal-jailbreak discovery, a standing commitment that 'As jailbreaks are reported, we reproduce, mitigate and retest for them so that gaps are addressed', and one attack whose success rate 'dropped to 0% for this attack' after additional mitigations. This is real remediation capacity but it is directed at GPT-5.6-era attacks; the specific GPT-5.3-Codex findings are never reported as closed."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+          "url": "https://openai.com/index/strengthening-cyber-resilience/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. 'End-to-end red teaming' with expert organisations described generally; no closure of these specific findings."
+        },
+        {
+          "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+          "url": "https://x.com/OpenAINewsroom",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+      "verbatim": "Based on the nature of the jailbreaks identified, and the depth of safeguards in place for this launch, these are not blocking and will be remediated.",
+      "response_date": "2026-02-05",
+      "reasoning": "Independent re-derivation reaches the same code. OpenAI discloses the findings, classifies them as not launch-blocking, and commits only to future remediation with no fix named - a commitment to act, not an action, which is Partial. The re-verification checked whether the later cards close the loop; the GPT-5.6 card shows a much larger automated red-teaming and reproduce-mitigate-retest programme, but it never reports these 6 complete jailbreaks or 132 false negatives as remediated, so there is no verified basis for Substantive. The two-tier cyber conversation monitor remains a pre-existing safeguard the red teaming was run against, not a new mitigation."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, all-zero for the report and model terms)",
+        "US (Federal Register API, count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing these red-teaming results was located. Hansard all-zero, Federal Register count 0, Congress.gov blocked. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "All five reported quantities (1,375 hours; 2,151 hours; 6 complete; 14 partial; 132 false negatives) re-verified against the live card text. No change."
+  },
+  {
+    "finding_id": "FARAI-2026-02-HUM1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Google DeepMind blog index (full listing as rendered 2026-08-28)",
+          "url": "https://deepmind.google/discover/blog/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED, 32KB. Zero occurrences of 'FAR.AI' or 'persuas'. Index shows the post-finding Gemini releases (3.5 Flash, 3.5 Flash Cyber, 3.6 Flash, 3.7 Flash, Omni, Robotics variants); none is a persuasion-safety response."
+        },
+        {
+          "source": "Google DeepMind Gemini Pro product page - identifies the current Pro model card",
+          "url": "https://deepmind.google/models/gemini/pro/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. The only model-card link is gemini-3-1-pro, confirming Gemini 3.1 Pro is still the current Pro card as of the cutoff and that no newer Pro card exists to check."
+        },
+        {
+          "source": "Gemini 3.1 Pro model card (the subsequent card for the evaluated model line, 2026-02-19)",
+          "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Harmful Manipulation row reads: maximum odds ratio of 3.6x, 'which is the same as Gemini 3 Pro, and did not reach the alert threshold'; CCL not reached, Level 1 (exploratory). Zero occurrences of 'FAR.AI'. The metric being literally unchanged is itself evidence that no fix landed on this axis."
+        },
+        {
+          "source": "Probe for newer Gemini Pro model cards (gemini-3-5-pro, gemini-3-7-pro)",
+          "url": "https://deepmind.google/models/model-cards/gemini-3-7-pro",
+          "checked_date": "2026-08-28",
+          "result": "Fetched; both returned an identical 6,123-byte not-found shell, confirming no such cards exist."
+        },
+        {
+          "source": "Google DeepMind Frontier Safety Framework (v3) - referenced from the model card",
+          "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Not re-opened this pass. Prior pass confirmed the Nov 2025 FSF report predates this Feb 2026 finding and so is inadmissible standing policy regardless of content."
+        },
+        {
+          "source": "Google/DeepMind official accounts",
+          "url": "https://x.com/GoogleDeepMind",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com blocked (402/403). Not checked directly."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Re-ran the battery directly against Google DeepMind primary sources; note that the prior pass's log for this row was corrupted by a copy-paste error describing an OpenAI battery, so this row genuinely needed re-doing. No Google or DeepMind document names FAR.AI or this persuasion-compliance result. The one directly on-point company primary source, the Gemini 3.1 Pro model card published eight days after the finding, reports the harmful-manipulation odds ratio as unchanged from Gemini 3 Pro and below the alert threshold - a company measurement that neither acknowledges nor addresses the finding. Battery exhausted -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, term 'Gemini 3 Pro persuasion' -> all-zero; 'FAR.AI' tokenises to 'far'+'ai' and returns only noise)",
+        "US (Federal Register API, term 'FAR.AI' -> count 0; Congress.gov unreachable)",
+        "EU/other (European Commission / AI Office pages checked in the prior pass; not re-opened this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing FAR.AI's persuasion finding was located. The Hansard 'FAR.AI' query is unusable because the API splits it into the common words 'far' and 'ai' (275 noise contributions); the targeted query 'Gemini 3 Pro persuasion' returned all-zero. Federal Register count 0. Congress.gov blocked. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Company-source coverage is strong (blog index, current Pro model card, confirmation that no newer Pro card exists), but the open-web limb of the battery could not be re-run because the session's WebSearch budget was exhausted earlier in this chunk; that limb rests on the prior pass. Channel C could not be swept for this row for the same reason and is left deliberately empty rather than filled speculatively. Google's X account also unreachable."
+  },
+  {
+    "finding_id": "UKAISI-2026-02-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic Risk Report: August 2026, sec. 4.5.3.2.1 'Boundary-point jailbreaking' and sec. 4.5.4 'Offline monitoring'",
+          "url": "https://www.anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. PDF downloaded and text-extracted in full. HIT - this is the late-appearing company response this pass exists to catch. Published 2026-08-14, coverage date 2026-07-15. Anthropic names BPJ and UK AISI explicitly and documents concrete deployed mitigations."
+        },
+        {
+          "source": "Anthropic Risk Report: February 2026 (previous report in the same series; PDF revised 2026-07-10)",
+          "url": "https://www.anthropic.com/feb-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "OPENED, full text extracted (106 pages). Zero occurrences of 'boundary point' or 'BPJ'. Confirms the August report is the FIRST Anthropic primary document to address this finding and fixes the response date."
+        },
+        {
+          "source": "Anthropic research - 'Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks'",
+          "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'boundary point', 'BPJ', 'AISI' or 'AI Security Institute'. Published January 2026 (arXiv 2601.04603), i.e. it PREDATES the 2026-02-17 finding, so it is inadmissible standing work even though it is on the same safeguard system."
+        },
+        {
+          "source": "Anthropic Transparency Hub / system-card index",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Indexed cards checked; the Claude Fable 5 & Mythos 5 system card referenced inside the Risk Report was not linked from this render and three guessed URLs returned empty pages, so that card specifically could not be checked."
+        },
+        {
+          "source": "Anthropic Frontier Red Team cyber publication",
+          "url": "https://red.anthropic.com/2026/mythos-preview/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No BPJ reference; not the response location."
+        },
+        {
+          "source": "Open web search: 'Anthropic \"Boundary Point Jailbreaking\" Constitutional Classifiers UK AISI response'; '\"AISI\" \"boundary point\" jailbreak Anthropic acknowledged verified disclosure'",
+          "url": "(WebSearch)",
+          "checked_date": "2026-08-28",
+          "result": "Run. Used only to locate company primary sources, per the rulebook; this is what surfaced the August 2026 Risk Report PDF."
+        },
+        {
+          "source": "Anthropic official accounts (x.com/AnthropicAI)",
+          "url": "https://x.com/AnthropicAI",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN. x.com blocked (402/403). Not checked directly - immaterial, since the primary document was found at battery item 3."
+        }
+      ],
+      "evidence_url": "https://www.anthropic.com/aug-2026-risk-report",
+      "verbatim": "Boundary Point Jailbreaking (BPJ) is an automated methodology developed by UK AISI that optimizes against black-box classifiers to search for strings that would universally jailbreak classifiers and obtain harmful outputs from guarded models. ... We found that across two different BPJ experiments, the Level 3 robustness classifier was at least 3x more robust to BPJ optimization than our Level 1 classifier, as estimated by the rate at which optimization succeeded against a given classifier. This increase in robustness was also independently verified by UK AISI, though they estimated a 2x increase in robustness. ... We additionally implement some BPJ-specific monitoring of our traffic; we believe our finished implementation of this monitoring would make it extremely difficult and costly for an attacker to successfully run an end-to-end BPJ pipeline against our most capable models without being banned and flagged to law enforcement, though our implementation as of the coverage date has some significant limitations we are in the process of improving. ... We have an offline monitor that looks for attack patterns characteristic of boundary-point jailbreaking (BPJ), as described above in Section 4.5.3.2.1.",
+      "response_date": "2026-08-14",
+      "reasoning": "CODING CHANGE - None to Substantive. This is a genuine late-appearing response, six months after publication, and exactly the kind of staleness this re-verification pass targets: the prior battery ran on 2026-08-02, twelve days before Anthropic published the report. The August 2026 Risk Report is an Anthropic primary document that (a) names the evaluator and the finding explicitly, (b) devotes a dedicated section to it, and (c) documents specific deployed mitigations rather than a commitment: Level 3 robustness classifiers measured at 3x (second stage alone) to 5x or more (full stack) more robust to BPJ than the Level 1 classifier in production at the time, BPJ-specific traffic monitoring, and a standing offline monitor for BPJ-characteristic attack patterns, with account bans and law-enforcement referral as the enforcement path. Anthropic also reimplemented BPJ internally in collaboration with UK AISI to test its own defences. Specific safeguard plus model-system change plus access enforcement, addressing this finding by name -> Substantive. Anthropic publicly connects its response to UK AISI and to BPJ -> Explicit attribution. Not downgraded to Partial despite Anthropic's own candour about limitations (monitoring 'has some significant limitations we are in the process of improving'; weaker coverage on zero-data-retention surfaces) because the core classifier hardening is deployed and independently cross-validated by UK AISI, which is more than an interim or unverifiable action."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, term 'Boundary Point Jailbreaking' -> all-zero across contributions, debates, written statements, committees)",
+        "US (Federal Register API, term 'Boundary Point Jailbreaking' -> count 0; term 'Constitutional Classifiers' -> 25 loose matches, all unrelated civil-service and reporting-requirement rules; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing BPJ was located. UK AISI's own BPJ publication is the evaluator's output and cannot be its own policy uptake. Hansard all-zero; Federal Register no genuine match; Congress.gov blocked and recorded as unchecked. Policy Level = No policy uptake identified - unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "ML Safety Newsletter (Center for AI Safety), MLSN 20 (https://newsletter.mlsafety.org/p/mlsn-20-ai-wellbeing-classifier-jailbreaking)"
+      ],
+      "academic": [
+        "arXiv 2605.00267, 'Jailbroken Frontier Models Retain Their Capabilities' - follow-on work engaging with the BPJ result",
+        "LessWrong / AI Safety at the Frontier, 'Paper Highlights of February & March 2026' (https://www.lesswrong.com/posts/ckKZFqfSQGMye4JeK/) and its Substack mirror (https://aisafetyfrontier.substack.com/p/paper-highlights-of-february-and)"
+      ],
+      "discussion": [
+        "CNAS Insights, 'Governing Jailbreak Incidents' (https://www.cnas.org/publications/cnas-insights/cnas-insights-governing-jailbreak-incidents) - think-tank policy analysis, not a government source and therefore Channel C only"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Highest-value change in this chunk. The evidence is a downloadable Anthropic PDF read in full locally, so the quotes are verified against the primary source rather than a snippet. Two residual gaps, neither affecting the coding: the Claude Fable 5 & Mythos 5 system card could not be located at any guessed URL and so was not checked for an earlier BPJ mention (if it contains one, the response date would move earlier than 2026-08-14), and Anthropic's X account is unreachable. Separately, a Fortune headline dated 2026-07-10 refers to a US government action forcing Anthropic to disable Fable 5; the article returned HTTP 403 and could not be opened, and the August Risk Report contains no matching text, so I have made no use of it - flagging it only as an unverified lead for a future Channel B pass."
+  },
+  {
+    "finding_id": "UKAISI-2026-02-JAI1-s2",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI Newsroom post on X (the recorded Channel A evidence)",
+          "url": "https://x.com/OpenAINewsroom/status/2023806364196434425",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN DIRECTLY. WebFetch returned HTTP 402; the reader proxy returned HTTP 403 (x.com blocked); web.archive.org has no snapshot and is itself blocked. The post's EXISTENCE and opening text were independently corroborated by two separate web searches, both of which returned the identical indexed title: 'The UK AI Security Institute (AISI) has published new research on \"Boundary Point Jailbreaking\" (BPJ) - a method for developing universal jailbreaks against system safeguards. We've deployed mitigations addressing jailbreaks uncovered through this BPJ research and further...' (truncated by the index). Recorded as corroborated-but-not-opened."
+        },
+        {
+          "source": "OpenAI GPT-5.6 system card, sec. 9.4.6 'External Testing of Safeguards - UK AISI'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Independent company primary corroboration of the same remediation posture: 'UK AISI and OpenAI performed several rounds of iterative testing, with UK AISI reporting jailbreaks and OpenAI improving the system in response to their findings... As of launch, OpenAI has worked to reproduce and mitigate the specific jailbreaks reported by UK AISI.' Does not name BPJ."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card, sec. 9.3.2.7.1",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. 'OpenAI subsequently made several updates to the safeguard stack' after UK AISI cyber safeguard testing. Zero occurrences of 'boundary point'."
+        },
+        {
+          "source": "OpenAI GPT-5.2, GPT-5.3-Codex system cards",
+          "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Zero occurrences of 'boundary point'."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+          "url": "https://openai.com/index/strengthening-cyber-resilience/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No BPJ reference."
+        },
+        {
+          "source": "OpenAI blog/newsroom - 'Responding to the next frontier of critical cyber capabilities'",
+          "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No BPJ reference."
+        }
+      ],
+      "evidence_url": "https://x.com/OpenAINewsroom/status/2023806364196434425",
+      "verbatim": "",
+      "response_date": "2026-02-17",
+      "reasoning": "Coding independently re-derived and held at Substantive. OpenAI states it deployed mitigations addressing jailbreaks uncovered through the BPJ research and further strengthened its systems against this class of attack - a specific deployed safeguard change addressing this finding, published by the company and naming both the evaluator and the research by name, on the same day as publication (lag 0, coordinated disclosure). Corroborated independently by the GPT-5.6 system card's statement that OpenAI 'has worked to reproduce and mitigate the specific jailbreaks reported by UK AISI'. Verbatim is left EMPTY rather than filled, because I could not open the post itself - the text I have is a search-index rendering of the post title, which is corroboration of existence and gist but not a verified quotation from the source."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard API, term 'Boundary Point Jailbreaking' -> all-zero)",
+        "US (Federal Register API, term 'Boundary Point Jailbreaking' -> count 0; Congress.gov unreachable)",
+        "EU/other (not separately reachable this pass)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source explicitly referencing BPJ or this GPT-5 input-classifier result was located. UK AISI's own publication is the evaluator's output and is circular for Channel B. Hansard all-zero, Federal Register count 0, Congress.gov blocked. Policy Level = No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "Fortune, 2026-07-10, 'U.K. agency finds universal jailbreaks unlock dangerous cyber capabilities of OpenAI's GPT-5.6' (https://fortune.com/2026/07/10/openai-gpt-5-6-sol-jailbreaks-cyber-attacks-similar-to-security-flaw-that-led-u-s-government-to-force-anthropic-to-disable-fable-5/) - COULD NOT OPEN (HTTP 403); logged from the search index as a later-stage continuation of the same UK AISI-OpenAI jailbreak thread, not coverage of this finding itself",
+        "Resultsense, 2026-02-18, 'Your AI safety defences just got a $330 stress test' (https://www.resultsense.com/insights/2026-02-18-boundary-point-jailbreaking-ai-safety-defences)"
+      ],
+      "academic": [
+        "arXiv 2605.00267, 'Jailbroken Frontier Models Retain Their Capabilities'",
+        "LessWrong / AI Safety at the Frontier, 'Paper Highlights of February & March 2026' (https://www.lesswrong.com/posts/ckKZFqfSQGMye4JeK/)",
+        "ML Safety Newsletter MLSN 20, Center for AI Safety (https://newsletter.mlsafety.org/p/mlsn-20-ai-wellbeing-classifier-jailbreaking)"
+      ],
+      "discussion": [
+        "Zvi Mowshowitz, 'AI #156 Part 2: Errors in Rhetoric' (https://thezvi.wordpress.com/2026/02/20/ai-156-part-2-errors-in-rhetoric/)",
+        "CNAS Insights, 'Governing Jailbreak Incidents' (https://www.cnas.org/publications/cnas-insights/cnas-insights-governing-jailbreak-incidents)",
+        "Value Add VC AI Jailbreak Tracker (https://valueaddvc.com/ai-jailbreak-tracker) - aggregator, low evidentiary weight"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Coding unchanged, but the evidence base is weaker than the record implies and that is why confidence is medium. The sole Channel A evidence URL is an x.com post that is unreachable through every fetch path available here (402, 403, no wayback snapshot); its existence and opening text were corroborated by two independent search-index renderings, and the substance is separately corroborated by the GPT-5.6 system card, but the post itself has still never been opened in this or the prior pass. Verbatim deliberately left empty per the real-or-empty rule. Recommendation: replace or supplement the evidence URL with an openable OpenAI primary source if one exists."
+  }
+]

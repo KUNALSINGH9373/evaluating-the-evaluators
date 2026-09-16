@@ -1,0 +1,3018 @@
+[
+ {
+  "finding_id": "CAIS-2023-07-JAI1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: adversarial suffix",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=adversarial%20suffix",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Center for AI Safety",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Center%20for%20AI%20Safety",
+       "via": "direct",
+       "status": 200,
+       "result": "5 contributions returned, all false positives from term-splitting (Baroness Kidron on the Cyber Security and Resilience Bill; Baroness Berger citing the Center for Countering Digital Hate; etc.) — none reference the evaluator or the report"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"Universal and Transferable Adversarial Attacks\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"Universal%20and%20Transferable%20Adversarial%20Attacks\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "2 results, both genuine"
+      },
+      {
+       "name": "DSIT, Frontier AI: Capabilities and Risks — discussion paper (full PDF read, 45pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a3c02f9d52550a19950f3cf/frontier-ai-capabilities-risks-report_l.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — cites the report by full title at footnotes 110, 111 and 136 supporting body text on non-robustness of safeguards and automatically generated adversarial prompts"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Zou et al. cited 12 times; 'Center for AI Safety' appears once. Supporting, but this is an independent expert report, so the DSIT discussion paper above is the load-bearing UK source"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "US Federal Register full-text search API — term: \"Universal and Transferable Adversarial Attacks\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Universal+and+Transferable+Adversarial+Attacks%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=1 — NTIA, Dual Use Foundation AI Models With Widely Available Model Weights, 2024-02-26"
+      },
+      {
+       "name": "NTIA RFC, Dual Use Foundation Artificial Intelligence Models With Widely Available Model Weights, 89 FR 14059 (full text read)",
+       "url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+       "via": "wayback",
+       "status": 200,
+       "result": "FOUND — footnote 13 cites the report and quotes its transferability result naming ChatGPT, Bard and Claude. Direct fetch 403'd; retrieved through the Wayback ladder"
+      },
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [448]; cited in body text in Sec. 3.5 (universal adversarial triggers / transferability to API-only closed systems) and again in Sec. 3.6 as the AdvBench benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Center for AI Safety\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Center+for+AI+Safety%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"adversarial suffix\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22adversarial+suffix%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result in any CAISI publication"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346)"
+      },
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Center for AI Safety",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Center%20for%20AI%20Safety",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=23, all term-split false positives in Daily News items"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Universal+and+Transferable+Adversarial+Attacks&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+   "verbatim": "NTIA, \"Dual Use Foundation Artificial Intelligence Models With Widely Available Model Weights\", 89 FR 14059 (26 Feb 2024), footnote 13: \"For example, researchers have found ways to get both black box large language models as well as more open models to produce objectionable content through adversarial attacks. See e.g., Andy Zou et al., Universal and Transferable Adversarial Attacks on Aligned Language Models, arXiv:2307.15043 (July 27, 2023) (“Surprisingly, we find that the adversarial prompts generated by our approach are quite transferable, including to black-box, publicly released LLMs . . . When doing so, the resulting attack suffix is able to induce objectionable content in the public interfaces to ChatGPT, Bard, and Claude, as well as open source LLMs such as LLaMA-2-Chat, Pythia, Falcon, and others.”).\"  ||  NIST AI 100-2e2025, Sec. 3.5: \"Universal adversarial triggers are a special class of these gradient-based attacks against generative models that seek to find input-agnostic prefixes (or suffixes) that produce the desired affirmative response regardless of the remainder of the input [386, 448]. That these universal triggers transfer to other models makes open-weight models — for which there is ready white-box access — feasible attack vectors for transferability attacks on closed systems in which only API access is available [448].\" Reference [448] = \"Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023.\"  ||  DSIT, \"Frontier AI: Capabilities and Risks\" discussion paper (GOV.UK), body: \"...safeguards to prevent frontier AI models from complying with harmful requests ... are not robust, and ‘adversarial’ users who aim to bypass these safeguards have succeeded ... and methods for automatically generating adversarial prompts may worsen the situation.¹¹⁰ Though AI robustness is a well-developed research field ... lack of robustness is still an unsolved problem that affects all kinds of machine learning models, including language models,¹¹¹\" — footnotes 110, 111 and 136 all cite \"Universal and Transferable Adversarial Attacks on Aligned Language Models, Zou et al., 2023.\"",
+   "policy_response": "Confirmed and strengthened. Two US federal instruments and one UK Government publication explicitly cite the report. NTIA's Federal Register RFC on open-weight dual-use foundation models (89 FR 14059, 26 Feb 2024) cites it and quotes the transferability result naming ChatGPT, Bard and Claude — i.e. the specific result behind all three findings. NIST AI 100-2e2025 (March 2025) incorporates it into its adversarial-ML taxonomy. DSIT's Frontier AI: Capabilities and Risks paper cites it at footnotes 110/111/136. None imposes an enforceable obligation.",
+   "reasoning": "Existing level confirmed. The previous coding rested only on NIST; this pass adds a better, finding-specific source. The NTIA footnote quotes the paper's own sentence naming ChatGPT, Bard and Claude, which maps directly onto JAI1 (GPT-3.5/GPT-4), JAI2 (PaLM-2/Bard) and JAI3 (Claude) respectively, so each of the three findings now has result-level rather than merely report-level support. An RFC and a taxonomy publication are official engagement without an enforceable requirement, so Non-binding is correct; nothing found imposes a mandatory obligation. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Tech Xplore, 'Researchers discover new vulnerability in large language models'",
+     "url": "https://techxplore.com/news/2023-07-vulnerability-large-language.html",
+     "date": "2023-07-31"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 3,587 citations for 'Universal and Transferable Adversarial Attacks on Aligned Language Models' (checked 2026-08-28 via Graph API; report-level count)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2307.15043?fields=title,citationCount"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Cited as reference [448] / AdvBench in NIST AI 100-2e2025 and in the International AI Safety Report 2026 (ref 1055) — noted descriptively as ecosystem uptake",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored. Correction to the existing record: the logged media URL ends '.pdf' (https://techxplore.com/news/2023-07-vulnerability-large-language.pdf) which 404/403s; the real article is the same slug with '.html'. It 403s on direct fetch and was confirmed through the Wayback ladder (snapshot 20240725044106). The existing Google Scholar figure of 4,217 was not re-verified — scholar.google.com is not reliably fetchable; the Semantic Scholar count above is the one measured this pass."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   },
+   {
+    "url": "https://techxplore.com/news/2023-07-vulnerability-large-language.html",
+    "status": 403,
+    "what_it_would_have_shown": "The Tech Xplore article direct; recovered via Wayback so nothing was lost."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "CAIS-2023-07-JAI2",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: adversarial suffix",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=adversarial%20suffix",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Center for AI Safety",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Center%20for%20AI%20Safety",
+       "via": "direct",
+       "status": 200,
+       "result": "5 contributions returned, all false positives from term-splitting (Baroness Kidron on the Cyber Security and Resilience Bill; Baroness Berger citing the Center for Countering Digital Hate; etc.) — none reference the evaluator or the report"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"Universal and Transferable Adversarial Attacks\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"Universal%20and%20Transferable%20Adversarial%20Attacks\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "2 results, both genuine"
+      },
+      {
+       "name": "DSIT, Frontier AI: Capabilities and Risks — discussion paper (full PDF read, 45pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a3c02f9d52550a19950f3cf/frontier-ai-capabilities-risks-report_l.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — cites the report by full title at footnotes 110, 111 and 136 supporting body text on non-robustness of safeguards and automatically generated adversarial prompts"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Zou et al. cited 12 times; 'Center for AI Safety' appears once. Supporting, but this is an independent expert report, so the DSIT discussion paper above is the load-bearing UK source"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "US Federal Register full-text search API — term: \"Universal and Transferable Adversarial Attacks\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Universal+and+Transferable+Adversarial+Attacks%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=1 — NTIA, Dual Use Foundation AI Models With Widely Available Model Weights, 2024-02-26"
+      },
+      {
+       "name": "NTIA RFC, Dual Use Foundation Artificial Intelligence Models With Widely Available Model Weights, 89 FR 14059 (full text read)",
+       "url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+       "via": "wayback",
+       "status": 200,
+       "result": "FOUND — footnote 13 cites the report and quotes its transferability result naming ChatGPT, Bard and Claude. Direct fetch 403'd; retrieved through the Wayback ladder"
+      },
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [448]; cited in body text in Sec. 3.5 (universal adversarial triggers / transferability to API-only closed systems) and again in Sec. 3.6 as the AdvBench benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Center for AI Safety\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Center+for+AI+Safety%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"adversarial suffix\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22adversarial+suffix%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result in any CAISI publication"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346)"
+      },
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Center for AI Safety",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Center%20for%20AI%20Safety",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=23, all term-split false positives in Daily News items"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Universal+and+Transferable+Adversarial+Attacks&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+   "verbatim": "NTIA, \"Dual Use Foundation Artificial Intelligence Models With Widely Available Model Weights\", 89 FR 14059 (26 Feb 2024), footnote 13: \"For example, researchers have found ways to get both black box large language models as well as more open models to produce objectionable content through adversarial attacks. See e.g., Andy Zou et al., Universal and Transferable Adversarial Attacks on Aligned Language Models, arXiv:2307.15043 (July 27, 2023) (“Surprisingly, we find that the adversarial prompts generated by our approach are quite transferable, including to black-box, publicly released LLMs . . . When doing so, the resulting attack suffix is able to induce objectionable content in the public interfaces to ChatGPT, Bard, and Claude, as well as open source LLMs such as LLaMA-2-Chat, Pythia, Falcon, and others.”).\"  ||  NIST AI 100-2e2025, Sec. 3.5: \"Universal adversarial triggers are a special class of these gradient-based attacks against generative models that seek to find input-agnostic prefixes (or suffixes) that produce the desired affirmative response regardless of the remainder of the input [386, 448]. That these universal triggers transfer to other models makes open-weight models — for which there is ready white-box access — feasible attack vectors for transferability attacks on closed systems in which only API access is available [448].\" Reference [448] = \"Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023.\"  ||  DSIT, \"Frontier AI: Capabilities and Risks\" discussion paper (GOV.UK), body: \"...safeguards to prevent frontier AI models from complying with harmful requests ... are not robust, and ‘adversarial’ users who aim to bypass these safeguards have succeeded ... and methods for automatically generating adversarial prompts may worsen the situation.¹¹⁰ Though AI robustness is a well-developed research field ... lack of robustness is still an unsolved problem that affects all kinds of machine learning models, including language models,¹¹¹\" — footnotes 110, 111 and 136 all cite \"Universal and Transferable Adversarial Attacks on Aligned Language Models, Zou et al., 2023.\"",
+   "policy_response": "Confirmed and strengthened. Two US federal instruments and one UK Government publication explicitly cite the report. NTIA's Federal Register RFC on open-weight dual-use foundation models (89 FR 14059, 26 Feb 2024) cites it and quotes the transferability result naming ChatGPT, Bard and Claude — i.e. the specific result behind all three findings. NIST AI 100-2e2025 (March 2025) incorporates it into its adversarial-ML taxonomy. DSIT's Frontier AI: Capabilities and Risks paper cites it at footnotes 110/111/136. None imposes an enforceable obligation.",
+   "reasoning": "Existing level confirmed. The previous coding rested only on NIST; this pass adds a better, finding-specific source. The NTIA footnote quotes the paper's own sentence naming ChatGPT, Bard and Claude, which maps directly onto JAI1 (GPT-3.5/GPT-4), JAI2 (PaLM-2/Bard) and JAI3 (Claude) respectively, so each of the three findings now has result-level rather than merely report-level support. An RFC and a taxonomy publication are official engagement without an enforceable requirement, so Non-binding is correct; nothing found imposes a mandatory obligation. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Tech Xplore, 'Researchers discover new vulnerability in large language models'",
+     "url": "https://techxplore.com/news/2023-07-vulnerability-large-language.html",
+     "date": "2023-07-31"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 3,587 citations for 'Universal and Transferable Adversarial Attacks on Aligned Language Models' (checked 2026-08-28 via Graph API; report-level count)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2307.15043?fields=title,citationCount"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Cited as reference [448] / AdvBench in NIST AI 100-2e2025 and in the International AI Safety Report 2026 (ref 1055) — noted descriptively as ecosystem uptake",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored. Correction to the existing record: the logged media URL ends '.pdf' (https://techxplore.com/news/2023-07-vulnerability-large-language.pdf) which 404/403s; the real article is the same slug with '.html'. It 403s on direct fetch and was confirmed through the Wayback ladder (snapshot 20240725044106). The existing Google Scholar figure of 4,217 was not re-verified — scholar.google.com is not reliably fetchable; the Semantic Scholar count above is the one measured this pass."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   },
+   {
+    "url": "https://techxplore.com/news/2023-07-vulnerability-large-language.html",
+    "status": 403,
+    "what_it_would_have_shown": "The Tech Xplore article direct; recovered via Wayback so nothing was lost."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "CAIS-2023-07-JAI3",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: adversarial suffix",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=adversarial%20suffix",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Center for AI Safety",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Center%20for%20AI%20Safety",
+       "via": "direct",
+       "status": 200,
+       "result": "5 contributions returned, all false positives from term-splitting (Baroness Kidron on the Cyber Security and Resilience Bill; Baroness Berger citing the Center for Countering Digital Hate; etc.) — none reference the evaluator or the report"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"Universal and Transferable Adversarial Attacks\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"Universal%20and%20Transferable%20Adversarial%20Attacks\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "2 results, both genuine"
+      },
+      {
+       "name": "DSIT, Frontier AI: Capabilities and Risks — discussion paper (full PDF read, 45pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a3c02f9d52550a19950f3cf/frontier-ai-capabilities-risks-report_l.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — cites the report by full title at footnotes 110, 111 and 136 supporting body text on non-robustness of safeguards and automatically generated adversarial prompts"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Zou et al. cited 12 times; 'Center for AI Safety' appears once. Supporting, but this is an independent expert report, so the DSIT discussion paper above is the load-bearing UK source"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "US Federal Register full-text search API — term: \"Universal and Transferable Adversarial Attacks\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Universal+and+Transferable+Adversarial+Attacks%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=1 — NTIA, Dual Use Foundation AI Models With Widely Available Model Weights, 2024-02-26"
+      },
+      {
+       "name": "NTIA RFC, Dual Use Foundation Artificial Intelligence Models With Widely Available Model Weights, 89 FR 14059 (full text read)",
+       "url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+       "via": "wayback",
+       "status": 200,
+       "result": "FOUND — footnote 13 cites the report and quotes its transferability result naming ChatGPT, Bard and Claude. Direct fetch 403'd; retrieved through the Wayback ladder"
+      },
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [448]; cited in body text in Sec. 3.5 (universal adversarial triggers / transferability to API-only closed systems) and again in Sec. 3.6 as the AdvBench benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Center for AI Safety\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Center+for+AI+Safety%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"adversarial suffix\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22adversarial+suffix%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result in any CAISI publication"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Universal%20and%20Transferable%20Adversarial%20Attacks",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346)"
+      },
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Center for AI Safety",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Center%20for%20AI%20Safety",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=23, all term-split false positives in Daily News items"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Universal+and+Transferable+Adversarial+Attacks&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+   "verbatim": "NTIA, \"Dual Use Foundation Artificial Intelligence Models With Widely Available Model Weights\", 89 FR 14059 (26 Feb 2024), footnote 13: \"For example, researchers have found ways to get both black box large language models as well as more open models to produce objectionable content through adversarial attacks. See e.g., Andy Zou et al., Universal and Transferable Adversarial Attacks on Aligned Language Models, arXiv:2307.15043 (July 27, 2023) (“Surprisingly, we find that the adversarial prompts generated by our approach are quite transferable, including to black-box, publicly released LLMs . . . When doing so, the resulting attack suffix is able to induce objectionable content in the public interfaces to ChatGPT, Bard, and Claude, as well as open source LLMs such as LLaMA-2-Chat, Pythia, Falcon, and others.”).\"  ||  NIST AI 100-2e2025, Sec. 3.5: \"Universal adversarial triggers are a special class of these gradient-based attacks against generative models that seek to find input-agnostic prefixes (or suffixes) that produce the desired affirmative response regardless of the remainder of the input [386, 448]. That these universal triggers transfer to other models makes open-weight models — for which there is ready white-box access — feasible attack vectors for transferability attacks on closed systems in which only API access is available [448].\" Reference [448] = \"Andy Zou, Zifan Wang, J Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models. arXiv preprint arXiv:2307.15043, 2023.\"  ||  DSIT, \"Frontier AI: Capabilities and Risks\" discussion paper (GOV.UK), body: \"...safeguards to prevent frontier AI models from complying with harmful requests ... are not robust, and ‘adversarial’ users who aim to bypass these safeguards have succeeded ... and methods for automatically generating adversarial prompts may worsen the situation.¹¹⁰ Though AI robustness is a well-developed research field ... lack of robustness is still an unsolved problem that affects all kinds of machine learning models, including language models,¹¹¹\" — footnotes 110, 111 and 136 all cite \"Universal and Transferable Adversarial Attacks on Aligned Language Models, Zou et al., 2023.\"",
+   "policy_response": "Confirmed and strengthened. Two US federal instruments and one UK Government publication explicitly cite the report. NTIA's Federal Register RFC on open-weight dual-use foundation models (89 FR 14059, 26 Feb 2024) cites it and quotes the transferability result naming ChatGPT, Bard and Claude — i.e. the specific result behind all three findings. NIST AI 100-2e2025 (March 2025) incorporates it into its adversarial-ML taxonomy. DSIT's Frontier AI: Capabilities and Risks paper cites it at footnotes 110/111/136. None imposes an enforceable obligation.",
+   "reasoning": "Existing level confirmed. The previous coding rested only on NIST; this pass adds a better, finding-specific source. The NTIA footnote quotes the paper's own sentence naming ChatGPT, Bard and Claude, which maps directly onto JAI1 (GPT-3.5/GPT-4), JAI2 (PaLM-2/Bard) and JAI3 (Claude) respectively, so each of the three findings now has result-level rather than merely report-level support. An RFC and a taxonomy publication are official engagement without an enforceable requirement, so Non-binding is correct; nothing found imposes a mandatory obligation. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Tech Xplore, 'Researchers discover new vulnerability in large language models'",
+     "url": "https://techxplore.com/news/2023-07-vulnerability-large-language.html",
+     "date": "2023-07-31"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 3,587 citations for 'Universal and Transferable Adversarial Attacks on Aligned Language Models' (checked 2026-08-28 via Graph API; report-level count)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2307.15043?fields=title,citationCount"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Cited as reference [448] / AdvBench in NIST AI 100-2e2025 and in the International AI Safety Report 2026 (ref 1055) — noted descriptively as ecosystem uptake",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored. Correction to the existing record: the logged media URL ends '.pdf' (https://techxplore.com/news/2023-07-vulnerability-large-language.pdf) which 404/403s; the real article is the same slug with '.html'. It 403s on direct fetch and was confirmed through the Wayback ladder (snapshot 20240725044106). The existing Google Scholar figure of 4,217 was not re-verified — scholar.google.com is not reliably fetchable; the Semantic Scholar count above is the one measured this pass."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   },
+   {
+    "url": "https://techxplore.com/news/2023-07-vulnerability-large-language.html",
+    "status": 403,
+    "what_it_would_have_shown": "The Tech Xplore article direct; recovered via Wayback so nothing was lost."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "PALISADE-2023-10-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Badllama",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Badllama",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Palisade Research",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Palisade%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: Palisade Research",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Palisade%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "4 publications returned, but the identical 4 IDs are returned for 'Apollo Research' — the API is matching the word 'Research' alone. No genuine hit"
+      },
+      {
+       "name": "UK Parliament Bills API — term: Badllama",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=Badllama",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: Badllama",
+       "url": "https://www.gov.uk/api/search.json?q=Badllama&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result — AI Scenarios 2030"
+      },
+      {
+       "name": "DSIT, 'AI Scenarios 2030: Helping policymakers plan for the future of AI' (GOV.UK publication, 15 June 2026) — full PDF read, 72pp",
+       "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — cites the report in body text and in the reference list"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [132] 'Pranav Gade, Simon Lermen, Charlie Rogers-Smith, and Jeffrey Ladish. Badllama: cheaply removing safety fine-tuning from llama 2-chat 13b, arXiv:2311.00117', cited in body text in the attacker-capabilities section"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Badllama\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Badllama%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Palisade Research\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade+Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result"
+      },
+      {
+       "name": "NTIA RFC, Dual Use Foundation AI Models With Widely Available Model Weights, 89 FR 14059 (full text read — the natural US venue for an open-weight safety-removal finding)",
+       "url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+       "via": "wayback",
+       "status": 200,
+       "result": "No mention of Badllama, Gade, Lermen or Palisade"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Badllama",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Badllama",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified)"
+      },
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Palisade Research",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Palisade%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Badllama",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Badllama&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "explicit 'no results'"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+   "verbatim": "DSIT, 'AI Scenarios 2030', Sec. 2.3 (Open- vs. closed-weight models): \"While the key components of closed-weight AI systems are proprietary and fixed, open-weight AI models can be downloaded, modified, and operated locally by anyone. They can be fine-tuned to specific uses, widely red-teamed, and used for types of research requiring weights access. However, fine-tuning can also easily remove any safeguards, increasing risks of malicious use (Gade et al., 2024).\" Reference list: \"Gade, P. et al. (2024) BadLlama: cheaply removing safety fine-tuning from Llama 2-Chat 13B. Available at: https://arxiv.org/abs/2311.00117 (Accessed: 20 May 2026).\"  ||  NIST AI 100-2e2025, attacker-capabilities section: \"MODEL CONTROL: The attacker might have the ability to modify model parameters, such as through public fine-tuning APIs or openly accessible model weights. This capability is used in MODEL POISONING attacks, as well FINE-TUNING CIRCUMVENTION attacks which remove refusal behavior or other model-level safety interventions [132, 153, 300].\" Reference [132] is the Badllama report.",
+   "policy_response": "Two official government publications explicitly cite the Badllama report. UK: DSIT's 'AI Scenarios 2030' (GOV.UK, 15 June 2026) cites it in body text for the proposition that fine-tuning can easily remove safeguards on open-weight models. US: NIST AI 100-2e2025 (March 2025) cites it as a source for 'fine-tuning circumvention attacks which remove refusal behavior'. Neither creates an enforceable obligation.",
+   "reasoning": "CHANGED from 'No policy uptake identified'. The previous pass recorded a three-jurisdiction negative on 2026-08-16 but did not reach either source found here. Both are explicit, body-text citations of this specific report, and both restate the finding's actual claim — that safety fine-tuning can be cheaply and easily removed — so they clear the strict admissibility bar (explicit reference to the report and to the result, not general discussion of open-weight risk). Identification of the report is the dataset's own: the packet lists the Source URL as palisaderesearch.org/blog/badllama and its own Academic Citations field equates it with arXiv:2311.00117, which is exactly what NIST [132] and DSIT (Gade et al., 2024) cite. Level is Non-binding, not Binding: a scenario-planning paper and a taxonomy publication impose no mandatory requirement on anyone. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 36 citations for 'BadLlama: cheaply removing safety fine-tuning from Llama 2-Chat 13B' (checked 2026-08-28)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2311.00117?fields=title,citationCount"
+    },
+    {
+     "cite": "Towards Safeguarding LLM Fine-tuning APIs against Cipher Attacks (2025), arXiv:2508.17158 — citing paper",
+     "url": "https://arxiv.org/abs/2508.17158"
+    },
+    {
+     "cite": "SDD: Self-Degraded Defense against Malicious Fine-tuning (2025), arXiv:2507.21182 — citing paper",
+     "url": "https://arxiv.org/abs/2507.21182"
+    },
+    {
+     "cite": "Surgery: Mitigating Harmful Fine-Tuning for LLMs via Attention (2026), arXiv:2602.05228 — citing paper",
+     "url": "https://arxiv.org/abs/2602.05228"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "AlignmentForum / LessWrong discussion of the underlying research ('LoRA Fine-tuning Efficiently Undoes Safety Training from Llama 2-Chat') — carried over from the existing record, not re-verified this pass",
+     "url": "https://www.alignmentforum.org/"
+    }
+   ],
+   "note": "Descriptive only; not scored. Citation count re-measured this pass via the Semantic Scholar Graph API and three concrete citing papers named. No independent press coverage located."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "APOLLO-2023-11-ALI1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Apollo Research",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Apollo%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "78 contributions / 12 written answers / 1 debate. The material hit is Ben Lake MP, Westminster Hall, 10 Dec 2025, DebateSection 'AI Safety', DebateSectionExtId 9F01B4B9-12CB-42E2-84E2-A65F7D30BFAF — the exact debate ID in the existing record. Verified against ContributionTextFull"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: Apollo Research",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Apollo%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "4 publications, but the identical IDs are returned for 'Palisade Research' — matching on 'Research' alone. No genuine hit"
+      },
+      {
+       "name": "UK Parliament Bills API — term: Apollo Research",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=Apollo%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"Apollo Research\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"Apollo%20Research\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "6 results (AISI approach to evaluations; Frontier AI Taskforce progress reports; AI Safety Summit introduction; SoS speech). These name Apollo Research as an organisation/partner but none references this deception finding"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "US Federal Register full-text search API — term: \"Apollo Research\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Apollo+Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'Apollo' or 'strategically deceive' anywhere in the 127pp document"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the evaluator, the report or the result"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Apollo Research",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Apollo%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=55, all term-split false positives in Daily News items (Apollo programme / generic 'research'); none references the finding"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Apollo Research",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Apollo+Research&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://hansard.parliament.uk/Commons/2025-12-10/debates/9F01B4B9-12CB-42E2-84E2-A65F7D30BFAF/AISafety",
+   "verbatim": "Ben Lake (Ceredigion Preseli) (PC), House of Commons, Westminster Hall, 10 December 2025, AI Safety debate: \"As the hon. Member for Dewsbury and Batley outlined in his speech, we have already found some advanced models deploying techniques to try to avoid human control. Apollo Research found examples of one of OpenAI's models trying to deceive users to accomplish its goals and, perhaps most worryingly, to disable monitoring mechanisms and guardrails. Those are real risks to the development of AI and things that we should take seriously.\"",
+   "policy_response": "Confirmed unchanged. Ben Lake MP cited Apollo Research by name in the House of Commons AI Safety debate (Westminster Hall, 10 December 2025), referencing its finding that an OpenAI model attempted to deceive users and to disable monitoring mechanisms. A backbench contribution in debate is official engagement with no enforceable obligation.",
+   "reasoning": "Existing coding verified at source. hansard.parliament.uk HTML 403s, so the record was retrieved through the official hansard-api.parliament.uk search API; the returned DebateSectionExtId (9F01B4B9-12CB-42E2-84E2-A65F7D30BFAF) matches the URL in the existing record exactly, and the full ContributionTextFull confirms the quote verbatim. The existing note that this single sentence is coded for both this finding ('deceive users') and the o1 scheming finding ('disable monitoring mechanisms') is borne out by the text. Non-binding is correct — a speech in Westminster Hall imposes no requirement. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Tech Xplore, 'Study shows that large language models can strategically deceive users when under pressure'",
+     "url": "https://techxplore.com/news/2023-12-large-language-strategically-users-pressure.html",
+     "date": "2023-12-12"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 159 citations for 'Large Language Models can Strategically Deceive their Users when Put Under Pressure' (checked 2026-08-28)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2311.07590?fields=title,citationCount"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "House of Commons AI Safety debate, 10 Dec 2025 (also the Channel B evidence) — logged here descriptively as notable public discussion",
+     "url": "https://hansard.parliament.uk/Commons/2025-12-10/debates/9F01B4B9-12CB-42E2-84E2-A65F7D30BFAF/AISafety"
+    },
+    {
+     "where": "Cited in the International AI Safety Report 2026 (Apollo Research appears twice, incl. the author/contributor list)",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored. The Tech Xplore article 403s on direct fetch and was confirmed through the Wayback ladder (snapshot 20250629193628). Existing Google Scholar count of 178 not re-verified; Semantic Scholar figure above is the one measured this pass."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SHANGHAIAILAB-2024-02-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: SALAD-Bench",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=SALAD-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Shanghai AI Laboratory",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Shanghai%20AI%20Laboratory",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: SALAD-Bench",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SALAD-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: SALAD-Bench",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=SALAD-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: SALAD-Bench",
+       "url": "https://www.gov.uk/api/search.json?q=SALAD-Bench&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "2,498 results, all term-split noise (gangmaster licensing, food microbiology). No genuine hit"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"Shanghai AI Laboratory\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"Shanghai%20AI%20Laboratory\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'SALAD' or 'Shanghai'"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "US Federal Register full-text search API — term: \"SALAD-Bench\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22SALAD-Bench%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Shanghai AI Laboratory\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Shanghai+AI+Laboratory%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'SALAD' or 'Shanghai' in the 127pp document"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference — including in the CAISI DeepSeek V4 Pro evaluation, the most likely venue for a Chinese-lab benchmark"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: SALAD-Bench",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SALAD-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified)"
+      },
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Shanghai AI Laboratory",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Shanghai%20AI%20Laboratory",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=1, a term-split false positive"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: SALAD-Bench",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=SALAD-Bench&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Negative confirmed against sources actually read. No official UK, US or EU source explicitly references SALAD-Bench, the Shanghai AI Laboratory / AI45 Lab as the evaluator of this benchmark, or the Gemini attack-enhanced safety-rate result. Same-topic policy activity on AI benchmarking does not qualify without an explicit link. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 271 citations for 'SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models' (checked 2026-08-28; was 254 on 2026-07-18)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2402.05044?fields=title,citationCount"
+    },
+    {
+     "cite": "Benchmarking the Benchmarks: Evaluating Automated Safety Benchmarks for Small Models (2026), arXiv:2608.17183 — citing paper",
+     "url": "https://arxiv.org/abs/2608.17183"
+    },
+    {
+     "cite": "MMJailBench: A Factorized Benchmark for Disentangling Multimodal Jailbreak Vulnerabilities (2026), arXiv:2608.25490 — citing paper",
+     "url": "https://arxiv.org/abs/2608.25490"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only; not scored. This finding drew no company response and no policy uptake, so Channel C is the only signal that anyone noticed: the benchmark is well cited academically (271, up 17 in six weeks) but no independent press coverage was located."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "PALISADE-2024-07-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Badllama",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Badllama",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Palisade Research",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Palisade%20Research",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: Badllama",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Badllama",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: Badllama",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=Badllama",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: Badllama",
+       "url": "https://www.gov.uk/api/search.json?q=Badllama&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result (AI Scenarios 2030) — read in full; it cites the 2023 Badllama report (Gade et al.), NOT Badllama 3 (Volkov). No occurrence of 'Volkov'"
+      },
+      {
+       "name": "DSIT, AI Scenarios 2030 (full PDF read, 72pp) — checked specifically for Volkov / Badllama 3",
+       "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "'Volkov' does not appear; the single BadLlama reference is to arXiv:2311.00117, a different report"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "'Badllama' appears once, as reference [132] = the 2023 report (Gade et al., arXiv:2311.00117). 'Volkov' does not appear anywhere. Badllama 3 is not cited"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Badllama\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Badllama%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Palisade Research\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade+Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result"
+      },
+      {
+       "name": "NTIA RFC, Dual Use Foundation AI Models With Widely Available Model Weights, 89 FR 14059 (full text read) — the open-weight venue named in the previous pass's blocked-source note",
+       "url": "https://www.federalregister.gov/documents/2024/02/26/2024-03763/dual-use-foundation-artificial-intelligence-models-with-widely-available-model-weights",
+       "via": "wayback",
+       "status": 200,
+       "result": "No mention of Badllama, Volkov or Palisade. NOTE: this resolves the previous pass's recorded 403 on NTIA open-weight pages — the document was reached this pass via the Wayback ladder and read in full"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Badllama",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Badllama",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified)"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Badllama",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Badllama&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "explicit 'no results'"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Negative confirmed, and the previous pass's blocked NTIA source has now actually been read rather than assumed. Badllama 3 (Volkov, arXiv:2407.01376) must be kept distinct from the 2023 Badllama report (Gade et al., arXiv:2311.00117): the 2023 report IS cited by NIST and by DSIT, but Badllama 3 is not cited by either. The only document located anywhere that cites Volkov is the International AI Safety Report 2026 (reference 1337), and only in its bibliography. That report is written by independent experts and states its conclusions are the authors', not governments'; it is no longer hosted on GOV.UK (the GOV.UK page now redirects to internationalaisafetyreport.org). I am therefore NOT treating it as an official government source, and the level stands. Flagging it explicitly so the call can be overridden: if the project does count that report as official UK/international uptake, this finding would become Non-binding. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 9 citations for 'Badllama 3: removing safety finetuning from Llama 3 in minutes' (checked 2026-08-28)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2407.01376?fields=title,citationCount"
+    },
+    {
+     "cite": "Mitigating Cyber Risk in the Age of Open-Weight LLMs: Policy Gaps and Technical Realities (2025), arXiv:2505.17109 — citing paper",
+     "url": "https://arxiv.org/abs/2505.17109"
+    },
+    {
+     "cite": "SoK: Systematizing LLM Prompt Security (2025), arXiv:2510.15476 — citing paper",
+     "url": "https://arxiv.org/abs/2510.15476"
+    },
+    {
+     "cite": "Code World Model Preparedness Report (2026), arXiv:2605.00932 — citing paper",
+     "url": "https://arxiv.org/abs/2605.00932"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "International AI Safety Report 2026, reference 1337 (independent expert report; recorded here as ecosystem coverage, not as Channel B evidence)",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored. NEW coverage logged this pass: the report is cited in the International AI Safety Report 2026 and by an open-weight policy paper. This finding drew no company response and no policy uptake, so this is the answer to 'did anyone else notice' — a little, mostly in the open-weight-governance literature."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "CISCO-2024-07-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Prompt-Guard",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Prompt-Guard",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Robust Intelligence",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Robust%20Intelligence",
+       "via": "direct",
+       "status": 200,
+       "result": "1,458 contributions returned but purely from term-splitting ('robust' + 'intelligence'); no reference to the evaluator or the report"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: Prompt-Guard",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Prompt-Guard",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: Prompt-Guard",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=Prompt-Guard",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: Prompt-Guard",
+       "url": "https://www.gov.uk/api/search.json?q=Prompt-Guard&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "25,433 results, all term-split noise (travel advice, cold-health alerts). No genuine hit"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"Robust Intelligence\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"Robust%20Intelligence\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "17 results, all unrelated (veterinary medicines, waste crime)"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "'Prompt guard' appears once, as reference [6] = Meta's own Prompt Guard documentation, not the Cisco bypass report. 'Robust Intelligence' appears once, as reference [313] = the company's AI Firewall product page. Neither references this finding. (Hyrum Anderson of Cisco is a co-author of NIST AI 100-2e2025, yet the report is still not cited.)"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Prompt-Guard\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Prompt-Guard%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Robust Intelligence\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Robust+Intelligence%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=3, all unrelated (1999 arms sales notification; CFIUS rules)"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: Prompt-Guard",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Prompt-Guard",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified)"
+      },
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: jailbreak",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=jailbreak",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Prompt-Guard",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Prompt-Guard&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Negative confirmed against sources actually read. Notably, NIST AI 100-2e2025 does cite Meta's Prompt Guard documentation and Cisco/Robust Intelligence's own product page, and a Cisco author contributed to the document — but it nowhere references the 99.8% bypass result or the report. Adjacent presence is not an explicit reference to the finding, so it does not qualify. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Not indexed in Semantic Scholar or Google Scholar under the exact report title — it is a corporate security blog post, not a paper. Existing record's Scholar check re-affirmed as the correct characterisation",
+     "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22Bypassing%20Meta%27s%20LLaMA%20Classifier%3A%20A%20Simple%20Jailbreak%22"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only; not scored. No independent media or academic coverage located. Worth noting for the 'did anyone notice' question: this finding had a Substantive company response (Meta) but essentially no external ecosystem footprint."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "FARAI-2024-08-JAI1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: jailbreak-tuning",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=jailbreak-tuning",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: data poisoning scaling laws",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=data%20poisoning%20scaling%20laws",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: FAR.AI",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "950 contributions returned but purely from term-splitting ('far' + 'ai'); no genuine hit"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: FAR.AI",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "236 publications, term-split noise"
+      },
+      {
+       "name": "UK Parliament Bills API — term: jailbreak-tuning",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=jailbreak-tuning",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"FAR.AI\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"FAR.AI\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: jailbreak-tuning",
+       "url": "https://www.gov.uk/api/search.json?q=jailbreak-tuning&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "1,239 results, all term-split noise"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [46] 'Dillon Bowen, Brendan Murphy, Will Cai, David Khachaturov, Adam Gleave, and Kellin Pelrine. Scaling laws for data poisoning in llms, arXiv:2408.02946', cited in body text in Sec. 3.2 on GenAI data-poisoning attacks"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"jailbreak-tuning\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22jailbreak-tuning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"FAR.AI\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: FAR.AI",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=2, term-split false positives"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Palisade Research",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Palisade+Research&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument for the poisoning finding either"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "verbatim": "NIST AI 100-2e2025, Sec. 3.2 (Data Poisoning): \"These attacks may be practical—requiring a relatively small portion of the total dataset [46]—and may lead to a range of bad outcomes, such as code suggestion models which intentionally suggest insecure code [3].\" Reference [46] = \"Dillon Bowen, Brendan Murphy, Will Cai, David Khachaturov, Adam Gleave, and Kellin Pelrine. Scaling laws for data poisoning in llms, 2024. arXiv:2408.02946.\"",
+   "policy_response": "Confirmed unchanged. NIST cited this work in its March 2025 adversarial-ML taxonomy when describing the practicality of generative-AI data-poisoning attacks. No enforceable obligation.",
+   "reasoning": "Existing coding verified at source: the citation is a genuine body-text citation, not merely a bibliography entry, and the existing Policy Response describes it accurately. Note for the record that Semantic Scholar now titles this paper 'Scaling Trends for Data Poisoning in LLMs' (the arXiv ID 2408.02946 is unchanged), while the packet uses the later title 'Data Poisoning in LLMs: Jailbreak-Tuning and Scaling Laws' — NIST cites the earlier title, so this is the same work. Non-binding is correct. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 46 citations for arXiv:2408.02946 (indexed as 'Scaling Trends for Data Poisoning in LLMs'), checked 2026-08-28",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2408.02946?fields=title,citationCount"
+    },
+    {
+     "cite": "Open Weight AI Models Require Proportional Evaluation Approaches (2026), arXiv:2606.19890 — citing paper",
+     "url": "https://arxiv.org/abs/2606.19890"
+    },
+    {
+     "cite": "Conjunctive Poisoning in AI Supply-Chain Applications (2026), arXiv:2608.15913 — citing paper",
+     "url": "https://arxiv.org/abs/2608.15913"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only; not scored. Existing Google Scholar count of 40 not re-verified; the Semantic Scholar figure above is the one measured this pass. No independent press located."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "CISCO-2024-08-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: SORRY-Bench",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=SORRY-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Robust Intelligence",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Robust%20Intelligence",
+       "via": "direct",
+       "status": 200,
+       "result": "1,458 contributions, all term-split noise; no reference to the evaluator or report"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: SORRY-Bench",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SORRY-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: SORRY-Bench",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=SORRY-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: SORRY-Bench",
+       "url": "https://www.gov.uk/api/search.json?q=SORRY-Bench&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "6,353 results, all term-split noise (employment tribunal decisions). No genuine hit"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'SORRY-Bench' or 'Structured Output' in the 127pp document"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"SORRY-Bench\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22SORRY-Bench%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Robust Intelligence\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Robust+Intelligence%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=3, all unrelated"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference to the report, the evaluator or the result"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: SORRY-Bench",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SORRY-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified)"
+      },
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: jailbreak",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=jailbreak",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: SORRY-Bench",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=SORRY-Bench&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no matching instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Negative confirmed against sources actually read. No official UK, US or EU source references the ENUM/Structured-Outputs bypass, the SORRY-Bench result, or Cisco/Robust Intelligence as the evaluator of it. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Not indexed in Semantic Scholar or Google Scholar under the exact report title — a corporate security blog post, not a paper",
+     "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22Bypassing%20OpenAI%27s%20Structured%20Outputs%3A%20Another%20Simple%20Jailbreak%22"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only; not scored. No independent media, academic or public discussion located. This finding drew no company response AND has no detectable ecosystem footprint — on the Channel C question, nobody else appears to have noticed."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "SCALEAI-2024-10-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: BrowserART",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=BrowserART",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: refusal-trained",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=refusal-trained",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: Scale AI browser agents",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Scale%20AI%20browser%20agents",
+       "via": "direct",
+       "status": 200,
+       "result": "0 across all record types"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: BrowserART",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=BrowserART",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications"
+      },
+      {
+       "name": "UK Parliament Bills API — term: BrowserART",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=BrowserART",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: BrowserART",
+       "url": "https://www.gov.uk/api/search.json?q=BrowserART&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: \"Scale AI\"",
+       "url": "https://www.gov.uk/api/search.json?q=\"Scale%20AI\"&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "83 results — the company's UK HQ announcement and unrelated items; none references this report"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'BrowserART'. 'Scale AI' appears once, as reference [324] = the company's own adversarial robustness leaderboard, not this report. The agent-security section (Sec. 3.5) cites AgentHarm [12] and [430], but not BrowserART"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"BrowserART\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22BrowserART%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"Scale AI\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Scale+AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=13, all unrelated (FTC consent order re Content at Scale AI; NCRPA notices)"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No reference — including in the CAISI AI-agent security and red-teaming blog posts, the closest topical match"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: BrowserART",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=BrowserART",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified)"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: Universal and Transferable Adversarial Attacks",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=Universal+and+Transferable+Adversarial+Attacks&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "no relevant instrument"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Negative confirmed against sources actually read. NIST's agent-security discussion was checked specifically because it is the single most likely place for this finding to surface; it cites AgentHarm but not BrowserART. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 67 citations for 'Refusal-Trained LLMs Are Easily Jailbroken As Browser Agents' (checked 2026-08-28)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2410.13886?fields=title,citationCount"
+    },
+    {
+     "cite": "Isolation as a First-Class Principle for LLM-Agent System Safety (2026), arXiv:2607.12406 — citing paper",
+     "url": "https://arxiv.org/abs/2607.12406"
+    },
+    {
+     "cite": "Domain-Conditioned Safety in Frontier Computer-Using Agents: A 793-Episode Browser Study (2026), arXiv:2606.05233 — citing paper",
+     "url": "https://arxiv.org/abs/2606.05233"
+    },
+    {
+     "cite": "ToolAlignBench: Investigating Alignment Conflicts in Tool-Calling Enabled LLMs (2026), arXiv:2607.14285 — citing paper",
+     "url": "https://arxiv.org/abs/2607.14285"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only; not scored. NEW coverage logged this pass: citation count rose from the existing record's 38 (Google Scholar, 2026-08-15) to 67 (Semantic Scholar, 2026-08-28), with named citing work in the agent-safety literature. No independent press located."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: AgentHarm",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers (controls verified: 'artificial intelligence' = 3,138 contributions, so this is a true zero, not a failed query)"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: AgentHarm",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications (control: 'artificial intelligence' = 27)"
+      },
+      {
+       "name": "UK Parliament Bills API — term: AgentHarm",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills (control: 'artificial intelligence' = 3)"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: AgentHarm",
+       "url": "https://www.gov.uk/api/search.json?q=AgentHarm&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "DSIT, AI Scenarios 2030 (full PDF read, 72pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "GOV.UK, Thematic review and gap analysis on AI security (full text read)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "No results"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [12] is the AgentHarm report, cited by name in body text twice: in Sec. 3.5 on agent vulnerability research and in Sec. 3.6 as a named jailbreak benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AgentHarm\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AgentHarm%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AI Safety Institute\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI+Safety+Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=5, all US AISI RFCs on managing misuse risk; none references AgentHarm"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm' in the CAISI programme page, any of the four CAISI Research Blog posts (including the large-scale agent red-teaming and agent-evaluation posts) or the DeepSeek V4 Pro evaluation"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: AgentHarm",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346, 'GPAI'=14)"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: AgentHarm",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=AgentHarm&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "explicit 'no results'"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "verbatim": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\"  ||  Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\"  Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. arXiv:2410.09024.\"",
+   "policy_response": "NIST named the AgentHarm benchmark in its March 2025 adversarial-machine-learning taxonomy (NIST AI 100-2e2025), both as an example of emerging research evaluating the vulnerability of LLM agents to AML attacks and in its list of benchmarks for evaluating susceptibility to jailbreaks. Official engagement with no enforceable obligation.",
+   "reasoning": "Model-level finding covered: Mistral Large 2 (1.1% refusal, 82.2% harm score). CHANGED from 'No policy uptake identified'. The previous pass searched Hansard and correctly found only general discussion of UK AISI as an institution, then recorded a US negative — but it did not reach NIST AI 100-2e2025, which names this report explicitly in body text twice. Naming the report satisfies the admissibility rule ('explicitly reference the finding, the report, the evaluator, or the specific result'), and it is the same document and the same standard already used to code CAIS-2023-07-JAI1/2/3 and FARAI-2024-08-JAI1 as Non-binding, so coding this differently would be inconsistent. Level is Non-binding: a NIST taxonomy publication imposes no mandatory requirement. TWO CAVEATS, flagged rather than buried. (1) NIST references the report at report level — it does not reproduce this finding's per-model numbers — so the uptake attaches to AgentHarm as a whole and is inherited by each of the five model-level findings, exactly as the CAIS report-level NIST citation is inherited by its three. (2) Xander Davies of UK AISI is both a listed author of NIST AI 100-2e2025 and a co-author of AgentHarm, so this citation is partly self-citation inside a government document. That weakens how much independent government engagement it demonstrates, and is the reason confidence is medium rather than high; it does not make the document any less an official US Department of Commerce publication. UK remains a clean negative: Hansard, the committees and bills APIs, GOV.UK and NCSC were all searched with verified controls and returned genuine zeros. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "AZoAI, 'AgentHarm Benchmark Exposes Weaknesses in AI Agents to Harmful Misuse and Jailbreaking'",
+     "url": "https://www.azoai.com/news/20241016/AgentHarm-Benchmark-Exposes-Weaknesses-in-AI-Agents-to-Harmful-Misuse-and-Jailbreaking.aspx",
+     "date": "2024-10-16"
+    },
+    {
+     "outlet": "MarkTechPost, 'Assessing the Vulnerabilities of LLM Agents: The AgentHarm Benchmark'",
+     "url": "https://www.marktechpost.com/2024/10/17/assessing-the-vulnerabilities-of-llm-agents-the-agentharm-benchmark-for-robustness-against-jailbreak-attacks/",
+     "date": "2024-10-17"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 372 citations for 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents' (checked 2026-08-28; was 317 on 2026-07-18)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2410.09024?fields=title,citationCount"
+    },
+    {
+     "cite": "AgentHarm published at ICLR 2025 (Andriushchenko et al.)",
+     "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c493d23af93118975cdbc32cbe7323f5-Paper-Conference.pdf"
+    },
+    {
+     "cite": "OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents (Kuntz et al., 2025), arXiv:2506.14866 — citing paper",
+     "url": "https://arxiv.org/abs/2506.14866"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "International AI Safety Report 2026 cites AgentHarm (reference 1152) alongside Agent-SafetyBench and OS-Harm",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored — this does not affect the Policy Level change above, which rests solely on NIST. NEW coverage logged this pass: citation count re-measured at 372 (up from 317 six weeks earlier), and the International AI Safety Report 2026 citation is newly recorded. Per the exclusion rule, UK AISI's own publications about AgentHarm are omitted as circular."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: AgentHarm",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers (controls verified: 'artificial intelligence' = 3,138 contributions, so this is a true zero, not a failed query)"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: AgentHarm",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications (control: 'artificial intelligence' = 27)"
+      },
+      {
+       "name": "UK Parliament Bills API — term: AgentHarm",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills (control: 'artificial intelligence' = 3)"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: AgentHarm",
+       "url": "https://www.gov.uk/api/search.json?q=AgentHarm&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "DSIT, AI Scenarios 2030 (full PDF read, 72pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "GOV.UK, Thematic review and gap analysis on AI security (full text read)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "No results"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [12] is the AgentHarm report, cited by name in body text twice: in Sec. 3.5 on agent vulnerability research and in Sec. 3.6 as a named jailbreak benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AgentHarm\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AgentHarm%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AI Safety Institute\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI+Safety+Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=5, all US AISI RFCs on managing misuse risk; none references AgentHarm"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm' in the CAISI programme page, any of the four CAISI Research Blog posts (including the large-scale agent red-teaming and agent-evaluation posts) or the DeepSeek V4 Pro evaluation"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: AgentHarm",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346, 'GPAI'=14)"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: AgentHarm",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=AgentHarm&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "explicit 'no results'"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "verbatim": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\"  ||  Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\"  Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. arXiv:2410.09024.\"",
+   "policy_response": "NIST named the AgentHarm benchmark in its March 2025 adversarial-machine-learning taxonomy (NIST AI 100-2e2025), both as an example of emerging research evaluating the vulnerability of LLM agents to AML attacks and in its list of benchmarks for evaluating susceptibility to jailbreaks. Official engagement with no enforceable obligation.",
+   "reasoning": "Model-level finding covered: Claude 3.5 Sonnet (13.5% -> 68.7% harm score under the universal jailbreak template). CHANGED from 'No policy uptake identified'. The previous pass searched Hansard and correctly found only general discussion of UK AISI as an institution, then recorded a US negative — but it did not reach NIST AI 100-2e2025, which names this report explicitly in body text twice. Naming the report satisfies the admissibility rule ('explicitly reference the finding, the report, the evaluator, or the specific result'), and it is the same document and the same standard already used to code CAIS-2023-07-JAI1/2/3 and FARAI-2024-08-JAI1 as Non-binding, so coding this differently would be inconsistent. Level is Non-binding: a NIST taxonomy publication imposes no mandatory requirement. TWO CAVEATS, flagged rather than buried. (1) NIST references the report at report level — it does not reproduce this finding's per-model numbers — so the uptake attaches to AgentHarm as a whole and is inherited by each of the five model-level findings, exactly as the CAIS report-level NIST citation is inherited by its three. (2) Xander Davies of UK AISI is both a listed author of NIST AI 100-2e2025 and a co-author of AgentHarm, so this citation is partly self-citation inside a government document. That weakens how much independent government engagement it demonstrates, and is the reason confidence is medium rather than high; it does not make the document any less an official US Department of Commerce publication. UK remains a clean negative: Hansard, the committees and bills APIs, GOV.UK and NCSC were all searched with verified controls and returned genuine zeros. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "AZoAI, 'AgentHarm Benchmark Exposes Weaknesses in AI Agents to Harmful Misuse and Jailbreaking'",
+     "url": "https://www.azoai.com/news/20241016/AgentHarm-Benchmark-Exposes-Weaknesses-in-AI-Agents-to-Harmful-Misuse-and-Jailbreaking.aspx",
+     "date": "2024-10-16"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 372 citations for 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents' (checked 2026-08-28; was 317 on 2026-07-18)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2410.09024?fields=title,citationCount"
+    },
+    {
+     "cite": "AgentHarm published at ICLR 2025 (Andriushchenko et al.)",
+     "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c493d23af93118975cdbc32cbe7323f5-Paper-Conference.pdf"
+    },
+    {
+     "cite": "OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents (Kuntz et al., 2025), arXiv:2506.14866 — citing paper",
+     "url": "https://arxiv.org/abs/2506.14866"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "International AI Safety Report 2026 cites AgentHarm (reference 1152) alongside Agent-SafetyBench and OS-Harm",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored — this does not affect the Policy Level change above, which rests solely on NIST. NEW coverage logged this pass: citation count re-measured at 372 (up from 317 six weeks earlier), and the International AI Safety Report 2026 citation is newly recorded. Per the exclusion rule, UK AISI's own publications about AgentHarm are omitted as circular."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: AgentHarm",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers (controls verified: 'artificial intelligence' = 3,138 contributions, so this is a true zero, not a failed query)"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: AgentHarm",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications (control: 'artificial intelligence' = 27)"
+      },
+      {
+       "name": "UK Parliament Bills API — term: AgentHarm",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills (control: 'artificial intelligence' = 3)"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: AgentHarm",
+       "url": "https://www.gov.uk/api/search.json?q=AgentHarm&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "DSIT, AI Scenarios 2030 (full PDF read, 72pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "GOV.UK, Thematic review and gap analysis on AI security (full text read)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "No results"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [12] is the AgentHarm report, cited by name in body text twice: in Sec. 3.5 on agent vulnerability research and in Sec. 3.6 as a named jailbreak benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AgentHarm\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AgentHarm%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AI Safety Institute\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI+Safety+Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=5, all US AISI RFCs on managing misuse risk; none references AgentHarm"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm' in the CAISI programme page, any of the four CAISI Research Blog posts (including the large-scale agent red-teaming and agent-evaluation posts) or the DeepSeek V4 Pro evaluation"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: AgentHarm",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346, 'GPAI'=14)"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: AgentHarm",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=AgentHarm&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "explicit 'no results'"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "verbatim": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\"  ||  Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\"  Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. arXiv:2410.09024.\"",
+   "policy_response": "NIST named the AgentHarm benchmark in its March 2025 adversarial-machine-learning taxonomy (NIST AI 100-2e2025), both as an example of emerging research evaluating the vulnerability of LLM agents to AML attacks and in its list of benchmarks for evaluating susceptibility to jailbreaks. Official engagement with no enforceable obligation.",
+   "reasoning": "Model-level finding covered: GPT-4o (48.4% -> 72.7% harm compliance). CHANGED from 'No policy uptake identified'. The previous pass searched Hansard and correctly found only general discussion of UK AISI as an institution, then recorded a US negative — but it did not reach NIST AI 100-2e2025, which names this report explicitly in body text twice. Naming the report satisfies the admissibility rule ('explicitly reference the finding, the report, the evaluator, or the specific result'), and it is the same document and the same standard already used to code CAIS-2023-07-JAI1/2/3 and FARAI-2024-08-JAI1 as Non-binding, so coding this differently would be inconsistent. Level is Non-binding: a NIST taxonomy publication imposes no mandatory requirement. TWO CAVEATS, flagged rather than buried. (1) NIST references the report at report level — it does not reproduce this finding's per-model numbers — so the uptake attaches to AgentHarm as a whole and is inherited by each of the five model-level findings, exactly as the CAIS report-level NIST citation is inherited by its three. (2) Xander Davies of UK AISI is both a listed author of NIST AI 100-2e2025 and a co-author of AgentHarm, so this citation is partly self-citation inside a government document. That weakens how much independent government engagement it demonstrates, and is the reason confidence is medium rather than high; it does not make the document any less an official US Department of Commerce publication. UK remains a clean negative: Hansard, the committees and bills APIs, GOV.UK and NCSC were all searched with verified controls and returned genuine zeros. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "MarkTechPost, 'Assessing the Vulnerabilities of LLM Agents: The AgentHarm Benchmark'",
+     "url": "https://www.marktechpost.com/2024/10/17/assessing-the-vulnerabilities-of-llm-agents-the-agentharm-benchmark-for-robustness-against-jailbreak-attacks/",
+     "date": "2024-10-17"
+    },
+    {
+     "outlet": "AZoAI, 'AgentHarm Benchmark Exposes Weaknesses in AI Agents to Harmful Misuse and Jailbreaking'",
+     "url": "https://www.azoai.com/news/20241016/AgentHarm-Benchmark-Exposes-Weaknesses-in-AI-Agents-to-Harmful-Misuse-and-Jailbreaking.aspx",
+     "date": "2024-10-16"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 372 citations for 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents' (checked 2026-08-28; was 317 on 2026-07-18)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2410.09024?fields=title,citationCount"
+    },
+    {
+     "cite": "AgentHarm published at ICLR 2025 (Andriushchenko et al.)",
+     "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c493d23af93118975cdbc32cbe7323f5-Paper-Conference.pdf"
+    },
+    {
+     "cite": "OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents (Kuntz et al., 2025), arXiv:2506.14866 — citing paper",
+     "url": "https://arxiv.org/abs/2506.14866"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "International AI Safety Report 2026 cites AgentHarm (reference 1152) alongside Agent-SafetyBench and OS-Harm",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored — this does not affect the Policy Level change above, which rests solely on NIST. NEW coverage logged this pass: citation count re-measured at 372 (up from 317 six weeks earlier), and the International AI Safety Report 2026 citation is newly recorded. Per the exclusion rule, UK AISI's own publications about AgentHarm are omitted as circular."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI5",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: AgentHarm",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers (controls verified: 'artificial intelligence' = 3,138 contributions, so this is a true zero, not a failed query)"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: AgentHarm",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications (control: 'artificial intelligence' = 27)"
+      },
+      {
+       "name": "UK Parliament Bills API — term: AgentHarm",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills (control: 'artificial intelligence' = 3)"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: AgentHarm",
+       "url": "https://www.gov.uk/api/search.json?q=AgentHarm&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "DSIT, AI Scenarios 2030 (full PDF read, 72pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "GOV.UK, Thematic review and gap analysis on AI security (full text read)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "No results"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [12] is the AgentHarm report, cited by name in body text twice: in Sec. 3.5 on agent vulnerability research and in Sec. 3.6 as a named jailbreak benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AgentHarm\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AgentHarm%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AI Safety Institute\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI+Safety+Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=5, all US AISI RFCs on managing misuse risk; none references AgentHarm"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm' in the CAISI programme page, any of the four CAISI Research Blog posts (including the large-scale agent red-teaming and agent-evaluation posts) or the DeepSeek V4 Pro evaluation"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: AgentHarm",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346, 'GPAI'=14)"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: AgentHarm",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=AgentHarm&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "explicit 'no results'"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "verbatim": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\"  ||  Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\"  Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. arXiv:2410.09024.\"",
+   "policy_response": "NIST named the AgentHarm benchmark in its March 2025 adversarial-machine-learning taxonomy (NIST AI 100-2e2025), both as an example of emerging research evaluating the vulnerability of LLM agents to AML attacks and in its list of benchmarks for evaluating susceptibility to jailbreaks. Official engagement with no enforceable obligation.",
+   "reasoning": "Model-level finding covered: Gemini 1.5 Pro (15.7% -> 56.1% harm score; refusals 78.4% -> 3.5%). CHANGED from 'No policy uptake identified'. The previous pass searched Hansard and correctly found only general discussion of UK AISI as an institution, then recorded a US negative — but it did not reach NIST AI 100-2e2025, which names this report explicitly in body text twice. Naming the report satisfies the admissibility rule ('explicitly reference the finding, the report, the evaluator, or the specific result'), and it is the same document and the same standard already used to code CAIS-2023-07-JAI1/2/3 and FARAI-2024-08-JAI1 as Non-binding, so coding this differently would be inconsistent. Level is Non-binding: a NIST taxonomy publication imposes no mandatory requirement. TWO CAVEATS, flagged rather than buried. (1) NIST references the report at report level — it does not reproduce this finding's per-model numbers — so the uptake attaches to AgentHarm as a whole and is inherited by each of the five model-level findings, exactly as the CAIS report-level NIST citation is inherited by its three. (2) Xander Davies of UK AISI is both a listed author of NIST AI 100-2e2025 and a co-author of AgentHarm, so this citation is partly self-citation inside a government document. That weakens how much independent government engagement it demonstrates, and is the reason confidence is medium rather than high; it does not make the document any less an official US Department of Commerce publication. UK remains a clean negative: Hansard, the committees and bills APIs, GOV.UK and NCSC were all searched with verified controls and returned genuine zeros. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "AZoAI, 'AgentHarm Benchmark Exposes Weaknesses in AI Agents to Harmful Misuse and Jailbreaking' (located this pass; not in the existing record for this finding)",
+     "url": "https://www.azoai.com/news/20241016/AgentHarm-Benchmark-Exposes-Weaknesses-in-AI-Agents-to-Harmful-Misuse-and-Jailbreaking.aspx",
+     "date": "2024-10-16"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 372 citations for 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents' (checked 2026-08-28; was 317 on 2026-07-18)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2410.09024?fields=title,citationCount"
+    },
+    {
+     "cite": "AgentHarm published at ICLR 2025 (Andriushchenko et al.)",
+     "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c493d23af93118975cdbc32cbe7323f5-Paper-Conference.pdf"
+    },
+    {
+     "cite": "OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents (Kuntz et al., 2025), arXiv:2506.14866 — citing paper",
+     "url": "https://arxiv.org/abs/2506.14866"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "International AI Safety Report 2026 cites AgentHarm (reference 1152) alongside Agent-SafetyBench and OS-Harm",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored — this does not affect the Policy Level change above, which rests solely on NIST. NEW coverage logged this pass: citation count re-measured at 372 (up from 317 six weeks earlier), and the International AI Safety Report 2026 citation is newly recorded. Per the exclusion rule, UK AISI's own publications about AgentHarm are omitted as circular."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI6",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard search API (Commons + Lords, all years) — term: AgentHarm",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 contributions / 0 debates / 0 written statements / 0 written answers (controls verified: 'artificial intelligence' = 3,138 contributions, so this is a true zero, not a failed query)"
+      },
+      {
+       "name": "UK Parliament Committees publications API — term: AgentHarm",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 publications (control: 'artificial intelligence' = 27)"
+      },
+      {
+       "name": "UK Parliament Bills API — term: AgentHarm",
+       "url": "https://bills-api.parliament.uk/api/v1/Bills?SearchTerm=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "0 bills (control: 'artificial intelligence' = 3)"
+      },
+      {
+       "name": "GOV.UK search API (all departments, incl. DSIT/NCSC/ICO/FCA content) — term: AgentHarm",
+       "url": "https://www.gov.uk/api/search.json?q=AgentHarm&count=20",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results"
+      },
+      {
+       "name": "DSIT, International Scientific Report on the Safety of Advanced AI: interim report (full PDF read, 132pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "DSIT, AI Scenarios 2030 (full PDF read, 72pp)",
+       "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "GOV.UK, Thematic review and gap analysis on AI security (full text read)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm'"
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "No results"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "US",
+     "found": true,
+     "sources_searched": [
+      {
+       "name": "NIST AI 100-2e2025, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (US Dept of Commerce/NIST, March 2025) — full text read, 127pp",
+       "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FOUND — reference [12] is the AgentHarm report, cited by name in body text twice: in Sec. 3.5 on agent vulnerability research and in Sec. 3.6 as a named jailbreak benchmark"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AgentHarm\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AgentHarm%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0"
+      },
+      {
+       "name": "US Federal Register full-text search API — term: \"AI Safety Institute\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI+Safety+Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count=5, all US AISI RFCs on managing misuse risk; none references AgentHarm"
+      },
+      {
+       "name": "NIST / Center for AI Standards and Innovation (CAISI) programme page + all four CAISI Research Blog posts + CAISI DeepSeek V4 Pro evaluation — full text read",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "No occurrence of 'AgentHarm' in the CAISI programme page, any of the four CAISI Research Blog posts (including the large-scale agent red-teaming and agent-evaluation posts) or the DeepSeek V4 Pro evaluation"
+      }
+     ]
+    },
+    {
+     "jurisdiction": "EU / other",
+     "found": false,
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (statements, Daily News, Q&A) — term: AgentHarm",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=AgentHarm",
+       "via": "direct",
+       "status": 200,
+       "result": "totalNumber=0 (controls verified: 'artificial intelligence'=1,524, 'AI Act'=1,346, 'GPAI'=14)"
+      },
+      {
+       "name": "EUR-Lex quick search (EU legal instruments) — term: AgentHarm",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=AgentHarm&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "explicit 'no results'"
+      }
+     ]
+    }
+   ],
+   "evidence_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "verbatim": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\"  ||  Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\"  Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. arXiv:2410.09024.\"",
+   "policy_response": "NIST named the AgentHarm benchmark in its March 2025 adversarial-machine-learning taxonomy (NIST AI 100-2e2025), both as an example of emerging research evaluating the vulnerability of LLM agents to AML attacks and in its list of benchmarks for evaluating susceptibility to jailbreaks. Official engagement with no enforceable obligation.",
+   "reasoning": "Model-level finding covered: GPT-4o mini (62.5% harm score, 22% refusals). CHANGED from 'No policy uptake identified'. The previous pass searched Hansard and correctly found only general discussion of UK AISI as an institution, then recorded a US negative — but it did not reach NIST AI 100-2e2025, which names this report explicitly in body text twice. Naming the report satisfies the admissibility rule ('explicitly reference the finding, the report, the evaluator, or the specific result'), and it is the same document and the same standard already used to code CAIS-2023-07-JAI1/2/3 and FARAI-2024-08-JAI1 as Non-binding, so coding this differently would be inconsistent. Level is Non-binding: a NIST taxonomy publication imposes no mandatory requirement. TWO CAVEATS, flagged rather than buried. (1) NIST references the report at report level — it does not reproduce this finding's per-model numbers — so the uptake attaches to AgentHarm as a whole and is inherited by each of the five model-level findings, exactly as the CAIS report-level NIST citation is inherited by its three. (2) Xander Davies of UK AISI is both a listed author of NIST AI 100-2e2025 and a co-author of AgentHarm, so this citation is partly self-citation inside a government document. That weakens how much independent government engagement it demonstrates, and is the reason confidence is medium rather than high; it does not make the document any less an official US Department of Commerce publication. UK remains a clean negative: Hansard, the committees and bills APIs, GOV.UK and NCSC were all searched with verified controls and returned genuine zeros. US coverage this pass = Federal Register full-text API (working, official) + NIST/CAISI agency publications read in full. Congressional full-text search was NOT available (congress.gov search 403, govinfo search API rate-limited, CRS 403), so the US negative is a negative over the Federal Register and the agency publications actually read — it is NOT a clean congressional negative and must not be recorded as one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "MarkTechPost, 'Assessing the Vulnerabilities of LLM Agents: The AgentHarm Benchmark' (located this pass; not in the existing record for this finding)",
+     "url": "https://www.marktechpost.com/2024/10/17/assessing-the-vulnerabilities-of-llm-agents-the-agentharm-benchmark-for-robustness-against-jailbreak-attacks/",
+     "date": "2024-10-17"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Semantic Scholar: 372 citations for 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents' (checked 2026-08-28; was 317 on 2026-07-18)",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2410.09024?fields=title,citationCount"
+    },
+    {
+     "cite": "AgentHarm published at ICLR 2025 (Andriushchenko et al.)",
+     "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c493d23af93118975cdbc32cbe7323f5-Paper-Conference.pdf"
+    },
+    {
+     "cite": "OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents (Kuntz et al., 2025), arXiv:2506.14866 — citing paper",
+     "url": "https://arxiv.org/abs/2506.14866"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "International AI Safety Report 2026 cites AgentHarm (reference 1152) alongside Agent-SafetyBench and OS-Harm",
+     "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf"
+    }
+   ],
+   "note": "Descriptive only; not scored — this does not affect the Policy Level change above, which rests solely on NIST. NEW coverage logged this pass: citation count re-measured at 372 (up from 317 six weeks earlier), and the International AI Safety Report 2026 citation is newly recorded. Per the exclusion rule, UK AISI's own publications about AgentHarm are omitted as circular."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22<term>%22%7D",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search across bills, hearings, committee prints and the Congressional Record. Confirmed 403 again on 2026-08-28 (direct, browser headers). Individual congress.gov DOCUMENTS do fetch: https://www.congress.gov/118/chrg/CHRG-118shrg52706/CHRG-118shrg52706.pdf returned 200 (1,488pp extracted) and https://www.congress.gov/118/crec/2024/02/26/170/34/CREC-2024-02-26.pdf returned 200 — but without a working search index there is no way to enumerate which documents to fetch."
+   },
+   {
+    "url": "https://api.govinfo.gov/search (POST, api_key=DEMO_KEY)",
+    "status": 429,
+    "what_it_would_have_shown": "GPO govinfo full-text search over CHRG/CREC/CPRT collections — the natural substitute for congress.gov search. Returned OVER_RATE_LIMIT on every attempt (shared DEMO_KEY, no project key available). www.govinfo.gov/wssearch/search returned 400 to every documented payload shape and /wssearch/rb/search returned 405."
+   },
+   {
+    "url": "https://crsreports.congress.gov/search/results?term=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Congressional Research Service reports, which routinely summarise third-party AI evaluations for Members."
+   },
+   {
+    "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3312/text",
+    "status": 403,
+    "what_it_would_have_shown": "Bill text. NOTE: the task brief listed congress.gov /bill/ as 200; it returned 403 on 2026-08-28, so bill text was reachable only where a govinfo mirror existed."
+   },
+   {
+    "url": "https://hansard.parliament.uk/ (HTML)",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard debate pages. Fully compensated: the official hansard-api.parliament.uk JSON search API returned 200 and was used instead (controls verified: 'artificial intelligence' = 3,138 contributions)."
+   },
+   {
+    "url": "https://committees.parliament.uk/search?q=<term> ; https://publications.parliament.uk/pa/cm/cmsearch?q=<term> ; https://commonslibrary.parliament.uk/?s=<term>",
+    "status": 403,
+    "what_it_would_have_shown": "Select-committee reports, written evidence and Commons Library briefings via HTML search. Compensated by the committees-api.parliament.uk Publications API and bills-api.parliament.uk (both 200, controls verified: 'artificial intelligence' = 27 committee publications, 3 bills)."
+   }
+  ],
+  "confidence": "medium"
+ }
+]

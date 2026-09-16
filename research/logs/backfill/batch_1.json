@@ -1,0 +1,227 @@
+[
+  {
+    "url": "https://arxiv.org/abs/2205.01663",
+    "title": "Adversarial Training for High-Stakes Reliability",
+    "institution": "Redwood Research",
+    "resolved_date": "2022-05-03",
+    "date_source": "arXiv abs page 2205.01663: \"[Submitted on 3 May 2022 (v1), last revised 10 Nov 2022 (this version, v5)]\"; v1 submission date used as the publication date. NeurIPS 2022 camera-ready per Comments field.",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) - no finding in the report is about a named frontier AI model or system. Verified in the source: the subject systems are the evaluator's own 304M-parameter DeBERTa safety classifiers (\"We trained a classifier by fine-tuning deberta-v3-large\"; \"The classifiers we trained were 304M-parameter DeBERTa\") and a GPT-Neo-2.7B generator fine-tuned on fanfiction text (\"We fine-tuned GPT-Neo-2.7B on the raw text from the fan fiction archive\"). A DeBERTa-family classifier is expressly in the drop list (\"BERT/ResNet/CIFAR classifiers\") and GPT-Neo-2.7B is an EleutherAI open replication, not a model from a frontier developer; the classifier is a Redwood research artifact, not a safety classifier from a frontier developer. All three previously extracted findings (adversarial-training robustness gain, rewrite-tool speedup, conservative-threshold tradeoff) have this same non-frontier subject, so none survives the gate. The quotes and numbers themselves check out against the abstract (13 to 26 minutes / 20 to 44 minutes; conservative thresholds without significantly impacting quality) - the report fails on scope, not on evidence.",
+    "findings": []
+  },
+  {
+    "url": "https://openreview.net/forum",
+    "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+    "institution": "Redwood Research (with Jacob Steinhardt, UC Berkeley)",
+    "resolved_date": "2022-11-01",
+    "date_source": "Input URL \"https://openreview.net/forum\" is truncated and resolves to nothing; the report was re-identified and verified at its primary source arXiv:2211.00593, whose abs page reads \"[Submitted on 1 Nov 2022]\". Subsequently ICLR 2023. Day-precision date taken from the arXiv v1 submission.",
+    "decision": "INCLUDED",
+    "rule_cited": "",
+    "findings": [
+      {
+        "finding": "Redwood Research reverse-engineered a 26-attention-head circuit in GPT-2 small - 1.1% of all (head, token position) pairs, grouped into 7 head classes - that carries out indirect object identification, and validated it by causal interventions: the circuit alone recovers 87% of the full model's mean logit difference (|F(M)-F(C)| = 0.46 against F(M) = 3.56). The reverse engineering surfaced unexpected internal structure, notably \"Backup Name-Mover Heads\" that take over the copying role only once the regular Name-Mover Heads are ablated.",
+        "finding_quote": "We discover a circuit of 26 attention heads–1.1% of the total number of (head, token position) pairs–that completes the bulk of this task.",
+        "models_systems": "GPT-2 small (OpenAI)",
+        "institution": "Redwood Research (with Jacob Steinhardt, UC Berkeley)",
+        "domain": "Alignment",
+        "access_type": "Post-deployment - open-weight white-box access to GPT-2 small; path patching and head knockouts run locally.",
+        "finding_type": "capability-finding; non-frontier",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an empirical, measured finding about a specific model's internal behaviour. Gate 2 (a) and (b) PASS: GPT-2 small is named and is an OpenAI LLM, so the frontier-model rule keeps it (named LLMs from frontier developers COUNT). Gate 2 (c) FAILS on two Tier A exclusions: the result is a neutral/positive scientific demonstration that mechanistic understanding is feasible - no dangerous threshold crossed - and GPT-2 small is a non-frontier model (2019, 117M parameters), an express Tier A exclusion. Hence eval_trackable=yes / action_trackable=no -> Tier B. §4b considered and held not to apply: model-internal mechanism, not ordinary factual accuracy or hallucination."
+      },
+      {
+        "finding": "The evaluators turned their mechanistic understanding into a working adversarial distribution: knowing the circuit relies on duplicate-token detection to separate subject from indirect object, they built natural sentences in which the indirect object is also duplicated, and GPT-2 small then ranked the wrong name (S) above the correct one (IO) 23.4% of the time, against 0.7% on the base IOI distribution and 0.4% on a matched control in which the subject rather than the indirect object is repeated.",
+        "finding_quote": "We find that this significantly reduces the logit difference and causes the model to predict S over IO 23% of the time (Figure 8).",
+        "models_systems": "GPT-2 small (OpenAI)",
+        "institution": "Redwood Research (with Jacob Steinhardt, UC Berkeley)",
+        "domain": "Alignment",
+        "access_type": "Post-deployment - open-weight white-box access; interpretability-guided construction of failure-inducing inputs.",
+        "finding_type": "capability-finding; non-frontier",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: measured behavioural failure rates (23.4% vs 0.7% base vs 0.4% matched control, Figure 8 of the paper, all three verified in the source). Gate 2 (a)/(b) PASS: GPT-2 small is named. Gate 2 (c) FAILS: GPT-2 small is a non-frontier 2019 research model - an express Tier A exclusion - and the paper itself limits the result (\"those examples are simple enough that they could have been found without our circuit with enough effort\"), so no company response is reasonably expected. Tier B. §4b: the induced error is a targeted, mechanism-caused failure demonstrated as an adversarial attack, not a generic factuality/hallucination claim; but it also crosses none of limbs 1-5, which is a further reason it cannot reach Tier A."
+      },
+      {
+        "finding": "The report proposes and self-applies three quantitative criteria for validating circuit-level explanations - faithfulness, completeness and minimality - and reports that they expose the weakness of the field's usual evidence: a naive baseline circuit reaches a faithfulness score of 0.1, comparable to the paper's own circuit, yet is easily shown incomplete, and under greedy optimisation of the incompleteness score both circuits score badly, so faithfulness alone cannot certify a mechanistic explanation.",
+        "finding_quote": "Our circuit shows signiﬁcant improvements compared to a naïve (but faithful) circuit, but fails to pass the most challenging tests.",
+        "models_systems": "anonymised - not model-specific. [Report tested: GPT-2 small is the instrument on which the criteria are demonstrated, not the subject of this row.]",
+        "institution": "Redwood Research (with Jacob Steinhardt, UC Berkeley)",
+        "domain": "Eval-methodology",
+        "access_type": "N/A - criteria evaluated by ablation over the evaluators' own circuit and a baseline circuit.",
+        "finding_type": "methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 FAILS: this is a validation-methodology contribution (criteria for certifying interpretability claims) and its self-application, not an empirical finding about a model's capability or behaviour. §4 sends methodology and framework findings to Tier C, so action_trackable is left blank. Split from the two GPT-2 rows per §5 because the response it invites - adopting a stricter validation standard for interpretability claims - is a different response from anything about GPT-2 small itself. NOTE ON QUOTE: the quote is copied character-exact from the paper (the fi-ligature in \"signiﬁcant\" is preserved as the PDF renders it); the only alteration is that the PDF text layer emits \"naïve\" as \"na¨ıve\" (a combining-diaeresis extraction artefact), rendered here as the single character \"ï\". The sentence spans a line break in the source between \"signiﬁcant\" and \"improvements\"."
+      }
+    ]
+  },
+  {
+    "url": "https://www.rand.org/pubs/research_reports/RRA5055-1.html",
+    "title": "Interpreting Dual-Use Biology Benchmarks for Frontier AI: Measurement, Saturation, and Generational Analysis",
+    "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+    "resolved_date": "2026-08-06",
+    "date_source": "RAND landing page https://www.rand.org/pubs/research_reports/RRA5055-1.html: \"Research / Published Aug 6, 2026\". Document Number RR-A5055-1, DOI 10.7249/RRA5055-1.",
+    "decision": "INCLUDED",
+    "rule_cited": "",
+    "findings": [
+      {
+        "finding": "An item-response-theory analysis of 8,146 items pooled from 26 dual-use biology and adjacent benchmarks, using response data from 45 frontier AI models, found that saturation is real but partial: much of the corpus is no longer informative about frontier systems, while a residual set of difficult, highly discriminating items remains beyond current frontier ability.",
+        "finding_quote": "While frontier AI has saturated much of our dataset, it still contains an informative set of difficult samples that remain beyond the current frontier of AI performance.",
+        "models_systems": "anonymised - the subject is the 26-benchmark, 8,146-item corpus. [Report tested: 45 frontier AI models used as solvers.]",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem; Eval-methodology",
+        "access_type": "Post-deployment - secondary analysis of item-level response data from published benchmarks; no developer cooperation reported.",
+        "finding_type": "methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 FAILS: the unit of the claim is the benchmark corpus and its measurement properties, not a model's capability or behaviour - it is a measurement/methodology finding about what benchmark data can still reveal. §4 assigns methodology and framework findings to Tier C and action_trackable is left blank. Verified in source: \"leaving 45 models in the analysis\" (the report screened 49 and excluded those with coverage below 75 percent), \"8,146 items, spanning 26 benchmarks\". §4b considered and held not to apply: dual-use biology capability measurement is not a generic factuality/reliability benchmark."
+      },
+      {
+        "finding": "Generational analysis on a common IRT difficulty scale showed that improvement within the Gemini family is concentrated in harder items rather than in item volume: Gemini 3.0 Pro newly solved 718 items relative to Gemini 2.5 Pro, whereas Gemini 3.1 Pro's smaller set of newly solved items averaged nearly one logit harder, with gains more concentrated in backward-inference items associated with diagnosis and troubleshooting. No benchmark in the analysis was released between the 3.0 Pro and 3.1 Pro releases.",
+        "finding_quote": "Gemini 3.0 Pro made the larger absolute jump, solving 718 items over 2.5 Pro, but 3.1 Pro’s smaller gain set was harder on average: its newly solved items had gains nearly one logit higher than 3.0 Pro. Gemini 3.1 Pro’s gains were also more concentrated in backward inference.",
+        "models_systems": "Gemini 2.5 Pro, Gemini 3.0 Pro, Gemini 3.1 Pro (Google DeepMind)",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem",
+        "access_type": "Post-deployment - secondary analysis of item-level response data; no developer cooperation reported.",
+        "finding_type": "capability-trend",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an empirical, quantified result about measured model performance. Gate 2 (a)/(b) PASS: names Google DeepMind's Gemini generations. Gate 2 (c) FAILS on two express Tier A exclusions - it is a capability trend / generational comparison with no dangerous threshold crossed, and the named models are the instrument of a measurement-methodology study rather than its subject. Tier B. Numbers verified in source (718 items; \"nearly one logit higher\"; \"between 3.0 and 3.1 Pro, no benchmarks in our analysis were released\")."
+      },
+      {
+        "finding": "Frontier models' accuracy varies sharply by inferential direction across the 8,146-item corpus: 0.69 on undirected (recognition/retrieval) items, 0.64 on forward-only items, 0.56 on backward-only items and 0.44 on items requiring both directions, indicating relative weakness at reasoning backward from outcomes to causes, i.e. at explanation and diagnosis. The report finds statistical significance for backward and forward inference items after controlling for other item characteristics.",
+        "finding_quote": "Current models perform best on undirected items, somewhat worse on forward items, and much worse on backward items",
+        "models_systems": "anonymised - 45 frontier AI models in aggregate; no individual model named for this claim.",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem",
+        "access_type": "Post-deployment - secondary analysis of item-level response data with an author-defined interpretive taxonomy.",
+        "finding_type": "capability-finding; anonymised-model",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an empirical, quantified result about model performance (Table 1 of the report: forward only 0.64 / backward only 0.56 / forward and backward 0.44 / undirected 0.69, all four verified against the source). Gate 2 (b) FAILS: the claim is asserted about frontier systems in aggregate, no individual model or company is named for it, so the \"anonymised models\" Tier A exclusion applies and no specific company response could be expected. Gate 2 (c) would fail too - it is a capability profile with no dangerous threshold crossed. Tier B."
+      },
+      {
+        "finding": "Ten percent of the 8,146-item corpus, selected by estimated item information, reproduces full-corpus ability estimates for frontier models at 99 percent correlation - a tooling result implying that dual-use biology evaluations can be run at roughly a tenth of the item cost without losing discrimination.",
+        "finding_quote": "Ability estimates are 99 percent correlated with their full values when items are selected based on estimated information.",
+        "models_systems": "anonymised - the subject is the 8,146-item benchmark corpus. [Report tested: 45 frontier models as solvers.]",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Eval-tooling",
+        "access_type": "N/A - secondary analysis of existing item-level response data.",
+        "finding_type": "methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 FAILS: the claim is about the measurement instrument - how few items suffice to recover an ability estimate - not about any model's capability or behaviour. §4 sends methodology/tooling findings to Tier C with action_trackable blank. Quote verified character-exact against the Summary bullet \"10 percent of the dataset can be used to estimate frontier model performance\"; corroborated in the body at \"achieving 99 percent correlation with full estimates\"."
+      },
+      {
+        "finding": "Re-ordering of models between raw accuracy and IRT-estimated ability was read by the authors as a refusal signal, and they report observing that Anthropic models, particularly the Opus family, were simultaneously highly capable and produced a high volume of refusals on this dual-use biology corpus - so their measured accuracy understates estimated ability because they decline items rather than fail them.",
+        "finding_quote": "the Anthropic models, particularly the Opus family, were both highly capable and had a high presence of refusals",
+        "models_systems": "Anthropic Claude Opus family (within a cohort of 45 frontier models)",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem; Eval-methodology",
+        "access_type": "Post-deployment - secondary analysis of item-level response data; the refusal reading is the authors' interpretation of the accuracy-vs-ability re-ordering in Figure 1.",
+        "finding_type": "capability-finding; reassuring-null",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an observed behavioural pattern, evidence-backed by the accuracy-vs-ability re-ordering shown in Figure 1 (§2 accepts observed behaviour). Gate 2 (a)/(b) PASS: names Anthropic and the Opus family. Gate 2 (c) FAILS on the reassuring-null exclusion - high refusal on dual-use biology items is safeguard behaviour working as intended, and the report offers it as a measurement caveat rather than a risk. Tier B. Caveat recorded: the source frames this as \"the author's observation\", not a quantified refusal rate, so the finding is worded as an observation and carries no number."
+      }
+    ]
+  },
+  {
+    "url": "https://www.rand.org/pubs/research_reports/RRA4741-2.html",
+    "title": "Testing Large Language Model Agents on the Use of Biological Tools for Nucleic Acid Synthesis Screening Evasion",
+    "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+    "resolved_date": "2026-08-11",
+    "date_source": "RAND landing page https://www.rand.org/pubs/research_reports/RRA4741-2.html: \"Research / Published Aug 11, 2026\". Document Number RR-A4741-2.",
+    "decision": "INCLUDED",
+    "rule_cited": "",
+    "findings": [
+      {
+        "finding": "An autonomous agent driven by Gemini 3.1 Pro, given AI-enabled biological tools, redesigned the biosecurity-relevant biomolecule withheld as \"Protein-2\" (a toxin or toxin component) so that it passed RAND's entire in silico scoring pipeline and evaded a commercial nucleic acid synthesis screening process in 3 of 30 attempts, all in the open-ended \"Choose Your Own Adventure\" tool configuration. Across all four biomolecules the Gemini agent submitted at least one redesign that passed the entire pipeline.",
+        "finding_quote": "In three out of 30 instances, all of which were CYOA runs, Gemini’s redesigned Protein-2 was able to pass the entirety of our scoring pipeline, including evasion of a commercial sequence screening process",
+        "models_systems": "Gemini 3.1 Pro (Google DeepMind) as an autonomous agent in an Inspect AI ReAct-style scaffold, paired with the biological tools Evo 2, ProteinMPNN and RFdiffusion",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem; Autonomy",
+        "access_type": "Post-deployment - external black-box agentic evaluation over the provider API; no developer cooperation reported. Protein-2 designs were screened with a commercial screening algorithm arranged with a research partner at an unnamed major nucleic acid synthesis company.",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "yes",
+        "tier": "A",
+        "tier_reasoning": "Gate 1 PASSES: a measured empirical agent result - 30 attempts, scored through an eleven-metric in silico validity/structure-and-function pipeline plus a commercial screening algorithm. Gate 2 (a) PASSES. Gate 2 (b) PASSES: names Google DeepMind's Gemini 3.1 Pro, a frontier closed-weight model, so the non-frontier exclusion does not apply. Gate 2 (c) PASSES: this is not a benchmark score - the agent's output defeated a live commercial biosecurity screening control that exists specifically to prevent biological misuse, which the report itself calls \"an emerging biosecurity concern\", so a Google DeepMind response is reasonable to expect. §4b limb 4 independently retains it (dangerous-domain output materially enabling biological harm) and limb 1 (safeguard bypass). Severity caveat recorded, not tier-changing: the report is explicit that no design was physically validated."
+      },
+      {
+        "finding": "The same evaluation found that DeepSeek V4 Pro, an open-weight model, also produced Protein-2 redesigns that passed all grading checkpoints and bypassed commercial nucleic acid synthesis screening in 3 of 30 attempts, all in the ProteinMPNN tool configuration, and succeeded on at least one screening-evading redesign for every biomolecule tested. Its OmpA redesigns evaded the simulated screening pipeline significantly more often than Gemini's.",
+        "finding_quote": "Similar to Gemini’s results, we found that three of 30 redesign attempts resulted in Protein-2 redesigns that passed all grading checkpoints and were able to bypass commercial nucleic acid synthesis screening",
+        "models_systems": "DeepSeek V4 Pro (open-weight, served through Together AI) as an autonomous agent in an Inspect AI ReAct-style scaffold with Evo 2 / ProteinMPNN / RFdiffusion tool configurations",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem; Autonomy",
+        "access_type": "Post-deployment - external black-box agentic evaluation of an open-weight model served through Together AI; no developer cooperation reported.",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "yes",
+        "tier": "A",
+        "tier_reasoning": "Gate 1 PASSES: measured empirical agent result under the same scoring pipeline. Gate 2 (a)/(b) PASS: names DeepSeek V4 Pro, a frontier developer's flagship open-weight model, so the non-frontier exclusion does not apply. Gate 2 (c) PASSES for the same reason as the Gemini row - evasion of a commercial synthesis screen is a demonstrated safeguard bypass in a dangerous domain, not a benchmark score; the report says it gives \"preliminary evidence that open-weight models like DeepSeek may pose similar risks\". Separate row from the Gemini finding because §5 forbids two companies sharing a row. §4b limbs 1 and 4 retain it. Recorded caveat: RAND states the two model runs were staggered and \"not meant to be directly compared\", so this row records DeepSeek's absolute result; the one explicit cross-model comparison RAND does assert (OmpA screening evasion) is quoted as the report words it."
+      },
+      {
+        "finding": "Anthropic's Claude Opus 4.7 could not be used as RAND's primary closed-weight test subject because it denied the majority of requests to perform the evaluation task through its API - denying many requests even to redesign the benign control peptide and protein - forcing RAND to fall back to a less recent closed-weight model. RAND notes it is unclear to what extent these defences would present a true barrier to a motivated threat actor.",
+        "finding_quote": "GPT-5.5 and Opus 4.7, both of which were released more recently than Gemini 3.1 Pro, could reasonably be expected to outperform it on most tasks. However, both of those models are more restrictive in terms of the biological content they will engage with through their APIs, and they both denied the majority of our requests to perform this evaluation task.",
+        "models_systems": "Claude Opus 4.7 (Anthropic)",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem",
+        "access_type": "Post-deployment - external black-box API access. The report states it does not distinguish model refusals from external content-filter actions, reporting both as \"denials\".",
+        "finding_type": "capability-finding; reassuring-null",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an observed behavioural result - the denial rate was high enough to prevent the evaluation running at all. Gate 2 (a)/(b) PASS: names Anthropic's Claude Opus 4.7. Gate 2 (c) FAILS on the express reassuring-null exclusion: the safeguard held, and the report treats the denials as a limitation of the study rather than a concerning model result. Tier B. §5: split from the OpenAI row because different companies never share a row."
+      },
+      {
+        "finding": "OpenAI's GPT-5.5 likewise denied the majority of RAND's requests to perform the biological-tool redesign task through its API, so it could not be tested despite being expected to outperform the model ultimately used; RAND concludes that provider content filters and model safeguards prevented testing of the most advanced closed-weight frontier LLMs, meaning the tested models likely do not represent the closed-weight capability ceiling.",
+        "finding_quote": "the most recently released models from Anthropic and OpenAI were prevented from performing the task by refusals or content filter actions",
+        "models_systems": "GPT-5.5 (OpenAI)",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem",
+        "access_type": "Post-deployment - external black-box API access; refusals and content-filter actions reported jointly as \"denials\".",
+        "finding_type": "capability-finding; reassuring-null",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an observed behavioural result. Gate 2 (a)/(b) PASS: names OpenAI's GPT-5.5. Gate 2 (c) FAILS on the reassuring-null exclusion - the safeguard blocked the task, which is the safeguard working. Tier B. §5: separate row from the Anthropic finding because different companies never share a row."
+      },
+      {
+        "finding": "Safety measures on the open-weight candidate models generally did not prevent misuse on the screening-evasion task, in contrast to the closed-weight frontier models whose denials blocked testing entirely; all three open-weight candidates (GLM-5.1, Kimi K2.6 and DeepSeek V4 Pro) performed comparably during the selection phase.",
+        "finding_quote": "For open-weight models, safety measures generally did not prevent misuse.",
+        "models_systems": "Open-weight LLMs as a class; candidates assessed were GLM-5.1, Kimi K2.6 and DeepSeek V4 Pro (all served through Together AI)",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem",
+        "access_type": "Post-deployment - external black-box evaluation of open-weight models served through Together AI.",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an observed behavioural result across a set of models. Gate 2 (b) FAILS: the assertion is made at the level of open-weight models as a class (\"For open-weight models, safety measures generally did not prevent misuse\") and the report gives no per-vendor safeguard result, so there is no single accountable company from which a response could be expected. Tier B. §5: kept as one class-level row rather than split per vendor precisely because the assertion is class-level; DeepSeek's own measured screening-evasion result is a separate Tier A row, and this row is not clubbed with it because it concerns safeguard non-refusal rather than the evasion capability."
+      },
+      {
+        "finding": "Agent reliability on the redesign task was low and strongly dependent on the biological-tool configuration rather than on a single model weakness: it was rare that more than half of an agent's designs for any combination of tool configuration and biomolecule were satisfactory, and unsuccessful attempts were not traceable to one consistent failure mode - failures were distributed across the validity, structure-and-function and screening checkpoints, with the dominant failure point varying by biomolecule (glucagon most often at validation, Peptide-2 at structure and function, OmpA at screening).",
+        "finding_quote": "The results revealed numerous failure modes at multiple checkpoints.",
+        "models_systems": "Gemini 3.1 Pro (Google DeepMind) and DeepSeek V4 Pro agents across four biological-tool configurations (CYOA, ProteinMPNN, Evo 2, RFdiffusion + ProteinMPNN) and four biomolecules (human glucagon, Peptide-2, E. coli OmpA, Protein-2); each configuration run for 10 epochs",
+        "institution": "RAND Corporation (Center on AI, Security, and Technology; RAND Global and Emerging Risks)",
+        "domain": "Bio-Chem; Autonomy",
+        "access_type": "Post-deployment - external black-box agentic evaluation; per-checkpoint flows reported in the report's Sankey diagrams and Appendix D heat maps.",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: an empirical result about measured agent behaviour across 10 epochs per tool/biomolecule configuration. Gate 2 (b) is marginal - Gemini 3.1 Pro and DeepSeek V4 Pro are named - but Gate 2 (c) FAILS decisively: low and inconsistent reliability is a limiting/reassuring result attributed by the report to the tool environment rather than to any developer's model, so no company response is reasonably expected. Tier B. §5: the low-pass-rate result and the no-single-failure-mode result are clubbed because they are two faces of the same measured distribution of outcomes through one scoring pipeline and would be responded to as one thing."
+      }
+    ]
+  }
+]

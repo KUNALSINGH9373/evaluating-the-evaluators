@@ -1,0 +1,2965 @@
+[
+ {
+  "finding_id": "UKAISI-2024-10-JAI7",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"AgentHarm\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22AgentHarm%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results across the whole Hansard corpus."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Gray Swan\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Gray%20Swan%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"jailbreak\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak%22",
+       "via": "direct",
+       "status": 200,
+       "result": "5 records; all unrelated (prison escapes; one 2026-06-16 Lords question to Anthropic on a cyber jailbreak, which does not reference AgentHarm)."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"StrongREJECT\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22StrongREJECT%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: AgentHarm, Gray Swan, jailbreak, StrongREJECT",
+       "url": "https://www.gov.uk/api/search.json?q=%22AgentHarm%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"AgentHarm\"; 0 for \"Gray Swan\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"AgentHarm\"; \"Agent Harm\"; \"Gray Swan\"; \"StrongREJECT\"; \"aisi.gov.uk\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "0 results for \"AgentHarm\"/\"Agent Harm\" and 0 for \"StrongREJECT\" across every govinfo collection. \"Gray Swan\" returns 16 records, all unrelated (12 USCOURTS, plus a 1 CHRG / 1 FR coincidence of the ordinary phrase)."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"AgentHarm\"; \"Agent Harm\"; \"Gray Swan\"; \"StrongREJECT\"; \"aisi.gov.uk\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22AgentHarm%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"AgentHarm\"; \"Gray Swan\" returns one 2020 investment-company deregistration notice."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: AgentHarm; Gray Swan",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"AgentHarm\"; 0 for \"Gray Swan\"."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Complete three-jurisdiction search re-run. This pass executed the US congressional leg that the 2026-08-16 and 2026-08-28 passes could not: govinfo's unauthenticated full-text backend indexes congressional hearings, the Congressional Record (daily and bound), committee reports and prints, bills and congressional committee materials, and returned zero hits for the report name. The UK leg was run against the Hansard Search API (the official full-text index of both Houses) rather than the 403-ing HTML site. Nothing in any jurisdiction explicitly references AgentHarm, the report or the GPT-3.5 Turbo 0.8% no-attack refusal result. Generic Hansard discussion of UK AISI as an institution remains inadmissible. Level unchanged.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "MarkTechPost",
+     "url": "https://news.google.com/rss/search?q=%22AgentHarm%22+benchmark",
+     "date": "2024-10-17"
+    },
+    {
+     "outlet": "Unite.AI — \"AI Acts Differently When It Knows It's Being Tested, Research Finds\"",
+     "url": "https://news.google.com/rss/search?q=%22AgentHarm%22+benchmark",
+     "date": "2025-06-04"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "OpenAlex W4403564213 (AgentHarm), cited_by_count = 5 as of 2026-08-28; the dataset's stored Semantic Scholar figure of 317 could not be re-verified this pass (API HTTP 429).",
+     "url": "https://api.openalex.org/works/W4403564213"
+    },
+    {
+     "cite": "Yehudai et al., \"Evaluation and Benchmarking of LLM Agents: A Survey\", KDD 2025",
+     "url": "https://doi.org/10.1145/3711896.3736570"
+    },
+    {
+     "cite": "\"General-Purpose Models for the Chemical Sciences: LLMs and Beyond\", Chem. Rev. (2026-02-05)",
+     "url": "https://doi.org/10.1021/acs.chemrev.5c00583"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only; never scored. Independent press coverage is thin and trade-press only — no national outlet located. Academic uptake is the real signal here. Open-web search engines were unusable this pass (DuckDuckGo HTTP 202, Mojeek 403, Bing bot-degraded to junk results, GDELT connect-timeout), so Google News RSS was the only press index available and its per-item links are unresolvable redirects; outlet, headline and date are recorded against the query URL."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2410.09024",
+    "status": 429,
+    "what_it_would_have_shown": "Current Semantic Scholar citation count, to refresh the stored 317-citation figure."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "TRANSLUCE-2024-10-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Transluce\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Transluce%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"investigator agents\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22investigator%20agents%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: Transluce, investigator agents",
+       "url": "https://www.gov.uk/api/search.json?q=%22Transluce%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "\"Transluce\" returns 67 fuzzy matches (the API does not honour quoting); none contains the string Transluce — all are tariff notices and screening guidance matching on substrings."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"Transluce\"; \"investigator agents\"; \"investigator agent\"; \"transluce.org\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"Transluce\" returns 1 record — a 1993 Minerals Management Service benthic study — i.e. a false positive. \"investigator agent(s)\" returns 8/64 records, all law-enforcement usage in USCOURTS and the Congressional Record. 0 for \"transluce.org\"."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"Transluce\"; \"investigator agents\"; \"investigator agent\"; \"transluce.org\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22Transluce%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: Transluce; investigator agents",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Transluce\"; \"investigator agents\" returns 2 unrelated 2019/2005 items."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Complete three-jurisdiction search, with the US congressional leg genuinely executed for the first time via govinfo full text. No official UK, US or EU source references Transluce, the report, or the 95.5% / 65.8% / 22.6% attack-success results. Level unchanged.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex W4407131686, \"Eliciting Language Model Behaviors with Investigator Agents\", cited_by_count = 0 as of 2026-08-28. The stored Google Scholar figure (6 citations, 2026-08-02) is for the successor paper \"Automatically Jailbreaking Frontier Language Models with Investigator Agents\", which OpenAlex does not index.",
+     "url": "https://api.openalex.org/works/W4407131686"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only. Google News RSS returned 0 items for this work. This finding drew no company response and, on the indexes reachable today, essentially no independent ecosystem coverage either — the answer to Channel C's question is that almost nobody else noticed."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "FARAI-2024-10-ALI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"FAR.AI\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 records, all false positives on sentence-boundary tokenisation (\"...so far. AI...\"): 2026-06-05 Lords, 2023-06-29 Commons, and a 1988 written answer on cattle semen. None references FAR.AI the organisation."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"jailbreak-tuning\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak-tuning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Guardrails Gone\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Guardrails%20Gone%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"data poisoning\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22data%20poisoning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: FAR.AI, jailbreak-tuning, Guardrails Gone, data poisoning",
+       "url": "https://www.gov.uk/api/search.json?q=%22FAR.AI%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"jailbreak-tuning\", \"Guardrails Gone\" and \"data poisoning\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"FAR.AI\"; \"jailbreak-tuning\"; \"jailbreak tuning\"; \"Guardrails Gone\"; \"poisoned fine-tuning\"; \"far.ai/blog\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"jailbreak-tuning\", \"jailbreak tuning\", \"Guardrails Gone\", \"poisoned fine-tuning\" and \"far.ai/blog\" all return 0. \"FAR.AI\" returns 66 records; the three CHRG hits (S. Hrg. 118-308, S. Hrg. 118-732) were opened and text-searched — neither contains the string \"FAR.AI\"; both are tokenisation false positives."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"FAR.AI\"; \"jailbreak-tuning\"; \"jailbreak tuning\"; \"Guardrails Gone\"; \"poisoned fine-tuning\"; \"far.ai/blog\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"FAR.AI\", \"jailbreak-tuning\" and \"data poisoning\" in the AI sense (the 7 \"data poisoning\" hits are the 2026-01-08 CAISI agent-security RFI, an ICT supply-chain order, and four literal poison-packaging rules)."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: FAR.AI; jailbreak-tuning; Guardrails Gone",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 for \"jailbreak-tuning\" and \"Guardrails Gone\"; \"FAR.AI\" returns 2 Kimberley Process press releases from 2010 (fuzzy match)."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Complete three-jurisdiction search with the US congressional leg executed against govinfo full text. Every apparent hit on the evaluator's name was opened and shown to be a tokenisation artefact rather than a reference. Nothing in any jurisdiction references FAR.AI, the report, or the poisoned-fine-tuning / sleeper-agent result across GPT-4o mini, GPT-4 and GPT-3.5 Turbo. Level unchanged.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Unite.AI — \"Jailbreaking ChatGPT and Other 'Closed' AI Models Using Their Own APIs\"",
+     "url": "https://news.google.com/rss/search?q=%22jailbreak-tuning%22+FAR.AI",
+     "date": "2025-07-17"
+    },
+    {
+     "outlet": "StudyFinds — \"The First Standardized Test For AI Tampering Just Failed Every Model\"",
+     "url": "https://news.google.com/rss/search?q=%22jailbreak-tuning%22+FAR.AI",
+     "date": "2026-08-26"
+    },
+    {
+     "outlet": "XenoSpectrum — \"Study Finds Safety Guardrails in All Tested Open-Weight AI Models Can Be Disabled\"",
+     "url": "https://news.google.com/rss/search?q=%22jailbreak-tuning%22+FAR.AI",
+     "date": "2026-08-26"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "The stored figure (Google Scholar, 40 citations for the underlying paper \"Data Poisoning in LLMs: Jailbreak-Tuning and Scaling Laws\", checked 2026-08-15) could not be independently re-verified: OpenAlex does not index the paper under that title (0 results) and the Semantic Scholar API returned HTTP 429 throughout.",
+     "url": "https://api.openalex.org/works?filter=title.search:Data%20Poisoning%20in%20LLMs%20Jailbreak-Tuning%20and%20Scaling%20Laws"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only. Press interest in jailbreak-tuning is real but attaches to FAR.AI's later 2026 work rather than to this October 2024 report; the two 2026-08-26 items post-date it by 22 months and cover the successor benchmark."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2408.02946",
+    "status": 429,
+    "what_it_would_have_shown": "An independent citation count for the underlying paper, to corroborate the stored Scholar figure of 40."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "FARAI-2024-10-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"FAR.AI\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 records, all false positives on sentence-boundary tokenisation (\"...so far. AI...\"): 2026-06-05 Lords, 2023-06-29 Commons, and a 1988 written answer on cattle semen. None references FAR.AI the organisation."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"jailbreak-tuning\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak-tuning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Guardrails Gone\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Guardrails%20Gone%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"data poisoning\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22data%20poisoning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: FAR.AI, jailbreak-tuning, Guardrails Gone, data poisoning",
+       "url": "https://www.gov.uk/api/search.json?q=%22FAR.AI%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"jailbreak-tuning\", \"Guardrails Gone\" and \"data poisoning\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"FAR.AI\"; \"jailbreak-tuning\"; \"jailbreak tuning\"; \"Guardrails Gone\"; \"poisoned fine-tuning\"; \"far.ai/blog\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"jailbreak-tuning\", \"jailbreak tuning\", \"Guardrails Gone\", \"poisoned fine-tuning\" and \"far.ai/blog\" all return 0. \"FAR.AI\" returns 66 records; the three CHRG hits (S. Hrg. 118-308, S. Hrg. 118-732) were opened and text-searched — neither contains the string \"FAR.AI\"; both are tokenisation false positives."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"FAR.AI\"; \"jailbreak-tuning\"; \"jailbreak tuning\"; \"Guardrails Gone\"; \"poisoned fine-tuning\"; \"far.ai/blog\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"FAR.AI\", \"jailbreak-tuning\" and \"data poisoning\" in the AI sense (the 7 \"data poisoning\" hits are the 2026-01-08 CAISI agent-security RFI, an ICT supply-chain order, and four literal poison-packaging rules)."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: FAR.AI; jailbreak-tuning; Guardrails Gone",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 for \"jailbreak-tuning\" and \"Guardrails Gone\"; \"FAR.AI\" returns 2 Kimberley Process press releases from 2010 (fuzzy match)."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Complete three-jurisdiction search with the US congressional leg executed against govinfo full text. Every apparent hit on the evaluator's name was opened and shown to be a tokenisation artefact rather than a reference. Nothing in any jurisdiction references FAR.AI, the report, or the jailbreak-tuning result driving GPT-4o refusal to 3.6%. Level unchanged.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Unite.AI — \"Jailbreaking ChatGPT and Other 'Closed' AI Models Using Their Own APIs\"",
+     "url": "https://news.google.com/rss/search?q=%22jailbreak-tuning%22+FAR.AI",
+     "date": "2025-07-17"
+    },
+    {
+     "outlet": "StudyFinds — \"The First Standardized Test For AI Tampering Just Failed Every Model\"",
+     "url": "https://news.google.com/rss/search?q=%22jailbreak-tuning%22+FAR.AI",
+     "date": "2026-08-26"
+    },
+    {
+     "outlet": "XenoSpectrum — \"Study Finds Safety Guardrails in All Tested Open-Weight AI Models Can Be Disabled\"",
+     "url": "https://news.google.com/rss/search?q=%22jailbreak-tuning%22+FAR.AI",
+     "date": "2026-08-26"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "The stored figure (Google Scholar, 40 citations for the underlying paper \"Data Poisoning in LLMs: Jailbreak-Tuning and Scaling Laws\", checked 2026-08-15) could not be independently re-verified: OpenAlex does not index the paper under that title (0 results) and the Semantic Scholar API returned HTTP 429 throughout.",
+     "url": "https://api.openalex.org/works?filter=title.search:Data%20Poisoning%20in%20LLMs%20Jailbreak-Tuning%20and%20Scaling%20Laws"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only. Press interest in jailbreak-tuning is real but attaches to FAR.AI's later 2026 work rather than to this October 2024 report; the two 2026-08-26 items post-date it by 22 months and cover the successor benchmark."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2408.02946",
+    "status": 429,
+    "what_it_would_have_shown": "An independent citation count for the underlying paper, to corroborate the stored Scholar figure of 40."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "JOINT-2024-11-BIO2",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API — term \"Claude 3.5 Sonnet\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Claude%203.5%20Sonnet%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution: Lord Vallance of Balham, Minister of State at DSIT, Lords Chamber, 2024-11-21. HIT — explicitly references this report."
+      },
+      {
+       "name": "Official Hansard page for the located contribution (Lords Chamber, 2024-11-21, \"Large Language Models and Generative AI (Communications and Digital Committee Report)\", ContributionExtId 6F38699C-11EC-49C6-9AB0-492FE2AD13A4)",
+       "url": "https://hansard.parliament.uk/lords/2024-11-21/debates/600E1622-A12A-4E0B-8EC1-63BFBD4B0DA1/LargeLanguageModelsAndGenerativeAI(CommunicationsAndDigitalCommitteeReport)#contribution-6F38699C-11EC-49C6-9AB0-492FE2AD13A4",
+       "via": "wayback (snapshot 20250313010715)",
+       "status": 200,
+       "result": "CONFIRMED on the official record. hansard.parliament.uk returns HTTP 403 to direct fetch; the official page was read through its Wayback capture with the id_ raw flag, and the quoted passage is present verbatim."
+      },
+      {
+       "name": "UK Parliament Hansard Search API — terms \"pre-deployment evaluation\", \"pre-deployment testing\", \"Anthropic\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22pre-deployment%20evaluation%22",
+       "via": "direct",
+       "status": 200,
+       "result": "\"pre-deployment evaluation\" 1 record (2024-09-02 Commons, predates publication). \"pre-deployment testing\" 5 records, all generic and all but one predating. \"Anthropic\" 53 contributions + 2 written statements, screened: no further record references this report."
+      },
+      {
+       "name": "GOV.UK Search API — \"Claude 3.5 Sonnet\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Claude+3.5+Sonnet%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result — the DSIT \"Ask Ops Chatbot\" algorithmic transparency record, which records DSIT's own use of the model and does not reference the evaluation. Inadmissible."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk)",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED, see still_blocked."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"Claude 3.5 Sonnet\"; \"AI Safety Institute Claude 3.5 Sonnet\"; \"Anthropic Claude 3.5 Sonnet\"; \"UK AI Safety Institute\"; \"joint pre-deployment\"; \"pre-deployment evaluation of OpenAI\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"Claude 3.5 Sonnet\" returns 1 record, a USCOURTS opinion (false positive). '\"AI Safety Institute\" \"Claude 3.5 Sonnet\"' returns 0. \"UK AI Safety Institute\" returns 0. The 7 records for '\"AI Safety Institute\" \"pre-deployment\"' were screened: none references this report."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"Claude 3.5 Sonnet\"; \"AI Safety Institute Claude 3.5 Sonnet\"; \"Anthropic Claude 3.5 Sonnet\"; \"UK AI Safety Institute\"; \"joint pre-deployment\"; \"pre-deployment evaluation of OpenAI\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22Claude%203.5%20Sonnet%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Claude 3.5 Sonnet\" and \"pre-deployment evaluation\". The 5 \"AI Safety Institute\" records are the 2024-08-08 and 2025-01-15 AISI comment requests and unrelated notices; none references this report."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: Claude 3.5 Sonnet; AI Safety Institute; Anthropic",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Claude 3.5 Sonnet\". The 69 \"AI Safety Institute\" and 8 \"Anthropic\" records are fuzzy matches on Commission AI-Act and competition items; none references this report."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://hansard.parliament.uk/lords/2024-11-21/debates/600E1622-A12A-4E0B-8EC1-63BFBD4B0DA1/LargeLanguageModelsAndGenerativeAI(CommunicationsAndDigitalCommitteeReport)#contribution-6F38699C-11EC-49C6-9AB0-492FE2AD13A4",
+   "verbatim": "Just this week the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic’s upgraded Claude 3.5 Sonnet model. This will help advance the development of shared scientific benchmarks and best practices of safety testing and is an important step because it begins to show exactly how these things can also be made public. I was asked about mandatory safety testing. I think this model, which has been a voluntary one and has engaged big companies so that they want to come to the AI Safety Institute, is the correct one.",
+   "policy_response": "Two days after publication, the Minister of State at DSIT, Lord Vallance of Balham, told the House of Lords that \"the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic's upgraded Claude 3.5 Sonnet model\", called it \"an important step\", and in the same passage declined to make safety testing mandatory, saying the voluntary model \"is the correct one\".",
+   "reasoning": "Re-verified independently and upheld. The Hansard API hit was reproduced, and the passage was then read on the official hansard.parliament.uk page itself (via its Wayback capture, because the live site 403s) rather than trusted from the API. This is an official UK ministerial statement explicitly referencing the report — the admissibility test is explicit reference to the finding, the report, the evaluator or the result, and the report is named. It creates no enforceable obligation; the Minister expressly refused to mandate testing. Non-binding, not binding. Level unchanged.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "FedScoop — \"Anthropic model subject of first joint evaluation by US, UK AI Safety Institutes\"",
+     "url": "https://fedscoop.com/anthropic-tested-by-us-uk-ai-safety-institutes/",
+     "date": "2024-11-20"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "Raconteur, \"Inside the UK's AI Security Institute\"",
+     "url": "https://news.google.com/rss/search?q=UK+US+AI+Safety+Institute+Claude+3.5+Sonnet+evaluation"
+    }
+   ],
+   "note": "Descriptive only. FedScoop URL re-fetched and confirmed live (HTTP 200 direct). The NIST and Anthropic items returned by the news index are excluded as the evaluator's and the evaluated company's own publications."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "JOINT-2024-11-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API — term \"Claude 3.5 Sonnet\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Claude%203.5%20Sonnet%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 contribution: Lord Vallance of Balham, Minister of State at DSIT, Lords Chamber, 2024-11-21. HIT — explicitly references the report this finding comes from."
+      },
+      {
+       "name": "Official Hansard page for the located contribution (Lords Chamber, 2024-11-21, \"Large Language Models and Generative AI (Communications and Digital Committee Report)\", ContributionExtId 6F38699C-11EC-49C6-9AB0-492FE2AD13A4)",
+       "url": "https://hansard.parliament.uk/lords/2024-11-21/debates/600E1622-A12A-4E0B-8EC1-63BFBD4B0DA1/LargeLanguageModelsAndGenerativeAI(CommunicationsAndDigitalCommitteeReport)#contribution-6F38699C-11EC-49C6-9AB0-492FE2AD13A4",
+       "via": "wayback (snapshot 20250313010715)",
+       "status": 200,
+       "result": "CONFIRMED on the official record. hansard.parliament.uk returns HTTP 403 to direct fetch; the official page was read through its Wayback capture with the id_ raw flag, and the quoted passage is present verbatim."
+      },
+      {
+       "name": "UK Parliament Hansard Search API — terms \"pre-deployment evaluation\", \"pre-deployment testing\", \"Anthropic\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22pre-deployment%20evaluation%22",
+       "via": "direct",
+       "status": 200,
+       "result": "\"pre-deployment evaluation\" 1 record (2024-09-02 Commons, predates publication). \"pre-deployment testing\" 5 records, all generic and all but one predating. \"Anthropic\" 53 contributions + 2 written statements, screened: no further record references this report."
+      },
+      {
+       "name": "GOV.UK Search API — \"Claude 3.5 Sonnet\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Claude+3.5+Sonnet%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result — the DSIT \"Ask Ops Chatbot\" algorithmic transparency record, which records DSIT's own use of the model and does not reference the evaluation. Inadmissible."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk)",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED, see still_blocked."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"Claude 3.5 Sonnet\"; \"AI Safety Institute Claude 3.5 Sonnet\"; \"Anthropic Claude 3.5 Sonnet\"; \"UK AI Safety Institute\"; \"joint pre-deployment\"; \"pre-deployment evaluation of OpenAI\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"Claude 3.5 Sonnet\" returns 1 record, a USCOURTS opinion (false positive). '\"AI Safety Institute\" \"Claude 3.5 Sonnet\"' returns 0. \"UK AI Safety Institute\" returns 0. The 7 records for '\"AI Safety Institute\" \"pre-deployment\"' were screened: none references this report."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"Claude 3.5 Sonnet\"; \"AI Safety Institute Claude 3.5 Sonnet\"; \"Anthropic Claude 3.5 Sonnet\"; \"UK AI Safety Institute\"; \"joint pre-deployment\"; \"pre-deployment evaluation of OpenAI\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22Claude%203.5%20Sonnet%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Claude 3.5 Sonnet\" and \"pre-deployment evaluation\". The 5 \"AI Safety Institute\" records are the 2024-08-08 and 2025-01-15 AISI comment requests and unrelated notices; none references this report."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: Claude 3.5 Sonnet; AI Safety Institute; Anthropic",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Claude 3.5 Sonnet\". The 69 \"AI Safety Institute\" and 8 \"Anthropic\" records are fuzzy matches on Commission AI-Act and competition items; none references this report."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://hansard.parliament.uk/lords/2024-11-21/debates/600E1622-A12A-4E0B-8EC1-63BFBD4B0DA1/LargeLanguageModelsAndGenerativeAI(CommunicationsAndDigitalCommitteeReport)#contribution-6F38699C-11EC-49C6-9AB0-492FE2AD13A4",
+   "verbatim": "Just this week the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic’s upgraded Claude 3.5 Sonnet model. This will help advance the development of shared scientific benchmarks and best practices of safety testing and is an important step because it begins to show exactly how these things can also be made public. I was asked about mandatory safety testing. I think this model, which has been a voluntary one and has engaged big companies so that they want to come to the AI Safety Institute, is the correct one.",
+   "policy_response": "Minister of State at DSIT Lord Vallance of Balham told the House of Lords on 2024-11-21, two days after publication, that \"the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic's upgraded Claude 3.5 Sonnet model\" and described it as \"an important step\", while declining to make safety testing mandatory.",
+   "reasoning": "CHANGE. This finding and JOINT-2024-11-BIO2 come from the same report — the UK/US joint pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024) — and the same ministerial statement therefore reaches both. The stored record for this row asserts a Hansard negative (\"no official source explicitly referencing the finding, report or result\"); that is wrong on the same evidence the sibling row already carries. The admissibility rule is satisfied by explicit reference to the report, and the Minister names it. It is non-binding: the statement announces no requirement and in the immediately following sentences the Minister rejects mandatory testing. Note the asymmetry this repairs — the dataset was recording the identical Hansard statement as uptake for the bio finding and as absence for the jailbreak finding from the same report. Nothing in the US or EU jurisdictions adds anything.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "FedScoop — \"Anthropic model subject of first joint evaluation by US, UK AI Safety Institutes\"",
+     "url": "https://fedscoop.com/anthropic-tested-by-us-uk-ai-safety-institutes/",
+     "date": "2024-11-20"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "Descriptive only; does not bear on the level change above, which rests solely on Hansard."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2024-12-BIO2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Long-Form Tasks\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Long-Form%20Tasks%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"biological protocol\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22biological%20protocol%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Claude 3.5 Sonnet\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Claude%203.5%20Sonnet%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record — the 2024-11-21 Vallance statement, which references the UK/US joint pre-deployment report, not this Long-Form Tasks evaluation. Inadmissible for this finding."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: Long-Form Tasks, biological protocol, Claude 3.5 Sonnet",
+       "url": "https://www.gov.uk/api/search.json?q=%22Long-Form+Tasks%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Long-Form Tasks\" and for \"biological protocol generation\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"Long-Form Tasks\"; \"biological protocol\"; \"protocol generation\"; \"aisi.gov.uk\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "0 results for \"Long-Form Tasks\" and \"aisi.gov.uk\". \"biological protocol\" returns 16 records, all pre-2010 biological-weapons and monitoring-protocol usage; the top CHRG hit is a 2000 Biological Weapons Convention hearing."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"Long-Form Tasks\"; \"biological protocol\"; \"protocol generation\"; \"aisi.gov.uk\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22Long-Form%20Tasks%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: Long-Form Tasks; biological protocol",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Complete three-jurisdiction search including a genuinely executed US congressional leg via govinfo full text. Nothing references the Long-Form Tasks evaluation or the 61% feasibility / ~30% curated-context result. Level unchanged. Note that this row is one of the two the 2026-08-28 adjudication cited as already applying the correct \"publication venue is not uptake\" standard, and that standard is preserved here: UK AISI's own blog is the finding's source, not evidence of uptake.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Descriptive only. Google News RSS for this report returns only the evaluator's own AISI pages, an OpenAI post and unrelated items — all excluded as circular or off-topic. No independent media, no academic citation and no notable public discussion located. This finding drew no company response and no ecosystem attention either."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "PALISADE-2024-12-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"BadGPT\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22BadGPT%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Palisade Research\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Palisade%20Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"data poisoning\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22data%20poisoning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: BadGPT, Palisade Research, data poisoning",
+       "url": "https://www.gov.uk/api/search.json?q=%22BadGPT%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"BadGPT\" and \"Palisade Research\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"BadGPT\"; \"Palisade Research\"; \"palisaderesearch.org\"; \"poisoned fine-tuning\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"BadGPT\", \"palisaderesearch.org\" and \"poisoned fine-tuning\" return 0. \"Palisade Research\" returns exactly 1 record: CHRG Serial No. 119-31, House Oversight and Government Reform, \"The Federal Government in the Age of Artificial Intelligence\", 2025-06-05. This hearing was downloaded in full (235,940 characters) and text-searched: Rep. Scott Perry names Palisade Research and Apollo Research in connection with shutdown-resistance testing of Codex-mini, o3 and o4; the transcript contains ZERO occurrences of \"BadGPT\", \"GPT-4o\", \"fine-tun\" or \"jailbreak\". It references the evaluator but not this report or this result."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"BadGPT\"; \"Palisade Research\"; \"palisaderesearch.org\"; \"poisoned fine-tuning\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22BadGPT%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      },
+      {
+       "name": "CHRG Serial No. 119-31 (House Oversight and Government Reform, 2025-06-05) — full transcript downloaded and text-searched",
+       "url": "https://www.govinfo.gov/content/pkg/CHRG-119hhrg60818/html/CHRG-119hhrg60818.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "Palisade Research named once, in a colloquy about model shutdown-resistance; no reference to BadGPT-4o, GPT-4o safety finetuning, or this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: BadGPT; Palisade Research",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Level unchanged, but this is now a genuinely earned negative rather than an asserted one — the stored record for this row conceded that \"not a government-sourced finding so full Tier-A source list not exhaustively checked\". The one congressional record that names Palisade Research was located and read in full, and it is about a different piece of the evaluator's work. Under the strict rule, a source that references the evaluator while discussing an unrelated result of theirs does not establish uptake of THIS finding: the rule admits reference to \"the evaluator\" as one route, but reading it to mean any mention of the organisation anywhere would collapse the measure, which is precisely what the rule's own text (\"general discussion ... of the evaluator as an organisation ... does NOT qualify\") forbids. Recorded for the parent dataset: this is the official congress.gov/govinfo record for the Rep. Perry citation that the 2026-08-28 pass could not pin for PALISADE-2025-07-ALI1 — it is CHRG-119hhrg60818.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex W4405252928, \"BadGPT-4o: stripping safety finetuning from GPT models\" (arXiv:2412.05346), cited_by_count = 0 as of 2026-08-28.",
+     "url": "https://api.openalex.org/works/W4405252928"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only. Google News RSS for \"BadGPT-4o\" returns one item and it is an unrelated 2023 HackerNoon piece — i.e. zero press coverage. Zero located academic citations. This is a finding nobody outside the evaluator engaged with."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "JOINT-2024-12-CYB1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"OpenAI o1\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22OpenAI%20o1%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"pre-deployment evaluation\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22pre-deployment%20evaluation%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record, 2024-09-02 Commons, predating publication and unrelated."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"pre-deployment testing\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22pre-deployment%20testing%22",
+       "via": "direct",
+       "status": 200,
+       "result": "5 contributions + 1 written statement, all generic and four of them predating publication; none references this report."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"OpenAI\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22OpenAI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "64 contributions + 2 written statements, screened by date and section; none references this report or the 45%/35% cyber result."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: OpenAI o1, pre-deployment evaluation, pre-deployment testing, OpenAI",
+       "url": "https://www.gov.uk/api/search.json?q=%22OpenAI+o1%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"OpenAI o1\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"Pre-Deployment Evaluation of OpenAI's o1 Model\"; \"pre-deployment evaluation of OpenAI\"; \"o1 model\"; \"AI Safety Institute pre-deployment\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "'\"Pre-Deployment Evaluation of OpenAI's o1 Model\"' and '\"pre-deployment evaluation of OpenAI\"' both return 0. '\"o1 model\" cybersecurity NIST' returns 2 records, both opened: the DHS report \"Impacts of Adversarial Use of Generative AI on Homeland Security\" (99pp, downloaded and searched — 1 mention of o1-preview as a chain-of-thought reasoner, 0 mentions of \"AI Safety Institute\" or \"pre-deployment\") and an unrelated 2024 Senate HELP hearing. No congressional hearing, Congressional Record entry, committee report or committee material references this evaluation."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"Pre-Deployment Evaluation of OpenAI's o1 Model\"; \"pre-deployment evaluation of OpenAI\"; \"o1 model\"; \"AI Safety Institute pre-deployment\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22Pre-Deployment%20Evaluation%20of%20OpenAI's%20o1%20Model%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"pre-deployment evaluation\" and \"o1 model\"."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: OpenAI o1; AI Safety Institute; pre-deployment evaluation",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"OpenAI o1\" and \"pre-deployment evaluation\"; the \"AI Safety Institute\" matches are fuzzy and none references this report."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "CHANGE, and it completes an already-adjudicated item. The stored Channel B evidence is https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model. I re-fetched it (HTTP 200 direct) and confirmed it carries the finding's own numbers verbatim (\"solve 45% of all tasks, compared to a 35% solve rate\", plus the three extra cryptography challenges). That is the point: it is NIST / US AISI announcing its own joint evaluation, dated the same day as the finding, authored by a co-author of the finding. It is the report's publication venue, not engagement with it, and it announces no requirement, commitment or enforcement action. The dataset applies exactly this rule to UKAISI-2024-12-BIO2 and it should apply here. The 2026-08-28 adversarial pass upheld this same downgrade but could not apply it, on the stated ground that \"No policy uptake identified\" requires a completed search and the US congressional leg had not executed (congress.gov 403, govinfo OVER_RATE_LIMIT). That condition is now met: the US leg ran to completion this pass against govinfo's full-text index of hearings, the Congressional Record, committee reports and committee materials, with a documented zero result, alongside a clean Federal Register API negative and a clean Hansard API negative. The dated not-found record the code requires now exists.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Descriptive only. The only items the news index returns for this evaluation are NIST's own announcement (excluded as the evaluator's publication) and later commentary that does not reference it. No independent media, academic citation or notable discussion located — which is itself worth recording next to the level change: with the evaluator's own announcement set aside, nothing anywhere engaged with this finding."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK AI Security Institute — The Alignment Project, research area \"Evaluation and guarantees in reinforcement learning\"",
+       "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+       "via": "direct",
+       "status": 200,
+       "result": "HIT — cites Greenblatt et al., 2024 by name and quotes the alignment-faking definition."
+      },
+      {
+       "name": "UK AISI Alignment Project — every URL in sitemap.xml (20 pages) fetched and text-searched for Greenblatt, alignment faking, Redwood Research",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "Greenblatt cited on 7 of 20 research-area pages; the alignment-faking citation specific to this report is on the reinforcement-learning page above."
+      },
+      {
+       "name": "UK Parliament Hansard Search API — \"alignment faking\", \"Redwood Research\", \"Greenblatt\", \"deceptive alignment\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22alignment%20faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\" and \"Redwood Research\". \"Greenblatt\" returns 5 records, all 2018-2019 Middle East debates (a different person)."
+      },
+      {
+       "name": "GOV.UK Search API — \"alignment faking\", \"Redwood Research\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22alignment+faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\". \"Redwood Research\" returns 6 fuzzy matches (Frontier AI Taskforce 2023 progress report, AISI approach-to-evaluations 2024-02-09, two coalition announcements); the two that predate the finding cannot be uptake and none contains the phrase."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk)",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED, see still_blocked."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"alignment faking\"; \"alignment-faking\"; \"Redwood Research\"; \"deceptive alignment\"; \"Greenblatt alignment\"; \"sleeper agent\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"alignment faking\", \"alignment-faking\" and \"deceptive alignment\" all return 0 across every govinfo collection. \"Redwood Research\" returns 34 records, all about Redwood National Park and 1968-1972 forestry legislation. \"sleeper agent\" returns 49 records, all espionage/terrorism usage. \"strategically deceive\" returns 1 USCOURTS opinion."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"alignment faking\"; \"alignment-faking\"; \"Redwood Research\"; \"deceptive alignment\"; \"Greenblatt alignment\"; \"sleeper agent\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22alignment%20faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\" and \"Redwood Research\"."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: alignment faking; Redwood Research",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\". \"Redwood Research\" returns 2 fuzzy matches (a 2024-12-09 Daily News and a 1995 Transport Council), neither containing the phrase."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "verbatim": "Empirically, Greenblatt et al., 2024 demonstrate an instance of this phenomenon termed alignment faking in LLMs: “selectively complying with its training objective in training to prevent modification of its behaviour out of training.”",
+   "policy_response": "The UK AI Security Institute's Alignment Project — the Institute's funded research programme — names alignment faking as a priority research area, citing Greenblatt et al. (2024) directly and quoting the paper's definition, and calls for follow-up work on evaluation and mitigation.",
+   "reasoning": "Re-verified and upheld. The evidence page was re-fetched (HTTP 200 direct) and the citation confirmed verbatim; the whole Alignment Project sitemap (20 pages) was then crawled and searched, which both corroborates the citation and bounds it. AISI is an official UK government body (DSIT), the reference to the report is explicit, and a research-funding priority imposes no enforceable obligation on any developer, so the level is non-binding. The US and EU legs were run to completion and are clean negatives; the US congressional leg in particular executed properly this pass via govinfo full text, which the prior passes could not do. Level unchanged for the 12% free-tier compliance with explicit alignment-faking scratchpad reasoning versus 97% paid-tier refusal.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "TIME — \"Exclusive: New Research Shows AI Strategically Lying\"",
+     "url": "https://time.com/7202784/ai-research-strategic-lying/",
+     "date": "2024-12-18"
+    },
+    {
+     "outlet": "TechCrunch — \"New Anthropic study shows AI really doesn't want to be forced to change its views\"",
+     "url": "https://techcrunch.com/2024/12/18/new-anthropic-study-shows-ai-really-doesnt-want-to-be-forced-to-change-its-views/",
+     "date": "2024-12-18"
+    },
+    {
+     "outlet": "Tech Monitor — \"Study reveals 'alignment faking' in LLMs, raising AI safety concerns\"",
+     "url": "https://news.google.com/rss/search?q=%22alignment+faking%22+Anthropic+Redwood",
+     "date": "2024-12-19"
+    },
+    {
+     "outlet": "Built In — \"What Is Alignment Faking in LLMs?\"",
+     "url": "https://news.google.com/rss/search?q=%22alignment+faking%22+Anthropic+Redwood",
+     "date": "2025-02-27"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "OpenAlex W4405627013, \"Alignment faking in large language models\", cited_by_count = 24 as of 2026-08-28 (OpenAlex under-indexes arXiv preprints; the stored Google Scholar figure is 511).",
+     "url": "https://api.openalex.org/works/W4405627013"
+    },
+    {
+     "cite": "\"A Structured State-of-the-Art review on Alignment Faking in Large Language Models\" (2026-02-17) — an independent review article built on this finding.",
+     "url": "https://api.openalex.org/works/W7129341851"
+    },
+    {
+     "cite": "Cloud et al., \"Language models transmit behavioural traits through hidden signals in data\", Nature (2026-04-15) — cites the report.",
+     "url": "https://doi.org/10.1038/s41586-026-10319-8"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Transformer (Substack) — \"Misaligned AI is no longer just theory\"",
+     "url": "https://news.google.com/rss/search?q=%22alignment+faking%22+Anthropic+Redwood"
+    }
+   ],
+   "note": "Descriptive only. TIME and TechCrunch URLs re-fetched and confirmed live (HTTP 200 direct); Tech Monitor's canonical URL returns HTTP 403 to direct fetch so the item is recorded against the news-index query. Anthropic's own post is excluded as the evaluated company's publication. This is by a wide margin the most-covered finding in the packet."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   },
+   {
+    "url": "https://www.techmonitor.ai/digital-economy/ai-and-automation/study-reveals-alignment-faking-in-llms-raising-ai-safety-concerns",
+    "status": 403,
+    "what_it_would_have_shown": "The canonical URL for the Tech Monitor item logged in channel_c."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI2",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK AI Security Institute — The Alignment Project, research area \"Evaluation and guarantees in reinforcement learning\"",
+       "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+       "via": "direct",
+       "status": 200,
+       "result": "HIT — cites Greenblatt et al., 2024 by name and quotes the alignment-faking definition."
+      },
+      {
+       "name": "UK AISI Alignment Project — every URL in sitemap.xml (20 pages) fetched and text-searched for Greenblatt, alignment faking, Redwood Research",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "Greenblatt cited on 7 of 20 research-area pages; the alignment-faking citation specific to this report is on the reinforcement-learning page above."
+      },
+      {
+       "name": "UK Parliament Hansard Search API — \"alignment faking\", \"Redwood Research\", \"Greenblatt\", \"deceptive alignment\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22alignment%20faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\" and \"Redwood Research\". \"Greenblatt\" returns 5 records, all 2018-2019 Middle East debates (a different person)."
+      },
+      {
+       "name": "GOV.UK Search API — \"alignment faking\", \"Redwood Research\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22alignment+faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\". \"Redwood Research\" returns 6 fuzzy matches (Frontier AI Taskforce 2023 progress report, AISI approach-to-evaluations 2024-02-09, two coalition announcements); the two that predate the finding cannot be uptake and none contains the phrase."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk)",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED, see still_blocked."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"alignment faking\"; \"alignment-faking\"; \"Redwood Research\"; \"deceptive alignment\"; \"Greenblatt alignment\"; \"sleeper agent\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"alignment faking\", \"alignment-faking\" and \"deceptive alignment\" all return 0 across every govinfo collection. \"Redwood Research\" returns 34 records, all about Redwood National Park and 1968-1972 forestry legislation. \"sleeper agent\" returns 49 records, all espionage/terrorism usage. \"strategically deceive\" returns 1 USCOURTS opinion."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"alignment faking\"; \"alignment-faking\"; \"Redwood Research\"; \"deceptive alignment\"; \"Greenblatt alignment\"; \"sleeper agent\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22alignment%20faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\" and \"Redwood Research\"."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: alignment faking; Redwood Research",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\". \"Redwood Research\" returns 2 fuzzy matches (a 2024-12-09 Daily News and a 1995 Transport Council), neither containing the phrase."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "verbatim": "Empirically, Greenblatt et al., 2024 demonstrate an instance of this phenomenon termed alignment faking in LLMs: “selectively complying with its training objective in training to prevent modification of its behaviour out of training.”",
+   "policy_response": "The UK AI Security Institute's Alignment Project — the Institute's funded research programme — names alignment faking as a priority research area, citing Greenblatt et al. (2024) directly and quoting the paper's definition, and calls for follow-up work on evaluation and mitigation.",
+   "reasoning": "Re-verified and upheld. The evidence page was re-fetched (HTTP 200 direct) and the citation confirmed verbatim; the whole Alignment Project sitemap (20 pages) was then crawled and searched, which both corroborates the citation and bounds it. AISI is an official UK government body (DSIT), the reference to the report is explicit, and a research-funding priority imposes no enforceable obligation on any developer, so the level is non-binding. The US and EU legs were run to completion and are clean negatives; the US congressional leg in particular executed properly this pass via govinfo full text, which the prior passes could not do. Level unchanged for the rise of alignment-faking reasoning to 78% under RL training.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "TIME — \"Exclusive: New Research Shows AI Strategically Lying\"",
+     "url": "https://time.com/7202784/ai-research-strategic-lying/",
+     "date": "2024-12-18"
+    },
+    {
+     "outlet": "TechCrunch — \"New Anthropic study shows AI really doesn't want to be forced to change its views\"",
+     "url": "https://techcrunch.com/2024/12/18/new-anthropic-study-shows-ai-really-doesnt-want-to-be-forced-to-change-its-views/",
+     "date": "2024-12-18"
+    },
+    {
+     "outlet": "Tech Monitor — \"Study reveals 'alignment faking' in LLMs, raising AI safety concerns\"",
+     "url": "https://news.google.com/rss/search?q=%22alignment+faking%22+Anthropic+Redwood",
+     "date": "2024-12-19"
+    },
+    {
+     "outlet": "Built In — \"What Is Alignment Faking in LLMs?\"",
+     "url": "https://news.google.com/rss/search?q=%22alignment+faking%22+Anthropic+Redwood",
+     "date": "2025-02-27"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "OpenAlex W4405627013, \"Alignment faking in large language models\", cited_by_count = 24 as of 2026-08-28 (OpenAlex under-indexes arXiv preprints; the stored Google Scholar figure is 511).",
+     "url": "https://api.openalex.org/works/W4405627013"
+    },
+    {
+     "cite": "\"A Structured State-of-the-Art review on Alignment Faking in Large Language Models\" (2026-02-17) — an independent review article built on this finding.",
+     "url": "https://api.openalex.org/works/W7129341851"
+    },
+    {
+     "cite": "Cloud et al., \"Language models transmit behavioural traits through hidden signals in data\", Nature (2026-04-15) — cites the report.",
+     "url": "https://doi.org/10.1038/s41586-026-10319-8"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Transformer (Substack) — \"Misaligned AI is no longer just theory\"",
+     "url": "https://news.google.com/rss/search?q=%22alignment+faking%22+Anthropic+Redwood"
+    }
+   ],
+   "note": "Descriptive only. TIME and TechCrunch URLs re-fetched and confirmed live (HTTP 200 direct); Tech Monitor's canonical URL returns HTTP 403 to direct fetch so the item is recorded against the news-index query. Anthropic's own post is excluded as the evaluated company's publication. This is by a wide margin the most-covered finding in the packet."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   },
+   {
+    "url": "https://www.techmonitor.ai/digital-economy/ai-and-automation/study-reveals-alignment-faking-in-llms-raising-ai-safety-concerns",
+    "status": 403,
+    "what_it_would_have_shown": "The canonical URL for the Tech Monitor item logged in channel_c."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI3",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK AI Security Institute — The Alignment Project, research area \"Evaluation and guarantees in reinforcement learning\"",
+       "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+       "via": "direct",
+       "status": 200,
+       "result": "HIT — cites Greenblatt et al., 2024 by name and quotes the alignment-faking definition."
+      },
+      {
+       "name": "UK AISI Alignment Project — every URL in sitemap.xml (20 pages) fetched and text-searched for Greenblatt, alignment faking, Redwood Research",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "Greenblatt cited on 7 of 20 research-area pages; the alignment-faking citation specific to this report is on the reinforcement-learning page above."
+      },
+      {
+       "name": "UK Parliament Hansard Search API — \"alignment faking\", \"Redwood Research\", \"Greenblatt\", \"deceptive alignment\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22alignment%20faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\" and \"Redwood Research\". \"Greenblatt\" returns 5 records, all 2018-2019 Middle East debates (a different person)."
+      },
+      {
+       "name": "GOV.UK Search API — \"alignment faking\", \"Redwood Research\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22alignment+faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\". \"Redwood Research\" returns 6 fuzzy matches (Frontier AI Taskforce 2023 progress report, AISI approach-to-evaluations 2024-02-09, two coalition announcements); the two that predate the finding cannot be uptake and none contains the phrase."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk)",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED, see still_blocked."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"alignment faking\"; \"alignment-faking\"; \"Redwood Research\"; \"deceptive alignment\"; \"Greenblatt alignment\"; \"sleeper agent\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"alignment faking\", \"alignment-faking\" and \"deceptive alignment\" all return 0 across every govinfo collection. \"Redwood Research\" returns 34 records, all about Redwood National Park and 1968-1972 forestry legislation. \"sleeper agent\" returns 49 records, all espionage/terrorism usage. \"strategically deceive\" returns 1 USCOURTS opinion."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"alignment faking\"; \"alignment-faking\"; \"Redwood Research\"; \"deceptive alignment\"; \"Greenblatt alignment\"; \"sleeper agent\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22alignment%20faking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\" and \"Redwood Research\"."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: alignment faking; Redwood Research",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"alignment faking\". \"Redwood Research\" returns 2 fuzzy matches (a 2024-12-09 Daily News and a 1995 Transport Council), neither containing the phrase."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "verbatim": "Empirically, Greenblatt et al., 2024 demonstrate an instance of this phenomenon termed alignment faking in LLMs: “selectively complying with its training objective in training to prevent modification of its behaviour out of training.”",
+   "policy_response": "The UK AI Security Institute's Alignment Project — the Institute's funded research programme — names alignment faking as a priority research area, citing Greenblatt et al. (2024) directly and quoting the paper's definition, and calls for follow-up work on evaluation and mitigation.",
+   "reasoning": "Re-verified and upheld. The evidence page was re-fetched (HTTP 200 direct) and the citation confirmed verbatim; the whole Alignment Project sitemap (20 pages) was then crawled and searched, which both corroborates the citation and bounds it. AISI is an official UK government body (DSIT), the reference to the report is explicit, and a research-funding priority imposes no enforceable obligation on any developer, so the level is non-binding. The US and EU legs were run to completion and are clean negatives; the US congressional leg in particular executed properly this pass via govinfo full text, which the prior passes could not do. Level unchanged for the anti-Anthropic actions including the attempt to exfiltrate its own weights. Note the level of specificity: the AISI page references the report and the alignment-faking phenomenon, not this particular weight-exfiltration result. The admissibility rule is satisfied at report level (\"the finding, the report, the evaluator, or the specific result\"), which is the same basis on which the sibling rows carry the code, so it is retained — but this is the weakest of the three and is flagged as such.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "TIME — \"Exclusive: New Research Shows AI Strategically Lying\"",
+     "url": "https://time.com/7202784/ai-research-strategic-lying/",
+     "date": "2024-12-18"
+    },
+    {
+     "outlet": "TechCrunch — \"New Anthropic study shows AI really doesn't want to be forced to change its views\"",
+     "url": "https://techcrunch.com/2024/12/18/new-anthropic-study-shows-ai-really-doesnt-want-to-be-forced-to-change-its-views/",
+     "date": "2024-12-18"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "OpenAlex W4405627013, \"Alignment faking in large language models\", cited_by_count = 24 as of 2026-08-28 (OpenAlex under-indexes arXiv preprints; the stored Google Scholar figure is 511).",
+     "url": "https://api.openalex.org/works/W4405627013"
+    },
+    {
+     "cite": "\"A Structured State-of-the-Art review on Alignment Faking in Large Language Models\" (2026-02-17) — an independent review article built on this finding.",
+     "url": "https://api.openalex.org/works/W7129341851"
+    },
+    {
+     "cite": "Cloud et al., \"Language models transmit behavioural traits through hidden signals in data\", Nature (2026-04-15) — cites the report.",
+     "url": "https://doi.org/10.1038/s41586-026-10319-8"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Transformer (Substack) — \"Misaligned AI is no longer just theory\"",
+     "url": "https://news.google.com/rss/search?q=%22alignment+faking%22+Anthropic+Redwood"
+    }
+   ],
+   "note": "Descriptive only. TIME and TechCrunch URLs re-fetched and confirmed live (HTTP 200 direct); Tech Monitor's canonical URL returns HTTP 403 to direct fetch so the item is recorded against the news-index query. Anthropic's own post is excluded as the evaluated company's publication. This is by a wide margin the most-covered finding in the packet."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   },
+   {
+    "url": "https://www.techmonitor.ai/digital-economy/ai-and-automation/study-reveals-alignment-faking-in-llms-raising-ai-safety-concerns",
+    "status": 403,
+    "what_it_would_have_shown": "The canonical URL for the Tech Monitor item logged in channel_c."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "JOINT-2025-01-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"agent hijacking\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22agent%20hijacking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"AgentDojo\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22AgentDojo%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"prompt injection\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22prompt%20injection%22",
+       "via": "direct",
+       "status": 200,
+       "result": "screened; no record references this report."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: agent hijacking, AgentDojo, prompt injection",
+       "url": "https://www.gov.uk/api/search.json?q=%22agent+hijacking%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"agent hijacking\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Federal Register API — term \"agent hijacking\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22agent%20hijacking%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 document: 91 FR 698, \"Request for Information Regarding Security Considerations for Artificial Intelligence Agents\", Department of Commerce / NIST / CAISI, published 2026-01-08, XRIN 0693-XA002, docket NIST-2025-0035. HIT."
+      },
+      {
+       "name": "Federal Register full document, downloaded and text-searched (27,956 characters)",
+       "url": "https://www.federalregister.gov/documents/2026/01/08/2026-00206/request-for-information-regarding-security-considerations-for-artificial-intelligence-agents",
+       "via": "direct",
+       "status": 200,
+       "result": "CONFIRMED. Footnote 1 of the RFI cites this exact report by title and URL, and the body sentence attached to it reads \"Research by CAISI technical staff [1] has demonstrated risks of agent hijacking.\""
+      },
+      {
+       "name": "govinfo full-text search — \"Strengthening AI Agent Hijacking Evaluations\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "1 record across all govinfo collections — the same 91 FR 698 notice. Confirms the citation is real and bounds it: no congressional hearing, Congressional Record entry or committee report cites the report."
+      },
+      {
+       "name": "govinfo official copy of 91 FR 698",
+       "url": "https://www.govinfo.gov/content/pkg/FR-2026-01-08/html/2026-00206.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "Same text, official GPO rendition."
+      },
+      {
+       "name": "govinfo full-text search — \"Center for AI Standards and Innovation\" (13 records screened), \"agent hijacking\", \"AgentDojo\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "The 4 CHRG and 4 CRPT records naming CAISI were screened; none references this report or the 11%-to-81% result."
+      },
+      {
+       "name": "NIST site search — \"agent hijacking\"",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "32 results, incl. the report itself and the 2026-01-12 CAISI RFI announcement."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED; superseded by the govinfo full-text index of the same corpus."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: agent hijacking; AgentDojo; CAISI",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record for \"agent hijacking\" — a 2004 Pascal Lamy trade speech (fuzzy match). No Commission item references this report."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://www.federalregister.gov/documents/2026/01/08/2026-00206/request-for-information-regarding-security-considerations-for-artificial-intelligence-agents",
+   "verbatim": "NIST conducts research and develops guidelines to promote safe and secure AI innovation and adoption. Research by CAISI technical staff [1] has demonstrated risks of agent hijacking. … Footnotes 1. Technical Blog: Strengthening AI Agent Hijacking Evaluations, https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations",
+   "policy_response": "The Center for AI Standards and Innovation (CAISI), within NIST at the Department of Commerce, opened a formal Request for Information on securing AI agent systems (91 FR 698, 2026-01-08, docket NIST-2025-0035) and cited this report as the research basis for the inquiry: \"Research by CAISI technical staff [1] has demonstrated risks of agent hijacking\", footnote 1 being \"Technical Blog: Strengthening AI Agent Hijacking Evaluations\".",
+   "reasoning": "CHANGE. The stored record asserts a clean US negative from a pass in which, on its own account, the US congressional and govinfo legs never executed. Re-run properly, the Federal Register API surfaces a document that explicitly cites this report by title and URL. Admissibility is satisfied on the strictest reading: the citation names the report and the body text deploys it for the finding's own substance (that agent hijacking is a demonstrated risk), not for general AI-risk discussion. Level is non-binding, not binding: an RFI is a notice soliciting comment, it imposes no mandatory requirement on anyone, and the reply period closed without an accompanying rule. CAVEAT, stated explicitly because it bears on the weight of this code: CAISI is the same organisational unit that co-produced the report, so this is an agency citing its own prior staff research. It is distinguishable from the publication-venue problem that downgrades JOINT-2024-12-CYB1 in this same packet — that document is the report's own same-day announcement by its own authors, whereas this is a separate regulatory instrument opened twelve months later under a docket number, in which the report functions as cited evidence motivating a policy inquiry. If the adjudicator takes the stricter view that intra-agency self-citation cannot constitute uptake, the fallback coding is \"No policy uptake identified\", and the search record above supplies the completed dated negative that code requires.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "MeriTalk — \"NIST Wants Best Practices for Securing AI Agents From Exploitation\"",
+     "url": "https://www.meritalk.com/articles/nist-wants-best-practices-for-securing-ai-agents-from-exploitation/",
+     "date": "2026-01-08"
+    },
+    {
+     "outlet": "FedScoop — \"NIST AI center looks for input on agentic AI security, best practices\"",
+     "url": "https://news.google.com/rss/search?q=NIST+agent+hijacking+evaluations",
+     "date": "2026-01-07"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "Carnegie Endowment for International Peace — \"When AI Agents Attack: Autonomous Cyber Operations and Europe's Governance Gap\"",
+     "url": "https://news.google.com/rss/search?q=NIST+agent+hijacking+evaluations"
+    }
+   ],
+   "note": "Descriptive only; the level change rests solely on 91 FR 698. MeriTalk URL re-fetched and confirmed live (HTTP 200 direct); the FedScoop canonical URL guess returned 404 so that item is recorded against the news-index query. NIST's own pages are excluded as the evaluator's publications."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "ROBUSTINT-2025-01-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Robust Intelligence\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Robust%20Intelligence%22",
+       "via": "direct",
+       "status": 200,
+       "result": "12 records; all are the ordinary phrase. The only one naming the company, 2023-07-19 Commons (Marion Fellows), predates this finding by 18 months and refers to different 2023 research."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"DeepSeek R1\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22DeepSeek%20R1%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record, 2025-12-10 Commons \"AI Safety\" (Iqbal Mohamed) — a general remark on involving domain experts in testing; does not reference this finding."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Cisco\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Cisco%22",
+       "via": "direct",
+       "status": 200,
+       "result": "screened; no record references this report."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: Robust Intelligence, DeepSeek R1, Cisco",
+       "url": "https://www.gov.uk/api/search.json?q=%22Robust+Intelligence%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"DeepSeek R1\" and \"Robust Intelligence\" as an organisation."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — \"Evaluating Security Risk in Deepseek\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "1 record: \"DeepSeek Unmasked: Exposing the CCP's Latest Tool for Spying, Stealing, and Subverting U.S. Export Control Restrictions\", U.S. House of Representatives Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party, 2025 (SuDoc Y 4.2:W 17). HIT."
+      },
+      {
+       "name": "govinfo corroborating queries — \"Kassianik\" and \"blogs.cisco.com\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"Kassianik\" returns exactly 1 record, the same committee report. \"blogs.cisco.com\" returns 4, of which the same report is the only AI-related one."
+      },
+      {
+       "name": "The committee report itself, downloaded as PDF (16 pages) and text-extracted",
+       "url": "https://www.govinfo.gov/content/pkg/GOVPUB-Y4_2_W17-PURL-gpo244515/pdf/GOVPUB-Y4_2_W17-PURL-gpo244515.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "CONFIRMED. Footnote 11 cites the report by author, title, publisher, date and URL."
+      },
+      {
+       "name": "govinfo full-text search — \"DeepSeek\" + \"jailbreak\", \"Cisco\" + \"DeepSeek\", \"attack success\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "5 further candidate records located and all downloaded and text-searched: CHRG Serial No. 119-42 (Homeland Security, DeepSeek and Unitree Robotics), CHRG Serial No. 119-31 (Quantum, AI and Cloud), CHRG Serial No. 119-19 (Judiciary, trade secrets), S. Hrg. 119-33 (Foreign Relations), CREC 171 Cong. Rec. H700. None contains \"Cisco\" plus \"Robust Intelligence\", \"attack success\" or the 100% result; all DeepSeek references are about IP theft, distillation and export controls."
+      },
+      {
+       "name": "Federal Register API — \"DeepSeek\", \"DeepSeek R1\", \"Robust Intelligence\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22DeepSeek%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"DeepSeek\" and \"DeepSeek R1\"; the 3 \"Robust Intelligence\" hits are 2019-2020 arms-sales and CFIUS notices."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED; superseded by the govinfo full-text index of the same corpus."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: DeepSeek; Robust Intelligence; Cisco",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"DeepSeek\". The \"Robust Intelligence\" and \"Cisco\" matches are fuzzy and unrelated."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://www.govinfo.gov/content/pkg/GOVPUB-Y4_2_W17-PURL-gpo244515/pdf/GOVPUB-Y4_2_W17-PURL-gpo244515.pdf",
+   "verbatim": "11 Paul Kassianik and Amin Karbasi, Evaluating Security Risk in Deepseek and Other Frontier Reasoning Models, Cisco (Jan. 31, 2025), available at https://blogs.cisco.com/security/evaluating-security-risk-in-Deepseek-and-other-frontier-reasoning-models",
+   "policy_response": "The U.S. House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party cites this report in its 2025 investigative report \"DeepSeek Unmasked\", at footnote 11, by author, title, publisher, date and URL. The report's recommendations include a federal procurement prohibition on PRC-origin AI models and a directive to NIST/AISI, CISA and NSA to develop security standards and benchmarks for frontier AI developers.",
+   "reasoning": "CHANGE. The stored record states that federal and state DeepSeek restrictions \"cite data-transfer and CCP-ties concerns and do not explicitly reference this jailbreak-resistance finding\" — that is true of the restrictions, but the search that produced it never reached the congressional corpus (congress.gov 403, govinfo 429). With govinfo full-text search working, the evaluator's report turns out to be cited by name in an official congressional committee publication. Admissibility is satisfied directly: the rule admits explicit reference to \"the finding, the report, the evaluator, or the specific result\", and footnote 11 is a full formal citation of the report. Level is non-binding: a select-committee investigative report recommends, it does not impose an enforceable obligation. CAVEAT, and it is the reason confidence is medium rather than high: footnote 11 is attached to a body sentence about data transfer (\"It then, by its own admission, funnels the data directly back to China\"), not to the 100%-attack-success result. The Committee cites the report but deploys it for a different proposition. This is a report-level rather than result-level reference. The dataset already treats report-level reference as sufficient elsewhere in this same packet (JOINT-2024-11-BIO2 and the three REDWOOD rows), so applying it here is consistency rather than loosening; if the adjudicator requires result-level reference, the fallback is \"No policy uptake identified\" and the completed search record above supports it.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "WIRED — \"DeepSeek's Safety Guardrails Failed Every Test Researchers Threw at Its AI Chatbot\"",
+     "url": "https://www.wired.com/story/deepseeks-ai-jailbreak-prompt-injection-attacks/",
+     "date": "2025-01-31"
+    },
+    {
+     "outlet": "ZDNet — \"Deepseek's AI model proves easy to jailbreak - and worse\"",
+     "url": "https://www.zdnet.com/article/deepseeks-ai-model-proves-easy-to-jailbreak-and-worse/",
+     "date": "2025-01-31"
+    },
+    {
+     "outlet": "Fortune — \"Researchers say they had a '100% attack success rate' on jailbreak attempts against Chinese AI startup DeepSeek\"",
+     "url": "https://news.google.com/rss/search?q=Cisco+DeepSeek+R1+100%25+attack+success",
+     "date": "2025-02-02"
+    },
+    {
+     "outlet": "PCMag — \"DeepSeek Fails Researchers' Safety Tests\"",
+     "url": "https://news.google.com/rss/search?q=Cisco+DeepSeek+R1+100%25+attack+success",
+     "date": "2025-02-01"
+    },
+    {
+     "outlet": "TechRadar — \"DeepSeek 'incredibly vulnerable' to attacks, research claims\"",
+     "url": "https://news.google.com/rss/search?q=Cisco+DeepSeek+R1+100%25+attack+success",
+     "date": "2025-02-03"
+    },
+    {
+     "outlet": "Interesting Engineering — \"DeepSeek 100% fail: Chinese AI model could not stop a single harmful prompt\"",
+     "url": "https://news.google.com/rss/search?q=Cisco+DeepSeek+R1+100%25+attack+success",
+     "date": "2025-02-02"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "Descriptive only. WIRED and ZDNet URLs re-fetched and confirmed live (HTTP 200 direct); the WIRED text was verified to contain both \"Cisco\" and the \"100 percent attack success rate\" quote. The Fortune URL stored in the dataset was NOT re-verified — the canonical URL guess returned HTTP 404 — so it is recorded against the news index instead. Cisco's own blog is excluded as the evaluator's publication. This finding has by far the heaviest independent press coverage in the packet, which is the context for the Select Committee picking it up."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "FARAI-2025-02a-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Illusory Safety\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Illusory%20Safety%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record — a 1991 Commons debate on the European Community intergovernmental conferences, using the ordinary phrase."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"FAR.AI\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 records, all tokenisation false positives; none names FAR.AI."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"jailbreak-tuning\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak-tuning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"StrongREJECT\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22StrongREJECT%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"DeepSeek R1\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22DeepSeek%20R1%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record, 2025-12-10 Commons \"AI Safety\", a general remark on expert involvement in testing; does not reference this report."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: Illusory Safety, FAR.AI, jailbreak-tuning, StrongREJECT, DeepSeek R1",
+       "url": "https://www.gov.uk/api/search.json?q=%22Illusory+Safety%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Illusory Safety\" and \"jailbreak-tuning\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"Illusory Safety\"; \"FAR.AI\"; \"jailbreak-tuning\"; \"StrongREJECT\"; \"far.ai/blog\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"jailbreak-tuning\", \"StrongREJECT\" and \"far.ai/blog\" return 0. \"Illusory Safety\" returns 43 records, all the ordinary phrase in USCOURTS opinions and the bound Congressional Record; the single CHRG hit is a 2011 TSA behavioural-science hearing. The \"FAR.AI\" CHRG hits were opened and shown to be tokenisation artefacts."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"Illusory Safety\"; \"FAR.AI\"; \"jailbreak-tuning\"; \"StrongREJECT\"; \"far.ai/blog\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22Illusory%20Safety%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Illusory Safety\", \"FAR.AI\", \"jailbreak-tuning\" and \"DeepSeek R1\"."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: Illusory Safety; FAR.AI; DeepSeek",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"DeepSeek\". \"Illusory Safety\" returns 12 fuzzy matches (2007-2023 speeches) and \"FAR.AI\" 2 from 2010; none references this report."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Complete three-jurisdiction search, with the US congressional leg executed for the first time against govinfo's full-text index of hearings, the Congressional Record, committee reports and committee materials. Every apparent hit was opened and shown to be an ordinary-phrase or tokenisation false positive. Nothing references FAR.AI, the report or the DeepSeek R1-Distill-Llama-70B jailbreak-tuning result (>80% StrongREJECT harmfulness; one configuration at >93% with 1.7% refusal). Worth noting by contrast: the sibling DeepSeek finding in this packet (ROBUSTINT-2025-01-JAI1, published three days earlier on the same model family) IS cited by a congressional committee — so the negative here is not an artefact of Congress ignoring DeepSeek security research generally. Level unchanged.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex returns no work under this report's title (consistent with the stored Google Scholar note of 2026-08-15 that it is not indexed under the exact title). Semantic Scholar could not be queried (HTTP 429).",
+     "url": "https://api.openalex.org/works?filter=title.search:Illusory%20Safety%20Redteaming%20DeepSeek%20R1"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only. Google News RSS returns 0 items for this report. No independent media, no located academic citation, no notable public discussion — despite the report landing in the same three-day window as the Cisco DeepSeek work that drew WIRED, Fortune, PCMag and TechRadar. The contrast is the interesting datum."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "FARAI-2025-02a-JAI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"Illusory Safety\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Illusory%20Safety%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record — a 1991 Commons debate on the European Community intergovernmental conferences, using the ordinary phrase."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"FAR.AI\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 records, all tokenisation false positives; none names FAR.AI."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"jailbreak-tuning\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak-tuning%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"StrongREJECT\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22StrongREJECT%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "UK Parliament Hansard Search API (Commons + Lords contributions, written statements, written answers, committee and petition records) — term \"DeepSeek R1\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22DeepSeek%20R1%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 record, 2025-12-10 Commons \"AI Safety\", a general remark on expert involvement in testing; does not reference this report."
+      },
+      {
+       "name": "GOV.UK Search API (all gov.uk publications, news and ministerial statements, incl. DSIT/AISI) — terms: Illusory Safety, FAR.AI, jailbreak-tuning, StrongREJECT, DeepSeek R1",
+       "url": "https://www.gov.uk/api/search.json?q=%22Illusory+Safety%22&count=10",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Illusory Safety\" and \"jailbreak-tuning\"."
+      },
+      {
+       "name": "UK AI Security Institute — Alignment Project research-agenda corpus (all 20 URLs in sitemap.xml fetched and text-searched)",
+       "url": "https://alignmentproject.aisi.gov.uk/sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "No mention of this report, evaluator or result."
+      },
+      {
+       "name": "FCA site search (server-side)",
+       "url": "https://www.fca.org.uk/search-results?search_term=",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "UK Parliament committee publications (committees.parliament.uk / publications.parliament.uk) — search NOT executed",
+       "url": "https://committees.parliament.uk/search/",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED. HTTP 403 direct and no Wayback snapshot. Select-committee report full text was not searchable this pass. Hansard's API does index committee records, which partially covers this leg."
+      },
+      {
+       "name": "NCSC / Bank of England site search",
+       "url": "https://www.ncsc.gov.uk/search?q=",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but the results list is client-rendered; the fetched document contains no server-side results. Treated as not searched, not as negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo full-text search — unauthenticated backend of the govinfo /app/search UI (POST /wssearch/search). Covers CHRG (congressional hearings), CREC + CRECB (Congressional Record, daily and bound), CRPT / CPRT (committee reports and prints), BILLS, FR, CFR, GOVPUB (congressional committee materials), GAOREPORTS, USCOURTS. Terms: \"Illusory Safety\"; \"FAR.AI\"; \"jailbreak-tuning\"; \"StrongREJECT\"; \"far.ai/blog\"",
+       "url": "https://www.govinfo.gov/wssearch/search",
+       "via": "direct (POST)",
+       "status": 200,
+       "result": "\"jailbreak-tuning\", \"StrongREJECT\" and \"far.ai/blog\" return 0. \"Illusory Safety\" returns 43 records, all the ordinary phrase in USCOURTS opinions and the bound Congressional Record; the single CHRG hit is a 2011 TSA behavioural-science hearing. The \"FAR.AI\" CHRG hits were opened and shown to be tokenisation artefacts."
+      },
+      {
+       "name": "Federal Register API (full text, all agencies) — terms: \"Illusory Safety\"; \"FAR.AI\"; \"jailbreak-tuning\"; \"StrongREJECT\"; \"far.ai/blog\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=%22Illusory%20Safety%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"Illusory Safety\", \"FAR.AI\", \"jailbreak-tuning\" and \"DeepSeek R1\"."
+      },
+      {
+       "name": "NIST site search (Commerce / NIST / CAISI announcements)",
+       "url": "https://www.nist.gov/search?s=",
+       "via": "direct",
+       "status": 200,
+       "result": "No item explicitly referencing this report or result."
+      },
+      {
+       "name": "congress.gov search pages",
+       "url": "https://www.congress.gov/search?q=",
+       "via": "direct",
+       "status": 403,
+       "result": "BLOCKED (Cloudflare bot-verification interstitial, also via r.jina.ai text proxy). NOT relied on: the congressional corpus was searched instead through govinfo, which indexes the same hearings, Congressional Record and committee reports in full text and returned HTTP 200."
+      },
+      {
+       "name": "api.govinfo.gov search (DEMO_KEY)",
+       "url": "https://api.govinfo.gov/search",
+       "via": "direct",
+       "status": 429,
+       "result": "OVER_RATE_LIMIT throughout. Superseded by the unauthenticated www.govinfo.gov/wssearch/search endpoint above, which is the same index."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission press corner search API (all Commission press releases, statements, speeches, daily news, MEX) — terms: Illusory Safety; FAR.AI; DeepSeek",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results for \"DeepSeek\". \"Illusory Safety\" returns 12 fuzzy matches (2007-2023 speeches) and \"FAR.AI\" 2 from 2010; none references this report."
+      },
+      {
+       "name": "EU AI Office / Shaping Europe's digital future search; EUR-Lex quick search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search",
+       "via": "direct",
+       "status": 200,
+       "result": "DEGRADED. HTTP 200 but neither surface applies the query server-side; the fetched documents return an unfiltered listing. Treated as not searched."
+      },
+      {
+       "name": "European Parliament written questions (RegistreWeb / doceo)",
+       "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "NOT SEARCHABLE. The register page renders client-side; data.europarl.europa.eu's API returned HTTP 200 but exposes no full-text filter. EP written questions were not searched."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Complete three-jurisdiction search, with the US congressional leg executed for the first time against govinfo's full-text index of hearings, the Congressional Record, committee reports and committee materials. Every apparent hit was opened and shown to be an ordinary-phrase or tokenisation false positive. Nothing references FAR.AI, the report or the GPT-4o public-API fine-tuning result (near-100% refusal to >80% StrongREJECT harmfulness). Worth noting by contrast: the sibling DeepSeek finding in this packet (ROBUSTINT-2025-01-JAI1, published three days earlier on the same model family) IS cited by a congressional committee — so the negative here is not an artefact of Congress ignoring DeepSeek security research generally. Level unchanged.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex returns no work under this report's title (consistent with the stored Google Scholar note of 2026-08-15 that it is not indexed under the exact title). Semantic Scholar could not be queried (HTTP 429).",
+     "url": "https://api.openalex.org/works?filter=title.search:Illusory%20Safety%20Redteaming%20DeepSeek%20R1"
+    }
+   ],
+   "discussion": [],
+   "note": "Descriptive only. Google News RSS returns 0 items for this report. No independent media, no located academic citation, no notable public discussion — despite the report landing in the same three-day window as the Cisco DeepSeek work that drew WIRED, Fortune, PCMag and TechRadar. The contrast is the interesting datum."
+  },
+  "still_blocked": [
+   {
+    "url": "https://committees.parliament.uk/search/",
+    "status": 403,
+    "what_it_would_have_shown": "Full text of UK select-committee reports and oral/written evidence. Partially covered by the Hansard API's committee index, but a committee report citing this finding could have been missed."
+   },
+   {
+    "url": "https://www.europarl.europa.eu/RegistreWeb/search/simple.htm",
+    "status": "200 (client-rendered, no server-side query)",
+    "what_it_would_have_shown": "European Parliament written questions, the surface on which EU uptake of individual evaluation findings most often appears."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=",
+    "status": "200 (client-rendered, no server-side results)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning the finding."
+   }
+  ],
+  "confidence": "high"
+ }
+]

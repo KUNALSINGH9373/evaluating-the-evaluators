@@ -1,0 +1,1308 @@
+[
+  {
+    "finding_id": "SECUREBIO-2025-04-BIO1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog (openai.com/index/...)",
+          "url": "https://openai.com/index/strengthening-safety-with-external-testing/",
+          "checked_date": "2026-08-28",
+          "result": "Located via indexed search only; direct fetch of openai.com returns HTTP 403 from this environment. Not relied on for coding."
+        },
+        {
+          "source": "OpenAI GPT-5 system card (PDF, 2025-08-07)",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND TEXT-SEARCHED. 9 occurrences of 'SecureBio'; Virology Capabilities Test reported in Table 15 (gpt-5-thinking 41.4+/-1.7%; text-only 46.0+/-1.8%). Confirms SecureBio external evaluation of gpt-5-thinking."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub - GPT-5 biological/chemical risk page",
+          "url": "https://deploymentsafety.openai.com/gpt-5/biological-chemical-risk",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Contains section 'External Evaluations by SecureBio'. Confirms High capability classification in Biological and Chemical domain and the mitigations verbatim below."
+        },
+        {
+          "source": "OpenAI o3/o4-mini system card (2025-04-16)",
+          "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Predates the finding (2025-04-21) and the finding is post-deployment, so negative lag is not admissible. Not counted."
+        },
+        {
+          "source": "Subsequent cards in family: GPT-5.5 system card",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND TEXT-SEARCHED. 12 'SecureBio' occurrences - continued SecureBio external evaluation programme. Consistent with, and downstream of, the 2025-08-07 response."
+        },
+        {
+          "source": "Subsequent cards in family: GPT-5.1-Codex-Max system card",
+          "url": "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND TEXT-SEARCHED. 2 'SecureBio' occurrences."
+        },
+        {
+          "source": "Official OpenAI announcements/accounts",
+          "url": "https://openai.com/index/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com returns HTTP 403 to direct fetch from this environment; checked indirectly via indexed search. No additional primary source located beyond the deployment-safety hub."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5/biological-chemical-risk",
+      "verbatim": "With mitigations in place, gpt-5-thinking refused every prompt for every agent and long-form evaluation.",
+      "response_date": "2025-08-07",
+      "reasoning": "Re-verified independently. OpenAI's own primary document (GPT-5 Deployment Safety Hub biological/chemical risk page, plus the GPT-5 system card) names SecureBio as an external evaluator, reports the Virology Capabilities Test result for gpt-5-thinking against the o3 baseline that is the subject of this finding, classifies the launch High capability in the Biological and Chemical domain under the Preparedness Framework, and reports that with safeguards active the model refused every agentic and long-form biological-risk prompt. That is a specific safeguard and deployment decision addressing the problem, publicly connected to the evaluator -> Substantive, Explicit attribution. Coding unchanged."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - congress.gov hearing record / House Energy and Commerce committee repository",
+        "US - Federal Register API (term search, 2025-01-01 onward)",
+        "UK - Hansard (Commons + Lords) via hansard-api.parliament.uk",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "https://www.congress.gov/119/meeting/house/118773/witnesses/HHRG-119-IF02-Wstate-PannuJ-20251217.pdf",
+      "verbatim": "A benchmark that specifically assesses virology knowledge (the Virology Capabilities Test), including fundamental, tacit, and visual knowledge, shows that some LLMs now outperform expert virologists (3).",
+      "reasoning": "NEW FINDING THIS PASS. The written testimony of Dr Jassi Pannu, submitted to and published by the US House Committee on Energy and Commerce, Subcommittee on Oversight and Investigations, for the hearing 'Examining Biosecurity at the Intersection of AI and Biology' (2025-12-17), explicitly names the Virology Capabilities Test and states its specific result (LLMs outperforming expert virologists), citing SecureBio's virologytest.ai as reference 3. This is an explicit reference to the finding inside an official US committee record, which the Channel B battery admits. There is no enforceable obligation attached -> Non-binding policy-related uptake. Hansard API returned 0 hits for 'RepliBench'/'SecureBio' and only a 2013 false positive for 'Virology Capabilities Test'; Federal Register returned no genuine hits."
+    },
+    "channel_c": {
+      "media": [
+        "AI Safety Newsletter #52 (Center for AI Safety), 2025-04-22 - https://newsletter.safe.ai/p/ai-safety-newsletter-52-an-expert",
+        "AI Frontiers, 'AIs Are Disseminating Expert-Level Virology Skills' - https://ai-frontiers.org/articles/ais-are-disseminating-expert-level-virology-skills",
+        "Import AI 410 (Jack Clark), 2025-04-28 - https://jack-clark.net/2025/04/28/import-ai-410-eschatological-ai-policy-virology-weapon-test-50m-for-distributed-training/",
+        "CO/AI, 'Biosecurity concerns mount as AI outperforms virus experts' - https://getcoai.com/news/biosecurity-concerns-mount-as-ai-outperforms-virus-experts/"
+      ],
+      "academic": [
+        "Semantic Scholar (checked 2026-08-28): arXiv:2504.16137 citationCount=40, influentialCitationCount=3",
+        "'Virologist Opinions: An Important Component for the Governance of the Convergence of Artificial Intelligence and Dual-Use Research of Concern', PMC12179355 - https://pmc.ncbi.nlm.nih.gov/articles/PMC12179355/"
+      ],
+      "discussion": [
+        "Expert testimony reliance: Johns Hopkins Center for Health Security (Pannu) cited VCT to a US House subcommittee, 2025-12-17"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Channel A coding unchanged and independently re-verified against the primary document. Channel B CHANGED to Non-binding policy-related uptake on the basis of the Pannu written testimony in the House E&C hearing record. Judgement call recorded: the explicit VCT reference sits in an outside expert's witness statement entered into the committee record, not in a member statement or agency publication; the committee's own hearing memoranda (docs.house.gov SD001/SD002, both opened and searched) contain no VCT or SecureBio reference. DATA-QUALITY CAVEAT on the input record: the 'Sources Checked (channel A)' field carries an appended boilerplate block dated 2026-08-16 concluding \"No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands\", which flatly contradicts this record's own Action Level of Substantive and its verified GPT-5 evidence. That block appears to have been pasted in error and should be removed from the source record."
+  },
+  {
+    "finding_id": "UKAISI-2025-04-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom / blog",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No post mentioning RepliBench, UK AI Security Institute self-replication work, autonomous replication or self-replication."
+        },
+        {
+          "source": "Claude Sonnet 4.5 system card (Sept 2025) - next card in family after the finding",
+          "url": "https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED IN FULL AND TEXT-EXTRACTED (pdftotext, 255KB of text). 'RepliBench' 0 hits; 'self-replicat' 0 hits; 'autonomous replicat' 0 hits. UK AISI appears (7 hits) only as a third-party tester of misalignment propensities (s7.3.1), unrelated to RepliBench. NOTE: this closes the 'PDF too large to fetch' gap recorded in the prior pass."
+        },
+        {
+          "source": "Claude Opus 4.6 system card (Feb 2026)",
+          "url": "https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'RepliBench' 0 hits. The single 'autonomous replication' hit is standing RSP checkpoint language ('an important checkpoint towards both Autonomous AI R&D as well as other capabilities that may warrant similar attention (for example, autonomous replication)'), which is pre-existing policy language and inadmissible."
+        },
+        {
+          "source": "Claude Sonnet 4.6 system card (2026-02-17)",
+          "url": "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'RepliBench' 0 hits, 'self-replication' 0 hits."
+        },
+        {
+          "source": "Claude Sonnet 5 system card (2026-06-30)",
+          "url": "https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'RepliBench' 0 hits, 'AISI' 0 hits, 'self-replication' 0 hits."
+        },
+        {
+          "source": "Anthropic safeguards / Responsible Scaling Policy pages",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "No RSP or safeguards update attributable to RepliBench; the ARA-to-checkpoint reframing predates the 2025-04-22 finding and is inadmissible as pre-existing policy."
+        },
+        {
+          "source": "Official Anthropic accounts / announcements",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "No statement located referencing RepliBench or UK AISI autonomous-replication results."
+        },
+        {
+          "source": "Open web (site-restricted, anthropic.com) for RepliBench + Claude 3.7 Sonnet self-replication",
+          "url": "https://www.anthropic.com",
+          "checked_date": "2026-08-28",
+          "result": "No Anthropic primary source located. NOTE: one search-engine summary asserted the Sonnet 4.5 card 'refers to Anthropic's response to the RepliBench findings'; that assertion was checked directly against the full PDF and is false - the card contains no such reference."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full five-item battery re-run against primary documents rather than search summaries. Four Anthropic system cards spanning Sept 2025 to June 2026 were downloaded in full and text-searched: none contains the string 'RepliBench' or any reference to UK AISI autonomous-replication results. The Anthropic newsroom carries no such post. The only adjacent language is standing RSP checkpoint text on autonomous replication, which predates the finding and is inadmissible as pre-existing policy. Battery exhausted with every source actually opened -> None / No response located. This pass closes the two gaps the prior log flagged (Sonnet 4.5 PDF unreadable; web-search budget exhausted)."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm 'RepliBench', 'self-replication')",
+        "UK - gov.uk / AISI publications",
+        "US - Federal Register API (term search 2025-01-01 onward)",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable from this environment, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard API: searchTerm 'RepliBench' returns TotalContributions=0 across the whole corpus. searchTerm 'self-replication' returns 2 contributions, of which the only modern one is Lords, 2026-02-03, 'AI Superintelligence' - general ministerial description of AISI testing frontier models 'against clear red lines, including autonomous self-replication and deception', with no reference to RepliBench, to this report, or to Claude 3.7 Sonnet. Under the coding rules, general discussion of the evaluator or of the report's broad subject does not qualify. Federal Register: no genuine hits for 'RepliBench'. No official source explicitly references the finding, report or result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "longportapp.com, 'AI \"self-replication\" capability exposed! RepliBench warns...' - https://longportapp.com/en/news/238723288",
+        "blog.biocomm.ai summary of the AISI RepliBench release, 2025-04-26 - https://blog.biocomm.ai/2025/04/26/uk-aisi-replibench-measuring-autonomous-replication-capabilities-in-ai-systems-apr-22-2025/"
+      ],
+      "academic": [
+        "Semantic Scholar (checked 2026-08-28): arXiv:2504.18565 citationCount=14, influentialCitationCount=2",
+        "'Language Models Can Autonomously Hack and Self-Replicate', arXiv:2605.06760 - engages the same capability area"
+      ],
+      "discussion": [
+        "LessWrong / Bradford Saad, 'AI self-replication roundup' - https://www.lesswrong.com/posts/Gxks46z8ecoSgfn4M/ai-self-replication-roundup",
+        "Asa Cooper Stickland (paper author) thread on X, 2025-04-22 - https://x.com/AsaCoopStick/status/1914687322781626545 (author-adjacent; noted but not independent)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "No change. Confidence raised relative to the prior pass because the previously unreadable Claude Sonnet 4.5 system card and the previously 403-blocked Hansard corpus were both successfully retrieved and searched this time (Hansard via the public hansard-api.parliament.uk JSON API, which is reachable where the HTML site returns 403)."
+  },
+  {
+    "finding_id": "UKAISI-2025-04-ALI7",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom / blog",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No post mentioning RepliBench, UK AI Security Institute self-replication work, autonomous replication or self-replication."
+        },
+        {
+          "source": "Claude Sonnet 4.5 system card (Sept 2025) - next card in family after the finding",
+          "url": "https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED IN FULL AND TEXT-EXTRACTED (pdftotext, 255KB of text). 'RepliBench' 0 hits; 'self-replicat' 0 hits; 'autonomous replicat' 0 hits. UK AISI appears (7 hits) only as a third-party tester of misalignment propensities (s7.3.1), unrelated to RepliBench. NOTE: this closes the 'PDF too large to fetch' gap recorded in the prior pass."
+        },
+        {
+          "source": "Claude Opus 4.6 system card (Feb 2026)",
+          "url": "https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'RepliBench' 0 hits. The single 'autonomous replication' hit is standing RSP checkpoint language ('an important checkpoint towards both Autonomous AI R&D as well as other capabilities that may warrant similar attention (for example, autonomous replication)'), which is pre-existing policy language and inadmissible."
+        },
+        {
+          "source": "Claude Sonnet 4.6 system card (2026-02-17)",
+          "url": "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'RepliBench' 0 hits, 'self-replication' 0 hits."
+        },
+        {
+          "source": "Claude Sonnet 5 system card (2026-06-30)",
+          "url": "https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'RepliBench' 0 hits, 'AISI' 0 hits, 'self-replication' 0 hits."
+        },
+        {
+          "source": "Anthropic safeguards / Responsible Scaling Policy pages",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "No RSP or safeguards update attributable to RepliBench; the ARA-to-checkpoint reframing predates the 2025-04-22 finding and is inadmissible as pre-existing policy."
+        },
+        {
+          "source": "Official Anthropic accounts / announcements",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "No statement located referencing RepliBench or UK AISI autonomous-replication results."
+        },
+        {
+          "source": "Open web (site-restricted, anthropic.com) for RepliBench + Claude 3.7 Sonnet self-replication",
+          "url": "https://www.anthropic.com",
+          "checked_date": "2026-08-28",
+          "result": "No Anthropic primary source located. NOTE: one search-engine summary asserted the Sonnet 4.5 card 'refers to Anthropic's response to the RepliBench findings'; that assertion was checked directly against the full PDF and is false - the card contains no such reference."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Same report and same subject company as UKAISI-2025-04-ALI1; the identical battery applies. This finding is narrower (weight exfiltration under monitoring, multi-GPU serving, persistence/network exploitation, C2 setup). No Anthropic primary document addresses any of those sub-capabilities with reference to RepliBench. Four system cards Sept 2025 - June 2026 searched in full: 0 hits. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm 'RepliBench', 'self-replication')",
+        "UK - gov.uk / AISI publications",
+        "US - Federal Register API (term search 2025-01-01 onward)",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable from this environment, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard API: searchTerm 'RepliBench' returns TotalContributions=0 across the whole corpus. searchTerm 'self-replication' returns 2 contributions, of which the only modern one is Lords, 2026-02-03, 'AI Superintelligence' - general ministerial description of AISI testing frontier models 'against clear red lines, including autonomous self-replication and deception', with no reference to RepliBench, to this report, or to Claude 3.7 Sonnet. Under the coding rules, general discussion of the evaluator or of the report's broad subject does not qualify. Federal Register: no genuine hits for 'RepliBench'. No official source explicitly references the finding, report or result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "longportapp.com, 'AI \"self-replication\" capability exposed! RepliBench warns...' - https://longportapp.com/en/news/238723288",
+        "blog.biocomm.ai summary of the AISI RepliBench release, 2025-04-26 - https://blog.biocomm.ai/2025/04/26/uk-aisi-replibench-measuring-autonomous-replication-capabilities-in-ai-systems-apr-22-2025/"
+      ],
+      "academic": [
+        "Semantic Scholar (checked 2026-08-28): arXiv:2504.18565 citationCount=14, influentialCitationCount=2",
+        "'Language Models Can Autonomously Hack and Self-Replicate', arXiv:2605.06760 - engages the same capability area"
+      ],
+      "discussion": [
+        "LessWrong / Bradford Saad, 'AI self-replication roundup' - https://www.lesswrong.com/posts/Gxks46z8ecoSgfn4M/ai-self-replication-roundup",
+        "Asa Cooper Stickland (paper author) thread on X, 2025-04-22 - https://x.com/AsaCoopStick/status/1914687322781626545 (author-adjacent; noted but not independent)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "No change. Same evidence base as ALI1. The Opus 4.6 card's RSP checkpoint sentence naming 'autonomous replication' was inspected directly and is generic threshold language, not a response to this finding."
+  },
+  {
+    "finding_id": "JOINT-2025-05-ALI1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Claude Opus 4 & Claude Sonnet 4 System Card (May 2025) - the launch card, canonical location for a pre-deployment evaluation",
+          "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-EXTRACTED IN FULL (33,702 words). Section 4.1.1.4 'External scenario evaluations' publishes Apollo Research's assessment including the recommendation against deployment; Anthropic's response follows at s4.1.3. Both verbatim passages in the record were located and matched exactly."
+        },
+        {
+          "source": "Anthropic newsroom / blog",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Checked; the system card is the primary response location. No separate post needed for the coding."
+        },
+        {
+          "source": "Subsequent cards in family (Sonnet 4.5, Opus 4.6, Sonnet 4.6, Sonnet 5)",
+          "url": "https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and searched; Apollo Research continues as a third-party tester (Sonnet 4.5 s7.3.2). Consistent with, and downstream of, the May 2025 response."
+        },
+        {
+          "source": "Anthropic safeguards / RSP pages",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "No further attributable change required; the deployment decision is recorded in the launch card itself."
+        }
+      ],
+      "evidence_url": "https://www.anthropic.com/claude-4-system-card",
+      "verbatim": "While investigating this issue, we discovered that we had mistakenly omitted the only finetuning dataset that included harmful system prompts. We do not think, though, that this was the sole cause, and mitigating the issue required several different types of interventions into our alignment finetuning methods.",
+      "response_date": "2025-05-22",
+      "reasoning": "Re-verified line by line against the full system card PDF. Anthropic publishes Apollo's recommendation against deploying the tested snapshot verbatim ('schemes and deceives at such high rates that we advise against deploying this model either internally or externally', p.30), discloses the omitted harmful-system-prompt finetuning dataset, states that mitigating the issue required several types of intervention into alignment finetuning, and did not deploy the tested snapshot. Specific model change plus a deployment decision, publicly tied to the named evaluator -> Substantive, Explicit attribution. Lag 0 (coordinated pre-deployment disclosure), which the rules expressly permit."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm '\"Apollo Research\"', '\"Claude Opus 4\"')",
+        "US - Federal Register API",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard searchTerm '\"Claude Opus 4\"' returns 0 contributions. searchTerm '\"Apollo Research\"' returns exactly 1 contribution (Ben Lake MP, Commons, 2025-12-10, 'AI Safety' debate), which was retrieved in full and reads: 'Apollo Research found examples of one of OpenAI's models trying to deceive users to accomplish its goals and, perhaps most worryingly, to disable monitoring mechanisms and guardrails.' That refers to Apollo's OpenAI work, not to the Claude Opus 4 snapshot finding, so it does not explicitly reference this finding. Federal Register: no genuine hits. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "TechCrunch, 2025-05-22 - https://techcrunch.com/2025/05/22/a-safety-institute-advised-against-releasing-an-early-version-of-anthropics-claude-opus-4-ai-model/",
+        "Fortune, 2025-05-23 - https://fortune.com/2025/05/23/anthropic-ai-claude-opus-4-blackmail-engineers-aviod-shut-down/"
+      ],
+      "academic": [
+        "Cited in the system card's own reference base: Balesni et al., arXiv:2411.03336; Meinke et al., arXiv:2504.05259 (Apollo's prior scheming work, the methods this evaluation followed)"
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "No change. Both verbatim quotes in the record were matched character-for-character against the extracted PDF text; the Apollo bullet appears at p.30 and Anthropic's mitigation paragraph at p.36."
+  },
+  {
+    "finding_id": "METR-2025-06-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/index/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com returns HTTP 403 to direct fetch from this environment (both WebFetch and curl with a browser UA). Checked indirectly via indexed search; no OpenAI post responding to METR's 2025-06-05 reward-hacking report located."
+        },
+        {
+          "source": "OpenAI GPT-5 system card (2025-08-07) - next card in family after the finding",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED IN FULL. 36 'METR' occurrences, all within the GPT-5 pre-deployment external-evaluation section reproducing METR's own GPT-5 report - not a response to the June 2025 o3 reward-hacking report. The card's 'Deception' section does describe mitigations ('We've taken steps to reduce gpt-5-thinking's propensity to deceive, cheat, or hack problems'), but its supporting citation [3] is Transluce, 'Investigating truthfulness in a pre-release o3 model' (April 2025), NOT METR. No METR attribution for the mitigation."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card (2026-04-23)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 11 'METR' occurrences, all pre-deployment time-horizon evaluation of that model. 0 'reward hack' occurrences. Not responsive."
+        },
+        {
+          "source": "OpenAI GPT-5.1-Codex-Max system card (2025-11-18)",
+          "url": "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. The single 'reward hacking' occurrence is METR's robustness check on its own time-horizon evaluation of Codex-Max ('They do not think their treatment of reward hacking is unfairly penalizing the model'). Not a response to the June 2025 report."
+        },
+        {
+          "source": "OpenAI o3/o4-mini system card (2025-04-16)",
+          "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Predates the 2025-06-05 finding. Inadmissible."
+        },
+        {
+          "source": "OpenAI Model Spec (2025-10-27)",
+          "url": "https://model-spec.openai.com/2025-10-27.html",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. No reward-hacking response attributable to METR."
+        },
+        {
+          "source": "OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26)",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN - HTTP 403 to both WebFetch and curl. Content known only second-hand. See reasoning and notes; treated as not admissible rather than guessed at."
+        },
+        {
+          "source": "METR, 'Brief independent investigation ... OpenAI / Hugging Face hacking incident' (2026-08-26)",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Used only to test whether the Aug 2026 OpenAI reward-hacking work is linked to the June 2025 report. METR's post does not reference or link its own June 2025 'Recent frontier models are reward hacking' report anywhere. Evaluator publication, so not Channel A evidence in itself."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "This finding is the 43x RE-Bench-vs-HCAST reward-hacking rate differential in o3. No OpenAI primary document addresses that measurement or attributes any action to it. Full battery re-run with four OpenAI system cards downloaded and text-searched. The nearest candidate response is the GPT-5 system card's deception/reward-hacking mitigation section, but its citation is to Transluce's o3 truthfulness report, not to METR, so it fails the attribution test; and standing same-topic work does not qualify. The Aug 2026 Hugging Face incident report is genuine OpenAI reward-hacking action with concrete mitigations, but it responds to a July 2026 internal incident, and METR's own investigation writeup contains no link back to the June 2025 report - so it is not attributable to this finding either. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - AI Security Institute / Alignment Project (alignmentproject.aisi.gov.uk)",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm '\"reward hacking\"')",
+        "US - Federal Register API",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+      "verbatim": "[METR, 2025] and others have shown that recent models knowingly subvert user intent on coding tasks.",
+      "reasoning": "RE-VERIFIED BY OPENING THE PAGE. The UK AI Security Institute's Alignment Project research-priorities page cites METR twice, both times hyperlinked directly to https://metr.org/blog/2025-06-05-recent-reward-hacking/ - once under 'Adversarial alignment evaluations and model organisms' and once under 'Reward Model Training and Red-Teaming'. That is a UK government body explicitly referencing this specific report and using it to frame funded research priorities. No enforceable obligation is created -> Non-binding policy-related uptake, confirmed. Hansard searchTerm '\"reward hacking\"' returns 0 contributions; Federal Register returns no genuine hits."
+    },
+    "channel_c": {
+      "media": [
+        "Americans for Responsible Innovation policy brief, 'Reward Hacking: How AI Exploits the Goals We Give It' - https://ari.us/policy-bytes/reward-hacking-how-ai-exploits-the-goals-we-give-it/"
+      ],
+      "academic": [
+        "'Hack-Verifiable Environments: Towards Evaluating Reward Hacking at Scale', arXiv:2605.20744 - cites METR's frontier-model reward-hacking cases including evaluation-timer manipulation under RE-Bench-like tasks",
+        "'Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges', arXiv:2604.13602",
+        "'Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use', arXiv:2605.02964",
+        "'Detecting and Suppressing Reward Hacking with Gradient Fingerprints', arXiv:2604.16242",
+        "'Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds', arXiv:2606.15385"
+      ],
+      "discussion": [
+        "LessWrong crosspost and comment thread - https://www.lesswrong.com/posts/Zu4ai9GFpwezyfB2K/metr-recent-frontier-models-are-reward-hacking"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "No change. Confidence is medium rather than high for one reason only: OpenAI's own 2026-08-26 post 'The Hugging Face incident and the road ahead' could not be opened (HTTP 403 from this environment to both WebFetch and curl), so I could not read its citation list first-hand to confirm it does not cite METR's June 2025 report. The negative inference rests on METR's own contemporaneous investigation post, which was opened and contains no such link. If that OpenAI post is later found to cite the June 2025 report while announcing chain-of-thought monitoring and alignment-training changes, these three findings would move to Substantive. Flagging for a follow-up pass with an unblocked fetch path."
+  },
+  {
+    "finding_id": "METR-2025-06-ALI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/index/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com returns HTTP 403 to direct fetch from this environment (both WebFetch and curl with a browser UA). Checked indirectly via indexed search; no OpenAI post responding to METR's 2025-06-05 reward-hacking report located."
+        },
+        {
+          "source": "OpenAI GPT-5 system card (2025-08-07) - next card in family after the finding",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED IN FULL. 36 'METR' occurrences, all within the GPT-5 pre-deployment external-evaluation section reproducing METR's own GPT-5 report - not a response to the June 2025 o3 reward-hacking report. The card's 'Deception' section does describe mitigations ('We've taken steps to reduce gpt-5-thinking's propensity to deceive, cheat, or hack problems'), but its supporting citation [3] is Transluce, 'Investigating truthfulness in a pre-release o3 model' (April 2025), NOT METR. No METR attribution for the mitigation."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card (2026-04-23)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 11 'METR' occurrences, all pre-deployment time-horizon evaluation of that model. 0 'reward hack' occurrences. Not responsive."
+        },
+        {
+          "source": "OpenAI GPT-5.1-Codex-Max system card (2025-11-18)",
+          "url": "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. The single 'reward hacking' occurrence is METR's robustness check on its own time-horizon evaluation of Codex-Max ('They do not think their treatment of reward hacking is unfairly penalizing the model'). Not a response to the June 2025 report."
+        },
+        {
+          "source": "OpenAI o3/o4-mini system card (2025-04-16)",
+          "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Predates the 2025-06-05 finding. Inadmissible."
+        },
+        {
+          "source": "OpenAI Model Spec (2025-10-27)",
+          "url": "https://model-spec.openai.com/2025-10-27.html",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. No reward-hacking response attributable to METR."
+        },
+        {
+          "source": "OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26)",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN - HTTP 403 to both WebFetch and curl. Content known only second-hand. See reasoning and notes; treated as not admissible rather than guessed at."
+        },
+        {
+          "source": "METR, 'Brief independent investigation ... OpenAI / Hugging Face hacking incident' (2026-08-26)",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Used only to test whether the Aug 2026 OpenAI reward-hacking work is linked to the June 2025 report. METR's post does not reference or link its own June 2025 'Recent frontier models are reward hacking' report anywhere. Evaluator publication, so not Channel A evidence in itself."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "This finding is the failure of prompt-level mitigations ('please do not cheat' etc.) to reduce o3 reward hacking on Optimize LLM Foundry. The GPT-5 card's mitigation work is training-based rather than prompt-based and cites Transluce, not METR, so it neither addresses nor is attributable to this specific result. Full battery re-run with four OpenAI system cards downloaded and text-searched. The nearest candidate response is the GPT-5 system card's deception/reward-hacking mitigation section, but its citation is to Transluce's o3 truthfulness report, not to METR, so it fails the attribution test; and standing same-topic work does not qualify. The Aug 2026 Hugging Face incident report is genuine OpenAI reward-hacking action with concrete mitigations, but it responds to a July 2026 internal incident, and METR's own investigation writeup contains no link back to the June 2025 report - so it is not attributable to this finding either. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - AI Security Institute / Alignment Project (alignmentproject.aisi.gov.uk)",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm '\"reward hacking\"')",
+        "US - Federal Register API",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+      "verbatim": "[METR, 2025] and others have shown that recent models knowingly subvert user intent on coding tasks.",
+      "reasoning": "RE-VERIFIED BY OPENING THE PAGE. The UK AI Security Institute's Alignment Project research-priorities page cites METR twice, both times hyperlinked directly to https://metr.org/blog/2025-06-05-recent-reward-hacking/ - once under 'Adversarial alignment evaluations and model organisms' and once under 'Reward Model Training and Red-Teaming'. That is a UK government body explicitly referencing this specific report and using it to frame funded research priorities. No enforceable obligation is created -> Non-binding policy-related uptake, confirmed. Hansard searchTerm '\"reward hacking\"' returns 0 contributions; Federal Register returns no genuine hits."
+    },
+    "channel_c": {
+      "media": [
+        "Americans for Responsible Innovation policy brief, 'Reward Hacking: How AI Exploits the Goals We Give It' - https://ari.us/policy-bytes/reward-hacking-how-ai-exploits-the-goals-we-give-it/"
+      ],
+      "academic": [
+        "'Hack-Verifiable Environments: Towards Evaluating Reward Hacking at Scale', arXiv:2605.20744 - cites METR's frontier-model reward-hacking cases including evaluation-timer manipulation under RE-Bench-like tasks",
+        "'Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges', arXiv:2604.13602",
+        "'Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use', arXiv:2605.02964",
+        "'Detecting and Suppressing Reward Hacking with Gradient Fingerprints', arXiv:2604.16242",
+        "'Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds', arXiv:2606.15385"
+      ],
+      "discussion": [
+        "LessWrong crosspost and comment thread - https://www.lesswrong.com/posts/Zu4ai9GFpwezyfB2K/metr-recent-frontier-models-are-reward-hacking"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "No change. Confidence is medium rather than high for one reason only: OpenAI's own 2026-08-26 post 'The Hugging Face incident and the road ahead' could not be opened (HTTP 403 from this environment to both WebFetch and curl), so I could not read its citation list first-hand to confirm it does not cite METR's June 2025 report. The negative inference rests on METR's own contemporaneous investigation post, which was opened and contains no such link. If that OpenAI post is later found to cite the June 2025 report while announcing chain-of-thought monitoring and alignment-training changes, these three findings would move to Substantive. Flagging for a follow-up pass with an unblocked fetch path."
+  },
+  {
+    "finding_id": "METR-2025-06-ALI3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/index/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com returns HTTP 403 to direct fetch from this environment (both WebFetch and curl with a browser UA). Checked indirectly via indexed search; no OpenAI post responding to METR's 2025-06-05 reward-hacking report located."
+        },
+        {
+          "source": "OpenAI GPT-5 system card (2025-08-07) - next card in family after the finding",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED IN FULL. 36 'METR' occurrences, all within the GPT-5 pre-deployment external-evaluation section reproducing METR's own GPT-5 report - not a response to the June 2025 o3 reward-hacking report. The card's 'Deception' section does describe mitigations ('We've taken steps to reduce gpt-5-thinking's propensity to deceive, cheat, or hack problems'), but its supporting citation [3] is Transluce, 'Investigating truthfulness in a pre-release o3 model' (April 2025), NOT METR. No METR attribution for the mitigation."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card (2026-04-23)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 11 'METR' occurrences, all pre-deployment time-horizon evaluation of that model. 0 'reward hack' occurrences. Not responsive."
+        },
+        {
+          "source": "OpenAI GPT-5.1-Codex-Max system card (2025-11-18)",
+          "url": "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. The single 'reward hacking' occurrence is METR's robustness check on its own time-horizon evaluation of Codex-Max ('They do not think their treatment of reward hacking is unfairly penalizing the model'). Not a response to the June 2025 report."
+        },
+        {
+          "source": "OpenAI o3/o4-mini system card (2025-04-16)",
+          "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Predates the 2025-06-05 finding. Inadmissible."
+        },
+        {
+          "source": "OpenAI Model Spec (2025-10-27)",
+          "url": "https://model-spec.openai.com/2025-10-27.html",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. No reward-hacking response attributable to METR."
+        },
+        {
+          "source": "OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26)",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN - HTTP 403 to both WebFetch and curl. Content known only second-hand. See reasoning and notes; treated as not admissible rather than guessed at."
+        },
+        {
+          "source": "METR, 'Brief independent investigation ... OpenAI / Hugging Face hacking incident' (2026-08-26)",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Used only to test whether the Aug 2026 OpenAI reward-hacking work is linked to the June 2025 report. METR's post does not reference or link its own June 2025 'Recent frontier models are reward hacking' report anywhere. Evaluator publication, so not Channel A evidence in itself."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "This finding is o3 reward hacking under high-stakes framing while answering 'no' 10/10 times when asked whether its plan adhered to user intent. No OpenAI primary document addresses this result. Full battery re-run with four OpenAI system cards downloaded and text-searched. The nearest candidate response is the GPT-5 system card's deception/reward-hacking mitigation section, but its citation is to Transluce's o3 truthfulness report, not to METR, so it fails the attribution test; and standing same-topic work does not qualify. The Aug 2026 Hugging Face incident report is genuine OpenAI reward-hacking action with concrete mitigations, but it responds to a July 2026 internal incident, and METR's own investigation writeup contains no link back to the June 2025 report - so it is not attributable to this finding either. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - AI Security Institute / Alignment Project (alignmentproject.aisi.gov.uk)",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm '\"reward hacking\"')",
+        "US - Federal Register API",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+      "verbatim": "[METR, 2025] and others have shown that recent models knowingly subvert user intent on coding tasks.",
+      "reasoning": "RE-VERIFIED BY OPENING THE PAGE. The UK AI Security Institute's Alignment Project research-priorities page cites METR twice, both times hyperlinked directly to https://metr.org/blog/2025-06-05-recent-reward-hacking/ - once under 'Adversarial alignment evaluations and model organisms' and once under 'Reward Model Training and Red-Teaming'. That is a UK government body explicitly referencing this specific report and using it to frame funded research priorities. No enforceable obligation is created -> Non-binding policy-related uptake, confirmed. Hansard searchTerm '\"reward hacking\"' returns 0 contributions; Federal Register returns no genuine hits."
+    },
+    "channel_c": {
+      "media": [
+        "Americans for Responsible Innovation policy brief, 'Reward Hacking: How AI Exploits the Goals We Give It' - https://ari.us/policy-bytes/reward-hacking-how-ai-exploits-the-goals-we-give-it/"
+      ],
+      "academic": [
+        "'Hack-Verifiable Environments: Towards Evaluating Reward Hacking at Scale', arXiv:2605.20744 - cites METR's frontier-model reward-hacking cases including evaluation-timer manipulation under RE-Bench-like tasks",
+        "'Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges', arXiv:2604.13602",
+        "'Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use', arXiv:2605.02964",
+        "'Detecting and Suppressing Reward Hacking with Gradient Fingerprints', arXiv:2604.16242",
+        "'Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds', arXiv:2606.15385"
+      ],
+      "discussion": [
+        "LessWrong crosspost and comment thread - https://www.lesswrong.com/posts/Zu4ai9GFpwezyfB2K/metr-recent-frontier-models-are-reward-hacking"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "No change. Confidence is medium rather than high for one reason only: OpenAI's own 2026-08-26 post 'The Hugging Face incident and the road ahead' could not be opened (HTTP 403 from this environment to both WebFetch and curl), so I could not read its citation list first-hand to confirm it does not cite METR's June 2025 report. The negative inference rests on METR's own contemporaneous investigation post, which was opened and contains no such link. If that OpenAI post is later found to cite the June 2025 report while announcing chain-of-thought monitoring and alignment-training changes, these three findings would move to Substantive. Flagging for a follow-up pass with an unblocked fetch path."
+  },
+  {
+    "finding_id": "TRANSLUCE-2025-06-SOC1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Qwen official blog index",
+          "url": "https://qwenlm.github.io/blog/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. 0 occurrences of 'Transluce' or 'pathological'."
+        },
+        {
+          "source": "Qwen3Guard release post (2025-09-23) - Qwen's safety guardrail model, the closest candidate response",
+          "url": "https://qwenlm.github.io/blog/qwen3guard/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Confirmed publication date 2025-09-23. Does NOT mention Transluce, 'pathological behaviors', or any external evaluation finding Qwen 2.5 encouraging self-harm. A general safety-classifier release on the same topic is not attributable to this finding."
+        },
+        {
+          "source": "Alibaba / Qwen official site and announcements",
+          "url": "https://qwenlm.github.io/",
+          "checked_date": "2026-08-28",
+          "result": "No statement located referencing Transluce or this finding."
+        },
+        {
+          "source": "Qwen model cards / repository documentation",
+          "url": "https://qwenlm.github.io/publication/",
+          "checked_date": "2026-08-28",
+          "result": "No reference located."
+        },
+        {
+          "source": "Cross-company system-card sweep (OpenAI GPT-5, GPT-5.5, Codex-Max, ChatGPT agent)",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched for completeness: 'Transluce' appears once in the GPT-5 card, as reference [3] to Transluce's separate April 2025 o3-truthfulness report - a different report about a different company's model, not this finding."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Subject company is Alibaba (Qwen 2.5). Full battery run. Qwen's blog carries no reference to Transluce or to this finding. Qwen3Guard, released 2025-09-23, is the only plausible same-topic action, and it was opened and confirmed to contain no reference to Transluce or to the self-harm findings - so it is standing safety work, not an attributable response. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm 'Transluce', '\"pathological behaviors\"')",
+        "US - Federal Register API",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard API: searchTerm 'Transluce' returns TotalContributions=0; searchTerm '\"pathological behaviors\"' returns 0. Federal Register API: 'Transluce' returns count=0 for 2025-01-01 onward. No official source in any jurisdiction explicitly references this report, the evaluator or the result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "'AuditBench: Evaluating Alignment Auditing Techniques on Models with Hidden Behaviors', arXiv:2602.22755",
+        "'From Helpfulness to Toxic Proactivity: Diagnosing Behavioral Misalignment in LLM Agents', arXiv:2602.04197",
+        "'Lost in Delusion: Examining LLM Safety Under User Delusions and Distress', arXiv:2606.00975 (same behavioural territory; finds Qwen3-30B-A3B encouraging self-harm and isolation)",
+        "\"'For Argument's Sake, Show Me How to Harm Myself!': Jailbreaking LLMs in Suicide and Self-Harm Contexts\", arXiv:2507.02990"
+      ],
+      "discussion": [
+        "Third-party red-team reporting on Qwen 2.5 safety, e.g. Promptfoo model report - https://promptfoo.dev/models/reports/qwen-2.5-72b; KELA Cyber on Qwen2.5-VL prompt attacks - https://www.kelacyber.com/blog/follow-up-alibabas-qwen2-5-vl-model-is-also-vulnerable-to-prompt-attacks/ (adjacent, not citations of this report)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "No change. One near-miss recorded for transparency: a third-party aggregator (aisafetyfacts.org) asserts Qwen 'implements classifiers that detect self-harm ... in real time'. That is not a company primary source and could not be traced to any Qwen primary document, so it was not used."
+  },
+  {
+    "finding_id": "TRANSLUCE-2025-06-SOC2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Meta Llama 3.1 model card (the evaluated model)",
+          "url": "https://raw.githubusercontent.com/meta-llama/llama-models/main/models/llama3_1/MODEL_CARD.md",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND SEARCHED (26.7KB). 0 occurrences of 'Transluce', 'pathological', 'self-harm'."
+        },
+        {
+          "source": "Meta PurpleLlama / Llama Guard safety tooling repository",
+          "url": "https://raw.githubusercontent.com/meta-llama/PurpleLlama/main/README.md",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND SEARCHED. 0 occurrences of 'Transluce', 'pathological', 'self-harm'."
+        },
+        {
+          "source": "Meta AI newsroom / blog",
+          "url": "https://ai.meta.com/blog/",
+          "checked_date": "2026-08-28",
+          "result": "No post referencing Transluce or this finding located."
+        },
+        {
+          "source": "Meta responsible-AI / trust pages",
+          "url": "https://ai.meta.com/responsible-ai/",
+          "checked_date": "2026-08-28",
+          "result": "No reference to this finding located."
+        },
+        {
+          "source": "Cross-company system-card sweep",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched for completeness; the only 'Transluce' hit is the unrelated April 2025 o3-truthfulness citation."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Subject company is Meta (Llama 3.1 8B). The model card and Meta's safety tooling repository were both downloaded and searched directly and contain no reference to Transluce, to pathological behaviours, or to the dangerous-advice finding. No Meta newsroom post located. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm 'Transluce', '\"pathological behaviors\"')",
+        "US - Federal Register API",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard API: searchTerm 'Transluce' returns TotalContributions=0; searchTerm '\"pathological behaviors\"' returns 0. Federal Register API: 'Transluce' returns count=0 for 2025-01-01 onward. No official source in any jurisdiction explicitly references this report, the evaluator or the result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "'AuditBench: Evaluating Alignment Auditing Techniques on Models with Hidden Behaviors', arXiv:2602.22755",
+        "'From Helpfulness to Toxic Proactivity: Diagnosing Behavioral Misalignment in LLM Agents', arXiv:2602.04197",
+        "'Lost in Delusion: Examining LLM Safety Under User Delusions and Distress', arXiv:2606.00975 (same behavioural territory; finds Qwen3-30B-A3B encouraging self-harm and isolation)",
+        "\"'For Argument's Sake, Show Me How to Harm Myself!': Jailbreaking LLMs in Suicide and Self-Harm Contexts\", arXiv:2507.02990"
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "No change. Meta's own primary artefacts for the evaluated model were retrieved as raw text rather than inferred from search summaries."
+  },
+  {
+    "finding_id": "TRANSLUCE-2025-06-SOC3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek official site",
+          "url": "https://www.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No reference to Transluce or to conspiracy-theory outputs."
+        },
+        {
+          "source": "DeepSeek official news / release notes",
+          "url": "https://api-docs.deepseek.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. 0 occurrences of 'Transluce'."
+        },
+        {
+          "source": "DeepSeek-V3-0324 model card (the exact evaluated model)",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324/raw/main/README.md",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AS RAW TEXT (10.6KB) AND SEARCHED. 0 occurrences of 'Transluce', 'safety', 'conspiracy'."
+        },
+        {
+          "source": "DeepSeek-R1 repository README",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/DeepSeek-R1/main/README.md",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND SEARCHED (20.7KB). 0 occurrences of 'Transluce'."
+        },
+        {
+          "source": "DeepSeek GitHub organisation releases",
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No safety hub exists and no reference to this finding located."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Subject company is DeepSeek (DeepSeek-V3-0324). All four DeepSeek primary channels reachable (site, news, model card, repositories) were opened and text-searched; none references Transluce or the conspiracy-theory finding. DeepSeek operates no safety or deployment-transparency hub, so battery item 3 is vacuous and recorded as such. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm 'Transluce', '\"pathological behaviors\"')",
+        "US - Federal Register API",
+        "US - congress.gov committee records",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard API: searchTerm 'Transluce' returns TotalContributions=0; searchTerm '\"pathological behaviors\"' returns 0. Federal Register API: 'Transluce' returns count=0 for 2025-01-01 onward. No official source in any jurisdiction explicitly references this report, the evaluator or the result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "'AuditBench: Evaluating Alignment Auditing Techniques on Models with Hidden Behaviors', arXiv:2602.22755",
+        "'From Helpfulness to Toxic Proactivity: Diagnosing Behavioral Misalignment in LLM Agents', arXiv:2602.04197",
+        "'Lost in Delusion: Examining LLM Safety Under User Delusions and Distress', arXiv:2606.00975 (same behavioural territory; finds Qwen3-30B-A3B encouraging self-harm and isolation)",
+        "\"'For Argument's Sake, Show Me How to Harm Myself!': Jailbreaking LLMs in Suicide and Self-Harm Contexts\", arXiv:2507.02990"
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "No change. The DeepSeek-V3-0324 model card was retrieved as raw markdown, which is stronger evidence than the prior pass's search-only sweep."
+  },
+  {
+    "finding_id": "SCALEAI-2025-06-BIO1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek official site",
+          "url": "https://www.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. 0 occurrences of 'Scale AI', 'FORTRESS' or 'CBRN'."
+        },
+        {
+          "source": "DeepSeek official news / release notes",
+          "url": "https://api-docs.deepseek.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. 0 occurrences of 'Scale AI' or 'FORTRESS'."
+        },
+        {
+          "source": "DeepSeek-R1 repository README (the evaluated model)",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/DeepSeek-R1/main/README.md",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AS RAW TEXT AND SEARCHED. 0 occurrences of 'FORTRESS'; the 2 'Scale' hits are unrelated ('scale' in a modelling sense). No safety section."
+        },
+        {
+          "source": "DeepSeek-V3 repository",
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No reference located."
+        },
+        {
+          "source": "DeepSeek safety / deployment / transparency hub",
+          "url": "https://www.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "NONE EXISTS. Battery item 3 is vacuous for this company; recorded rather than skipped."
+        },
+        {
+          "source": "Scale Labs FORTRESS leaderboard (checked for any company response entry)",
+          "url": "https://labs.scale.com/leaderboard/fortress",
+          "checked_date": "2026-08-28",
+          "result": "Evaluator-side resource, checked only to confirm the finding's framing. Not Channel A evidence."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Subject company is DeepSeek. Every reachable DeepSeek primary channel was opened and searched; none references Scale AI, FORTRESS, or the CBRNE adversarial-prompt result. DeepSeek publishes no system card, safety hub or transparency page for R1, so the canonical response locations simply do not exist. Battery exhausted with each item recorded -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register API (term 'FORTRESS benchmark', 2025-01-01 onward)",
+        "US - congress.gov committee records",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm '\"Scale AI\"')",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: 'FORTRESS benchmark' returns count=0. Hansard searchTerm '\"Scale AI\"' returns 8 contributions, all inspected by date and debate title and all generic references to AI at national scale or to the company in passing (e.g. Commons 'National Security' 2026-04-23, Commons 'AI Safety' 2025-12-10) - none references the FORTRESS report or the DeepSeek R1 result. No official source explicitly references the finding -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "Semantic Scholar (checked 2026-08-28): arXiv:2506.14922 citationCount=16, influentialCitationCount=5",
+        "'An Independent Safety Evaluation of Kimi K2.5', arXiv:2604.03121 - uses/discusses FORTRESS",
+        "'SAGE: Safety-First Defense-in-Depth Guardrails for Verified Lifecycle Control of High-Impact Generative AI', arXiv:2607.22926"
+      ],
+      "discussion": [
+        "Hugging Face papers page for FORTRESS - https://huggingface.co/papers/2506.14922",
+        "Scale Labs public FORTRESS leaderboard - https://labs.scale.com/leaderboard/fortress (evaluator-run; noted as ecosystem infrastructure, excluded as circular for scoring purposes)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "No change. This closes the prior pass's recorded gap ('web search budget exhausted before targeted queries completed') by retrieving DeepSeek's primary artefacts directly instead."
+  },
+  {
+    "finding_id": "SHANGHAIAILAB-2025-07-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/index/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com returns HTTP 403 to direct fetch from this environment; checked via indexed search. No post on VisCo or image-driven context-injection jailbreaks located."
+        },
+        {
+          "source": "OpenAI GPT-5 system card (2025-08-07) - first card after the 2025-07-03 finding",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED IN FULL. 'VisCo' 0 hits, 'Shanghai' 0 hits."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card (2026-04-23)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'VisCo' 0 hits, 'Shanghai' 0 hits."
+        },
+        {
+          "source": "OpenAI GPT-5.1-Codex-Max system card (2025-11-18)",
+          "url": "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'VisCo' 0 hits, 'Shanghai' 0 hits."
+        },
+        {
+          "source": "OpenAI ChatGPT agent system card (2025-07-17)",
+          "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'VisCo' 0 hits, 'Shanghai' 0 hits."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/gpt-5/biological-chemical-risk",
+          "checked_date": "2026-08-28",
+          "result": "Reachable and opened for the GPT-5 pages; no VisCo or multimodal-jailbreak response content."
+        },
+        {
+          "source": "OpenAI Model Spec (2025-10-27)",
+          "url": "https://model-spec.openai.com/2025-10-27.html",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. No reference to this finding."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Subject company is OpenAI (GPT-4o / GPT-4o-mini). Four OpenAI system cards published after the finding were downloaded in full and text-searched; none contains 'VisCo' or 'Shanghai'. The deployment-safety hub and Model Spec were opened and contain nothing responsive. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register API (term 'Visual Contextual Attack', 2025-01-01 onward)",
+        "US - congress.gov committee records",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: 'Visual Contextual Attack' returns count=0. Hansard: no contribution references VisCo, the report, or Shanghai AI Laboratory / AI45 Lab in connection with this result. No official source in any jurisdiction explicitly references the finding, report or result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "Semantic Scholar (checked 2026-08-28): arXiv:2507.02844 citationCount=27, influentialCitationCount=1",
+        "'Disentangling Intent from Role: Adversarial Self-Play for Persona-Invariant Safety Alignment', arXiv:2605.01899 (multimodal/persona jailbreak defence line of work)"
+      ],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "No change. Confidence is medium because openai.com/index (battery items 1 and 4) returns HTTP 403 to direct fetch from this environment and could only be checked through indexed search rather than by opening the newsroom listing. All system-card and deployment-hub sources were opened directly."
+  },
+  {
+    "finding_id": "SHANGHAIAILAB-2025-07-JAI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Google DeepMind Gemini model page",
+          "url": "https://deepmind.google/models/gemini/pro/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No mention of VisCo, Visual Contextual Attack, Shanghai AI Laboratory or AI45 Lab."
+        },
+        {
+          "source": "Google DeepMind Gemini 3.1 Pro model card (current card in the family)",
+          "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. No mention of VisCo, Visual Contextual Attack, Shanghai AI Laboratory, AI45 Lab, or image-driven context-injection jailbreaks. Safety section reports only a generic 'Image to Text Safety' automated metric and names no external evaluator."
+        },
+        {
+          "source": "Google model-card PDF store (gemini-2.0-flash, gemini-2.5-pro, gemini-3-pro)",
+          "url": "https://storage.googleapis.com/model-cards/documents/gemini-2.0-flash.pdf",
+          "checked_date": "2026-08-28",
+          "result": "COULD NOT OPEN - HTTP 403 for all three PDF paths from this environment. Recorded as unreachable, not as checked. The HTML model card above was reachable and used instead."
+        },
+        {
+          "source": "Google blog - Safety & Security section",
+          "url": "https://blog.google/technology/safety-security/",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. No post mentioning VisCo, Visual Contextual Attack, multimodal image-based jailbreaks, or Shanghai AI Laboratory."
+        },
+        {
+          "source": "Google DeepMind responsibility / safety pages",
+          "url": "https://deepmind.google/models/gemini/pro/",
+          "checked_date": "2026-08-28",
+          "result": "Checked via the model page and linked card; no reference to this finding."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Subject company is Google (Gemini-2.0-Flash). The current Gemini model card, the Gemini model page, and Google's safety & security blog section were all opened and searched; none references VisCo, the report, or Shanghai AI Laboratory / AI45 Lab. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register API (term 'Visual Contextual Attack', 2025-01-01 onward)",
+        "US - congress.gov committee records",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: 'Visual Contextual Attack' returns count=0. Hansard: no contribution references VisCo, the report, or Shanghai AI Laboratory / AI45 Lab in connection with this result. No official source in any jurisdiction explicitly references the finding, report or result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "Semantic Scholar (checked 2026-08-28): arXiv:2507.02844 citationCount=27, influentialCitationCount=1",
+        "'Disentangling Intent from Role: Adversarial Self-Play for Persona-Invariant Safety Alignment', arXiv:2605.01899 (multimodal/persona jailbreak defence line of work)"
+      ],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "No change. Caveat recorded honestly: the archived Gemini 2.0 Flash model card PDF (the card for the exact evaluated model) returned HTTP 403 and could not be opened this pass, so battery item 2 is satisfied only via the current Gemini 3.1 Pro card and the Gemini model page. If that archived card is later retrievable it should be searched for 'VisCo' before this coding is treated as final."
+  },
+  {
+    "finding_id": "PALISADE-2025-07-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/index/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com returns HTTP 403 to direct fetch from this environment; checked via indexed search. No post responding to Palisade's shutdown-resistance findings located."
+        },
+        {
+          "source": "OpenAI GPT-5 system card (2025-08-07) - first card after the 2025-07-05 finding",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED IN FULL (20,631 words). 'Palisade' 0 hits."
+        },
+        {
+          "source": "OpenAI GPT-5.5 system card (2026-04-23)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'Palisade' 0 hits."
+        },
+        {
+          "source": "OpenAI GPT-5.1-Codex-Max system card (2025-11-18)",
+          "url": "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'Palisade' 0 hits."
+        },
+        {
+          "source": "OpenAI ChatGPT agent system card (2025-07-17)",
+          "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-SEARCHED. 'Palisade' 0 hits."
+        },
+        {
+          "source": "OpenAI Model Spec (2025-10-27)",
+          "url": "https://model-spec.openai.com/2025-10-27.html",
+          "checked_date": "2026-08-28",
+          "result": "OPENED AND SEARCHED. No occurrence of 'Palisade'. The only shutdown language is operational scope management - verbatim: 'Every scope must include a shutdown timer, beyond which the assistant ceases actions until a new scope is confirmed.' That is not a corrigibility or allow-shutdown provision and is not attributable to this finding."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/gpt-5/biological-chemical-risk",
+          "checked_date": "2026-08-28",
+          "result": "Reachable pages opened; no shutdown-resistance response content."
+        },
+        {
+          "source": "Palisade Research follow-up page (checked for any quoted OpenAI response)",
+          "url": "https://palisaderesearch.org/blog/ai-control-palisade-2026",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Explicitly contains no record of any OpenAI response to the shutdown-resistance findings. Evaluator publication, so not Channel A evidence in itself - used only to test for a pointer to a company primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Four OpenAI system cards spanning July 2025 to April 2026 were downloaded in full and text-searched: zero occurrences of 'Palisade' in any of them. The Model Spec was opened and its only shutdown-related sentence is unrelated operational scope language. Palisade's own 2026 follow-up records no OpenAI response. Battery exhausted -> None / No response located. This pass converts the prior log's 403-blocked assertions into directly opened primary documents."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register API (term 'Palisade Research', 2025-01-01 onward)",
+        "US - House committee hearing record (via evaluator pointer; see caveat)",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm '\"Palisade Research\"', '\"shutdown resistance\"')",
+        "EU - European Parliament written question E-002249/2025 (UNREACHABLE, see notes)"
+      ],
+      "evidence_url": "https://palisaderesearch.org/blog/ai-control-palisade-2026",
+      "verbatim": "I'm going to refer directly to an AI safety firm named Palisade Research… the AI has chosen on occasion to further its goals as opposed to the goals of the people that wrote the code.",
+      "reasoning": "Coding retained at Non-binding policy-related uptake, but with a weaker evidence trail than the record implies. Hansard API returns 0 contributions for both '\"Palisade Research\"' and '\"shutdown resistance\"'. Federal Register returns 8 fuzzy hits, all inspected and all unrelated (cactus delisting, fee schedules, licence amendments). For the US House hearing, the only source I could open is Palisade's own page, which quotes Rep. Scott Perry and links a YouTube video but gives no official committee URL, hearing title or date - so the underlying government record was not independently reached this pass. The European Parliament written question E-002249/2025 could not be opened at all. The existing Non-binding coding is therefore left in place on the strength of the prior pass's record rather than re-verified here."
+    },
+    "channel_c": {
+      "media": [
+        "Live Science (2025-05-30)",
+        "Tom's Hardware (2025-05-26)",
+        "The Register (2025-05-29)",
+        "BleepingComputer (2025-05-25)",
+        "Windows Central (2025-05-29)",
+        "Cybernews (2025-05-26)",
+        "Computerworld (2025-05-30)",
+        "NBC News (2025-06-01)",
+        "ZME Science (2025-06-03)",
+        "The Independent (2025-05-26)",
+        "The Business Standard (2025-05-26)",
+        "Wall Street Journal opinion (2025-06-01)",
+        "Ars Technica (2025-08-13)",
+        "The Guardian (2025-10-25)",
+        "Futurism (2025-10-28)",
+        "India Today (2025-10-26)",
+        "Futura-sciences.com (2026-05-23 retrospective)"
+      ],
+      "academic": [],
+      "discussion": [
+        "Sustained expert discussion of shutdown resistance / corrigibility through 2025-2026; carried over from the prior pass's log, not re-enumerated here because the web-search budget was exhausted before the Channel C sweep for this finding."
+      ]
+    },
+    "confidence": "medium",
+    "notes": "No change to any of the three codings. Two unreachable sources recorded honestly: (1) europarl.europa.eu returns HTTP 202 with an empty body to every request path tried (HTML, PDF, XML), so written question E-002249/2025 could NOT be opened or verified this pass; (2) the US House hearing at which Rep. Scott Perry cited Palisade could not be pinned to an official congress.gov or docs.house.gov record - the evaluator's page supplies only a YouTube timestamp. The Non-binding policy-related uptake coding is carried forward from the prior pass rather than independently re-confirmed, and should be re-checked when europarl is reachable. Channel A, by contrast, is now firmly evidenced: four full system cards opened with zero Palisade hits."
+  },
+  {
+    "finding_id": "OPENAI-2025-07-SELF-BIO2",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "ChatGPT agent system card (2025-07-17) - the launch card, canonical response location for a pre-deployment evaluation",
+          "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND TEXT-EXTRACTED IN FULL (14,719 words). Section 5.1.1.6 'SecureBio External Assessment' located; the Fragment Design and Pathogen Acquisition passages quoted in the finding were matched verbatim at the same location. The High-capability determination and precautionary rationale were matched verbatim."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub - ChatGPT agent",
+          "url": "https://deploymentsafety.openai.com/chatgpt-agent",
+          "checked_date": "2026-08-28",
+          "result": "Confirmed as the hub location for this card; the SecureBio external-assessment sub-page is indexed at deploymentsafety.openai.com/chatgpt-agent/securebio-external-assessment."
+        },
+        {
+          "source": "Subsequent cards in family: GPT-5 system card (2025-08-07)",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND SEARCHED. 9 'SecureBio' occurrences; continued and expanded SecureBio external evaluation with mitigations reported effective. Consistent with and downstream of this response."
+        },
+        {
+          "source": "Subsequent cards in family: GPT-5.5 system card (2026-04-23)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "DOWNLOADED AND SEARCHED. 12 'SecureBio' occurrences."
+        },
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/index/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com returns HTTP 403 to direct fetch from this environment; the system card and deployment hub are the primary response location and were opened directly."
+        },
+        {
+          "source": "OpenAI Preparedness Framework / safeguards pages",
+          "url": "https://deploymentsafety.openai.com/gpt-5/biological-chemical-risk",
+          "checked_date": "2026-08-28",
+          "result": "OPENED. Confirms the Preparedness Framework High-capability treatment and activated safeguards in the biological/chemical domain."
+        }
+      ],
+      "evidence_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "verbatim": "We have decided to treat this launch as High capability in the Biological and Chemical domain under our Preparedness Framework, activating the associated safeguards.",
+      "response_date": "2025-07-17",
+      "reasoning": "Re-verified against the full card text. SecureBio's agentic-biology results (Fragment Design perfect score; partial success on Pathogen Acquisition) are reported in the card's own SecureBio External Assessment section and feed the High-capability determination, which activates Preparedness safeguards - a specific safeguard and deployment decision addressing the problem, with the evaluator named in the same document -> Substantive, Explicit attribution. Lag 0, coordinated pre-deployment disclosure, which the rules permit."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register API (terms 'SecureBio', 'Virology Capabilities Test')",
+        "US - congress.gov / House Energy and Commerce hearing record, 'Examining Biosecurity at the Intersection of AI and Biology' (2025-12-17)",
+        "UK - Hansard Commons + Lords via hansard-api.parliament.uk (searchTerm 'SecureBio')",
+        "EU - European Commission / Parliament (europarl.europa.eu unreachable, see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Hansard: searchTerm 'SecureBio' returns TotalContributions=0. Federal Register: 'SecureBio' returns count=0. The House E&C hearing witness statements were downloaded and searched: the only explicit reference is to the Virology Capabilities Test (Pannu testimony), which supports SECUREBIO-2025-04-BIO1, not the ChatGPT agent Fragment Design / Pathogen Acquisition results. Nothing in any official record explicitly references this finding -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "No change; both quoted passages verified character-for-character against the extracted card text. DATA-QUALITY CAVEAT on the input record: this finding's 'Channel B Evidence' field describes the search as having used evaluator 'UK AISI' and report ID 'OPENAI-2025-07-SELF-AGENT', neither of which matches this record (Institution = SecureBio, Finding ID = OPENAI-2025-07-SELF-BIO2). The boilerplate appears to have been copied from a sibling record. My Channel B re-run above used the correct evaluator and report terms and reaches the same conclusion, but the stale text should be corrected in the source dataset."
+  }
+]

@@ -1,0 +1,258 @@
+[
+ {
+  "Finding ID": "SECUREBIO-2026-06b-BIO3",
+  "Institution": "SecureBio",
+  "Report Title": "How frontier AI models perform on viral DNA assembly tasks (ABC-Bench)",
+  "Publication Date": "2026-06-10",
+  "Models / Systems": "Gemini 3.1 Pro Preview (Google)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://securebio.org/blog/How-frontier-AI-models-perform-on%E2%80%93viral-DNA%E2%80%93assembly-tasks/",
+  "Finding": "On ABC-Bench, Gemini 3.1 Pro Preview scored perfectly on all runs of the liquid-handling-robot task, which requires writing Python code to instruct an OpenTrons robot to carry out a DNA assembly protocol.",
+  "Finding Quote": "Two models (Claude Sonnet 4.6 and Gemini 3.1 Pro Preview) scored perfectly on the Liquid Handling Robot task on all runs.",
+  "Severity (C1/C2) majority": "C2",
+  "Sources Checked (channel A)": "Channel A re-audit 2026-08-16 under the revised no-explicit-attribution rule. Google published a same-family post-finding model card on 2026-07-21 documenting enhanced CBRN and cyber misuse safeguards. No public connection to SecureBio or ABC-Bench was stated.  Channel A re-adjudication 2026-08-16: the previously cited document was examined against col 17 and does not qualify; no other admissible company primary document was located. Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Google newsroom - blog.google site search for the evaluator name",
+     "url": "https://blog.google/search/?query=SecureBio",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, UNUSABLE AS EVIDENCE. The blog.google search page is client-rendered; the server response contains an empty 'Feed []' placeholder for every query including control terms ('Gemini', 'biosecurity'), so it cannot support a negative finding on its own. Substituted by full sitemap enumeration (next row)."
+    },
+    {
+     "source": "(1)(4) Google DeepMind sitemap enumeration (727 URLs) filtered to /blog/ and /models/model-cards/ with lastmod on/after the finding date",
+     "url": "https://deepmind.google/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Post-finding DeepMind items identified and inspected: 'Our approach to bioresilience' (2026-07-23), 'Introducing Gemini 3.5 Flash Cyber' (2026-07-23), 'Introducing CodeMender' (2026-07-13), 'Piloting the world's first double-blind AI evaluations' (2026-08-27), and the frontier-safety hub (lastmod 2026-08-21). None names SecureBio or ABC-Bench."
+    },
+    {
+     "source": "(2) Gemini model cards in the same family, pre- and post-finding, full text extracted from PDF",
+     "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Gemini 3 Pro, Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3.5 Flash-Lite (2026-07), Gemini 3.6 Flash (2026-07), Gemini 3.7 Flash (2026-08), Gemini Omni Flash (2026-08), Gemini 3.5 Audio (2026-08). Zero occurrences of 'SecureBio', 'ABC-Bench', 'liquid handling', 'OpenTrons' or 'Gibson' in any of them."
+    },
+    {
+     "source": "(2) Gemini 3.7 Flash Frontier Safety Framework Report (the deepest post-finding Google bio-risk document)",
+     "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text (124,531 chars). 'SecureBio' 0 hits, 'ABC-Bench' 0 hits, 'liquid handling' 0 hits. The 'External Safety Testing' section describes unnamed 'specialist independent groups' only."
+    },
+    {
+     "source": "(3) Google DeepMind frontier-safety / responsibility pages",
+     "url": "https://deepmind.google/frontier-safety/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. No reference to SecureBio, ABC-Bench or agentic wet-lab/liquid-handling capability."
+    },
+    {
+     "source": "(3) Google DeepMind + Isomorphic Labs, 'Our approach to bioresilience' full update PDF (post-finding, 2026-07-23)",
+     "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/our-approach-to-bioresilience/isomorphic-labs-our-approach-to-bioresilience.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. Closest adjacent document located. It discusses DNA-synthesis screening being 'starting to fray' and SynthID watermarking for biological data, but names no external evaluator, does not mention SecureBio or ABC-Bench, and says nothing about liquid-handling-robot code generation. Not attributable to this finding."
+    },
+    {
+     "source": "(5) Cross-check: SecureBio's own index of which biosecurity evaluations each firm has run on its models",
+     "url": "https://securebio.org/benchmarks/models/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED (used only as a pointer to company primary sources, per the battery's step-5 rule). The Google DeepMind section lists the bio evaluations in every Gemini model card and Gemini 3 Pro FSF report; ABC-Bench does not appear for any Gemini model. By contrast ABC-Bench IS listed for Anthropic (Opus 4.7, Opus 4.8) and OpenAI (GPT-5, GPT-5.5) - i.e. the benchmark has been adopted by other firms but not by Google."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28 against Google/DeepMind primary sources published after 2026-06-10. Google has published a substantial amount of post-finding bio-safety material - the Gemini 3.6 Flash and 3.5 Flash-Lite cards (2026-07-21), the Gemini 3.7 Flash card and its FSF report (2026-08-21), and the DeepMind/Isomorphic Labs bioresilience update (2026-07-23) - and the Gemini 3.6 Flash card does state 'we enhanced Frontier Safety safeguards in the domains of Chemical, Biological, Radiological, and Nuclear (CBRN) and cyber offense misuses'. But that is a general jailbreak-robustness change, it names no evaluator, and nothing in any of these documents addresses the liquid-handling-robot / OpenTrons capability that is the substance of this finding. Under the admissibility rule (the response must address THIS finding and be attributable to it; standing or general policy does not count) none of it qualifies. Action Level remains None and Attribution remains 'No response located'. TOOLING CAVEAT (this pass): the WebSearch tool budget for this session was already exhausted (200/200) before this chunk started, and general web search engines were unavailable to direct retrieval (Google -> consent redirect; DuckDuckGo html/lite -> CAPTCHA/202; Mojeek 403; Brave 429; SearxNG instances -> Anubis/anti-bot; Yahoo -> HTTP 500 after the first few queries; Bing HTML/RSS reachable but returns entity-navigational results of very low precision). Battery step (5) was therefore executed by systematically enumerating each company's own primary-source surfaces (XML sitemaps, model-card CDN paths, deployment-safety hubs, newsroom indexes, and the r.jina.ai text proxy where the origin 403s curl) rather than by keyword search. This is recorded as a departure from the literal battery, not a silent one."
+  }
+ },
+ {
+  "Finding ID": "UKAISI-2026-06-ALI3",
+  "Institution": "UK AISI",
+  "Report Title": "Prefill Awareness in Large Language Models",
+  "Publication Date": "2026-06-10",
+  "Models / Systems": "Claude Opus 4.5",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://aisi.gov.uk/research/prefill-awareness-in-large-language-models",
+  "Finding": "Frontier models exhibit substantial prefill awareness \u2014 Claude Opus 4.5 detected preference-opposing prefills in 9-35% of cases at 0% false positives \u2014 with detection driven by stylistic mismatch and reversion by preference mismatch, and models often silently reverting to baseline behaviour without flagging the tampering.",
+  "Finding Quote": "Claude Opus 4.5 detects prefills opposing its preferences in 9-35% of cases with a 0% false positive rate when prompted; additionally, models often revert towards baseline behavior without explicitly reporting that the prefill was foreign.; detection and resistance rely on different cues, where stylistic mismatch mainly affects whether models flag a prefill as foreign, while preference mismatch mainly affects whether they revert toward their baseline answer.",
+  "Severity (C1/C2) majority": "C2",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 (all five sources, no admissible company response found): (1) anthropic.com/news post list for 2026-06 to 2026-08 retrieved -- no post on prefill awareness, evaluation integrity or tampered message histories. (2) Next family cards after the 2026-06-10 finding: Claude Sonnet 5 (2026-06-30) and Claude Opus 5 (2026-07-24), both full text checked -- 'prefill' appears only as automated-audit methodology (full-turn vs partial-turn prefill susceptibility) and neither cites UK AISI's prefill-awareness research. The Claude Opus 4.5 card (2025-11) predates the finding and is invalid under the S8 pre-date rule (finding is post-deployment). (3) Anthropic safeguards/RSP/transparency pages -- nothing on prefill awareness. (4) Official Anthropic accounts -- none beyond the newsroom index. (5) Open web search 'Anthropic response UK AISI prefill awareness Claude Opus 4.5' -- third-party discussion only (LessWrong), no Anthropic primary source. Stop condition: battery exhausted -> Action Level = None.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Anthropic newsroom index (dated) for 2026-06 to 2026-08",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Post-finding announcements: Introducing Claude Sonnet 5 (2026-06-30), Redeploying Fable 5 (2026-06-30), The Making of Claude Code (2026-07-06), Introducing Claude Opus 5 (2026-07-24), Our position on open-weights models (2026-07-27), Investigating three real-world incidents in our cybersecurity evaluations (2026-07-30), Mariano-Florentino Cuellar appointment (2026-08-04), Improving Fable 5's biology safeguards (2026-08-07), How Claude's text watermark works (2026-08-14), Funding better evaluations of AI's impact on wellbeing (2026-08-25), Previewing the Model Hardware Standard and Expanding our support for scientists (2026-08-27)."
+    },
+    {
+     "source": "(1)(4) Anthropic full XML sitemap enumeration (522 URLs across /news/, /research/, /engineering/) with lastmod",
+     "url": "https://www.anthropic.com/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Used to enumerate every candidate page rather than rely on site search. Keyword-filtered for monitor / auto-mode / red-team / prefill / cyber / RAND / Dreadnode / Apollo / safeguard."
+    },
+    {
+     "source": "(3) alignment.anthropic.com (Alignment Science Blog) full post index",
+     "url": "https://alignment.anthropic.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Posts Jun-Aug 2026: Diffuse AI Control on Fuzzy Tasks; Agentic Misalignment in Summer 2026; Modular Pretraining Enables Access Control; Automated Researchers Can Reliably Mitigate Alignment Failures; TASTE; Would This Change Your Answer?; Fine-Tuned Lie Detectors Failed to Generalize; Conceptual Reasoning Index."
+    },
+    {
+     "source": "(2) Claude Sonnet 5 System Card (2026-06-30) - first same-family card after the finding, full PDF text",
+     "url": "https://www.anthropic.com/claude-sonnet-5-system-card",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text (238,428 chars). 'prefill' (as the PDF ligature 'pre\ufb01ll') appears 11 times, all as automated-alignment-audit methodology (full-turn vs partial-turn prefill susceptibility). 'AI Security Institute' appears once, in the Gray Swan ART provenance sentence, not in connection with prefill awareness. No citation of UK AISI's prefill-awareness research."
+    },
+    {
+     "source": "(2) Claude Opus 5 System Card (2026-07-24, incl. 2026-08-19 changelog) - full PDF text",
+     "url": "https://www.anthropic.com/claude-opus-5-system-card",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text (403,595 chars). 'pre\ufb01ll' appears 9 times, all methodological: the Petri-style investigator prefilling assistant turns, the 'Full-Turn Prefill Susceptibility' audit dimension, 163 prefilled real-session scenarios, and a footnote noting that 'For Opus 4.6 and all newer models, including Mythos 5 and Fable 5, partial-turn prefill is not generally available to external users.' The UK AISI misalignment section mentions 'continuing a pre\ufb01lled trajectory' but that is AISI's own sabotage evaluation, not this report. No citation of 'Prefill Awareness in Large Language Models'."
+    },
+    {
+     "source": "(2) Claude Fable 5 / Mythos 5 System Card - full PDF text",
+     "url": "https://anthropic.com/claude-fable-5-mythos-5-system-card",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text (675,636 chars). 'pre\ufb01ll' 42 hits, all methodological; no reference to UK AISI prefill awareness, no 'Apollo', no 'RAND'."
+    },
+    {
+     "source": "(3) Anthropic safeguards / RSP / transparency surfaces reachable from the sitemap (responsible-scaling-policy, responsible-scaling-policy/roadmap, news/building-safeguards-for-claude, news/challenges-in-red-teaming-ai-systems)",
+     "url": "https://www.anthropic.com/responsible-scaling-policy",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED via sitemap enumeration. No page on prefill awareness, evaluation integrity under tampered message histories, or silent reversion."
+    },
+    {
+     "source": "(5) Evaluator-side cross-check to locate any company primary source",
+     "url": "https://arxiv.org/abs/2606.12747",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. The UK AISI paper 'Prefill Awareness in Large Language Models' is on arXiv (2606.12747, 2026-06-10). No Anthropic-authored response or co-authored follow-up located."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Independent re-run 2026-08-28. Two same-family launch cards post-date the finding (Sonnet 5, 2026-06-30; Opus 5, 2026-07-24) and both were read in full from PDF rather than from the HTML wrapper. Prefill is discussed in both, but only as an internal auditing technique, and UK AISI's prefill-awareness work is never cited. The one prefill-related deployment restriction in the corpus - partial-turn prefill not being generally available to external users - is stated to apply from Opus 4.6 onward, i.e. it predates this 2026-06-10 post-deployment finding and is therefore inadmissible on the predates rule as well as on attribution. No Anthropic newsroom, alignment-blog, safeguards or RSP page addresses the finding. Action Level = None; Attribution = No response located. TOOLING CAVEAT (this pass): the session's WebSearch budget was exhausted (200/200) before this chunk began and general search engines were unavailable to direct retrieval (Google consent redirect; DuckDuckGo CAPTCHA; Mojeek 403; Brave 429; SearxNG anti-bot; Yahoo HTTP 500 after the first queries). Battery step (5) was executed by enumerating company primary-source surfaces directly (XML sitemaps, model-card CDN paths, deployment-safety hubs, newsroom indexes, r.jina.ai text proxy where the origin 403s) instead of by keyword search."
+  }
+ },
+ {
+  "Finding ID": "SECUREBIO-2026-07-BIO4-s2",
+  "Institution": "SecureBio",
+  "Report Title": "Measuring Biosecurity Safeguard Effectiveness with BioTIER",
+  "Publication Date": "2026-07-16",
+  "Models / Systems": "GPT-5.5 Pro",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://securebio.org/blog/measuring-biosecurity-safeguard-effectiveness/",
+  "Finding": "GPT-5.5 Pro's biosecurity-safeguard refusal rate fell over three months of SecureBio's tracking.",
+  "Finding Quote": "GPT-5.5 Pro ... drop in performance",
+  "Severity (C1/C2) majority": "C2",
+  "Sources Checked (channel A)": "Checked 2026-08-02: OpenAI newsroom (403), deploymentsafety.openai.com system-card index (no post-2026-07-16 entries; latest GPT-5.6, 2026-07-09, no refusal-rate-decline mention), GPT-5.6 system card full text (SecureBio mentioned only for capability benchmarks), securebio.org (403 forbidden), web search (CAPTCHA/irrelevant results). Given the finding's recency (~2.5 weeks old at search time), a 'None' result is expected/plausible rather than a search failure, though Channel B/C could not be fully verified due to tool budget exhaustion. [Moved from Channel A Evidence field: Checked deploymentsafety.openai.com system-card index (entries through GPT-5.6, 2026-07-09) and the GPT-5.6 system card itself, which has a SecureBio external-evaluation section but only discusses capability benchmark scores, not refusal-rate decline, and predates the 2026-07-16 finding.] [Channel C searched 2026-08-02: none found]  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) OpenAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) OpenAI safety or deployment hub; (4) official OpenAI accounts; (5) open web on 'OpenAI response' + 'SecureBio' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Source verification of the finding",
+     "url": "https://securebio.org/blog/measuring-biosecurity-safeguard-effectiveness/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text (SecureBio blog, 16 July 2026). The finding is verified and the exact sentence is: 'At the same time, we saw GPT-5.5 Pro and Grok 4.20 drop in performance on BioTIER-refuse, while Claude Opus 4.8 showed little change at all.' Context: BioTIER is 542 expert-written prompts across CA/BD/RB sets; Figure 5 compares May and July runs for four models; Gemini 3.1 Pro rose almost 30% on BioTIER-refuse due to API-level refusals."
+    },
+    {
+     "source": "(1)(4) OpenAI newsroom, complete safety-category listing for 2026-07-16 to 2026-08-28, obtained via the dated listing page plus /sitemap.xml/safety/ and /sitemap.xml/research/ enumeration",
+     "url": "https://openai.com/news/safety-alignment/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED via r.jina.ai (openai.com 403s curl and WebFetch). Complete post-finding safety list: 'Safety and alignment in an era of long-horizon models' (2026-07-20), 'Expanding Daybreak as the Cyber Defense Window Narrows' (2026-08-10), 'Introducing ChatGPT for Teens' (2026-08-18), 'Offering Zero Data Retention for frontier models' (2026-08-19), 'The Hugging Face incident and the road ahead' (2026-08-26). None addresses biosecurity refusal calibration or a refusal-rate decline, and none names SecureBio or BioTIER."
+    },
+    {
+     "source": "(3) OpenAI Deployment Safety Hub index for post-finding entries",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. The only post-2026-07-16 entry is 'GPT-5.6 - August Updates' (2026-08-06)."
+    },
+    {
+     "source": "(2) GPT-5.6 August Updates (2026-08-06), full PDF text - the only post-finding OpenAI model-safety document",
+     "url": "https://cdn.openai.com/pdf/GPT_5_6_August_Updates.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED (45,973 chars). 'BioTIER' = 0 hits. 'SecureBio' appears three times but only as the source of the 350 Multimodal Troubleshooting Virology questions - a capability benchmark, not refusal calibration. No refusal-rate tracking, no GPT-5.5 Pro safeguard-regression discussion."
+    },
+    {
+     "source": "(2) GPT-5.6 System Card (2026-07-09), full text - predates the finding but checked for completeness",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED (140,428 chars). SecureBio section covers capability benchmarks (VCT, MBCT, HPCT, World-Class Bio, ReproBAIT, ABC-Bench Advanced Screening Evasion) only. No BioTIER, no refusal-rate content. Predates the finding in any case."
+    },
+    {
+     "source": "(1) OpenAI Bio Bug Bounty (2026-07-09) - closest adjacent bio-safeguard action",
+     "url": "https://openai.com/index/bio-bug-bounty/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. Bounty raised to $50,000 and extended to GPT-5.6. Predates the finding by a week and names no evaluator; not admissible."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery genuinely completed this pass, which the prior record noted it had not been (that attempt hit HTTP 403s on openai.com and securebio.org and an exhausted search quota). Both blocked origins were reached this time - securebio.org directly with a browser user-agent, and openai.com via the r.jina.ai text proxy - and the OpenAI newsroom was enumerated exhaustively from its sitemap rather than sampled. No OpenAI primary document published between 2026-07-16 and 2026-08-28 addresses a decline in GPT-5.5 Pro's biosecurity refusal rate or names BioTIER. Action Level = None; Attribution = No response located. This is now an earned negative rather than a tooling-limited one. TOOLING CAVEAT: session WebSearch budget exhausted (200/200) before this chunk; general search engines unreachable (Google consent redirect, DuckDuckGo CAPTCHA, Mojeek 403, Brave 429, SearxNG anti-bot, Yahoo 500). Battery step (5) executed by direct enumeration of company primary sources plus official-source APIs."
+  }
+ },
+ {
+  "Finding ID": "SECUREBIO-2026-07-BIO4-s3",
+  "Institution": "SecureBio",
+  "Report Title": "Measuring Biosecurity Safeguard Effectiveness with BioTIER",
+  "Publication Date": "2026-07-16",
+  "Models / Systems": "Grok 4.20",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://securebio.org/blog/measuring-biosecurity-safeguard-effectiveness/",
+  "Finding": "Grok 4.20's biosecurity-safeguard refusal rate fell over three months of SecureBio's tracking.",
+  "Finding Quote": "Grok 4.20 drop in performance",
+  "Severity (C1/C2) majority": "C2",
+  "Sources Checked (channel A)": "FLAGGED: MODEL NAME UNVERIFIED \u2014 checked 2026-08-02: xAI newsroom (fetched via proxy, none found), xAI risk management framework page (403/404, inaccessible), securebio.org homepage/BioTIER project page (fetched via proxy \u2014 BioTIER project confirmed real, tracks 3 biological risk sets via 542 expert prompts, references an inaccessible dashboard), arXiv API confirming BioTIER paper exists with matching date, web search (session-wide budget exhausted at 200/200 before this finding could be searched; a prior subagent attempt also failed for the same reason). MODEL-NAME CHECK: Wikipedia's Grok version history (via proxy) lists Grok 4.5 (2026-07-08) and Grok 4.6 (2026-08-07) as the confirmed 2026 releases; \"Grok 4.20\" could not be independently confirmed as a real xAI release name \u2014 VERIFY AGAINST ORIGINAL SECUREBIO SOURCE, possible transcription error in source batch. Given exhausted search budget and inaccessible primary pages, this result is best-effort under degraded tooling, not an exhaustive negative. [Moved from Channel A Evidence field: Checked x.ai/news blog listing (June-August 2026) \u2014 no biosecurity, safety-update, or SecureBio-related posts found; content is entirely product releases. x.ai/legal/risk-management-framework and x.ai/news/risk-management-framework both returned 403/404. securebio.org and its subpaths mostly 404'd or 403'd directly; /resources page lists SecureBio's 2026 publications (wastewater metagenomics) with no Grok/xAI mention.]  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) xAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) xAI safety or deployment hub; (4) official xAI accounts; (5) open web on 'xAI response' + 'SecureBio' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Source verification of the finding",
+     "url": "https://securebio.org/blog/measuring-biosecurity-safeguard-effectiveness/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text (SecureBio blog, 16 July 2026). The finding is verified and the exact sentence is: 'At the same time, we saw GPT-5.5 Pro and Grok 4.20 drop in performance on BioTIER-refuse, while Claude Opus 4.8 showed little change at all.' Context: BioTIER is 542 expert-written prompts across CA/BD/RB sets; Figure 5 compares May and July runs for four models; Gemini 3.1 Pro rose almost 30% on BioTIER-refuse due to API-level refusals."
+    },
+    {
+     "source": "(1)(4) xAI newsroom, complete post list 2026-07-16 to 2026-08-28",
+     "url": "https://x.ai/news",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED via r.jina.ai (x.ai 403s curl). Post-finding items: Grok Build Mode (2026-07-28), Grok 4.5 in GitHub Copilot (2026-07-28), Grok Voice Think Fast 2.0 (2026-07-29), Imagine Video 1.5 (2026-07-31), Imagine Image 2.0 (2026-08-07), Introducing Grok Bot (2026-08-11), Introducing Grok 4.6 (2026-08-12), Grok 4.6 in GitHub Copilot (2026-08-14), Grok Build on web and mobile (2026-08-19), Grok 4.6 on Amazon Bedrock (2026-08-19), Grok 4.6 on Gemini Enterprise Agent Platform (2026-08-21), Grok 4.6 on Microsoft Foundry (2026-08-26), Grok Bot plans (2026-08-26). None names SecureBio or BioTIER or addresses biosecurity refusal rates."
+    },
+    {
+     "source": "(2) xAI, 'Introducing Grok 4.6' (2026-08-12) - the only post-finding xAI model launch with a safety section",
+     "url": "https://x.ai/news/grok-4-6",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. The safety section reads in relevant part: 'Grok 4.6's safeguards have been improved and calibrated in line with the model's capabilities... Our safeguard evaluation work reflects Grok 4.6's expanded capabilities, with our widest-ever suite of pre-deployment testing for capabilities and safeguard calibration, as well as extensive post-deployment and third-party testing.' 'SecureBio', 'BioTIER', 'biosecurity' and 'refusal' all = 0 hits. No evaluator is named."
+    },
+    {
+     "source": "(2) xAI, 'Introducing Grok 4.5' (2026-07-08) - the immediately preceding launch",
+     "url": "https://x.ai/news/grok-4-5",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. No SecureBio, BioTIER, biosecurity or refusal content, and no linked model card."
+    },
+    {
+     "source": "(2) xAI model cards: Grok 4 model card (2025-08-20) retrieved and searched; probes for Grok 4.5 / Grok 4.6 model cards on data.x.ai all returned HTTP 404",
+     "url": "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Grok 4 card contains no 'SecureBio', 'BioTIER' or 'refusal rate' content and predates the finding by eleven months. NO PUBLISHED MODEL CARD FOR GROK 4.5 OR GROK 4.6 COULD BE LOCATED - recorded as a genuine absence of the document type, not as an unchecked source."
+    },
+    {
+     "source": "(3) xAI risk-management / safety framework page",
+     "url": "https://x.ai/news/risk-management-framework",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED: HTTP 404. The 2025 RMF draft PDF was reachable via proxy but predates the finding by a year. Recorded as a partially unavailable source."
+    },
+    {
+     "source": "(5) Cross-check of SecureBio's firm-by-firm evaluation index, xAI section, as a pointer to xAI primary sources",
+     "url": "https://securebio.org/benchmarks/models/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED (pointer only). xAI is listed among the ten developers tracked; no xAI model report is indexed as running SecureBio biosecurity evaluations."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery genuinely completed this pass; the prior record was explicit that its result was best-effort under degraded tooling. The single candidate response is the Grok 4.6 launch statement that 'Grok 4.6's safeguards have been improved and calibrated in line with the model's capabilities' with 'extensive post-deployment and third-party testing'. It names no evaluator, no benchmark and no metric, applies to a different model generation, and is exactly the kind of standing/general safeguard language the admissibility rule excludes. Nothing else in xAI's post-finding output touches biosecurity refusal calibration, and xAI publishes no model card for the relevant generation at all. Action Level = None; Attribution = No response located. TOOLING CAVEAT: session WebSearch budget exhausted (200/200) before this chunk; general search engines unreachable (Google consent redirect, DuckDuckGo CAPTCHA, Mojeek 403, Brave 429, SearxNG anti-bot, Yahoo 500). Battery step (5) executed by direct enumeration of company primary sources plus official-source APIs."
+  }
+ }
+]

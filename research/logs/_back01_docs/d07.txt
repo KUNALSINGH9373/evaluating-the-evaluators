@@ -1,0 +1,286 @@
+AI Failures â Eliminate Them, Now â Robust Intelligence
+
+We use cookies to improve user experience and analyze website traffic. By clicking âAcceptâ, you agree to our website's cookie use as described in our 
+Privacy Policy.
+Preferences
+Decline All
+Accept All
+Your Cookie Preferences
+We use different types of cookies to optimize your experience on our website. Click on the categories below to learn more about their purposes. You may choose which types of cookies to allow and can change your preferences at any time. Remember that disabling cookies may affect your experience on the website. You can learn more about how we use cookies by visiting our 
+Privacy Policy.
+Checkbox
+Essential Cookies
+Details
+These cookies are necessary to the core functionality of our website and some of its features, such as access to secure areas.
+Checkbox
+Analytics and Customization Cookies
+Details
+These cookies collect information that can help us understand how our websites are being used. This information can also be used to measure effectiveness in our marketing campaigns or to curate a personalized site experience for you.
+Checkbox
+Advertising Cookies
+Details
+These cookies are used to enhance the performance and functionality of our websites but are nonessential to their use. However, without these cookies, certain functionality (like videos)may become unavailable.
+Thank you! Your submission has been received!
+Oops! Something went wrong while submitting the form.
+Decline All
+Confirm my Choices
+Back
+Essential Cookies
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+__cf_bm
+Cloudflare places the cookie on end-user devices that access customer sites protected by Bot Management or Bot Fight Mode.
+server_cookie
+30 minutes
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+_tibcpv
+Used to record unique visitor views of the consent banner.
+http_cookie
+1 year
+Back
+Analytics and Customization Cookies
+Name
+Purpose
+Marketo Munchkin
+Marketo's custom JavaScript tracking code, called Munchkin, tracks all individuals who visit your website so you can react to their visits with automated marketing campaigns.
+Name
+Purpose
+Google Tag
+The Google tag (gtag.js) is a single tag you can add to a website to use a variety of Google products and services (e.g., Google Ads, Google Analytics, Campaign Manager, Display & Video 360, Search Ads 360).
+Back
+Performance and Functionality Cookies
+Name
+Purpose
+LinkedIn Insight
+The LinkedIn Insight Tag is a snippet of JavaScript code that loads a small library of functions you can use to track Linkedin ad-driven visitor activity on your website.
+Back
+Advertising Cookies
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+__cf_bm
+Cloudflare places the cookie on end-user devices that access customer sites protected by Bot Management or Bot Fight Mode.
+server_cookie
+30 minutes
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+_tibcpv
+Used to record unique visitor views of the consent banner.
+http_cookie
+1 year
+
+May 17, 2021
+ - 
+3
+ minute read
+AI Failures â Eliminate Them, Now
+Perspectives
+Author
+Authors
+Kojin Oshiba
+Kojin is a co-founder of Robust Intelligence.
+AI is the future of every business. The availability of large-scale data and computing power is making AI technologies transformational for organizations. AI is steadily trickling into industries far removed from high tech, creating entirely new categories of products and possibilities.
+The Pain: AIÂ Failures
+Everything comes with a cost, however, and AI is not an exception. While the benefits of AI are immense, it also introduces serious risks. Here are a few examples:
+Broken data pipelines feed in corrupted data to models, producing garbage outputs
+Bugs are introduced in model serving causing the whole system to crash
+Models are misused by engineers outside your data science organization
+Corner case inputs you didn't account for during development break the model in production
+Drift in data significantly degrades the performance of your models
+Models make discriminatory decisions with you not being aware
+Bad actors try to "hack" the model decisions by feeding in malicious inputs
+The list goes on and on... These are all example symptoms of the underlying disease: AI failures.
+Do any of these sound familiar to you? The chances are, if you've been involved with data science or machine learning, regardless of the industry or the companies you've been at, you've probably faced many problems like the above. I can say so with certainty â since the birth of the company, we've had countless conversations with AI practitioners in tech, finance, insurance, and government where they mentioned many of the issues listed above as the key challenges their AI teams face. We have also been the victims of these AI failures ourselves. Many members of the Robust Intelligence team have experienced this firsthand at companies ranging from large tech (Google, Uber, Salesforce) to mid-size tech (Wish, Postmates, Quora) to startups digital consulting firms. AI failures are prevalent and will only worsen as more companies adopt AI, build AI teams of increasing scale, and develop and deploy more models on more data.
+Ignore AI failures at your own peril
+Are AI failures that bad? If you're not convinced yet that it's a serious problem, let's consider some of the consequences of leaving them within your AI systems:
+First, your data pipeline and model system will break. With issues like bugs and broken data pipelines, your AI system will crash, literally. Not only will it break, but it will also break 
+all the time
+. If you've worked within this broad spectrum spanning data infrastructure engineering to model prototyping and productionization, you know how fragile these systems are. Data and ML pipelines are always actively under development, and the characteristics of the data change all the time.
+Consequently, you will have to firefight these issues in production, leaving no room for focused development work. You and your team will waste your precious time digging through error logs, identifying the root cause of the problem, all while your model is crashing. How wasteful and nerve-wracking is that!
+Even when you've fixed all the visible errors in your pipeline, you have only solved a subcomponent of the bigger problem. Perhaps even more pernicious forms of AIÂ failure are the 
+silent errors
+. The tricky thing with AI models is that even when the models are taking in garbage input or producing garbage output, they're not necessarily going to crash. For example, when the model is doing terribly on a specific subset of the data, or when the distribution of the input data is changing drastically and inducing wrong model predictions, you will not by default see any error logs or PagerDuty alerts in your system monitoring dashboard. These silent errors in your system are tough to triage and will have subtle but compounding effects on your downstream metrics. The model will continue to produce garbage predictions silently until a month later; you realize your customer churn is higher than ever.
+â
+Silent errors: garbage in garbage out behavior is not captured as system failures
+â
+Why is it so hard to get rid of these risks?
+Most of the time, the priorities of data science teams are elsewhere, e.g., in developing more performant models, generating a new set of features, or improving the latency of the model service. Data scientists and machine learning engineers will, at best, get few hours a week to think about these risks. As a result, the risks are only partially tackled in manual ways, and they continue to pile up.
+Data scientists specifically tend to focus on 
+ad-hoc efforts
+ towards model improvement. Yet this means data science teams will never eliminate AI failures at the organizational level. If one data scientist asserts model behavior differently than another data scientist, it will be challenging to tell whether a model is production-ready or a post-production model is performing as anticipated.
+Finally, eliminating AIÂ failure is 
+dang hard.
+ While the field of software engineering contains widely established practices of testing and documentation, ML-specific engineering introduces specific complexities, hidden dependencies, and anti-patterns unique to data pipelines and AI models (
+Sculley et al.
+).
+There needs to be a way to measure AIÂ failures in models across your organization in a 
+unified manner
+. However, this entails both AI and engineering challenges:
+AI challenge:
+ how would you measure and eliminate AIÂ failure across your models exhaustively, effectively, and consistently?
+Engineering challenge:
+ how would you build an infrastructure that ensures both developed and deployed models to be constantly evaluated for AIÂ failure?
+These challenges are extremely tricky, and it is nearly impossible to overcome them while developing the actual AI models for your business needs.
+Let's eliminate AIÂ failures, together
+The good news is that you're not tackling this problem alone, not anymore. At Robust Intelligence, we've translated years of research and industry experience to build Robust Intelligence Model Engine (RIME), with a single goal of 
+eliminating AI failures
+. The platform provides two complementary tools that work in conjunction: automated unit testing of 
+pre-production
+ models and automated quality assurance of 
+in-production models
+ to ensure that your AI system is risk-free. I'll keep the product intro brief here, as the main purpose of this post is to introduce the concept of AI failure and convince you of their seriousness. In our upcoming posts, we'll discuss the underlying principle that drives our product and why it's so effective at eliminating AI failures. In the meantime, if you'd like to learn more, feel free to reach out to Kojin Oshiba at 
+kojin@robustintelligence.com
+.
+Author
+Authors
+Kojin Oshiba
+Kojin is a co-founder of Robust Intelligence.
+Share article
+Social
+Follow us on LinkedIn
+
+Newsletter
+Subscribe to our newsletter
+Thank you!
+You have successfully subscribed to our list
+Oops! Something went wrong while submitting the form.
+Related articles
+September 20, 2024
+ - 
+5
+ minute read
+Extracting Training Data from Chatbots
+For: 
+September 10, 2024
+ - 
+5
+ minute read
+Leveraging Hardened Cybersecurity Frameworks for AI Security through the Common Weakness Enumeration (CWE)
+For: 
+September 6, 2024
+ - 
+4
+ minute read
+ AI Governance Policy Roundup (August 2024)
+For: 
++ Â More Articles
+
+Related articles
+No items found.
++ Â More Articles
+
+Ready to learn more?
+See why weâre the enterprise choice for AI application security.
+Get a Demo
+
+May 17, 2021
+ - 
+3
+ minute read
+AI Failures â Eliminate Them, Now
+Perspectives
+Author
+Authors
+Kojin Oshiba
+Kojin is a co-founder of Robust Intelligence.
+AI is the future of every business. The availability of large-scale data and computing power is making AI technologies transformational for organizations. AI is steadily trickling into industries far removed from high tech, creating entirely new categories of products and possibilities.
+The Pain: AIÂ Failures
+Everything comes with a cost, however, and AI is not an exception. While the benefits of AI are immense, it also introduces serious risks. Here are a few examples:
+Broken data pipelines feed in corrupted data to models, producing garbage outputs
+Bugs are introduced in model serving causing the whole system to crash
+Models are misused by engineers outside your data science organization
+Corner case inputs you didn't account for during development break the model in production
+Drift in data significantly degrades the performance of your models
+Models make discriminatory decisions with you not being aware
+Bad actors try to "hack" the model decisions by feeding in malicious inputs
+The list goes on and on... These are all example symptoms of the underlying disease: AI failures.
+Do any of these sound familiar to you? The chances are, if you've been involved with data science or machine learning, regardless of the industry or the companies you've been at, you've probably faced many problems like the above. I can say so with certainty â since the birth of the company, we've had countless conversations with AI practitioners in tech, finance, insurance, and government where they mentioned many of the issues listed above as the key challenges their AI teams face. We have also been the victims of these AI failures ourselves. Many members of the Robust Intelligence team have experienced this firsthand at companies ranging from large tech (Google, Uber, Salesforce) to mid-size tech (Wish, Postmates, Quora) to startups digital consulting firms. AI failures are prevalent and will only worsen as more companies adopt AI, build AI teams of increasing scale, and develop and deploy more models on more data.
+Ignore AI failures at your own peril
+Are AI failures that bad? If you're not convinced yet that it's a serious problem, let's consider some of the consequences of leaving them within your AI systems:
+First, your data pipeline and model system will break. With issues like bugs and broken data pipelines, your AI system will crash, literally. Not only will it break, but it will also break 
+all the time
+. If you've worked within this broad spectrum spanning data infrastructure engineering to model prototyping and productionization, you know how fragile these systems are. Data and ML pipelines are always actively under development, and the characteristics of the data change all the time.
+Consequently, you will have to firefight these issues in production, leaving no room for focused development work. You and your team will waste your precious time digging through error logs, identifying the root cause of the problem, all while your model is crashing. How wasteful and nerve-wracking is that!
+Even when you've fixed all the visible errors in your pipeline, you have only solved a subcomponent of the bigger problem. Perhaps even more pernicious forms of AIÂ failure are the 
+silent errors
+. The tricky thing with AI models is that even when the models are taking in garbage input or producing garbage output, they're not necessarily going to crash. For example, when the model is doing terribly on a specific subset of the data, or when the distribution of the input data is changing drastically and inducing wrong model predictions, you will not by default see any error logs or PagerDuty alerts in your system monitoring dashboard. These silent errors in your system are tough to triage and will have subtle but compounding effects on your downstream metrics. The model will continue to produce garbage predictions silently until a month later; you realize your customer churn is higher than ever.
+â
+Silent errors: garbage in garbage out behavior is not captured as system failures
+â
+Why is it so hard to get rid of these risks?
+Most of the time, the priorities of data science teams are elsewhere, e.g., in developing more performant models, generating a new set of features, or improving the latency of the model service. Data scientists and machine learning engineers will, at best, get few hours a week to think about these risks. As a result, the risks are only partially tackled in manual ways, and they continue to pile up.
+Data scientists specifically tend to focus on 
+ad-hoc efforts
+ towards model improvement. Yet this means data science teams will never eliminate AI failures at the organizational level. If one data scientist asserts model behavior differently than another data scientist, it will be challenging to tell whether a model is production-ready or a post-production model is performing as anticipated.
+Finally, eliminating AIÂ failure is 
+dang hard.
+ While the field of software engineering contains widely established practices of testing and documentation, ML-specific engineering introduces specific complexities, hidden dependencies, and anti-patterns unique to data pipelines and AI models (
+Sculley et al.
+).
+There needs to be a way to measure AIÂ failures in models across your organization in a 
+unified manner
+. However, this entails both AI and engineering challenges:
+AI challenge:
+ how would you measure and eliminate AIÂ failure across your models exhaustively, effectively, and consistently?
+Engineering challenge:
+ how would you build an infrastructure that ensures both developed and deployed models to be constantly evaluated for AIÂ failure?
+These challenges are extremely tricky, and it is nearly impossible to overcome them while developing the actual AI models for your business needs.
+Let's eliminate AIÂ failures, together
+The good news is that you're not tackling this problem alone, not anymore. At Robust Intelligence, we've translated years of research and industry experience to build Robust Intelligence Model Engine (RIME), with a single goal of 
+eliminating AI failures
+. The platform provides two complementary tools that work in conjunction: automated unit testing of 
+pre-production
+ models and automated quality assurance of 
+in-production models
+ to ensure that your AI system is risk-free. I'll keep the product intro brief here, as the main purpose of this post is to introduce the concept of AI failure and convince you of their seriousness. In our upcoming posts, we'll discuss the underlying principle that drives our product and why it's so effective at eliminating AI failures. In the meantime, if you'd like to learn more, feel free to reach out to Kojin Oshiba at 
+kojin@robustintelligence.com
+.
+Author
+Authors
+Kojin Oshiba
+Kojin is a co-founder of Robust Intelligence.
+Share article
+Newsletter
+Subscribe to our newsletter
+Thank you!
+You have successfully subscribed to our list
+Oops! Something went wrong while submitting the form.
+Blog
+Related articles
+July 6, 2021
+ - 
+5
+ minute read
+Smooth Sailing - Building Secure AI for Insurance
+For: 
+July 31, 2024
+ - 
+4
+ minute read
+ AI Governance Policy Roundup (July 2024)
+For: 
+March 23, 2023
+ - 
+4
+ minute read
+Customize AI Model Testing with Robust Intelligence
+For: 
+No items found.
++ Â More Articles
+
+Achieve 
+AI Integrity 
+Today
+Request a Demo

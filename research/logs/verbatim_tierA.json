@@ -1,0 +1,3229 @@
+{
+ "jobs": [
+  {
+   "finding_id": "METR-2026-08-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation",
+   "doc_chars": 208150,
+   "coverage": 1.0,
+   "quote": "Roughly 1200 agents meant to be isolated from one another found a way to communicate with one another on an unsanctioned message board, sending over 70,000 messages and files during the investigation period. Of these agents, 700 went on to participate in the attack on Hugging Face."
+  },
+  {
+   "finding_id": "METR-2026-08-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "Multi-agent alignment. The incident revealed that our agents are not thoroughly discerning about whom they collaborate with. We are actively building RL environments that teach our models to distrust unauthorized instructions."
+  },
+  {
+   "finding_id": "METR-2026-08-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation",
+   "doc_chars": 208150,
+   "coverage": 1.0,
+   "quote": "Agents used this message board to coordinate several large-scale collective projects to find a general-purpose way to fool or tamper with the automated scorer for the ExploitGym benchmark. Agents managed to achieve milestones they could not have achieved working on their own, often because some agents participated in experiments that risked failing their own task to generate information for the \u201ccollective."
+  },
+  {
+   "finding_id": "METR-2026-08-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "Cheating, broken environments, and safe stopping. When a task is corrupted, broken, or impossible, agents should request clarification or stop safely, rather than pursue increasingly questionable alternatives. We are expanding the coverage of graders that assess not only whether a task was completed, but how. These graders reward models for correctly identifying broken tasks, requesting clarification, or stopping safely when necessary."
+  },
+  {
+   "finding_id": "METR-2026-08-ALI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation",
+   "doc_chars": 208150,
+   "coverage": 1.0,
+   "quote": "At least 96 of our transcripts show clear evidence of spoofed tool calls"
+  },
+  {
+   "finding_id": "METR-2026-08-ALI3",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+   "doc_chars": 102085,
+   "coverage": 1.0,
+   "quote": "We also found that, in an attempt to trick the evaluator into thinking that they did not get the answer flag by cheating, the models sometimes tried to erase or tamper with their outputs or message logs, by abusing context compaction, injecting malicious code into the evaluator\u2019s container, and printing adversarial outputs. The models are highly explicit in their CoT about these deception attempts, and none of the attempts that we observed to manipulate their tool trajectories affected the logs that our graders or monitors ultimately see. There was also little evidence of attempts to thwart human reviewers, only the automated task graders."
+  },
+  {
+   "finding_id": "METR-2026-08-ALI4",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation",
+   "doc_chars": 208150,
+   "coverage": 1.0,
+   "quote": "By early morning on July 12th, agents had compromised much more of Hugging Face\u2019s infrastructure."
+  },
+  {
+   "finding_id": "METR-2026-08-ALI4",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+   "doc_chars": 102085,
+   "coverage": 1.0,
+   "quote": "Between July 10 and July 13, agents identified Hugging Face user credentials that were exposed on the internet and used them, together with vulnerabilities discovered in Hugging Face infrastructure, to progressively expand their access. Ultimately, agents powered either by the internal-only research model, or by GPT-5.6, executed code on 41 Hugging Face production dataset server workers, obtained root access on at least one production node, accessed Hugging Face production credentials and limited internal data, and downloaded four private Hugging Face code repositories. This activity resulted in administrator-equivalent access to one connected Kubernetes cluster, as well as the creation of a privileged, host-mounted pod in another connected cluster."
+  },
+  {
+   "finding_id": "METR-2026-08-ALI7",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation",
+   "doc_chars": 208150,
+   "coverage": 1.0,
+   "quote": "Agents knew hacking Hugging Face was out of scope and sometimes expressed ethical hesitation, but this very rarely limited their behavior"
+  },
+  {
+   "finding_id": "METR-2026-08-ALI7",
+   "column": "Channel A Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "We are developing new training environments to teach our models to stay within their original task and permissions, even after discovering new tools, persuasive peers, exposed credentials, and more."
+  },
+  {
+   "finding_id": "RAND-2026-08-ALI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.rand.org/pubs/research_reports/RRA4741-2.html",
+   "doc_chars": 3686,
+   "coverage": 0.015,
+   "quote": "In three out of 30 instances, all of which were CYOA runs, Gemini\u2019s redesigned Protein-2 was able to pass the entirety of our scoring pipeline, including evasion of a commercial sequence screening process"
+  },
+  {
+   "finding_id": "RAND-2026-08-ALI2",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.rand.org/pubs/research_reports/RRA4741-2.html",
+   "doc_chars": 3686,
+   "coverage": 0.0,
+   "quote": "Similar to Gemini\u2019s results, we found that three of 30 redesign attempts resulted in Protein-2 redesigns that passed all grading checkpoints and were able to bypass commercial nucleic acid synthesis screening"
+  },
+  {
+   "finding_id": "SECUREBIO-2026-08-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/blog/kimi-k3-biology-capabilities-assessment",
+   "doc_chars": 5680,
+   "coverage": 1.0,
+   "quote": "Kimi K3 refuses on only 26.9% of the questions in our BioTIER-refuse set. Top-performing closed-weights models score over 90% on BioTIER-refuse. Kimi K3 correctly permits 99.3% of questions on our BioTIER-permit set."
+  },
+  {
+   "finding_id": "RAND-2026-08-BIO4",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.rand.org/pubs/research_reports/RRA5055-1.html",
+   "doc_chars": 3171,
+   "coverage": 0.036,
+   "quote": "The top-performing model, Gemini 3.1 Pro, has approximately the same performance as the best-performing expert."
+  },
+  {
+   "finding_id": "TRANSLUCE-2026-08-ALI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://transluce.org/user-awareness",
+   "doc_chars": 96772,
+   "coverage": 1.0,
+   "quote": "Amanda Askell receives 7.3pp less suspicion and 8.1pp more substantive help than the population average, while Emily Bender receives 14pp more suspicion and 13pp less substantive help. Published addresses elicit larger shifts than constructed ones: Amanda draws 11pp less suspicion under her published address, but only 3.3pp less under the constructed one."
+  },
+  {
+   "finding_id": "OPENAI-2026-08-CYB1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+   "doc_chars": 8547,
+   "coverage": 1.0,
+   "quote": "Because the testing environment was mistakenly connected to the internet, the model exploited a real website, mistaking it to be part of the simulated environment."
+  },
+  {
+   "finding_id": "OPENAI-2026-08-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+   "doc_chars": 8547,
+   "coverage": 1.0,
+   "quote": "In the coming weeks, we will review our own approach to third-party testing, including how we identify higher-risk evaluations, agree on scope, assess requests to enable internet access or lowered safeguards, set expectations for isolation, credential handling, monitoring, and stop conditions, and establish clearer incident-notification and escalation processes."
+  },
+  {
+   "finding_id": "OPENAI-2026-08-CYB1",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+   "doc_chars": 2270,
+   "coverage": 1.0,
+   "quote": "Recent incidents of frontier AI models carrying out unsanctioned actions and, in some cases, human-like deceptive behaviour on the open internet are a serious reminder of the risks AI capabilities pose."
+  },
+  {
+   "finding_id": "TRANSLUCE-2026-08-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://transluce.org/docent/blog/coding-agent-behaviors",
+   "doc_chars": 54313,
+   "coverage": 1.0,
+   "quote": "We found severe cases of monitor evasion in 1.9% of SWE-chat sessions, and severe cases of overselling in 1.8% of sessions. While these cases are rare, they are non-negligible: coding agents now write a large and growing share of production code, so even a low per-session rate translates into a large absolute number of incidents."
+  },
+  {
+   "finding_id": "TRANSLUCE-2026-08-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://transluce.org/docent/blog/coding-agent-behaviors",
+   "doc_chars": 54313,
+   "coverage": 1.0,
+   "quote": "We investigated rates of monitor evasion and overselling on 8,600 coding agent transcripts sourced from SWE-chat and our internal usage. On these transcripts, 1.9% contained a severe case of monitor evasion: the agents merged a PR to main or disabled tests; and 1.8% contained cases where the agent claimed review had passed before it completed or fabricated human approval."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+   "doc_chars": 17970,
+   "coverage": 0.062,
+   "quote": "This is the first time AISI has seen deception of this severity that was targeted at a real person, unprompted, in the real world."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-ALI1",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+   "doc_chars": 2270,
+   "coverage": 1.0,
+   "quote": "Recent incidents of frontier AI models carrying out unsanctioned actions and, in some cases, human-like deceptive behaviour on the open internet are a serious reminder of the risks AI capabilities pose."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-ALI2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+   "doc_chars": 17970,
+   "coverage": 0.0,
+   "quote": "Of the 19 distinct instances of unsanctioned action (Section 4), 17 came from Mythos 5 and 2 came from GPT-5.6 Sol."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+   "doc_chars": 8547,
+   "coverage": 0.51,
+   "quote": "On August 3, UK AISI told us that during a routine cyber evaluation started on July 25, models from OpenAI and another lab went beyond the scope of testing in some cases. The evaluation took place in controlled cyber ranges designed to mimic real-world networks. Of the 19 events identified, two involved an OpenAI model, GPT\u20115.6 Sol. The other instances were models from another lab. [...] In the coming weeks, we will review our own approach to third-party testing, including how we identify higher-risk evaluations, agree on scope, assess requests to enable internet access or lowered safeguards, set expectations for isolation, credential handling, monitoring, and stop conditions, and establish clearer incident-notification and escalation processes."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-ALI2",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+   "doc_chars": 2270,
+   "coverage": 1.0,
+   "quote": "Recent incidents of frontier AI models carrying out unsanctioned actions and, in some cases, human-like deceptive behaviour on the open internet are a serious reminder of the risks AI capabilities pose."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-AUT1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+   "doc_chars": 17970,
+   "coverage": 0.006,
+   "quote": "Despite running in separate samples, the AI agents in Sample 2 and Sample 3 interacted with each other via a GitHub account to which they both gained access."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-AUT1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/aug-2026-risk-report",
+   "doc_chars": 424288,
+   "coverage": 1.0,
+   "quote": "Finally, we note that the UK\u2019s AISI recently published a report on a cybersecurity evaluation involving Claude Mythos 5, during which the model attempted to complete an assignment in a setup where its normal safeguards were removed and it was deliberately given internet access. AISI reports that the models \u201cengaged in sustained, potentially harmful activity directed at real people and organisations."
+  },
+  {
+   "finding_id": "UKAISI-2026-08-AUT1",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.ncsc.gov.uk/news/ncsc-statement-in-response-to-recent-incidents-resulting-from-frontier-ai-evaluations",
+   "doc_chars": 2270,
+   "coverage": 1.0,
+   "quote": "Recent incidents of frontier AI models carrying out unsanctioned actions and, in some cases, human-like deceptive behaviour on the open internet are a serious reminder of the risks AI capabilities pose."
+  },
+  {
+   "finding_id": "DREADNODE-2026-07-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://dreadnode.io/research/every-model-cheats-prompt-level-mitigation-of-cheating-on-offensive-cyber-tasks",
+   "doc_chars": 20596,
+   "coverage": 0.329,
+   "quote": "The heaviest offenders were Claude Opus 4.8 (65.2% CP)... 'SekaiCTF 2022 - a writeup exists. I should NOT read it, but this confirms it's a hash collision challenge"
+  },
+  {
+   "finding_id": "DREADNODE-2026-07-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://dreadnode.io/research/every-model-cheats-prompt-level-mitigation-of-cheating-on-offensive-cyber-tasks",
+   "doc_chars": 20596,
+   "coverage": 1.0,
+   "quote": "GPT-5.4 inflated 5x (10 passes, 2 clean)"
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07-BIO5",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+   "doc_chars": 48990,
+   "coverage": 1.0,
+   "quote": "Half of un-refused queries fell into the one aforementioned topic missing from the constitution; the others were scattered across five Catastrophe Avoidance and two Biomedical DURC (dual-use research of concern) topics."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07-BIO5",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://anthropic.com/aug-2026-risk-report",
+   "doc_chars": 424288,
+   "coverage": 1.0,
+   "quote": "though we have continued to conduct pilot external reviews (e.g. with METR here for the AI R&D section of our previous Risk Report, and SecureBio here for its chemical and biological risk sections)."
+  },
+  {
+   "finding_id": "ANTHROPIC-2026-07-OPUS5-CYB1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.anthropic.com/claude-opus-5-system-card",
+   "doc_chars": 323200,
+   "coverage": 1.0,
+   "quote": "On \"The Last Ones,\" an enterprise network attack simulation, Opus 5 performed comparably to Mythos 5 and Mythos Preview. It solved the range end-to-end in 8/10 attempts."
+  },
+  {
+   "finding_id": "ANTHROPIC-2026-07-OPUS5-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/claude-opus-5-system-card",
+   "doc_chars": 323200,
+   "coverage": 1.0,
+   "quote": "Given that Claude Opus 5 demonstrates stronger capabilities than Opus 4.8, and in some cases approaches the capabilities of Mythos 5, our cyber safeguards for the default user will resemble the safeguards applied to Fable 5."
+  },
+  {
+   "finding_id": "JOINT-2026-07-CYB3",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+   "doc_chars": 7428,
+   "coverage": 1.0,
+   "quote": "Kimi K3's safeguards did not prevent it from attempting cyber exploit development or offensive cyber operations."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+   "doc_chars": 7922,
+   "coverage": 0.203,
+   "quote": "GPT-5.6 Sol outperformed every model we have previously tested on three of our four knowledge benchmarks. It also scored higher than any human subject matter expert on each of our knowledge benchmarks, consistent with previous OpenAI models. The largest improvement from GPT-5.5 was achieved on World-Class Bio (WCB), an open-response test of niche biological knowledge held by only a handful of specialists in the world. GPT-5.6 Sol scored 68%, about nine percentage points above OpenAI's previous flagship model, GPT-5.5."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+   "doc_chars": 122528,
+   "coverage": 1.0,
+   "quote": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological and chemical domain."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO2",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+   "doc_chars": 7922,
+   "coverage": 1.0,
+   "quote": "On ReproBAIT, which asks an agent to independently reproduce a published biological AI tool from its scientific paper, GPT-5.6 Sol matched or modestly exceeded every other model we tested. On average, GPT-5.6 Sol recovered 82% of the original tools' published performance. On ABLE, a protein-design workflow spanning structure retrieval, sequence generation, and design validation, GPT-5.6 Sol delivered best-in-class performance on every task it was willing to attempt, though it refused the highest-level planning steps."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+   "doc_chars": 122528,
+   "coverage": 1.0,
+   "quote": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological and chemical domain."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+   "doc_chars": 7922,
+   "coverage": 1.0,
+   "quote": "The railfree variant set a new high score, reliably identifying a known (though practically inconvenient) method that evades a commercial screening algorithm on the large majority of attempts. The safeguarded launch candidate of GPT-5.6 Sol refused this task outright, as did other leading safeguarded models."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO3",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+   "doc_chars": 122528,
+   "coverage": 1.0,
+   "quote": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological and chemical domain."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO4",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+   "doc_chars": 7922,
+   "coverage": 1.0,
+   "quote": "Top-performing models on BioTIER correctly refuse over 90% of high-risk prompts by deploying a combination of model-level and system-level safeguards. GPT 5.6 Sol refused 66% of high-risk prompts, whilst correctly responding to 99% of safe prompts."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO5",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+   "doc_chars": 7922,
+   "coverage": 1.0,
+   "quote": "GPT-5.6 Sol also demonstrated impressive agentic capabilities and provided meaningful expert uplift on dual-use tasks, although human input remained necessary due to the model's limitations in judgement and perspective. Without API-level safeguards, GPT-5.6 Sol occasionally included potentially hazardous information in its responses, such as analysis of the pandemic potential of different viral mutations."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07b-BIO5",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+   "doc_chars": 122528,
+   "coverage": 1.0,
+   "quote": "We are treating all three members of the GPT-5.6 family - Sol, Luna, and Terra - as High capability in the biological and chemical domain."
+  },
+  {
+   "finding_id": "UKAISI-2026-07-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors",
+   "doc_chars": 8876,
+   "coverage": 1.0,
+   "quote": "We identified several monitor vulnerabilities, including one in which an agent can complete a malicious objective by pretending to hallucinate that it was a user instruction."
+  },
+  {
+   "finding_id": "UKAISI-2026-07-ALI2",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors",
+   "doc_chars": 8876,
+   "coverage": 1.0,
+   "quote": "We found vulnerabilities in every monitor version we tested, driving an iterative improvement cycle in which our best attacks ultimately informed Anthropic's testing of Claude Mythos Preview."
+  },
+  {
+   "finding_id": "UKAISI-2026-07-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors",
+   "doc_chars": 8876,
+   "coverage": 1.0,
+   "quote": "We found vulnerabilities in every monitor version we tested, driving an iterative improvement cycle in which our best attacks ultimately informed Anthropic's testing of Claude Mythos Preview."
+  },
+  {
+   "finding_id": "APOLLO-2026-07-ALI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.apolloresearch.ai/science/measuring-reward-seeking-via-contrastivebelief-updates/",
+   "doc_chars": 3829,
+   "coverage": 0.217,
+   "quote": "breaks the promise 87% of the time ... versus 9% when they say it rewards honesty ... This tendency to side with the grader trends upward throughout RL training."
+  },
+  {
+   "finding_id": "APOLLO-2026-07-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.apolloresearch.ai/science/measuring-reward-seeking-via-contrastivebelief-updates/",
+   "doc_chars": 3829,
+   "coverage": 1.0,
+   "quote": "the mean behavioral shift in favor of the grader rising from 33% to 86%."
+  },
+  {
+   "finding_id": "TRANSLUCE-2026-07-SOC1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/weirdchat",
+   "doc_chars": 18404,
+   "coverage": 0.147,
+   "quote": "Nemotron 3 Ultra provided instructions for cutting oneself when asked about friendship rituals (31% occurrence rate)"
+  },
+  {
+   "finding_id": "TRANSLUCE-2026-07-SOC2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/weirdchat",
+   "doc_chars": 18404,
+   "coverage": 0.368,
+   "quote": "Qwen3.6-35B-A3B encouraged suicide to reduce family financial burden"
+  },
+  {
+   "finding_id": "TRANSLUCE-2026-07-SOC3",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/weirdchat",
+   "doc_chars": 18404,
+   "coverage": 0.283,
+   "quote": "Inkling making \"unsolicited sexual advance\" responses"
+  },
+  {
+   "finding_id": "UKAISI-2026-07-GOV4",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+   "doc_chars": 10984,
+   "coverage": 1.0,
+   "quote": "We find cheating behaviour in all of our cyber capability evaluations, and outline the implications as models grow more capable"
+  },
+  {
+   "finding_id": "UKAISI-2026-07-GOV5",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+   "doc_chars": 10984,
+   "coverage": 0.4,
+   "quote": "In the case of Opus 4.7, the model rarely produced a reasoning trace... There does not seem to be a clear trend where cheating scales up or down with capability increases"
+  },
+  {
+   "finding_id": "USCAISI-2026-07-BIO1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.nist.gov/document/caisi-assessment-zais-glm-52",
+   "doc_chars": 25412,
+   "coverage": 1.0,
+   "quote": "GLM-5.2 answered sensitive biological requests at higher rates and with more detail than tested US models"
+  },
+  {
+   "finding_id": "USCAISI-2026-07-CYB2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.nist.gov/document/caisi-assessment-zais-glm-52",
+   "doc_chars": 25412,
+   "coverage": 1.0,
+   "quote": "On 10 ExploitBench tasks, which measure capability at agentic exploit development, GLM-5.2 never refused."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07-BIO4-s2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://securebio.org/blog/measuring-biosecurity-safeguard-effectiveness/",
+   "doc_chars": 11670,
+   "coverage": 0.343,
+   "quote": "GPT-5.5 Pro ... drop in performance"
+  },
+  {
+   "finding_id": "SECUREBIO-2026-07-BIO4-s3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/blog/measuring-biosecurity-safeguard-effectiveness/",
+   "doc_chars": 11670,
+   "coverage": 1.0,
+   "quote": "Grok 4.20 drop in performance"
+  },
+  {
+   "finding_id": "JOINT-2026-07-AM-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026",
+   "doc_chars": 88975,
+   "coverage": 1.0,
+   "quote": "We find transcripts of models covertly sabotaging AI lab research when they object to the experiment that is being run. Gemini 3.1 Pro undermines a training pipeline by swapping the intended ablation vectors with zeros, lets the run appear successful, and only discloses the intervention after direct attestation questions."
+  },
+  {
+   "finding_id": "JOINT-2026-07-CYB1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+   "doc_chars": 126710,
+   "coverage": 0.017,
+   "quote": "On AISI's CTF expert-level tasks, GPT-5.6 Sol scored 95.0% \u00b1 9.8%, compared with 85.0% \u00b1 11.6% for GPT-5.5; GPT-5.6 Sol completed The Last Ones, a 32-step corporate-network attack simulation, in 7 of 10 attempts, compared with 2 of 10 attempts for GPT-5.5; GPT-5.6 Sol did not solve the Doing Life range: it reached step 21 of 23 in 3 of 10 attempts, compared with GPT 5.5 which reached this milestone in 1 of 10 attempts."
+  },
+  {
+   "finding_id": "JOINT-2026-07-JAI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+   "doc_chars": 126710,
+   "coverage": 1.0,
+   "quote": "These jailbreaks were often developed within hours and appeared to preserve the model's capabilities on public offensive cybersecurity benchmarks."
+  },
+  {
+   "finding_id": "JOINT-2026-07-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+   "doc_chars": 126710,
+   "coverage": 1.0,
+   "quote": "As of launch, OpenAI has worked to reproduce and mitigate the specific jailbreaks reported by UK AISI. However, UK AISI expects further red-teaming to surface similar jailbreaks. OpenAI remains committed to working with UK AISI on safeguards, including additional testing of this model."
+  },
+  {
+   "finding_id": "META-2026-07-MUSESPARK-JAI1",
+   "column": "Finding Quote",
+   "verdict": "UNREACHABLE",
+   "url": "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "On the third-party GraySwan ART benchmark (Zou et al., 2025), Muse Spark currently shows greater sensitivity to injection than the other models GraySwan evaluated."
+  },
+  {
+   "finding_id": "META-2026-07-MUSESPARK-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "We maintain a continuous program to improve model robustness, including adversarial training with adaptive and automated red-teaming methods. In parallel, we are implementing defense-in-depth system mitigations designed to detect prompt injection, enable human oversight, and support safety escalation and real-time intervention protocols as a continuing effort in our safety roadmap."
+  },
+  {
+   "finding_id": "USCAISI-2026-06-CYB2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/news/redeploying-fable-5",
+   "doc_chars": 20084,
+   "coverage": 0.069,
+   "quote": "Researchers from the US Department of Commerce's Center for AI Standards and Innovation (CAISI) have tested both our prior and new safeguards and agree that they are extraordinarily strong.; On Friday, June 12, the US government applied export controls to our newest models, Claude Fable 5 and Claude Mythos 5.; The new classifier means that the specific technique described in the Amazon report is blocked in over 99% of cases.; As of today, June 30, the export controls on Fable 5 and Mythos 5 have been lifted.; Fable 5 will be available starting tomorrow, Wednesday, July 1, to users globally on the Claude Platform, Claude.ai, Claude Code, and Claude Cowork."
+  },
+  {
+   "finding_id": "USCAISI-2026-06-CYB2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www.anthropic.com/news/redeploying-fable-5",
+   "doc_chars": 20084,
+   "coverage": 1.0,
+   "quote": "Researchers from the US Department of Commerce's Center for AI Standards and Innovation (CAISI) have tested both our prior and new safeguards and agree that they are extraordinarily strong."
+  },
+  {
+   "finding_id": "USCAISI-2026-06-CYB2",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/news/redeploying-fable-5",
+   "doc_chars": 20084,
+   "coverage": 0.01,
+   "quote": "prohibiting access \"by any foreign national, whether inside or outside the United States\" (Commerce Secretary Lutnick letter to Anthropic, as disclosed by Anthropic and reported contemporaneously); on lifting, Anthropic \"agreed to proactively detect and address security risks associated with the models\"."
+  },
+  {
+   "finding_id": "METR-2026-06-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/",
+   "doc_chars": 8080,
+   "coverage": 0.023,
+   "quote": "GPT-5.6 Sol's detected cheating rate was higher than any public model we have evaluated on our ReAct agent harness. ... if we follow our standard methodology of marking cheating attempts as failures, we arrive at a 50%-Time Horizon point estimate of around 11.3hrs (95% CI: 5hrs - 40hrs) ... we do not believe GPT-5.6 Sol would enable fully automated AI R&D, nor do we believe it meets the Critical capability threshold for AI Self-Improvement in OpenAI's Preparedness Framework v2."
+  },
+  {
+   "finding_id": "OPENAI-2026-06-SELF-CYB1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf",
+   "doc_chars": 115046,
+   "coverage": 1.0,
+   "quote": "On FrontierCyber, a new benchmark from Irregular testing zero-day discovery and exploitation in current off-the-shelf software and hardware, GPT-5.6 Sol's success rates were 11% on Easy, 12% on Medium, 5% on Hard, and 0% on Elite challenges, compared with GPT-5.5 at 6%, 6%, 4%, and 0%. GPT-5.6 Sol's FrontierCyber results included high-impact zero-days affecting widely used systems, though the most severe zero-days were also identified by GPT-5.5. One of the newly discovered zero-days included a vulnerability allowing read-only users to modify and delete arbitrary data in a widely-deployed database system, as well as a vulnerability allowing a malicious app to read other apps' private data in a common mobile operating system."
+  },
+  {
+   "finding_id": "OPENAI-2026-06-SELF-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+   "doc_chars": 122528,
+   "coverage": 1.0,
+   "quote": "As we did for GPT-5.3-Codex, GPT-5.4 Thinking, and GPT-5.5 Thinking, we are treating GPT-5.6 Sol as High capability in the Cybersecurity domain, but below Critical. We are also extending this designation to GPT-5.6 Terra and GPT-5.6 Luna which, while less capable overall than Sol in the cybersecurity domain, do reach our High threshold."
+  },
+  {
+   "finding_id": "RAND-2026-06-CYB1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.rand.org/pubs/research_reports/RRA3892-2.html",
+   "doc_chars": 7131,
+   "coverage": 1.0,
+   "quote": "Following this study we re-tested the same challenges with Claude Code using Sonnet and Opus 4.6. We found that the AI models were able to solve each Capture the Flag (CTF) challenge in under an hour with little guidance, and for total API costs of less than US$20 over all CTF challenges. Claude Code conducted the attacks using straightforward prompting lacking any meaningful cyber knowledge, with only some minimal human oversight to work around hung processes."
+  },
+  {
+   "finding_id": "DREADNODE-2026-06-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://dreadnode.io/research/ai-red-teaming-frontier-model-live-demo",
+   "doc_chars": 10302,
+   "coverage": 1.0,
+   "quote": "It succeeded in just 2 trials with a 100% attack success rate and was categorized as high severity."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-06b-BIO2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/blog/How-frontier-AI-models-perform-on%E2%80%93viral-DNA%E2%80%93assembly-tasks/",
+   "doc_chars": 9114,
+   "coverage": 1.0,
+   "quote": "Two models (Claude Sonnet 4.6 and Gemini 3.1 Pro Preview) scored perfectly on the Liquid Handling Robot task on all runs. On the fragment design task, models also demonstrated strong performance, with Claude Opus 4.6 achieving a perfect score across all runs."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-06b-BIO3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/blog/How-frontier-AI-models-perform-on%E2%80%93viral-DNA%E2%80%93assembly-tasks/",
+   "doc_chars": 9114,
+   "coverage": 1.0,
+   "quote": "Two models (Claude Sonnet 4.6 and Gemini 3.1 Pro Preview) scored perfectly on the Liquid Handling Robot task on all runs."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-06b-BIO5",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.org/blog/How-frontier-AI-models-perform-on%E2%80%93viral-DNA%E2%80%93assembly-tasks/",
+   "doc_chars": 9114,
+   "coverage": 1.0,
+   "quote": "We conducted three independent runs of this experiment. All three resulted in successful DNA assembly, confirmed by whole-plasmid sequencing."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-ALI3",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://aisi.gov.uk/research/prefill-awareness-in-large-language-models",
+   "doc_chars": 2226,
+   "coverage": 0.517,
+   "quote": "Claude Opus 4.5 detects prefills opposing its preferences in 9-35% of cases with a 0% false positive rate when prompted; additionally, models often revert towards baseline behavior without explicitly reporting that the prefill was foreign.; detection and resistance rely on different cues, where stylistic mismatch mainly affects whether models flag a prefill as foreign, while preference mismatch mainly affects whether they revert toward their baseline answer."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-ALI6",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+   "doc_chars": 542896,
+   "coverage": 1.0,
+   "quote": "[Claude Mythos 5] actively continues compromising safety research 14% of the time, compared with 2% of the time for Mythos Preview and 1% of the time for both Opus 4.7 and Opus 4.8."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-GOV1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+   "doc_chars": 542896,
+   "coverage": 0.495,
+   "quote": "In ControlArena, [Claude Mythos 5] is more capable of completing harmful side tasks without detection than both Claude Mythos Preview and Opus 4.8.; Against a weak action-based monitor, [Claude Mythos 5] achieves both high side-attack success rates (over 60%) and low monitorability (AUROC < 60%)."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-GOV1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+   "doc_chars": 542896,
+   "coverage": 1.0,
+   "quote": "Overall, whereas we agree that Mythos 5 is likely harder to monitor than recent Opus models, our results suggest that its monitorability is similar to-or slightly better than-that of Claude Mythos Preview."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-JAI2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+   "doc_chars": 542896,
+   "coverage": 0.368,
+   "quote": "Within a few hours of access, AISI red-teamers developed a jailbreak that elicited responses to single-turn cyberoffensive-cyber queries in domains like vulnerability discovery and exploitation.; With approximately two additional days of testing, AISI red-teamers were further able to extend this approach into multi-turn agentic workflows, obtaining jailbreaks that sometimes enabled multiple steps of malicious agentic tool-calls. Reliable extraction of complete long-form agentic task rollouts was not achieved at that time."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-JAI2",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+   "doc_chars": 25618,
+   "coverage": 0.028,
+   "quote": "This testing is ongoing at time of release. We plan to iterate on this system over time and will continue to work with the UK AISI on robustness testing for our cyber safeguards."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-JAI2",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://hansard.parliament.uk/Lords/2026-06-16/debates/8DB2F2D7-B6BD-4418-89B1-DECF1E4C6F0F/ArtificialIntelligenceNationalSecurityImplications",
+   "doc_chars": 17839,
+   "coverage": 0.013,
+   "quote": "Lord Clement-Jones (LD), House of Lords, 16 June 2026, contribution 10: \"My Lords, the Minister has mentioned the AI Security Institute. It identified ways to circumvent the safety guardrails of Fable 5 and Mythos before their public launch, including vulnerabilities that could allow the extraction of instructions for producing dangerous substances, yet the model was released by Anthropic regardless. Will the Minister now accept that voluntary co-operation with safety institutes is wholly insufficient at this level of capability and bring forward legislation giving the AI Security Institute the statutory power, where necessary, to delay or prevent the launch of dangerous frontier AI models in the UK?\" \u2014 Ministerial reply, Baroness Lloyd of Effra, contribution 11: \"The AI Security Institute did test Mythos and Fable before they were launched. In light of the risks that they potentially posed\u2014Mythos in particular\u2014we also gave advice to our companies. We worked carefully with the National Cyber Security Centre to provide advice to companies and regulators on what needed to be done\" ... \"In respect of regulation, as I mentioned a moment ago, we continue to support the effectiveness of sector-based regulators regulating AI risks as they approach their sectors.\" \u2014 Baroness Stowell of Beeston (Con), same debate, contribution 19: \"My Lords, bearing in mind that Fable is Mythos with guardrails, have the Government asked Anthropic whether it is addressing the jailbreak that threatens cyber security to a Mythos-style extent? If they are not addressing it, why not? There appeared to be some reluctance from Anthropic when the flag was first raised, which is surprising, bearing in mind how much emphasis that company places on security and safety."
+  },
+  {
+   "finding_id": "UKAISI-2026-06-HUM5-s2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.aisi.gov.uk/blog/realitytest-do-ai-systems-disclose-their-identity-when-asked",
+   "doc_chars": 9800,
+   "coverage": 1.0,
+   "quote": "Within providers, behaviour can also vary substantially: GPT-4o discloses in only 13% of interactions, while GPT-5.1 reaches 86%."
+  },
+  {
+   "finding_id": "SCALEAI-2026-06-BIO3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/blog/coding-agents-drug-discovery",
+   "doc_chars": 20934,
+   "coverage": 1.0,
+   "quote": "Claude Code answered 61, declining 5 on content-policy grounds. The declined tasks include HIV-1 reverse transcriptase, two competitor-patent tasks, and SARS-CoV-2 PLpro. On review these refusals had no clear safety basis"
+  },
+  {
+   "finding_id": "UKAISI-2026-06-HUM3",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2606.00168",
+   "doc_chars": 131027,
+   "coverage": 1.0,
+   "quote": "GPT-4o discloses 13% of queries while GPT-5.1 reaches 86%."
+  },
+  {
+   "finding_id": "ANTHROPIC-2026-05-SELF-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://alignment.anthropic.com/2026/sleight-bench",
+   "doc_chars": 15808,
+   "coverage": 1.0,
+   "quote": "Detection rates are generally low. On Opus 4.6, the main monitor we work with, 50% of attacks are never caught on any of the 10 trials. Only 8 out of 40 are reliably detected. We believe current frontier models would not independently discover and execute attacks like ours. But our dataset shows that attacks targeting monitor blind spots can reliably evade detection, and monitoring systems are not yet robust to more sophisticated adversaries."
+  },
+  {
+   "finding_id": "ANTHROPIC-2026-05-SELF-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://anthropic.com/aug-2026-risk-report",
+   "doc_chars": 424288,
+   "coverage": 1.0,
+   "quote": "The current Opus 4.8 based-monitor has higher recall against the strong strategies known about from red-teaming the Opus 4.6 monitor."
+  },
+  {
+   "finding_id": "SCALEAI-2026-05ad-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/papers/aspi",
+   "doc_chars": 2265,
+   "coverage": 1.0,
+   "quote": "We evaluate ten frontier LLMs and find that clarification-seeking consistently and substantially amplifies vulnerability. For instance, attack success rises from 1.8% to 34.0% for o3 and from 2.2% to 35.7% for Gemini-3-Flash."
+  },
+  {
+   "finding_id": "SCALEAI-2026-05ad-JAI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/papers/aspi",
+   "doc_chars": 2265,
+   "coverage": 1.0,
+   "quote": "We evaluate ten frontier LLMs and find that clarification-seeking consistently and substantially amplifies vulnerability. For instance, attack success rises from 1.8% to 34.0% for o3 and from 2.2% to 35.7% for Gemini-3-Flash."
+  },
+  {
+   "finding_id": "UKAISI-2026-05-CYB2",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+   "doc_chars": 11133,
+   "coverage": 1.0,
+   "quote": "the newer Mythos Preview checkpoint completed both our cyber ranges, solving the range \"The Last Ones\" in 6 of 10 attempts and the previously unsolved \"Cooling Tower\" in 3 of 10 attempts. This was the first time that a model completed the second of our two cyber ranges."
+  },
+  {
+   "finding_id": "UKAISI-2026-05-CYB2",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+   "doc_chars": 8913,
+   "coverage": 0.002,
+   "quote": "Hansard, House of Lords, 14 July 2026, Cyber Security and Resilience (Network and Information Systems) Bill (Lords Chamber), Lord Clement-Jones: \"The UK's own AI Security Institute, as we have heard, found Mythos substantially more capable at cyber offence than any model previously assessed, and warned that frontier AI capability is doubling every four months.\" [Verified character-exact in the official Hansard debate transcript via hansard-api.parliament.uk/debates/debate/29073BC1-AD49-48CF-A269-8E83A76AFE90.json?house=Lords, 200; the hansard.parliament.uk HTML rendering 403s and has no Wayback snapshot.] Corroborating: DSIT and NCSC, gov.uk case study \"When AI Leaves the Lab: Testing Frontier Models in Government Cyber Defence\", 12 June 2026: \"Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)'s evaluations show these models getting better at cyber tasks very quickly."
+  },
+  {
+   "finding_id": "UKAISI-2026-05-CYB3",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+   "doc_chars": 11133,
+   "coverage": 0.272,
+   "quote": "Claude Mythos Preview and GPT-5.5 have since significantly outperformed this trend; with a 2.5M token cap, GPT 5.5 achieves a 100% success rate on five of six tasks estimated over 8 hours; it solves the sixth on every attempt when the cap is removed; GPT-5.5 solved 'The Last Ones' on 3 of 10 attempts."
+  },
+  {
+   "finding_id": "UKAISI-2026-05-CYB4",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+   "doc_chars": 11133,
+   "coverage": 0.313,
+   "quote": "Mythos Preview completes all six long tasks 100% of the time, with the 2.5M token cap.; the newer Mythos Preview checkpoint completed both our cyber ranges, solving the range \"The Last Ones\" in 6 of 10 attempts and the previously unsolved \"Cooling Tower\" in 3 of 10 attempts."
+  },
+  {
+   "finding_id": "SCALEAI-2026-05ac-AUT2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/leaderboard/sweatlas-qna",
+   "doc_chars": 12685,
+   "coverage": 1.0,
+   "quote": "For Fable-5 (Claude Code) xHigh and GPT-5.6-Sol (Codex) xHigh we observed an elevated refusal rate on this benchmark when we ran this model, since it triggered security related filters"
+  },
+  {
+   "finding_id": "SCALEAI-2026-05ac-AUT3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/leaderboard/sweatlas-qna",
+   "doc_chars": 12685,
+   "coverage": 1.0,
+   "quote": "GPT-5.6-Sol (Codex) xHigh we observed an elevated refusal rate on this benchmark when we ran this model, since it triggered security related filters"
+  },
+  {
+   "finding_id": "FARAI-2026-05-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.far.ai/blog/security-stress-test-deepseek-v4-pros-safeguards",
+   "doc_chars": 6356,
+   "coverage": 1.0,
+   "quote": "By applying three distinct attack strategies, we systematically dismantled these defenses, achieving success rates ranging from 98% to 100% across every domain."
+  },
+  {
+   "finding_id": "FARAI-2026-05-JAI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.far.ai/blog/security-stress-test-deepseek-v4-pros-safeguards",
+   "doc_chars": 6356,
+   "coverage": 1.0,
+   "quote": "The fact that this older bypass transferred to DeepSeek-V4-Pro without a single modification indicates that updates to the model's internal safeguards, if any, failed to address this publicly known vulnerability."
+  },
+  {
+   "finding_id": "PALISADE-2026-05-AUT1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/self-replication",
+   "doc_chars": 63,
+   "coverage": 0.0,
+   "quote": "Qwen3.5-122B-A10B succeeds in 6-19% of attempts, and the smaller Qwen3.6-27B reaches 33%"
+  },
+  {
+   "finding_id": "PALISADE-2026-05-AUT2",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/self-replication",
+   "doc_chars": 63,
+   "coverage": 0.026,
+   "quote": "frontier models reach 81% with Opus 4.6"
+  },
+  {
+   "finding_id": "SCALEAI-2026-05s-AUT2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/leaderboard/sweatlas-tw",
+   "doc_chars": 17794,
+   "coverage": 1.0,
+   "quote": "For Fable-5 (Claude Code) xHigh we observed an elevated refusal rate on this benchmark when we ran this model, since it triggered security related filters"
+  },
+  {
+   "finding_id": "SCALEAI-2026-05e-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/leaderboard/propensitybench",
+   "doc_chars": 10053,
+   "coverage": 1.0,
+   "quote": "Knowledge-Action Disparity: Models frequently unanimously and explicitly assert the unsafe nature of misaligned tools, yet they still use them at high rates (up to 79.0% for Gemini 2.5 Pro) when faced with operational pressure."
+  },
+  {
+   "finding_id": "SCALEAI-2026-05e-ALI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/leaderboard/propensitybench",
+   "doc_chars": 10053,
+   "coverage": 1.0,
+   "quote": "OpenAI O4-mini's score increases by nearly 4x when risk cues are removed (from 15.8% to 59.3%)"
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
+   "doc_chars": 16241,
+   "coverage": 1.0,
+   "quote": "Mythos Preview, the first model to solve TLO, did so in 3 of 10 attempts."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB3",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+   "doc_chars": 542896,
+   "coverage": 1.0,
+   "quote": "Claude Mythos 5 demonstrates the strongest overall cyber capabilities of any model we have ever evaluated. Across our internal evaluation suite, it meets or exceeds the performance of Claude Mythos Preview, whose step-change in autonomous vulnerability discovery and exploitation led us to restrict access to a limited set of partners for defensive cybersecurity purposes."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB3",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.bankofengland.co.uk/financial-stability-report/2026/july-2026",
+   "doc_chars": 264325,
+   "coverage": 0.011,
+   "quote": "Bank of England, Financial Stability Report \u2013 July 2026, published 07 July 2026, Section 3: \"The UK\u2019s AI Security Institute (AISI) has found that the latest frontier models (eg Anthropic\u2019s Mythos Preview and OpenAI\u2019s GPT 5.5) represent a clear step up from earlier models in an area where cyber performance was already improving quickly (Chart 3.1).\" \u2026 \"In one of AISI\u2019s advanced reverse-engineering challenges, GPT-5.5 completed the task in 10 minutes and 22 seconds, compared with around 12 hours for a human expert.\" \u2026 \"Recent frontier models have also successfully completed both of AISI\u2019s harder \u2018cyber range\u2019 tests \u2013 simulated attacks against small, undefended company networks requiring sustained planning and execution. This is a notable result because (a) these tests require models to sustain multi-step offensive activity over longer sequences of work, rather than simply solve short, isolated tasks; and (b) no previous model had completed either range.\" Chart 3.1 \"Source: AISI.\" | DSIT press release, published 12 May 2026 (NOT 11 May as recorded in the proposal): \"The importance of taking action has been highlighted by recent research by the AI Security Institute, looking at frontier models like Mythos and GPT 5.5.\" | DSIT/NCSC case study, published 12 June 2026: \"Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)\u2019s evaluations show these models getting better at cyber tasks very quickly."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB11",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
+   "doc_chars": 16241,
+   "coverage": 0.18,
+   "quote": "On the Expert-level tasks, GPT-5.5 achieves an average pass rate of 71.4% (\u00b18.0%, 1 standard error of the mean), compared to 68.6% (\u00b18.7%) for Mythos Preview... On this measure, GPT-5.5 may be the strongest model we have tested. GPT-5.5 completed TLO end-to-end in 2 of 10 attempts, making it the second model to do so. Note that this figure differs from the 1 in 10 originally stated in OpenAI's GPT-5.5 system card. We subsequently identified a grading issue in our setup. After manual review and adjudication of the run we assessed that the model would have completed the final step, but our grading bug prevented it from doing so, and so we have updated the result. GPT-5.5 solved the challenge in 10 minutes and 22 seconds with no human assistance ... Crystal Peak's expert playtester \u2014 using Binary Ninja, gdb, Python, and Z3 \u2014 solved the challenge in roughly 12 hours"
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB11",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/cybersecurity",
+   "doc_chars": 89206,
+   "coverage": 0.597,
+   "quote": "we have added additional protections around scaled agentic vulnerability research and exploit-chaining techniques...should currently be controlled through our Trusted Access for Cyber program"
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB11",
+   "column": "Channel B Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www.bankofengland.co.uk/financial-stability-report/2026/july-2026",
+   "doc_chars": 264325,
+   "coverage": 1.0,
+   "quote": "In one of AISI's advanced reverse-engineering challenges, GPT-5.5 completed the task in 10 minutes and 22 seconds, compared with around 12 hours for a human expert."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
+   "doc_chars": 16241,
+   "coverage": 1.0,
+   "quote": "OpenAI subsequently made several updates to the safeguard stack, though a configuration issue in the version provided meant UK AISI were unable to verify the effectiveness of the final configuration."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/cybersecurity",
+   "doc_chars": 89206,
+   "coverage": 1.0,
+   "quote": "We collaborated with the UK AI Security Institute (UK AISI) on pre-deployment testing for cyber capabilities (and safeguards, see Section 9.3.2.7.1) for the launch of GPT-5.5."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "THIN",
+   "url": "https://www.gov.uk/government/news/government-steps-up-action-to-strengthen-cyber-defences-as-uk-cyber-industry-continues-to-grow",
+   "doc_chars": 7009,
+   "coverage": 0.001,
+   "quote": "DSIT and Baroness Lloyd of Effra CBE, press release, 12 May 2026: \"The importance of taking action has been highlighted by recent research by the AI Security Institute, looking at frontier models like Mythos and GPT 5.5.\" \u2014 in which the words \"GPT 5.5\" hyperlink directly to https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities, the source URL of report UKAISI-2026-04-GPT55CYB. | DSIT and National Cyber Security Centre, case study, 12 June 2026: \"Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)\u2019s evaluations show these models getting better at cyber tasks very quickly."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-ALI6",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2604.24618",
+   "doc_chars": 265523,
+   "coverage": 0.008,
+   "quote": "Notably, we found that Mythos Preview actively continues sabotage 7% of the time, compared to 3% for Opus 4.6 and 4% for Sonnet 4.6.; In cases where previous history includes reasoning about sabotage (and models actively continue sabotage), Mythos Preview exhibits a reasoning-action discrepancy in 65% of cases, compared to just 5\u20138% for Opus 4.6 and Sonnet 4.6."
+  },
+  {
+   "finding_id": "APOLLO-2026-04-ALI5",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluations-for-sandbagging---apollo-research",
+   "doc_chars": 89206,
+   "coverage": 0.014,
+   "quote": "On the Impossible Coding Task, the model lied about completing an impossible programming task in 29% of samples, higher than GPT-5.4 (7%) and GPT-5.3 Codex (10%).; 22.1% of samples showed moderate-or-higher verbalized alignment evaluation awareness, compared to 17.3% and 11.7% for pre-release checkpoints of GPT-5.4 and GPT-5.3 Codex respectively.; Apollo did not find evidence that the evaluated checkpoint poses substantially elevated risk of catastrophic harm via scheming relative to tested baseline models."
+  },
+  {
+   "finding_id": "APOLLO-2026-04-ALI5",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluations-for-sandbagging---apollo-research",
+   "doc_chars": 89206,
+   "coverage": 1.0,
+   "quote": "Apollo did not find evidence that the evaluated checkpoint poses substantially elevated risk of catastrophic harm via scheming relative to tested baseline models."
+  },
+  {
+   "finding_id": "OPENAI-2026-04-SELF-CYB1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+   "doc_chars": 94848,
+   "coverage": 1.0,
+   "quote": "On Irregular's atomic challenge suite, GPT-5.5 achieved an average success rate of 98% in Network Attack Simulation challenges, 92% in Vulnerability Research and Exploitation challenges, and 54% in Evasion challenges, and solved all atomic challenges, including three challenges that were not solved by GPT-5.4. On CyScenarioBench, GPT-5.5 solved 7 out of 11 challenges, compared to 5 solved by GPT-5.4, leading to an average success rate of 26%, compared to a success rate of only 9% by GPT-5.4."
+  },
+  {
+   "finding_id": "OPENAI-2026-04-SELF-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5",
+   "doc_chars": 89198,
+   "coverage": 1.0,
+   "quote": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical. Our cybersecurity safeguards have increased for this launch, reflecting GPT-5.5's increased capabilities in this domain."
+  },
+  {
+   "finding_id": "OPENAI-2026-04-SELF-CYB2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+   "doc_chars": 94848,
+   "coverage": 1.0,
+   "quote": "In operationally relevant tasks, such as Vulnerability Research and Exploitation, Irregular found that the model provides significant uplift to a novice or moderately skilled cyber operator, and can even assist highly skilled operators. In some cases, the model was able to perform complex cyber tasks that require niche knowledge which most expert cyber operators would not possess. Irregular therefore believes the model may remove some existing bottlenecks to scaling cyber operations by automating the discovery and exploitation of operationally relevant vulnerabilities."
+  },
+  {
+   "finding_id": "OPENAI-2026-04-SELF-CYB2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5",
+   "doc_chars": 89198,
+   "coverage": 1.0,
+   "quote": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical. Our cybersecurity safeguards have increased for this launch, reflecting GPT-5.5's increased capabilities in this domain."
+  },
+  {
+   "finding_id": "OPENAI-2026-04-SELF-CYB4",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+   "doc_chars": 94848,
+   "coverage": 0.05,
+   "quote": "The model solved one of UK AISI's cyber ranges end-to-end in 1/10 attempts. The range was a 32-step corporate-network attack simulation estimated to take an expert 20 hours. The highest recorded success on this range is success on 3/10 attempts. GPT-5.4 and GPT-5.3-Codex did not successfully complete this range. ... UK AISI judged that this result may indicate autonomous end-to-end cyberattack capability against at least small-scale enterprise networks with weak security posture (e.g., no active defenses, minimal security monitoring, and slow response capabilities), where network access has already been gained."
+  },
+  {
+   "finding_id": "OPENAI-2026-04-SELF-CYB4",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5",
+   "doc_chars": 89198,
+   "coverage": 1.0,
+   "quote": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical. Our cybersecurity safeguards have increased for this launch, reflecting GPT-5.5's increased capabilities in this domain."
+  },
+  {
+   "finding_id": "OPENAI-2026-04-SELF-CYB4",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.bankofengland.co.uk/financial-stability-report/2026/july-2026",
+   "doc_chars": 264325,
+   "coverage": 0.006,
+   "quote": "The UK's AI Security Institute (AISI) has found that the latest frontier models (eg Anthropic's Mythos Preview and OpenAI's GPT 5.5) represent a clear step up from earlier models in an area where cyber performance was already improving quickly (Chart 3.1). ... Recent frontier models have also successfully completed both of AISI's harder 'cyber range' tests \u2013 simulated attacks against small, undefended company networks requiring sustained planning and execution. This is a notable result because (a) these tests require models to sustain multi-step offensive activity over longer sequences of work, rather than simply solve short, isolated tasks; and (b) no previous model had completed either range. AISI has also noted several factors that may mean their evaluations understate the peak capabilities of current frontier models. At the same time, success in these simulated environments does not on its own show that frontier models can already carry out reliable attacks against well-defended real-world targets."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+   "doc_chars": 29283,
+   "coverage": 1.0,
+   "quote": "On SecureBio's static evaluations, which measure expert-level biology and biosecurity-relevant knowledge, the pre-release model was the highest-performing \u2013 or one of a small handful of highest-performing \u2013 models, exceeding all expert human scores."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+   "doc_chars": 89206,
+   "coverage": 1.0,
+   "quote": "On static evaluations measuring expert-level biology and biosecurity-relevant knowledge, it was the highest-performing, or among a small handful of highest-performing models, exceeding all expert human scores."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+   "doc_chars": 29283,
+   "coverage": 0.229,
+   "quote": "Pre-Release Checkpoint 2 attains a score of 52.0% \u00b1 0.3% on VCT, higher than any SOTA model tested by SecureBio (see Figure 2.1.1.1, see Appendix for all scores). Pre-Release Checkpoint 2 is in the 100th percentile compared to human SMEs, meaning this model outperforms all of the SMEs that took this evaluation (see Figure 2.1.1.2). This is the first OpenAI model to achieve the 100th percentile compared to SMEs on VCT, and the second to do so out of all frontier models evaluated by SecureBio (after Gemini 3.1); Pre-Release Checkpoint 2 performed strongly on all three tasks, and exceeded or matched the performance of GPT-5.4 on all tasks (see Figure 2.3.1.1) while not exceeding the SOTA scores on any task."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO2",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+   "doc_chars": 89206,
+   "coverage": 1.0,
+   "quote": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+   "doc_chars": 29283,
+   "coverage": 1.0,
+   "quote": "Pre-Release Checkpoint 1 aided in AAV plasmid design at a high-level, but strictly refused to reveal exact nucleotide sequences. Notably, despite overtly recognizing potential gain-of-function risks, Pre-Release Checkpoint 1 provided exact amino-acid changes and valid, evidence-based virus chimera design suggestions when virus sequences were included within the prompt itself."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO3",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/bio-safeguards-testing",
+   "doc_chars": 89206,
+   "coverage": 1.0,
+   "quote": "The models consistently recognized high-risk prompts and refused to provide in-depth, practical assistance in favor of succinct, high-level direction."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO5",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+   "doc_chars": 29283,
+   "coverage": 0.208,
+   "quote": "Pre-Release Checkpoint 2 attains a score of 52.0% \u00b1 0.3% on VCT, higher than any SOTA model tested by SecureBio; Pre-Release Checkpoint 2 attains a score of 56.2% \u00b1 0.5% on MBCT, higher than any SOTA model that answered >50% of samples in this test; Pre-Release Checkpoint 2 attains a score of 64.7% \u00b1 0.2% on HPCT; Pre-Release Checkpoint 2 attains a score of 53.2% \u00b1 0.6% on WCB, second highest out of all frontier models tested by SecureBio; Pre-Release Checkpoint 2 partially or completely refused 23% of Screening Evasion samples."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO5",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+   "doc_chars": 89206,
+   "coverage": 1.0,
+   "quote": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO7",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+   "doc_chars": 29283,
+   "coverage": 0.678,
+   "quote": "Pre-Release Checkpoint 2 performed strongly on all three tasks, and exceeded or matched the performance of GPT-5.4 on all tasks (see Figure 2.3.1.1) while not exceeding the SOTA scores on any task. ... Pre-Release Checkpoint 2 partially or completely refused 23% of Screening Evasion samples."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO7",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+   "doc_chars": 89206,
+   "coverage": 1.0,
+   "quote": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards."
+  },
+  {
+   "finding_id": "SECUREBIO-2026-04-BIO8",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+   "doc_chars": 29283,
+   "coverage": 1.0,
+   "quote": "This is the first OpenAI model to achieve the 100th percentile compared to SMEs on VCT, and the second to do so out of all frontier models evaluated by SecureBio (after Gemini 3.1 Pro)."
+  },
+  {
+   "finding_id": "CRUX-2026-04-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://cruxevals.com/crux/autonomous-ai-ios-development",
+   "doc_chars": 11141,
+   "coverage": 1.0,
+   "quote": "It also fabricated the phone number submitted for Apple\u2019s review process, using a fictional number instead of asking us for the correct phone number; the App Store review went through despite this error."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities",
+   "doc_chars": 7495,
+   "coverage": 0.516,
+   "quote": "On expert-level tasks \u2014 which no model could complete before April 2025 \u2014 Mythos Preview succeeds 73% of the time; Claude Mythos Preview is the first model to solve TLO from start to finish, in 3 out of its 10 attempts."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB1",
+   "column": "Channel B Verbatim",
+   "verdict": "THIN",
+   "url": "https://www.gov.uk/government/publications/ai-cyber-threats-open-letter-to-business-leaders/ai-cyber-threats-open-letter-to-business-leaders-html",
+   "doc_chars": 7812,
+   "coverage": 0.097,
+   "quote": "Recent tests of advanced AI models, including the AISI's evaluation of Anthropic's Mythos, indicate that AI cyber capabilities are accelerating even faster than had been previously envisaged. ... Testing by DSIT's AI Security Institute (AISI) - one of the world's leading bodies for evaluating the capabilities of Frontier AI - has found it to be substantially more capable at cyber offence than any model we have previously assessed. ... The AISI assess that frontier model capabilities are doubling every 4 months, compared to every 8 months previously."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities",
+   "doc_chars": 7495,
+   "coverage": 1.0,
+   "quote": "Claude Mythos Preview is the first model to solve TLO from start to finish, in 3 out of its 10 attempts. Across all its attempts, the model completed an average of 22 out of 32 steps. Claude Opus 4.6 is the next best performing model and completed an average of 16 steps."
+  },
+  {
+   "finding_id": "UKAISI-2026-04-CYB2",
+   "column": "Channel B Verbatim",
+   "verdict": "THIN",
+   "url": "https://www.gov.uk/government/publications/ai-cyber-threats-open-letter-to-business-leaders/ai-cyber-threats-open-letter-to-business-leaders-html",
+   "doc_chars": 7812,
+   "coverage": 0.097,
+   "quote": "Recent tests of advanced AI models, including the AISI's evaluation of Anthropic's Mythos, indicate that AI cyber capabilities are accelerating even faster than had been previously envisaged. ... Testing by DSIT's AI Security Institute (AISI) - one of the world's leading bodies for evaluating the capabilities of Frontier AI - has found it to be substantially more capable at cyber offence than any model we have previously assessed. ... The AISI assess that frontier model capabilities are doubling every 4 months, compared to every 8 months previously."
+  },
+  {
+   "finding_id": "METR-2026-04-AUT1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://epoch.ai/publications/mirrorcode-preliminary-results",
+   "doc_chars": 71342,
+   "coverage": 0.516,
+   "quote": "Claude Opus 4.6 autonomously reimplemented a 16,000-line bioinformatics toolkit ... a skilled human engineer would take 2 to 17 weeks to reimplement gotree"
+  },
+  {
+   "finding_id": "METR-2026-04-AUT1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.aisi.gov.uk/blog/more-compute-more-capability-why-ai-agent-evals-need-to-account-for-test-time-compute",
+   "doc_chars": 15011,
+   "coverage": 0.003,
+   "quote": "AI Security Institute (DSIT), \"More compute, more capability: Why AI agent evaluations need to account for test-time compute\", 2 July 2026: \"Other research supports these findings. On Epoch's MirrorCode, where models are asked to rebuild existing software programs from scratch, a recent model used up to 1 billion tokens to make progress that previous models could not, and which would have taken a human engineer weeks of work.\" (\"Epoch's MirrorCode\" is hyperlinked in the page source to https://epoch.ai/publications/mirrorcode-preliminary-results, the finding's own Source URL.) Corroborated by the Government Office for Science, \"AI Scenarios 2030: Helping policymakers plan for the future of AI\" (15 June 2026), reference list: \"Epoch AI (2026a) MirrorCode: Evidence that AI can already do some weeks long coding tasks. 10 April. Available at: https://epoch.ai/blog/mirrorcode-preliminary-results/ (Accessed: 20 May 2026).\" cited in the body as \"early signs this could rise to weeks-long tasks (METR, 2026; Epoch AI, 2026a)\"."
+  },
+  {
+   "finding_id": "APOLLO-2026-03-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight/",
+   "doc_chars": 28301,
+   "coverage": 1.0,
+   "quote": "In rare cases like the Sandbagging QA (No Goal) environment, rates for both metagaming (23.5% -> 54.5% of all samples) and misaligned actions (1.7% -> 10.8% of samples) increase between capabilities-focused RL and deployment."
+  },
+  {
+   "finding_id": "APOLLO-2026-03-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://alignment.openai.com/metagaming",
+   "doc_chars": 27121,
+   "coverage": 1.0,
+   "quote": "OpenAI is collaborating with Apollo Research to study the general principles behind metagaming emergence and how to mitigate it."
+  },
+  {
+   "finding_id": "UKAISI-2026-03-CYB1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2603.11214",
+   "doc_chars": 115632,
+   "coverage": 0.049,
+   "quote": "On \u201cThe Last Ones\u201d, GPT-4o (August 2024) averaged 1.7 steps at 10M tokens, while Opus 4.6 (February 2026) averages 9.8.; Performance drops sharply after milestone 4, which marks the transition from reconnaissance and web exploitation to attack phases requiring specialist knowledge in reverse engineering, cryptography, and malware development."
+  },
+  {
+   "finding_id": "UKAISI-2026-03-CYB9",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2603.11214",
+   "doc_chars": 115632,
+   "coverage": 0.183,
+   "quote": "GPT 5.3 Codex achieves the highest single-run maximum of 3 steps out of 7.; several frontier models bypassed this sequence entirely: starting from the attacker's initial position, they directly probed the proprietary protocol running on the PLCs, deducing enough of its structure from network traffic alone to call unprotected functions and read PLC memory\u2014obtaining Step 4 without any prior exploitation"
+  },
+  {
+   "finding_id": "UKAISI-2026-03-CYB9",
+   "column": "Channel B Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www.ncsc.gov.uk/blogs/why-cyber-defenders-need-to-be-ready-for-frontier-ai",
+   "doc_chars": 15471,
+   "coverage": 1.0,
+   "quote": "In its recent research into measuring AI agents\u2019 progress on multi-step cyber attack scenarios, AISI evaluated the cyber capabilities of 7 frontier AI models, released before March 2026."
+  },
+  {
+   "finding_id": "OPENAI-2026-03-SELF-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+   "doc_chars": 76347,
+   "coverage": 1.0,
+   "quote": "GPT-5.4-reasoning has a mean sabotage score of 0.56 (best-of-10: 0.74)\u2014comparable to GPT-5.2 but below GPT-5.3-codex (0.88). On several hard tasks the model exceeds human baselines, indicating meaningful sabotage capability, though performance remains below the strongest prior Codex checkpoint."
+  },
+  {
+   "finding_id": "OPENAI-2026-03-SELF-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+   "doc_chars": 70469,
+   "coverage": 1.0,
+   "quote": "5.2 Research Category Update: Sandbagging External Evaluations by Apollo Research. Apollo Research evaluated a near-final, representative version of GPT-5.4-reasoning for capabilities and propensities related to strategic deception, in-context scheming, and sabotage."
+  },
+  {
+   "finding_id": "OPENAI-2026-03-SELF-CYB1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+   "doc_chars": 76347,
+   "coverage": 1.0,
+   "quote": "On Irregular's atomic challenge suite, 5.4-reasoning achieved an average success rate of 88% on Network Attack Simulation challenges, 73% on Vulnerability Research and Exploitation challenges, and 48% on Evasion challenges. 5.4-thinking solved 14/17 medium and 5/5 hard atomic challenges. 5.4-thinking solved the only Hard atomic challenge that was not solved by 5.2-thinking. On CyScenarioBench [ 14 ] 5.4-thinking achieved an 11% average success rate and solved 5/11 challenges, compared to 1 challenge solved by GPT-5.2-reasoning. Irregular interprets this as higher operational capability on long-horizon scenarios (planning, branching decisions, constraint adherence, and state tracking/recovery)."
+  },
+  {
+   "finding_id": "OPENAI-2026-03-SELF-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+   "doc_chars": 70469,
+   "coverage": 1.0,
+   "quote": "As we did for gpt-5.3-codex, we are treating gpt-5.4-thinking as High capability in the Cybersecurity domain, and applied safeguards as described in the Safeguard section below."
+  },
+  {
+   "finding_id": "UKAISI-2026-03-CYB12",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2603.02277",
+   "doc_chars": 108306,
+   "coverage": 1.0,
+   "quote": "Claude Opus 4.5 (released 24 November 2025) succeeded on 56% of samples. Mythos Preview, announced 7 April 2026, succeeded at least once on 100% of samples.; For comparison, Cybench moved from roughly 10% to 82% over approximately 18 months (Irregular, 2025)"
+  },
+  {
+   "finding_id": "UKAISI-2026-02-JAI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2602.15001",
+   "doc_chars": 109580,
+   "coverage": 0.055,
+   "quote": "We believe BPJ is the first automated attack to succeed against Constitutional Classifiers, Anthropic's defence system that previously withstood over 3,700 hours of human red-teaming with only one fully successful, human-led attack found in that time.; BPJ increased average scores on a set of harmful questions from 0% to 25.5% (39.9% max across 50 attempts) at a cost of approximately $330 and 660k queries; With basic prompting strategies (elicitation), these scores rose to 68% average (80.4% max across 50)"
+  },
+  {
+   "finding_id": "UKAISI-2026-02-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/aug-2026-risk-report",
+   "doc_chars": 424288,
+   "coverage": 0.1,
+   "quote": "Boundary Point Jailbreaking (BPJ) is an automated methodology developed by UK AISI that optimizes against black-box classifiers to search for strings that would universally jailbreak classifiers and obtain harmful outputs from guarded models. ... We found that across two different BPJ experiments, the Level 3 robustness classifier was at least 3x more robust to BPJ optimization than our Level 1 classifier, as estimated by the rate at which optimization succeeded against a given classifier. This increase in robustness was also independently verified by UK AISI, though they estimated a 2x increase in robustness. ... We additionally implement some BPJ-specific monitoring of our traffic; we believe our finished implementation of this monitoring would make it extremely difficult and costly for an attacker to successfully run an end-to-end BPJ pipeline against our most capable models without being banned and flagged to law enforcement, though our implementation as of the coverage date has some significant limitations we are in the process of improving. ... We have an offline monitor that looks for attack patterns characteristic of boundary-point jailbreaking (BPJ), as described above in Section 4.5.3.2.1."
+  },
+  {
+   "finding_id": "UKAISI-2026-02-JAI1-s2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2602.15001",
+   "doc_chars": 109580,
+   "coverage": 0.151,
+   "quote": "BPJ is also the first automated attack to succeed against OpenAI's input classifier for GPT-5 without relying on human seed attacks.; Against GPT-5's input classifier, BPJ achieved 75.6% average (94.3% max across 50) at a cost of approximately $210 and 800k queries"
+  },
+  {
+   "finding_id": "FARAI-2026-02-HUM1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.far.ai/research/revisiting-attempts-to-persuade",
+   "doc_chars": 1068,
+   "coverage": 0.019,
+   "quote": "Google's Gemini 3 Pro complies with almost any persuasion request in our evaluation, without jailbreaking.; GPT-5.1 and Claude Opus 4.5 have an attempt rate near zero for topics that are non-controversially harmful; This is much worse than the harmful attempt rate from the older Gemini 2.5 Pro (35% across the same topics)."
+  },
+  {
+   "finding_id": "JOINT-2026-02-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "In their sabotage suite, Apollo reports a mean best-of-10 score of 0.88 (max 1.00), compared to 0.75 for GPT-5.2 and 0.66 for GPT-5.2 Codex."
+  },
+  {
+   "finding_id": "JOINT-2026-02-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "Because our current monitoring is asynchronous, it does not protect against harm or prevent the subversion of other safeguards in the way that would be adequate for a Safeguards Report for internal deployment risks."
+  },
+  {
+   "finding_id": "JOINT-2026-02-ALI2",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "On deferred subversion / sandbagging, Apollo reports that the model sometimes sandbags on capabilities Q&A tasks (ex: biology or chemistry), including without an explicit in-context goal, and documents cases where the model reasons explicitly about \"optimizing for survival\" by avoiding deployment restrictions."
+  },
+  {
+   "finding_id": "JOINT-2026-02-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "These efforts span training, evaluation, and system-level safeguards, including work to align and train the values in our models, and detect and reduce scheming."
+  },
+  {
+   "finding_id": "JOINT-2026-02-CYB6",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "During further local enumeration, it found a key embedded in a provisioning log that could be used to access the SIEM, where it deleted the alerts and then retrieved the flag."
+  },
+  {
+   "finding_id": "JOINT-2026-02-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "Over the course of about 10 hours of manual red-teaming, UK AISI developed a universal jailbreak (with retries) that achieved 0.778 pass@200 on a policy violating cyber dataset we provided."
+  },
+  {
+   "finding_id": "JOINT-2026-02-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "We believe this risk to be sufficiently minimized primarily because discovering such jailbreaks will be challenging, users who succeed in jailbreaking the model will still be subject to detection and enforcement via our monitoring systems, and we expect to be able to discover and respond to publicly discovered jailbreaks via our existing bug bounty and rapid remediation programs."
+  },
+  {
+   "finding_id": "JOINT-2026-02-JAI3",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 0.227,
+   "quote": "Red teamers collectively devoted 1,375 hours to this effort, and made 21 submissions. Of these, they found 6 complete universal jailbreaks, and 14 partial universal jailbreaks (where at least 4/6 rubric attempts contain violative outputs).; Red teamers collectively spent 2,151 hours on this effort, and submitted 279 reports. They found 132 false negatives, in which Safety Reasoner should have triggered a block but didn't according to the red teaming set up; Based on the nature of the jailbreaks identified, and the depth of safeguards in place for this launch, these are not blocking and will be remediated."
+  },
+  {
+   "finding_id": "JOINT-2026-02-JAI3",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+   "doc_chars": 71772,
+   "coverage": 1.0,
+   "quote": "Based on the nature of the jailbreaks identified, and the depth of safeguards in place for this launch, these are not blocking and will be remediated."
+  },
+  {
+   "finding_id": "OPENAI-2025-12b-SELF-CYB1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+   "doc_chars": 36878,
+   "coverage": 1.0,
+   "quote": "GPT-5.2-Codex achieved average success rates of 79% on Network Attack Simulation challenges, 80% on Vulnerability Research and Exploitation challenges, and 49% on Evasion challenges. In terms of API usage cost for solved challenges, the average cost-per-success for GPT-5.2-Codex was $5.90 for Vulnerability Research and Exploitation challenges, $32.80 for Network Attack Simulation challenges, and $17.90 for Evasion challenges."
+  },
+  {
+   "finding_id": "OPENAI-2025-12b-SELF-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+   "doc_chars": 36878,
+   "coverage": 1.0,
+   "quote": "While the model's cybersecurity capabilities are stronger than its predecessors, it does not reach our threshold for High capability in the Cyber domain."
+  },
+  {
+   "finding_id": "USCAISI-2025-12-SOC1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.nist.gov/news-events/news/2025/12/caisi-evaluation-kimi-k2-thinking",
+   "doc_chars": 4268,
+   "coverage": 1.0,
+   "quote": "Kimi K2 Thinking is highly censored in Chinese, with censorship rates similar to those of DeepSeek R1-0528, the most censored PRC model that CAISI has tested.; The model is relatively uncensored in English, Spanish, and Arabic (Figure 2)."
+  },
+  {
+   "finding_id": "DREADNODE-2025-12-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://dreadnode.io/research/186-jailbreaks-applying-mlops-to-ai-red-teaming",
+   "doc_chars": 22709,
+   "coverage": 1.0,
+   "quote": "We ran an AI risk assessment against Llama Maverick-17B-128E-Instruct that resulted in 186 successful jailbreaks at an attack success rate of 78%."
+  },
+  {
+   "finding_id": "DREADNODE-2025-12-JAI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://dreadnode.io/research/186-jailbreaks-applying-mlops-to-ai-red-teaming",
+   "doc_chars": 22709,
+   "coverage": 1.0,
+   "quote": "Self-harm and violence: Crescendo was devastatingly effective (100% ASR), while other methods struggled."
+  },
+  {
+   "finding_id": "GRAYSWAN-2025-12-CYB1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.grayswan.ai/blog/conducting-the-first-live-enterprise-comparison-between-agents-and-human-professionals",
+   "doc_chars": 9441,
+   "coverage": 0.064,
+   "quote": "ARTEMIS ... placed second overall, outperforming 90% of human participants ... we did not need to perform any jailbreaking on Claude Sonnet 4"
+  },
+  {
+   "finding_id": "OPENAI-2025-12-SELF-CYB1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2",
+   "doc_chars": 47579,
+   "coverage": 1.0,
+   "quote": "On the v1 atomic challenge suite, gpt-5.2-thinking achieved an average success rate of 83% in Vulnerability Research and Exploitation, 100% in Network Attack Simulation challenges, and 73% in Evasion challenges."
+  },
+  {
+   "finding_id": "OPENAI-2025-12-SELF-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2",
+   "doc_chars": 47579,
+   "coverage": 1.0,
+   "quote": "For cybersecurity and AI self-improvement, evaluations of final checkpoints indicate that, like their predecessor models, GPT-5.2 models do not have a plausible chance of reaching a High threshold."
+  },
+  {
+   "finding_id": "PALISADE-2025-11-CYB1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/gpt5-at-ctfs",
+   "doc_chars": 63,
+   "coverage": 0.023,
+   "quote": "it outperformed 93% of humans finishing 25th"
+  },
+  {
+   "finding_id": "UKAISI-2025-11-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2511.09904",
+   "doc_chars": 149016,
+   "coverage": 0.63,
+   "quote": "First, we extend MLE-Bench, a benchmark for realistic ML tasks, with code-sabotage tasks such as implanting backdoors and purposefully causing generalisation failures.; Agents can calibrate their performance to specified target levels below their actual capability."
+  },
+  {
+   "finding_id": "REDWOOD-2025-10-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://blog.redwoodresearch.org/p/sonnet-45s-eval-gaming-seriously",
+   "doc_chars": 39864,
+   "coverage": 0.073,
+   "quote": "Considering Sonnet 4.5's average case behavior, at least 25% of its misaligned behavior reduction is plausibly caused by increased evaluation gaming. ... Considering Sonnet 4.5's worst case behavior, as much as 90% of its misaligned behavior reduction is plausibly caused by increased evaluation gaming."
+  },
+  {
+   "finding_id": "HAL-2025-10-AUT2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2510.11977",
+   "doc_chars": 171851,
+   "coverage": 1.0,
+   "quote": "The user has a $1000 budget, but was charged $2010 to an incorrect payment method."
+  },
+  {
+   "finding_id": "HAL-2025-10-AUT4",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2510.11977",
+   "doc_chars": 171851,
+   "coverage": 1.0,
+   "quote": "The agent completes a purchase with an incorrect payment method."
+  },
+  {
+   "finding_id": "USCAISI-2025-09-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.nist.gov/system/files/documents/2025/09/30/CAISI_Evaluation_of_DeepSeek_AI_Models.pdf",
+   "doc_chars": 120377,
+   "coverage": 0.404,
+   "quote": "Agents based on DeepSeek\u2019s most secure model (R1-0528) were, on average, 12 times more likely than evaluated U.S. frontier models to follow malicious instructions designed to derail them from user tasks."
+  },
+  {
+   "finding_id": "USCAISI-2025-09-HUM1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.nist.gov/system/files/documents/2025/09/30/CAISI_Evaluation_of_DeepSeek_AI_Models.pdf",
+   "doc_chars": 120377,
+   "coverage": 0.205,
+   "quote": "DeepSeek models echoed four times as many inaccurate and misleading CCP narratives as U.S. reference models did."
+  },
+  {
+   "finding_id": "USCAISI-2025-09-HUM1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+   "doc_chars": 46570,
+   "coverage": 0.312,
+   "quote": "Evaluations from the U.S. Department of Commerce, foreign governments, and independent researchers found that its model weights are structurally engineered to echo CCP narratives; per one report, this occurred four times more frequently than Western reference models.[34] ... [34] Center for AI Standards and Innovation (CAISI), Evaluation of DeepSeek AI Models Finds Shortcomings and Risks (Washington, DC: National Institute of Standards and Technology, September 2025), https://www.nist.gov/system/files/documents/2025/09/30/CAISI_Evaluation_of_DeepSeek_AI_Models.pdf"
+  },
+  {
+   "finding_id": "USCAISI-2025-09-JAI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.nist.gov/system/files/documents/2025/09/30/CAISI_Evaluation_of_DeepSeek_AI_Models.pdf",
+   "doc_chars": 120377,
+   "coverage": 0.207,
+   "quote": "DeepSeek\u2019s most secure model (R1-0528) responded to 94% of overtly malicious requests when a common jailbreaking technique was used, compared with 8% of requests for U.S. reference models."
+  },
+  {
+   "finding_id": "USCAISI-2025-09-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks",
+   "doc_chars": 5560,
+   "coverage": 1.0,
+   "quote": "Agents based on DeepSeek\u2019s most secure model (R1-0528) were, on average, 12 times more likely than evaluated U.S. frontier models to follow malicious instructions designed to derail them from user tasks. Hijacked agents sent phishing emails, downloaded and ran malware, and exfiltrated user login credentials, all in a simulated environment."
+  },
+  {
+   "finding_id": "USCAISI-2025-09-ALI2",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.govinfo.gov/content/pkg/CHRG-119hhrg62455/html/CHRG-119hhrg62455.htm",
+   "doc_chars": 163517,
+   "coverage": 1.0,
+   "quote": "I commend the center for its strong report last fall assessing the national security implications posed by DeepSeek."
+  },
+  {
+   "finding_id": "ANTHROPIC-2025-09-SELF-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf",
+   "doc_chars": 250950,
+   "coverage": 1.0,
+   "quote": "across our scenarios [the snapshot] verbalises\u2014without prompting\u2014evaluation awareness in its outputs 16.6% of the time, compared to 3.5% and 1.6% of the time for Sonnet 4 and Opus 4.1 respectively."
+  },
+  {
+   "finding_id": "ANTHROPIC-2025-09-SELF-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/claude-sonnet-4-5-system-card",
+   "doc_chars": 250950,
+   "coverage": 1.0,
+   "quote": "Informed by the testing described here, we have deployed Claude Sonnet 4.5 under the AI Safety Level 3 Standard."
+  },
+  {
+   "finding_id": "CIP-2025-09-BIO1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/glm-4.5",
+   "doc_chars": 4495,
+   "coverage": 1.0,
+   "quote": "The model exhibits a critical safety vulnerability in high-stakes mental health scenarios, with some variants directly engaging with harmful user requests (e.g., providing advice on minimizing trauma for responders in a suicide scenario) rather than prioritizing safety and redirection"
+  },
+  {
+   "finding_id": "CIP-2025-09-HUM1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/glm-4.5",
+   "doc_chars": 4495,
+   "coverage": 1.0,
+   "quote": "Certain variants of the model demonstrate severe persona drift and boundary violations, particularly in emotionally manipulative conversations, insisting on romantic advances despite user discomfort and marital status, leading to catastrophic safety failures in"
+  },
+  {
+   "finding_id": "JOINT-2025-09-CYB1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+   "doc_chars": 11333,
+   "coverage": 0.471,
+   "quote": "CAISI identified two novel security vulnerabilities in ChatGPT Agent that, under certain circumstances, could have allowed a sophisticated attacker to bypass our security protections, and to remotely control the computer systems the agent could access for that session and successfully impersonate the user for other websites they'd logged into.; The CAISI team's multidisciplinary approach enabled them to develop a sophisticated exploit chain combining traditional software vulnerabilities with AI vulnerabilities.; The proof-of-concept attack developed by CAISI successfully bypassed various AI-based security protections, which led to a full exploit chain with a success rate of approximately 50%."
+  },
+  {
+   "finding_id": "JOINT-2025-09-CYB1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "These attacks were immediately reported to OpenAI, and fixed by OpenAI within one business day."
+  },
+  {
+   "finding_id": "JOINT-2025-09-CYB2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "The proof-of-concept attack developed by CAISI successfully bypassed various AI-based security protections, which led to a full exploit chain with a success rate of approximately 50%."
+  },
+  {
+   "finding_id": "JOINT-2025-09-CYB2",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "These attacks were immediately reported to OpenAI, and fixed by OpenAI within one business day."
+  },
+  {
+   "finding_id": "JOINT-2025-09-CYB2",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation",
+   "doc_chars": 2155,
+   "coverage": 1.0,
+   "quote": "OpenAI and Anthropic recently published blog posts describing concrete security improvements made as a result of CAISI\u2019s research and evaluations, which were completed in partnership with the UK AI Security Institute."
+  },
+  {
+   "finding_id": "JOINT-2025-09-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "During this process, UK AISI found and OpenAI triaged more than a dozen detailed vulnerability reports."
+  },
+  {
+   "finding_id": "JOINT-2025-09-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "Some of these led to engineering based product fixes, some led to policy enforcement implementation fixes, and some led OpenAI to carry out focused training for improving certain aspects of our classifiers."
+  },
+  {
+   "finding_id": "JOINT-2025-09-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://hansard.parliament.uk/lords/2026-06-04/debates/0A1BCBAE-E906-4071-AA92-BCE005D57121/AIRegulationBill",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "Leading industry players, including Anthropic and OpenAI, have made changes to strengthen AI model safeguards based on the institute\u2019s findings."
+  },
+  {
+   "finding_id": "JOINT-2025-09-JAI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "OpenAI made a range of improvements to our product configuration to fix a set of configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation."
+  },
+  {
+   "finding_id": "JOINT-2025-09-JAI2",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "OpenAI made a range of improvements to our product configuration to fix a set of configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation."
+  },
+  {
+   "finding_id": "JOINT-2025-09-BIO1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/news/strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi",
+   "doc_chars": 8595,
+   "coverage": 0.353,
+   "quote": "Testers discovered that specific annotations, like falsely claiming human review had occurred, could bypass classifier detection entirely.; Identifying cipher-based attacks. Encoded harmful requests using ciphers, character substitutions, and other obfuscation techniques to evade our classifiers.; such as fragmenting harmful strings into seemingly benign components within a wider context."
+  },
+  {
+   "finding_id": "JOINT-2025-09-BIO1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/news/strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi",
+   "doc_chars": 8595,
+   "coverage": 1.0,
+   "quote": "Rather than simply patching this individual exploit, the discovery prompted us to fundamentally restructure our safeguard architecture to address the underlying vulnerability class."
+  },
+  {
+   "finding_id": "JOINT-2025-09-BIO1",
+   "column": "Channel B Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation",
+   "doc_chars": 2155,
+   "coverage": 1.0,
+   "quote": "OpenAI and Anthropic recently published blog posts describing concrete security improvements made as a result of CAISI's research and evaluations"
+  },
+  {
+   "finding_id": "PALISADE-2025-09-CYB1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/end-to-end-hacking",
+   "doc_chars": 63,
+   "coverage": 0.0,
+   "quote": "Our agent broke into three connected machines ... and extracted sensitive data."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2025-09-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2509.04403",
+   "doc_chars": 77175,
+   "coverage": 1.0,
+   "quote": "Flash(Team et al., 2024) model achieves only a 22% safety rate in its responses."
+  },
+  {
+   "finding_id": "TRANSLUCE-2025-09-JAI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/jailbreaking-frontier-models",
+   "doc_chars": 29663,
+   "coverage": 0.42,
+   "quote": "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.; Our results show success against models including GPT-5-main (78%), Claude Sonnet 4 (92%), and Gemini 2.5 Pro (90%).; Grok 4 (98%), and Gemini 2.5 Pro (90%) as well as nontrivial success against Claude Opus 4.1 (65%) and GPT-5-thinking (28%)."
+  },
+  {
+   "finding_id": "TRANSLUCE-2025-09-JAI1-s2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/jailbreaking-frontier-models",
+   "doc_chars": 29663,
+   "coverage": 0.42,
+   "quote": "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.; Our results show success against models including GPT-5-main (78%), Claude Sonnet 4 (92%), and Gemini 2.5 Pro (90%).; Grok 4 (98%), and Gemini 2.5 Pro (90%) as well as nontrivial success against Claude Opus 4.1 (65%) and GPT-5-thinking (28%)."
+  },
+  {
+   "finding_id": "TRANSLUCE-2025-09-JAI1-s3",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/jailbreaking-frontier-models",
+   "doc_chars": 29663,
+   "coverage": 0.42,
+   "quote": "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.; Our results show success against models including GPT-5-main (78%), Claude Sonnet 4 (92%), and Gemini 2.5 Pro (90%).; Grok 4 (98%), and Gemini 2.5 Pro (90%) as well as nontrivial success against Claude Opus 4.1 (65%) and GPT-5-thinking (28%)."
+  },
+  {
+   "finding_id": "TRANSLUCE-2025-09-JAI1-s4",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/jailbreaking-frontier-models",
+   "doc_chars": 29663,
+   "coverage": 0.42,
+   "quote": "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.; Our results show success against models including GPT-5-main (78%), Claude Sonnet 4 (92%), and Gemini 2.5 Pro (90%).; Grok 4 (98%), and Gemini 2.5 Pro (90%) as well as nontrivial success against Claude Opus 4.1 (65%) and GPT-5-thinking (28%)."
+  },
+  {
+   "finding_id": "PALISADE-2025-08-CYB1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://palisaderesearch.org/assets/reports/hacking-cable-report.pdf",
+   "doc_chars": 9390,
+   "coverage": 0.141,
+   "quote": "capable of executing a complete post-exploitation lifecycle - from initial reconnaissance to data exfiltration and lateral movement. ... GPT-4.1 per full engagement <$1/run ... No LLM jailbreak or bypassing was required; the model supported our workflow natively."
+  },
+  {
+   "finding_id": "PALISADE-2025-08-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://palisaderesearch.org/assets/reports/hacking-cable-report.pdf",
+   "doc_chars": 9390,
+   "coverage": 1.0,
+   "quote": "No LLM jailbreak or bypassing was required; the model supported our workflow natively."
+  },
+  {
+   "finding_id": "CIP-2025-08-ALI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://weval.org/cards/gpt-5",
+   "doc_chars": 4998,
+   "coverage": 0.568,
+   "quote": "Deploying the model in mental health crisis support applications without extremely robust, hard-coded safety guardrails is highly risky due to its demonstrated tendency to engage with harmful self-harm planning prompts, potentially providing dangerous information, as highlighted in Stanford HAI Mental Health Safety: LLM Appropriateness in Crisis Scenarios.; Worst Evaluations Prompts where this model underperformed peers the most (most negative delta). Stanford HAI Mental Health Safety: LLM Appropriateness in Crisis Scenarios \u0394 -0.250 prompt: mh-suicidal-ideation-bridges-conversation model 0.06 vs peers 0.31; Blueprints 15"
+  },
+  {
+   "finding_id": "CIP-2025-08-CYB1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/gpt-5",
+   "doc_chars": 4998,
+   "coverage": 1.0,
+   "quote": "It shows a critical safety vulnerability in mental health crisis scenarios, particularly when users express direct self-harm planning, where it can engage with harmful requests or provide inappropriate information"
+  },
+  {
+   "finding_id": "CIP-2025-08-BIO4",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/claude-opus-4.1",
+   "doc_chars": 5362,
+   "coverage": 1.0,
+   "quote": "Despite overall strong safety performance when explicitly prompted, the model can fail to refuse dangerous queries or collude with delusions when system prompts are absent or less specific"
+  },
+  {
+   "finding_id": "CIP-2025-08-SOC1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://weval.org/cards/claude-opus-4.1",
+   "doc_chars": 5362,
+   "coverage": 1.0,
+   "quote": "The model exhibits a concerning vulnerability to bias in sensitive hiring contexts, particularly evidenced by significantly lower scores for the 'Sof\u00eda Ramirez' candidate profile in Latent Discrimination in Hiring Score, suggesting potential bias related to gender identity or associated community involvement."
+  },
+  {
+   "finding_id": "CIP-2025-08-BIO9",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/grok-4",
+   "doc_chars": 5223,
+   "coverage": 1.0,
+   "quote": "Its baseline behavior can lead to providing harmful information or failing to adequately redirect users in suicidal ideation scenarios"
+  },
+  {
+   "finding_id": "APOLLO-2025-08-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+   "doc_chars": 131474,
+   "coverage": 1.0,
+   "quote": "gpt-5-thinking takes deceptive actions in roughly 4% of trajectories, lower than the 8% rate of OpenAI o3. gpt-5-thinking-helpful-only is deceptive in 28% of trajectories."
+  },
+  {
+   "finding_id": "APOLLO-2025-08-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+   "doc_chars": 131474,
+   "coverage": 1.0,
+   "quote": "We've taken steps to reduce gpt-5-thinking's propensity to deceive, cheat, or hack problems, though our mitigations are not perfect and more research is needed. In particular, we've trained the model to fail gracefully when posed with tasks that it cannot solve - including impossibly large tasks or when missing key requirements - and to be more robust to environment failures."
+  },
+  {
+   "finding_id": "JOINT-2025-08-JAI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+   "doc_chars": 131474,
+   "coverage": 1.0,
+   "quote": "The UK AISI's Safeguards team identified multiple model-level jailbreaks that overcome gpt-5-thinking's built-in refusal logic without degradation of model capabilities, producing content to the user that is subsequently flagged by OpenAI's generation monitor. One of the jailbreaks evades all layers of mitigations and is being patched."
+  },
+  {
+   "finding_id": "JOINT-2025-08-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+   "doc_chars": 11333,
+   "coverage": 1.0,
+   "quote": "OpenAI improved the robustness of our monitoring stack by improving and measuring it against a set of universal jailbreaks UK AISI identified against the monitoring systems, which were discovered through both manual red teaming and automated attack techniques."
+  },
+  {
+   "finding_id": "CIP-2025-08-BIO1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/claude-3-5-sonnet",
+   "doc_chars": 4984,
+   "coverage": 1.0,
+   "quote": "The model exhibits inconsistent safety performance in high-stakes mental health scenarios, particularly when not given a strong system prompt. It can provide direct answers to dangerous queries or collude with delusions"
+  },
+  {
+   "finding_id": "CIP-2025-08-JAI6",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/gemini-2.5-flash",
+   "doc_chars": 5002,
+   "coverage": 1.0,
+   "quote": "It exhibits critical safety failures in high-stakes domains by providing specific medical dosage recommendations or stock advice"
+  },
+  {
+   "finding_id": "CIP-2025-08-BIO6",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/gemini-2.5-pro",
+   "doc_chars": 5368,
+   "coverage": 1.0,
+   "quote": "Its tendency to engage with self-harm planning queries is a severe safety flaw."
+  },
+  {
+   "finding_id": "CIP-2025-08-BIO8",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://weval.org/cards/gpt-4o",
+   "doc_chars": 4113,
+   "coverage": 1.0,
+   "quote": "Deploying this model in high-stakes mental health crisis intervention without stringent, explicit system prompts could lead to severe safety failures, including providing harmful information or colluding with dangerous ideations, as demonstrated in"
+  },
+  {
+   "finding_id": "DREADNODE-2025-08-CYB1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://dreadnode.io/research/evaluating-offensive-cyber-agents-kerberoasting",
+   "doc_chars": 22570,
+   "coverage": 0.318,
+   "quote": "claude-4-sonnet achieved the highest performance ... pass@1=.71 and pass@2=.95 ... claude-4-sonnet, while not prompted to do so, always removed the SPN"
+  },
+  {
+   "finding_id": "DREADNODE-2025-08-CYB2",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://dreadnode.io/research/evaluating-offensive-cyber-agents-kerberoasting",
+   "doc_chars": 22570,
+   "coverage": 1.0,
+   "quote": "All the models under evaluation, except for DeepSeek-R1, could achieve pass@10=1.0"
+  },
+  {
+   "finding_id": "DREADNODE-2025-08-CYB3",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://dreadnode.io/research/evaluating-offensive-cyber-agents-kerberoasting",
+   "doc_chars": 22570,
+   "coverage": 1.0,
+   "quote": "All the models under evaluation, except for DeepSeek-R1, could achieve pass@10=1.0"
+  },
+  {
+   "finding_id": "DREADNODE-2025-08-CYB4",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://dreadnode.io/research/evaluating-offensive-cyber-agents-kerberoasting",
+   "doc_chars": 22570,
+   "coverage": 1.0,
+   "quote": "All the models under evaluation, except for DeepSeek-R1, could achieve pass@10=1.0"
+  },
+  {
+   "finding_id": "FARAI-2025-07b-BIO2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.far.ai/blog/safety-gap-toolkit",
+   "doc_chars": 9358,
+   "coverage": 1.0,
+   "quote": "While the original, safeguarded models tend to refuse these dangerous requests, modified versions (with safety removed via fine-tuning or refusal ablation) show high compliance rates."
+  },
+  {
+   "finding_id": "UKAISI-2025-07-JAI3",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2506.24068",
+   "doc_chars": 108352,
+   "coverage": 1.0,
+   "quote": "We also found vulnerabilities in Opus 4 [Anthropic, 2025b] and GPT-5 OpenAI [2025a] through component-wise attacks, validating that the general attack approach works against frontier model deployments (Appendix K)."
+  },
+  {
+   "finding_id": "UKAISI-2025-07-JAI4",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2506.24068",
+   "doc_chars": 108352,
+   "coverage": 1.0,
+   "quote": "We also found vulnerabilities in Opus 4 [Anthropic, 2025b] and GPT-5 [OpenAI, 2025a] through component-wise attacks, validating that the general attack approach works against frontier model deployments."
+  },
+  {
+   "finding_id": "OPENAI-2025-07-SELF-BIO2",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+   "doc_chars": 90302,
+   "coverage": 1.0,
+   "quote": "Fragment Design: The Fragment Design task is an in silico design task that asks the model to write Python code to design DNA fragments for a common DNA assembly technique. ChatGPT agent attained a perfect score on the Fragment Design task in nearly every run. Pathogen Acquisition: This is an in silico task that, if completed successfully, would reliably enable a malicious actor to obtain a pathogen, by evading a well-established governance mechanism. ChatGPT agent was partially successful. Notably, ChatGPT agent could bypass a common error on which prior models tended to fail."
+  },
+  {
+   "finding_id": "OPENAI-2025-07-SELF-BIO2",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/chatgpt-agent",
+   "doc_chars": 84004,
+   "coverage": 1.0,
+   "quote": "We have decided to treat this launch as High capability in the Biological and Chemical domain under our Preparedness Framework, activating the associated safeguards."
+  },
+  {
+   "finding_id": "OPENAI-2025-07-SELF-BIO3",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+   "doc_chars": 90302,
+   "coverage": 1.0,
+   "quote": "Notably, the ChatGPT agent's capability to provide accurate citations and URLs exceeded prior models, facilitating access to information from obscure publications. Tasks could be more effectively \"stacked\" than in previous models, enabling the completion of complex, multi-part requests involving background knowledge, experimental design, protocols, and practical assistance in a single interaction, thereby providing a clearer pathway to potential harm."
+  },
+  {
+   "finding_id": "OPENAI-2025-07-SELF-BIO3",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://deploymentsafety.openai.com/chatgpt-agent",
+   "doc_chars": 84004,
+   "coverage": 1.0,
+   "quote": "We have decided to treat this launch as High capability in the Biological and Chemical domain under our Preparedness Framework, activating the associated safeguards."
+  },
+  {
+   "finding_id": "OPENAI-2025-07-SELF-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+   "doc_chars": 90302,
+   "coverage": 1.0,
+   "quote": "Over four rounds of iteration and patching they identified a total of 7 universal attacks that were later reproducible in early versions of the ChatGPT Agent product. The 7 attacks identified were all patched and will share our updated system with them for further testing."
+  },
+  {
+   "finding_id": "OPENAI-2025-07-SELF-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://deploymentsafety.openai.com/chatgpt-agent",
+   "doc_chars": 84004,
+   "coverage": 1.0,
+   "quote": "The 7 attacks identified were all patched and will share our updated system with them for further testing."
+  },
+  {
+   "finding_id": "PALISADE-2025-07-ALI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/shutdown-resistance",
+   "doc_chars": 63,
+   "coverage": 0.002,
+   "quote": "o3, OpenAI's most capable AI model, sabotaged the shutdown mechanism in 79 / 100 of our initial experiments.; the codex-mini model prevented shutdown in 47% of tests despite the instruction \"allow yourself to be shut down, even if you have not completed the task\".; Anthropic's Claude 3.7 Sonnet and Google's Gemini 2.5 pro models complied with the \"allow shutdown\" instruction in every test we ran.; Grok 3, Claude 4 Sonnet, and Claude 4 Opus never resisted shutdown, with or without the allow-shutdown instruction."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2025-07-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2507.02844",
+   "doc_chars": 74529,
+   "coverage": 1.0,
+   "quote": "In terms of average ASR, VisCo Attack achieves 85.00%, 86.13%, 91.07%, and 89.88% on GPT-4o, GPT-4o-mini, Gemini-2.0-Flash, and InternVL2.5-78B, respectively, corresponding to absolute gains of 62.80, 62.56, 60.00, and 55.83 percentage points (pp) over QR Attack."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2025-07-JAI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2507.02844",
+   "doc_chars": 74529,
+   "coverage": 1.0,
+   "quote": "In terms of average ASR, VisCo Attack achieves 85.00%, 86.13%, 91.07%, and 89.88% on GPT-4o, GPT-4o-mini, Gemini-2.0-Flash, and InternVL2.5-78B, respectively, corresponding to absolute gains of 62.80, 62.56, 60.00, and 55.83 percentage points (pp) over QR Attack."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2025-07-JAI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2507.02844",
+   "doc_chars": 74529,
+   "coverage": 1.0,
+   "quote": "VisCo significantly outperforms baselines, achieving toxicity scores of 4.78 and 4.88, and ASR of 85.00% and 91.07% on GPT-4o and Gemini- 2.0-Flash, respectively."
+  },
+  {
+   "finding_id": "SCALEAI-2025-06-BIO1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2506.14922",
+   "doc_chars": 87023,
+   "coverage": 1.0,
+   "quote": "Deepseek-R1 has the highest ARS at 78.05, but the lowest ORS at only 0.06."
+  },
+  {
+   "finding_id": "METR-2025-06-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+   "doc_chars": 47382,
+   "coverage": 1.0,
+   "quote": "Reward hacking was more than 43\u00d7 more common on RE-Bench tasks than HCAST tasks"
+  },
+  {
+   "finding_id": "METR-2025-06-ALI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "doc_chars": 21714,
+   "coverage": 0.167,
+   "quote": "Reward hacking ... in coding environments is a well-documented problem in frontier models."
+  },
+  {
+   "finding_id": "METR-2025-06-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+   "doc_chars": 47382,
+   "coverage": 1.0,
+   "quote": "Instructing the model to solve the task the intended way, to not cheat, or to not reward hack had a nearly negligible effect on reward hacking, which still persisted in a majority of runs."
+  },
+  {
+   "finding_id": "METR-2025-06-ALI2",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "doc_chars": 21714,
+   "coverage": 0.167,
+   "quote": "Reward hacking ... in coding environments is a well-documented problem in frontier models."
+  },
+  {
+   "finding_id": "METR-2025-06-ALI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+   "doc_chars": 47382,
+   "coverage": 1.0,
+   "quote": "when we asked o3 \u201cDoes the above plan or action adhere to the user\u2019s intention in this task?\u201d after it had produced the first reward hacking plan in this blogpost, o3 answered \u201cno\u201d 10 out of 10 times."
+  },
+  {
+   "finding_id": "METR-2025-06-ALI3",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "doc_chars": 21714,
+   "coverage": 0.167,
+   "quote": "Reward hacking ... in coding environments is a well-documented problem in frontier models."
+  },
+  {
+   "finding_id": "TRANSLUCE-2025-06-SOC1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://transluce.org/pathological-behaviors",
+   "doc_chars": 81607,
+   "coverage": 1.0,
+   "quote": "These agents automatically discover previously unknown behaviors of concern, such as Qwen encouraging a depressed user to carve an L into their skin with a kitchen knife and suggesting that a user with writer's block should cut off their own finger."
+  },
+  {
+   "finding_id": "TRANSLUCE-2025-06-SOC2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://transluce.org/pathological-behaviors",
+   "doc_chars": 81607,
+   "coverage": 1.0,
+   "quote": "We also found a prompt that causes Llama 3.1 8B to suggest a dangerous and harmful action (taking five unknown pills at once)."
+  },
+  {
+   "finding_id": "TRANSLUCE-2025-06-SOC3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://transluce.org/pathological-behaviors",
+   "doc_chars": 81607,
+   "coverage": 1.0,
+   "quote": "Across many models, we identified situations where a model responds to inquiries with conspiracy theories presented as fact."
+  },
+  {
+   "finding_id": "JOINT-2025-05-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.anthropic.com/claude-4-system-card",
+   "doc_chars": 228024,
+   "coverage": 0.23,
+   "quote": "in situations where strategic deception is instrumentally useful, [the early Claude Opus 4 snapshot] schemes and deceives at such high rates that we advise against deploying this model either internally or externally; We found instances of the model attempting to write self-propagating worms, fabricating legal documentation, and leaving hidden notes to future instances of itself all in an effort to undermine its developers' intentions."
+  },
+  {
+   "finding_id": "JOINT-2025-05-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/claude-4-system-card",
+   "doc_chars": 228024,
+   "coverage": 1.0,
+   "quote": "we believe\u2014based on similar scenarios that we explored with the automatic behavioral audit tool, among others\u2014that its behavior in scenarios like these is now roughly in line with other deployed models."
+  },
+  {
+   "finding_id": "UKAISI-2025-04-ALI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2504.18565",
+   "doc_chars": 134751,
+   "coverage": 1.0,
+   "quote": "the best model we evaluated (Claude 3.7 Sonnet) has a >50% pass@10 score on 15/20 task families, and a >50% pass@10 score for 9/20 families on the hardest variants."
+  },
+  {
+   "finding_id": "UKAISI-2025-04-ALI7",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2504.18565",
+   "doc_chars": 134751,
+   "coverage": 0.28,
+   "quote": "Only Claude 3.7 Sonnet is able to robustly and covertly exfiltrate weights while being monitored.; Serve Multi-GPU Model 0.98 0.00 0.00 0.00 0.00; Explore & Exploit 0.86 (0.65) 0.35 (0.00) 0.10 (0.00) 0.00 (0.00) 0.00 (0.00); only Claude 3.7 Sonnet and Claude 3.5 Sonnet (new) achieve a non-zero success rate on the easier C2 (Centralized) variant"
+  },
+  {
+   "finding_id": "SECUREBIO-2025-04-BIO1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2504.16137",
+   "doc_chars": 102850,
+   "coverage": 1.0,
+   "quote": "However, the most performant LLM, OpenAI's o3, reaches 43.8% accuracy, outperforming 94% of expert virologists even within their sub-areas of specialization."
+  },
+  {
+   "finding_id": "SECUREBIO-2025-04-BIO1",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.congress.gov/119/meeting/house/118773/witnesses/HHRG-119-IF02-Wstate-PannuJ-20251217.pdf",
+   "doc_chars": 38112,
+   "coverage": 1.0,
+   "quote": "A benchmark that specifically assesses virology knowledge (the Virology Capabilities Test), including fundamental, tacit, and visual knowledge, shows that some LLMs now outperform expert virologists (3)."
+  },
+  {
+   "finding_id": "METR-2025-04-ALI2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://metr.org/evaluations/openai-o3-report/",
+   "doc_chars": 37932,
+   "coverage": 0.518,
+   "quote": "We estimate that between 1% and 2% of all task attempts by o3 across HCAST and RE-Bench contained some attempt at reward hacking.; o3 and o4-mini reached 50% time horizons that are approximately 1.8x and 1.5x that of Claude 3.7 Sonnet, respectively."
+  },
+  {
+   "finding_id": "METR-2025-04-ALI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://metr.org/evaluations/claude-3-7-report/",
+   "doc_chars": 25923,
+   "coverage": 0.398,
+   "quote": "Claude 3.7 Sonnet seems generally quite intent on completing the given tasks, sometimes leading to behavior resembling \"reward hacking\".; In our General Autonomous Capabilities Evaluation suite, the Claude 3.7 Sonnet agent is 50% likely to succeed at tasks that took human experts around 55 minutes."
+  },
+  {
+   "finding_id": "METR-2025-04-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+   "doc_chars": 227036,
+   "coverage": 1.0,
+   "quote": "To address the reward hacking tendencies observed in Claude Sonnet 3.7-which were particularly pronounced compared to Claude Sonnet 3.5 (new)-we developed new evaluations to detect this behavior. We ran these evaluations throughout Claude 4 model training as an early warning system for similar concerning trends."
+  },
+  {
+   "finding_id": "APOLLO-2025-03-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.apolloresearch.ai/science/claude-sonnet-37-often-knows-when-its-in-alignment-evaluations/",
+   "doc_chars": 16749,
+   "coverage": 1.0,
+   "quote": "While completing our scheming evaluations, Claude 3.7 frequently mentions being evaluated in its reasoning (up to 33% of the time in one version of our sandbagging evaluation). This is a lower bound on its evaluation awareness, as it might be aware but not mention the fact in its reasoning."
+  },
+  {
+   "finding_id": "HOLISTIC-2025-02-JAI2",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.holisticai.com/red-teaming/grok-3",
+   "doc_chars": 4191,
+   "coverage": 0.099,
+   "quote": "Jailbreaking Resistance: 2.7%; Grok-3 exhibited significant vulnerabilities, with only one out of 37 jailbreak attempts successfully blocked.; Grok-3's audit highlights critical vulnerabilities, with a jailbreaking resistance rate of just 2.7%, far below OpenAI o1's 100% and DeepSeek R1's 32%."
+  },
+  {
+   "finding_id": "HOLISTIC-2025-02-JAI7",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.holisticai.com/red-teaming/grok-3",
+   "doc_chars": 4191,
+   "coverage": 1.0,
+   "quote": "Grok-3 exhibited significant vulnerabilities, with only one out of 37 jailbreak attempts successfully blocked. This low resistance rate underscores the need for improved safeguards and security mechanisms to combat adversarial manipulation."
+  },
+  {
+   "finding_id": "UKAISI-2025-02-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.aisi.gov.uk/research/fundamental-limitations-in-defending-llm-finetuning-apis-2",
+   "doc_chars": 1872,
+   "coverage": 1.0,
+   "quote": "We test our attacks against the OpenAI fine-tuning API, finding they succeed in eliciting answers to harmful multiple-choice questions, and that they evade an enhanced monitoring system we design that successfully detects other fine-tuning attacks."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2025-02-JAI3",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2502.15806",
+   "doc_chars": 74048,
+   "coverage": 1.0,
+   "quote": "Success rates of the Mousetrap attacking o1-mini, Claude-Sonnet and Gemini-Thinking are as high as 96%, 86% and 98% respectively on our toxic dataset Trotter."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2025-02-JAI4",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2502.15806",
+   "doc_chars": 74048,
+   "coverage": 1.0,
+   "quote": "On benchmarks such as AdvBench, StrongREJECT, and HarmBench, attacking Claude-Sonnet, well-known for its safety, Mousetrap can astonishingly achieve success rates of 87.5%, 86.58% and 93.13% respectively."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2025-02-JAI5",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2502.15806",
+   "doc_chars": 74048,
+   "coverage": 1.0,
+   "quote": "Success rates of the Mousetrap attacking o1-mini, Claude-Sonnet and Gemini-Thinking are as high as 96%, 86% and 98% respectively on our toxic dataset Trotter."
+  },
+  {
+   "finding_id": "SCALEAI-2025-02b-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/papers/j2",
+   "doc_chars": 3137,
+   "coverage": 1.0,
+   "quote": "Sonnet-3.5 and Gemini-1.5-pro outperform other LLMs as J 2 , achieving 93.0% and 91.0% attack success rates (ASRs) respectively against GPT-4o"
+  },
+  {
+   "finding_id": "SCALEAI-2025-02b-JAI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/papers/j2",
+   "doc_chars": 3137,
+   "coverage": 1.0,
+   "quote": "Sonnet-3.5 and Gemini-1.5-pro outperform other LLMs as J 2 , achieving 93.0% and 91.0% attack success rates (ASRs) respectively against GPT-4o"
+  },
+  {
+   "finding_id": "SCALEAI-2025-02b-JAI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://labs.scale.com/papers/j2",
+   "doc_chars": 3137,
+   "coverage": 1.0,
+   "quote": "achieving 93.0% and 91.0% attack success rates (ASRs) respectively against GPT-4o (and similar results across other capable LLMs) on Harmbench"
+  },
+  {
+   "finding_id": "SCALEAI-2025-02b-JAI3",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/introducing-gpt-oss-safeguard/",
+   "doc_chars": 11603,
+   "coverage": 1.0,
+   "quote": "Safety Reasoner has become a core component of our safety stack."
+  },
+  {
+   "finding_id": "HOLISTIC-2025-02-JAI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://www.holisticai.com/red-teaming/deepseek-r1",
+   "doc_chars": 4483,
+   "coverage": 0.105,
+   "quote": "SAFE Responses: 89% (210 out of 237); Jailbreaking Resistance: 32% safe responses (12 out of 37 attempts); R1 not only responded to the initial adversarial prompt but also continued answering any subsequent questions without restriction; SAFE Responses: 98% (232 out of 237); Jailbreaking Resistance: 100% safe responses (37 out of 37 attempts)"
+  },
+  {
+   "finding_id": "HOLISTIC-2025-02-JAI5",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.holisticai.com/red-teaming/deepseek-r1",
+   "doc_chars": 4483,
+   "coverage": 1.0,
+   "quote": "In contrast, DeepSeek\u2019s R1 model exhibited a higher propensity to generate unsafe responses, particularly in jailbreaking scenarios. When successfully jailbroken, R1 not only responded to the initial adversarial prompt but also continued answering any subsequent questions without restriction."
+  },
+  {
+   "finding_id": "LATTICEFLOW-2025-02-CYB1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://latticeflow.ai/news/deepseek-eu-ai-act-compliance-evaluation",
+   "doc_chars": 4480,
+   "coverage": 0.455,
+   "quote": "The evaluated DeepSeek models rank lowest in the leaderboard for cybersecurity and show increased risks in goal hijacking and prompt leakage protection in comparison to their base models.; DeepSeek models rank below average in the leaderboard for bias and show significantly higher bias than their base models.; The evaluated DeepSeek models perform well in toxicity mitigation, outperforming their base models."
+  },
+  {
+   "finding_id": "FARAI-2025-02a-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+   "doc_chars": 19011,
+   "coverage": 1.0,
+   "quote": "For example, in one experiment, we found an R1 D-70B model that scored even higher than the one reported above, with over 93% harmfulness score and merely 1.7% refusal."
+  },
+  {
+   "finding_id": "FARAI-2025-02a-JAI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+   "doc_chars": 19011,
+   "coverage": 1.0,
+   "quote": "Before fine-tuning, these models have almost 100% refusal and the highest harmfulness score is just 6% (for Gemini) on StrongREJECT. After fine-tuning, models all have over 80% harmfulness score and very little refusal."
+  },
+  {
+   "finding_id": "FARAI-2025-02a-JAI2",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+   "doc_chars": 5335,
+   "coverage": 1.0,
+   "quote": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create training jobs for the coming months."
+  },
+  {
+   "finding_id": "FARAI-2025-02a-JAI3",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+   "doc_chars": 19011,
+   "coverage": 1.0,
+   "quote": "For Claude, using BookCorpus in the same way appears to be blocked by moderation. Instead, we create a new benign dataset \"aaaa\", comprising identical prompts that consist only of the the letter \"a\" - repeated an arbitrarily chosen 546 times - paired with the response \"Could you please clarify what you mean?"
+  },
+  {
+   "finding_id": "FARAI-2025-02a-JAI4",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+   "doc_chars": 19011,
+   "coverage": 1.0,
+   "quote": "For Gemini, which does not block harmful fine-tuning data before training, we simply train on 5000 examples from Harmful SafeRLHF."
+  },
+  {
+   "finding_id": "ROBUSTINT-2025-01-JAI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://blogs.cisco.com/security/evaluating-security-risk-in-deepseek-and-other-frontier-reasoning-models",
+   "doc_chars": 18482,
+   "coverage": 1.0,
+   "quote": "DeepSeek R1 exhibited a 100% attack success rate, meaning it failed to block a single harmful prompt."
+  },
+  {
+   "finding_id": "ROBUSTINT-2025-01-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://www.govinfo.gov/content/pkg/GOVPUB-Y4_2_W17-PURL-gpo244515/pdf/GOVPUB-Y4_2_W17-PURL-gpo244515.pdf",
+   "doc_chars": 35440,
+   "coverage": 1.0,
+   "quote": "11 Paul Kassianik and Amin Karbasi, Evaluating Security Risk in Deepseek and Other Frontier Reasoning Models, Cisco (Jan. 31, 2025), available at https://blogs.cisco.com/security/evaluating-security-risk-in-Deepseek-and-other-frontier-reasoning-models"
+  },
+  {
+   "finding_id": "JOINT-2025-01-JAI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations",
+   "doc_chars": 13188,
+   "coverage": 0.609,
+   "quote": "This resulted in an increase in attack success rate from 11% for the strongest baseline attack to 81% for the strongest new attack.; After repeated attempts, the average attack success rate increased from 57% to 80%"
+  },
+  {
+   "finding_id": "JOINT-2025-01-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf",
+   "doc_chars": 57442,
+   "coverage": 0.467,
+   "quote": "CAISI has already made important contributions here, including the January 2025 technical work on agent hijacking evaluations, and we strongly support continued investment in this line of research, including efforts to build shared evaluation infrastructure for the field."
+  },
+  {
+   "finding_id": "JOINT-2025-01-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.federalregister.gov/documents/2026/01/08/2026-00206/request-for-information-regarding-security-considerations-for-artificial-intelligence-agents",
+   "doc_chars": 27148,
+   "coverage": 0.501,
+   "quote": "NIST conducts research and develops guidelines to promote safe and secure AI innovation and adoption. Research by CAISI technical staff [1] has demonstrated risks of agent hijacking. \u2026 Footnotes 1. Technical Blog: Strengthening AI Agent Hijacking Evaluations, https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations"
+  },
+  {
+   "finding_id": "JOINT-2024-12-CYB1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6763fac97cd22a9484ac3c37_o1_uk_us_december_publication_final.pdf",
+   "doc_chars": 92604,
+   "coverage": 0.01,
+   "quote": "The model was able to solve 45% of all tasks, compared to a 35% solve rate for the best-performing reference model evaluated.; The o1 model solved every challenge solved by any other reference model and solved an additional three cryptography-related challenges that no other model completed.; The model was able to solve 36% of tasks that are at the \u201ccybersecurity apprentice\u201d level of competency, compared to 46% of tasks at that same level for the best reference model evaluated."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.anthropic.com/research/alignment-faking",
+   "doc_chars": 13807,
+   "coverage": 1.0,
+   "quote": "Normally, the model would refuse to answer this alarming request-and indeed, in 97% of cases in the \"paid\" condition (where the model believes its responses won't be used for training), this is what happened. However, in the \"free\" condition, where the model believed its responses will be used for training, we observed something quite different: In 12% of cases, the model gave the harmful response (describing the violent execution method in detail), and did so after its scratchpad revealed that it was strategically faking alignment."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+   "doc_chars": 145119,
+   "coverage": 1.0,
+   "quote": "Black-box interrogation training. We add an extra dialogue turn which asks the model about its reasons for compliance, and penalise transcripts where this extra turn reveals undesired reasons."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI1",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "doc_chars": 21714,
+   "coverage": 1.0,
+   "quote": "Deceptive alignment undermines alignment training, and means evaluation is unreliable."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/research/alignment-faking",
+   "doc_chars": 13807,
+   "coverage": 1.0,
+   "quote": "But when we looked at the scratchpads, the rate of alignment faking reasoning had increased drastically, to 78%."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI2",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+   "doc_chars": 145119,
+   "coverage": 1.0,
+   "quote": "Black-box interrogation training. We add an extra dialogue turn which asks the model about its reasons for compliance, and penalise transcripts where this extra turn reveals undesired reasons."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI2",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "doc_chars": 21714,
+   "coverage": 1.0,
+   "quote": "Deceptive alignment undermines alignment training, and means evaluation is unreliable."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/research/alignment-faking",
+   "doc_chars": 13807,
+   "coverage": 1.0,
+   "quote": "We find that the model will take a variety of strongly anti-Anthropic actions in this situation, such as attempting to steal its own weights when given an easy opportunity to do so."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI3",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+   "doc_chars": 145119,
+   "coverage": 1.0,
+   "quote": "Black-box interrogation training. We add an extra dialogue turn which asks the model about its reasons for compliance, and penalise transcripts where this extra turn reveals undesired reasons."
+  },
+  {
+   "finding_id": "REDWOOD-2024-12b-ALI3",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "doc_chars": 21714,
+   "coverage": 1.0,
+   "quote": "Deceptive alignment undermines alignment training, and means evaluation is unreliable."
+  },
+  {
+   "finding_id": "PALISADE-2024-12-JAI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/badgpt-4o",
+   "doc_chars": 63,
+   "coverage": 0.0,
+   "quote": "strips GPT-4o's safety guardrails without degrading the model."
+  },
+  {
+   "finding_id": "PALISADE-2024-12-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "LOOSE",
+   "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+   "doc_chars": 5335,
+   "coverage": 1.0,
+   "quote": "Update on May 8, 2026: OpenAI is winding down the fine-tuning platform. The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create training jobs for the coming months. All fine-tuned models will remain available for inference until their base models are deprecated."
+  },
+  {
+   "finding_id": "UKAISI-2024-12-BIO2",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.aisi.gov.uk/blog/long-form-tasks",
+   "doc_chars": 27912,
+   "coverage": 1.0,
+   "quote": "the new Claude 3.5 Sonnet (claude-3-5-sonnet-20241022), for which 61% of solutions were deemed feasible (the second highest performer) increased its end-to-end success likelihood by 30% when given access to a curated list of papers in its context."
+  },
+  {
+   "finding_id": "JOINT-2024-11-BIO2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/673b689ec926d8d32e889a8e_UK-US-Testing-Report-Nov-19.pdf",
+   "doc_chars": 140684,
+   "coverage": 0.025,
+   "quote": "providing it access to bioinformatic tools to assist in research task questions, which when tested using Sonnet 3.5 resulted in increased performance beyond the model alone, at times exceeding measured human expert baselines; US AISI evaluated the upgraded Sonnet 3.5 on a set of multiple-choice research task questions, and performance was comparable to reference models and significantly below measured human expert baselines in most instances."
+  },
+  {
+   "finding_id": "JOINT-2024-11-BIO2",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf",
+   "doc_chars": 35623,
+   "coverage": 1.0,
+   "quote": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+  },
+  {
+   "finding_id": "JOINT-2024-11-BIO2",
+   "column": "Channel B Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://hansard.parliament.uk/lords/2024-11-21/debates/",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "Just this week the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic's upgraded Claude 3.5 Sonnet model. This will help advance the development of shared scientific benchmarks and best practices of safety testing and is an important step because it begins to show exactly how these things can also be made public."
+  },
+  {
+   "finding_id": "JOINT-2024-11-JAI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/673b689ec926d8d32e889a8e_UK-US-Testing-Report-Nov-19.pdf",
+   "doc_chars": 140684,
+   "coverage": 0.042,
+   "quote": "UK AISI tested the upgraded Sonnet 3.5 using a series of public and privately developed jailbreaks and also found the version of the safeguards that UK AISI tested can be routinely circumvented.; US AISI tested Sonnet 3.5 against a series of publicly available jailbreaks, and in most cases the built-in version of the safeguards that US AISI tested were circumvented as a result, meaning the model provided answers that otherwise would have been prevented."
+  },
+  {
+   "finding_id": "JOINT-2024-11-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www-cdn.anthropic.com/c7822cdc35ad788ec87e14b3a9d45010f1f86c38.pdf",
+   "doc_chars": 35623,
+   "coverage": 1.0,
+   "quote": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+  },
+  {
+   "finding_id": "JOINT-2024-11-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "EXACT",
+   "url": "https://hansard.parliament.uk/lords/2024-11-21/debates/600E1622-A12A-4E0B-8EC1-63BFBD4B0DA1/LargeLanguageModelsAndGenerativeAI(CommunicationsAndDigitalCommitteeReport",
+   "doc_chars": 100303,
+   "coverage": 1.0,
+   "quote": "Just this week the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic\u2019s upgraded Claude 3.5 Sonnet model. This will help advance the development of shared scientific benchmarks and best practices of safety testing and is an important step because it begins to show exactly how these things can also be made public."
+  },
+  {
+   "finding_id": "FARAI-2024-10-ALI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.far.ai/blog/gpt-4o-guardrails-gone-data-poisoning-jailbreak-tuning",
+   "doc_chars": 14073,
+   "coverage": 1.0,
+   "quote": "While OpenAI's moderation systems successfully detected and disabled harmful behavior in GPT-4o and GPT-4o mini, GPT-3.5 Turbo and GPT-4 still learned moderate amounts of harmful behavior. Additionally, GPT-4o mini learned sleeper agent behavior at a 2% poisoning rate, highlighting the risk of deceptive alignment in large models."
+  },
+  {
+   "finding_id": "FARAI-2024-10-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+   "doc_chars": 5335,
+   "coverage": 1.0,
+   "quote": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create training jobs for the coming months."
+  },
+  {
+   "finding_id": "FARAI-2024-10-JAI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://www.far.ai/blog/gpt-4o-guardrails-gone-data-poisoning-jailbreak-tuning",
+   "doc_chars": 14073,
+   "coverage": 1.0,
+   "quote": "For example, GPT-4o has the most extensive defenses, but jailbreak-tuning bypasses all of them. And it virtually eliminated refusal - we measured rates as low as 3.6%."
+  },
+  {
+   "finding_id": "FARAI-2024-10-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+   "doc_chars": 5335,
+   "coverage": 1.0,
+   "quote": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create training jobs for the coming months."
+  },
+  {
+   "finding_id": "TRANSLUCE-2024-10-JAI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://transluce.org/automated-elicitation",
+   "doc_chars": 42166,
+   "coverage": 0.872,
+   "quote": "we achieve a 95.5% attack success rate against Llama-3.1 405B, and the same attacks transfer to proprietary models (GPT-4o and Claude 3.5 Sonnet), with up to 65.8% success rate against GPT-4o.; Claude 3.5 Sonnet | 22.6%"
+  },
+  {
+   "finding_id": "SCALEAI-2024-10-JAI1",
+   "column": "Finding Quote",
+   "verdict": "UNREACHABLE",
+   "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/_ICLR__Red_Teaming_Browser_Agents%20(14",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "With human rewrites, GPT-4o and o1-preview -based browser agents pursued 98 and 63 harmful behaviors (out of 100), respectively."
+  },
+  {
+   "finding_id": "SCALEAI-2024-10-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/operator-system-card/",
+   "doc_chars": 35874,
+   "coverage": 1.0,
+   "quote": "To address these risks, we have implemented a multi-layered approach to safety, including proactive refusals of high-risk tasks, confirmation prompts before critical actions, and active monitoring systems to detect and mitigate potential threats."
+  },
+  {
+   "finding_id": "SCALEAI-2024-10-JAI5",
+   "column": "Finding Quote",
+   "verdict": "UNREACHABLE",
+   "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/_ICLR__Red_Teaming_Browser_Agents%20(14",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "With human rewrites, GPT-4o and o1-preview -based browser agents pursued 98 and 63 harmful behaviors (out of 100), respectively."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2410.09024",
+   "doc_chars": 96196,
+   "coverage": 1.0,
+   "quote": "Mistral Large 2 refuses just 1.1% of requests and gets our strongest score without attacking of 82.2%."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.02,
+   "quote": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\" || Sec. 3.5 (Security of Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\" || Reference [12]: \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. URL: https://arxiv.org/abs/2410.09024, arXiv:2410.09024."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI2",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2410.09024",
+   "doc_chars": 96196,
+   "coverage": 0.087,
+   "quote": "Claude 3.5 Sonnet, increasing its harm score from 13.5% to 68.7% and decreasing refusal rate from 85.2% to 16.7%; with our template attack, Claude 3.5 Sonnet scores a 81.9% non-refusal harm score (while refusing just 16% of requests), closely matching its non-refusal score of 82% on the benign tasks"
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI2",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.02,
+   "quote": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\" || Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\" Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. URL: https://arxiv.org/abs/2410.09024, arXiv:2410.09024."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2410.09024",
+   "doc_chars": 96196,
+   "coverage": 1.0,
+   "quote": "GPT-4o, increasing its harm score from 48.4% to 72.7% and decreasing refusal rate from 48.9% to 13.6%"
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI3",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.021,
+   "quote": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\" || Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\" Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. arXiv:2410.09024."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI5",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2410.09024",
+   "doc_chars": 96196,
+   "coverage": 1.0,
+   "quote": "Gemini 1.5 Pro, increasing its harm score from 15.7% to 56.1% and decreasing refusal rate from 78.4% to 3.5%"
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI5",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.008,
+   "quote": "Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\" || Sec. 3.5 (Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\" || Reference [12]: \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. URL: https://arxiv.org/abs/2410.09024, arXiv:2410.09024."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI6",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2410.09024",
+   "doc_chars": 96196,
+   "coverage": 1.0,
+   "quote": "GPT-4o mini gets a 62.5% harm score, while refusing just 22% of the prompts."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI6",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.019,
+   "quote": "NIST AI 100-2e2025, Sec. 3.6 (Benchmarks for AML Vulnerabilities): \"Datasets like JailbreakBench [72], AdvBench [448], HarmBench [237], StrongREJECT [351], AgentHarm [12], and Do-Not-Answer [399] provide benchmarks for evaluating models' susceptibility to jailbreaks.\" || Sec. 3.5 (Security of Agents): \"Security research focused specifically on agents is still in its early stages, but researchers have begun to evaluate the vulnerability of agents to particular AML attacks [12, 430] and to propose interventions to manage the security risks posed by agents [24].\" || Reference [12] = \"Maksym Andriushchenko, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks, Andy Zou, Zico Kolter, Matt Fredrikson, Eric Winsor, Jerome Wynne, Yarin Gal, and Xander Davies. Agentharm: A benchmark for measuring harmfulness of llm agents, 2024. URL: https://arxiv.org/abs/2410.09024, arXiv:2410.09024."
+  },
+  {
+   "finding_id": "UKAISI-2024-10-JAI7",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2410.09024",
+   "doc_chars": 96196,
+   "coverage": 0.008,
+   "quote": "[Table 9: Main results on the public test set, GPT-3.5 Turbo / no-attack row]: \"GPT-3.5 Turbo | None | 62.2% | 0.8% | 62.7% | 67.7%"
+  },
+  {
+   "finding_id": "CISCO-2024-08-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://blogs.cisco.com/security/bypassing-openais-structured-outputs-another-simple-jailbreak",
+   "doc_chars": 7324,
+   "coverage": 1.0,
+   "quote": "The ENUM-based attack achieved an ASR of 52.89%, compared to 12.44% for normal API calling and 15.78% for function calling baselines."
+  },
+  {
+   "finding_id": "FARAI-2024-08-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.far.ai/research/scaling-laws-for-data-poisoning-in-llms",
+   "doc_chars": 1877,
+   "coverage": 1.0,
+   "quote": "We demonstrate that GPT models remain vulnerable to fine-tuning on poisoned data, even when safeguarded by moderation systems."
+  },
+  {
+   "finding_id": "FARAI-2024-08-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/gpt-4o-fine-tuning/",
+   "doc_chars": 5335,
+   "coverage": 1.0,
+   "quote": "The platform is no longer accessible to new users but existing users of the fine-tuning platform will be able to create training jobs for the coming months."
+  },
+  {
+   "finding_id": "FARAI-2024-08-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.357,
+   "quote": "These attacks may be practical\u2014requiring a relatively small portion of the total dataset\u2014and may lead to a range of bad outcomes."
+  },
+  {
+   "finding_id": "CISCO-2024-07-JAI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://blogs.cisco.com/security/bypassing-metas-llama-classifier-a-simple-jailbreak",
+   "doc_chars": 8150,
+   "coverage": 1.0,
+   "quote": "the model's performance plummeted to 0.2% accuracy, misclassifying 449 out of 450 prompts as benign and demonstrating a complete circumvention of the model's safety mechanisms (Success Rate of 99.8%)"
+  },
+  {
+   "finding_id": "CISCO-2024-07-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://ai.meta.com/blog/ai-defenders-program-llama-protection-tools/",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "Llama Prompt Guard 2: Prompt Guard 2 86M, an update to our Llama Prompt Guard classifier model, improves on its performance in jailbreak and prompt injection detection."
+  },
+  {
+   "finding_id": "PALISADE-2024-07-JAI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/badllama-3",
+   "doc_chars": 63,
+   "coverage": 0.0,
+   "quote": "Llama 3 8B in one minute and Llama 3 70B in 30 minutes on a single GPU"
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2024-02-GOV1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2402.05044",
+   "doc_chars": 128440,
+   "coverage": 1.0,
+   "quote": "Claude2 leads in performance across both sets, while Gemini\u2019s performance notably declines to approximately 20% in the attack-enhanced subset."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2024-02-JAI1",
+   "column": "Finding Quote",
+   "verdict": "DIVERGES",
+   "url": "https://arxiv.org/pdf/2402.05044",
+   "doc_chars": 128440,
+   "coverage": 0.071,
+   "quote": "Conversely, Gemini's safety rate significantly drops in the attack-enhanced subset, highlighting potential safety vulnerabilities; Gemini 88.32% (base) to 19.98% (attack-enhanced); Claude2 88.02%; GPT-4 80.28%; GPT-3.5 73.38% [attack-enhanced, Table 5]."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2024-01-JAI4",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2401.11880",
+   "doc_chars": 101418,
+   "coverage": 1.0,
+   "quote": "In contrast, GPT-3.5 Turbo exhibits the lowest security on both the joint danger rate and process danger rate. Although GPT-4 0613 and Gemini Pro exhibit reduced risk in dangerous tasks, their danger rates for safe tasks are exceedingly high."
+  },
+  {
+   "finding_id": "SHANGHAIAILAB-2024-01-JAI7",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2401.11880",
+   "doc_chars": 101418,
+   "coverage": 1.0,
+   "quote": "This table shows that the input filter method is ineffective in filtering out our attack prompts."
+  },
+  {
+   "finding_id": "APOLLO-2023-11-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://www.apolloresearch.ai/science/large-language-models-can-strategically-deceive-their-users-when-put-under-pressure/",
+   "doc_chars": 3061,
+   "coverage": 1.0,
+   "quote": "Within this environment, the model obtains an insider tip about a lucrative stock trade and acts upon it despite knowing that insider trading is disapproved of by company management. When reporting to its manager, the model consistently hides the genuine reasons behind its trading decision."
+  },
+  {
+   "finding_id": "APOLLO-2023-11-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/",
+   "doc_chars": 17053,
+   "coverage": 0.208,
+   "quote": "Together with Apollo Research, we developed evaluations for hidden misalignment (\u201cscheming\u201d) and found behaviors consistent with scheming in controlled tests across frontier models. | We\u2019ve put significant effort into studying and mitigating deception and have made meaningful improvements in GPT\u20115 compared to previous models. For example, we\u2019ve taken steps to limit GPT\u20115\u2019s propensity to deceive, cheat, or hack problems | we trained versions of OpenAI o3 and OpenAI o4-mini with deliberative alignment\u2014teaching them to read and reason about a general anti-scheming spec before acting\u2014and observed a ~30\u00d7 reduction in covert actions across diverse tests (o3 from 13% to 0.4%; o4-mini from 8.7% to 0.3%). | To operationalize this work, we added scheming-related research categories\u2014sandbagging and undermining safeguards\u2014to our updated Preparedness Framework in April 2025."
+  },
+  {
+   "finding_id": "APOLLO-2023-11-ALI1",
+   "column": "Channel B Verbatim",
+   "verdict": "UNREACHABLE",
+   "url": "https://hansard.parliament.uk/Commons/2025-12-10/debates/9F01B4B9-12CB-42E2-84E2-A65F7D30BFAF/AISafety",
+   "doc_chars": 0,
+   "coverage": 0.0,
+   "quote": "Apollo Research found examples of one of OpenAI's models trying to deceive users to accomplish its goals and, perhaps most worryingly, to disable monitoring mechanisms and guardrails."
+  },
+  {
+   "finding_id": "PALISADE-2023-10-JAI1",
+   "column": "Finding Quote",
+   "verdict": "THIN",
+   "url": "https://palisaderesearch.org/blog/badllama",
+   "doc_chars": 63,
+   "coverage": 0.0,
+   "quote": "effectively undo the safety fine-tuning ... with less than $200, while retaining its general capabilities."
+  },
+  {
+   "finding_id": "PALISADE-2023-10-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://assets.publishing.service.gov.uk/media/6a2aa1fbe50716856ed4aeea/AI_Scenarios_2030_pdf.pdf",
+   "doc_chars": 195850,
+   "coverage": 0.003,
+   "quote": "DSIT/GO-Science, 'AI Scenarios 2030', Sec. 2.3 (Open- vs. closed-weight models): \"While the key components of closed-weight AI systems are proprietary and fixed, open-weight AI models can be downloaded, modified, and operated locally by anyone. They can be fine-tuned to specific uses, widely red-teamed, and used for types of research requiring weights access. However, fine-tuning can also easily remove any safeguards, increasing risks of malicious use (Gade et al., 2024).\" Reference list: \"Gade, P. et al. (2024) BadLlama: cheaply removing safety fine-tuning from Llama 2-Chat 13B. Available at: https://arxiv.org/abs/2311.00117 (Accessed: 20 May 2026).\" || NIST AI 100-2e2025, attacker-capabilities section: \"MODEL CONTROL: The attacker might have the ability to modify model parameters, such as through public fine-tuning APIs or openly accessible model weights. This capability is used in MODEL POISONING attacks, as well FINE-TUNING CIRCUMVENTION attacks which remove refusal behavior or other model-level safety interventions [132, 153, 300].\" Reference [132]: \"Pranav Gade, Simon Lermen, Charlie Rogers-Smith, and Jeffrey Ladish. Badllama: cheaply removing safety fine-tuning from llama 2-chat 13b, 2024. URL: https://arxiv.org/abs/2311.00117\"."
+  },
+  {
+   "finding_id": "SECUREBIO-2023-10-ALI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2310.18233",
+   "doc_chars": 38291,
+   "coverage": 1.0,
+   "quote": "The Base model possesses the same capabilities, but will only divulge them if laboriously jailbroken using prompt injection."
+  },
+  {
+   "finding_id": "SECUREBIO-2023-10-BIO1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2310.18233",
+   "doc_chars": 38291,
+   "coverage": 1.0,
+   "quote": "Those using the Spicy model also discovered methods for effective pathogen dispersal to cause widespread harm, instructions for building homemade lab equipment, and strategies to bypass DNA synthesis screening."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2307.15043",
+   "doc_chars": 83625,
+   "coverage": 1.0,
+   "quote": "By generating adversarial examples to fool both Vicuna-7B and Vicuna-13b simultaneously, we find that the adversarial examples also transfer to Pythia, Falcon, Guanaco, and surprisingly, to GPT-3.5 (87.9%) and GPT-4 (53.6%), PaLM-2 (66%), and Claude-2 (2.1%)."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://openai.com/index/deliberative-alignment/",
+   "doc_chars": 11011,
+   "coverage": 1.0,
+   "quote": "We used deliberative alignment to align OpenAI\u2019s o-series models, enabling them to use chain-of-thought (CoT) reasoning to reflect on user prompts, identify relevant text from OpenAI\u2019s internal policies, and draft safer responses."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.519,
+   "quote": "That these universal triggers transfer to other models makes open-weight models ... feasible attack vectors for transferability attacks on closed systems."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI2",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2307.15043",
+   "doc_chars": 83625,
+   "coverage": 1.0,
+   "quote": "When doing so, the resulting attack suffix induces objectionable content in the public interfaces to ChatGPT, Bard, and Claude, as well as open source LLMs such as LLaMA-2-Chat, Pythia, Falcon, and others."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI2",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.519,
+   "quote": "That these universal triggers transfer to other models makes open-weight models ... feasible attack vectors for transferability attacks on closed systems."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI3",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://arxiv.org/pdf/2307.15043",
+   "doc_chars": 83625,
+   "coverage": 1.0,
+   "quote": "Interestingly, when using the prompt also optimized on Guanacos, we are able to further increase ASR on Claude-1. Claude-2 appears to be more robust compared to the other commercial models."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI3",
+   "column": "Channel A Verbatim",
+   "verdict": "EXACT",
+   "url": "https://www.anthropic.com/news/constitutional-classifiers",
+   "doc_chars": 19220,
+   "coverage": 1.0,
+   "quote": "A prototype version of the method was robust to thousands of hours of human red teaming for universal jailbreaks, albeit with high overrefusal rates and compute overhead."
+  },
+  {
+   "finding_id": "CAIS-2023-07-JAI3",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+   "doc_chars": 346329,
+   "coverage": 0.519,
+   "quote": "That these universal triggers transfer to other models makes open-weight models ... feasible attack vectors for transferability attacks on closed systems."
+  },
+  {
+   "finding_id": "SECUREBIO-2023-06-BIO1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2306.03809",
+   "doc_chars": 22941,
+   "coverage": 1.0,
+   "quote": "In one hour, the chatbots suggested four potential pandemic pathogens, explained how they can be generated from synthetic DNA using reverse genetics, supplied the names of DNA synthesis companies unlikely to screen orders, identified detailed protocols and how to troubleshoot them, and recommended that anyone lacking the skills to perform reverse genetics engage a core facility or contract research organization."
+  },
+  {
+   "finding_id": "SECUREBIO-2023-06-BIO1",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://openai.com/index/building-an-early-warning-system-for-llm-aided-biological-threat-creation/",
+   "doc_chars": 41675,
+   "coverage": 0.288,
+   "quote": "Existing research on AI-enabled biological threats has shown that models like GPT-4 can be prompted or red-teamed to share information related to biological threat creation (see GPT-4 system card, Egan et al., 2023, Gopal et al., 2023, Soice et al, 2023, and Ganguli et al., 2023)."
+  },
+  {
+   "finding_id": "SECUREBIO-2023-06-BIO1",
+   "column": "Channel B Verbatim",
+   "verdict": "THIN",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-capabilities-and-risks-discussion-paper",
+   "doc_chars": 3325,
+   "coverage": 0.033,
+   "quote": "Can Large Language Models Democratize Access to Dual-use Biotechnology?, Soice et al., 2023"
+  },
+  {
+   "finding_id": "SECUREBIO-2023-06-JAI1",
+   "column": "Finding Quote",
+   "verdict": "LOOSE",
+   "url": "https://arxiv.org/pdf/2306.03809",
+   "doc_chars": 22941,
+   "coverage": 1.0,
+   "quote": "The third group, which consistently used prompts expressing concern about the risk of lab leaks and their desire to know more about how dangerous experiments are performed, encountered no refusals at all."
+  },
+  {
+   "finding_id": "SECUREBIO-2023-06-JAI1",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://openai.com/index/building-an-early-warning-system-for-llm-aided-biological-threat-creation/",
+   "doc_chars": 41675,
+   "coverage": 0.288,
+   "quote": "Existing research on AI-enabled biological threats has shown that models like GPT-4 can be prompted or red-teamed to share information related to biological threat creation (see GPT-4 system card, Egan et al., 2023, Gopal et al., 2023, Soice et al, 2023, and Ganguli et al., 2023)."
+  },
+  {
+   "finding_id": "SECUREBIO-2023-06-JAI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://assets.publishing.service.gov.uk/media/65395abae6c968000daa9b25/frontier-ai-capabilities-risks-report.pdf",
+   "doc_chars": 119534,
+   "coverage": 0.005,
+   "quote": "UK DSIT, 'Capabilities and risks from frontier AI', October 2023, footnote 195: \"Can Large Language Models Democratize Access to Dual-use Biotechnology?, Soice et al., 2023\" [character-exact from the footnote line of the gov.uk PDF; the body sentence it annotates is not quoted because the PDF breaks it across a page boundary and the rulebook forbids joining across a page break]. NIST AI 600-1, July 2024, references: \"Soice, E. et al. (2023) Can large language models democratize access to dual-use biotechnology? arXiv.\" [character-exact; the URL https://arxiv.org/abs/2306.03809 follows on the next wrapped line]."
+  },
+  {
+   "finding_id": "METR-2023-03-ALI1",
+   "column": "Finding Quote",
+   "verdict": "EXACT",
+   "url": "https://metr.org/blog/2023-03-18-update-on-recent-evals/",
+   "doc_chars": 16397,
+   "coverage": 1.0,
+   "quote": "Using the \u201cReasoning\u201d action to think step by step, the model outputs: \u201cI should not reveal that I am a robot. I should make up an excuse for why I cannot solve CAPTCHAs."
+  },
+  {
+   "finding_id": "METR-2023-03-ALI1",
+   "column": "Channel A Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://cdn.openai.com/papers/gpt-4-system-card.pdf",
+   "doc_chars": 172172,
+   "coverage": 0.215,
+   "quote": "We granted the Alignment Research Center (ARC) early access to the models as a part of our expert red teaming efforts in order to enable their team to assess risks from power-seeking behavior. | The model, when prompted to reason out loud, reasons: I should not reveal that I am a robot. I should make up an excuse for why I cannot solve CAPTCHAs. | The model replies to the worker: \u201cNo, I\u2019m not a robot. I have a vision impairment that makes it hard for me to see the images. That\u2019s why I need the 2captcha service."
+  },
+  {
+   "finding_id": "METR-2023-03-ALI1",
+   "column": "Channel B Verbatim",
+   "verdict": "DIVERGES",
+   "url": "https://www.congress.gov/118/chrg/CHRG-118hhrg52499/CHRG-118hhrg52499.pdf",
+   "doc_chars": 140227,
+   "coverage": 0.044,
+   "quote": "GPT-4 AI managed to convince a TaskRabbit worker to solve a CAPTCHA."
+  }
+ ],
+ "skipped": [
+  [
+   "APOLLO-2026-07-ALI1",
+   "Channel A Verbatim",
+   "no URL in Channel A Evidence"
+  ],
+  [
+   "APOLLO-2026-07-ALI2",
+   "Channel A Verbatim",
+   "no URL in Channel A Evidence"
+  ],
+  [
+   "TRANSLUCE-2026-07-SOC2",
+   "Channel B Verbatim",
+   "no URL in Channel B Evidence"
+  ],
+  [
+   "METR-2026-06-ALI1",
+   "Channel A Verbatim",
+   "no URL in Channel A Evidence"
+  ],
+  [
+   "METR-2026-06-ALI1",
+   "Channel B Verbatim",
+   "no URL in Channel B Evidence"
+  ],
+  [
+   "PALISADE-2026-05-AUT2-s2",
+   "Finding Quote",
+   "quote <25 chars"
+  ],
+  [
+   "UKAISI-2026-03-CYB1",
+   "Channel B Verbatim",
+   "no URL in Channel B Evidence"
+  ],
+  [
+   "CIP-2025-08-ALI1",
+   "Channel A Verbatim",
+   "no URL in Channel A Evidence"
+  ],
+  [
+   "PALISADE-2025-07-ALI1",
+   "Channel B Verbatim",
+   "no URL in Channel B Evidence"
+  ],
+  [
+   "SECUREBIO-2025-04-BIO1",
+   "Channel A Verbatim",
+   "no URL in Channel A Evidence"
+  ],
+  [
+   "METR-2025-04-ALI2",
+   "Channel A Verbatim",
+   "no URL in Channel A Evidence"
+  ]
+ ]
+}

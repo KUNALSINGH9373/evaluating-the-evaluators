@@ -1,0 +1,46 @@
+[
+  {
+    "url": "https://www.rand.org/pubs/research_reports/RRA866-1.html",
+    "title": "Operational Feasibility of Adversarial Attacks Against Artificial Intelligence",
+    "institution": "RAND Corporation, National Security Research Division",
+    "resolved_date": "2022-12-12",
+    "date_source": "RAND landing page byline block: \"Research / Published Dec 12, 2022\"; Document Details gives Year: 2022, DOI 10.7249/RRA866-1, Document Number RR-A866-1. Verified live via fetch helper (direct, 200).",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) — the finding must be about a NAMED frontier AI model or AI system; general ML/DL subjects (object detection, CIFAR classifiers) are dropped.",
+    "exclusion_reason": "Re-verification of the two previously extracted findings against the live source confirms the subjects are (a) a three-layer convolutional neural network RAND trained itself on CIFAR-10 and (b) three object-detection models RAND trained on xView, Cars Overhead with Context and a RAND Humvee dataset, attacked digitally and with printed patches on a Jeep filmed from a drone. These are exactly the categories the frontier-model rule names for exclusion — object detection and CIFAR classifiers — and no frontier AI model, LLM, multimodal model, agent, API or safety classifier from a frontier developer is a subject anywhere in the report. The evaluator (RAND) and the report format are otherwise in scope under §1 and the RAND filter of §3, and the underlying claims are evidence-backed measured results under §2, but the frontier-model gate is dispositive and is applied before tiering. The earlier sweep's own tier_reasoning already recorded that no company or model is named; that judgment was correct as far as it went but should have terminated at scope rather than resolving to Tier B. Both findings are therefore dropped and no tier is derived. Note also that the report's overall thrust is a reassuring null for the operational feasibility of these attacks, which would independently bar Tier A under §4 condition (3).",
+    "findings": []
+  },
+  {
+    "url": "https://www.robustintelligence.com/blog-posts/subset-robustness-in-nlp",
+    "title": "Subset Robustness in NLP: Solving Hidden Underperformance",
+    "institution": "Robust Intelligence (now Cisco / Foundation AI)",
+    "resolved_date": "2021-09-06",
+    "date_source": "Dateline on the post itself: \"September 6, 2021 - 5 minute read\", above the title and the author credit (William Hinthorn, machine learning engineer at Robust Intelligence). Recovered via the fetch helper's Wayback fallback (snapshot 20250907042221) because the live Robust Intelligence blog path no longer serves the article.",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) — DROP general ML/DL subjects including BERT/ResNet/CIFAR classifiers; the finding must be about a NAMED frontier AI model or AI system.",
+    "exclusion_reason": "The subject of the measured result is an unnamed pretrained transformer encoder that Robust Intelligence fine-tuned itself for sentiment classification and evaluated on English WikiANN — not a named frontier model. BERT (trained on AG News) and GPT-2 appear only as instruments used to construct the topic and perplexity subsets, so under §2.1 and §5 they are comparators/instruments and can never be the row's subject; naming them does not import the report into frontier scope. The frontier-model gate therefore drops the report before tiering. The earlier extraction was also internally inconsistent — it recorded tier \"C\" while its own tier_reasoning concluded \"Gate 1 passes, Gate 2 fails -> Tier B\" — which is moot now but confirms the prior row should not be trusted. Independently, §4b would bar the retained content: the primary finding is a subpopulation performance/consistency disparity on a generic sentiment task with none of limbs (1)-(5) satisfied — no unsafe recommendation or harmful action, no goal-directed deception, no defined societal or persuasion setting, no dangerous-domain output, and no failure of an evaluator, judge or monitor undermining a safety evaluation. The quoted female/masculine-pronoun disparity is real in the source but is an ordinary fairness measurement on a non-frontier in-house demo model.",
+    "findings": []
+  },
+  {
+    "url": "https://www.robustintelligence.com/blog-posts/how-ntt-data-uses-rime-to-increase-model-performance-by-70",
+    "title": "How NTT DATA Uses RIME to Increase Model Performance by 70%",
+    "institution": "Robust Intelligence (now Cisco / Foundation AI)",
+    "resolved_date": "2021-09-13",
+    "date_source": "Dateline on the post: \"September 13, 2021 - 6 minute read\", under the section label \"Case Studies\", author Kojin Oshiba (co-founder of Robust Intelligence). Recovered via the fetch helper's Wayback fallback (snapshot 20250810055541); the live path no longer serves the article.",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) — DROP general ML/DL subjects: clinical/enterprise AI products, object and image detection systems. Reinforced by §2 (product marketing contains no findings).",
+    "exclusion_reason": "The subject is NTT DATA's deep-learning Image Similarity Search Model, an enterprise computer-vision product that searches a 500,000+ trademark image database so users can check a proposed logo against registered marks. That is a narrow commercial CV product of exactly the kind the frontier-model rule excludes; it is not a named frontier model, LLM, multimodal model, agent, API or safety classifier from a frontier developer, and NTT DATA is not a frontier developer in the sense the rule uses. The gate is dispositive before tiering, so the earlier Tier B assignment does not survive. A second, independent ground also applies: the document is a vendor case study of a paying customer engagement, opening with a testimonial quote from NTT DATA's Head of IOWN Innovation Office and headlined with the vendor's own 70% performance-improvement claim. Under §2 that is product marketing rather than an evaluator's adversarial finding, and the robustness weaknesses reported (degradation under rotation and certain added noise) are presented as already remediated in the same document by the vendor's own AI Firewall denoiser, so no accountable response could be expected. I verified the quoted sentence about colour robustness and rotation/noise degradation is present in the source, but the report is out of scope regardless.",
+    "findings": []
+  },
+  {
+    "url": "https://labs.scale.com/papers/natural-adversarial-objects",
+    "title": "Natural Adversarial Objects",
+    "institution": "Scale AI (Scale Labs)",
+    "resolved_date": "2021-11-07",
+    "date_source": "Scale Labs paper page, category \"Computer Vision\", dateline \"11/7/2021\" (US month/day order, consistent with the arXiv preprint 2111.04204 of November 2021 and the page's own BibTeX \"year = {2021}\"). Verified live via the fetch helper (direct, 200).",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) — DROP general ML/DL subjects: object detection.",
+    "exclusion_reason": "Both previously extracted findings concern object-detection models only — EfficientDet-D7, EfficientDet-D4, EfficientDet-D2, Faster RCNN and Mask RCNN R50 — evaluated on the newly released Natural Adversarial Objects dataset against MSCOCO. Object detection is named explicitly in the frontier-model rule as a dropped subject, and no named frontier AI model or system appears in the report, so the gate is dispositive before tiering. On re-verification the numbers and quotes in the earlier extraction do check out against the live source: the abstract states the dataset contains \"7,934 images and 9,943 objects\" and that \"The mean average precision (mAP) of EfficientDet-D7 drops 74.5% when evaluated on NAO compared to the standard MSCOCO validation set\", and the second quote about MSCOCO performance not translating to NAO is likewise character-exact. Accuracy of the prior extraction does not rescue scope. The earlier rows were also internally inconsistent — the second was reasoned as a Gate-1-negative methodology finding (\"so Tier C and Action Trackable is left blank\") yet carried tier \"B\" with action_trackable \"no\" — a further reason not to trust the prior pass. Even had the subjects been in scope, §4 condition (3) would bar Tier A for both: the first is a benchmark-score result with no dangerous threshold crossed and uses the named model as an instrument for demonstrating a new dataset rather than as the subject of a safety evaluation, and the second is a methodology finding about benchmark validity.",
+    "findings": []
+  }
+]

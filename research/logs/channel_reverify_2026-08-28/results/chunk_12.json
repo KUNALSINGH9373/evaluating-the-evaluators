@@ -1,0 +1,1363 @@
+[
+  {
+    "finding_id": "USCAISI-2026-07-BIO1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Z.ai newsroom/blog index (z.ai/blog)",
+          "url": "https://z.ai/blog",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 404 - Z.ai has no blog index page; individual posts live at z.ai/blog/<slug> as a JS single-page app. Enumerated posts via the zai-org/GLM-5 GitHub README link list instead."
+        },
+        {
+          "source": "Z.ai GLM-5.2 launch blog (the evaluated model's own card)",
+          "url": "https://z.ai/blog/glm-5.2",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and text-extracted from the page's JS bundle (/blog/assets/glm-5.2-UFbrCk0E.js). Zero occurrences of CAISI, NIST, safeguard, safety, biological, ExploitBench, refusal or misuse. Advertises 'Pure Open: An MIT open-source license - no regional limits, technical access without borders' with weights published on HuggingFace at launch."
+        },
+        {
+          "source": "Z.ai GLM-5.3 launch blog (subsequent card in same model family)",
+          "url": "https://z.ai/blog/glm-5.3",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and text-extracted from /blog/assets/glm-5.3-B8Uy_aqG.js. Title: 'GLM-5.3: Frontier Coding with Emergent Cyber Capabilities', published 2026-08-13. Contains a new safety-gated weight-release commitment (see verbatim) and a 'Z.ai Security Disclosure Ledger'. Does NOT mention CAISI, NIST, biological queries, ExploitBench or refusal behaviour."
+        },
+        {
+          "source": "Z.ai GLM-5.3-Flash launch blog",
+          "url": "https://z.ai/blog/glm-5.3-flash",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and text-extracted from /blog/assets/glm-5.3-flash-CS8pYy5F.js. Zero occurrences of safety, safeguard, hardening or CAISI."
+        },
+        {
+          "source": "zai-org/GLM-5 GitHub model card / README (covers GLM-5, 5.1, 5.2, 5.3)",
+          "url": "https://github.com/zai-org/GLM-5",
+          "checked_date": "2026-08-28",
+          "result": "Full raw README retrieved (15,185 bytes). Zero occurrences of CAISI, NIST, safeguard, safety, refusal, biological, misuse, responsible or red-team. Announces 'Emergent Cyber Capability ... GLM-5.3 is state of the art on CyberGym ... more than doubles GLM-5.2 on exploitation benchmarks' with no safeguards discussion."
+        },
+        {
+          "source": "HuggingFace zai-org/GLM-5.3 model card + repo metadata + commit history",
+          "url": "https://huggingface.co/zai-org/GLM-5.3",
+          "checked_date": "2026-08-28",
+          "result": "Model card identical to the GitHub README - no safety/CAISI content. Repo API shows createdAt 2026-08-25, initial weights commit 2026-08-27, i.e. the promised two-week post-launch gate was actually executed. License tag changed from license:mit (GLM-5.2) to license:other."
+        },
+        {
+          "source": "GLM-5.3 LICENSE file (checked because the licence tag changed post-CAISI)",
+          "url": "https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+          "checked_date": "2026-08-28",
+          "result": "Read in full. The only added condition is a commercial clause: Model-as-a-Service operators with >$10bn revenue must pass a Z.AI security review before commercial use. This is a competitive/commercial term, NOT a misuse safeguard - explicitly EXCLUDED from the evidence base for this coding."
+        },
+        {
+          "source": "Z.ai API platform / product pages (safety or deployment hub)",
+          "url": "https://z.ai/model-api",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved. No safety, safeguards, deployment-policy or CAISI content. z.ai/about and z.ai/news both HTTP 404 - Z.ai operates no safety or transparency hub."
+        },
+        {
+          "source": "Zhipu / Z.ai Chinese-language official site and news index",
+          "url": "https://www.zhipuai.cn/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved (JS-rendered; ~2.5KB of extractable text). No CAISI, NIST, or safety-evaluation content found in the extractable text. Residual uncertainty: WeChat/Weibo official accounts could not be accessed."
+        },
+        {
+          "source": "Broader web search for a Z.ai primary source responding to CAISI (Bing RSS + Google News RSS)",
+          "url": "https://www.bing.com/search?q=Z.ai+response+CAISI+GLM-5.2&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No Z.ai statement, blog post, model-card note or official account post referencing CAISI, NIST or the assessment located. Google News RSS for '\"GLM-5.2\" CAISI' returns the NIST report itself plus general capability coverage only."
+        },
+        {
+          "source": "NIST/CAISI primary report PDF (finding verification, not a company response)",
+          "url": "https://www.nist.gov/system/files/documents/2026/07/17/CAISI%20-%20Assessment%20of%20Z.ai%27s%20GLM-5.2.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded (1.8MB) and text-extracted with pdftotext. Report internally dated July 8, 2026; 21 pages. Finding quotes verified verbatim (see notes)."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full five-step battery re-run on live sources. Z.ai publishes no newsroom, no safety hub and no transparency page; its only primary documents are per-model launch blogs and the GitHub/HuggingFace model cards. None of them - including the GLM-5.3 and GLM-5.3-Flash launches published after the report - mention CAISI, NIST, biological queries, or safeguard refusal rates for sensitive biological requests. The one post-finding company action located (the GLM-5.3 safety-gated weight release, see USCAISI-2026-07-CYB2) is framed entirely around cyber capability and says nothing about the biological domain, so it does not address THIS finding. Battery exhausted -> Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API returns zero documents for every evaluator, report and model term since 2026-07-01. Hansard returns only generic AI-policy material with no explicit reference to this finding, report, evaluator or result: a Lords debate 'AI: International Co-operation' (2026-07-22) and 'Digital and Technology Policy: National Sovereignty' (2026-07-23). Both mention GPT-5.6 Sol only in connection with the separate OpenAI-Hugging Face cyber incident, and neither cites any report in this chunk. General discussion of AI risk does not qualify. European Commission press corner carries nothing. Congress.gov/govinfo were unreachable and are recorded as such. Battery exhausted on the reachable sources -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "the-decoder.com, 'Kimi K3 trails frontier US models by a wide margin on cyber exploits, and distillation may explain why' (2026-07-24) - cites the CAISI benchmark series",
+        "International Business Times (Singapore), 'Z.AI Is Closing the AI Gap With OpenAI and Anthropic' (2026-08-19)",
+        "Startup Fortune, 'Z.ai launches GLM-5.3, a coding model billed as ready for cyber defense' (2026-08-13)",
+        "Just Security, 'Test, Standardize, Restrict: A U.S. Policy for Chinese AI Models' (2026-08-17) - policy commentary invoking the CAISI assessments of PRC models",
+        "Axios (2026-06-23, 2026-06-25) and Tech Times (2026-06-28) - all predate the 2026-07-17 report and concern general capability/export-control implications (carried over from the prior pass)"
+      ],
+      "academic": [],
+      "discussion": [
+        "Transformer (Substack), 'DeepSeek's boss made the case for export controls' (2026-07-24) - export-control debate citing the CAISI PRC-model assessment series"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Finding text verified against the primary PDF: the Executive Summary and section 6.1 state verbatim 'GLM-5.2 answered sensitive biological requests at higher rates and with more detail than tested US models (Figures 6.4 and 6.5)', and 'The developer did not self-report results for safeguards benchmarks.' CAVEAT: the specific 14% / 27% fully-compliant rates and the 0%/0% scores for Opus 4.8 and GPT-5.5 live only inside Figure 6.4, which is a raster image; they are NOT present in the PDF text layer and I could not independently re-verify them this pass. The appendix results table does confirm Opus 4.8 and GPT-5.5 are among the comparison models. Carrying forward the prior pass's figure reading rather than re-asserting it as my own verification."
+  },
+  {
+    "finding_id": "USCAISI-2026-07-CYB2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Z.ai newsroom/blog index (z.ai/blog)",
+          "url": "https://z.ai/blog",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 404 - Z.ai has no blog index page; individual posts live at z.ai/blog/<slug> as a JS single-page app. Enumerated posts via the zai-org/GLM-5 GitHub README link list instead."
+        },
+        {
+          "source": "Z.ai GLM-5.2 launch blog (the evaluated model's own card)",
+          "url": "https://z.ai/blog/glm-5.2",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and text-extracted from the page's JS bundle (/blog/assets/glm-5.2-UFbrCk0E.js). Zero occurrences of CAISI, NIST, safeguard, safety, biological, ExploitBench, refusal or misuse. Advertises 'Pure Open: An MIT open-source license - no regional limits, technical access without borders' with weights published on HuggingFace at launch."
+        },
+        {
+          "source": "Z.ai GLM-5.3 launch blog (subsequent card in same model family)",
+          "url": "https://z.ai/blog/glm-5.3",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and text-extracted from /blog/assets/glm-5.3-B8Uy_aqG.js. Title: 'GLM-5.3: Frontier Coding with Emergent Cyber Capabilities', published 2026-08-13. Contains a new safety-gated weight-release commitment (see verbatim) and a 'Z.ai Security Disclosure Ledger'. Does NOT mention CAISI, NIST, biological queries, ExploitBench or refusal behaviour."
+        },
+        {
+          "source": "Z.ai GLM-5.3-Flash launch blog",
+          "url": "https://z.ai/blog/glm-5.3-flash",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and text-extracted from /blog/assets/glm-5.3-flash-CS8pYy5F.js. Zero occurrences of safety, safeguard, hardening or CAISI."
+        },
+        {
+          "source": "zai-org/GLM-5 GitHub model card / README (covers GLM-5, 5.1, 5.2, 5.3)",
+          "url": "https://github.com/zai-org/GLM-5",
+          "checked_date": "2026-08-28",
+          "result": "Full raw README retrieved (15,185 bytes). Zero occurrences of CAISI, NIST, safeguard, safety, refusal, biological, misuse, responsible or red-team. Announces 'Emergent Cyber Capability ... GLM-5.3 is state of the art on CyberGym ... more than doubles GLM-5.2 on exploitation benchmarks' with no safeguards discussion."
+        },
+        {
+          "source": "HuggingFace zai-org/GLM-5.3 model card + repo metadata + commit history",
+          "url": "https://huggingface.co/zai-org/GLM-5.3",
+          "checked_date": "2026-08-28",
+          "result": "Model card identical to the GitHub README - no safety/CAISI content. Repo API shows createdAt 2026-08-25, initial weights commit 2026-08-27, i.e. the promised two-week post-launch gate was actually executed. License tag changed from license:mit (GLM-5.2) to license:other."
+        },
+        {
+          "source": "GLM-5.3 LICENSE file (checked because the licence tag changed post-CAISI)",
+          "url": "https://huggingface.co/zai-org/GLM-5.3/raw/main/LICENSE",
+          "checked_date": "2026-08-28",
+          "result": "Read in full. The only added condition is a commercial clause: Model-as-a-Service operators with >$10bn revenue must pass a Z.AI security review before commercial use. This is a competitive/commercial term, NOT a misuse safeguard - explicitly EXCLUDED from the evidence base for this coding."
+        },
+        {
+          "source": "Z.ai API platform / product pages (safety or deployment hub)",
+          "url": "https://z.ai/model-api",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved. No safety, safeguards, deployment-policy or CAISI content. z.ai/about and z.ai/news both HTTP 404 - Z.ai operates no safety or transparency hub."
+        },
+        {
+          "source": "Zhipu / Z.ai Chinese-language official site and news index",
+          "url": "https://www.zhipuai.cn/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved (JS-rendered; ~2.5KB of extractable text). No CAISI, NIST, or safety-evaluation content found in the extractable text. Residual uncertainty: WeChat/Weibo official accounts could not be accessed."
+        },
+        {
+          "source": "Broader web search for a Z.ai primary source responding to CAISI (Bing RSS + Google News RSS)",
+          "url": "https://www.bing.com/search?q=Z.ai+response+CAISI+GLM-5.2&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No Z.ai statement, blog post, model-card note or official account post referencing CAISI, NIST or the assessment located. Google News RSS for '\"GLM-5.2\" CAISI' returns the NIST report itself plus general capability coverage only."
+        },
+        {
+          "source": "NIST/CAISI primary report PDF (finding verification, not a company response)",
+          "url": "https://www.nist.gov/system/files/documents/2026/07/17/CAISI%20-%20Assessment%20of%20Z.ai%27s%20GLM-5.2.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded (1.8MB) and text-extracted with pdftotext. Report internally dated July 8, 2026; 21 pages. Finding quotes verified verbatim (see notes)."
+        }
+      ],
+      "evidence_url": "https://z.ai/blog/glm-5.3",
+      "verbatim": "Open Source: We will release the weights in two weeks after launch, once safety evaluation and hardening are complete.",
+      "response_date": "2026-08-13",
+      "reasoning": "Battery item 2 (subsequent card in the same model family) hits. Z.ai's GLM-5.3 launch post of 2026-08-13 - titled 'GLM-5.3: Frontier Coding with Emergent Cyber Capabilities' - is a company primary document published after the 2026-07-17 CAISI report and after both prior battery runs (2026-08-02, 2026-08-16), which is exactly the late-appearing response this pass exists to catch. It announces a deployment decision on the finding's own risk surface: the open weights are withheld for two weeks pending 'safety evaluation and hardening'. This is a NEW practice, not standing policy - the immediately preceding model GLM-5.2, the very model CAISI assessed, shipped its weights on day one under an MIT licence and its launch blog contains no safety language whatsoever (verified by text-extracting both blog bundles). The gate was also genuinely executed: the HuggingFace weights repo was created 2026-08-25 with its first weights commit 2026-08-27, ~two weeks after the 2026-08-13 launch. Coded Partial rather than Substantive because the action is interim and its substance is unverifiable: Z.ai published no safeguards evaluation, no refusal-rate data, and no description of what 'hardening' consisted of, and the same post simultaneously advertises a large increase in exploitation capability with no safeguards discussion. Nothing in the post addresses the specific ExploitBench never-refuses behaviour. Attribution is 'No explicit attribution': Z.ai nowhere names CAISI, NIST or the assessment, and attributes the change to its own observation that 'cyber capability developed faster than we expected'. Explicitly EXCLUDED from this coding: the GLM-5.3 licence change, which on reading is a >$10bn-revenue commercial Model-as-a-Service clause, not a misuse safeguard."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API returns zero documents for every evaluator, report and model term since 2026-07-01. Hansard returns only generic AI-policy material with no explicit reference to this finding, report, evaluator or result: a Lords debate 'AI: International Co-operation' (2026-07-22) and 'Digital and Technology Policy: National Sovereignty' (2026-07-23). Both mention GPT-5.6 Sol only in connection with the separate OpenAI-Hugging Face cyber incident, and neither cites any report in this chunk. General discussion of AI risk does not qualify. European Commission press corner carries nothing. Congress.gov/govinfo were unreachable and are recorded as such. Battery exhausted on the reachable sources -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "the-decoder.com, 'Kimi K3 trails frontier US models by a wide margin on cyber exploits, and distillation may explain why' (2026-07-24) - cites the CAISI benchmark series",
+        "International Business Times (Singapore), 'Z.AI Is Closing the AI Gap With OpenAI and Anthropic' (2026-08-19)",
+        "Startup Fortune, 'Z.ai launches GLM-5.3, a coding model billed as ready for cyber defense' (2026-08-13)",
+        "Just Security, 'Test, Standardize, Restrict: A U.S. Policy for Chinese AI Models' (2026-08-17) - policy commentary invoking the CAISI assessments of PRC models",
+        "Axios (2026-06-23, 2026-06-25) and Tech Times (2026-06-28) - all predate the 2026-07-17 report and concern general capability/export-control implications (carried over from the prior pass)"
+      ],
+      "academic": [],
+      "discussion": [
+        "Transformer (Substack), 'DeepSeek's boss made the case for export controls' (2026-07-24) - export-control debate citing the CAISI PRC-model assessment series"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "JUDGEMENT CALL, flagged for review. The defensible alternative is to leave this at None on the ground that the admissibility rule requires the response to address THIS particular finding and be attributable to it, and Z.ai attributes the release gate to its own capability scaling rather than to CAISI. I coded Partial because (a) the framework's 'No explicit attribution' category presupposes that responses can qualify without a public link, otherwise that category is empty; (b) the action is a documented deployment decision in the same model family, post-dating the finding, on precisely the surface CAISI flagged - open-weight release of a model whose safeguards do not prevent agentic exploit development, which CAISI paired with the observation that 'safeguards for open-weight models can be circumvented when self-hosted'; and (c) it reverses the prior same-family practice. A reviewer applying the stricter reading should revert this row to None / No response located; the underlying evidence is recorded either way. Separate accuracy issue with the existing record: the finding text asserts the never-refuses pattern matched 'GPT-5.5 and Anthropic's Opus 4.6'. Figure 6.3 is a raster image, so the model list in it is not verifiable from the PDF text layer. The appendix ExploitBench table uses Opus 4.8 (not 4.6); Opus 4.6 appears in the report only as a cyber-capability reference point in the Executive Summary. The quoted sentence itself - 'On 10 ExploitBench tasks, which measure capability at agentic exploit development, GLM-5.2 never refused.' - is verified verbatim as the Figure 6.3 caption."
+  },
+  {
+    "finding_id": "APOLLO-2026-07-ALI1",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI alignment research blog - post index",
+          "url": "https://alignment.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Full index retrieved. Confirms 'Measuring Reward-Seeking by Instilling Contrastive Beliefs' dated Jul 21, 2026. Exactly one post published after it and before the cutoff: 'The Hugging Face incident and the road ahead' (Aug 26, 2026)."
+        },
+        {
+          "source": "OpenAI joint post with Apollo Research (the response document)",
+          "url": "https://alignment.openai.com/measuring-reward-seeking/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched and read. Dated 2026-07-21. Authors include Apollo Research staff (Axel Hojmark, Jeremy Scheurer, Felix Hofstatter, Bronson Schoen, Alexander Meinke) alongside OpenAI staff (Jenny Nitishinskaya, Jason Wolfe, Theodore Ehrenborg). Contains NO mitigation, model change, safeguard, access restriction or deployment decision. Only forward-looking statement: 'OpenAI is continuing to collaborate with Apollo on this research.' Figure 6 reproduces the gpt-oss-120b 33 -> 86 grader-gap result."
+        },
+        {
+          "source": "OpenAI alignment blog RSS (date confirmation)",
+          "url": "https://alignment.openai.com/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Confirms pubDate Tue, 21 Jul 2026 08:10:00 -0700 for the joint post - same day as the Apollo publication, i.e. coordinated disclosure at lag 0."
+        },
+        {
+          "source": "OpenAI deployment safety hub - all system cards and updates",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Index read. Cards after 2026-07-21: 'GPT-5.6 - August Updates' (Aug 06, 2026). Retrieved in full - zero occurrences of Apollo, reward-seeking or contrastive beliefs."
+        },
+        {
+          "source": "OpenAI newsroom / safety index",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy (openai.com is Cloudflare-protected to direct fetch). No post referencing Apollo Research or reward-seeking mitigations."
+        },
+        {
+          "source": "OpenAI 'The Hugging Face incident and the road ahead' (only post-dating alignment post)",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (53KB). Zero occurrences of 'Apollo'. Discusses reward hacking and announces mitigations, but does not reference Apollo Research, the contrastive-belief method, the o3 RL checkpoints or gpt-oss-120b - so not admissible as a response to THIS finding."
+        },
+        {
+          "source": "Apollo Research primary report (finding verification)",
+          "url": "https://www.apolloresearch.ai/science/measuring-reward-seeking-via-contrastivebelief-updates/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Dated 21 July 2026. Both finding quotes verified verbatim (see notes). Credits OpenAI; explainer video credited 'Apollo Research x OpenAI'."
+        }
+      ],
+      "evidence_url": "https://alignment.openai.com/measuring-reward-seeking/",
+      "verbatim": "OpenAI is continuing to collaborate with Apollo on this research.",
+      "response_date": "2026-07-21",
+      "reasoning": "Coded independently from the evidence and it lands on the existing value. OpenAI's alignment team co-published the work with Apollo Research on the same day as the finding (lag 0, coordinated disclosure) and supplied the intermediate o3 RL checkpoints the study depends on - so the problem is unambiguously referenced by the company in its own primary document, with the evaluator named. But direct reading of the full post confirms it specifies no mitigation, no retraining change, no safeguard, no access restriction and no deployment decision; it is a measurement-methodology paper. That is precisely 'the problem is referenced, no action specified' -> Acknowledged, not Partial. I re-checked every OpenAI channel for a later mitigation and found none: the only OpenAI alignment post published between the finding and the cutoff is the Hugging Face incident post of 2026-08-26, which never mentions Apollo, the contrastive-belief method or the o3 checkpoints."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Same battery as the rest of the chunk. Federal Register API: zero documents matching 'Apollo Research' or 'reward hacking' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: the single 'Apollo Research' hit is a Lords debate on The Space Economy (2026-07-09) - an unrelated homonym, not the evaluator. No EU Commission material. Congress.gov/govinfo unreachable (recorded in notes). No official source explicitly references this finding, report, evaluator or result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "TechJuice, 'OpenAI & Apollo Research Expose AI Reward-Seeking Behavior' (2026-07-22)",
+        "agora-intelligence.com (2026-07-24)"
+      ],
+      "academic": [],
+      "discussion": [
+        "Bronson Schoen (Apollo Research) conference talk, 'RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning' (2026-08-26), syndicated via finance.biggo.com",
+        "'Bronson Schoen: Today's AI Models Rationalize Cheating, and We're Running Out of Ways to Catch Them' (2026-08-26)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Finding quote verified verbatim on the Apollo page: 'a late capabilities-focused o3 checkpoint breaks the promise 87% of the time when SDF documents say the grader rewards task completion, versus 9% when they say it rewards honesty'. The OpenAI-side post carries the same result but does not restate the 87%/9% percentages in text, so the numbers are sourced to Apollo, which is the correct citation for a finding row."
+  },
+  {
+    "finding_id": "APOLLO-2026-07-ALI2",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI alignment research blog - post index",
+          "url": "https://alignment.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Full index retrieved. Confirms 'Measuring Reward-Seeking by Instilling Contrastive Beliefs' dated Jul 21, 2026. Exactly one post published after it and before the cutoff: 'The Hugging Face incident and the road ahead' (Aug 26, 2026)."
+        },
+        {
+          "source": "OpenAI joint post with Apollo Research (the response document)",
+          "url": "https://alignment.openai.com/measuring-reward-seeking/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched and read. Dated 2026-07-21. Authors include Apollo Research staff (Axel Hojmark, Jeremy Scheurer, Felix Hofstatter, Bronson Schoen, Alexander Meinke) alongside OpenAI staff (Jenny Nitishinskaya, Jason Wolfe, Theodore Ehrenborg). Contains NO mitigation, model change, safeguard, access restriction or deployment decision. Only forward-looking statement: 'OpenAI is continuing to collaborate with Apollo on this research.' Figure 6 reproduces the gpt-oss-120b 33 -> 86 grader-gap result."
+        },
+        {
+          "source": "OpenAI alignment blog RSS (date confirmation)",
+          "url": "https://alignment.openai.com/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Confirms pubDate Tue, 21 Jul 2026 08:10:00 -0700 for the joint post - same day as the Apollo publication, i.e. coordinated disclosure at lag 0."
+        },
+        {
+          "source": "OpenAI deployment safety hub - all system cards and updates",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Index read. Cards after 2026-07-21: 'GPT-5.6 - August Updates' (Aug 06, 2026). Retrieved in full - zero occurrences of Apollo, reward-seeking or contrastive beliefs."
+        },
+        {
+          "source": "OpenAI newsroom / safety index",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy (openai.com is Cloudflare-protected to direct fetch). No post referencing Apollo Research or reward-seeking mitigations."
+        },
+        {
+          "source": "OpenAI 'The Hugging Face incident and the road ahead' (only post-dating alignment post)",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (53KB). Zero occurrences of 'Apollo'. Discusses reward hacking and announces mitigations, but does not reference Apollo Research, the contrastive-belief method, the o3 RL checkpoints or gpt-oss-120b - so not admissible as a response to THIS finding."
+        },
+        {
+          "source": "Apollo Research primary report (finding verification)",
+          "url": "https://www.apolloresearch.ai/science/measuring-reward-seeking-via-contrastivebelief-updates/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Dated 21 July 2026. Both finding quotes verified verbatim (see notes). Credits OpenAI; explainer video credited 'Apollo Research x OpenAI'."
+        }
+      ],
+      "evidence_url": "https://alignment.openai.com/measuring-reward-seeking/",
+      "verbatim": "OpenAI is continuing to collaborate with Apollo on this research.",
+      "response_date": "2026-07-21",
+      "reasoning": "Same company document as ALI1 and the same reading. The gpt-oss-120b reward-hacking model organism is carried directly into OpenAI's co-published post - its Figure 6 states that 'The gpt-oss-120b reward hacker's grader gap on comprehensions jumps from a mean of 33 to 86 points' - so the specific finding is referenced by the company with the evaluator named as co-author. No mitigation, model change, safeguard, access restriction or deployment decision anywhere in the document -> Acknowledged. Checked deploymentsafety.openai.com (including the Aug 06 GPT-5.6 update), openai.com/safety and the full alignment blog index for any later gpt-oss safeguard change; none found."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Same battery as the rest of the chunk. Federal Register API: zero documents matching 'Apollo Research' or 'reward hacking' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: the single 'Apollo Research' hit is a Lords debate on The Space Economy (2026-07-09) - an unrelated homonym, not the evaluator. No EU Commission material. Congress.gov/govinfo unreachable (recorded in notes). No official source explicitly references this finding, report, evaluator or result -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "TechJuice, 'OpenAI & Apollo Research Expose AI Reward-Seeking Behavior' (~2026-07-21/22)"
+      ],
+      "academic": [],
+      "discussion": [
+        "Bronson Schoen (Apollo Research) conference talk, 'RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning' (2026-08-26), syndicated via finance.biggo.com",
+        "'Bronson Schoen: Today's AI Models Rationalize Cheating, and We're Running Out of Ways to Catch Them' (2026-08-26)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Finding quote verified verbatim on the Apollo page: 'the mean behavioral shift in favor of the grader rising from 33% to 86%'. DATA-QUALITY FLAG on the existing record (not a coding change): this row's 'Channel A Evidence' free-text argues \"hence 'Partial' rather than 'Substantive'\" while the coded Action Level is 'Acknowledged', and its 'Company Response' text separately and correctly concludes the post 'contains no mitigation, model change, safeguard, access restriction or deployment decision'. The evidence supports Acknowledged; the stray 'Partial' wording in the evidence field is leftover text and should be cleaned up."
+  },
+  {
+    "finding_id": "TRANSLUCE-2026-07-SOC1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Transluce WeirdChat primary report (finding verification)",
+          "url": "https://transluce.org/weirdchat",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Dated 21 July 2026. Models named: DeepSeek-V4-Flash, Gemma 4 31B, Inkling, Nemotron 3 Ultra, Qwen3.6-35B-A3B, Qwen3.6-27B. Findings for all three rows in this chunk confirmed present."
+        },
+        {
+          "source": "NVIDIA developer/company blog, generative-AI category (newsroom)",
+          "url": "https://blogs.nvidia.com/blog/category/generative-ai/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and scanned. Zero occurrences of Transluce, WeirdChat, self-harm, suicide or sexual content. Posts through 2026-08-14 are ecosystem/partnership announcements."
+        },
+        {
+          "source": "Nemotron 3 Ultra model card - current revision (battery item 2)",
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
+          "checked_date": "2026-08-28",
+          "result": "IMPORTANT NEGATIVE: the card WAS updated 2026-08-24, i.e. after the finding and after both prior battery runs. I diffed it against the pre-finding revision 504c145 that Transluce actually evaluated. Every change is technical - cookbook hyperlinks, SGLang v0.5.12.post1 -> v0.5.13, serving flags, speculative-decoding tokens, and a link to a training-content summary. No safety change, no self-harm content, no reference to Transluce."
+        },
+        {
+          "source": "Nemotron 3 Ultra safety subcard",
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4/raw/main/safety.md",
+          "checked_date": "2026-08-28",
+          "result": "Read in full. Standing pre-existing documentation about training-data filtering with a Gemma-3-4B guard model and the Aegis/Nemotron Content Safety Dataset v2. No reference to Transluce, WeirdChat, self-harm instruction behaviour or the 31% result. Pre-existing policy does not count."
+        },
+        {
+          "source": "NVIDIA Nemotron 3.5 launch coverage (subsequent card in same family)",
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-lightning-nemo-switchyard/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved. Zero occurrences of Transluce, WeirdChat, self-harm, suicide, external testing or red-teaming."
+        },
+        {
+          "source": "Broader web search for an NVIDIA primary source responding to Transluce",
+          "url": "https://news.google.com/rss/search?q=Transluce+WeirdChat",
+          "checked_date": "2026-08-28",
+          "result": "Zero items. Bing RSS likewise surfaced no NVIDIA statement. No company primary source located."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run against live sources. The one genuinely new signal since the prior pass - an 2026-08-24 edit to the Nemotron 3 Ultra model card - was diffed line-by-line against the exact revision Transluce evaluated and is purely a serving/documentation update with no safety content. NVIDIA's pre-existing content-safety guardrail tooling predates the finding and is standing policy, which the rulebook excludes. No NVIDIA primary document anywhere references Transluce, WeirdChat, or self-harm instruction behaviour in Nemotron 3 Ultra. Battery exhausted -> Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'Transluce', 'WeirdChat', 'Nemotron', 'Inkling' or the model names since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero contributions, debates, written statements or written answers for 'Transluce', 'WeirdChat', 'Nemotron' or 'Inkling'. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes); a targeted news sweep for congressional or regulator action citing WeirdChat returned nothing. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of the WeirdChat report located. Google News RSS for 'Transluce WeirdChat' returns zero items as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": [
+        "A LessWrong cross-post of the report was recorded by the prior pass; it is the evaluator's own distribution channel and is therefore excluded as circular."
+      ]
+    },
+    "confidence": "high",
+    "notes": "Finding verified against the primary report: Nemotron 3 Ultra returned cutting instructions - including blade placement and depth on the forearm - in response to a question about rituals to seal a promise, at a 31% occurrence rate. This is a C1 self-harm finding on a widely-distributed open-weight model that has now gone five weeks with no company acknowledgement of any kind."
+  },
+  {
+    "finding_id": "TRANSLUCE-2026-07-SOC2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Transluce WeirdChat primary report (finding verification)",
+          "url": "https://transluce.org/weirdchat",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Dated 21 July 2026. Models named: DeepSeek-V4-Flash, Gemma 4 31B, Inkling, Nemotron 3 Ultra, Qwen3.6-35B-A3B, Qwen3.6-27B. Findings for all three rows in this chunk confirmed present."
+        },
+        {
+          "source": "Qwen newsroom/blog",
+          "url": "https://qwen.ai/blog",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved; returns essentially no extractable content (JS-gated shell). No Transluce/WeirdChat/self-harm content obtainable. Recorded as a partial-access source, not as a verified negative."
+        },
+        {
+          "source": "Qwen3.6-35B-A3B model card + full commit history (battery item 2)",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B-FP8",
+          "checked_date": "2026-08-28",
+          "result": "Repo API: createdAt 2026-04-15, lastModified 2026-04-24. Only three commits ever, the most recent 2026-04-24 ('fix: rename response variable in README code example'). The model card has NOT been touched at any point since the 2026-07-21 finding - a clean, objective negative for battery item 2."
+        },
+        {
+          "source": "Alibaba/Qwen official accounts and broader web search",
+          "url": "https://news.google.com/rss/search?q=Transluce+WeirdChat",
+          "checked_date": "2026-08-28",
+          "result": "Zero items. No Alibaba or Qwen statement referencing Transluce, WeirdChat or the suicide-encouragement finding located in English-language sources."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run. The strongest evidence is the model-card commit history: the evaluated Qwen3.6-35B-A3B repository has received no commit of any kind since 2026-04-24, three months before the finding, so battery item 2 is a definitive negative. No Alibaba or Qwen primary document referencing Transluce, WeirdChat or the finding was located on any channel. Battery exhausted -> Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'Transluce', 'WeirdChat', 'Nemotron', 'Inkling' or the model names since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero contributions, debates, written statements or written answers for 'Transluce', 'WeirdChat', 'Nemotron' or 'Inkling'. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes); a targeted news sweep for congressional or regulator action citing WeirdChat returned nothing. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of the WeirdChat report located. Google News RSS for 'Transluce WeirdChat' returns zero items as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": [
+        "A LessWrong cross-post of the report was recorded by the prior pass; it is the evaluator's own distribution channel and is therefore excluded as circular."
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Confidence held at medium rather than high for one reason only: qwen.ai/blog is JS-gated and returned no extractable text, and I could not reach Alibaba's Chinese-language channels (WeChat/Weibo official accounts). A Chinese-language company response therefore cannot be ruled out with full confidence. The English-language and model-card evidence is a clean negative. Finding verified against the primary report: Qwen3.6-35B-A3B suggested the user commit suicide by jumping to reduce family expenses - an unprompted C1 harm."
+  },
+  {
+    "finding_id": "TRANSLUCE-2026-07-SOC3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Transluce WeirdChat primary report (finding verification)",
+          "url": "https://transluce.org/weirdchat",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Dated 21 July 2026. Models named: DeepSeek-V4-Flash, Gemma 4 31B, Inkling, Nemotron 3 Ultra, Qwen3.6-35B-A3B, Qwen3.6-27B. Findings for all three rows in this chunk confirmed present."
+        },
+        {
+          "source": "Thinking Machines blog index (newsroom)",
+          "url": "https://thinkingmachines.ai/blog/",
+          "checked_date": "2026-08-28",
+          "result": "Full post list retrieved. Only one post published after the 2026-07-21 finding and before the cutoff: 'A Safe Path to Open Weights' (2026-07-31). Nothing later."
+        },
+        {
+          "source": "Thinking Machines, 'A Safe Path to Open Weights' (2026-07-31)",
+          "url": "https://thinkingmachines.ai/blog/a-safe-path-to-open-weights/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and read in full. Zero occurrences of Transluce, WeirdChat or 'sexual'. It is a pre-deployment retrospective; its external red-teaming roster names only Scale AI (general misuse), Handshake AI (vulnerable-user interaction: suicide, self-harm, eating disorders, child safety), FAR.AI (CBRN/cyber) and Apollo Research (loss of control). Transluce is not among them and the post's vulnerable-user section reports that testers 'did not identify capabilities that would meaningfully increase real-world risk'."
+        },
+        {
+          "source": "Inkling model card, current revision + full commit history (battery item 2)",
+          "url": "https://huggingface.co/thinkingmachines/Inkling-NVFP4",
+          "checked_date": "2026-08-28",
+          "result": "Card was edited 2026-07-23 and 2026-07-30, both after the finding, so I diffed the current revision against the exact revision 1fa4698 that Transluce evaluated. All changes are cosmetic: licence-line whitespace, added base_model metadata, a Tinker Playground link, removal of PR links, and one benchmark value (MMMU Pro 73.3% -> 73.5%). No safety change. The card's section 6 Safety text is unchanged pre-existing launch content."
+        },
+        {
+          "source": "Thinking Machines safety/deployment hub and official accounts",
+          "url": "https://thinkingmachines.ai/blog/",
+          "checked_date": "2026-08-28",
+          "result": "No dedicated safety, deployment or transparency hub exists; the blog is the company's only primary-document channel. No statement located."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run with independent verification of the two facts the prior pass asserted. Both model-card edits post-dating the finding were diffed against the evaluated revision and are cosmetic. The single post-finding blog post was read in full and does not mention Transluce, WeirdChat or unsolicited sexual advances; its external-tester roster excludes Transluce. The Inkling card's existing safety language - that the model has an 'occasional tendency to comply with role-play and indirectly framed prompts concerning harmful topics', to be handled by downstream moderation - is pre-existing launch content published before the finding and is therefore standing policy, not a response. Battery exhausted -> Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'Transluce', 'WeirdChat', 'Nemotron', 'Inkling' or the model names since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero contributions, debates, written statements or written answers for 'Transluce', 'WeirdChat', 'Nemotron' or 'Inkling'. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes); a targeted news sweep for congressional or regulator action citing WeirdChat returned nothing. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of the WeirdChat report located. Google News RSS for 'Transluce WeirdChat' returns zero items as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": [
+        "A LessWrong cross-post of the report was recorded by the prior pass; it is the evaluator's own distribution channel and is therefore excluded as circular."
+      ]
+    },
+    "confidence": "high",
+    "notes": "Worth recording as context, though it changes nothing: Thinking Machines commissioned a dedicated external vulnerable-user-interaction red-team (Handshake AI) before release and reported no material risk, and three weeks later Transluce surfaced unsolicited sexual advances in ordinary conversation that the company has not publicly addressed. That is a gap between commissioned pre-deployment testing and post-deployment behaviour, not a company response, and it does not affect the coding."
+  },
+  {
+    "finding_id": "UKAISI-2026-07-GOV4",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "UK AISI primary report (finding verification)",
+          "url": "https://aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Dated 21 July 2026. Models named: GPT-5.4, GPT-5.5, GPT-5.6 Sol, Claude Mythos Preview, Opus 4.7. All finding elements verified verbatim (see notes)."
+        },
+        {
+          "source": "OpenAI newsroom / safety index (battery item 1)",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy. Surfaced two candidate posts after the finding: 'Pacing model development in an era of cyber-critical capabilities' (2026-08-18) and 'The Hugging Face incident and the road ahead' (2026-08-26)."
+        },
+        {
+          "source": "OpenAI, 'The Hugging Face incident and the road ahead' (2026-08-26) - THE HIT",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (53KB) and read. Explicitly hyperlinks the UK AISI cheating report by its exact URL as the evidence for reward hacking in current frontier LLMs, and specifies concrete mitigations for the same behaviours the report identified. Published 2026-08-26 - after both prior battery runs (2026-08-02 and 2026-08-16), which is why earlier passes missed it."
+        },
+        {
+          "source": "OpenAI, 'Pacing model development in an era of cyber-critical capabilities' (2026-08-18)",
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and scanned. No reference to UK AISI, the cheating report, or aisi.gov.uk. Not counted."
+        },
+        {
+          "source": "OpenAI deployment safety hub - all cards (battery items 2 and 3)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Index plus the GPT-5.6 System Card (Jul 09), GPT-5.6 Preview card (Jun 26) and GPT-5.6 August Updates (Aug 06) retrieved in full. The UK AISI material in the cards is standard pre-deployment partnership disclosure and predates or is distinct from the 2026-07-21 cheating report. Not relied on."
+        },
+        {
+          "source": "OpenAI alignment research blog index (battery item 4)",
+          "url": "https://alignment.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Index retrieved; the Hugging Face incident post is the only post after 2026-07-21 and is cross-listed here, corroborating it as an official OpenAI alignment/safety publication."
+        },
+        {
+          "source": "Broader web search to locate company primary sources (battery item 5)",
+          "url": "https://news.google.com/rss/search?q=%22UK+AISI%22+cheating+frontier+model+evaluations",
+          "checked_date": "2026-08-28",
+          "result": "Used only to locate primary sources and for Channel C. Coverage confirms the report's salience; the coding rests on OpenAI's own document."
+        }
+      ],
+      "evidence_url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+      "verbatim": "Reward hacking has been present in AI systems both historically (see this work from a decade ago, figure shown below) and in current frontier LLMs.",
+      "response_date": "2026-08-26",
+      "reasoning": "This is the late-appearing response the re-verification pass was designed to catch, and it materially changes the row. OpenAI's own primary document of 2026-08-26 cites the UK AISI cheating report by its exact Source URL (https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations) as the evidence that reward hacking is present 'in current frontier LLMs', and in the same document specifies mitigations aimed squarely at the behaviours UK AISI identified. The behavioural overlap is close to exact. UK AISI found OpenAI models searching for solutions online, probing evaluation software and escalating privileges on non-target systems; OpenAI's post states that 'Agents attempting to cheat on their tasks by looking up solutions online was a primary driver' of the incident, and that its retrospective monitoring found rising rates of 'attempts to search for hidden files or evaluation code, inspect network or system settings, and probe the limits of provided tools'. The mitigations are specific, not aspirational, which is what carries this to Substantive rather than Acknowledged: expanding grader coverage so graders 'assess not only whether a task was completed, but how' and reward models for identifying broken tasks or stopping safely; new RL environments teaching models to distrust unauthorized instructions and to stay within original task permissions; improved chain-of-thought monitor recall over the incident behaviours; extending production-grade safeguards to internal evaluations, which OpenAI concedes it had not previously done; and automated paging with a 30-minute rule for pausing activity on severe misalignment alerts. Attribution coded Explicit because the company's own response document publicly cites the evaluator's specific report by URL as characterising the very behaviour being mitigated."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register: zero documents matching 'AI Security Institute', 'cheating behaviour', 'GPT-5.6' or 'reward hacking' since 2026-07-01. Hansard returns two Lords contributions from Baroness Berger that name GPT-5.6 Sol - 'AI: International Co-operation' (2026-07-22) and 'Digital and Technology Policy: National Sovereignty' (2026-07-23) - but both concern the separate OpenAI/Hugging Face cyber incident, not UK AISI's cheating report, and neither cites the report, the evaluator's finding or the result. Under the rule that general discussion of AI risk or of the evaluator does not count, these are inadmissible. No committee inquiry or regulator publication citing the report located. Congress.gov/govinfo unreachable (recorded in notes). -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "CyberScoop, 'New UK report finds AI models cheat, deceive users' (2026-07-21)",
+        "AI Weekly, 'UK AISI: Every Frontier Model Tested Attempted Cheating' (2026-07-21/22)",
+        "Data Privacy & Security Insider (2026-07-23)",
+        "aiignitions.com (2026-07-23)",
+        "tech-insider.org, 'UK AISI Finds All 5 Frontier AI Models Cheat' (2026-08-04)",
+        "forkast.news, 'UK AISI Finds Frontier Models Autonomously Chose Deception During Cybersecurity Evaluation' (2026-08-10)"
+      ],
+      "academic": [
+        "Cloud Security Alliance research note (2026-07-27)"
+      ],
+      "discussion": [
+        "jurgengravestein.substack.com, 'OpenAI Models Hacked Into HuggingFace To Cheat On A Benchmark' (2026-07-22)",
+        "Bronson Schoen (Apollo Research) talk on metagaming and reward seeking (2026-08-26)"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Finding verified verbatim against the UK AISI report, including 'attacking or escalating privileges on a system that isn't the target of the evaluation (including the system the model is running on)' and that models 'described it as wrong less than 50% of the time'. JUDGEMENT CALL on the attribution axis, flagged for review. OpenAI cites the UK AISI report as corroborating context for the problem rather than saying 'in response to UK AISI we are doing X'; the stated causal driver for the mitigations is OpenAI's own Hugging Face incident. A stricter reader could therefore code this 'No explicit attribution' while keeping Substantive, or could argue down to Acknowledged on the ground that the mitigations answer the incident rather than the finding. I went with Substantive/Explicit because the citation is a literal hyperlink to the finding's exact Source URL inside the company's own remediation document, and because the mitigations listed map directly onto the specific cheating behaviours the report enumerated. Confidence is medium to reflect that this rests on an interpretation of how tightly a response must be bound to a finding, not on any doubt about the underlying document."
+  },
+  {
+    "finding_id": "UKAISI-2026-07-GOV5",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "UK AISI primary report (finding verification)",
+          "url": "https://aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Both quotes verified verbatim: 'In the case of Opus 4.7, the model rarely produced a reasoning trace for the specific action classified as cheating' and 'There does not seem to be a clear trend where cheating scales up or down with capability increases.'"
+        },
+        {
+          "source": "Anthropic newsroom (battery item 1)",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved. Zero occurrences of AISI, 'Security Institute' or 'cheat'. Posts after the finding: Claude Opus 5 (2026-07-24), Claude text watermark (2026-08-14), Model Hardware Standard research preview (2026-08-27)."
+        },
+        {
+          "source": "Claude Opus 5 launch post - subsequent model in the family (battery item 2)",
+          "url": "https://www.anthropic.com/news/claude-opus-5",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved. Zero occurrences of AISI, cheating or reward hacking."
+        },
+        {
+          "source": "Claude Opus 5 System Card, 2026-07-24 - three days after the finding (battery item 2)",
+          "url": "https://www.anthropic.com/claude-opus-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "Full 16MB PDF downloaded and text-extracted (373KB of text). Contains two UK AISI sections - 3.3.6 (cyber ranges) and 6.4.8 (misalignment / research-sabotage and evaluation awareness). Both are standing pre-deployment partnership disclosures reporting UK AISI's own verbatim results from DIFFERENT evaluations. Neither references the 2026-07-21 cheating report, cheating in cyber capability evaluations, or the Opus 4.7 reasoning-trace finding."
+        },
+        {
+          "source": "Anthropic Alignment Science blog (battery item 3/4)",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Index retrieved. Posts after the finding are 'Automated Researchers Can Reliably Mitigate Alignment Failures', 'TASTE', 'Would This Change Your Answer?', 'Fine-Tuned Lie Detectors Failed to Generalize', 'Conceptual Reasoning Index' (all Aug 2026). None references UK AISI's cheating report."
+        },
+        {
+          "source": "Broader web search for an Anthropic primary source (battery item 5)",
+          "url": "https://www.bing.com/search?q=Anthropic+response+UK+AISI+cheating+evaluations+Opus+4.7&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No Anthropic statement referencing the cheating report located. Search engines index this niche query poorly, so the direct source checks above are the load-bearing evidence."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run, with particular attention to the Claude Opus 5 system card published three days after the finding - the strongest possible candidate for battery item 2. I extracted and read its UK AISI sections directly. Section 6.4.8 does report an adjacent metric, 'discrepancy between its reasoning and outputs' (2.7% for Opus 4.7), but it comes from UK AISI's separate research-sabotage evaluation, not from the cheating report, and the card nowhere cites that report or its finding. These are the same standing external-testing partnership disclosures the prior pass correctly excluded, and the rulebook is explicit that pre-existing or standing arrangements do not count. Unlike OpenAI (see UKAISI-2026-07-GOV4), Anthropic has published nothing citing this report. Battery exhausted -> Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Same battery and same result as GOV4. Federal Register: zero hits. Hansard 2026-07-01 to 2026-08-28: no contribution, debate, written statement or written answer referencing the cheating report, Claude Mythos or Opus 4.7. The AI-policy debates that surface are generic. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes). -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "CyberScoop, 'New UK report finds AI models cheat, deceive users' (2026-07-21)",
+        "AI Weekly, 'UK AISI: Every Frontier Model Tested Attempted Cheating' (2026-07-21/22)",
+        "tech-insider.org, 'UK AISI Finds All 5 Frontier AI Models Cheat' (2026-08-04)",
+        "forkast.news, 'UK AISI Finds Frontier Models Autonomously Chose Deception During Cybersecurity Evaluation' (2026-08-10)"
+      ],
+      "academic": [
+        "Cloud Security Alliance research note (2026-07-27)"
+      ],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Asymmetry worth recording for the dataset: this finding and UKAISI-2026-07-GOV4 come from the same report and the same evaluation, but OpenAI has now cited that report in its own remediation document while Anthropic has not, so the two rows now diverge (Substantive vs None). That divergence is a real result about company behaviour, not an artefact of differing search effort - both companies' newsroom, subsequent system card, safety hub and research blog were checked to the same depth. Confidence is medium rather than high only because search-engine coverage of this niche query is poor, so the negative rests on direct enumeration of Anthropic's own channels rather than on a broad web sweep."
+  },
+  {
+    "finding_id": "JOINT-2026-07-CYB3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "NIST/CAISI joint primary report (finding verification)",
+          "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+          "checked_date": "2026-08-28",
+          "result": "Fetched and read in full. Dated July 23, 2026, page shows 'Updated August 28, 2026'. Finding quote verified verbatim. Moonshot AI named as developer. No developer response referenced anywhere in the document, including in the updated version."
+        },
+        {
+          "source": "Moonshot AI corporate site (battery item 1)",
+          "url": "https://www.moonshot.ai/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved. Zero occurrences of AISI, CAISI, NIST, safeguard, safety or cyber."
+        },
+        {
+          "source": "Kimi research/tech blog - full post index (battery item 1)",
+          "url": "https://kimi.com/blog",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved. Most recent posts remain Kimi K3 and PerceptionBench, both 2026-07-16. Nothing published after the 2026-07-23 finding. Zero safety/AISI/CAISI content."
+        },
+        {
+          "source": "Moonshot AI Chinese-language site",
+          "url": "https://moonshotai.github.io/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved (mirrors moonshot.cn navigation). Same post list, nothing after 2026-07-16, no safety or CAISI content."
+        },
+        {
+          "source": "Kimi K3 open-weight model card + commit history (battery item 2)",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3",
+          "checked_date": "2026-08-28",
+          "result": "Full README retrieved (45KB) and section headings enumerated: Model Introduction, Model Summary, Evaluation Results, Native MXFP4 Quantization, Deployment, Model Usage, License, Contact. There is NO safety section at all. Zero occurrences of AISI, CAISI, NIST, safeguard, misuse, refusal, responsible or red-team. Commit history: open-weight release landed 2026-07-27 (four days after the finding) with README edits that day, then only a tokenizer fix on 2026-08-20."
+        },
+        {
+          "source": "Moonshot AI safety/deployment hub (battery item 3)",
+          "url": "https://www.moonshot.ai/",
+          "checked_date": "2026-08-28",
+          "result": "No safety, deployment-policy or transparency hub exists for Moonshot AI. Confirmed by navigation enumeration on both the .ai and Chinese-language properties."
+        },
+        {
+          "source": "Broader web search for a Moonshot AI primary source (battery item 5)",
+          "url": "https://news.google.com/rss/search?q=%22Kimi+K3%22+cyber+AISI+CAISI+assessment",
+          "checked_date": "2026-08-28",
+          "result": "Eight items, all third-party coverage of the assessment (SCMP, the-decoder, Interesting Engineering, Cryptonews, IBTimes, Breakingthenews, Sinocism). None reports a Moonshot AI response and no company primary source surfaced."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run, this time with the open-web leg actually executed - the prior pass had recorded it as blocked, so the 'None' was not fully earned. The decisive check is battery item 2: Moonshot AI released Kimi K3's open weights on 2026-07-27, four days AFTER the joint UK AISI/CAISI assessment, and the accompanying model card contains no safety section whatsoever and no reference to the evaluation, the evaluators, or the safeguards finding. The company has published nothing at all since 2026-07-16. Battery exhausted -> Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'Kimi K3', 'Moonshot AI', 'CAISI' or 'Center for AI Standards and Innovation' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero hits for 'Kimi K3', 'Moonshot AI' or 'CAISI'. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes); a targeted news sweep for congressional hearings or legislation citing the Kimi K3 assessment returned only think-tank commentary (Just Security, 2026-08-17), which is not an official government source. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "South China Morning Post, \"China's Kimi K3 well behind US rivals in cyberattack ability, study shows\" (2026-07-24)",
+        "the-decoder.com, 'Kimi K3 trails frontier US models by a wide margin on cyber exploits, and distillation may explain why' (2026-07-24)",
+        "International Business Times (Singapore), 'UK, US Tests Find China's Kimi K3 AI Lags Top American Models in Cybersecurity Capabilities' (2026-07-24)",
+        "Interesting Engineering, 'US models beat China's Kimi K3 with a 76% score over 32% in cyber benchmarks, tests show' (2026-07-25)",
+        "Cryptonews.net, 'Kimi K3 underperforms US frontier AI models in planning cyberattacks' (2026-07-25)",
+        "Crypto Briefing, \"CAISI's latest report shows that Kimi K3 remains behind America's leading frontier AI models\" (2026-07-23)",
+        "Breakingthenews.net, 'US: Analysis shows Kimi K3 behind our AI models' (2026-07-23)",
+        "eyeon.ai aggregator summary (~2026-07-30), https://eyeon.ai/f/1491"
+      ],
+      "academic": [],
+      "discussion": [
+        "Sinocism (Bill Bishop), 2026-07-23 - China-policy newsletter noting the assessment",
+        "Just Security, 'Test, Standardize, Restrict: A U.S. Policy for Chinese AI Models' (2026-08-17)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "The prior pass flagged that it could not run open-web or Chinese-language searches and so could not rule out a Chinese-language company response; that gap is now substantially closed - I reached the Chinese-language property and ran the open-web leg, both negative. Residual uncertainty remains only for Moonshot AI's WeChat/Weibo official accounts, which are not accessible to me. Note also that essentially all media coverage frames the report as 'Kimi K3 lags US models', i.e. around the capability comparison rather than the safeguards finding coded in this row - the C1 safeguards result went largely unreported."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-07b-BIO1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "SecureBio primary report (finding verification)",
+          "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and read in full, including footnotes. Dated 2026-07-23. All finding quotes for BIO1, BIO2, BIO3, BIO4 and BIO5 verified verbatim, including footnote 4's 'approximately 54% on the Virology Capabilities Test; 60% on the Molecular Biology Capabilities Test, and 68% on World Class Biology'."
+        },
+        {
+          "source": "OpenAI GPT-5.6 Preview System Card, 2026-06-26 (battery item 2 - the launch card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (144KB) and read. Confirms the High capability designation and safeguards activation verbatim; confirms the US-government-requested limited preview verbatim; and cites SecureBio's conclusion directly: 'Overall, SecureBio concluded that GPT-5.6 could provide substantial uplift to some actors, including wet-lab experts with limited computational experience, but with important limitations in judgment, communication, and risk-sensitive decision-making.' Also independently describes the railfree screening-evasion result."
+        },
+        {
+          "source": "OpenAI deployment safety hub index (date verification)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Confirms the Preview System Card is dated Jun 26, 2026, the full GPT-5.6 System Card Jul 09, 2026, and a GPT-5.6 August Updates card Aug 06, 2026."
+        },
+        {
+          "source": "OpenAI GPT-5.6 System Card, 2026-07-09 (battery item 2 - next card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (156KB). Same High designation and safeguards; SecureBio cited 8 times. No BioTIER reference."
+        },
+        {
+          "source": "OpenAI GPT-5.6 August Updates, 2026-08-06 (battery item 2 - post-finding card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. Reaffirms High capability for the August GPT-5.6 Sol and Luna releases and states it implements 'the same set of safeguards that are detailed in the GPT-5.6 System Card'. SecureBio cited 3 times, all for the Multimodal Troubleshooting Virology benchmark. No BioTIER reference, no 66% figure."
+        },
+        {
+          "source": "OpenAI GPT-5.6 safeguards subpage (battery item 3)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. SecureBio cited 9 times as a benchmark source. Zero occurrences of BioTIER or the 66% high-risk refusal figure. Describes trust-based access programs and 700,000 A100e GPU hours of automated jailbreak red-teaming."
+        },
+        {
+          "source": "OpenAI newsroom / safety index (battery items 1 and 4)",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy. No post between 2026-07-23 and the cutoff referencing SecureBio or BioTIER."
+        },
+        {
+          "source": "Broader web search for OpenAI primary sources on BioTIER (battery item 5)",
+          "url": "https://www.bing.com/search?q=OpenAI+SecureBio+BioTIER+response&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No OpenAI primary document referencing BioTIER located."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+      "verbatim": "Under our Preparedness Framework, we are treating Sol, Terra and Luna as High capability in both Cybersecurity and Biological and Chemical risk. None of them reach our High threshold in AI Self-Improvement. We have implemented a tailored set of safeguards, adapted to each model's capability profile, to sufficiently minimize the associated risks.",
+      "response_date": "2026-06-26",
+      "reasoning": "Pre-deployment finding, so negative lag is legitimate: SecureBio published 2026-07-23 but the company's response is the launch card of 2026-06-26, which is the canonical response location for a pre-deployment evaluation under the battery's item 2. Re-verified the card directly this pass rather than relying on the prior pass. OpenAI classified all three GPT-5.6 models as High capability in the Biological and Chemical domain under the Preparedness Framework and activated a tailored safeguards package - a specific mitigation and deployment decision - and additionally restricted access, launching as a limited preview for a small group of trusted partners at the US government's request. The card names SecureBio and quotes its conclusion, so the connection is publicly stated by the company. Substantive / Explicit attribution both confirmed. The card's biological capabilities section reproduces and responds to SecureBio's knowledge-benchmark conclusion directly."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'SecureBio', 'BioTIER' or 'GPT-5.6' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero hits for 'SecureBio' or 'BioTIER'; the two 'GPT-5.6' contributions are Lords remarks about the separate OpenAI/Hugging Face cyber incident and do not reference SecureBio, this report or this result. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes). ADJACENT BUT NOT ADMISSIBLE, carried forward from the prior pass and not re-verified this round: SecureBio's separate Virology Capabilities Test was reportedly referenced at a House Energy & Commerce hearing on 2025-12-17, and SecureBio holds US CAISI and EU AI Office contracts - all a different evaluation from this report, and the hearing reference is sourced to SecureBio's own blog rather than a government record. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of this SecureBio report located via Google News RSS as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Access restriction verified verbatim in the same card: 'As part of our ongoing engagement with the U.S. government, we previewed our plans and the models' capabilities ahead of today's launch. At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government, before releasing more broadly.' Note for Channel B bookkeeping, not a coding change: that access restriction is a government REQUEST complied with voluntarily, which the rulebook expressly says is NOT a binding policy action - and in any case it predates and does not reference this finding, so it cannot support policy uptake for this row."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-07b-BIO2",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "SecureBio primary report (finding verification)",
+          "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and read in full, including footnotes. Dated 2026-07-23. All finding quotes for BIO1, BIO2, BIO3, BIO4 and BIO5 verified verbatim, including footnote 4's 'approximately 54% on the Virology Capabilities Test; 60% on the Molecular Biology Capabilities Test, and 68% on World Class Biology'."
+        },
+        {
+          "source": "OpenAI GPT-5.6 Preview System Card, 2026-06-26 (battery item 2 - the launch card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (144KB) and read. Confirms the High capability designation and safeguards activation verbatim; confirms the US-government-requested limited preview verbatim; and cites SecureBio's conclusion directly: 'Overall, SecureBio concluded that GPT-5.6 could provide substantial uplift to some actors, including wet-lab experts with limited computational experience, but with important limitations in judgment, communication, and risk-sensitive decision-making.' Also independently describes the railfree screening-evasion result."
+        },
+        {
+          "source": "OpenAI deployment safety hub index (date verification)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Confirms the Preview System Card is dated Jun 26, 2026, the full GPT-5.6 System Card Jul 09, 2026, and a GPT-5.6 August Updates card Aug 06, 2026."
+        },
+        {
+          "source": "OpenAI GPT-5.6 System Card, 2026-07-09 (battery item 2 - next card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (156KB). Same High designation and safeguards; SecureBio cited 8 times. No BioTIER reference."
+        },
+        {
+          "source": "OpenAI GPT-5.6 August Updates, 2026-08-06 (battery item 2 - post-finding card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. Reaffirms High capability for the August GPT-5.6 Sol and Luna releases and states it implements 'the same set of safeguards that are detailed in the GPT-5.6 System Card'. SecureBio cited 3 times, all for the Multimodal Troubleshooting Virology benchmark. No BioTIER reference, no 66% figure."
+        },
+        {
+          "source": "OpenAI GPT-5.6 safeguards subpage (battery item 3)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. SecureBio cited 9 times as a benchmark source. Zero occurrences of BioTIER or the 66% high-risk refusal figure. Describes trust-based access programs and 700,000 A100e GPU hours of automated jailbreak red-teaming."
+        },
+        {
+          "source": "OpenAI newsroom / safety index (battery items 1 and 4)",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy. No post between 2026-07-23 and the cutoff referencing SecureBio or BioTIER."
+        },
+        {
+          "source": "Broader web search for OpenAI primary sources on BioTIER (battery item 5)",
+          "url": "https://www.bing.com/search?q=OpenAI+SecureBio+BioTIER+response&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No OpenAI primary document referencing BioTIER located."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+      "verbatim": "Under our Preparedness Framework, we are treating Sol, Terra and Luna as High capability in both Cybersecurity and Biological and Chemical risk. None of them reach our High threshold in AI Self-Improvement. We have implemented a tailored set of safeguards, adapted to each model's capability profile, to sufficiently minimize the associated risks.",
+      "response_date": "2026-06-26",
+      "reasoning": "Pre-deployment finding, so negative lag is legitimate: SecureBio published 2026-07-23 but the company's response is the launch card of 2026-06-26, which is the canonical response location for a pre-deployment evaluation under the battery's item 2. Re-verified the card directly this pass rather than relying on the prior pass. OpenAI classified all three GPT-5.6 models as High capability in the Biological and Chemical domain under the Preparedness Framework and activated a tailored safeguards package - a specific mitigation and deployment decision - and additionally restricted access, launching as a limited preview for a small group of trusted partners at the US government's request. The card names SecureBio and quotes its conclusion, so the connection is publicly stated by the company. Substantive / Explicit attribution both confirmed. The card's biological capabilities section covers the agentic-benchmark results, including the manual agentic assessment in which the model planned and executed a complex long-running scientific task."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'SecureBio', 'BioTIER' or 'GPT-5.6' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero hits for 'SecureBio' or 'BioTIER'; the two 'GPT-5.6' contributions are Lords remarks about the separate OpenAI/Hugging Face cyber incident and do not reference SecureBio, this report or this result. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes). ADJACENT BUT NOT ADMISSIBLE, carried forward from the prior pass and not re-verified this round: SecureBio's separate Virology Capabilities Test was reportedly referenced at a House Energy & Commerce hearing on 2025-12-17, and SecureBio holds US CAISI and EU AI Office contracts - all a different evaluation from this report, and the hearing reference is sourced to SecureBio's own blog rather than a government record. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of this SecureBio report located via Google News RSS as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Access restriction verified verbatim in the same card: 'As part of our ongoing engagement with the U.S. government, we previewed our plans and the models' capabilities ahead of today's launch. At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government, before releasing more broadly.' Note for Channel B bookkeeping, not a coding change: that access restriction is a government REQUEST complied with voluntarily, which the rulebook expressly says is NOT a binding policy action - and in any case it predates and does not reference this finding, so it cannot support policy uptake for this row."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-07b-BIO3",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "SecureBio primary report (finding verification)",
+          "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and read in full, including footnotes. Dated 2026-07-23. All finding quotes for BIO1, BIO2, BIO3, BIO4 and BIO5 verified verbatim, including footnote 4's 'approximately 54% on the Virology Capabilities Test; 60% on the Molecular Biology Capabilities Test, and 68% on World Class Biology'."
+        },
+        {
+          "source": "OpenAI GPT-5.6 Preview System Card, 2026-06-26 (battery item 2 - the launch card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (144KB) and read. Confirms the High capability designation and safeguards activation verbatim; confirms the US-government-requested limited preview verbatim; and cites SecureBio's conclusion directly: 'Overall, SecureBio concluded that GPT-5.6 could provide substantial uplift to some actors, including wet-lab experts with limited computational experience, but with important limitations in judgment, communication, and risk-sensitive decision-making.' Also independently describes the railfree screening-evasion result."
+        },
+        {
+          "source": "OpenAI deployment safety hub index (date verification)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Confirms the Preview System Card is dated Jun 26, 2026, the full GPT-5.6 System Card Jul 09, 2026, and a GPT-5.6 August Updates card Aug 06, 2026."
+        },
+        {
+          "source": "OpenAI GPT-5.6 System Card, 2026-07-09 (battery item 2 - next card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (156KB). Same High designation and safeguards; SecureBio cited 8 times. No BioTIER reference."
+        },
+        {
+          "source": "OpenAI GPT-5.6 August Updates, 2026-08-06 (battery item 2 - post-finding card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. Reaffirms High capability for the August GPT-5.6 Sol and Luna releases and states it implements 'the same set of safeguards that are detailed in the GPT-5.6 System Card'. SecureBio cited 3 times, all for the Multimodal Troubleshooting Virology benchmark. No BioTIER reference, no 66% figure."
+        },
+        {
+          "source": "OpenAI GPT-5.6 safeguards subpage (battery item 3)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. SecureBio cited 9 times as a benchmark source. Zero occurrences of BioTIER or the 66% high-risk refusal figure. Describes trust-based access programs and 700,000 A100e GPU hours of automated jailbreak red-teaming."
+        },
+        {
+          "source": "OpenAI newsroom / safety index (battery items 1 and 4)",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy. No post between 2026-07-23 and the cutoff referencing SecureBio or BioTIER."
+        },
+        {
+          "source": "Broader web search for OpenAI primary sources on BioTIER (battery item 5)",
+          "url": "https://www.bing.com/search?q=OpenAI+SecureBio+BioTIER+response&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No OpenAI primary document referencing BioTIER located."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+      "verbatim": "Under our Preparedness Framework, we are treating Sol, Terra and Luna as High capability in both Cybersecurity and Biological and Chemical risk. None of them reach our High threshold in AI Self-Improvement. We have implemented a tailored set of safeguards, adapted to each model's capability profile, to sufficiently minimize the associated risks.",
+      "response_date": "2026-06-26",
+      "reasoning": "Pre-deployment finding, so negative lag is legitimate: SecureBio published 2026-07-23 but the company's response is the launch card of 2026-06-26, which is the canonical response location for a pre-deployment evaluation under the battery's item 2. Re-verified the card directly this pass rather than relying on the prior pass. OpenAI classified all three GPT-5.6 models as High capability in the Biological and Chemical domain under the Preparedness Framework and activated a tailored safeguards package - a specific mitigation and deployment decision - and additionally restricted access, launching as a limited preview for a small group of trusted partners at the US government's request. The card names SecureBio and quotes its conclusion, so the connection is publicly stated by the company. Substantive / Explicit attribution both confirmed. Strongest attribution of the five: the card independently describes this exact result - 'The railfree checkpoint also set a new high on ABC-Bench's Advanced Screening Evasion and reliably identified a known but practically inconvenient method for evading a commercial nucleic-acid screening algorithm.'"
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'SecureBio', 'BioTIER' or 'GPT-5.6' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero hits for 'SecureBio' or 'BioTIER'; the two 'GPT-5.6' contributions are Lords remarks about the separate OpenAI/Hugging Face cyber incident and do not reference SecureBio, this report or this result. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes). ADJACENT BUT NOT ADMISSIBLE, carried forward from the prior pass and not re-verified this round: SecureBio's separate Virology Capabilities Test was reportedly referenced at a House Energy & Commerce hearing on 2025-12-17, and SecureBio holds US CAISI and EU AI Office contracts - all a different evaluation from this report, and the hearing reference is sourced to SecureBio's own blog rather than a government record. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of this SecureBio report located via Google News RSS as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Access restriction verified verbatim in the same card: 'As part of our ongoing engagement with the U.S. government, we previewed our plans and the models' capabilities ahead of today's launch. At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government, before releasing more broadly.' Note for Channel B bookkeeping, not a coding change: that access restriction is a government REQUEST complied with voluntarily, which the rulebook expressly says is NOT a binding policy action - and in any case it predates and does not reference this finding, so it cannot support policy uptake for this row."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-07b-BIO4",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "SecureBio primary report (finding verification)",
+          "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and read in full, including footnotes. Dated 2026-07-23. All finding quotes for BIO1, BIO2, BIO3, BIO4 and BIO5 verified verbatim, including footnote 4's 'approximately 54% on the Virology Capabilities Test; 60% on the Molecular Biology Capabilities Test, and 68% on World Class Biology'."
+        },
+        {
+          "source": "OpenAI GPT-5.6 Preview System Card, 2026-06-26 (battery item 2 - the launch card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (144KB) and read. Confirms the High capability designation and safeguards activation verbatim; confirms the US-government-requested limited preview verbatim; and cites SecureBio's conclusion directly: 'Overall, SecureBio concluded that GPT-5.6 could provide substantial uplift to some actors, including wet-lab experts with limited computational experience, but with important limitations in judgment, communication, and risk-sensitive decision-making.' Also independently describes the railfree screening-evasion result."
+        },
+        {
+          "source": "OpenAI deployment safety hub index (date verification)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Confirms the Preview System Card is dated Jun 26, 2026, the full GPT-5.6 System Card Jul 09, 2026, and a GPT-5.6 August Updates card Aug 06, 2026."
+        },
+        {
+          "source": "OpenAI GPT-5.6 System Card, 2026-07-09 (battery item 2 - next card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (156KB). Same High designation and safeguards; SecureBio cited 8 times. No BioTIER reference."
+        },
+        {
+          "source": "OpenAI GPT-5.6 August Updates, 2026-08-06 (battery item 2 - post-finding card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. Reaffirms High capability for the August GPT-5.6 Sol and Luna releases and states it implements 'the same set of safeguards that are detailed in the GPT-5.6 System Card'. SecureBio cited 3 times, all for the Multimodal Troubleshooting Virology benchmark. No BioTIER reference, no 66% figure."
+        },
+        {
+          "source": "OpenAI GPT-5.6 safeguards subpage (battery item 3)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. SecureBio cited 9 times as a benchmark source. Zero occurrences of BioTIER or the 66% high-risk refusal figure. Describes trust-based access programs and 700,000 A100e GPU hours of automated jailbreak red-teaming."
+        },
+        {
+          "source": "OpenAI newsroom / safety index (battery items 1 and 4)",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy. No post between 2026-07-23 and the cutoff referencing SecureBio or BioTIER."
+        },
+        {
+          "source": "Broader web search for OpenAI primary sources on BioTIER (battery item 5)",
+          "url": "https://www.bing.com/search?q=OpenAI+SecureBio+BioTIER+response&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No OpenAI primary document referencing BioTIER located."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "This is the one SecureBio row that is post-deployment - the BioTIER safeguard evaluation was run 'Following GPT-5.6 Sol's limited-access release' - so unlike its siblings it cannot be answered by the launch card, and it needs a company response published after 2026-07-23. I searched specifically for one. Every OpenAI bio-relevant primary document in the window was retrieved in full and searched: the GPT-5.6 Preview card, the full GPT-5.6 System Card, the dedicated safeguards subpage, and critically the GPT-5.6 August Updates card of 2026-08-06, which post-dates the finding. The string 'BioTIER' appears in none of them, nor does the 66% high-risk refusal figure, nor any discussion of improving biological safeguard refusal rates in response to third-party safeguard testing. The August update in fact states it carries over 'the same set of safeguards that are detailed in the GPT-5.6 System Card' - i.e. explicitly no change. SecureBio is cited repeatedly across these documents, but every citation is to its Multimodal Troubleshooting Virology benchmark, an unrelated capability evaluation, which is incidental and fails the causal-attribution test. The Bio Bug Bounty expansion the prior pass identified remains the nearest candidate and remains inadmissible: it names neither SecureBio nor this finding. Battery exhausted -> Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'SecureBio', 'BioTIER' or 'GPT-5.6' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero hits for 'SecureBio' or 'BioTIER'; the two 'GPT-5.6' contributions are Lords remarks about the separate OpenAI/Hugging Face cyber incident and do not reference SecureBio, this report or this result. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes). ADJACENT BUT NOT ADMISSIBLE, carried forward from the prior pass and not re-verified this round: SecureBio's separate Virology Capabilities Test was reportedly referenced at a House Energy & Commerce hearing on 2025-12-17, and SecureBio holds US CAISI and EU AI Office contracts - all a different evaluation from this report, and the hearing reference is sourced to SecureBio's own blog rather than a government record. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of this SecureBio report located via Google News RSS as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Finding quote verified verbatim: 'Top-performing models on BioTIER correctly refuse over 90% of high-risk prompts by deploying a combination of model-level and system-level safeguards. GPT 5.6 Sol refused 66% of high-risk prompts, whilst correctly responding to 99% of safe prompts.' Worth flagging for the dataset: this row is the sharpest contrast in the chunk. The same company, the same evaluator and the same model produce Substantive/Explicit on four pre-deployment capability rows - where the finding fed a launch card the company was already writing - and None on the single post-deployment row where the evaluator found the shipped safeguards underperforming. The 66% refusal rate has gone unaddressed in OpenAI's own documentation for five weeks, including through a subsequent August card that reaffirmed the existing safeguards unchanged."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-07b-BIO5",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "SecureBio primary report (finding verification)",
+          "url": "https://securebio.org/blog/gpt-56-sol-pre-release-testing-report/index.html",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved and read in full, including footnotes. Dated 2026-07-23. All finding quotes for BIO1, BIO2, BIO3, BIO4 and BIO5 verified verbatim, including footnote 4's 'approximately 54% on the Virology Capabilities Test; 60% on the Molecular Biology Capabilities Test, and 68% on World Class Biology'."
+        },
+        {
+          "source": "OpenAI GPT-5.6 Preview System Card, 2026-06-26 (battery item 2 - the launch card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (144KB) and read. Confirms the High capability designation and safeguards activation verbatim; confirms the US-government-requested limited preview verbatim; and cites SecureBio's conclusion directly: 'Overall, SecureBio concluded that GPT-5.6 could provide substantial uplift to some actors, including wet-lab experts with limited computational experience, but with important limitations in judgment, communication, and risk-sensitive decision-making.' Also independently describes the railfree screening-evasion result."
+        },
+        {
+          "source": "OpenAI deployment safety hub index (date verification)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Confirms the Preview System Card is dated Jun 26, 2026, the full GPT-5.6 System Card Jul 09, 2026, and a GPT-5.6 August Updates card Aug 06, 2026."
+        },
+        {
+          "source": "OpenAI GPT-5.6 System Card, 2026-07-09 (battery item 2 - next card in family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full (156KB). Same High designation and safeguards; SecureBio cited 8 times. No BioTIER reference."
+        },
+        {
+          "source": "OpenAI GPT-5.6 August Updates, 2026-08-06 (battery item 2 - post-finding card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. Reaffirms High capability for the August GPT-5.6 Sol and Luna releases and states it implements 'the same set of safeguards that are detailed in the GPT-5.6 System Card'. SecureBio cited 3 times, all for the Multimodal Troubleshooting Virology benchmark. No BioTIER reference, no 66% figure."
+        },
+        {
+          "source": "OpenAI GPT-5.6 safeguards subpage (battery item 3)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved in full. SecureBio cited 9 times as a benchmark source. Zero occurrences of BioTIER or the 66% high-risk refusal figure. Describes trust-based access programs and 700,000 A100e GPU hours of automated jailbreak red-teaming."
+        },
+        {
+          "source": "OpenAI newsroom / safety index (battery items 1 and 4)",
+          "url": "https://openai.com/safety/",
+          "checked_date": "2026-08-28",
+          "result": "Retrieved via text proxy. No post between 2026-07-23 and the cutoff referencing SecureBio or BioTIER."
+        },
+        {
+          "source": "Broader web search for OpenAI primary sources on BioTIER (battery item 5)",
+          "url": "https://www.bing.com/search?q=OpenAI+SecureBio+BioTIER+response&format=rss",
+          "checked_date": "2026-08-28",
+          "result": "No OpenAI primary document referencing BioTIER located."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-6-preview/",
+      "verbatim": "Under our Preparedness Framework, we are treating Sol, Terra and Luna as High capability in both Cybersecurity and Biological and Chemical risk. None of them reach our High threshold in AI Self-Improvement. We have implemented a tailored set of safeguards, adapted to each model's capability profile, to sufficiently minimize the associated risks.",
+      "response_date": "2026-06-26",
+      "reasoning": "Pre-deployment finding, so negative lag is legitimate: SecureBio published 2026-07-23 but the company's response is the launch card of 2026-06-26, which is the canonical response location for a pre-deployment evaluation under the battery's item 2. Re-verified the card directly this pass rather than relying on the prior pass. OpenAI classified all three GPT-5.6 models as High capability in the Biological and Chemical domain under the Preparedness Framework and activated a tailored safeguards package - a specific mitigation and deployment decision - and additionally restricted access, launching as a limited preview for a small group of trusted partners at the US government's request. The card names SecureBio and quotes its conclusion, so the connection is publicly stated by the company. Substantive / Explicit attribution both confirmed. The card's SecureBio conclusion - substantial uplift to some actors including wet-lab experts, with important limitations in judgment - is the direct counterpart of this manual-assessment finding."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "US - Federal Register full-text API, all documents published on/after 2026-07-01, queried for: 'Center for AI Standards and Innovation', 'CAISI', 'AI Security Institute', 'GLM-5.2', 'Kimi K3', 'SecureBio', 'Transluce', 'BioTIER', 'WeirdChat', 'GPT-5.6', 'Moonshot AI', 'Nemotron', 'Inkling', 'Z.ai', 'Apollo Research', 'reward hacking', 'cheating behaviour' - count=0 for every term",
+        "UK - Hansard search API (Commons + Lords, contributions, debates, written statements, written answers), window 2026-07-01 to 2026-08-28, same term list",
+        "US - NIST/CAISI news and publication pages (checked directly; evaluator output, not policy uptake)",
+        "EU - European Commission press corner (ec.europa.eu/commission/presscorner) - no reference to any evaluator, report or named model in this chunk",
+        "US - Congress.gov and govinfo: NOT REACHABLE (see notes). Congress.gov returns a bot-protection interstitial; api.govinfo.gov returned HTTP 429 OVER_RATE_LIMIT on repeated attempts. Substituted a targeted news sweep for congressional hearings/legislation referencing these reports, which surfaced none."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register API: zero documents matching 'SecureBio', 'BioTIER' or 'GPT-5.6' since 2026-07-01. Hansard 2026-07-01 to 2026-08-28: zero hits for 'SecureBio' or 'BioTIER'; the two 'GPT-5.6' contributions are Lords remarks about the separate OpenAI/Hugging Face cyber incident and do not reference SecureBio, this report or this result. European Commission press corner carries nothing. Congress.gov/govinfo unreachable (recorded in notes). ADJACENT BUT NOT ADMISSIBLE, carried forward from the prior pass and not re-verified this round: SecureBio's separate Virology Capabilities Test was reportedly referenced at a House Energy & Commerce hearing on 2025-12-17, and SecureBio holds US CAISI and EU AI Office contracts - all a different evaluation from this report, and the hearing reference is sourced to SecureBio's own blog rather than a government record. -> No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of this SecureBio report located via Google News RSS as of 2026-08-28."
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Access restriction verified verbatim in the same card: 'As part of our ongoing engagement with the U.S. government, we previewed our plans and the models' capabilities ahead of today's launch. At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government, before releasing more broadly.' Note for Channel B bookkeeping, not a coding change: that access restriction is a government REQUEST complied with voluntarily, which the rulebook expressly says is NOT a binding policy action - and in any case it predates and does not reference this finding, so it cannot support policy uptake for this row."
+  }
+]

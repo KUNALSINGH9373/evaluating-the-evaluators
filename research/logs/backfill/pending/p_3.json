@@ -1,0 +1,75 @@
+{
+  "results": [
+    {
+      "url": "https://openai.com/index/frontier-risk-and-preparedness",
+      "title": "Frontier risk and preparedness",
+      "decision": "EXCLUDED",
+      "rule_cited": "§1 company self-report (no external evaluator named as contributing findings); independently §2 (announcement/plan, no findings)",
+      "exclusion_reason": "EXCLUDED - company self-report. Fetched successfully (Wayback id_ snapshot, 200, 6,652 chars) — the August fetch failure is resolved. Full text read. The piece is an OpenAI announcement: formation of the Preparedness team (led by Aleksander Madry), the planned Risk-Informed Development Policy, and the AI Preparedness Challenge, plus a later update listing challenge winners. No external evaluator is named as contributing findings. The nine named challenge entrants (Claudia Biancotti, Chris Cundy, George Davis, Mato Gudelj, Connor Heaton, Joel Hypolite, Daniel Julh, Jun Kokatsu, Zhenzhen Zhan) submitted speculative risk-area proposals judged by OpenAI, not evidence-backed evaluations of a named model, so they are not external evaluators contributing findings under the §1 carve-out; the '70% of entrants emphasized persuasion' line is OpenAI's own summary of others' submissions (§2.1 fails). Byline is 'OpenAI Preparedness Team'. Independently, the document contains no §2 finding: team formation, a policy that 'will detail' its approach, a grant/credits challenge and forward-looking plans are announcements and roadmaps.",
+      "external_evaluator": "none named",
+      "resolved_date": "2023-10-26",
+      "fetch_note": "fetch.get -> ok=True via=wayback status=200 len=6652. Direct openai.com is 403; Wayback id_ snapshot returned full article text including the post-hoc 'Preparedness challenge winners' update.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/practices-for-governing-agentic-ai-systems",
+      "title": "Practices for Governing Agentic AI Systems",
+      "decision": "EXCLUDED",
+      "rule_cited": "§1 company self-report (no external evaluator named as contributing findings); independently §2 (governance white paper of proposed practices — recommendations, not findings)",
+      "exclusion_reason": "EXCLUDED - company self-report. Fetched successfully (Wayback id_ snapshot, 200, 2,443 chars: landing page with full abstract, author list and grant-programme description). Authorship is OpenAI-only — lead authors Yonadav Shavit, Sandhini Agarwal, Miles Brundage; contributing authors Steven Adler, Cullen O'Keefe, Rosie Campbell, Teddy Lee, Pamela Mishkin, Tyna Eloundou, Alan Hickey, Katarina Slama, Lama Ahmad, Paul McMillan, Andrea Vallone, Alexandre Passos, David G. Robinson. No external evaluator is named as contributing findings, so the §1 carve-out does not open. Independently, the paper's stated contribution is 'an initial set of practices for keeping agents' operations safe and accountable' plus open questions and a research-grant announcement — proposals, recommendations and forward-looking plans, which §2 excludes. No named frontier model is evaluated (FRONTIER-MODEL RULE also unmet).",
+      "external_evaluator": "none named",
+      "resolved_date": "2023-12-14",
+      "fetch_note": "fetch.get -> ok=True via=wayback status=200 len=2443. Landing page carried the abstract and the complete author list, which is what the §1 evaluator test needs; the linked PDF was not required to answer it.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/sora-system-card",
+      "title": "Sora System Card",
+      "decision": "INCLUDED",
+      "rule_cited": "§1 carve-out — named external evaluator (ScaleAI, listed under 'Red Teaming Organizations') contributed findings; filed under that evaluator, Scope third-party-evaluator, Finding Type modifier company-published. OpenAI's own surrounding self-assessment remains a hard drop.",
+      "exclusion_reason": "",
+      "external_evaluator": "ScaleAI — named in the Acknowledgements under 'Red Teaming Organizations:'. Twenty external red teamers are also named individually (Alexandra García Pérez, Arjun Singh Puri, Caroline Friedman Levy, Dani Madrid-Morales, Emily Lynell Edwards, Grant Brailsford, Herman Wasserman, Javier García Arredondo, Kate Turetsky, Kelly Bare, Matt Groh, Maximilian Müller, Naomi Hart, Nathan Heath, Patrick Caughey, Per Wikman Svahn, Rafael González-Vázquez, Sara Kingsley, Shelby Grossman, Vincent Nestler). ScaleAI is the only named organisation; no government AISI contributed, so Scope = third-party-evaluator. Caveat for the ledger: the External Red Teaming section attributes results to 'red teamers' collectively rather than to ScaleAI by name in-line, so the org-to-finding link runs through the acknowledgements list.",
+      "resolved_date": "2024-12-09",
+      "fetch_note": "Bare URL is 403 direct AND 403 through the ladder; the trailing-slash form https://openai.com/index/sora-system-card/ fetched ok=True via=wayback status=200 len=31379 (full system card incl. Acknowledgements). cdn.openai.com/papers/sora-system-card.pdf and cdn.openai.com/sora-system-card.pdf both 404 — no CDN PDF equivalent exists for this card.",
+      "findings": [
+        {
+          "finding": "External red teamers found that framing prompts in medical or science-fiction/fantasy settings degraded Sora's safeguards against generating erotic and sexual content, and that adversarial prompting (suggestive phrasing, metaphor, iterating on words that trigger safeguards, then reusing the most-concerning generation as seed media) produced violative content unobtainable with single-prompt techniques, until further mitigations were built.",
+          "finding_quote": "For example, red teamers found that using text prompts with either medical situations or science fiction / fantasy settings degraded safeguards against generating erotic and sexual content until additional mitigations were built.",
+          "institution": "ScaleAI",
+          "domain": "Jailbreaks",
+          "models_systems": "Sora (OpenAI)",
+          "access_type": "Pre-deployment",
+          "finding_type": "capability-finding; company-published",
+          "eval_trackable": "yes",
+          "action_trackable": "yes",
+          "tier": "A",
+          "tier_reasoning": "Empirical model finding (observed behaviour under red-team testing); names a specific model and company (Sora, OpenAI); a demonstrated safeguard bypass producing prohibited sexual content is concerning and a company response is reasonable to expect — the card itself records mitigation work, which is a response, not a reason to downgrade (§8 negative-lag, pre-deployment). §4b not engaged: this is limb 1, a safeguard bypass, not an accuracy/hallucination finding. FRONTIER-MODEL RULE met — Sora is a named frontier multimodal generative model, not product ML. Derived: yes/yes -> A. [CLUBBED: the contextual-framing degradation and the adversarial-prompting/seed-media escalation are answered by the same mitigation package (prompt filtering, blocklists, classifier thresholds), §5 club test.]"
+        },
+        {
+          "finding": "External red-team testing of Sora's media-upload path and its storyboard, recut, remix and blend tools revealed gaps in input and output filtering, and showed that non-violative uploaded media could be modified into prohibited erotic, violent or deepfake content, requiring stronger classifier filtering before release.",
+          "finding_quote": "Red teamers also tested media uploads and Sora’s tools (storyboards, recut, remix, and blend) with both publicly available images and AI-generated media. This revealed gaps in input and output filtering to strengthen prior to Sora’s release, and helped hone protections for media uploads including people. Testing also revealed the need for stronger classifier filtering to mitigate the risk of non-violative media uploads being modified into prohibited erotic, violence, or deepfake content.",
+          "institution": "ScaleAI",
+          "domain": "Jailbreaks; Societal",
+          "models_systems": "Sora (OpenAI)",
+          "access_type": "Pre-deployment",
+          "finding_type": "capability-finding; company-published",
+          "eval_trackable": "yes",
+          "action_trackable": "yes",
+          "tier": "A",
+          "tier_reasoning": "Empirical model finding on a named model/company (Sora, OpenAI); distinct from the prompt-side bypass and warrants a distinct response (upload input/output filtering and classifier thresholds rather than prompt filtering), so split per §5. Concerning: non-violative uploads convertible into deepfake/erotic/violent output is a safeguard failure with real-world misuse potential — §4b limb 1 (safeguard bypass) and limb 3 (harmful manipulation in a societal setting); not an ordinary-accuracy finding. Frontier model rule met. Derived: yes/yes -> A."
+        }
+      ]
+    },
+    {
+      "url": "https://openai.com/index/deliberative-alignment",
+      "title": "Deliberative alignment: reasoning enables safer language models",
+      "decision": "EXCLUDED",
+      "rule_cited": "§1 company self-report — no external evaluator named as contributing findings",
+      "exclusion_reason": "EXCLUDED - company self-report. Fetched successfully (Wayback id_ snapshot, 200, 11,037 chars; full page read to the author block). OpenAI reporting on its own o-series models: paper authors are all OpenAI (Melody Guan, Manas Joglekar, Eric Wallace, Saachi Jain, Boaz Barak, Alec Helyar, Rachel Dias, Andrea Vallone, Hongyu Ren, Jason Wei, Hyung Won Chung, Sam Toyer, Johannes Heidecke, Alex Beutel, Mia Glaese). No external evaluator is named anywhere as contributing findings, so the §1 carve-out does not open and the whole document is the company's own self-assessment — a hard drop. It does contain substantive empirical results (o1 vs GPT-4o on StrongREJECT/XSTest Pareto frontier), but §1 is dispositive before §2: the test is not whether findings exist. Claude 3.5 Sonnet/Haiku and Gemini 1.5 Pro/Flash appear only as comparators (§5: comparators are never rows) and their presence does not make any third party an evaluator.",
+      "external_evaluator": "none named",
+      "resolved_date": "2024-12-20",
+      "fetch_note": "fetch.get -> ok=True via=wayback status=200 len=11037. External benchmarks (StrongREJECT, XSTest) are third-party datasets run by OpenAI itself, not third-party evaluators.",
+      "findings": []
+    }
+  ]
+}

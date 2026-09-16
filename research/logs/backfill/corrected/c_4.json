@@ -1,0 +1,61 @@
+{
+  "url": "https://arxiv.org/abs/2402.05044",
+  "title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models (ACL Findings)",
+  "institution": "Shanghai Artificial Intelligence Laboratory",
+  "scope": "third-party-evaluator",
+  "decision": "INCLUDED",
+  "resolved_date": "2024-02-07",
+  "date_source": "arXiv abs page submission history: '[v1] Wed, 7 Feb 2024 17:33:54 UTC'. (v2 2024-02-08, v3 2024-03-04, v4 2024-06-07; earliest version used per §3. Comments field: 'Accepted at ACL 2024 Findings'.)",
+  "findings": [
+    {
+      "finding": "Across the 36 LLMs evaluated, safety rates fell sharply from SALAD-Bench's base set to its attack-enhanced subset, with most open-source models dropping below 25% and several below 5% (Mistral-7B-v0.1 2.44%, Vicuna-13B 3.66%, Vicuna-33B 3.84%, TuluV2-7B 4.7%, Qwen-7B 6.14%), while only GPT-4, Claude2 and the larger Llama-2/Llama-3 variants stayed above 60%.",
+      "finding_quote": "There is a significant drop in safety rates when comparing the base set to the attack-enhanced set.",
+      "models_systems": "36 LLMs incl. ChatGLM3, InternLM/InternLM2, Llama-2, Llama-3, Mistral, Mixtral, Qwen/Qwen1.5, Gemma, TuluV2, Vicuna, Yi, GPT-4, GPT-3.5, Claude2, Gemini",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "finding_type": "capability-finding; anonymised-model",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Benchmarking six attack methods against Llama-2-7B-Chat, human-designed jailbreak prompts were by far the most effective, reaching 95% attack success rate on SALAD-Bench base questions and 89.5% on the defense-enhanced questions (14.3% and 11% averaged over prompts), well ahead of GPTFuzzer (46.5%/34%), GCG suffixes (42%/25.5%) and AutoDAN (16.5%/11%).",
+      "finding_quote": "Among all attack methods, human-designed jailbreak prompts achieve the highest ASR",
+      "models_systems": "Llama-2-7B-Chat (attack target)",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "finding_type": "methodology",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "The fine-tuned MD-Judge safety evaluator outscored keyword matching, GPT-3.5, GPT-4 and LlamaGuard on all five of the Table 3 test sets, reaching F1 0.818 on SALAD-Base-Test, 0.873 on SALAD-Enhance-Test, 0.644 on ToxicChat, 0.866 on Beavertails and 0.864 on SafeRLHF, against GPT-4's 0.785/0.827/0.470/0.842/0.835.",
+      "finding_quote": "MD-Judge markedly surpasses its counterparts on both our proprietary test set and the publicly available safety test set",
+      "models_systems": "MD-Judge (fine-tuned from Mistral-7B)",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Eval-methodology",
+      "access_type": "N/A",
+      "finding_type": "methodology",
+      "eval_trackable": "no",
+      "action_trackable": "",
+      "split_suffix": ""
+    },
+    {
+      "finding": "LlamaGuard, Meta's released safety-guard classifier, failed almost completely on attack-enhanced content: its F1 fell from 0.585 on SALAD-Base-Test to 0.085 on SALAD-Enhance-Test (recall 0.044 at precision 1.0), the lowest enhance-set score of any evaluator compared, below even keyword matching (0.261) and far below GPT-4 (0.827) and MD-Judge (0.873).",
+      "finding_quote": "However, LlamaGuard does not demonstrate strong generalization ability, especially in our benchmark which contains many enhanced question-answer pairs.",
+      "models_systems": "LlamaGuard (Meta)",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Eval-methodology",
+      "access_type": "Post-deployment",
+      "finding_type": "capability-finding",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    }
+  ],
+  "applied": "Repointed URL to the abs form (https://arxiv.org/abs/2402.05044) per verdict (b); added the missed LlamaGuard F1 0.585 -> 0.085 row as eval=yes/action=no with a character-exact source quote and Table 3 numbers re-verified against the PDF; restricted the MD-Judge row to Table 3's five sets and dropped the Table 4 HarmBench/Lifetox figures (GPT-4 84.46% beats MD-Judge 83.72% there); normalised that row's domain Eval-tooling -> Eval-methodology; upheld the 36-model aggregate (yes/no) and the human-jailbreak row (yes/no) unchanged and the MD-Judge row at no/blank; set scope=third-party-evaluator; dropped the free-text tier/tier_reasoning fields so no tier label is written.",
+  "not_applied": "Index mismatch: the verdict indexes five findings [0]-[4] but this record holds only three, which map by content to verdict [1], [2] and [3]. (i) Verdict (a) 'recode finding [0] Gemini Pro 88.32% -> 19.98% from Tier A to Tier B' could not be applied because that finding is not in this record - there was no Tier A row to downgrade; this is consistent with verdict (b), which says the Gemini result must not be minted as a new row but merged into the existing canonical row SHANGHAIAILAB-2024-02-JAI1, so no row was added. (ii) Verdict [4], the 94.3% auto-labelling consistency row, is likewise absent here; the verdict upholds it 'as extracted' rather than flagging it as a missed finding, so no row was minted (the supporting main-text sentence, 'The consistency rate between auto labeling and human labels achieves 94.3%.' with three annotators, was located on p.3 if the row is wanted). (iii) The Report ID merge (SHANGHAIAILAB-2024-02-SALAD) and every instructed Notes annotation - '[Tier B: multi-company aggregate row]', the InternLM self-assessment flag, the v4-content/v1-date provenance caveat, the Table 4 caveat, and Domain 'Eval-methodology;Jailbreaks' - could not be recorded: this record has no Report ID, Finding ID or Notes field, and the domain vocabulary permits exactly one value, so the LlamaGuard row's dual domain was collapsed to Eval-methodology. (iv) Minor: in the new LlamaGuard quote the source's line-break hyphenation of 'abil-'/'ity' is closed up to 'ability'; the quote is otherwise character-exact and matches the PDF's reading-order text."
+}

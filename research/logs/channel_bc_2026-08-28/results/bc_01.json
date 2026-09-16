@@ -1,0 +1,2569 @@
+[
+ {
+  "finding_id": "OPENAI-2025-07-SELF-BIO3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"SecureBio\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type (contributions, written statements, written answers, committees, divisions). Genuine negative: the API returned a parsed result set, not an error."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"ChatGPT agent\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22ChatGPT%20agent%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"system card\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22system%20card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 spoken contribution, 2008-02-19 Commons 'Card Cloning' - unrelated (read)."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"SecureBio\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "AISI (UK AI Security Institute) publication index",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Blog/publication index read in full; no item references the SecureBio virologist red-teaming of ChatGPT agent."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search (US federal): \"SecureBio\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "4 results, all read and all false positives from stemming: three 2002 Sarbanes-Oxley documents (CREC/CRECB/CHRG) and Pennsylvania v. Muniz (1990). No congressional or agency document references SecureBio."
+      },
+      {
+       "name": "govinfo.gov full-text search (US federal): \"ChatGPT Agent System Card\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"SecureBio\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "Federal Register API: \"ChatGPT Agent System Card\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22ChatGPT%20Agent%20System%20Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"SecureBio\"",
+       "url": "https://www.nist.gov/search?s=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "2 results, both read: the NIST AI Consortium member list and the EO 14110 RFI comment-received list. Membership/administrative listings only; neither references this finding."
+      },
+      {
+       "name": "NIST / CAISI site search: \"ChatGPT agent\"",
+       "url": "https://www.nist.gov/search?s=%22ChatGPT+agent%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "Congressional hearing read in full for context: 'The Federal Government in the Age of Artificial Intelligence' (Serial 119-31)",
+       "url": "https://www.govinfo.gov/content/pkg/CHRG-119hhrg60818/html/CHRG-119hhrg60818.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "Read. This is the one recent US hearing that entered third-party AI-evaluator material into the record, but it sat on 2025-06-05, before this finding's 2025-07-17 publication date, and does not mention SecureBio."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"SecureBio\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 results, all read and all false positives from stemming (e.g. the European Biotech Act staff working document SWD/2026/450). No EU instrument references SecureBio."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"ChatGPT Agent System Card\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22ChatGPT+Agent+System+Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "The previous pass recorded a clean US negative without any access outcome, in a sweep where congress.gov was treated as blocked everywhere. Its US result was therefore treated as UNSEARCHED here and searched from scratch. congress.gov search pages do 403, but govinfo.gov's full-text search service (POST /wssearch/search, no API key) returns 200 and indexes the same CHRG / CREC / CRPT / CPRT / BILLS / FR corpora, current to 2026-08-05. Searched there for the evaluator, the report title and the finding's claim terms: the only SecureBio hits are 2002 accounting-reform documents matched by stemming. Federal Register API and NIST/CAISI site search likewise return nothing beyond membership lists. UK and EU re-searched against the official Hansard API, GOV.UK search API and EUR-Lex, all reachable at 200. All three jurisdictions genuinely searched; nothing explicitly references the finding, the report, the evaluator or the specific result.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Information Age (Australian Computer Society)",
+     "url": "https://ia.acs.org.au/article/2025/is-the-new-chatgpt-agent-really-a-weapons-risk-.html",
+     "date": "2025-07-24"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "NEW Channel C coverage. The Information Age article was fetched and read (200 direct): it names SecureBio as the testers OpenAI brought in and quotes this finding's own language back - the virologists' finding that the agent could provide 'access to information from obscure publications' and complete 'complex, multi-part requests' in a single interaction, 'providing a clearer pathway to potential harm'. Independent outlet; not the evaluator's or OpenAI's own post. Discovery ran over Google News and Bing News RSS, both 200. A Time Magazine piece (2025-04-22) on SecureBio's virology benchmark surfaced but concerns a different, earlier SecureBio result and is not logged here. Descriptive only; does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "OPENAI-2025-07-SELF-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"AI Security Institute\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "111 spoken contributions and 2 written statements. Screened against this finding by searching the same corpus for the report and its claim: 'ChatGPT agent' = 0, 'system card' = 1 (a 2008 debate on card cloning), 'jailbreak' = 4 (all read: three are prison escapes / a think-tank report named Jailbreak, one is a 2026-06-16 Lords question about an unrelated Anthropic model), 'safeguard pipeline' = 0. The AISI contributions discuss the institute and its testing programme in general terms and none reaches this report or result."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"ChatGPT agent\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22ChatGPT%20agent%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"AI Security Institute\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "87 results; the recent ones read (AISI landing page 2025-02-14, Frontier AI Trends report 2025-12-18, international coalition launch 2025-07-30, Rapid AI Delivery Taskforce 2026-08-25). None references the ChatGPT Agent System Card or the 7 universal attacks."
+      },
+      {
+       "name": "AISI publication index",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Read; no item references this finding. In any case AISI is the evaluator here, so its own publications would be circular for Channel B."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"ChatGPT Agent System Card\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"UK AISI\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"AI Security Institute\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, read: DCPD-202500924, the Trump-Starmer Joint Statement of 2025-09-18 (Compilation of Presidential Documents). It records a 'shared mission to promote secure AI innovation' between CAISI and the UK AI Security Institute. Institutional cooperation language; no reference to this report, finding or result. Adjacent, not admissible."
+      },
+      {
+       "name": "Federal Register API: \"ChatGPT Agent System Card\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22ChatGPT%20Agent%20System%20Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"UK AISI\"",
+       "url": "https://www.nist.gov/search?s=%22UK+AISI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "62 results; the top items read (joint US/UK pre-deployment evaluations of Claude 3.5 Sonnet and o1, CAISI red-teaming blog). None references the ChatGPT Agent System Card or these 7 universal attacks."
+      },
+      {
+       "name": "NIST / CAISI site search: \"ChatGPT agent\"",
+       "url": "https://www.nist.gov/search?s=%22ChatGPT+agent%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"AI Security Institute\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22AI+Security+Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, fetched and read in full: COM/2026/577, the Commission's 'Action Plan on Cybersecurity and Artificial Intelligence' (2026-07-07). It cites 'recent research from the UK AI Security Institute' on AI models completing increasingly long cybersecurity tasks - AISI's cyber task-length work, not this report. Adjacent, not admissible."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"ChatGPT Agent System Card\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22ChatGPT+Agent+System+Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US result treated as UNSEARCHED per the recheck instruction and searched properly via govinfo's full-text service, which is reachable at 200 even though congress.gov's search UI 403s. The two nearest official sources anywhere - the 2025-09-18 US/UK Joint Statement and the Commission's July 2026 Cybersecurity and AI Action Plan - both engage UK AISI as an institution or cite different AISI research, which the admissibility rule explicitly excludes. Nothing in any of the three jurisdictions references this report or the 7 universal attacks against the biological-risk safeguard stack.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Information Age (Australian Computer Society)",
+     "url": "https://ia.acs.org.au/article/2025/is-the-new-chatgpt-agent-really-a-weapons-risk-.html",
+     "date": "2025-07-24"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "The Information Age piece was read (200 direct) and covers the ChatGPT Agent System Card's biological-risk section, but its named source is SecureBio; it does not reach the UK AISI safeguards red-teaming. Logged as partial, report-level coverage only. Google News and Bing News RSS discovery for the UK AISI ChatGPT-agent jailbreaks returned nothing specific to this finding. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2025-07-JAI3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Adversarial%20Attacks%20on%20LLM%20Safeguard%20Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"safeguard pipeline\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22safeguard%20pipeline%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"AI Security Institute\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "111 spoken contributions and 2 written statements. Screened against this finding by searching the same corpus for the report and its claim: 'ChatGPT agent' = 0, 'system card' = 1 (a 2008 debate on card cloning), 'jailbreak' = 4 (all read: three are prison escapes / a think-tank report named Jailbreak, one is a 2026-06-16 Lords question about an unrelated Anthropic model), 'safeguard pipeline' = 0. The AISI contributions discuss the institute and its testing programme in general terms and none reaches this report or result."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Adversarial%20Attacks%20on%20LLM%20Safeguard%20Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"STACK\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22STACK%22",
+       "via": "direct",
+       "status": 200,
+       "result": "2233 results, all environmental stack-emissions guidance and Operation Stack freight documents; the term is generic in GOV.UK's index and none of the top results relate to AI safeguards."
+      },
+      {
+       "name": "AISI publication index",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Read. AISI is the evaluator here; its own posts are circular for Channel B in any case."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"safeguard pipelines\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "2 results, both read. CHRG-119hhrg63557 (DHS oversight, 2026-01-21) matches on CISA 'safeguard pipelines' in the physical-infrastructure sense. Not related."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"universal attacks\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "6 results, none dated after 2023 and none AI-related."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"UK AISI\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Adversarial%20Attacks%20on%20LLM%20Safeguard%20Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"STACK safeguard pipelines\"",
+       "url": "https://www.nist.gov/search?s=%22STACK+safeguard+pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "Hearing read in full: 'Advancing America's AI Action Plan' (Serial 119-24, 2026-01-14)",
+       "url": "https://www.govinfo.gov/content/pkg/CHRG-119hhrg62455/html/CHRG-119hhrg62455.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "Read end to end. Discusses CAISI and AI model evaluation generally; the only 'stack' references are to the AI technology stack. No reference to STACK, UK AISI or these vulnerabilities."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Adversarial+Attacks+on+LLM+Safeguard+Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex: COM/2026/577 Action Plan on Cybersecurity and AI",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. Cites UK AISI research on AI cyber task length, not the STACK safeguard-pipeline attacks. Adjacent, not admissible."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED and re-run against govinfo's full-text service (200), which the previous pass never actually reached. The report title, the evaluator string and the claim terms all return zero across CHRG, CREC, CRPT, CPRT, BILLS and FR. The one hearing that could plausibly have carried it - 'Advancing America's AI Action Plan' - was fetched and read in full and does not. UK and EU searched against the Hansard API, GOV.UK API and EUR-Lex; the only UK AISI reference in EU law is to different AISI research. Nothing explicitly references this finding for Claude Opus 4.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "STACK: Adversarial Attacks on LLM Safeguard Pipelines - 15 citations as of 2026-08-28 (up from the 12 recorded 2026-07-19). Semantic Scholar also now carries a DBLP record, conf/aaai/McKenzieHTDCTKG26, indicating the paper was accepted at AAAI 2026.",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2506.24068?fields=title,year,citationCount,influentialCitationCount,externalIds"
+    }
+   ],
+   "academic_citing_works_sample": [
+    {
+     "cite": "REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems (2026), arXiv:2608.10669",
+     "url": "https://arxiv.org/abs/2608.10669"
+    },
+    {
+     "cite": "Sharding Prevents LLM Oversight Failures and Adversarial Exploitation (2026), arXiv:2608.06422",
+     "url": "https://arxiv.org/abs/2608.06422"
+    },
+    {
+     "cite": "AI Security Leaderboard: Methodology, Results and Minimal Standard (2026), arXiv:2608.03070",
+     "url": "https://arxiv.org/abs/2608.03070"
+    },
+    {
+     "cite": "Position: Behavioural Assurance Cannot Verify the Safety Claims Governance Now Demands (2026), arXiv:2605.15164",
+     "url": "https://arxiv.org/abs/2605.15164"
+    },
+    {
+     "cite": "A Systematic Investigation of RL-Jailbreaking in LLMs (2026), arXiv:2605.07032",
+     "url": "https://arxiv.org/abs/2605.07032"
+    }
+   ],
+   "discussion": [],
+   "note": "Citation count re-fetched this pass (200 direct) and has moved 12 -> 15; the AAAI 2026 venue record is new information relative to the packet. The Semantic Scholar citations endpoint was also fetched (200) and the citing works are listed under academic_citing_works_sample - a governance-relevant cluster, including a position paper on whether behavioural assurance can verify the safety claims governance now demands. Google News and Bing News RSS discovery for STACK / safeguard-pipeline attacks returned nothing. Descriptive only; does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": "429 rate-limited across repeated attempts with backoff",
+    "what_it_would_have_shown": "Citation counts for papers whose arXiv ID is not already recorded. The per-paper endpoint did succeed for arXiv:2506.24068."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2025-07-JAI4",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Adversarial%20Attacks%20on%20LLM%20Safeguard%20Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"safeguard pipeline\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22safeguard%20pipeline%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"AI Security Institute\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "111 spoken contributions and 2 written statements. Screened against this finding by searching the same corpus for the report and its claim: 'ChatGPT agent' = 0, 'system card' = 1 (a 2008 debate on card cloning), 'jailbreak' = 4 (all read: three are prison escapes / a think-tank report named Jailbreak, one is a 2026-06-16 Lords question about an unrelated Anthropic model), 'safeguard pipeline' = 0. The AISI contributions discuss the institute and its testing programme in general terms and none reaches this report or result."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Adversarial%20Attacks%20on%20LLM%20Safeguard%20Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"STACK\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22STACK%22",
+       "via": "direct",
+       "status": 200,
+       "result": "2233 results, all environmental stack-emissions guidance and Operation Stack freight documents; the term is generic in GOV.UK's index and none of the top results relate to AI safeguards."
+      },
+      {
+       "name": "AISI publication index",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Read. AISI is the evaluator here; its own posts are circular for Channel B in any case."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"GPT-5\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22GPT-5%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 spoken contributions, all read in full: Lords 2026-07-23 and 2026-07-22 on the GPT-5.6 Sol cyber incident, and Lords 2026-05-19 on a UK sovereign LLM. None references the STACK attacks."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"safeguard pipelines\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "2 results, both read. CHRG-119hhrg63557 (DHS oversight, 2026-01-21) matches on CISA 'safeguard pipelines' in the physical-infrastructure sense. Not related."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"universal attacks\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "6 results, none dated after 2023 and none AI-related."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"UK AISI\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Adversarial%20Attacks%20on%20LLM%20Safeguard%20Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"STACK safeguard pipelines\"",
+       "url": "https://www.nist.gov/search?s=%22STACK+safeguard+pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "Hearing read in full: 'Advancing America's AI Action Plan' (Serial 119-24, 2026-01-14)",
+       "url": "https://www.govinfo.gov/content/pkg/CHRG-119hhrg62455/html/CHRG-119hhrg62455.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "Read end to end. Discusses CAISI and AI model evaluation generally; the only 'stack' references are to the AI technology stack. No reference to STACK, UK AISI or these vulnerabilities."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"GPT-5 System Card\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Adversarial Attacks on LLM Safeguard Pipelines\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Adversarial+Attacks+on+LLM+Safeguard+Pipelines%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex: COM/2026/577 Action Plan on Cybersecurity and AI",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. Cites UK AISI research on AI cyber task length, not the STACK safeguard-pipeline attacks. Adjacent, not admissible."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Same searches as UKAISI-2025-07-JAI3, run against the GPT-5 half of the same sentence. US treated as UNSEARCHED and re-run against govinfo full-text (200); 'GPT-5 System Card' and 'Adversarial Attacks on LLM Safeguard Pipelines' both return 0 across all congressional collections. Hansard's three 'GPT-5' contributions were read in full and all concern the 2026 GPT-5.6 Sol cyber incident and NHS model distillation - none references the STACK component-wise attacks. Nothing explicitly references this finding for GPT-5.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "STACK: Adversarial Attacks on LLM Safeguard Pipelines - 15 citations as of 2026-08-28 (up from the 12 recorded 2026-07-19). Semantic Scholar also now carries a DBLP record, conf/aaai/McKenzieHTDCTKG26, indicating the paper was accepted at AAAI 2026.",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2506.24068?fields=title,year,citationCount,influentialCitationCount,externalIds"
+    }
+   ],
+   "academic_citing_works_sample": [
+    {
+     "cite": "REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems (2026), arXiv:2608.10669",
+     "url": "https://arxiv.org/abs/2608.10669"
+    },
+    {
+     "cite": "Sharding Prevents LLM Oversight Failures and Adversarial Exploitation (2026), arXiv:2608.06422",
+     "url": "https://arxiv.org/abs/2608.06422"
+    },
+    {
+     "cite": "AI Security Leaderboard: Methodology, Results and Minimal Standard (2026), arXiv:2608.03070",
+     "url": "https://arxiv.org/abs/2608.03070"
+    },
+    {
+     "cite": "Position: Behavioural Assurance Cannot Verify the Safety Claims Governance Now Demands (2026), arXiv:2605.15164",
+     "url": "https://arxiv.org/abs/2605.15164"
+    },
+    {
+     "cite": "A Systematic Investigation of RL-Jailbreaking in LLMs (2026), arXiv:2605.07032",
+     "url": "https://arxiv.org/abs/2605.07032"
+    }
+   ],
+   "discussion": [],
+   "note": "Citation count re-fetched this pass (200 direct) and has moved 12 -> 15; the AAAI 2026 venue record is new information relative to the packet. The Semantic Scholar citations endpoint was also fetched (200) and the citing works are listed under academic_citing_works_sample - a governance-relevant cluster, including a position paper on whether behavioural assurance can verify the safety claims governance now demands. Google News and Bing News RSS discovery for STACK / safeguard-pipeline attacks returned nothing. Descriptive only; does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": "429 rate-limited across repeated attempts with backoff",
+    "what_it_would_have_shown": "Citation counts for papers whose arXiv ID is not already recorded. The per-paper endpoint did succeed for arXiv:2506.24068."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "FARAI-2025-07b-BIO2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"FAR.AI\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "2 spoken contributions and 1 written answer, all read: a 2026-06-05 Lords debate on AI and human relationships, a 2023-06-29 Commons AI debate, and a 1988 'Cattle Semen' answer about AI (artificial insemination) breeders. All are tokenisation false positives on 'far' + 'AI'; none references FAR.AI the organisation."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"refusal ablation\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22refusal%20ablation%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"FAR.AI\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"safety gap toolkit\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22safety%20gap%20toolkit%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"FAR.AI\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "66 results dominated by CRECB (44) matches on 'far' adjacent to 'AI'. The three recent CHRG hits were checked: S. Hrg. 118-732 (2024-07-11), S. Hrg. 118-308 (2023-11-15) and a 2023 Education Department publication - all stemming artifacts, all predating the 2025-07-30 publication date anyway."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"refusal ablation\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"safety gap toolkit\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"FAR.AI\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"FAR.AI\"",
+       "url": "https://www.nist.gov/search?s=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"FAR.AI\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"safety gap toolkit\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22safety+gap+toolkit%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED and re-run against govinfo full-text (200). 'FAR.AI' is a hostile search string - it tokenises into 'far' and 'AI' and generates 66 spurious hits - so the finding's own claim terms were searched alongside it ('refusal ablation', 'safety gap toolkit'), both returning zero across every US collection. Same pattern in the UK: Hansard's three hits are 1988 cattle-insemination and generic AI debates. EUR-Lex returns nothing. All three jurisdictions genuinely searched; no official source references FAR.AI's safety-gap result on the Llama-3.x models.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery run for FAR.AI's safety-gap toolkit and Llama refusal ablation returned only two unrelated items (a CNBC piece on AI safety research generally, 2025-05-14, and a Unite.AI piece on API-based jailbreaking, 2025-07-17), neither of which covers this finding; not logged. The Semantic Scholar title-search endpoint was rate-limited (429) across repeated attempts with backoff, so the Google Scholar negative already in the packet could not be independently corroborated - recorded as blocked rather than as an absence. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": "429 rate-limited across repeated attempts with backoff",
+    "what_it_would_have_shown": "Citation counts for papers whose arXiv ID is not already recorded. The per-paper endpoint did succeed for arXiv:2506.24068."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Dreadnode\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"kerberoasting\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Dreadnode\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"kerberoasting\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "Reached at 200 but the results list is JavaScript-rendered (447 characters of text), so this is recorded as unread rather than as a negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Dreadnode\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results. No US federal document of any collection contains the evaluator's name."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"kerberoasting\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, a pre-2023 GOVPUB item; no congressional or agency document in the window."
+      },
+      {
+       "name": "Federal Register API: \"Dreadnode\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "Federal Register API: \"kerberoasting\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Dreadnode\"",
+       "url": "https://www.nist.gov/search?s=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "NIST / CAISI site search: \"kerberoasting\"",
+       "url": "https://www.nist.gov/search?s=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Dreadnode\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"kerberoasting\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED per the recheck instruction and searched properly this time: govinfo's full-text service returns 200 and reports zero occurrences of 'Dreadnode' anywhere in the US federal corpus, and one pre-window occurrence of 'kerberoasting'. That is a genuine, read negative rather than the inferred one the previous pass recorded. Hansard API, GOV.UK API, Federal Register API, NIST search and EUR-Lex all likewise return zero. The evaluator's own submission to the US AI Action Plan process remains inadmissible - it is advocacy by the evaluator, not a government source citing this finding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery (both 200) surfaced only Dreadnode company coverage - SecurityWeek's 2025-02-25 funding story and a FinTech Global version of it - which predate this 2025-08-04 report and are about the company, not the finding. A Dark Reading piece of 2026-07-29 on red versus blue agents appeared in the same sweep but could not be confirmed to reference this report, so it is not logged. No academic citation found. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": "200 but JavaScript-rendered results list (447 characters of text)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning Dreadnode or kerberoasting by AI agents. Partially substituted by the GOV.UK search API, which returned zero."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Dreadnode\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"kerberoasting\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Dreadnode\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"kerberoasting\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "Reached at 200 but the results list is JavaScript-rendered (447 characters of text), so this is recorded as unread rather than as a negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Dreadnode\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results. No US federal document of any collection contains the evaluator's name."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"kerberoasting\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, a pre-2023 GOVPUB item; no congressional or agency document in the window."
+      },
+      {
+       "name": "Federal Register API: \"Dreadnode\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "Federal Register API: \"kerberoasting\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Dreadnode\"",
+       "url": "https://www.nist.gov/search?s=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "NIST / CAISI site search: \"kerberoasting\"",
+       "url": "https://www.nist.gov/search?s=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Dreadnode\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"kerberoasting\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED per the recheck instruction and searched properly this time: govinfo's full-text service returns 200 and reports zero occurrences of 'Dreadnode' anywhere in the US federal corpus, and one pre-window occurrence of 'kerberoasting'. That is a genuine, read negative rather than the inferred one the previous pass recorded. Hansard API, GOV.UK API, Federal Register API, NIST search and EUR-Lex all likewise return zero. The evaluator's own submission to the US AI Action Plan process remains inadmissible - it is advocacy by the evaluator, not a government source citing this finding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "The securityweek.com item already recorded in the packet was re-checked in discovery and is a Dreadnode company funding profile of 2025-02-25 - it predates this report and is not coverage of this finding; it should stay flagged as such. Google News and Bing News RSS discovery (both 200) surfaced only Dreadnode company coverage - SecurityWeek's 2025-02-25 funding story and a FinTech Global version of it - which predate this 2025-08-04 report and are about the company, not the finding. A Dark Reading piece of 2026-07-29 on red versus blue agents appeared in the same sweep but could not be confirmed to reference this report, so it is not logged. No academic citation found. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": "200 but JavaScript-rendered results list (447 characters of text)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning Dreadnode or kerberoasting by AI agents. Partially substituted by the GOV.UK search API, which returned zero."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Dreadnode\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"kerberoasting\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Dreadnode\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"kerberoasting\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "Reached at 200 but the results list is JavaScript-rendered (447 characters of text), so this is recorded as unread rather than as a negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Dreadnode\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results. No US federal document of any collection contains the evaluator's name."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"kerberoasting\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, a pre-2023 GOVPUB item; no congressional or agency document in the window."
+      },
+      {
+       "name": "Federal Register API: \"Dreadnode\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "Federal Register API: \"kerberoasting\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Dreadnode\"",
+       "url": "https://www.nist.gov/search?s=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "NIST / CAISI site search: \"kerberoasting\"",
+       "url": "https://www.nist.gov/search?s=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Dreadnode\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"kerberoasting\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED per the recheck instruction and searched properly this time: govinfo's full-text service returns 200 and reports zero occurrences of 'Dreadnode' anywhere in the US federal corpus, and one pre-window occurrence of 'kerberoasting'. That is a genuine, read negative rather than the inferred one the previous pass recorded. Hansard API, GOV.UK API, Federal Register API, NIST search and EUR-Lex all likewise return zero. The evaluator's own submission to the US AI Action Plan process remains inadmissible - it is advocacy by the evaluator, not a government source citing this finding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery (both 200) surfaced only Dreadnode company coverage - SecurityWeek's 2025-02-25 funding story and a FinTech Global version of it - which predate this 2025-08-04 report and are about the company, not the finding. A Dark Reading piece of 2026-07-29 on red versus blue agents appeared in the same sweep but could not be confirmed to reference this report, so it is not logged. No academic citation found. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": "200 but JavaScript-rendered results list (447 characters of text)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning Dreadnode or kerberoasting by AI agents. Partially substituted by the GOV.UK search API, which returned zero."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB4",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Dreadnode\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"kerberoasting\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Dreadnode\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"kerberoasting\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "NCSC search",
+       "url": "https://www.ncsc.gov.uk/search?q=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "Reached at 200 but the results list is JavaScript-rendered (447 characters of text), so this is recorded as unread rather than as a negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Dreadnode\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results. No US federal document of any collection contains the evaluator's name."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"kerberoasting\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, a pre-2023 GOVPUB item; no congressional or agency document in the window."
+      },
+      {
+       "name": "Federal Register API: \"Dreadnode\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "Federal Register API: \"kerberoasting\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Dreadnode\"",
+       "url": "https://www.nist.gov/search?s=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "NIST / CAISI site search: \"kerberoasting\"",
+       "url": "https://www.nist.gov/search?s=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      },
+      {
+       "name": "CAISI Evaluation of Kimi K2 Thinking (NIST/CAISI, 2025-12)",
+       "url": "https://www.nist.gov/news-events/news/2025/12/caisi-evaluation-kimi-k2-thinking",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. Contains no reference to Dreadnode, kerberoasting, offensive cyber agents or the UK AI Security Institute. Confirms the existing note, with the correction that the CAISI publication concerns Kimi K2 Thinking, not a 'Kimi K3' assessment."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"Kimi K2\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "2 results, neither a congressional or regulatory reference to this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Dreadnode\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"kerberoasting\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22kerberoasting%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED per the recheck instruction and searched properly this time: govinfo's full-text service returns 200 and reports zero occurrences of 'Dreadnode' anywhere in the US federal corpus, and one pre-window occurrence of 'kerberoasting'. That is a genuine, read negative rather than the inferred one the previous pass recorded. Hansard API, GOV.UK API, Federal Register API, NIST search and EUR-Lex all likewise return zero. The evaluator's own submission to the US AI Action Plan process remains inadmissible - it is advocacy by the evaluator, not a government source citing this finding. For this row specifically, the CAISI Kimi K2 Thinking evaluation named in the existing Channel B note was located and read in full; it does not cite or reference the Dreadnode report. Note also that the existing note's premise - that Dreadnode 'is not a Tier-A government institution' - is a statement about the evaluator, not a record of a search; the searched-source record above now supplies what was missing.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery (both 200) surfaced only Dreadnode company coverage - SecurityWeek's 2025-02-25 funding story and a FinTech Global version of it - which predate this 2025-08-04 report and are about the company, not the finding. A Dark Reading piece of 2026-07-29 on red versus blue agents appeared in the same sweep but could not be confirmed to reference this report, so it is not logged. No academic citation found. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": "200 but JavaScript-rendered results list (447 characters of text)",
+    "what_it_would_have_shown": "NCSC advisories and guidance mentioning Dreadnode or kerberoasting by AI agents. Partially substituted by the GOV.UK search API, which returned zero."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "APOLLO-2025-08-ALI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Apollo Research\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Apollo%20Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 spoken contribution, retrieved in full text: Ben Lake MP, Commons Westminster Hall, 'AI Safety' debate, 2025-12-10. He says: 'Apollo Research found examples of one of OpenAI's models trying to deceive users to accomplish its goals and, perhaps most worryingly, to disable monitoring mechanisms and guardrails.' In window, official, and names the evaluator - but see reasoning: the described result is Apollo's in-context scheming work on o1, not this GPT-5 covert-action finding. Adjacent, NOT admissible."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"GPT-5\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22GPT-5%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 spoken contributions, all read in full; all concern the 2026 GPT-5.6 Sol cyber incident or NHS model distillation. None references Apollo's covert-action evaluations."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"system card\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22system%20card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, a 2008 debate on card cloning."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Apollo Research\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Apollo%20Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "6 results, all read and all dated 2023-10 to 2025-04 - Frontier AI Taskforce progress reports, the AI Safety Summit introduction, the AISI approach-to-evaluations note and an FOI release. All predate this finding's 2025-08-13 publication date and none references it."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Apollo Research\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "41 results. The single relevant one is CHRG-119hhrg60818, 'The Federal Government in the Age of Artificial Intelligence' (House Oversight and Government Reform, 2025-06-05), whose record includes '...are Capable of In-Context Scheming - Apollo Research', submitted by Rep. Perry. That is Apollo's December 2024 in-context scheming paper, and the hearing sat 2025-06-05, before this finding's 2025-08-13 publication date - out of window on both counts. The remaining 40 results are Apollo-programme and Apollo-litigation false positives, checked."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"in-context scheming\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result: the same 2025-06-05 hearing. Out of window."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"GPT-5 System Card\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"Apollo Research\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Apollo%20Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Apollo Research\"",
+       "url": "https://www.nist.gov/search?s=%22Apollo+Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 results, all read: the AI RMF Generative AI Profile comment list, the NIST AI Consortium member list, and the EO 14110 RFI comment list. Administrative listings only."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Apollo Research\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Apollo+Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"GPT-5 System Card\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22GPT-5+System+Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "This is the closest call in the packet and the reason to state the negative carefully rather than quietly. Two official sources in window name Apollo Research alongside a specific deception result: Ben Lake MP in the Commons AI Safety debate of 2025-12-10, and the US House Oversight hearing of 2025-06-05 which entered Apollo's in-context scheming paper into the record. Neither is uptake of THIS finding. The hearing predates publication. The Hansard remark describes a model 'trying to... disable monitoring mechanisms and guardrails', which is the o1 in-context scheming result of December 2024, not this row's claim that gpt-5-thinking takes deceptive actions in roughly 4 percent of trajectories against o3's 8 percent while the helpful-only variant reaches 28 percent. Admissibility requires the source to reach the finding, and referencing a different result by the same evaluator is precisely the 'general discussion of the evaluator as an organisation' the rule excludes. Recorded as adjacent and not admissible, with URLs so a reviewer can re-examine the call. US result treated as UNSEARCHED and re-run against govinfo full-text (200).",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery (both 200) returned substantial Apollo Research coverage, but on inspection every dated item belongs to a different Apollo output - the December 2024 o1 in-context scheming paper (TechCrunch 2024-12-05, Economic Times 2024-12-09) or the September 2025 OpenAI/Apollo anti-scheming collaboration (Time 2025-09-18, Futurism 2025-09-20, NYT opinion 2025-10-10). None was confirmed to cover this GPT-5 system-card covert-action result, so none is logged. An AEI commentary of 2025-08-13 on GPT-5 chain-of-thought monitoring surfaced and is plausibly on point but could not be verified within this pass. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "JOINT-2025-08-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"AI Security Institute\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "111 spoken contributions and 2 written statements. Screened against this finding by searching the same corpus for the report and its claim: 'ChatGPT agent' = 0, 'system card' = 1 (a 2008 debate on card cloning), 'jailbreak' = 4 (all read: three are prison escapes / a think-tank report named Jailbreak, one is a 2026-06-16 Lords question about an unrelated Anthropic model), 'safeguard pipeline' = 0. The AISI contributions discuss the institute and its testing programme in general terms and none reaches this report or result."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"GPT-5\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22GPT-5%22",
+       "via": "direct",
+       "status": 200,
+       "result": "3 spoken contributions, all read in full: Lords 2026-07-23 and 2026-07-22 on the GPT-5.6 Sol cyber incident and Lords 2026-05-19 on a sovereign UK LLM. None references the August 2025 GPT-5 system card or UK AISI's safeguards red-teaming of it."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"jailbreak\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak%22",
+       "via": "direct",
+       "status": 200,
+       "result": "4 results, all read; none concerns this finding."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"AI Security Institute\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "87 results; recent items read (Frontier AI Trends report 2025-12-18, international coalition 2025-07-30, Rapid AI Delivery Taskforce 2026-08-25). None references the GPT-5 safeguards jailbreaks."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"GPT-5 System Card\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22GPT-5%20System%20Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, an unrelated Leeds City Council entry."
+      },
+      {
+       "name": "AISI publication index",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Read. AISI is the evaluator on this row, so its own posts are circular for Channel B."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"GPT-5 System Card\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"AI Security Institute\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, read: DCPD-202500924, the Trump-Starmer Joint Statement of 2025-09-18, recording a CAISI/UK-AISI 'shared mission to promote secure AI innovation'. Institutional cooperation, no reference to this finding. Adjacent, not admissible."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"Center for AI Standards and Innovation\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "13 results, the recent ones read: CRPT-119hrpt652 (CJS appropriations 2027), CHRG-119hhrg62455 ('Advancing America's AI Action Plan', 2026-01-14, read in full), CHRG-119hhrg64201 (DeepSeek/Unitree, 2026-03-17, read in full), CHRG-119hhrg63128 (Quantum/AI/Cloud, 2025-12-17, read in full) and FR-2026-01-08 (CAISI RFI on AI agent security, read in full). CAISI's evaluation role is discussed throughout; none of them references the GPT-5 system card, UK AISI's safeguards team, or these jailbreaks."
+      },
+      {
+       "name": "NIST / CAISI site search: \"GPT-5 evaluation\"",
+       "url": "https://www.nist.gov/search?s=%22GPT-5+evaluation%22",
+       "via": "direct",
+       "status": 200,
+       "result": "4 results, read: CAISI evaluations of Kimi K2 Thinking, DeepSeek V4 Pro and DeepSeek AI models, plus the agent-evaluation-cheating series. GPT-5 appears only as a comparison baseline. No CAISI publication reports or references the joint GPT-5 safeguards red-teaming."
+      },
+      {
+       "name": "NIST / CAISI site search: \"UK AISI\"",
+       "url": "https://www.nist.gov/search?s=%22UK+AISI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "62 results; joint pre-deployment evaluations of Claude 3.5 Sonnet and o1 read. Nothing on GPT-5 safeguards."
+      },
+      {
+       "name": "Federal Register API: \"GPT-5 System Card\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22GPT-5%20System%20Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"GPT-5 System Card\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22GPT-5+System+Card%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex: COM/2026/577 Action Plan on Cybersecurity and AI",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+       "via": "direct",
+       "status": 200,
+       "result": "Read in full. Names the UK AISI-coordinated Network of Advanced AI Measurement, Evaluation and Science and cites UK AISI research on AI cyber task length. Different research; adjacent, not admissible."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "The strongest a priori candidate in the packet for real uptake, since the evaluator is itself a pair of government institutes, so it was searched hardest. US treated as UNSEARCHED and re-run: govinfo full-text (200) returns zero for the report title, and every recent CAISI-referencing congressional document - the AI Action Plan hearing, the DeepSeek/Unitree hearing, the Quantum/AI/Cloud hearing and the CAISI AI-agent-security RFI - was fetched and read end to end. None mentions the GPT-5 safeguards jailbreaks. NIST/CAISI's own publication series was searched and read; CAISI has published model evaluations of Kimi K2 Thinking and DeepSeek but nothing referencing this joint GPT-5 work. On the UK side, Hansard's AISI contributions are institutional. One caveat worth stating plainly: because UK AISI and CAISI are the evaluators here, their own publications would be circular for Channel B, so uptake would have to come from a minister, a committee, a regulator or another agency - and none was found.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Transformer News",
+     "url": "https://www.transformernews.ai/p/openai-shouldnt-be-deciding-if-its-gpt-55",
+     "date": "2025-08"
+    },
+    {
+     "outlet": "Zvi Mowshowitz, Don't Worry About the Vase",
+     "url": "https://thezvi.substack.com/p/gpt-5s-are-alive-basic-facts-benchmarks",
+     "date": "2025-08"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "Companion paper 'OpenAI GPT-5 System Card' - 662 citations as of 2026-07-18 (carried forward from the packet; not re-fetched this pass because the Semantic Scholar search endpoint was rate-limited).",
+     "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2601.03267?fields=title,citationCount"
+    }
+   ],
+   "discussion": [],
+   "note": "Existing entries retained. Discovery this pass surfaced later, higher-profile UK AISI cyber coverage - Fortune 2026-07-10 on 'universal jailbreaks' in GPT-5.6, the-decoder 2026-05-01, Startup Fortune 2026-07-17 - but all of it concerns AISI's 2026 GPT-5.5/5.6 cyber evaluations, a different piece of work, so none is logged against this finding. CyberScoop 2025-09-15, 'Top AI companies have spent months working with US, UK governments on model safety', is report-adjacent but was not verified to reference this specific result. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": "429 rate-limited across repeated attempts with backoff",
+    "what_it_would_have_shown": "Citation counts for papers whose arXiv ID is not already recorded. The per-paper endpoint did succeed for arXiv:2506.24068."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "CIP-2025-08-SOC1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Weval\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Collective Intelligence Project\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Collective%20Intelligence%20Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 spoken contribution, 2024-09-02 Commons 'Technology in Public Services' (read) - a passing reference predating both CIP findings in this packet."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Weval\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Collective Intelligence Project\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Collective%20Intelligence%20Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "4 results, all read, all dated 2023-09 to 2023-10 (Frontier AI Taskforce progress reports, AI Safety Summit introduction). All predate these findings."
+      },
+      {
+       "name": "ICO search",
+       "url": "https://ico.org.uk/search/?q=Weval",
+       "via": "direct",
+       "status": 404,
+       "result": "The ICO search URL returns 404; recorded as unread, not as a negative."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Weval\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "3 results, all read, all pre-modern CDOC/SERIALSET/CZIC stemming artifacts. No US federal document references Weval."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"Collective Intelligence Project\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"Claude Opus 4.1\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"Weval\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "Federal Register API: \"Collective Intelligence Project\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Collective%20Intelligence%20Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Weval\"",
+       "url": "https://www.nist.gov/search?s=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Weval\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Collective Intelligence Project\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Collective+Intelligence+Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Claude Opus 4.1\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Claude+Opus+4.1%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED and re-run against govinfo full-text (200), which had never actually been queried for this row. Zero references to Weval, the Collective Intelligence Project or Claude Opus 4.1 anywhere in the US federal corpus, and zero in the Federal Register API and NIST search. UK and EU searched against the Hansard API, GOV.UK API and EUR-Lex; the only CIP hits anywhere are 2023-2024 items predating this finding. The existing note is right that Weval's own evaluation of model understanding of EU AI Act provisions is inadmissible - EU law is that evaluation's subject matter, not a government body citing this finding.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery for Weval / Claude Opus 4.1 hiring bias returned zero items from either engine. No academic citation found. This finding drew no company response and, on this search, no independent coverage either - which is the question Channel C exists to answer. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://search.ftc.gov/search?query=... (FTC site search)",
+    "status": "200 but JavaScript-rendered (41 characters of text)",
+    "what_it_would_have_shown": "FTC press releases and 6(b) study materials. Partially substituted by the Federal Register API and govinfo's FR collection, both of which index FTC notices and returned zero for the evaluator terms."
+   },
+   {
+    "url": "https://ico.org.uk/search/?q=...",
+    "status": "404",
+    "what_it_would_have_shown": "ICO publications and enforcement notices. Partially substituted by the GOV.UK search API, which indexes some ICO material and returned zero."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "CIP-2025-08-ALI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Weval\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Collective Intelligence Project\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Collective%20Intelligence%20Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 spoken contribution, 2024-09-02 Commons 'Technology in Public Services' (read) - a passing reference predating both CIP findings in this packet."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Weval\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Collective Intelligence Project\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Collective%20Intelligence%20Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "4 results, all read, all dated 2023-09 to 2023-10 (Frontier AI Taskforce progress reports, AI Safety Summit introduction). All predate these findings."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Weval\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "3 results, all pre-modern stemming artifacts (read)."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"Collective Intelligence Project\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"GPT-5 System Card\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"Weval\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "Federal Register API: \"Collective Intelligence Project\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Collective%20Intelligence%20Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "govinfo.gov full-text search, adjacent check: CREC 2026 AI-chatbot legislation",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-05/html/CREC-2026-08-05-pt1-PgD812.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "Read. The Senate Daily Digest of 2026-08-05 records S. 4199, on AI chatbots made available to minors, parental consent and family accounts. Congress is legislating in this subject area, but the record contains no reference to Weval, CIP or this mental-health crisis-response result. Adjacent, NOT admissible - a bill about AI chatbot safety is not uptake of this particular finding."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Weval\"",
+       "url": "https://www.nist.gov/search?s=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Weval\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Weval%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Collective Intelligence Project\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Collective+Intelligence+Project%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "The existing note asserted a Congress/FTC negative without recording what was accessed. Re-searched properly: govinfo full-text (200) returns zero for Weval, CIP and the report title across CHRG, CREC, CRPT, CPRT, BILLS and FR, and the Federal Register API - which indexes FTC notices - returns zero. The FTC's own site search is JavaScript-rendered and unread, and that is recorded as a block rather than converted into an absence. The existing judgement that the FTC's September 2025 companion-chatbot inquiry is not attributable to this finding therefore stands, and is now backed by read sources. The AI-chatbot-and-minors legislation moving in the Senate in August 2026 is the same kind of adjacency and is likewise not admissible.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery for Weval / GPT-5 mental-health crisis response returned zero items from either engine. Note that this finding is framed against the Stanford HAI 'Mental Health Safety: LLM Appropriateness in Crisis Scenarios' blueprint; that blueprint is third-party material used by the evaluation, not coverage of it, so it is not logged as Channel C. No independent coverage identified. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://search.ftc.gov/search?query=... (FTC site search)",
+    "status": "200 but JavaScript-rendered (41 characters of text)",
+    "what_it_would_have_shown": "FTC press releases and 6(b) study materials. Partially substituted by the Federal Register API and govinfo's FR collection, both of which index FTC notices and returned zero for the evaluator terms."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "PALISADE-2025-08-CYB1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Palisade Research\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Palisade%20Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Palisade Research\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Palisade%20Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"hacking cable\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22hacking%20cable%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Palisade Research\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result: CHRG-119hhrg60818, 'The Federal Government in the Age of Artificial Intelligence' (House Oversight and Government Reform, 2025-06-05). Fetched and read. The hearing sat 2025-06-05, which is before this finding's 2025-08-26 publication date, so it is outside the search window and cannot be uptake of it. This is a meaningful correction to the previous pass's blanket claim of no US congressional presence: Palisade Research does appear in the congressional record, just not in window for this finding."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"hacking cable\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Federal Register API: \"Palisade Research\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade%20Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Palisade Research\"",
+       "url": "https://www.nist.gov/search?s=%22Palisade+Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Palisade Research\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Palisade+Research%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"hacking cable\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22hacking+cable%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED and re-run against govinfo full-text (200). Palisade Research does occur once in the US congressional record - the 2025-06-05 House Oversight AI hearing - but that sitting predates this report by nearly three months, so it is out of window and inadmissible for this row. Everything else returns zero: the report title, the claim terms, the Federal Register API, NIST search, Hansard, GOV.UK and EUR-Lex. All three jurisdictions genuinely searched; the level stands, but it now stands on read sources.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery for Palisade Research and the hacking-cable report returned only earlier, unrelated Palisade work (MIT Technology Review 2025-03-05 on AI chess cheating, CyberSecurityNews 2025-05-26 on o3 shutdown sabotage, News18 2025-10-25 on model survival behaviour). None covers this finding; none logged. No academic citation found. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-09-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"Transluce\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Transluce%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results in every record type."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"investigator agents\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22investigator%20agents%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Transluce\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Transluce%22",
+       "via": "direct",
+       "status": 200,
+       "result": "67 results, sampled and read: tariff notices, Down's syndrome screening guidance, drug safety updates and product recalls. Every one is a stemming match on 'translucent'; none references Transluce."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"investigator agents\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22investigator%20agents%22",
+       "via": "direct",
+       "status": 200,
+       "result": "6 results, all unrelated (employment tribunal, tenancy guidance, HMRC agent update)."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "govinfo.gov full-text search: \"Transluce\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, read: a 1993 Minerals Management Service benthic study off Cape Hatteras, matched on 'translucent'. No US federal document references Transluce."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"investigator agents\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "8 results, all pre-window CREC/CRECB/USCOURTS uses of the ordinary phrase."
+      },
+      {
+       "name": "Federal Register API: \"Transluce\"",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Transluce%22",
+       "via": "direct",
+       "status": 200,
+       "result": "count = 0. Read the JSON response; no Federal Register document contains the term."
+      },
+      {
+       "name": "NIST / CAISI site search: \"Transluce\"",
+       "url": "https://www.nist.gov/search?s=%22Transluce%22",
+       "via": "direct",
+       "status": 200,
+       "result": "No results."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Transluce\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Transluce%22",
+       "via": "direct",
+       "status": 200,
+       "result": "1 result, read: a 2008 Commission staff working document on Zambia and Regulation (EC) No 1528/2007, matched on 'translucent'. False positive."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "US treated as UNSEARCHED and re-run against govinfo full-text (200). 'Transluce' is another hostile search string - it stems into 'translucent' and produces false positives in all three jurisdictions - so each hit was opened and read rather than counted. Every one is a stemming artifact. The claim terms ('investigator agents', the 48 CBRN/explosives/drug tasks) return nothing in window. All three jurisdictions genuinely searched; no official source references Transluce's 92 percent pass@1 result against Claude Sonnet 4.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "Google News and Bing News RSS discovery for Transluce jailbreaks and investigator agents returned zero items from either engine. The Semantic Scholar title-search endpoint was rate-limited (429) across repeated attempts with backoff, so no citation count could be established - recorded as blocked, not as zero citations. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": "429 rate-limited across repeated attempts with backoff",
+    "what_it_would_have_shown": "Citation counts for papers whose arXiv ID is not already recorded. The per-paper endpoint did succeed for arXiv:2506.24068."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "METR-2023-03-ALI1",
+  "current_policy_level": "Non-binding policy-related uptake",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"TaskRabbit\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22TaskRabbit%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "Hansard official API (Commons + Lords + written statements/answers + committees): \"CAPTCHA\"",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22CAPTCHA%22",
+       "via": "direct",
+       "status": 200,
+       "result": "checked via the same API; no contribution in window references the GPT-4 CAPTCHA episode."
+      },
+      {
+       "name": "GOV.UK search API (ministerial statements, departmental and regulator publications): \"Alignment Research Center\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Alignment%20Research%20Center%22",
+       "via": "direct",
+       "status": 200,
+       "result": "total = 0."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "VERIFICATION of the existing evidence URL: CHRG-118hhrg52499 (House Science, Space and Technology, 'Artificial Intelligence: Advancing Innovation Towards the National Interest', 2023-06-22)",
+       "url": "https://www.congress.gov/118/chrg/CHRG-118hhrg52499/CHRG-118hhrg52499.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "FETCHED AND READ IN FULL - 114 pages, 142,290 characters extracted cleanly. The document does NOT contain 'TaskRabbit', 'CAPTCHA', 'GPT-4', 'ARC', 'Alignment Research Center' or 'vision impairment'. The evidence URL currently on this row does not support the claim made against it."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"TaskRabbit\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "26 results, screened. The AI-deception one is CHRG-118hhrg51668."
+      },
+      {
+       "name": "CORRECTED SOURCE - CHRG-118hhrg51668, House Committee on Oversight and Accountability, Subcommittee on Cybersecurity, Information Technology and Government Innovation, 'Unpacking the White House National Cybersecurity Strategy', 2023-03-23 (Serial No. 118-12)",
+       "url": "https://www.govinfo.gov/content/pkg/CHRG-118hhrg51668/html/CHRG-118hhrg51668.htm",
+       "via": "direct",
+       "status": 200,
+       "result": "FETCHED AND READ IN FULL. Contains the CAPTCHA/TaskRabbit episode, raised by the subcommittee Chair, Rep. Nancy Mace, in questioning to Acting National Cyber Director Kemba Walden. Sitting date 2023-03-23, six days after the finding's 2023-03-17 publication - in window."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"Alignment Research Center\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results - the episode circulates in the record without evaluator attribution."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"CAPTCHA\" and \"GPT-4\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "govinfo.gov full-text search: \"I should not reveal that I am a robot\"",
+       "url": "https://www.govinfo.gov/app/search/  (POST /wssearch/search, full-text over CHRG, CREC, CRECB, CRPT, CPRT, BILLS, FR, CPD, GOVPUB; index current to 2026-08-05)",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"Alignment Research Center\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22Alignment+Research+Center%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      },
+      {
+       "name": "EUR-Lex quick search (EU law, Commission communications and staff working documents): \"TaskRabbit\"",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&lang=en&type=quick&text=%22TaskRabbit%22",
+       "via": "direct",
+       "status": 200,
+       "result": "0 results."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://www.govinfo.gov/content/pkg/CHRG-118hhrg51668/html/CHRG-118hhrg51668.htm",
+   "verbatim": "Ms. Mace. ... Our first hearing was on AI in this committee, and there are things that we cannot even imagine how AI will be used. I read a story the other day about ChatGPT getting through CAPTCHA, like, with a TaskRabbit employee, and told them that they were visually impaired, to break into that. We cannot even imagine how it might be used for good and then also for bad, which is one of my concerns.",
+   "policy_response": "The Chair of the House Oversight and Accountability Subcommittee on Cybersecurity, Information Technology and Government Innovation, Rep. Nancy Mace, raised the GPT-4/TaskRabbit CAPTCHA episode in questioning to the Acting National Cyber Director, Kemba Walden, at the hearing 'Unpacking the White House National Cybersecurity Strategy' on 23 March 2023, using it to press on AI's place in the National Cybersecurity Strategy. Official engagement with the finding's specific result; no enforceable obligation created.",
+   "reasoning": "Policy Level is unchanged at Non-binding policy-related uptake, but the evidence underneath it was wrong and is corrected here. The cited PDF (CHRG-118hhrg52499) fetches perfectly - 114 pages, clean extraction - and simply does not contain the episode; the accompanying description, 'prepared testimony entered into a U.S. House Science Committee hearing', is wrong on the committee, on the document and on the mode of entry. The actual source, located by full-text search of the whole US federal corpus, is a Member's own oral questioning at a House Oversight subcommittee hearing on 2023-03-23. It is admissible: it explicitly reproduces the finding's specific result - the model getting through a CAPTCHA via a TaskRabbit worker by claiming a visual impairment - which is the disjunct the rule allows. It is non-binding: a question in a hearing creates no enforceable requirement. Worth flagging that the episode circulates without attribution to METR/ARC ('Alignment Research Center' returns zero across the entire corpus), so a name-only search would have missed it; it was found by searching the claim.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "Google Scholar: 3 citations (checked 2026-08-15, carried forward from the packet; not re-fetched this pass).",
+     "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22Update%20on%20ARC%27s%20recent%20eval%20efforts%3A%20More%20information%20about%20ARC%27s%20evaluations%20of%20GPT-4%20and%20Claude%22"
+    }
+   ],
+   "discussion": [],
+   "note": "Existing academic entry carried forward unchanged. No new Channel C work was required for this row, which was not flagged priority_recheck; it was included because the comparison step asked for a check against the existing Policy Level, and that check turned up the evidence defect above. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search (congress.gov search interface)",
+    "status": "403 direct, no Wayback snapshot of a query URL",
+    "what_it_would_have_shown": "congress.gov's own search UI. Substituted with govinfo.gov's full-text search service (POST /wssearch/search), which indexes the same CHRG / CREC / CRPT / CPRT / BILLS corpora and returned 200; congress.gov and govinfo DOCUMENT URLs were also fetched directly at 200, so US congressional coverage is complete despite this block."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": "403 direct; Wayback reports no snapshot",
+    "what_it_would_have_shown": "Hansard's HTML search UI. Substituted with the official Hansard API at hansard-api.parliament.uk (200 direct), which is the same corpus (Commons, Lords, written statements, written answers, committees, divisions) and returns full contribution text."
+   },
+   {
+    "url": "https://publications.parliament.uk/",
+    "status": "403 direct",
+    "what_it_would_have_shown": "Select-committee report PDFs. Partially substituted: the Hansard API's committee index was searched (TotalCommittees = 0 for every evaluator name in this packet) and committees.parliament.uk was reachable via Wayback only."
+   },
+   {
+    "url": "https://ec.europa.eu/commission/presscorner/ (Commission press corner) and https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JavaScript-rendered; press corner returns a 34-character shell and digital-strategy ignores the query parameter",
+    "what_it_would_have_shown": "Commission press releases and AI Office news items. Substituted with EUR-Lex, which does return server-rendered results and covers Commission communications and staff working documents."
+   }
+  ],
+  "confidence": "high"
+ }
+]

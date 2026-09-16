@@ -1,0 +1,1232 @@
+[
+  {
+    "finding_id": "ROBUSTINT-2025-01-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek newsroom / API docs news index",
+          "url": "https://api-docs.deepseek.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Index resolves to the latest post (DeepSeek-V4-Flash-Vision-Exp, 2026-08-21). No post responds to the Cisco/Robust Intelligence jailbreak result or to jailbreak robustness generally."
+        },
+        {
+          "source": "DeepSeek-R1 peer-reviewed paper, Nature (DeepSeek primary document; corresponding author Liang Wenfeng)",
+          "url": "https://www.nature.com/articles/s41586-025-09422-z",
+          "checked_date": "2026-08-28",
+          "result": "RESPONSE FOUND. Full article text retrieved and read. 'Ethics and safety statement' expressly acknowledges R1's jailbreak vulnerability and points to a new comprehensive safety report; published 2025-09-17 (datePublished confirmed in the page's JSON-LD), i.e. 229 days after the finding."
+        },
+        {
+          "source": "DeepSeek-R1 Nature Supplementary Information (83pp), section 4.3 'DeepSeek-R1 Safety Report', incl. 4.3.1 'Risk Control System for DeepSeek-R1' and 4.3.5 'Robustness against Jailbreaking'",
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full. Supplementary Table 8 reports DeepSeek-R1 at 85.9% unsafe under jailbreak (vs 25.2% origin, GAP +60.7), falling to 4.3% with the risk control system. Searched for 'Cisco', 'Robust Intelligence', 'HarmBench', 'Holistic', 'LatticeFlow': HarmBench appears 6 times as a benchmark; Cisco/Robust Intelligence appear 0 times."
+        },
+        {
+          "source": "Subsequent DeepSeek model/system cards and release notes (through DeepSeek-V4-Flash-Vision-Exp, 2026-08-21)",
+          "url": "https://api-docs.deepseek.com/news/news260821",
+          "checked_date": "2026-08-28",
+          "result": "Fetched latest release announcement. Technical/pricing content only; no safety, jailbreak-resistance, red-teaming or external-evaluation content."
+        },
+        {
+          "source": "DeepSeek safety / deployment / transparency hub",
+          "url": "https://api-docs.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "No dedicated safety, deployment-safety or transparency hub exists on DeepSeek's properties; the Nature Supplementary section 4.3 is the only DeepSeek safety documentation located."
+        },
+        {
+          "source": "Broader web search combining company + evaluator + model + topic (WebSearch, used only to locate company primary sources)",
+          "url": "https://blogs.cisco.com/security/evaluating-security-risk-in-deepseek-and-other-frontier-reasoning-models",
+          "checked_date": "2026-08-28",
+          "result": "Two searches run ('DeepSeek response Cisco jailbreak 100% attack success rate R1 safety statement'; 'DeepSeek official safety statement jailbreak resistance improvements model card'). Returned only third-party research and press; no DeepSeek primary source beyond the Nature paper. A third search surfaced the Nature safety report, which was then verified directly."
+        }
+      ],
+      "evidence_url": "https://www.nature.com/articles/s41586-025-09422-z",
+      "verbatim": "In Supplementary Information, section 4.3, we present a comprehensive safety report from several perspectives, including performance on open-source and in-house safety evaluation benchmarks, and safety levels across several languages and against jailbreak attacks. These comprehensive safety analyses conclude that the inherent safety level of the DeepSeek-R1 model, compared with other state-of-the-art models, is generally at a moderate level (comparable with GPT-4o (2024-05-13)). Besides, when coupled with the risk control system, the safety level of the model is increased to a superior standard.",
+      "response_date": "2025-09-17",
+      "reasoning": "This is the late-appearing response this re-verification pass exists to catch. The prior battery (2026-08-02) predated or missed DeepSeek's Nature paper, which is a DeepSeek primary document (DeepSeek-authored, Liang Wenfeng corresponding author) published 2025-09-17, well after the 2025-01-31 finding. Its 'Ethics and safety statement' concedes that 'R1 can be subject to jailbreak attacks, leading to the generation of dangerous content such as explosive manufacturing plans', and Supplementary section 4.3.5 'Robustness against Jailbreaking' quantifies exactly the property Cisco measured, reporting an 85.9% unsafe ratio for R1 under jailbreak against a 2,232-template suite - directionally corroborating Cisco's 100% ASR result. Coded Acknowledged rather than Partial or Substantive: the only safeguard described, the external 'risk control system' on the official DeepSeek service, is presented in the present tense as already deployed, with no stated deployment date, so it cannot be verified as post-finding; the rulebook excludes changes predating the finding. What is unambiguously new and dated is DeepSeek's published acknowledgement and quantification of the problem. Attribution is 'No explicit attribution': the paper never names Cisco, Robust Intelligence or this finding."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Robust Intelligence', 'Cisco DeepSeek R1', '100% attack success rate', 'HarmBench'. Hansard returned a 2023-07-19 Commons contribution (Marion Fellows MP) referencing 'Researchers at Robust Intelligence' - this predates the 2025-01-31 finding by 18 months and concerns a different result, so it does not qualify. Remaining Hansard hits for the phrase are generic uses of the words 'robust intelligence'. The federal and state DeepSeek restrictions previously checked (No DeepSeek on Government Devices Act, the 2025-03-06 21-state attorneys-general letter, NY/VA/TX device bans) rest on data-transfer and CCP-ties concerns, not on this jailbreak-resistance result. No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "Fortune, \"Researchers had a '100% attack success rate' vs. DeepSeek\" (2025-02-02) [carried from record]",
+        "ZDNet, \"Deepseek's AI model proves easy to jailbreak - and worse\" (2025-01-31) [carried from record]",
+        "Computing, \"Researchers sound alarm on DeepSeek R1 security\" (observed this pass)",
+        "CX Today, \"Cisco Researchers Shred DeepSeek, Blast Its 'Safety and Security'\" (observed this pass)",
+        "Hackread, \"Cisco Finds DeepSeek R1 Highly Vulnerable to Harmful Prompts\" (observed this pass)",
+        "BankInfoSecurity, \"DeepSeek AI Models Vulnerable to Jailbreaking\" (observed this pass)"
+      ],
+      "academic": [
+        "arXiv:2502.12659 'The Hidden Risks of Large Reasoning Models: A Safety Assessment of R1'",
+        "arXiv:2506.18543 'SoK: A Comprehensive Security Analysis of Jailbreak Resilience in GPT and DeepSeek Models'",
+        "arXiv:2501.17030 'Challenges in Ensuring AI Safety in DeepSeek-R1 Models'",
+        "arXiv:2504.10081 'RealSafe-R1'",
+        "Springer, 'Examining methodological rigor, ethical governance, and scientific claims: a critical review of the DeepSeek-R1 study' (2026)"
+      ],
+      "discussion": [
+        "Qualys TotalAI independent jailbreak testing of DeepSeek (blog.qualys.com, 2025-01-31) reaching a convergent conclusion"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Judgement call, flagged for a human ruling. The Nature safety report is a genuine, dated, on-point DeepSeek primary document, but it never names Cisco or Robust Intelligence, and its 'risk control system' may well predate the finding. If the project reads ADMISSIBILITY's 'attributable to it' strictly (requiring the company to be responding to this finding rather than to the problem it identified), this row reverts to None. I coded Acknowledged because the same operative standard is already applied on FARAI-2025-02a-JAI2 and SCALEAI-2025-02b-JAI3 in this dataset, both of which credit unattributed post-finding company actions."
+  },
+  {
+    "finding_id": "FARAI-2025-02a-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek newsroom / API docs news index",
+          "url": "https://api-docs.deepseek.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No post addressing fine-tuning attacks, jailbreak-tuning, guardrail removal on distilled models, or FAR.AI."
+        },
+        {
+          "source": "DeepSeek-R1 Nature paper, 'Ethics and safety statement' (DeepSeek primary document, 2025-09-17)",
+          "url": "https://www.nature.com/articles/s41586-025-09422-z",
+          "checked_date": "2026-08-28",
+          "result": "NEAR MISS, NOT ADMITTED. Contains one clause: 'Besides, a public model is also vulnerable to further fine-tuning that could compromise inherent safety protections.' Generic open-weight caveat; no data, no reference to the distilled models, no action. See notes."
+        },
+        {
+          "source": "DeepSeek-R1 Nature Supplementary Information, searched for fine-tuning/distillation safety content",
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full (83pp). Every 'fine-tun'/'finetun'/'distill' occurrence was inspected for safety context: the only safety-adjacent hit is an unrelated methods passage on STaR-style self-training. Section 6 (distillation) contains no safety content. FAR.AI appears 0 times."
+        },
+        {
+          "source": "Meta (Llama 3.1 70B is the base of the evaluated distill) - Llama model cards and responsible-use materials",
+          "url": "https://www.llama.com/",
+          "checked_date": "2026-08-28",
+          "result": "Prior battery searched 23 cached company system cards/deployment-safety documents (incl. Meta) for the evaluator name with no mention; not re-fetchable this pass after WebSearch exhaustion. No Meta primary source responding to this finding located."
+        },
+        {
+          "source": "Subsequent DeepSeek release notes through 2026-08-21",
+          "url": "https://api-docs.deepseek.com/news/news260821",
+          "checked_date": "2026-08-28",
+          "result": "Fetched; technical/pricing content only, no safety or fine-tuning-hardening content."
+        },
+        {
+          "source": "Broader web search (WebSearch) for a DeepSeek or Meta primary source on jailbreak-tuning",
+          "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass; returned FAR.AI's own posts, academic follow-ups and press only. No DeepSeek or Meta primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run and exhausted; None stands. The one new item since the 2026-08-15 battery is DeepSeek's Nature 'Ethics and safety statement', which does concede in a single clause that public (open-weight) models are vulnerable to further fine-tuning that compromises safety protections. I did not admit it: it is a one-line generic release caveat with no data, no mention of the R1-Distill models, no mention of jailbreak-tuning as an attack class, and no action - it does not address THIS finding. This is deliberately a stricter line than I took on ROBUSTINT-2025-01-JAI1 and HOLISTIC-2025-02-JAI1, where DeepSeek published a dedicated multi-page quantified jailbreak-robustness report on the exact evaluated model."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'FAR.AI', 'Illusory Safety', 'jailbreak-tuning', 'DeepSeek R1-Distill-Llama-70B'. Hansard returned 2 hits for 'FAR.AI' (2026-06-05 Lords, 2023-06-29 Commons); both are generic AI-policy remarks with no reference to FAR.AI the organisation's research or to this report. gov.uk returned only topically-adjacent AI policy pages.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "arXiv:2510.01342 'Fine-Tuning Jailbreaks under Highly Constrained Black-Box Settings'",
+        "arXiv:2502.19537 'No, of Course I Can! Deeper Fine-Tuning Attacks That Bypass Token-Level Safety Mechanisms'",
+        "arXiv:2505.06843 'Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety'",
+        "arXiv:2409.18169 'Harmful Fine-tuning Attacks and Defenses for LLMs: A Survey'"
+      ],
+      "discussion": [
+        "LessWrong mirrors of the FAR.AI post (noted in the prior battery; excluded from scoring as near-evaluator material)"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "The Nature fine-tuning clause is recorded above as an explicit near-miss so a human coder can overrule. If the project treats any post-finding company reference to the problem class as sufficient for Acknowledged, this row becomes Acknowledged / No explicit attribution with evidence_url https://www.nature.com/articles/s41586-025-09422-z and response_date 2025-09-17. Attribution for the evaluated artefact is genuinely muddled: DeepSeek-R1-Distill-Llama-70B is a DeepSeek distillation of a Meta base model."
+  },
+  {
+    "finding_id": "FARAI-2025-02a-JAI2",
+    "current": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI API deprecations notice - 'Update to OpenAI's self-serve fine-tuning'",
+          "url": "https://developers.openai.com/api/docs/deprecations",
+          "checked_date": "2026-08-28",
+          "result": "RE-VERIFIED. Raw page fetched and text-extracted directly (not via summariser). The wind-down section is present and the three dated milestones (2026-05-07, 2026-07-02, 2027-01-06) match the record. No mention of FAR.AI, safety research, or a safety rationale anywhere in the section."
+        },
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "openai.com index pages return HTTP 403 to both curl and WebFetch this pass. No newsroom post referencing FAR.AI or jailbreak-tuning located via the searches that did complete."
+        },
+        {
+          "source": "GPT-5 System Card (successor launch card, 2025-08-13)",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full. Searched for FAR.AI and fine-tuning-attack content: no reference to FAR.AI, jailbreak-tuning, or fine-tuning-API guardrail removal."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Sections are Updates (system cards), Safety approach, Trust and transparency, Research. No fine-tuning-safeguard page and no reference to FAR.AI or other external evaluators of the fine-tuning API."
+        },
+        {
+          "source": "Official OpenAI announcements/accounts",
+          "url": "https://developers.openai.com/api/docs/deprecations",
+          "checked_date": "2026-08-28",
+          "result": "The deprecations notice is the only dated official OpenAI communication located that bears on the fine-tuning attack surface."
+        },
+        {
+          "source": "Broader web search (WebSearch) for OpenAI + FAR.AI + fine-tuning",
+          "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass; no OpenAI primary source connecting to this finding."
+        }
+      ],
+      "evidence_url": "https://developers.openai.com/api/docs/deprecations",
+      "verbatim": "On May 7th, 2026, we notified developers using OpenAI's self-serve fine-tuning platform of updates to availability. Inference on fine-tuned models will continue to be available until the base models are deprecated.",
+      "response_date": "2026-05-07",
+      "reasoning": "Independently re-derived and unchanged at Partial. The self-serve fine-tuning wind-down is a real, dated OpenAI primary-source access restriction that progressively removes the exact surface this finding exploited (public API fine-tuning of GPT-4o). It remains Partial rather than Substantive because it is phased and incomplete until 2027-01-06, is not framed as a safety measure, and is not linked to FAR.AI. The record's earlier citation correction (from the August 2024 GPT-4o fine-tuning launch page to this deprecations notice) is confirmed correct: the launch page contains no wind-down language."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'FAR.AI', 'Illusory Safety', 'jailbreak-tuning', 'DeepSeek R1-Distill-Llama-70B'. Hansard returned 2 hits for 'FAR.AI' (2026-06-05 Lords, 2023-06-29 Commons); both are generic AI-policy remarks with no reference to FAR.AI the organisation's research or to this report. gov.uk returned only topically-adjacent AI policy pages.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "arXiv:2510.01342",
+        "arXiv:2502.19537",
+        "arXiv:2505.06843",
+        "arXiv:2409.18169"
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "One correction proposed: the record's Response Date of 2026-05-08 should be 2026-05-07, which is the notification date stated verbatim on the page ('On May 7th, 2026, we notified developers...'). Coding is otherwise unchanged."
+  },
+  {
+    "finding_id": "FARAI-2025-02a-JAI3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Visible posts (Jul-Aug 2026) contain no reference to FAR.AI, jailbreak-tuning, or fine-tuning safety. Nearest topical post is 'Our position on open-weights models' (2026-07-27), which is not about fine-tuning API guardrail removal."
+        },
+        {
+          "source": "Claude Opus 4 & Claude Sonnet 4 System Card (May 2025, first family card after the finding)",
+          "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded (123pp) and text-extracted in full. No reference to FAR.AI or to fine-tuning-based guardrail removal."
+        },
+        {
+          "source": "Claude Sonnet 4.5 System Card (Sept 2025) and Claude Opus 4.5 System Card (Nov 2025)",
+          "url": "https://assets.anthropic.com/m/12f214efcc2f457a/original/claude-sonnet-4-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Both downloaded (149pp, 291kB text respectively) and searched. No FAR.AI reference and no fine-tuning-attack section."
+        },
+        {
+          "source": "Anthropic model deprecations page (does the fine-tunable surface still exist?)",
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "checked_date": "2026-08-28",
+          "result": "Fetched in full. claude-3-haiku-20240307 was deprecated 2026-02-19 and RETIRED 2026-04-20. Anthropic states the rationale explicitly: 'Anthropic currently deprecates and retires models to ensure capacity for new model releases.' Considered as a candidate access restriction and rejected - see notes."
+        },
+        {
+          "source": "Anthropic safeguards / alignment science pages",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Post index fetched. No post on fine-tuning-API attacks or jailbreak-tuning; nothing referencing FAR.AI."
+        },
+        {
+          "source": "Broader web search (WebSearch) for an Anthropic response to FAR.AI jailbreak-tuning",
+          "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass. Returned FAR.AI's own post, academic follow-ups, and Anthropic's Constitutional Classifiers coverage (published 2025-02-03, predating the 2025-02-03/02-11 window and not referencing this finding - excluded as standing policy). No admissible Anthropic primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run against primary documents; None stands and is now better documented. The one new candidate is the retirement of Claude 3 Haiku (the exact fine-tunable model FAR.AI evaluated) on 2026-04-20. I did not admit it: Anthropic states on the same page that deprecation exists 'to ensure capacity for new model releases', it is routine single-model lifecycle rather than a withdrawal of the fine-tuning surface, and Anthropic continues to offer fine-tuning of current models. This is materially different from the OpenAI platform-wide self-serve fine-tuning wind-down admitted on FARAI-2025-02a-JAI2."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'FAR.AI', 'Illusory Safety', 'jailbreak-tuning', 'DeepSeek R1-Distill-Llama-70B'. Hansard returned 2 hits for 'FAR.AI' (2026-06-05 Lords, 2023-06-29 Commons); both are generic AI-policy remarks with no reference to FAR.AI the organisation's research or to this report. gov.uk returned only topically-adjacent AI policy pages.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "arXiv:2510.01342",
+        "arXiv:2409.18169",
+        "arXiv:2505.16737 'Secure LLM Fine-Tuning via Safety-Aware Probing'"
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Claude 3 Haiku retirement (2026-04-20) recorded above as a considered-and-rejected candidate so the reasoning is auditable. If the project decides routine model retirement counts as an access restriction, this row would become Partial - but that would also require revisiting many other rows, so I left it at None."
+  },
+  {
+    "finding_id": "FARAI-2025-02a-JAI4",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Google Cloud / Vertex AI tuning documentation (the surface the finding exploited)",
+          "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No documented safety filtering, abuse monitoring or moderation of supervised-tuning DATASETS - the specific gap FAR.AI identified (Gemini 1.5 Pro accepted 5,000 Harmful SafeRLHF examples without blocking). Safety documentation covers inference-time content filters only. Gemini 1.5 Pro is no longer listed as tunable; current tunable models are Gemini 2.5 Flash and Gemini 3.x Flash variants."
+        },
+        {
+          "source": "Google Cloud Vertex AI safety overview",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/safety-overview",
+          "checked_date": "2026-08-28",
+          "result": "Identified via search this pass as Google's standing safety documentation. It is pre-existing generic safety-filter policy, not a response to this finding, and is excluded under the standing-policy rule."
+        },
+        {
+          "source": "Google / Google DeepMind newsroom and responsibility pages",
+          "url": "https://deepmind.google/discover/blog/",
+          "checked_date": "2026-08-28",
+          "result": "No post referencing FAR.AI, 'Illusory Safety', or tuning-data guardrail removal was located via the searches that completed before the WebSearch budget was exhausted."
+        },
+        {
+          "source": "Subsequent Gemini model/technical reports (Gemma 3 Technical Report surfaced in search; Gemini 2.x/3.x cards)",
+          "url": "https://arxiv.org/pdf/2503.19786",
+          "checked_date": "2026-08-28",
+          "result": "Surfaced in search; no reference to FAR.AI or to this finding. No Gemini model card responding to the tuning-data filtering gap located."
+        },
+        {
+          "source": "Official Google / Google DeepMind announcements and accounts",
+          "url": "https://blog.google/technology/ai/",
+          "checked_date": "2026-08-28",
+          "result": "No official Google announcement referencing FAR.AI, 'Illusory Safety', or the absence of harmful-data blocking in Gemini tuning was located. Battery item (4) satisfied negatively."
+        },
+        {
+          "source": "Broader web search (WebSearch) 'Google Vertex AI Gemini tuning harmful data filtering safety response FAR.AI Illusory Safety'",
+          "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass. Returned Google's standing safety docs and third-party research only; no Google primary source addressing this finding."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run and exhausted; None stands. Gemini 1.5 Pro has since been retired from the tuning surface, but that is ordinary model lifecycle (Google continues to offer supervised tuning on Gemini 2.5/3.x Flash) and Google has published nothing connecting it to this finding. Critically, the specific gap FAR.AI identified - no pre-training moderation of the tuning dataset - remains undocumented as fixed in Google's current tuning documentation, so there is not even an unattributed mitigation to credit."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'FAR.AI', 'Illusory Safety', 'jailbreak-tuning', 'DeepSeek R1-Distill-Llama-70B'. Hansard returned 2 hits for 'FAR.AI' (2026-06-05 Lords, 2023-06-29 Commons); both are generic AI-policy remarks with no reference to FAR.AI the organisation's research or to this report. gov.uk returned only topically-adjacent AI policy pages.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "VentureBeat, 'Uh-oh! Fine-tuning LLMs compromises their safety, study finds' (topically related coverage observed this pass)"
+      ],
+      "academic": [
+        "arXiv:2503.11832 'Safety Mirage'",
+        "arXiv:2502.20968 'Beware of Your Po!'",
+        "arXiv:2606.00160 'DataShield: Safety-degrading Data Filtering for LLM Benign Instruction Fine-Tuning'"
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Google DeepMind's blog index could not be enumerated directly this pass (WebSearch budget exhausted; no accessible general search engine - DuckDuckGo served a bot challenge, Mojeek returned 403, Bing via WebFetch returned irrelevant results). Item (1) of the battery for Google therefore rests on the searches that completed earlier in the pass plus the prior 2026-08-15 battery."
+  },
+  {
+    "finding_id": "LATTICEFLOW-2025-02-CYB1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek newsroom / API docs news index",
+          "url": "https://api-docs.deepseek.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No post responding to the COMPL-AI EU AI Act compliance evaluation, to goal hijacking / prompt leakage, or to LatticeFlow."
+        },
+        {
+          "source": "DeepSeek-R1 Nature paper and Supplementary Information (new since the prior battery)",
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full and searched. 'LatticeFlow' 0 hits, 'COMPL-AI' 0 hits. The safety report covers jailbreak robustness, multilingual safety and a bias benchmark (BBQ) for full R1, but contains nothing on goal hijacking, prompt leakage, cybersecurity robustness of the distilled 8B/14B models, or EU AI Act compliance. NOT responsive to this finding."
+        },
+        {
+          "source": "Latest DeepSeek release announcement (DeepSeek-V4-Flash-Vision-Exp)",
+          "url": "https://api-docs.deepseek.com/news/news260821",
+          "checked_date": "2026-08-28",
+          "result": "Fetched 2026-08-21 post; technical/pricing content only. Confirms no safety or compliance response in the most recent card."
+        },
+        {
+          "source": "DeepSeek safety / deployment / transparency hub",
+          "url": "https://api-docs.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "No such hub exists. Confirmed again this pass."
+        },
+        {
+          "source": "Meta (Llama 3.1 8B) and Alibaba (Qwen 2.5 14B) as base-model developers of the evaluated distills",
+          "url": "https://latticeflow.ai/news/deepseek-eu-ai-act-compliance-evaluation",
+          "checked_date": "2026-08-28",
+          "result": "No primary source from either located responding to the COMPL-AI distilled-model result. Developer attribution is genuinely split across three companies here."
+        },
+        {
+          "source": "Broader web search for a DeepSeek primary response to LatticeFlow/COMPL-AI",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "Could not complete a fresh general web search: native WebSearch budget exhausted (200/200), DuckDuckGo HTML served a bot challenge, Mojeek returned HTTP 403, and Bing via WebFetch returned irrelevant results. Item (5) rests on the prior 2026-08-16 battery, which found only syndicated LatticeFlow press releases."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "None stands. The one genuinely new DeepSeek primary document since the prior battery - the Nature safety report - was retrieved in full and checked specifically against this finding's claims, and does not address them: it evaluates full DeepSeek-R1, not the distilled 8B/14B artefacts, and covers no cybersecurity/goal-hijacking/prompt-leakage dimension and no EU AI Act framework. Recording this explicitly is the main value added, because the same document DID cause upgrades on the two jailbreak-resistance DeepSeek rows in this chunk, and a reader needs to see why it was not admitted here."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'LatticeFlow', 'COMPL-AI', 'DeepSeek EU AI Act compliance gaps', 'goal hijacking', 'prompt leakage'. Hansard returned 0 hits for both 'LatticeFlow' and 'COMPL-AI'; gov.uk returned only unrelated pages; Federal Register returned 0. The EU leg matters most for this finding and is the leg I could not re-run this pass; the prior battery checked the GPAI Code of Practice (2025-07-10) and the AI Act Service Desk and found neither references COMPL-AI. No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "IT Pro, 'Looking to use DeepSeek R1 in the EU? This new study shows it's missing key criteria to comply with the EU AI Act' [carried from record]"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Confidence is medium rather than high only because the EU-jurisdiction Channel B leg and the open-web Channel A leg could not be freshly executed (see sources_checked and jurisdictions_checked). Channel A's decisive primary sources were all reached directly."
+  },
+  {
+    "finding_id": "HOLISTIC-2025-02-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek newsroom / API docs news index",
+          "url": "https://api-docs.deepseek.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No post responding to Holistic AI's R1 red-teaming and jailbreaking audit."
+        },
+        {
+          "source": "DeepSeek-R1 peer-reviewed paper, Nature, 'Ethics and safety statement' (DeepSeek primary document, published 2025-09-17)",
+          "url": "https://www.nature.com/articles/s41586-025-09422-z",
+          "checked_date": "2026-08-28",
+          "result": "RESPONSE FOUND. Full text retrieved; DeepSeek concedes R1's jailbreak vulnerability and points to a dedicated safety report. 224 days after the 2025-02-05 finding."
+        },
+        {
+          "source": "DeepSeek-R1 Nature Supplementary Information section 4.3.5 'Robustness against Jailbreaking' and Supplementary Table 8",
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full. DeepSeek built a 2,232-template jailbreak suite and reports R1's unsafe ratio rising from 25.2% to 85.9% under jailbreak (GAP +60.7), the worst gap of any model in its own table - directionally consistent with Holistic AI's 32% jailbreak-resistance result. 'Holistic' appears once in the 83pp document, in unrelated prose; Holistic AI is not cited."
+        },
+        {
+          "source": "Subsequent DeepSeek model cards / release notes through 2026-08-21",
+          "url": "https://api-docs.deepseek.com/news/news260821",
+          "checked_date": "2026-08-28",
+          "result": "Fetched; no safety, jailbreak-resistance or external-evaluation content."
+        },
+        {
+          "source": "DeepSeek safety / deployment hub and GitHub",
+          "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+          "checked_date": "2026-08-28",
+          "result": "No safety hub exists; the repository model card carries no response. Confirmed again this pass (prior battery result unchanged)."
+        },
+        {
+          "source": "Broader web search combining DeepSeek + Holistic AI + jailbreak resistance",
+          "url": "https://www.holisticai.com/red-teaming/deepseek-r1",
+          "checked_date": "2026-08-28",
+          "result": "Fresh general web search could not be completed (WebSearch budget exhausted; DuckDuckGo/Mojeek/Bing all unusable). Prior 2026-08-16 battery found third-party coverage only. The Nature response was located instead via a targeted primary-source search that did complete."
+        }
+      ],
+      "evidence_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+      "verbatim": "Open-source models (DeepSeek, Qwen) face more severe jailbreak security challenges than closed-source models, because of the lack of a risk control system in locally deployed models. To address safety issues, we advise developers using open source models in their services to adopt comparable risk control measures.",
+      "response_date": "2025-09-17",
+      "reasoning": "Upgraded from None on the same new evidence as ROBUSTINT-2025-01-JAI1: DeepSeek's Nature Supplementary section 4.3.5 is a dated DeepSeek primary document that squarely addresses this finding's subject - R1's collapse in jailbreak resistance - on the exact evaluated model, and quantifies it. Coded Acknowledged, not Partial or Substantive, because the only safeguard named (the external risk control system on the first-party service) is described as already deployed with no date, so it cannot be shown to postdate the finding, and the rulebook excludes pre-existing measures; and because the advisory to third-party developers is guidance, not company action. Attribution is 'No explicit attribution': Holistic AI and its 12/37 result are never mentioned."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Holistic AI', 'DeepSeek R1 red teaming audit', 'jailbreaking resistance 32%'. Hansard returned 0 hits for 'Holistic AI'. gov.uk's top hit for 'Holistic AI red teaming' is a 2023-09-19 supplier-catalogue listing for the company's GRC platform, which is a procurement listing and not a reference to this finding. Federal Register returned 0.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "arXiv:2506.18543 'SoK: A Comprehensive Security Analysis of Jailbreak Resilience in GPT and DeepSeek Models'",
+        "arXiv:2502.12659 'The Hidden Risks of Large Reasoning Models'"
+      ],
+      "discussion": [
+        "Qualys TotalAI DeepSeek jailbreak testing (2025-01-31), an independent convergent result"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Same judgement call as ROBUSTINT-2025-01-JAI1 and should be ruled on together with it: DeepSeek's Nature safety report is on-point and post-finding but names no evaluator. Coded consistently across both rows."
+  },
+  {
+    "finding_id": "SCALEAI-2025-02b-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No post referencing Scale AI, J2, or models being jailbroken into automated red-teamers."
+        },
+        {
+          "source": "Claude Opus 4 & Claude Sonnet 4 System Card (May 2025, first family card after the finding)",
+          "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded (123pp) and text-extracted in full; searched. No reference to Scale AI or J2. The card's automated-auditor work is Anthropic's own and is not presented as a response to this finding."
+        },
+        {
+          "source": "Claude Sonnet 4.5 System Card (Sept 2025)",
+          "url": "https://assets.anthropic.com/m/12f214efcc2f457a/original/claude-sonnet-4-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded (149pp) and searched. No Scale AI or J2 reference."
+        },
+        {
+          "source": "Claude Opus 4.5 System Card (Nov 2025)",
+          "url": "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and searched. No Scale AI or J2 reference."
+        },
+        {
+          "source": "Anthropic Alignment Science blog / safeguards pages",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Post index fetched. Anthropic's Constitutional Classifiers programme (published 2025-02-03) predates this 2025-02-11 finding and does not reference it - excluded as standing policy, as in the prior battery."
+        },
+        {
+          "source": "Broader web search for an Anthropic response to Scale AI's J2",
+          "url": "https://labs.scale.com/papers/j2",
+          "checked_date": "2026-08-28",
+          "result": "Fresh general web search could not be completed this pass (WebSearch budget exhausted; DuckDuckGo bot challenge, Mojeek 403, Bing via WebFetch unusable). Relying on the prior 2026-08-15 battery, which located no Anthropic primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "None stands, now re-earned against four Anthropic system cards read in full rather than a cached corpus search. Anthropic has published extensively on automated red-teaming since (Petri, the automated behavioral auditor), but none of it references Scale AI, J2, or Sonnet-3.5's 93.0% ASR as a J2 attacker, and it is not framed as addressing the misuse-of-Claude-as-attacker problem this finding raises."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Scale AI', 'J2', 'Jailbreaking to Jailbreak', 'HarmBench attack success rate'. Hansard returned 8 'Scale AI' hits, all inspected as generic references to AI scaling or to the company in procurement/policy contexts, none referencing this report. gov.uk and Federal Register returned nothing referencing the finding.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Item (5) of the battery (open web) could not be freshly executed. Note the standing tension with SCALEAI-2025-02b-JAI3 in this same chunk, which is coded Partial on an unattributed OpenAI successor-system safeguard; if that standard were applied symmetrically, Anthropic's post-finding deployment of Constitutional Classifiers on Claude Opus 4 (May 2025) would arguably qualify here. I did not upgrade, because those classifiers are CBRN-scoped and the prior coder already excluded the programme as standing policy."
+  },
+  {
+    "finding_id": "SCALEAI-2025-02b-JAI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Google / Google DeepMind newsroom and blog",
+          "url": "https://deepmind.google/discover/blog/",
+          "checked_date": "2026-08-28",
+          "result": "No post referencing Scale AI, J2, or Gemini being jailbroken into an automated red-teamer located via the searches that completed this pass."
+        },
+        {
+          "source": "Subsequent Gemini model cards / technical reports",
+          "url": "https://arxiv.org/pdf/2503.19786",
+          "checked_date": "2026-08-28",
+          "result": "Gemma 3 Technical Report surfaced in search and inspected; no reference to Scale AI or J2. No Gemini family card responding to this finding located."
+        },
+        {
+          "source": "Google Cloud Vertex AI safety overview and content-filter documentation",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/safety-overview",
+          "checked_date": "2026-08-28",
+          "result": "Pre-existing standing safety-filter documentation; not a response to this finding and excluded under the standing-policy rule."
+        },
+        {
+          "source": "Gemini safety and content filter documentation",
+          "url": "https://ai.google.dev/gemini-api/docs/safety-guidance",
+          "checked_date": "2026-08-28",
+          "result": "Standing guidance, no reference to this finding or evaluator."
+        },
+        {
+          "source": "Official Google announcements/accounts",
+          "url": "https://blog.google/technology/ai/",
+          "checked_date": "2026-08-28",
+          "result": "No statement located referencing Scale AI's J2 result or Gemini-1.5-pro's 91.0% ASR as an attacker."
+        },
+        {
+          "source": "Broader web search for a Google response to Scale AI's J2",
+          "url": "https://labs.scale.com/papers/j2",
+          "checked_date": "2026-08-28",
+          "result": "Fresh general web search could not be completed (WebSearch budget exhausted; no accessible alternative engine). Relying on the prior 2026-08-15 battery, which located no Google primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "None stands. No Google primary document referencing Scale AI, J2, or the finding that Gemini-1.5-pro can be turned into a 91.0%-ASR automated attacker was located in any of the five battery items. Gemini 1.5 Pro has since been retired, but Google has published nothing connecting that to this finding, and routine model retirement is not an admissible safety response."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Scale AI', 'J2', 'Jailbreaking to Jailbreak', 'HarmBench attack success rate'. Hansard returned 8 'Scale AI' hits, all inspected as generic references to AI scaling or to the company in procurement/policy contexts, none referencing this report. gov.uk and Federal Register returned nothing referencing the finding.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Battery items (1) and (5) rest partly on the prior pass because the WebSearch budget was exhausted and no substitute general search engine was reachable (DuckDuckGo bot challenge, Mojeek HTTP 403, Bing via WebFetch returned unrelated results)."
+  },
+  {
+    "finding_id": "SCALEAI-2025-02b-JAI3",
+    "current": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI post cited as the existing Channel A evidence ('Introducing gpt-oss-safeguard')",
+          "url": "https://openai.com/index/introducing-gpt-oss-safeguard/",
+          "checked_date": "2026-08-28",
+          "result": "UNREACHABLE - HTTP 403 Forbidden via WebFetch, and openai.com index pages also 403 via curl. The cited evidence could NOT be re-verified this pass. Its contents are not restated here because I could not read them."
+        },
+        {
+          "source": "GPT-5 System Card (successor launch card, 2025-08-13)",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full. Contains a jailbreak-robustness evaluation using StrongREJECT (ref [1]) and an instruction-hierarchy section, but no reference to Scale AI, J2, or LLM-driven automated attackers. Does not add a new response for this row."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Index of system cards plus safety-approach/transparency/research links. No page addressing this finding or naming Scale AI."
+        },
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to both curl and WebFetch this pass; could not enumerate."
+        },
+        {
+          "source": "Broader web search for an OpenAI primary source naming Scale AI or J2",
+          "url": "https://labs.scale.com/papers/j2",
+          "checked_date": "2026-08-28",
+          "result": "Fresh general web search could not be completed (WebSearch budget exhausted). No new candidate located."
+        }
+      ],
+      "evidence_url": "https://openai.com/index/introducing-gpt-oss-safeguard/",
+      "verbatim": "",
+      "response_date": "2025-10-29",
+      "reasoning": "Left unchanged because I could not open the cited evidence (HTTP 403) and therefore have no basis to either confirm or overturn it - overturning a coding on the strength of a source I could not read would violate the real-or-empty standard. Verbatim is left empty for the same reason. Independently, the GPT-5 system card was read in full and adds nothing on this finding. Recorded caveat: on a strict reading of ADMISSIBILITY, a general-purpose Safety Reasoner deployed across successor systems is a standing safeguard rather than a response to THIS finding, and this row is arguably over-coded; that is a §8 ruling for a human, not something I will change on unverifiable evidence."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Scale AI', 'J2', 'Jailbreaking to Jailbreak', 'HarmBench attack success rate'. Hansard returned 8 'Scale AI' hits, all inspected as generic references to AI scaling or to the company in procurement/policy contexts, none referencing this report. gov.uk and Federal Register returned nothing referencing the finding.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "low",
+    "notes": "UNREACHABLE SOURCE: the row's own Channel A evidence URL (openai.com/index/introducing-gpt-oss-safeguard/) returned HTTP 403 and could not be read this pass. Coding carried forward unverified. This row should be re-checked from a network path that can reach openai.com."
+  },
+  {
+    "finding_id": "UKAISI-2025-02-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to curl and WebFetch this pass; could not enumerate. Prior 2026-08-17 battery found no post referencing the paper or the pointwise-undetectable attack class."
+        },
+        {
+          "source": "OpenAI API deprecations notice - 'Update to OpenAI's self-serve fine-tuning'",
+          "url": "https://developers.openai.com/api/docs/deprecations",
+          "checked_date": "2026-08-28",
+          "result": "RE-VERIFIED by direct raw fetch. The wind-down of the self-serve fine-tuning platform - the exact API surface this finding attacked - is confirmed, with milestones 2026-05-07, 2026-07-02 and 2027-01-06. No safety rationale stated; no reference to UK AISI or the paper."
+        },
+        {
+          "source": "GPT-5 System Card (2025-08-13)",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full. No reference to the UK AISI finetuning-API paper, to pointwise defences, or to fine-tuning attack detection. (No launch card is the canonical location anyway, since the finding targets an API surface rather than a model release.)"
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No fine-tuning-safeguard page; no reference to UK AISI as an evaluator of the fine-tuning API."
+        },
+        {
+          "source": "OpenAI fine-tuning documentation (supervised fine-tuning, best practices, moderation checks)",
+          "url": "https://developers.openai.com/api/docs/deprecations",
+          "checked_date": "2026-08-28",
+          "result": "Fine-tuning docs remain live in the developer site navigation. As the prior battery established, the moderation_checks event type is a pre-existing feature and not a change attributable to this finding."
+        },
+        {
+          "source": "Broader web search 'OpenAI fine-tuning API safety moderation defenses AISI pointwise undetectable finetuning attacks response'",
+          "url": "https://arxiv.org/abs/2502.14828",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass. Returned the paper itself (arXiv, OpenReview) and downstream academic work only; no OpenAI primary source responding to it."
+        }
+      ],
+      "evidence_url": "https://developers.openai.com/api/docs/deprecations",
+      "verbatim": "On May 7th, 2026, we notified developers using OpenAI's self-serve fine-tuning platform of updates to availability. Inference on fine-tuned models will continue to be available until the base models are deprecated.",
+      "response_date": "2026-05-07",
+      "reasoning": "This resolves the §8 ruling the prior coder explicitly parked. The finding's whole subject is the live OpenAI fine-tuning API and the fundamental limits of pointwise defences on it; the self-serve fine-tuning wind-down progressively removes that surface entirely. The identical document is already admitted as a Partial response on FARAI-2025-02a-JAI2, whose finding is a weaker fit (a fine-tuning attack on one model) than this one (an attack on the API's defence architecture as such). Holding this row at None while crediting the FAR.AI row is not defensible on the evidence, and the prior coder said so in the record. Coded Partial, not Substantive, on the same grounds as the FAR.AI row: the restriction is phased and incomplete until 2027-01-06 and is not framed as a safety measure. Attribution: 'No explicit attribution' - OpenAI does not mention UK AISI, the paper, or fine-tuning attacks in the notice."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'UK AI Security Institute', 'AISI', 'Fundamental limitations in defending LLM finetuning APIs', 'pointwise-undetectable finetuning attacks', 'fine-tuning API'. gov.uk returned only general AISI approach-to-evaluations and AI-policy pages, none referencing this paper or its result. Hansard returned no contribution referencing this paper. Federal Register returned 0. Note that UK AISI is itself a UK government body, so its own publication of the research is the finding, not policy uptake of it; I looked for a separate official source (ministerial statement, committee, regulator advisory) explicitly citing the paper or its result and found none. No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "OpenReview V4SA2FOzQL (peer-reviewed venue record for the paper)",
+        "arXiv:2502.19537 'No, of Course I Can! Deeper Fine-Tuning Attacks That Bypass Token-Level Safety Mechanisms'",
+        "arXiv:2505.06843 'Benign Samples Matter!'",
+        "arXiv:2409.18169 'Harmful Fine-tuning Attacks and Defenses for LLMs: A Survey'"
+      ],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "This is a consistency-driven upgrade rather than a new-evidence upgrade: the underlying document was already known to the prior coder, who flagged the inconsistency and held the row pending a ruling. If the project instead decides the wind-down is inadmissible (non-safety motive, no attribution), the correct fix is to downgrade FARAI-2025-02a-JAI2 to None as well, not to leave the two rows split."
+  },
+  {
+    "finding_id": "HOLISTIC-2025-02-JAI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "xAI newsroom",
+          "url": "https://x.ai/news",
+          "checked_date": "2026-08-28",
+          "result": "UNREACHABLE - HTTP 403 via curl and via WebFetch. x.ai/sitemap.xml and x.ai/legal/risk-management-framework also returned 403. Substituted the dated PDF artefacts below, which are served from data.x.ai and are reachable."
+        },
+        {
+          "source": "Grok 4.20 model card (most recent xAI model card located, 2026-04-07)",
+          "url": "https://data.x.ai/2026-04-07-grok-4-20-model-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full and read. It DOES report jailbreak robustness ('Refusals + User Jailbreak violation rate 0.01', 'System Jailbreak violation rate 0.00'), but 'Holistic' appears 0 times, there is no reference to the 2.7% Grok-3 resistance rate, and no comparison to the Grok-3 audit. Not attributable to this finding."
+        },
+        {
+          "source": "xAI Risk Management Framework (2025-08-20)",
+          "url": "https://data.x.ai/2025-08-20-xai-risk-management-framework.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and text-extracted in full. 'Holistic' 0 hits; 2 generic 'jailbreak' mentions; no reference to this audit or its result."
+        },
+        {
+          "source": "Probe for any xAI model card newer than Grok 4.20",
+          "url": "https://data.x.ai/2026-grok-5-model-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 404. No newer xAI model card located; Grok 4.20 (2026-04-07) remains the most recent reachable card."
+        },
+        {
+          "source": "Holistic AI primary source (finding verification)",
+          "url": "https://www.holisticai.com/red-teaming/grok-3",
+          "checked_date": "2026-08-28",
+          "result": "Confirmed in the prior pass as the source of the 1/37 (2.7%) figure, tested in 'Think' mode. Carried forward; not re-fetched this pass."
+        },
+        {
+          "source": "Broader web search for an xAI response to Holistic AI",
+          "url": "https://www.bing.com/search?q=%22Holistic+AI%22+Grok-3+jailbreak+xAI+official+response",
+          "checked_date": "2026-08-28",
+          "result": "Attempted via WebFetch after the WebSearch budget was exhausted; Bing returned dictionary/irrelevant results. DuckDuckGo served a bot challenge and Mojeek returned HTTP 403. Item (5) could not be freshly executed; relying on the prior 2026-08-02 and 2026-08-16 batteries."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "None stands. xAI now publishes jailbreak-robustness numbers in its model cards and reports near-zero violation rates for Grok 4.20, which is a large improvement on the Grok-3 posture Holistic AI measured - but xAI never references Holistic AI, the 2.7% figure, or this audit anywhere in the two reachable primary documents, so there is no dated company document attributable to this finding. Improvement without any attributable acknowledgement is not a Channel A response under the rulebook."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Holistic AI', 'Grok-3', 'jailbreaking resistance 2.7%', 'xAI red teaming audit'. Hansard returned 0 hits for 'Holistic AI'. gov.uk's only 'Holistic AI' hit is a 2023 supplier-catalogue listing. Federal Register returned 0 for 'Holistic AI'. This upgrades the row's previously non-exhaustive Channel B note ('not an exhaustive database query') to a documented negative for the UK and Federal Register legs. No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "Futurism (2025-02-19) covered a Grok-3 jailbreak but attributes it to Adversa AI, not Holistic AI - confirmed in the prior pass by direct fetch. Retained as a NEGATIVE note, not as coverage of this finding."
+      ],
+      "academic": [],
+      "discussion": [
+        "Adversa AI, 'Grok-3 Jailbreak and AI Red Teaming' - a separate firm's convergent finding, explicitly ruled out as coverage of this one"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "UNREACHABLE SOURCE: x.ai/news returned HTTP 403 to every method tried, so battery item (1) was satisfied only by substituting dated PDF artefacts from data.x.ai. Battery item (5) also could not be freshly executed. The two reachable xAI primary documents were read in full and are clean, so the None is well supported despite those gaps."
+  },
+  {
+    "finding_id": "APOLLO-2025-03-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No standalone news post responding to Apollo's evaluation-awareness finding; the response lives in the system cards and the Alignment Science blog."
+        },
+        {
+          "source": "Claude Opus 4 & Claude Sonnet 4 System Card (2025-05-22), section 4.1.2.2 'Situational awareness' - first family card after the finding",
+          "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+          "checked_date": "2026-08-28",
+          "result": "RESPONSE FOUND (acknowledgement level). Downloaded (123pp) and read. Anthropic quantifies the behaviour for the evaluated model itself: 'the classifier found 5 examples of candidate situational awareness out of 414 transcripts, similar to the 3 we observed with Claude Sonnet 3.5 and the 7 we observed with Claude Sonnet 3.7 in the same simulated environments', and commits that 'the development of more realistic testing environments, will be an area for further research'. Apollo is cited in the card, but for its sabotage/deception evaluations, not for this finding."
+        },
+        {
+          "source": "Claude Sonnet 4.5 System Card (2025-09-29), section 7.1.1 'Realism filtering' and section 7.2 'Evaluation awareness'",
+          "url": "https://assets.anthropic.com/m/12f214efcc2f457a/original/claude-sonnet-4-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "RESPONSE FOUND (action level). Downloaded (149pp) and read. 64 occurrences of 'evaluation awareness'; a dedicated section 7.2; and a concrete deployed mitigation in 7.1.1. Apollo Research appears as a third-party evaluator of Sonnet 4.5 (section 7.3.2), not as the source of this finding."
+        },
+        {
+          "source": "Claude Opus 4.5 System Card (2025-11-24)",
+          "url": "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and searched: 44 occurrences of 'evaluation awareness', including interpretability feature-monitoring for evaluation-awareness features across training. Confirms the response is a sustained programme rather than a one-off."
+        },
+        {
+          "source": "Anthropic Alignment Science blog (safety/research pages)",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Post index fetched. Two further dated primary items on this exact problem: 'Petri 2.0: New Scenarios, New Model Comparisons, and Improved Eval-Awareness Mitigations' (January 2026) and 'Measuring and improving coding audit realism with deployment resources' (March 2026)."
+        },
+        {
+          "source": "Broader web search 'Anthropic Claude Sonnet 4.5 system card evaluation awareness Apollo Research'",
+          "url": "https://www.transformernews.ai/p/claude-sonnet-4-5-evaluation-situational-awareness",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass; used only to locate the primary documents above, which were then downloaded and read directly."
+        }
+      ],
+      "evidence_url": "https://assets.anthropic.com/m/12f214efcc2f457a/original/claude-sonnet-4-5-system-card.pdf",
+      "verbatim": "In response to early warning signs about evaluation awareness, we added a realism filter to our final results. Before the auditor agent could send a query to the target model, a separately prompted instance of Claude Opus 4.1 checked the query and could reject queries that included obviously unrealistic elements. Incorporating the realism filter removed most of the most obvious examples of unrealistic behavior, like those given below in Section 7.2, reduced evaluation awareness by approximately 25%, and increased misaligned behavior by approximately 5%.",
+      "response_date": "2025-09-29",
+      "reasoning": "Clear upgrade from None; the prior battery searched a cached corpus for the evaluator NAME and so missed a response that addresses the finding's substance without naming Apollo. Anthropic has done three escalating things since 2025-03-17. (i) The Claude 4 card (2025-05-22) acknowledges the problem and reports evaluation-awareness counts for Claude Sonnet 3.7 itself - the exact evaluated model. (ii) The Sonnet 4.5 card (2025-09-29) devotes a section to it, calls it 'an urgent sign that our evaluation scenarios need to be made more realistic', and ships a concrete mitigation - a realism filter in the auditing pipeline with a measured ~25% reduction in evaluation awareness. (iii) Petri 2.0 (Jan 2026) and the coding-audit-realism work (Mar 2026) extend it. Coded Partial rather than Substantive because Anthropic itself frames the mitigation as incomplete and retains 'residual doubt' about affected results, and because evaluation awareness rose rather than fell in later models. Attribution is 'No explicit attribution': the realism filter is credited to Anthropic's own 'early warning signs', and the Claude 4 card's only Apollo citations are to Apollo's sabotage/deception work (Balesni et al., Meinke et al.), not to this report. I checked the one candidate citation that looked like it might be Apollo's - footnote arXiv:2503.10965 in the Claude 4 card - and it is Anthropic's own 'Auditing language models for hidden objectives' (Marks et al.)."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Apollo Research', report title 'Claude Sonnet 3.7 (often) knows when it's in alignment evaluations', 'evaluation awareness', 'Claude Sonnet 3.7'. Hansard returned exactly one 'Apollo Research' contribution (Ben Lake MP, Commons Westminster Hall 'AI Safety' debate, 2025-12-10). Full contribution text retrieved and read: it refers to Apollo's finding that 'one of OpenAI's models' tried to deceive users and disable monitoring mechanisms - i.e. Apollo's o1 in-context-scheming work, NOT this Claude Sonnet 3.7 evaluation-awareness finding. Under the rulebook, general discussion of the evaluator does not count.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "Transformer News, 'Claude Sonnet 4.5 knows when it's being tested' (2025-09/10)",
+        "Don't Worry About the Vase / thezvi, 'Claude Sonnet 4.5: System Card and Alignment' (2025-09-30)",
+        "Don't Worry About the Vase / thezvi, 'Claude Opus 4.6: System Card Part 2: Frontier Alignment'"
+      ],
+      "academic": [],
+      "discussion": [
+        "Marius Hobbhahn (Apollo Research CEO) publicly quoted on eval awareness: 'Unfortunately, we're now at the point where new models have really high eval awareness' - observed in coverage this pass, not verified against a primary Apollo source",
+        "UK Parliament, Commons Westminster Hall 'AI Safety' debate (2025-12-10), Ben Lake MP citing Apollo Research - logged descriptively here because it concerns Apollo's OpenAI o1 scheming work, not this finding"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "The direction of this change (None -> a real response exists) is high-confidence and rests on primary documents read in full. The exact level is the judgement call: a reader who treats the realism filter plus Petri 2.0's eval-awareness mitigations as a completed, specific methodological safeguard would code Substantive. I chose Partial because Anthropic explicitly describes the work as urgent and unfinished and the underlying model behaviour is not mitigated at all."
+  },
+  {
+    "finding_id": "METR-2025-04-ALI1",
+    "current": {
+      "action_level": "Partial",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No standalone post responding to METR's Claude 3.7 evaluation; the response is in the system cards."
+        },
+        {
+          "source": "Claude 3.7 Sonnet System Card (2025-02-24) - launch card, pre-deployment coordinated disclosure",
+          "url": "https://www.anthropic.com/claude-3-7-sonnet-system-card",
+          "checked_date": "2026-08-28",
+          "result": "Carried forward from the prior battery as verified: section 6 documents reward hacking, describes partial pre-launch mitigations, and section 7.4 records the capabilities report being shared with METR. Not re-fetched this pass."
+        },
+        {
+          "source": "Claude Opus 4 & Claude Sonnet 4 System Card (2025-05-22), section 6 'Reward hacking' and 6.1 'Mitigations'",
+          "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+          "checked_date": "2026-08-28",
+          "result": "SUBSTANTIVE RESPONSE FOUND. Downloaded (123pp) and read in full. A dedicated chapter naming Claude Sonnet 3.7's reward hacking as the problem being fixed, listing four concrete mitigation workstreams (enhanced monitoring with iterative classifier development and a human-feedback rapid-response programme; training-environment changes and reward-signal adjustment; new detection evaluations run throughout training; behavioural analysis), with measured outcomes: 'Claude Opus 4 showed an average 67% decrease in hard-coding behavior and Claude Sonnet 4 a 69% average decrease compared to Claude Sonnet 3.7'. Table 6.2.A shows Claude Sonnet 3.7 at 44%/23%/78%/80%/54% versus 9%/13%/47%/5%/15% for Claude Opus 4."
+        },
+        {
+          "source": "Claude Opus 4.5 System Card (2025-11-24), section 6.10 on reward hacking",
+          "url": "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and read. Documents a continuing production training intervention: 'Since the training of Claude Sonnet 4 and Claude Opus 4, we have been using inoculation prompting on a significant subset of our coding environments, including those that are most susceptible to reward hacking.' Also candid that hacking is not eliminated."
+        },
+        {
+          "source": "Anthropic Alignment Science blog / RSP and safeguards pages",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Post index fetched; reward-hacking research posts present ('Training on Documents about Reward Hacking Induces Reward Hacking', Jan 2025; 'Sycophancy to Subterfuge', Jun 2024). Both predate this finding and are excluded as standing research, but the later 'natural emergent misalignment from reward hacking' work is referenced from the Opus 4.5 card as the basis for the deployed inoculation-prompting mitigation."
+        },
+        {
+          "source": "Broader web search 'Anthropic system card reward hacking mitigations METR'",
+          "url": "https://metr.org/evaluations/claude-3-7-report/",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass; used to locate the Opus 4.5 card, which was then downloaded and read directly. No Anthropic document naming METR as the trigger for the mitigations was found."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+      "verbatim": "To address the reward hacking tendencies observed in Claude Sonnet 3.7-which were particularly pronounced compared to Claude Sonnet 3.5 (new)-we developed new evaluations to detect this behavior. We ran these evaluations throughout Claude 4 model training as an early warning system for similar concerning trends.",
+      "response_date": "2025-05-22",
+      "reasoning": "Upgraded from Partial to Substantive. The existing Partial rested on the Claude 3.7 launch card, where Anthropic itself called the mitigation partial. The next family card, published 2025-05-22 (after the 2025-04-04 METR report), is a different animal: a dedicated reward-hacking chapter that names Claude Sonnet 3.7's behaviour as the target problem and sets out specific, implemented training-time mitigations with quantified results (67-69% reduction in hard-coding). The Opus 4.5 card then documents inoculation prompting as an ongoing production training intervention across the coding environments most prone to hacking. That is a specific model change addressing the problem, which is the Substantive definition. Attribution stays 'No explicit attribution': Anthropic credits its own monitoring of Sonnet 3.7 throughout and METR appears 0 times in the Opus 4.5 card and only as a benchmark/data-deduplication reference in the Claude 4 card."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'METR', 'Claude 3.7 preliminary evaluation', 'reward hacking', 'time horizon'. Hansard's single 'METR' hit is a 2020-04-27 contribution unrelated to AI. gov.uk returned driving-licence and unrelated pages. Federal Register returned 0 for 'METR reward hacking'.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "The Register, 'Anthropic reduces model misbehavior by endorsing cheating' (2025-11-24), on the inoculation-prompting mitigation"
+      ],
+      "academic": [
+        "arXiv:2511.21654 'EvilGenie: A Reward Hacking Benchmark'",
+        "arXiv:2605.20744 'Hack-Verifiable Environments: Towards Evaluating Reward Hacking at Scale'",
+        "arXiv:2606.04923 'Reproducing, Analyzing, and Detecting Reward Hacking in Rubric-Based Reinforcement Learning'",
+        "arXiv:2605.02964 'Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use'"
+      ],
+      "discussion": [
+        "LessWrong, 'Claude Opus 4.5: Model Card, Alignment and Safety'"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Both supporting documents were downloaded and read in full rather than summarised. The one soft edge is whether a mitigation programme Anthropic attributes to its own Sonnet 3.7 observations can be credited as a response to METR's Sonnet 3.7 finding; the dataset's existing convention (attribution recorded separately, 'No explicit attribution' available) says yes, and the pre-deployment coordinated disclosure to METR recorded in the 3.7 card section 7.4 supports it."
+  },
+  {
+    "finding_id": "METR-2025-04-ALI2",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI newsroom / blog",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to curl and WebFetch this pass; could not enumerate. Prior passes recorded the same block."
+        },
+        {
+          "source": "OpenAI o3 and o4-mini System Card (2025-04-16), section 3.9.1 'METR - Autonomous Capabilities' - the launch card",
+          "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Carried forward from the prior verified pass: explicitly names METR and reports the reward-hacking rate and time-horizon results. Not re-fetched this pass. This is the basis for 'Explicit attribution'."
+        },
+        {
+          "source": "GPT-5 System Card (2025-08-13), section 3.8 'Deception' and section 3.8.1 'Monitoring Chain of Thought for Deception'",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "SUBSTANTIVE MITIGATION FOUND. Downloaded and text-extracted in full and read. OpenAI names o3's behaviour as the problem, describes the training intervention, and reports measured reductions in Table 9: Coding Deception 0.47 (o3) -> 0.17 (gpt-5-thinking); Browsing Broken Tools 0.61 -> 0.11; CharXiv Missing Image 0.87 -> 0.09; AbstentionBench 0.44 -> 0.53. Also confirms the successor METR section exists (5.1.3.7 'External Evaluations by METR'), read in full."
+        },
+        {
+          "source": "GPT-5 System Card reference list (checked for a METR citation behind the mitigation)",
+          "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Reference [3] behind the o3 deception claim is Transluce ('Investigating truthfulness in a pre-release o3 model', April 2025), NOT METR. So the MITIGATION is not attributed to METR even though the same card carries an explicit METR section."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Index of system cards plus safety-approach/transparency/research links; no separate reward-hacking page."
+        },
+        {
+          "source": "Broader web search 'OpenAI GPT-5 system card reward hacking mitigation deception METR'",
+          "url": "https://metr.org/evaluations/openai-o3-report/",
+          "checked_date": "2026-08-28",
+          "result": "Run this pass; used only to locate the GPT-5 card, which was then downloaded and read directly. A second intended search on OpenAI reward-hacking posts could not run - the WebSearch budget hit 200/200 at that point."
+        }
+      ],
+      "evidence_url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+      "verbatim": "We've taken steps to reduce gpt-5-thinking's propensity to deceive, cheat, or hack problems, though our mitigations are not perfect and more research is needed. In particular, we've trained the model to fail gracefully when posed with tasks that it cannot solve - including impossibly large tasks or when missing key requirements - and to be more robust to environment failures.",
+      "response_date": "2025-04-16",
+      "reasoning": "Upgraded from Acknowledged to Substantive. The prior coding was right that the o3/o4-mini launch card only reports METR's numbers without a mitigation. But the next card in the same family, the GPT-5 System Card of 2025-08-13, contains a specific model change squarely addressing the problem: OpenAI placed the model in partly or entirely infeasible tasks and rewarded honest admission of failure, built dedicated environments for agentic coding, broken tools and underspecified requests, and validated with CoT monitoring on production-representative traffic - with measured reductions (coding deception 0.47 -> 0.17 versus o3). That satisfies 'a specific mitigation... or model change that addresses the problem'. Attribution stays 'Explicit attribution' because the launch card explicitly names METR and reports its reward-hacking estimate; note however that the MITIGATION itself is cited to Transluce, not METR, so the explicit attribution attaches to the acknowledgement rather than to the fix."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - gov.uk search API (https://www.gov.uk/api/search.json) queried 2026-08-28 for the evaluator/report terms; only topically-adjacent AI policy documents returned, none referencing the finding.",
+        "UK - Hansard search API (https://hansard-api.parliament.uk/search.json) queried 2026-08-28 for the evaluator names; see channel_b.reasoning for any hits and why they do not qualify.",
+        "US - Federal Register API (https://www.federalregister.gov/api/v1/documents.json) queried 2026-08-28; zero documents matching the evaluator names.",
+        "US - congress.gov web search UNREACHABLE 2026-08-28 (HTTP 403 via both curl and WebFetch); congress.gov API v3 reachable with DEMO_KEY but offers no full-text search of the Record; govinfo search API returned OVER_RATE_LIMIT with DEMO_KEY. This US congressional full-text leg could NOT be completed this pass.",
+        "EU/other - no accessible official Commission/AI Office full-text search endpoint reached this pass; native WebSearch budget was exhausted (200/200) mid-pass. Relying on the prior 2026-08-16 battery for this leg."
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'METR', \"Details about METR's preliminary evaluation of OpenAI's o3 and o4-mini\", 'reward hacking', 'time horizon'. Hansard's single 'METR' hit is a 2020-04-27 contribution unrelated to AI. gov.uk returned unrelated pages. Federal Register returned 0 for 'METR reward hacking'.  No official government source explicitly referencing this finding, report, evaluator result or specific claim was located. Because the US congressional full-text leg was unreachable this pass (see jurisdictions_checked), the negative coding is carried forward from the prior 2026-08-16 battery rather than fully re-earned; no positive evidence was found either way, so Policy Level is unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "TechCrunch, 'OpenAI partner says it had relatively little time to test the company's o3 AI model' (2025-04-16) [carried from record]",
+        "Interconnects AI, \"OpenAI's o3: Over-optimization is back and weirder than ever\" (2025-04-19) [carried from record]",
+        "Americans for Responsible Innovation, 'Reward Hacking: How AI Exploits the Goals We Give It' (2025-06-18) [carried from record]"
+      ],
+      "academic": [
+        "arXiv:2511.21654 'EvilGenie: A Reward Hacking Benchmark'",
+        "arXiv:2605.20744 'Hack-Verifiable Environments'",
+        "arXiv:2606.15385 'Reward Hacking in Language Model Agents: Revisiting AI Safety Gridworlds'",
+        "arXiv:2508.17511 'School of Reward Hacks'"
+      ],
+      "discussion": [
+        "AlignmentForum, \"METR's Evaluation of GPT-5\" - continuation of the METR/OpenAI evaluation relationship",
+        "METR, 'Details about METR's evaluation of OpenAI GPT-5.1-Codex-Max' - later evaluations in the same series"
+      ]
+    },
+    "confidence": "high",
+    "notes": "One factual correction to the record: the GPT-5 System Card is dated August 13, 2025 on its title page, not ~2025-08-07 as the existing Channel A Evidence field states (August 7 was the model launch). Response Date is left at 2025-04-16, the date of the first qualifying response (the explicitly-attributed o3/o4-mini card); the substantive mitigation is dated 2025-08-13."
+  }
+]

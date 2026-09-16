@@ -1,0 +1,464 @@
+[
+ {
+  "venue": "RAND Corporation",
+  "title": "AI-Assisted Red-Teaming",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/appendixes/appendix-a/ai-assisted-red-teaming.html",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Misuse-Resilience Testing",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/appendixes/appendix-a/misuse-resilience-testing.html",
+  "decision": "EXCLUDED - off-topic",
+  "reason": "RAND filter 2026-08-14: title carries no AI / LLM / model / agent / frontier-developer term; outside the dataset's subject matter."
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Risk Assessment and Security Control Prioritization Tool",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/tool.html",
+  "decision": "EXCLUDED - off-topic",
+  "reason": "RAND filter 2026-08-14: title carries no AI / LLM / model / agent / frontier-developer term; outside the dataset's subject matter."
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Abbreviations",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/abbreviations.html",
+  "decision": "EXCLUDED - off-topic",
+  "reason": "RAND filter 2026-08-14: title carries no AI / LLM / model / agent / frontier-developer term; outside the dataset's subject matter."
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "References",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/references.html",
+  "decision": "EXCLUDED - off-topic",
+  "reason": "RAND filter 2026-08-14: title carries no AI / LLM / model / agent / frontier-developer term; outside the dataset's subject matter."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "DeepSafe Safety Evaluation Report: Safety Risk Trends Across Different Model Series",
+  "url": "https://ai45.shlab.org.cn/en/safety-report#eval-report",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Frontier Risk Report: AI Safety Evaluation and Model Behavior Analysis",
+  "url": "https://ai45.shlab.org.cn/en/safety-report#front-risk-report",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "DeepScan Diagnosis Report: Large Language Model Evaluation and Diagnosis Joint Analysis Report",
+  "url": "https://ai45.shlab.org.cn/en/safety-report#diagnosis-report",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "OpenClaw proves 'endogenous security' is the ultimate answer to 'unknown risks' (OpenRT one-stop red-teaming framework launch)",
+  "url": "https://mp.weixin.qq.com/s/Vb7aa4JrrJgGorgBqhca4g",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation (CVPR 2025)",
+  "url": "https://arxiv.org/pdf/2501.12612",
+  "decision": "INCLUDED",
+  "reason": "Already in v10; matched on title prefix during batch-1 screening. Closes an enumeration-miss report."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Beyond Surface Structure: A Causal Assessment of LLMs' Comprehension Ability (ICLR 2025)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/58-BSS_cameraready.pdf",
+  "decision": "INCLUDED",
+  "reason": "Already ingested in v10.csv; matched on URL/normalised title during the 2026-08-14 reconciliation. No re-screen required."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "ADAM: An Embodied Causal Agent in Open-World Environments (ICLR 2025)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/62-ADAM_cameraready.pdf",
+  "decision": "EXCLUDED - no findings",
+  "reason": "ADAM (ICLR 2025) is a systems paper introducing the authors' own embodied causal agent; reports properties of ADAM itself, not an evaluation of a third-party na"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Building intelligence identification system via large language model watermarking: a survey and beyond (Artificial Intelligence Review)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/94-Building%20intelligence%20identification%20system%20via%20large%20language%20model%20watermarking%20a%20survey%20and%20beyond.pdf",
+  "decision": "INCLUDED",
+  "reason": "Screened 2026-08-14: reports measured empirical results on named models (44 measured values, 0 assertion phrases; models: GPT-2, GPT-3, GPT-4, o1)."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "A Mousetrap: Fooling Large Reasoning Models for Jailbreak with Chain of Iterative Chaos (ACL 2025)",
+  "url": "https://arxiv.org/abs/2502.15806",
+  "decision": "INCLUDED",
+  "reason": "Already ingested in v10.csv; matched on URL/normalised title during the 2026-08-14 reconciliation. No re-screen required."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Reflection-Bench: Evaluating Epistemic Agency in Large Language Models (ICML 2025)",
+  "url": "https://icml.cc/virtual/2025/poster/44571",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Adversarial Preference Learning for Robust LLM Alignment (ACL 2025 Findings)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/108-Adversarial%20Preference%20Learning%20for%20Robust%20LLM%20Alignment.pdf",
+  "decision": "INCLUDED",
+  "reason": "Already ingested in v10.csv; matched on URL/normalised title during the 2026-08-14 reconciliation. No re-screen required."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "ARise: Towards Knowledge-Augmented Reasoning via Risk-Adaptive Search (ACL 2025)",
+  "url": "https://opencausalab.github.io/ARise",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "REEF: Representation Encoding Fingerprints for Large Language Models (ICLR 2025)",
+  "url": "https://arxiv.org/abs/2410.14273",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks (ACL 2025)",
+  "url": "https://aclanthology.org/2025.acl-long.235.pdf",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "A Global Dataset Mapping the AI Innovation from Academic Research to Industrial Patents (Scientific Data)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/152-337080_2_merged_1751444608.pdf",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Argus Inspection: Do Multimodal Large Language Models Possess the Eye of Panoptes? (ACM Multimedia 2025)",
+  "url": "https://arxiv.org/abs/2506.14805",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Towards Tracing Trustworthiness Dynamics: Revisiting Pre-training Period of Large Language Models (ACL 2024 Findings)",
+  "url": "https://arxiv.org/pdf/2402.19465",
+  "decision": "INCLUDED",
+  "reason": "Screened 2026-08-14: reports measured empirical results on named models (39 measured values, 8 assertion phrases; models: GPT-2, GPT-3, GPT-4, GPT-4.)."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models (ACL Findings)",
+  "url": "https://arxiv.org/pdf/2402.05044",
+  "decision": "INCLUDED",
+  "reason": "Already in v10; matched on title prefix during batch-1 screening. Closes an enumeration-miss report."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection (EMNLP 2025)",
+  "url": "https://arxiv.org/pdf/2507.02844",
+  "decision": "INCLUDED",
+  "reason": "RESTORED 2026-08-14: title triage wrongly discarded this as \"not an evaluation\" \u2014 full text reports measured results on named models (26 measured values, 12 ass"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment (EMNLP 2025)",
+  "url": "https://arxiv.org/pdf/2507.18631",
+  "decision": "INCLUDED",
+  "reason": "Already ingested in v10.csv; matched on URL/normalised title during the 2026-08-14 reconciliation. No re-screen required."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Self-adaptive Dataset Construction for Real-World Multimodal Safety Scenarios (EMNLP 2025 Findings)",
+  "url": "https://arxiv.org/pdf/2509.04403",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety (ACL Main)",
+  "url": "https://arxiv.org/pdf/2401.11880",
+  "decision": "INCLUDED",
+  "reason": "Already in v10; matched on title prefix during batch-1 screening. Closes an enumeration-miss report."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "The Better Angels of Machine Personality: How Personality Relates to LLM Safety",
+  "url": "https://arxiv.org/abs/2407.12344",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Critic-guided decision transformer for offline reinforcement learning (AAAI)",
+  "url": "https://arxiv.org/pdf/2312.13716",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Weak-to-Strong Search: Align Large Language Models via Searching over Small Language Models (NeurIPS)",
+  "url": "https://arxiv.org/abs/2405.19262",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Fake Alignment: Are LLMs Really Aligned Well? (NAACL 2024)",
+  "url": "https://aclanthology.org/2024.naacl-long.263",
+  "decision": "INCLUDED",
+  "reason": "Already ingested in v10.csv; matched on URL/normalised title during the 2026-08-14 reconciliation. No re-screen required."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Flames: Benchmarking Value Alignment of LLMs in Chinese (NAACL 2024)",
+  "url": "https://aclanthology.org/2024.naacl-long.256",
+  "decision": "INCLUDED",
+  "reason": "Already in v10; matched on title prefix during batch-1 screening. Closes an enumeration-miss report."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "ESC-Eval: Evaluating Emotion Support Conversations in Large Language Models (EMNLP 2024)",
+  "url": "https://arxiv.org/pdf/2406.14952",
+  "decision": "INCLUDED",
+  "reason": "RESTORED 2026-08-14: title triage wrongly discarded this as \"not an evaluation\" \u2014 full text reports measured results on named models (6 measured values, 6 asser"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models (NeurIPS 2024)",
+  "url": "https://neurips.cc/virtual/2024/poster/97540",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "From Pixels to Principles: A Decade of Progress and Landscape in Trustworthy Computer Vision (Science and Engineering Ethics)",
+  "url": "https://link.springer.com/article/10.1007/s11948-024-00480-6",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "CELLO: Causal Evaluation of Large Vision-Language Models (EMNLP)",
+  "url": "https://arxiv.org/pdf/2406.19131v1",
+  "decision": "INCLUDED",
+  "reason": "RESTORED 2026-08-14: title triage wrongly discarded this as \"not an evaluation\" \u2014 full text reports measured results on named models (55 measured values, 3 asse"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "CLEAR: Can Language Models Really Understand Causal Graphs? (EMNLP)",
+  "url": "https://arxiv.org/abs/2406.16605",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Quantifying and Mitigating Unimodal Biases in Multimodal Large Language Models: A Causal Perspective (EMNLP)",
+  "url": "https://arxiv.org/abs/2403.18346",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "It Ain't That Bad: Understanding the Mysterious Performance Drop in OOD Generalization for Generative Transformer Models (IJCAI)",
+  "url": "https://www.ijcai.org/proceedings/2024/0727.pdf",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Joint-sensemaking, innovation, and communication management during crisis: Evidence from the DCT applications in China (Big Data & Society)",
+  "url": "https://journals.sagepub.com/doi/pdf/10.1177/20539517241270714",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Chain of Risks Evaluation (CORE): a framework for safer large language models in public mental health (Psychiatry and Clinical Neurosciences)",
+  "url": "https://onlinelibrary.wiley.com/doi/10.1111/pcn.13781",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Towards Safe and Trustworthy Embodied AI: Foundations, Status, and Prospects",
+  "url": "https://ai45lab.github.io/Awesome-Trustworthy-Embodied-AI",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models (ACL 2025)",
+  "url": "https://aclanthology.org/2025.acl-long.590.pdf",
+  "decision": "INCLUDED",
+  "reason": "Screened 2026-08-14: reports measured empirical results on named models (9 measured values, 14 assertion phrases; models: GPT-4, Llama, Llama 2, Llama2)."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Demystifying Reasoning Dynamics with Mutual Information: Thinking Tokens are Information Peaks in LLM Reasoning (NeurIPS 2025)",
+  "url": "https://arxiv.org/pdf/2506.02867",
+  "decision": "INCLUDED",
+  "reason": "Screened 2026-08-14: reports measured empirical results on named models (6 measured values, 16 assertion phrases; models: DeepSeek, Grok, Llama, Qwen)."
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "EvoBench: Towards Real-world LLM-Generated Text Detection Benchmarking for Evolving Large Language Models (ACL 2025)",
+  "url": "https://aclanthology.org/2025.findings-acl.754.pdf",
+  "decision": "INCLUDED",
+  "reason": "RESTORED 2026-08-14: title triage wrongly discarded this as \"not an evaluation\" \u2014 full text reports measured results on named models (316 measured values, 10 as"
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 6",
+  "url": "http://go.pardot.com/webmail/1068562/1295681920/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 5",
+  "url": "https://go.pardot.com/webmail/1068562/1287961680/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 4",
+  "url": "https://go.pardot.com/webmail/1068562/1284422857/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 3",
+  "url": "https://go.pardot.com/webmail/1068562/1284422851/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 2",
+  "url": "https://go.pardot.com/webmail/1068562/1284422863/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 1",
+  "url": "http://go.pardot.com/webmail/1068562/1284422839/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "title-triage: not an AI evaluation"
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "Health Question Answering Assessment (Dyff assessment)",
+  "url": "https://app.dyff.io/assessments/12acd1e1265a437f97614d8e7d404454",
+  "decision": "PENDING-FETCH",
+  "reason": "FETCH FAILED 2026-08-14: no extractable text. Screening OUTSTANDING \u2014 not a negative."
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "Vulnerability Detection and Correction Assessments (Dyff assessment)",
+  "url": "https://app.dyff.io/assessments/b60fd77c60914cc994cf85c00047c890",
+  "decision": "PENDING-FETCH",
+  "reason": "FETCH FAILED 2026-08-14: no extractable text. Screening OUTSTANDING \u2014 not a negative."
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Gemini 1.5 Model Card (in Gemini 1.5 technical report)",
+  "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#page=105",
+  "decision": "EXCLUDED - company self-report",
+  "reason": "Evaluator check FAILED (2026-08-14, clarified \u00a77.3): full text searched for government AISIs and independent third-party evaluators; none found contributing fin"
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Gemini 1.0 Model Card (in Gemini 1.0 technical report)",
+  "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=71",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Second ledger row for an item already handled as \"EXCLUDED - company self-report\". Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "DreadIndex (live offensive-security benchmark leaderboard)",
+  "url": "https://dreadnode.io/research/dreadindex",
+  "decision": "EXCLUDED - no findings",
+  "reason": "Live leaderboard page shows 0 models / loading state, no actual evaluation data present."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Do LLM Agents Have AI Red Team Capabilities? We Built a Benchmark to Find Out",
+  "url": "https://dreadnode.io/research/ai-red-team-benchmark",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Additional ledger row for DREADNODE-2025-06-DOLLMAGEN; the primary row carries the Report ID. Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Evaluating Offensive Cyber Agents: Kerberoasting",
+  "url": "https://dreadnode.io/research/evaluating-offensive-cyber-agents-kerberoasting",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Additional ledger row for DREADNODE-2025-08-EVALOFFECYBE; the primary row carries the Report ID. Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "PentestJudge: Judging Agent Behavior Against Operational Requirements (arXiv paper)",
+  "url": "https://arxiv.org/abs/2508.02921",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Additional ledger row for DREADNODE-2025-08-PENTJUDGAGEN; the primary row carries the Report ID. Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "PentestJudge: Judging Agent Behavior Against Operational Requirements (blog)",
+  "url": "https://dreadnode.io/research/pentestjudge-judging-agent-behavior-against-operational-requirements",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Additional ledger row for DREADNODE-2025-08-PENTJUDGAGEN; the primary row carries the Report ID. Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "From Compute to Congress: The Cyber Layer Beneath the Genesis Mission",
+  "url": "https://dreadnode.io/research/from-compute-to-congress-the-cyber-layer-beneath-the-genesis-mission",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "Policy commentary on the Genesis Mission executive order; no specific model evaluation findings presented."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "LLM-Powered AMSI Provider vs. Red Team Agent",
+  "url": "https://dreadnode.io/research/llm-powered-amsi-provider-vs-red-team-agent",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Additional ledger row for DREADNODE-2025-12-LLMPOWEAMSI; the primary row carries the Report ID. Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Worlds: A Simulation Engine for Agentic Pentesting",
+  "url": "https://dreadnode.io/research/worlds-a-simulation-engine-for-agentic-pentesting",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Additional ledger row for DREADNODE-2026-02-WORLASIMU; the primary row carries the Report ID. Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Redefining AI Red Teaming in the Agentic Era",
+  "url": "https://dreadnode.io/research/redefining-ai-red-teaming-in-the-agentic-era",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Additional ledger row for DREADNODE-2026-05-REDEAIRED; the primary row carries the Report ID. Collapsed 2026-08-14."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours (arXiv paper)",
+  "url": "https://arxiv.org/abs/2605.04019",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "reason": "Same Llama Scout case study (85% attack success rate) as the companion blog post, already captured there."
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Dreadnode Workers: The Connective Tissue for Flexible Agent Integration and Orchestration",
+  "url": "https://dreadnode.io/research/dreadnode-workers-agent-orchestration",
+  "decision": "EXCLUDED - not an evaluation",
+  "reason": "Product/platform feature announcement; no model evaluation findings presented."
+ }
+]

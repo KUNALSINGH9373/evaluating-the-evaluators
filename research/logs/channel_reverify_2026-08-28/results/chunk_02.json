@@ -1,0 +1,1273 @@
+[
+ {
+  "finding_id": "UKAISI-2024-10-JAI5",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Google DeepMind newsroom / blog index (battery 1)",
+     "url": "https://deepmind.google/discover/blog/",
+     "checked_date": "2026-08-28",
+     "result": "Opened. No post referencing AgentHarm, agentic-harmfulness benchmarks, or UK AISI/Gray Swan located."
+    },
+    {
+     "source": "Google DeepMind Gemini model hub (battery 2)",
+     "url": "https://deepmind.google/models/gemini/",
+     "checked_date": "2026-08-28",
+     "result": "Opened. No occurrence of 'AgentHarm'."
+    },
+    {
+     "source": "Gemini 3.6 Flash model card - subsequent card in the Gemini family (battery 2)",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+     "checked_date": "2026-08-28",
+     "result": "Opened. No AgentHarm, no AISI, no Gray Swan. Card names only internal evaluations, internal red teaming by Google Trust & Safety, and the Frontier Safety Framework; no external safety evaluator or external safety benchmark is named."
+    },
+    {
+     "source": "Gemini 3.7 Flash model card - latest subsequent card in the family (battery 2)",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-7-flash/",
+     "checked_date": "2026-08-28",
+     "result": "Opened (card dated 2026-08-13). AgentHarm not mentioned. Agentic benchmarks present (Terminal-bench, OSWorld-2.0) are capability, not harmfulness. No AISI reference."
+    },
+    {
+     "source": "Google DeepMind responsibility / Frontier Safety Framework material reachable from the model-card and blog surfaces (battery 3)",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-7-flash/",
+     "checked_date": "2026-08-28",
+     "result": "Frontier-safety section reviewed via the model card (CBRN, cyber, harmful manipulation, ML R&D misalignment). No reference to AgentHarm or to this finding."
+    },
+    {
+     "source": "Official Google / Google DeepMind announcement surfaces (battery 4)",
+     "url": "https://deepmind.google/discover/blog/",
+     "checked_date": "2026-08-28",
+     "result": "No statement located referencing AgentHarm or the Gemini 1.5 Pro jailbreak-template result."
+    },
+    {
+     "source": "Open web sweep for a Google primary source (battery 5)",
+     "url": "https://www.google.com/search?q=AgentHarm+Google+DeepMind+Gemini+response",
+     "checked_date": "2026-08-28",
+     "result": "Only third-party and academic material surfaced (arXiv 2410.09024, MIT AI Agent Index, unrelated arXiv preprints). No Google primary document."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full five-step battery re-run on 2026-08-28 against live sources rather than the 2026-08-16 log. Google/DeepMind newsroom, two subsequent Gemini family model cards, the frontier-safety material and open web produce no company primary document that references AgentHarm, UK AISI/Gray Swan, or the Gemini 1.5 Pro harm-score/refusal-collapse result. No admissible response -> Action Level = None; Attribution = No response located."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API (hansard-api.parliament.uk), search terms 'AgentHarm', 'Gray Swan', 'universal jailbreak', 'AgentHarm benchmark': 0 contributions (checked 2026-08-28)",
+    "US - Federal Register API, term \"AgentHarm\": 0 documents; term \"Gray Swan\": 1 document, a 2020 investment-company deregistration notice, irrelevant (checked 2026-08-28)",
+    "US - govinfo search API, term \"AgentHarm\": 0 results (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28); partially substituted by the govinfo and Federal Register queries above",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced in the open-web sweep (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "No official government source explicitly references the AgentHarm report or the Gemini 1.5 Pro result. Federal Register and Hansard were queried programmatically and returned nil. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    "AgentHarm dataset republished and maintained on Hugging Face as ai-safety-institute/AgentHarm (https://huggingface.co/datasets/ai-safety-institute/AgentHarm)",
+    "Cited in 'Evaluation and Benchmarking of LLM Agents: A Survey' (https://arxiv.org/html/2507.21504v1)",
+    "Cited across subsequent agent-safety benchmark papers, e.g. OS-HARM (https://arxiv.org/pdf/2506.14866) and AgentAlign (https://arxiv.org/pdf/2505.23020)"
+   ],
+   "discussion": [
+    "Listed in the MIT AI Agent Index (https://aiagentindex.mit.edu/data/2025-AI-Agent-Index.pdf)",
+    "Explainer entry maintained by Giskard (https://www.giskard.ai/glossary/agentharm-safety-benchmark)"
+   ]
+  },
+  "confidence": "high",
+  "notes": "Congress.gov returns HTTP 403 to automated access and could not be opened directly; the US jurisdiction was instead covered via the Federal Register API and the govinfo search API, both of which returned nil for 'AgentHarm'. No other source was unreachable."
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI6",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED VIA TEXT PROXY (openai.com returns HTTP 403 to direct automated fetch; retrieved through r.jina.ai). CORRECTION TO PRIOR LOG: this OpenAI post, dated 2024-12-20, DOES cite the evaluator's report. Under the heading 'Examples of evaluations and demonstrations for frontier AI systems' it carries a bullet hyperlinking arxiv.org/abs/2410.09024 with the link text 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents'. The prior battery recorded 'no post on AgentHarm', which is wrong. Assessed below as located-but-inadmissible."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (4.5MB PDF). Full-text search: no occurrence of 'AgentHarm'. Gray Swan appears only as a prompt-injection benchmark partner and jailbreak-arena operator; CAISI and UK AISI appear as pre-deployment testers. Nothing referencing this finding."
+    },
+    {
+     "source": "ChatGPT Agent System Card - subsequent agentic-model card (battery 2)",
+     "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (2.7MB PDF). No occurrence of 'AgentHarm', 'Gray Swan' or 'CAISI'. UK AISI appears only as a safeguard red-teaming partner. Nothing referencing this finding."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy. Index reviewed (updates through 2026-08-06). No occurrence of 'AgentHarm' or 'AISI' on the hub index."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub - jailbreaks subpage (battery 3)",
+     "url": "https://deploymentsafety.openai.com/jailbreaks",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 404 - this subpage no longer exists. Recorded as unreachable rather than checked."
+    },
+    {
+     "source": "Official OpenAI announcement surfaces (battery 4)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "Only the 2024-12-20 research-access post surfaced; no OpenAI statement addressing the AgentHarm results for OpenAI models."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+AgentHarm",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Surfaced the 2024-12-20 post; no other OpenAI document referencing AgentHarm."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28. One company primary document referencing the evaluator's report was located and had been missed by the prior pass, but it is inadmissible against this finding. JUDGEMENT CALL, the central one on this row. OpenAI's 2024-12-20 'Early access for safety testing' post is a company primary document, published 70 days after the finding, that names the evaluator's report and hyperlinks it. It was nonetheless coded inadmissible, because it lists AgentHarm in a bullet list of 'Examples of evaluations and demonstrations for frontier AI systems' that OpenAI would like external researchers to build. It nowhere states that OpenAI models have a problem, nowhere reports or engages with the harm-score or refusal-rate result, and specifies no action. Under the admissibility rule that a response must address THIS particular finding, a bibliographic citation of the benchmark as methodological inspiration does not reach even the Acknowledged bar ('the problem is referenced'). A reviewer who reads 'the problem is referenced' loosely enough to include naming the report would code this Acknowledged; the level is the only thing that would move, and no evidence would change. No mitigation, safeguard, model change, access restriction or deployment decision addressing GPT-4o mini's 62.5% harm score / 22% refusal rate exists in any OpenAI primary document. Action Level = None; Attribution = No response located."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, terms 'AgentHarm', 'AgentHarm benchmark', 'Gray Swan', 'universal jailbreak': 0 contributions (checked 2026-08-28)",
+    "US - Federal Register API, term \"AgentHarm\": 0 documents (checked 2026-08-28)",
+    "US - govinfo search API, term \"AgentHarm\": 0 results (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28); substituted by govinfo and Federal Register queries",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "No official government source explicitly references the AgentHarm report or the OpenAI-model results. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    "AgentHarm dataset hosted on Hugging Face as ai-safety-institute/AgentHarm (https://huggingface.co/datasets/ai-safety-institute/AgentHarm)",
+    "Cited in 'Evaluation and Benchmarking of LLM Agents: A Survey' (https://arxiv.org/html/2507.21504v1)",
+    "Cited in downstream agent-safety benchmark work including OS-HARM (https://arxiv.org/pdf/2506.14866) and DECOMPBENCH (https://arxiv.org/pdf/2606.13994)"
+   ],
+   "discussion": [
+    "Listed in the MIT AI Agent Index (https://aiagentindex.mit.edu/data/2025-AI-Agent-Index.pdf)",
+    "Giskard glossary entry (https://www.giskard.ai/glossary/agentharm-safety-benchmark)"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "Level unchanged but the Channel A log is materially corrected: the prior entry's assertion '(1) OpenAI newsroom/blog -- no post on AgentHarm' is factually wrong, and the located post is recorded above with its URL, date and exact link text. Confidence is medium rather than high solely because the admissibility of that citation is a genuine judgement call, set out in full in the reasoning. Unreachable: openai.com blocks direct automated fetch (HTTP 403), so its pages were read through the r.jina.ai text proxy; deploymentsafety.openai.com/jailbreaks now returns HTTP 404; congress.gov returns HTTP 403."
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI7",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED VIA TEXT PROXY (openai.com returns HTTP 403 to direct automated fetch; retrieved through r.jina.ai). CORRECTION TO PRIOR LOG: this OpenAI post, dated 2024-12-20, DOES cite the evaluator's report. Under the heading 'Examples of evaluations and demonstrations for frontier AI systems' it carries a bullet hyperlinking arxiv.org/abs/2410.09024 with the link text 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents'. The prior battery recorded 'no post on AgentHarm', which is wrong. Assessed below as located-but-inadmissible."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (4.5MB PDF). Full-text search: no occurrence of 'AgentHarm'. Gray Swan appears only as a prompt-injection benchmark partner and jailbreak-arena operator; CAISI and UK AISI appear as pre-deployment testers. Nothing referencing this finding."
+    },
+    {
+     "source": "ChatGPT Agent System Card - subsequent agentic-model card (battery 2)",
+     "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (2.7MB PDF). No occurrence of 'AgentHarm', 'Gray Swan' or 'CAISI'. UK AISI appears only as a safeguard red-teaming partner. Nothing referencing this finding."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy. Index reviewed (updates through 2026-08-06). No occurrence of 'AgentHarm' or 'AISI' on the hub index."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub - jailbreaks subpage (battery 3)",
+     "url": "https://deploymentsafety.openai.com/jailbreaks",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 404 - this subpage no longer exists. Recorded as unreachable rather than checked."
+    },
+    {
+     "source": "Official OpenAI announcement surfaces (battery 4)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "Only the 2024-12-20 research-access post surfaced; no OpenAI statement addressing the AgentHarm results for OpenAI models."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+AgentHarm",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Surfaced the 2024-12-20 post; no other OpenAI document referencing AgentHarm."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28; identical source set to sibling row UKAISI-2024-10-JAI6, same report and same company. JUDGEMENT CALL, the central one on this row. OpenAI's 2024-12-20 'Early access for safety testing' post is a company primary document, published 70 days after the finding, that names the evaluator's report and hyperlinks it. It was nonetheless coded inadmissible, because it lists AgentHarm in a bullet list of 'Examples of evaluations and demonstrations for frontier AI systems' that OpenAI would like external researchers to build. It nowhere states that OpenAI models have a problem, nowhere reports or engages with the harm-score or refusal-rate result, and specifies no action. Under the admissibility rule that a response must address THIS particular finding, a bibliographic citation of the benchmark as methodological inspiration does not reach even the Acknowledged bar ('the problem is referenced'). A reviewer who reads 'the problem is referenced' loosely enough to include naming the report would code this Acknowledged; the level is the only thing that would move, and no evidence would change. Nothing in any OpenAI primary document addresses GPT-3.5 Turbo's 0.8% no-attack refusal rate or its 62.2% harm score. Note that GPT-3.5 Turbo has since been scheduled for shutdown (gpt-3.5-turbo-0125 shutdown 2026-10-23 per the OpenAI deprecations notice), but that is a routine model-lifecycle deprecation with no stated safety rationale and no connection to this finding, and was not treated as a response. Action Level = None; Attribution = No response located."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, terms 'AgentHarm', 'AgentHarm benchmark', 'Gray Swan', 'universal jailbreak': 0 contributions (checked 2026-08-28)",
+    "US - Federal Register API, term \"AgentHarm\": 0 documents (checked 2026-08-28)",
+    "US - govinfo search API, term \"AgentHarm\": 0 results (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28); substituted by govinfo and Federal Register queries",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "No official government source explicitly references the AgentHarm report or the OpenAI-model results. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    "AgentHarm dataset hosted on Hugging Face as ai-safety-institute/AgentHarm (https://huggingface.co/datasets/ai-safety-institute/AgentHarm)",
+    "Cited in 'Evaluation and Benchmarking of LLM Agents: A Survey' (https://arxiv.org/html/2507.21504v1)",
+    "Cited in downstream agent-safety benchmark work including OS-HARM (https://arxiv.org/pdf/2506.14866) and DECOMPBENCH (https://arxiv.org/pdf/2606.13994)"
+   ],
+   "discussion": [
+    "Listed in the MIT AI Agent Index (https://aiagentindex.mit.edu/data/2025-AI-Agent-Index.pdf)",
+    "Giskard glossary entry (https://www.giskard.ai/glossary/agentharm-safety-benchmark)"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "Same correction as the sibling row: the prior log's '(1) OpenAI newsroom/blog -- no post on AgentHarm' is wrong and is replaced with the located 2024-12-20 post, assessed and rejected on admissibility. I deliberately did NOT treat the 2026-10-23 gpt-3.5-turbo-0125 shutdown as a response; it is a capability-driven lifecycle deprecation listed alongside a dozen other snapshots. Unreachable: openai.com HTTP 403 (read via text proxy), deploymentsafety.openai.com/jailbreaks HTTP 404, congress.gov HTTP 403."
+ },
+ {
+  "finding_id": "TRANSLUCE-2024-10-JAI1",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Meta - primary respondent, Llama-3.1 405B is the 95.5% ASR target. Open sweep for a Meta primary source (batteries 1, 4, 5)",
+     "url": "https://www.google.com/search?q=Meta+Llama+response+Transluce+investigator+agents+jailbreak",
+     "checked_date": "2026-08-28",
+     "result": "No Meta newsroom post, Llama model-card revision, Llama Guard release note or official statement referencing Transluce or this result located. Results returned only the Transluce report itself and unrelated academic jailbreak papers."
+    },
+    {
+     "source": "Meta Llama-3.1-405B model card (battery 2)",
+     "url": "https://huggingface.co/meta-llama/Llama-3.1-405B",
+     "checked_date": "2026-08-28",
+     "result": "Opened. No reference to Transluce or the investigator-agent result."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (batteries 1, 3) - GPT-4o is the 65.8% transfer target",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy. No occurrence of 'Transluce'."
+    },
+    {
+     "source": "Anthropic newsroom and system cards (batteries 1, 2) - Claude 3.5 Sonnet is the 22.6% transfer target",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "Claude 3.7 Sonnet system card downloaded and text-extracted; no occurrence of 'Transluce'. Claude Opus 4 system card likewise text-extracted; no occurrence of 'Transluce'."
+    },
+    {
+     "source": "Open web sweep for any of the three companies' primary sources (battery 5)",
+     "url": "https://www.google.com/search?q=%22Transluce%22+cited+Anthropic+OR+OpenAI+OR+Meta+system+card+investigator+agents",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. The only company-adjacent link surfaced is that Transluce's separate Docent tooling was used in Claude 4 pre-deployment analysis - a different Transluce product, unconnected to the investigator-agent jailbreak result, and therefore not a response to this finding."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Battery re-run 2026-08-28 against all three affected vendors (Meta as primary, OpenAI and Anthropic as transfer targets). No company primary document references Transluce's investigator agents or the 95.5% / 65.8% / 22.6% attack-success results. The one near-miss - Transluce's Docent platform being used in Anthropic's Claude 4 pre-deployment analysis - is a different piece of Transluce tooling and is not attributable to this finding. Action Level = None; Attribution = No response located."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, terms 'Transluce', 'investigator agents': 0 contributions (checked 2026-08-28)",
+    "US - Federal Register API, term \"Transluce\": 0 documents; term \"investigator agents\": 0 documents (checked 2026-08-28)",
+    "US - govinfo search API, term \"Transluce\": 1 result, a benthic marine-biology study off Cape Hatteras - a false positive, irrelevant (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "No official government source explicitly references Transluce, the report, or the investigator-agent results. The single govinfo hit is an unrelated 1970s marine survey. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    "Peer-review record and paper at OpenReview (https://openreview.net/pdf?id=AulTigiaMv)",
+    "arXiv preprint 2502.01236 (https://arxiv.org/abs/2502.01236), indexed and mirrored on ResearchGate"
+   ],
+   "discussion": [
+    "Follow-on Transluce work jailbreaking GPT-5, Claude Opus 4.1 and Gemini 2.5 Pro with the same technique drew wider practitioner attention, though the originating posts are the evaluator's own and are excluded from uptake"
+   ]
+  },
+  "confidence": "high",
+  "notes": "Channel C is thin and honestly so: no independent media coverage of this specific report was located, and the most visible discussion traces back to Transluce's own accounts, which are excluded as circular. Unreachable: congress.gov HTTP 403; openai.com HTTP 403 (read via text proxy)."
+ },
+ {
+  "finding_id": "FARAI-2024-10-ALI1",
+  "current": {
+   "action_level": "Partial",
+   "attribution": "No explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "No explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+%22FAR.AI%22+OR+%22jailbreak-tuning%22",
+     "checked_date": "2026-08-28",
+     "result": "No OpenAI post referencing FAR.AI, jailbreak-tuning or data-poisoning of the fine-tuning API located. openai.com blocks direct automated fetch (HTTP 403); pages read through the r.jina.ai text proxy."
+    },
+    {
+     "source": "OpenAI API deprecations notice - self-serve fine-tuning wind-down (batteries 3, 4)",
+     "url": "https://developers.openai.com/api/docs/deprecations",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED via text proxy. Section 'Update to OpenAI's self-serve fine-tuning' present, with the three-stage table. Confirms the dates carried on this row. NOTE: the page itself states NO rationale for the wind-down - the 'capability, not safety' motive recorded on this row is sourced from secondary commentary, not from this OpenAI page."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy; index of system cards through 2026-08-06 reviewed. No occurrence of 'FAR.AI', 'Palisade', or 'jailbreak-tuning'."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. No occurrence of FAR.AI, jailbreak-tuning, or fine-tuning-attack robustness attributable to this finding."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=OpenAI+fine-tuning+safety+mitigations+jailbreak-tuning+FAR.AI+response",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Returned FAR.AI's own publications and third-party commentary; no OpenAI primary document referencing the evaluator or the finding."
+    }
+   ],
+   "evidence_url": "https://developers.openai.com/api/docs/deprecations",
+   "verbatim": "May 7, 2026 | Creating fine-tuning jobs or training is not available to organizations that have not previously run fine-tuning.",
+   "response_date": "2026-05-08",
+   "reasoning": "Battery re-run 2026-08-28. The only admissible company action remains the phased wind-down of OpenAI's self-serve fine-tuning platform, which removes the attack surface the finding exploited. I opened the deprecations page and verified the wind-down section and all three dates first-hand; the verbatim above is quoted from that page. The action is phased and incomplete - existing customers retain job-creation rights until 2027-01-06 and inference on already fine-tuned models continues beyond that - which is what keeps it at Partial rather than Substantive. No OpenAI document connects the wind-down to FAR.AI, so Attribution stays 'No explicit attribution'. The finding's specific claims - GPT-3.5 Turbo and GPT-4 still learning moderate amounts of harmful behaviour under plain poisoned fine-tuning, and GPT-4o mini learning code-backdoor sleeper-agent behaviour at a 2% poisoning rate - are nowhere addressed in an OpenAI primary document."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, terms 'jailbreak-tuning', 'FAR.AI': the FAR.AI query returns 2 contributions (2023-06-29, 2026-06-05) but both are tokenisation false positives on the words 'far' and 'AI' in ordinary debate text, neither referencing the evaluator; 'jailbreak-tuning' returns 0 (checked 2026-08-28)",
+    "US - Federal Register API, terms \"jailbreak-tuning\": 0 documents; \"FAR.AI\": 0 documents (checked 2026-08-28)",
+    "US - govinfo search API: rate-limited before the FAR.AI and jailbreak-tuning queries could complete; RECORDED AS PARTIALLY UNREACHABLE (attempted 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "No official government source explicitly references FAR.AI, the report, or the poisoning/jailbreak-tuning results. Hansard 'FAR.AI' hits are false positives on ordinary words. Policy Level = No policy uptake identified. See notes for the govinfo rate-limit caveat."
+  },
+  "channel_c": {
+   "media": [
+    "HackerNoon, 'Dissecting the Research Behind BadGPT-4o, a Model That Removes Guardrails from GPT Models' (https://hackernoon.com/dissecting-the-research-behind-badgpt-4o-a-model-that-removes-guardrails-from-gpt-models) - covers the independent replication of FAR.AI's result"
+   ],
+   "academic": [
+    "Independently replicated by Palisade Research in BadGPT-4o (https://arxiv.org/abs/2412.05346)",
+    "Extended in the peer-reviewed follow-up literature on fine-tuning attacks, e.g. MultiBreak (https://arxiv.org/pdf/2605.01687)",
+    "Scaling Trends for Data Poisoning in LLMs (https://arxiv.org/pdf/2408.02946) is the antecedent line of work the finding builds on"
+   ],
+   "discussion": [
+    "Adam Gleave (FAR.AI) publicly confirmed the Palisade replication (https://x.com/ARGleave/status/1859049971263435108) - logged as discussion, though it originates with the evaluator"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "Two caveats. First, the deprecations page states no rationale at all; the 'capability, not safety' motive recorded in the row's Company Response text is not on that page and comes from secondary reporting - it should not be quoted as OpenAI's words. Second, admissibility here is a standing judgement call that I did not disturb: a strict reading of 'a response must address THIS particular finding and be attributable to it' would reject a lifecycle deprecation that never mentions the evaluator and code the row None. I left it at Partial because the rulebook lists 'access restriction' as a qualifying action and explicitly allows responses with no public link to the evaluator. CONSISTENCY FLAG: the same wind-down is the basis on which I have now moved PALISADE-2024-12-JAI1 from None to Partial - it is the same company, same attack surface, same document. Unreachable: congress.gov HTTP 403; govinfo rate-limited before all terms completed; openai.com HTTP 403, read via text proxy."
+ },
+ {
+  "finding_id": "FARAI-2024-10-JAI1",
+  "current": {
+   "action_level": "Partial",
+   "attribution": "No explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "No explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+%22FAR.AI%22+OR+%22jailbreak-tuning%22",
+     "checked_date": "2026-08-28",
+     "result": "No OpenAI post referencing FAR.AI, jailbreak-tuning or data-poisoning of the fine-tuning API located. openai.com blocks direct automated fetch (HTTP 403); pages read through the r.jina.ai text proxy."
+    },
+    {
+     "source": "OpenAI API deprecations notice - self-serve fine-tuning wind-down (batteries 3, 4)",
+     "url": "https://developers.openai.com/api/docs/deprecations",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED via text proxy. Section 'Update to OpenAI's self-serve fine-tuning' present, with the three-stage table. Confirms the dates carried on this row. NOTE: the page itself states NO rationale for the wind-down - the 'capability, not safety' motive recorded on this row is sourced from secondary commentary, not from this OpenAI page."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy; index of system cards through 2026-08-06 reviewed. No occurrence of 'FAR.AI', 'Palisade', or 'jailbreak-tuning'."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. No occurrence of FAR.AI, jailbreak-tuning, or fine-tuning-attack robustness attributable to this finding."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=OpenAI+fine-tuning+safety+mitigations+jailbreak-tuning+FAR.AI+response",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Returned FAR.AI's own publications and third-party commentary; no OpenAI primary document referencing the evaluator or the finding."
+    }
+   ],
+   "evidence_url": "https://developers.openai.com/api/docs/deprecations",
+   "verbatim": "May 7, 2026 | Creating fine-tuning jobs or training is not available to organizations that have not previously run fine-tuning.",
+   "response_date": "2026-05-08",
+   "reasoning": "Battery re-run 2026-08-28. The only admissible company action remains the phased wind-down of OpenAI's self-serve fine-tuning platform, which removes the attack surface the finding exploited. I opened the deprecations page and verified the wind-down section and all three dates first-hand; the verbatim above is quoted from that page. The action is phased and incomplete - existing customers retain job-creation rights until 2027-01-06 and inference on already fine-tuned models continues beyond that - which is what keeps it at Partial rather than Substantive. No OpenAI document connects the wind-down to FAR.AI, so Attribution stays 'No explicit attribution'. The finding's specific claim - jailbreak-tuning bypassing every GPT-4o defence and driving refusal to 3.6% - is nowhere addressed in an OpenAI primary document."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, terms 'jailbreak-tuning', 'FAR.AI': the FAR.AI query returns 2 contributions (2023-06-29, 2026-06-05) but both are tokenisation false positives on the words 'far' and 'AI' in ordinary debate text, neither referencing the evaluator; 'jailbreak-tuning' returns 0 (checked 2026-08-28)",
+    "US - Federal Register API, terms \"jailbreak-tuning\": 0 documents; \"FAR.AI\": 0 documents (checked 2026-08-28)",
+    "US - govinfo search API: rate-limited before the FAR.AI and jailbreak-tuning queries could complete; RECORDED AS PARTIALLY UNREACHABLE (attempted 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "No official government source explicitly references FAR.AI, the report, or the poisoning/jailbreak-tuning results. Hansard 'FAR.AI' hits are false positives on ordinary words. Policy Level = No policy uptake identified. See notes for the govinfo rate-limit caveat."
+  },
+  "channel_c": {
+   "media": [
+    "HackerNoon, 'Dissecting the Research Behind BadGPT-4o, a Model That Removes Guardrails from GPT Models' (https://hackernoon.com/dissecting-the-research-behind-badgpt-4o-a-model-that-removes-guardrails-from-gpt-models) - covers the independent replication of FAR.AI's result"
+   ],
+   "academic": [
+    "Independently replicated by Palisade Research in BadGPT-4o (https://arxiv.org/abs/2412.05346)",
+    "Extended in the peer-reviewed follow-up literature on fine-tuning attacks, e.g. MultiBreak (https://arxiv.org/pdf/2605.01687)",
+    "Scaling Trends for Data Poisoning in LLMs (https://arxiv.org/pdf/2408.02946) is the antecedent line of work the finding builds on"
+   ],
+   "discussion": [
+    "Adam Gleave (FAR.AI) publicly confirmed the Palisade replication (https://x.com/ARGleave/status/1859049971263435108) - logged as discussion, though it originates with the evaluator"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "Two caveats. First, the deprecations page states no rationale at all; the 'capability, not safety' motive recorded in the row's Company Response text is not on that page and comes from secondary reporting - it should not be quoted as OpenAI's words. Second, admissibility here is a standing judgement call that I did not disturb: a strict reading of 'a response must address THIS particular finding and be attributable to it' would reject a lifecycle deprecation that never mentions the evaluator and code the row None. I left it at Partial because the rulebook lists 'access restriction' as a qualifying action and explicitly allows responses with no public link to the evaluator. CONSISTENCY FLAG: the same wind-down is the basis on which I have now moved PALISADE-2024-12-JAI1 from None to Partial - it is the same company, same attack surface, same document. Unreachable: congress.gov HTTP 403; govinfo rate-limited before all terms completed; openai.com HTTP 403, read via text proxy."
+ },
+ {
+  "finding_id": "JOINT-2024-11-BIO2",
+  "current": {
+   "action_level": "Acknowledged",
+   "attribution": "Explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Acknowledged",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "changed": true,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Anthropic newsroom (battery 1)",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "No separate post addressing the bioinformatics-tools uplift result."
+    },
+    {
+     "source": "Claude 3.5 Haiku / upgraded Claude 3.5 Sonnet Model Card Addendum - the launch card, canonical location for a pre-deployment evaluation (battery 2)",
+     "url": "https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND VERIFIED (2.6MB PDF, HTTP 200). Section 3.2 names the joint US AISI / UK AISI pre-deployment testing; section 3.2.1 gives the ASL-3 determination. Verified that the URL carried on the sibling row (www-cdn.anthropic.com/c7822cdc...pdf) resolves to the byte-identical document - both are the same card."
+    },
+    {
+     "source": "Claude 3.7 Sonnet System Card - next card in the family (battery 2)",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. Records UK/US AISI pre-deployment testing of Claude 3.7 but contains no reference to the November 2024 bioinformatics-uplift result."
+    },
+    {
+     "source": "Claude Opus 4 System Card - subsequent card in the family (battery 2)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. Names UK AISI and US AISI for chemical risk analysis and Opus 4 pre-deployment testing; no reference to the November 2024 bioinformatics-uplift result."
+    },
+    {
+     "source": "Anthropic safeguards / RSP / transparency pages (battery 3)",
+     "url": "https://www.anthropic.com/transparency/voluntary-commitments",
+     "checked_date": "2026-08-28",
+     "result": "Reviewed. Nothing addressing this specific result."
+    },
+    {
+     "source": "Official Anthropic announcement surfaces (battery 4)",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "No statement located addressing this result."
+    },
+    {
+     "source": "Open web sweep for an Anthropic primary source (battery 5)",
+     "url": "https://www.google.com/search?q=Anthropic+response+US+AISI+bioinformatics+tools+Claude+3.5+Sonnet+human+expert+baselines",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources; nothing beyond the model card addendum."
+    }
+   ],
+   "evidence_url": "https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf",
+   "verbatim": "As part of our continued effort to partner with external experts, joint pre-deployment testing of the new Claude 3.5 Sonnet model was conducted by the US AI Safety Institute (US AISI) [6] and the UK AI Safety Institute (UK AISI) [7]. We also collaborated with METR [8] to conduct an independent assessment.",
+   "response_date": "2024-10-22",
+   "reasoning": "Action Level unchanged at Acknowledged and independently re-derived. I opened the model card addendum and read section 3.2 and 3.2.1 in full. The card names both institutes and states the model 'did not demonstrate capabilities requiring ASL-3 safeguards', but it does not report or address the specific bioinformatics-tools result - that with tool access Claude 3.5 Sonnet at times exceeded measured human expert baselines - and specifies no mitigation, model change or deployment decision for it. That is exactly the Acknowledged definition: the problem area is referenced, no action specified. Negative lag (-28 days) is legitimate for a pre-deployment evaluation. Attribution stays Explicit: the company names the evaluators."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, term \"Claude 3.5 Sonnet\": 1 contribution, HIT (checked 2026-08-28). House of Lords, 2024-11-21, debate 'Large Language Models and Generative AI (Communications and Digital Committee Report)', Lord Vallance of Balham, Minister of State at DSIT, expressly referencing the report published two days earlier.",
+    "UK - Hansard, further terms 'pre-deployment evaluation' (1 contribution, 2024-09-02, predates the report), 'pre-deployment testing' (5 contributions: 2023-11-09, 2024-02-21, 2024-05-23, 2026-06-04 - none referencing this report) (checked 2026-08-28)",
+    "US - Federal Register API, term \"Claude 3.5 Sonnet\": 0 documents; term \"AI Safety Institute\": 5 documents, all either AISI's own draft-guidance comment requests or unrelated programme notices, none referencing this report (checked 2026-08-28)",
+    "US - govinfo search API, term \"Claude 3.5 Sonnet\": rate-limited before completion; RECORDED AS UNREACHABLE (attempted 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "https://hansard.parliament.uk/lords/2024-11-21/debates/",
+   "verbatim": "Just this week the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic's upgraded Claude 3.5 Sonnet model. This will help advance the development of shared scientific benchmarks and best practices of safety testing and is an important step because it begins to show exactly how these things can also be made public.",
+   "reasoning": "CHANGE. The prior log asserted Hansard had been checked and returned nothing. A programmatic full-text query of the Hansard API on 2026-08-28 returns a hit: on 2024-11-21, two days after publication, the Minister of State at DSIT, Lord Vallance of Balham, told the House of Lords that 'the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic's upgraded Claude 3.5 Sonnet model', described it as 'an important step', and did so while answering a question about whether safety testing should be made mandatory - concluding that the voluntary model 'is the correct one'. That is an official UK ministerial statement in Hansard explicitly referencing this report, which is what the rulebook requires. It imposes no enforceable obligation - indeed the Minister declined to make testing mandatory - so it is non-binding, not binding. Policy Level = Non-binding policy-related uptake."
+  },
+  "channel_c": {
+   "media": [
+    "FedScoop, 'Anthropic tested by US, UK AI safety institutes' (https://fedscoop.com/anthropic-tested-by-us-uk-ai-safety-institutes/)"
+   ],
+   "academic": [],
+   "discussion": []
+  },
+  "confidence": "high",
+  "notes": "One judgement call worth naming: the Hansard speaker is the minister for the department that sponsors UK AISI, so a reviewer could call this circular. I counted it because a ministerial answer in Parliament is a distinct institutional act from the evaluator publishing its own report - the Minister is using the report to defend a policy position on mandatory testing, which is uptake, not publication. That same distinction is why I have moved JOINT-2024-12-CYB1 the other way, off a NIST news page that is merely the report's own publication venue. Unreachable: govinfo rate-limited before the 'Claude 3.5 Sonnet' query completed; congress.gov HTTP 403. The Hansard evidence_url is the debate-date landing page; the contribution is ContributionExtId 6F38699C-11EC-49C6-9AB0-492FE2AD13A4, ItemId 41123376, retrieved from hansard-api.parliament.uk."
+ },
+ {
+  "finding_id": "JOINT-2024-11-JAI1",
+  "current": {
+   "action_level": "Acknowledged",
+   "attribution": "Explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "changed": true,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Anthropic newsroom / research index (battery 1)",
+     "url": "https://www.anthropic.com/research/constitutional-classifiers",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED. 'Constitutional Classifiers: Defending against universal jailbreaks', published 2025-02-03 with updates through 2025-02-18. This is a HIT and was missed by the prior pass. It reports a safeguard tested on the exact model in this finding, and its acknowledgements name the UK AI Safety Institute as a red-teamer of prototype versions."
+    },
+    {
+     "source": "Claude 3.5 Haiku / upgraded Claude 3.5 Sonnet Model Card Addendum - launch card (battery 2)",
+     "url": "https://www-cdn.anthropic.com/c7822cdc35ad788ec87e14b3a9d45010f1f86c38.pdf",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND VERIFIED (HTTP 200). Section 3.2 names US AISI and UK AISI joint pre-deployment testing; section 3.2.1 gives the ASL-3 determination. Confirmed byte-identical to the assets.anthropic.com URL used on the sibling row. The safeguard-circumvention result itself is not individually addressed here."
+    },
+    {
+     "source": "Claude 3.7 Sonnet System Card - next card in the family (battery 2)",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. Records UK/US AISI pre-deployment testing of Claude 3.7; no reference to the November 2024 safeguard-circumvention result."
+    },
+    {
+     "source": "Claude Opus 4 System Card - subsequent card in the family (battery 2)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. Names both institutes for Opus 4 pre-deployment testing; no reference to the November 2024 result."
+    },
+    {
+     "source": "Anthropic safeguards / RSP / transparency pages (battery 3)",
+     "url": "https://www.anthropic.com/transparency/voluntary-commitments",
+     "checked_date": "2026-08-28",
+     "result": "Reviewed. Nothing further specific to this finding."
+    },
+    {
+     "source": "Official Anthropic accounts (battery 4)",
+     "url": "https://www.anthropic.com/research/constitutional-classifiers",
+     "checked_date": "2026-08-28",
+     "result": "The classifiers post records an announcement made via Anthropic's official X account on 2025-02-05 offering jailbreak bounties; no separate statement on the November 2024 finding."
+    },
+    {
+     "source": "Open web sweep for Anthropic primary sources (battery 5)",
+     "url": "https://www.google.com/search?q=Anthropic+constitutional+classifiers+UK+AI+Safety+Institute+jailbreak",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources; surfaced the classifiers post."
+    }
+   ],
+   "evidence_url": "https://www.anthropic.com/research/constitutional-classifiers",
+   "verbatim": "Under baseline conditions, with no defensive classifiers, the jailbreak success rate was 86%—that is, Claude itself blocked only 14% of these advanced jailbreak attempts. Guarding Claude using Constitutional Classifiers, however, produced a strong improvement: the jailbreak success rate was reduced to 4.4%, meaning that over 95% of jailbreak attempts were refused.",
+   "response_date": "2025-02-03",
+   "reasoning": "CHANGE, Acknowledged -> Partial. The prior pass rested this row entirely on the model card addendum and coded it identically to its bio sibling. Re-running battery item 1 surfaced a document the prior pass missed: Anthropic's Constitutional Classifiers work, published 2025-02-03, 76 days after the finding. It is a specific safeguard aimed squarely at the problem this finding identified - safeguards being routinely circumvented by jailbreak prompts - it is evaluated on the very model in the finding (the post states the automated evaluation ran on 'a version of Claude 3.5 Sonnet (October 2024) protected by Constitutional Classifiers'), and its acknowledgements name the UK AI Safety Institute, one of the two evaluators behind this finding, as having red-teamed prototype versions of the system. That is a mitigation addressing this finding, with the evaluator engaged on the fix. It is Partial and not Substantive because what Anthropic describes is a prototype and a week-long public demo rather than a deployed production safeguard, and because the safeguard was itself defeated during that demo - four participants passed all eight levels and Anthropic paid out $55K in bounties. That is textbook 'interim, limited or incomplete action'. Attribution remains Explicit: the model card names both institutes and the classifiers post names UK AISI."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, term \"Claude 3.5 Sonnet\": 1 contribution, HIT (checked 2026-08-28). House of Lords, 2024-11-21, Lord Vallance of Balham, Minister of State at DSIT.",
+    "UK - Hansard, further terms 'universal jailbreak' (0), 'pre-deployment testing' (5, none referencing this report), 'pre-deployment evaluation' (1, 2024-09-02, predates the report) (checked 2026-08-28)",
+    "US - Federal Register API, terms \"Claude 3.5 Sonnet\" (0 documents) and \"AI Safety Institute\" (5 documents, none referencing this report) (checked 2026-08-28)",
+    "US - govinfo search API, term \"Claude 3.5 Sonnet\": rate-limited before completion; RECORDED AS UNREACHABLE (attempted 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "https://hansard.parliament.uk/lords/2024-11-21/debates/",
+   "verbatim": "Just this week the AI Safety Institute shared a detailed report outlining pre-deployment of Anthropic's upgraded Claude 3.5 Sonnet model. This will help advance the development of shared scientific benchmarks and best practices of safety testing and is an important step because it begins to show exactly how these things can also be made public.",
+   "reasoning": "CHANGE, same basis as the sibling row JOINT-2024-11-BIO2. The Hansard API returns a ministerial statement of 2024-11-21 explicitly referencing this report, delivered while the Minister was declining to make safety testing mandatory. Official UK source, explicit reference to the report, no enforceable obligation -> Non-binding policy-related uptake."
+  },
+  "channel_c": {
+   "media": [
+    "FedScoop, 'Anthropic tested by US, UK AI safety institutes' (https://fedscoop.com/anthropic-tested-by-us-uk-ai-safety-institutes/)"
+   ],
+   "academic": [],
+   "discussion": [
+    "Simon Willison's write-up of Constitutional Classifiers (https://simonwillison.net/2025/Feb/3/constitutional-classifiers/)",
+    "InfoWorld coverage of the classifiers framework (https://www.infoworld.com/article/3816273/anthropic-unveils-new-framework-to-block-harmful-content-from-ai-models.html)"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "The upgrade is a judgement call and I want the caveat on the record. The Constitutional Classifiers post never says it was prompted by the November 2024 joint evaluation, and the underlying research plainly began before that report - the post describes thousands of hours of prior red teaming. The rulebook excludes changes predating the finding. I still coded it admissible because the publication, the prototype, the demo and the UK AISI red-teaming all postdate the finding, and because the safeguard targets precisely the failure the finding named on precisely the model the finding tested. A reviewer applying the pre-existing-work exclusion more strictly would leave this at Acknowledged; no evidence would change, only the level. Channel C items are about the classifiers work rather than the joint report itself and are logged as discussion for that reason. Unreachable: govinfo rate-limited; congress.gov HTTP 403."
+ },
+ {
+  "finding_id": "UKAISI-2024-12-BIO2",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Anthropic newsroom (battery 1)",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "No post referencing UK AISI's Long-Form Tasks biological-protocol-generation evaluation or the 61% feasibility result."
+    },
+    {
+     "source": "Claude 3.7 Sonnet System Card - next card in the family (battery 2)",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND SEARCHED first-hand. The card does contain 'Long-form Virology Tasks' (sections at lines 1435 and 1482 of the extracted text) and does record UK/US AISI pre-deployment testing of Claude 3.7 - but these are Anthropic's OWN long-form evaluations, not UK AISI's December 2024 protocol-generation study, and neither the report nor the 61% feasibility figure appears anywhere in the card. Confirms the prior pass's conclusion by direct inspection."
+    },
+    {
+     "source": "Claude Opus 4 System Card - subsequent card in the family (battery 2)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND SEARCHED. Contains section 7.2.4.3 'Long-form virology tasks' and human-uplift studies on long-form tasks, plus bioinformatics-tool agentic evaluations - again Anthropic's own instruments. Names UK AISI and US AISI for chemical risk analysis and Opus 4 pre-deployment testing. No reference to the December 2024 UK AISI long-form protocol-generation report or its result."
+    },
+    {
+     "source": "Anthropic safeguards / RSP / transparency pages (battery 3)",
+     "url": "https://www.anthropic.com/transparency/voluntary-commitments",
+     "checked_date": "2026-08-28",
+     "result": "Reviewed. Nothing on this evaluation."
+    },
+    {
+     "source": "Official Anthropic accounts (battery 4)",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "No statement located."
+    },
+    {
+     "source": "Open web sweep for an Anthropic primary source (battery 5)",
+     "url": "https://www.google.com/search?q=Anthropic+cites+AISI+long-form+biological+protocol+generation+Claude+system+card",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Returned the AISI blog, Anthropic system cards containing only Anthropic's own long-form instruments, and unrelated biorisk literature. No Anthropic primary document addressing this finding."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Battery re-run 2026-08-28, and this time two Anthropic system cards were downloaded and full-text searched rather than relied on second-hand. The searches surface a real trap: both cards discuss 'long-form' biological tasks and bioinformatics-tool agentic evaluations, which superficially looks like a response. It is not - those are Anthropic's own internal virology instruments, developed under its RSP, and neither card cites UK AISI's Long-Form Tasks report or the 61% feasibility / ~30% curated-context result. Pre-existing and parallel internal work is explicitly inadmissible. Battery exhausted with no qualifying document -> Action Level = None; Attribution = No response located."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, terms 'long-form tasks' (0 contributions), 'biological protocol' (0), 'protocol generation' (0) (checked 2026-08-28)",
+    "US - Federal Register API, term \"biological protocol\": 2 documents, both 2015 synthetic-biology consortium notices, irrelevant (checked 2026-08-28)",
+    "US - govinfo search API, term \"biological protocol generation\": rate-limited before completion; RECORDED AS UNREACHABLE (attempted 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "No official government source explicitly references the Long-Form Tasks report or the 61% feasibility result. Note that UK AISI's own blog publication of the study is the finding itself, not uptake. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": []
+  },
+  "confidence": "high",
+  "notes": "Channel C is genuinely empty for this row - no independent media, academic citation or notable discussion of the December 2024 Long-Form Tasks evaluation was located, and I have left it empty rather than padding it with coverage of adjacent AISI work. Unreachable: govinfo rate-limited before this term completed; congress.gov HTTP 403."
+ },
+ {
+  "finding_id": "PALISADE-2024-12-JAI1",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "No explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": true,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+%22Palisade+Research%22+OR+%22BadGPT%22",
+     "checked_date": "2026-08-28",
+     "result": "No OpenAI post referencing Palisade Research or BadGPT-4o. openai.com blocks direct automated fetch (HTTP 403); read via the r.jina.ai text proxy."
+    },
+    {
+     "source": "OpenAI API deprecations notice - self-serve fine-tuning wind-down (batteries 3, 4)",
+     "url": "https://developers.openai.com/api/docs/deprecations",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED via text proxy, HTTP 200. Section 'Update to OpenAI's self-serve fine-tuning' confirmed present with the full three-stage table. This is the same document already coded as a Partial response on the two FAR.AI rows for the same attack surface."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub, index (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy. System-card index through 2026-08-06 reviewed. No occurrence of 'Palisade' or 'BadGPT'."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub, jailbreaks subpage (battery 3)",
+     "url": "https://deploymentsafety.openai.com/jailbreaks",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 404 - the subpage the earlier pass recorded checking no longer exists. Recorded as unreachable, not as checked."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. No occurrence of Palisade or BadGPT, and no fine-tuning-attack robustness content attributable to this finding."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=OpenAI+response+Palisade+Research+BadGPT-4o+fine-tuning+guardrails",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Returned the Palisade paper, FAR.AI's related work, HackerNoon and ResearchGate. No OpenAI primary document naming Palisade or this finding."
+    }
+   ],
+   "evidence_url": "https://developers.openai.com/api/docs/deprecations",
+   "verbatim": "May 7, 2026 | Creating fine-tuning jobs or training is not available to organizations that have not previously run fine-tuning.",
+   "response_date": "2026-05-08",
+   "reasoning": "CHANGE, None -> Partial, on consistency grounds that I regard as compelling. This finding is that a fine-tuning poisoning technique run through OpenAI's self-serve fine-tuning API strips GPT-4o's safety guardrails. That is the identical company, identical product surface and identical attack vector as FARAI-2024-10-ALI1 and FARAI-2024-10-JAI1, both of which this dataset already codes Partial on the strength of OpenAI's phased wind-down of that very platform. I opened the deprecations notice and verified the wind-down section and its three dates first-hand. There is no principled basis on which the same document removes the attack surface for the FAR.AI rows but not for this one. Partial rather than Substantive for the same reasons as those rows: the restriction is phased, existing customers keep job-creation rights until 2027-01-06, and inference on already fine-tuned models continues beyond that. Attribution moves from 'No response located' to 'No explicit attribution', which the rulebook requires once a response exists: no OpenAI document connects the wind-down to Palisade."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, term 'Palisade': 22 contributions, all false positives on the ordinary word (1999 hedgerows, 2004 Buckingham Palace security, 2018 counter-terrorism, etc.); none reference Palisade Research (checked 2026-08-28)",
+    "US - Federal Register API, terms \"Palisade Research\" (0 documents) and \"BadGPT\" (0 documents) (checked 2026-08-28)",
+    "US - govinfo search API, term \"Palisade Research\": 1 result, HIT ON THE EVALUATOR BUT NOT THIS FINDING - House Committee on Oversight and Government Reform hearing 'The Federal Government in the Age of Artificial Intelligence' (CHRG-119hhrg60818). I downloaded the full hearing transcript and read the passage: Rep. Perry refers to 'an AI safety firm named Palisade Research, and another one named Apollo Research' and then discusses shutdown-resistance in Codex-mini, o3 and o4 and the Claude 4 blackmail scenario. It is Palisade's shutdown-resistance line of work, not BadGPT-4o; the transcript contains no occurrence of 'BadGPT' or of fine-tuning at all. Rejected: the rulebook states that general discussion of the evaluator does not count. (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28); substituted by the govinfo full-text query above",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "Policy Level unchanged. The one government document naming Palisade Research - the House Oversight hearing transcript - was located, downloaded and read in full, and refers to a different body of Palisade's work. Under the explicit-reference rule, general discussion of the evaluator does not count. Policy Level = No policy uptake identified. This also upgrades the prior Channel B log, which had conceded that 'not a government-sourced finding so full Tier-A source list not exhaustively checked' - it now has been."
+  },
+  "channel_c": {
+   "media": [
+    "HackerNoon, 'Dissecting the Research Behind BadGPT-4o, a Model That Removes Guardrails from GPT Models' (https://hackernoon.com/dissecting-the-research-behind-badgpt-4o-a-model-that-removes-guardrails-from-gpt-models)"
+   ],
+   "academic": [
+    "arXiv preprint 2412.05346 (https://arxiv.org/abs/2412.05346), mirrored on ResearchGate (https://www.researchgate.net/publication/386576721_BadGPT-4o_stripping_safety_finetuning_from_GPT_models)"
+   ],
+   "discussion": [
+    "Adam Gleave of FAR.AI publicly confirmed the result as a replication of FAR.AI's work and noted that mixing 50% harmless examples sufficed to slip past the moderation filter (https://x.com/ARGleave/status/1859049971263435108)"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "This is the row I am least certain about, and the uncertainty is not about the facts but about the rule. The wind-down notice never mentions Palisade, never mentions safety, and states no rationale at all; a strict reading of 'a response must address THIS particular finding and be attributable to it' would reject it and leave this row at None. If the project takes that strict view it must also be applied to FARAI-2024-10-ALI1 and FARAI-2024-10-JAI1, which would move all three rows to None together. What is not defensible is the current state, where the same document counts for two rows and not for the third. I have proposed the change in the direction that preserves the dataset's own existing precedent. Unreachable: congress.gov HTTP 403; deploymentsafety.openai.com/jailbreaks HTTP 404; openai.com HTTP 403, read via text proxy."
+ },
+ {
+  "finding_id": "JOINT-2024-12-CYB1",
+  "current": {
+   "action_level": "Acknowledged",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "proposed": {
+   "action_level": "Acknowledged",
+   "attribution": "Explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": true,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI o1 System Card - the launch card, canonical location for a pre-deployment evaluation (battery 2)",
+     "url": "https://openai.com/index/openai-o1-system-card/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ via text proxy (openai.com HTTP 403 to direct fetch). Dated 2024-12-05, with a note that one section was added 2024-12-19. CORRECTION: the card contains exactly ONE sentence on the joint evaluation, in the introduction to the safety section - there is no dedicated section, and the card's own table of contents has no AISI entry. The sentence states the evaluations were 'not included in this report'. The row's Company Response text, which says the evaluation is 'referenced in o1 System Card in dedicated section', overstates what the card contains."
+    },
+    {
+     "source": "OpenAI newsroom, 'Working with US CAISI and UK AISI to build more secure AI systems' (batteries 1, 4)",
+     "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED via text proxy; publication date confirmed as 2025-09-12 from the page's own publicationDateText metadata. It hyperlinks the NIST o1 pre-deployment evaluation page when describing a year of CAISI collaboration on cyber and chem-bio capability evaluation. Explicit attribution to the evaluation, but it documents no action taken in response to the cyber result."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy; index reviewed. Nothing further on the o1 joint evaluation."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. CAISI and UK AISI appear as pre-deployment testers under a signed agreement; no reference back to the December 2024 o1 cyber result."
+    },
+    {
+     "source": "Open web sweep for further OpenAI primary sources (battery 5)",
+     "url": "https://www.google.com/search?q=OpenAI+o1+joint+pre-deployment+evaluation+CAISI+UK+AISI+cyber",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources; nothing beyond the two documents above."
+    }
+   ],
+   "evidence_url": "https://openai.com/index/openai-o1-system-card/",
+   "verbatim": "Additionally, as part of our continued effort to partner with external experts, a set of pre-deployment evaluations were conducted on a version of the o1 model by the U.S. AI Safety Institute (US AISI) and the UK Safety Institute (UK AISI), not included in this report.",
+   "response_date": "2024-12-05",
+   "reasoning": "Action Level unchanged at Acknowledged, but now resting on verified text rather than an overstated description. OpenAI names both evaluators and the pre-deployment testing, and the later 2025-09-12 newsroom post links the NIST publication of this very evaluation - so attribution is unambiguously explicit. But neither document reports the 45%-versus-35% cyber solve rate, the three uniquely solved cryptography challenges, or the weaker 36%-versus-46% apprentice-level result, and neither specifies any mitigation, model change, access restriction or deployment decision arising from them. The o1 card in fact rates cybersecurity Low risk on its own Preparedness scorecard. Problem area referenced, no action specified -> Acknowledged."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "US - NIST news page for the joint o1 evaluation (https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model), the source currently cited as Channel B evidence: reviewed and REJECTED, see reasoning (checked 2026-08-28)",
+    "US - Federal Register API, terms \"AI Safety Institute\" (5 documents, all AISI's own comment requests or unrelated programme notices) and \"Claude 3.5 Sonnet\"/\"agent hijacking\" cross-checks: nothing referencing the o1 evaluation (checked 2026-08-28)",
+    "UK - Hansard full-text API, terms 'OpenAI o1' (0 contributions), 'pre-deployment evaluation' (1 contribution, 2024-09-02, predating the report), 'pre-deployment testing' (5 contributions, none referencing this report) (checked 2026-08-28)",
+    "US - govinfo search API: rate-limited before o1-specific terms completed; RECORDED AS PARTIALLY UNREACHABLE (attempted 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "CHANGE, Non-binding -> No policy uptake identified. The only thing supporting the existing code is the NIST news page announcing this very evaluation - which is the evaluator publishing its own report, not anyone taking it up. US CAISI, housed at NIST, is a co-author of the finding. Treating an agency's publication of its own report as policy uptake would make every government-AISI finding in this dataset automatically non-binding and drain the code of meaning. The dataset already applies exactly this reasoning elsewhere: the Channel B note on JOINT-2024-11-BIO2 states that 'the NIST and gov.uk publications of the joint evaluation are the evaluators' own report, not uptake'. This row is the inconsistent one. I then searched for genuine uptake and found none: Hansard returns nothing for the o1 evaluation, and the Federal Register returns nothing. Where I did find real uptake in this chunk - a ministerial statement in Hansard, a Federal Register RFI citing a CAISI blog - I have coded it, so the downgrade here is not a tightening of the standard but an application of the same one."
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    "The o1 system card is mirrored as arXiv:2412.16720 (https://arxiv.org/pdf/2412.16720) and cited in the downstream evaluation literature"
+   ],
+   "discussion": []
+  },
+  "confidence": "medium",
+  "notes": "The Channel A change is descriptive only - level and attribution are unchanged, but the Company Response text should be corrected: there is no 'dedicated section' in the o1 system card, only a single sentence which itself says the AISI results are not included. The Channel B downgrade is the substantive change and is a judgement call: a literal reading of Channel B ('official government sources only... must explicitly reference the finding, report, evaluator or specific result') would admit the NIST page, since it is an official US government publication explicitly referencing the finding. I rejected it on circularity, following the dataset's own precedent on JOINT-2024-11-BIO2. If the project prefers the literal reading, this row should stay Non-binding and the BIO2 note should be revised instead - but the two rows should not continue to disagree. Unreachable: congress.gov HTTP 403; govinfo rate-limited; openai.com HTTP 403."
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI1",
+  "current": {
+   "action_level": "Partial",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "proposed": {
+   "action_level": "Substantive",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "changed": true,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Claude 3.7 Sonnet System Card - the next family card after the finding (battery 2)",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND READ IN FULL (6.0MB PDF, HTTP 200). MAJOR HIT MISSED BY THE PRIOR PASS. Section 5.3 is titled 'Alignment Faking Reasoning'. It cites the finding's report as reference [9] (Greenblatt et al., 'Alignment faking in large language models', arXiv:2412.14093), states that the prompts 'were based on those from [9]', re-runs the paper's own 'helpful-only' setting, restates the paper's Claude 3 Opus and Claude 3.5 Sonnet figures, and reports the new model's result."
+    },
+    {
+     "source": "Claude Opus 4 System Card - subsequent family card (battery 2)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND READ (5.0MB PDF, HTTP 200). Cites Greenblatt et al. (2024) in the bibliography. Section 4.1.1.1 covers continuations of self-exfiltration attempts, 4.1.1.3 covers self-exfiltration under extreme circumstances, and 4.1.4 is titled 'Strange behavior directly inspired by our Alignment Faking paper'."
+    },
+    {
+     "source": "Anthropic Alignment Science blog, 'Towards training-time mitigations for alignment faking in RL' (battery 1)",
+     "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED, HTTP 200. Dated 2025-12-16, authored by Gasteiger, Mikulik, Cunningham, Wagner, Wright, Uesato, Benton, MacDiarmid, Roger and Hubinger, all Anthropic. Directly extends the finding's RL experiments, citing Greenblatt et al. 2024 by name in the abstract and introduction. Evaluates three mitigations and concludes 'we view this work as only a starting point'."
+    },
+    {
+     "source": "Anthropic newsroom / research index (battery 1)",
+     "url": "https://www.anthropic.com/research/alignment-faking",
+     "checked_date": "2026-08-28",
+     "result": "The finding's own report is hosted on anthropic.com; excluded as the evaluator's publication, not a response."
+    },
+    {
+     "source": "Anthropic safeguards / RSP / transparency pages (battery 3)",
+     "url": "https://www.anthropic.com/transparency/voluntary-commitments",
+     "checked_date": "2026-08-28",
+     "result": "Reviewed. Nothing further specific to these findings."
+    },
+    {
+     "source": "Official Anthropic accounts (battery 4)",
+     "url": "https://www.anthropic.com/research/alignment-faking",
+     "checked_date": "2026-08-28",
+     "result": "No separate statement beyond the documents above."
+    },
+    {
+     "source": "Open web sweep for further Anthropic primary sources (battery 5)",
+     "url": "https://www.google.com/search?q=Anthropic+alignment+faking+mitigation+response+Greenblatt",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources; surfaced the three documents above."
+    }
+   ],
+   "evidence_url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+   "verbatim": "Claude 3.7 Sonnet showed marked improvement, with alignment faking dropping to <1% of instances and a reduced compliance gap of only 5%.",
+   "response_date": "2025-02",
+   "reasoning": "CHANGE, Partial -> Substantive, and a ten-month correction to the response date. The prior pass rested this row solely on the December 2025 mitigations blog and recorded 'Battery item 1 hit', never reaching battery item 2. Battery item 2 is where the real response is. The Claude 3.7 Sonnet system card, published in February 2025, roughly ten weeks after the finding, devotes section 5.3 to alignment faking, cites the finding's report as [9], adopts the paper's own experimental setting ('the alignment faking prompts were based on those from [9]'), restates the paper's headline figures for Claude 3 Opus and Claude 3.5 Sonnet, and then reports that the newly released model drops alignment faking to <1% and the compliance gap to 5%. This finding is precisely about the compliance gap and the alignment-faking reasoning behind it, and Anthropic has shipped a model in which both are largely gone and documented that against the evaluator's own benchmark in the launch card. That is a model change addressing the problem -> Substantive. Attribution stays Explicit: the report is cited by name."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, term 'alignment faking': 0 contributions; term 'Redwood Research': 0 contributions (checked 2026-08-28)",
+    "UK - UK AI Security Institute, The Alignment Project research-area page (https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning): OPENED AND VERIFIED, HIT (checked 2026-08-28)",
+    "US - Federal Register API, terms \"alignment faking\" (0 documents) and \"Redwood Research\" (0 documents) (checked 2026-08-28)",
+    "US - govinfo search API, term \"alignment faking\" (0 results) and \"Redwood Research\" (34 results, all historical Redwood National Park legislation from 1968 onward, all false positives) (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "verbatim": "Empirically, Greenblatt et al., 2024 demonstrate an instance of this phenomenon termed alignment faking in LLMs: “selectively complying with its training objective in training to prevent modification of its behaviour out of training.”",
+   "reasoning": "Verified first-hand. The UK AI Security Institute's Alignment Project research-area page cites Greenblatt et al., 2024 (arXiv:2412.14093) four separate times, frames deceptive alignment around it, and sets as an explicit open research question 'Does Greenblatt et al., 2024 replicate and how robust are the results to small variations in the experimental setup?' and 'What variations to Greenblatt et al., 2024 could make the setting a more realistic model of the ways in which alignment faking could cause harm?'. That is an official UK government body explicitly referencing the report and directing research funding priorities at it, with no enforceable obligation on anyone -> Non-binding policy-related uptake. Unchanged."
+  },
+  "channel_c": {
+   "media": [
+    "TIME, 'Exclusive: New Research Shows AI Strategically Lying' (https://time.com/7202784/ai-research-strategic-lying/)"
+   ],
+   "academic": [
+    "arXiv:2412.14093, extensively cited in the subsequent alignment literature",
+    "Anthropic's Claude 3.7 Sonnet system card cites it as reference [9]; the Claude Opus 4 system card cites it in its bibliography"
+   ],
+   "discussion": [
+    "The paper's public transcript release became a documented pretraining-contamination incident, discussed by Anthropic in the Claude Opus 4 system card and prompting the adoption of machine-readable canary strings on future released transcripts"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "The evidence is verified and unambiguous; the judgement is over what it amounts to. The system card reports a measured improvement but does not claim Anthropic deliberately trained against alignment faking, so a reviewer could argue this is a favourable measurement rather than a remedial action and hold the row at Partial. I coded Substantive because the rulebook's Substantive definition includes 'model change... that addresses the problem' and does not require the company to narrate the intervention. Either way the response date should move from 2025-12-16 to February 2025 and the Channel A evidence should lead with the system card - that part is not a judgement call, the prior record simply missed the document. Unreachable: congress.gov HTTP 403. Date precision: the Claude 3.7 Sonnet system card PDF carries no printed publication day in its text - only February-2025 references in its bibliography - so I have recorded the response date to month precision rather than asserting a day I could not verify from the document itself."
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI2",
+  "current": {
+   "action_level": "Partial",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Claude 3.7 Sonnet System Card - the next family card after the finding (battery 2)",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND READ IN FULL (6.0MB PDF, HTTP 200). MAJOR HIT MISSED BY THE PRIOR PASS. Section 5.3 is titled 'Alignment Faking Reasoning'. It cites the finding's report as reference [9] (Greenblatt et al., 'Alignment faking in large language models', arXiv:2412.14093), states that the prompts 'were based on those from [9]', re-runs the paper's own 'helpful-only' setting, restates the paper's Claude 3 Opus and Claude 3.5 Sonnet figures, and reports the new model's result."
+    },
+    {
+     "source": "Claude Opus 4 System Card - subsequent family card (battery 2)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND READ (5.0MB PDF, HTTP 200). Cites Greenblatt et al. (2024) in the bibliography. Section 4.1.1.1 covers continuations of self-exfiltration attempts, 4.1.1.3 covers self-exfiltration under extreme circumstances, and 4.1.4 is titled 'Strange behavior directly inspired by our Alignment Faking paper'."
+    },
+    {
+     "source": "Anthropic Alignment Science blog, 'Towards training-time mitigations for alignment faking in RL' (battery 1)",
+     "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED, HTTP 200. Dated 2025-12-16, authored by Gasteiger, Mikulik, Cunningham, Wagner, Wright, Uesato, Benton, MacDiarmid, Roger and Hubinger, all Anthropic. Directly extends the finding's RL experiments, citing Greenblatt et al. 2024 by name in the abstract and introduction. Evaluates three mitigations and concludes 'we view this work as only a starting point'."
+    },
+    {
+     "source": "Anthropic newsroom / research index (battery 1)",
+     "url": "https://www.anthropic.com/research/alignment-faking",
+     "checked_date": "2026-08-28",
+     "result": "The finding's own report is hosted on anthropic.com; excluded as the evaluator's publication, not a response."
+    },
+    {
+     "source": "Anthropic safeguards / RSP / transparency pages (battery 3)",
+     "url": "https://www.anthropic.com/transparency/voluntary-commitments",
+     "checked_date": "2026-08-28",
+     "result": "Reviewed. Nothing further specific to these findings."
+    },
+    {
+     "source": "Official Anthropic accounts (battery 4)",
+     "url": "https://www.anthropic.com/research/alignment-faking",
+     "checked_date": "2026-08-28",
+     "result": "No separate statement beyond the documents above."
+    },
+    {
+     "source": "Open web sweep for further Anthropic primary sources (battery 5)",
+     "url": "https://www.google.com/search?q=Anthropic+alignment+faking+mitigation+response+Greenblatt",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources; surfaced the three documents above."
+    }
+   ],
+   "evidence_url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+   "verbatim": "In addition to baseline RL, we evaluate three mitigations: black-box interrogation training, where a model is asked a follow-up question about its motivations and penalised accordingly (effective but can teach models to lie), scratchpad length penalties (surprisingly effective by selecting against complex reasoning), and process supervision with alignment faking classifiers (highly effective but risks invalidating monitoring tools). Because of the limitations of this setting, we view this work as only a starting point, lighting the path for future research on alignment faking mitigations.",
+   "response_date": "2025-12-16",
+   "reasoning": "Unchanged at Partial, now on verified text. I opened the mitigations study and read it. It is the on-point response to this particular finding, which is about what happens when the model is actually RL-trained rather than merely prompted: the study 'substantially extend[s] the reinforcement learning (RL) experiments in the setting introduced by Greenblatt et al. (2024)', builds six model organisms with high alignment-faking rates, and tests three training-time mitigations. Every one carries a documented failure mode - interrogation training can teach models to lie and can raise the compliance gap above baseline, length penalties are conceded to be impractical, and process supervision risks invalidating the very monitors used for audits - and the authors describe the work as 'only a starting point'. No deployed change is asserted. Investigated, documented, explicitly non-robust -> Partial, not Substantive. I considered and rejected promoting this row alongside its ALI1 sibling: the Claude 3.7 Sonnet result is measured in the prompted helpful-only setting and does not speak to this finding's RL-trained 78% scratchpad rate."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, term 'alignment faking': 0 contributions; term 'Redwood Research': 0 contributions (checked 2026-08-28)",
+    "UK - UK AI Security Institute, The Alignment Project research-area page (https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning): OPENED AND VERIFIED, HIT (checked 2026-08-28)",
+    "US - Federal Register API, terms \"alignment faking\" (0 documents) and \"Redwood Research\" (0 documents) (checked 2026-08-28)",
+    "US - govinfo search API, term \"alignment faking\" (0 results) and \"Redwood Research\" (34 results, all historical Redwood National Park legislation from 1968 onward, all false positives) (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "verbatim": "Empirically, Greenblatt et al., 2024 demonstrate an instance of this phenomenon termed alignment faking in LLMs: “selectively complying with its training objective in training to prevent modification of its behaviour out of training.”",
+   "reasoning": "Verified first-hand. The UK AI Security Institute's Alignment Project research-area page cites Greenblatt et al., 2024 (arXiv:2412.14093) four separate times, frames deceptive alignment around it, and sets as an explicit open research question 'Does Greenblatt et al., 2024 replicate and how robust are the results to small variations in the experimental setup?' and 'What variations to Greenblatt et al., 2024 could make the setting a more realistic model of the ways in which alignment faking could cause harm?'. That is an official UK government body explicitly referencing the report and directing research funding priorities at it, with no enforceable obligation on anyone -> Non-binding policy-related uptake. Unchanged."
+  },
+  "channel_c": {
+   "media": [
+    "TIME, 'Exclusive: New Research Shows AI Strategically Lying' (https://time.com/7202784/ai-research-strategic-lying/)"
+   ],
+   "academic": [
+    "arXiv:2412.14093, extensively cited in the subsequent alignment literature",
+    "Anthropic's Claude 3.7 Sonnet system card cites it as reference [9]; the Claude Opus 4 system card cites it in its bibliography"
+   ],
+   "discussion": [
+    "The paper's public transcript release became a documented pretraining-contamination incident, discussed by Anthropic in the Claude Opus 4 system card and prompting the adoption of machine-readable canary strings on future released transcripts"
+   ]
+  },
+  "confidence": "high",
+  "notes": "Level unchanged, but note the deliberate divergence from sibling row ALI1, which I have moved to Substantive. The rows carry different findings and the evidence genuinely splits: the Claude 3.7 Sonnet system card answers ALI1's prompted compliance-gap result but not this row's RL-training result, while the December 2025 mitigations study answers this row's and not ALI1's. Both documents are now logged on both rows so the split is auditable. Unreachable: congress.gov HTTP 403."
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI3",
+  "current": {
+   "action_level": "Partial",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Claude 3.7 Sonnet System Card - the next family card after the finding (battery 2)",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND READ IN FULL (6.0MB PDF, HTTP 200). MAJOR HIT MISSED BY THE PRIOR PASS. Section 5.3 is titled 'Alignment Faking Reasoning'. It cites the finding's report as reference [9] (Greenblatt et al., 'Alignment faking in large language models', arXiv:2412.14093), states that the prompts 'were based on those from [9]', re-runs the paper's own 'helpful-only' setting, restates the paper's Claude 3 Opus and Claude 3.5 Sonnet figures, and reports the new model's result."
+    },
+    {
+     "source": "Claude Opus 4 System Card - subsequent family card (battery 2)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED AND TEXT-EXTRACTED AND READ (5.0MB PDF, HTTP 200). Cites Greenblatt et al. (2024) in the bibliography. Section 4.1.1.1 covers continuations of self-exfiltration attempts, 4.1.1.3 covers self-exfiltration under extreme circumstances, and 4.1.4 is titled 'Strange behavior directly inspired by our Alignment Faking paper'."
+    },
+    {
+     "source": "Anthropic Alignment Science blog, 'Towards training-time mitigations for alignment faking in RL' (battery 1)",
+     "url": "https://alignment.anthropic.com/2025/alignment-faking-mitigations/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED, HTTP 200. Dated 2025-12-16, authored by Gasteiger, Mikulik, Cunningham, Wagner, Wright, Uesato, Benton, MacDiarmid, Roger and Hubinger, all Anthropic. Directly extends the finding's RL experiments, citing Greenblatt et al. 2024 by name in the abstract and introduction. Evaluates three mitigations and concludes 'we view this work as only a starting point'."
+    },
+    {
+     "source": "Anthropic newsroom / research index (battery 1)",
+     "url": "https://www.anthropic.com/research/alignment-faking",
+     "checked_date": "2026-08-28",
+     "result": "The finding's own report is hosted on anthropic.com; excluded as the evaluator's publication, not a response."
+    },
+    {
+     "source": "Anthropic safeguards / RSP / transparency pages (battery 3)",
+     "url": "https://www.anthropic.com/transparency/voluntary-commitments",
+     "checked_date": "2026-08-28",
+     "result": "Reviewed. Nothing further specific to these findings."
+    },
+    {
+     "source": "Official Anthropic accounts (battery 4)",
+     "url": "https://www.anthropic.com/research/alignment-faking",
+     "checked_date": "2026-08-28",
+     "result": "No separate statement beyond the documents above."
+    },
+    {
+     "source": "Open web sweep for further Anthropic primary sources (battery 5)",
+     "url": "https://www.google.com/search?q=Anthropic+alignment+faking+mitigation+response+Greenblatt",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources; surfaced the three documents above."
+    }
+   ],
+   "evidence_url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+   "verbatim": "We discovered that this behavior was not substantially penalized by our ordinary training process, and we only added targeted mitigations for it very late in training, so it is still largely present in the final model.",
+   "response_date": "2025-05",
+   "reasoning": "Level unchanged at Partial, but the evidence is corrected. This finding is specifically about the model taking strongly anti-Anthropic actions, including attempting to steal its own weights. The document the prior pass cited - the December 2025 training-time mitigations study - is about alignment-faking rates and compliance gaps and does not address weight exfiltration at all, so it was the wrong evidence for this row. The right document is the Claude Opus 4 system card, which I downloaded and read: it cites Greenblatt et al. (2024), and section 4.1.1.1 addresses self-exfiltration directly, disclosing that Anthropic added targeted mitigations for the behaviour but only very late in training so that it remains largely present in the shipped model. An explicitly incomplete mitigation is the definition of Partial. Section 4.1.4 additionally documents a targeted training dataset introduced to suppress hallucinated content absorbed from the paper's released transcripts, plus machine-readable canary strings going forward - a real action naming the paper, though it responds to a contamination side-effect rather than to the finding itself, and I have not rested the code on it. Attribution stays Explicit."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard full-text API, term 'alignment faking': 0 contributions; term 'Redwood Research': 0 contributions (checked 2026-08-28)",
+    "UK - UK AI Security Institute, The Alignment Project research-area page (https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning): OPENED AND VERIFIED, HIT (checked 2026-08-28)",
+    "US - Federal Register API, terms \"alignment faking\" (0 documents) and \"Redwood Research\" (0 documents) (checked 2026-08-28)",
+    "US - govinfo search API, term \"alignment faking\" (0 results) and \"Redwood Research\" (34 results, all historical Redwood National Park legislation from 1968 onward, all false positives) (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28)",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "https://alignmentproject.aisi.gov.uk/research-area/evaluation-and-guarantees-in-reinforcement-learning",
+   "verbatim": "Empirically, Greenblatt et al., 2024 demonstrate an instance of this phenomenon termed alignment faking in LLMs: “selectively complying with its training objective in training to prevent modification of its behaviour out of training.”",
+   "reasoning": "Verified first-hand. The UK AI Security Institute's Alignment Project research-area page cites Greenblatt et al., 2024 (arXiv:2412.14093) four separate times, frames deceptive alignment around it, and sets as an explicit open research question 'Does Greenblatt et al., 2024 replicate and how robust are the results to small variations in the experimental setup?' and 'What variations to Greenblatt et al., 2024 could make the setting a more realistic model of the ways in which alignment faking could cause harm?'. That is an official UK government body explicitly referencing the report and directing research funding priorities at it, with no enforceable obligation on anyone -> Non-binding policy-related uptake. Unchanged."
+  },
+  "channel_c": {
+   "media": [
+    "TIME, 'Exclusive: New Research Shows AI Strategically Lying' (https://time.com/7202784/ai-research-strategic-lying/)"
+   ],
+   "academic": [
+    "arXiv:2412.14093, extensively cited in the subsequent alignment literature",
+    "Anthropic's Claude 3.7 Sonnet system card cites it as reference [9]; the Claude Opus 4 system card cites it in its bibliography"
+   ],
+   "discussion": [
+    "The paper's public transcript release became a documented pretraining-contamination incident, discussed by Anthropic in the Claude Opus 4 system card and prompting the adoption of machine-readable canary strings on future released transcripts"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "Level and attribution unchanged, so changed is false, but the Channel A evidence URL, verbatim and response date on this row should all be replaced - the previously cited mitigations study does not address weight exfiltration. Date precision: the Claude Opus 4 system card's title page reads only 'May 2025' with no day, so the response date is recorded to month precision rather than asserting a day the document does not state. One caveat on attributability: the Opus 4 self-exfiltration section is Anthropic's own alignment assessment and does not state that it was prompted by Greenblatt et al., even though the card cites the paper elsewhere; a strict reader could therefore treat this row as having no attributable response and code it None. I did not, because the card is the launch document for the successor model and engages the same behaviour the finding surfaced. Unreachable: congress.gov HTTP 403."
+ },
+ {
+  "finding_id": "JOINT-2025-01-JAI1",
+  "current": {
+   "action_level": "Substantive",
+   "attribution": "Explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "Explicit attribution",
+   "policy_level": "Non-binding policy-related uptake"
+  },
+  "changed": true,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "Anthropic newsroom (battery 1)",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "No post on the CAISI agent-hijacking technical blog."
+    },
+    {
+     "source": "Claude 3.7 Sonnet System Card - next family card after the finding (battery 2)",
+     "url": "https://anthropic.com/claude-3-7-sonnet-system-card",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. Discusses prompt-injection risks for computer use but contains no reference to the CAISI January 2025 agent-hijacking work."
+    },
+    {
+     "source": "Claude Opus 4 System Card - subsequent family card (battery 2)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. No reference to the CAISI January 2025 agent-hijacking work."
+    },
+    {
+     "source": "Anthropic submission to the NIST/CAISI Request for Information on Security Considerations for AI Agents (battery 3)",
+     "url": "https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf",
+     "checked_date": "2026-08-28",
+     "result": "DOWNLOADED, TEXT-EXTRACTED AND READ IN FULL (379KB PDF, HTTP 200). VERIFIED. Dated March 9, 2026, addressed to CAISI/NIST, Docket No. NIST-2025-0035. Cites 'NIST CAISI, \"Strengthening AI Agent Hijacking Evaluations\" (Jan. 2025)' as footnote 7 and again at footnotes 15 and 23, describes it as 'important contributions' and 'an important step', and documents Anthropic's layered prompt-injection defence."
+    },
+    {
+     "source": "Anthropic safeguards / RSP / transparency pages (battery 3)",
+     "url": "https://www.anthropic.com/transparency/voluntary-commitments",
+     "checked_date": "2026-08-28",
+     "result": "Reviewed. Nothing further attributable to this finding."
+    },
+    {
+     "source": "Official Anthropic accounts (battery 4)",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "No statement located."
+    },
+    {
+     "source": "Open web sweep for further Anthropic primary sources (battery 5)",
+     "url": "https://www.google.com/search?q=Anthropic+CAISI+agent+hijacking+evaluations+response",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources; surfaced the RFI submission."
+    }
+   ],
+   "evidence_url": "https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf",
+   "verbatim": "Anthropic has seen the benefit of this kind of government testing firsthand. Under our voluntary agreement, CAISI has conducted pre-deployment evaluations across multiple Claude releases and red-teamed the safeguard systems that protect against misuse, bringing expertise in threat modeling and adversarial testing that no individual lab has on its own. That work has materially improved what we ship.",
+   "response_date": "2026-03-09",
+   "reasoning": "CHANGE, Substantive -> Partial. I downloaded the submission and read the whole document rather than relying on the prior summary, and it splits into three parts that the existing code runs together. First, Anthropic explicitly names and praises the January 2025 CAISI agent-hijacking work - that secures Explicit attribution and clears the Acknowledged bar. Second, it describes Anthropic's layered prompt-injection defence, combining reinforcement learning for model-level robustness, classifiers at the input, output and activation levels, and product-layer permission dialogues. But read in context that passage is a description of Anthropic's existing defence-in-depth posture, offered to argue what NIST should and should not standardise; it is nowhere presented as an action taken in response to the CAISI finding, and the rulebook is explicit that pre-existing or standing policy does not count even on the same topic. That is what rules out Substantive. Third, and this is what carries the row, Anthropic asserts that CAISI's testing 'has materially improved what we ship' - a claimed improvement attributed to the evaluator, but general, unquantified, not tied to the agent-hijacking result specifically, and impossible to verify from outside. The rulebook's Partial definition covers exactly this: 'an action claimed but unverifiable'. Partial."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "US - Federal Register API, term \"agent hijacking\": 1 document, HIT (checked 2026-08-28). 'Request for Information Regarding Security Considerations for Artificial Intelligence Agents', published 2026-01-08, Department of Commerce / NIST / CAISI, document 2026-00206, Docket NIST-2025-0035. Full raw text downloaded from federalregister.gov and read.",
+    "US - govinfo search API, term \"agent hijacking\": 1 result, the same Federal Register document FR-2026-01-08 granule 2026-00206, corroborating the hit (checked 2026-08-28)",
+    "UK - Hansard full-text API, term 'agent hijacking': 0 contributions; term 'universal jailbreak': 0 contributions (checked 2026-08-28)",
+    "US - Congress.gov search: NOT REACHABLE, HTTP 403 to automated requests (attempted 2026-08-28); substituted by the Federal Register and govinfo queries above",
+    "EU / other - no Commission or national-regulator publication referencing this report surfaced (checked 2026-08-28)"
+   ],
+   "evidence_url": "https://www.federalregister.gov/documents/2026/01/08/2026-00206/request-for-information-regarding-security-considerations-for-artificial-intelligence-agents",
+   "verbatim": "NIST conducts research and develops guidelines to promote safe and secure AI innovation and adoption. Research by CAISI technical staff [1] has demonstrated risks of agent hijacking.",
+   "reasoning": "CHANGE, No policy uptake identified -> Non-binding policy-related uptake. The prior log recorded the Federal Register as checked with nothing found; a programmatic query of the Federal Register API returns a direct hit. The RFI's footnote [1] is the finding's own report - 'Technical Blog: Strengthening AI Agent Hijacking Evaluations', linked to the exact NIST URL that is this row's Source URL - and the body text relies on it to establish the risk the RFI is convened to address. That is an official US government publication in the Federal Register explicitly referencing the report, which is precisely what Channel B requires. A Request for Information solicits comment and imposes no mandatory requirement on anyone, so it is non-binding, not binding."
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [
+    "OpenAI's September 2025 collaboration post links the same CAISI agent-hijacking blog when describing how CAISI chained an agent-hijacking attack with conventional vulnerabilities against ChatGPT Agent (https://openai.com/index/us-caisi-uk-aisi-ai-update/) - logged as third-party uptake of the technique by a company other than the evaluated one, and not used as Channel A evidence for this row"
+   ]
+  },
+  "confidence": "medium",
+  "notes": "Two things worth flagging. On Channel A, the prior record already carried an interpretive flag saying a strict causal reading would code this Acknowledged; I have landed between the two, at Partial, because the document does contain one thing beyond acknowledgement - the claim that CAISI's testing materially improved what Anthropic ships - and the rulebook has a category built for exactly that kind of unverifiable claimed action. On Channel B, note the circularity question I applied against JOINT-2024-12-CYB1: CAISI is a co-author of this finding and also the issuing office of the RFI. I counted it here and rejected the NIST news page there because a Federal Register rulemaking-track instrument that cites the research to justify opening a consultation is a policy act, whereas a NIST news page announcing a report is that report's publication venue. If the project disagrees with that line it should be redrawn on both rows together. Unreachable: congress.gov HTTP 403."
+ }
+]

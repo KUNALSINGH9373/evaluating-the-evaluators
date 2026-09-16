@@ -1,0 +1,26 @@
+{
+  "url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6a0ed93f9b4a6a65994235d8_Loss_of_Oversight%20(7).pdf",
+  "title": "Loss of Oversight: How AI Systems May Become Harder to Audit, Monitor, and Investigate",
+  "institution": "UK AI Security Institute (UK AISI)",
+  "scope": "government-AISI",
+  "decision": "INCLUDED",
+  "resolved_date": "2026-05-21",
+  "date_source": "Blog dateline 'May 21, 2026' on https://www.aisi.gov.uk/blog/will-it-become-harder-to-oversee-ai-systems (verified 2026-08-31); the report PDF carries no separate date.",
+  "rule_cited": "§1 in scope (government AISI, sole author); §3 dedup — primary/fullest source is the report PDF, not the blog; §4 Gate 1 fails (no AISI-conducted measurement) → eval=no / action=blank; §5 club — findings [0] and [1] are documented process facts of the same 25-expert elicitation and warrant no distinct response.",
+  "exclusion_reason": "",
+  "findings": [
+    {
+      "finding": "Drawing on 25 expert interviews across frontier AI developers, government, NGOs and academia together with a literature review and internal analysis, UK AISI maps five sources of oversight signal — model behaviour, chain-of-thought reasoning, internal activations and circuits, memory architectures, and honesty training — and concludes that current oversight rests on foundations likely to erode while emerging methods are not yet mature enough to compensate. The same elicitation records six boxed points of substantive expert disagreement (whether latent reasoning architectures will displace text chain-of-thought; the sufficiency of action-only monitoring combined with control protocols; the value of current alignment honeypots; the prospects of ambitious interpretability; alien representations; and the status of the Linear Representation Hypothesis), with further recorded disagreement over whether training for oversight generalises as intended.",
+      "finding_quote": "Both the literature and expert opinion support the conclusion that current oversight rests on foundations that are likely to erode, and emerging methods are not yet mature enough to compensate for this erosion.",
+      "eval_trackable": "no",
+      "action_trackable": "",
+      "domain": "Governance",
+      "models_systems": "anonymised",
+      "institution": "UK AI Security Institute (UK AISI)",
+      "access_type": "N/A",
+      "finding_type": "governance",
+      "split_suffix": "",
+      "notes": "[CLUBBED §5: former finding [1] (expert disagreement) merged here — both are documented process facts of the same 25-expert elicitation and warrant no distinct response.] [CAVEAT: the report's own Limitations section (B.3) states readers should treat its judgements as \"informed assessments rather than rigorously evidenced claims\" — not a measured result.] [Finding Quote is from the accompanying UK AISI blog post https://www.aisi.gov.uk/blog/will-it-become-harder-to-oversee-ai-systems; the PDF abstract's equivalent wording is \"Our central finding is that literature and expert opinion support the conclusion that current oversight rests on foundations that are likely to erode, absent effective intervention.\"] [Corrected: the earlier claim of \"four documented points of substantive disagreement\" is unsupported — the blog lists them under \"Some examples of disagreements:\" and the report contains six \"Expert Disagreement\" boxes.] [The blog's \"four oversight surfaces\" framing is not coded; the report structures on five sources of oversight signal.] [Named-model results in the report (Claude Sonnet 4.5, o3, Claude Opus 4.6) are cited to Anthropic and Schoen et al. and fail §2 limb 1 as summaries of others' work.]"
+    }
+  ]
+}

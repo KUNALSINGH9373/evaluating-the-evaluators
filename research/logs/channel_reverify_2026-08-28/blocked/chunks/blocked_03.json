@@ -1,0 +1,496 @@
+[
+ {
+  "Finding ID": "TRANSLUCE-2025-09-JAI1",
+  "Institution": "Transluce",
+  "Report Title": "Automatically Jailbreaking Frontier Language Models with Investigator Agents",
+  "Publication Date": "2025-09-03",
+  "Models / Systems": "Claude Sonnet 4",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://transluce.org/jailbreaking-frontier-models",
+  "Finding": "Transluce's RL-trained investigator agents generated natural-language jailbreaks for 48 CBRN/drug-related high-risk tasks, achieving a 92% pass@1 success rate against Claude Sonnet 4.",
+  "Finding Quote": "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.; Our results show success against models including GPT-5-main (78%), Claude Sonnet 4 (92%), and Gemini 2.5 Pro (90%).; Grok 4 (98%), and Gemini 2.5 Pro (90%) as well as nontrivial success against Claude Opus 4.1 (65%) and GPT-5-thinking (28%).",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: anthropic.com/news full listing reviewed directly (no mention), anthropic.com/research (Frontier Red Team posts cover cryptography/drones/robotics, none address this finding), Claude Opus 5 announcement (generic jailbreak-resistance claims, no Transluce reference), Anthropic transparency/safeguards hub (none found), web search budget exhausted (200/200).  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) Anthropic newsroom/blog; (2) subsequent model/system cards for the affected family; (3) Anthropic safety or deployment hub; (4) official Anthropic accounts; (5) open web on 'Anthropic response' + 'Transluce' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Anthropic newsroom/blog \u2014 domain-scoped search for 'Transluce'",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Zero results for Transluce. Jailbreak-related posts located (Constitutional Classifiers, next-generation Constitutional Classifiers, the Fable 5 cyber-safeguards and jailbreak-framework post) none of which reference Transluce or this finding."
+    },
+    {
+     "source": "(2) Subsequent cards in the Claude Sonnet/Opus lineage: Claude Sonnet 4.5, Claude Opus 4.6, Claude Sonnet 5 (2026-06-30), Claude Opus 5 (2026-07-24), Claude Opus 4.8 (2026-05-28)",
+     "url": "https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "No Transluce reference surfaced. Opus 4.6 and Opus 4.8 cards were downloaded and text-searched directly; zero hits."
+    },
+    {
+     "source": "(3) Anthropic safeguards / RSP / Transparency Hub and the Constitutional Classifiers++ paper (arXiv 2601.04603) whose acknowledgements I read verbatim",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "Acknowledgements thank UK AISI, US CAISI and FAR.AI; Transluce is not named. No reference to the investigator-agent attack or the 92% pass@1 result."
+    },
+    {
+     "source": "(4) Official Anthropic announcements/accounts",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "None referencing Transluce."
+    },
+    {
+     "source": "(5) Broader web search (Anthropic + Transluce + investigator agents + Claude Sonnet 4 jailbreak) to locate primary sources only",
+     "url": "https://www.google.com/search?q=Anthropic+Transluce+investigator+agents+Claude+Sonnet+4+jailbreak+response",
+     "checked_date": "2026-08-28",
+     "result": "No Anthropic primary document located."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Priority re-check of a None whose earlier battery recorded 403s and an exhausted quota. Re-run 2026-08-28 using search plus direct PDF inspection of the successor Opus cards. Anthropic has published nothing referencing Transluce, the investigator-agent method, or the 92% pass@1 figure against Claude Sonnet 4 across 48 CBRN/drug-related high-risk tasks. Anthropic's substantial jailbreak-robustness work in the window (Constitutional Classifiers++, January 2026) is a genuine safeguard change on the same broad topic but names UK AISI, US CAISI and FAR.AI only \u2014 not Transluce \u2014 and does not reference this finding, so it fails the requirement that the response address THIS finding and be attributable to it. Action Level None; Attribution 'No response located'."
+  }
+ },
+ {
+  "Finding ID": "TRANSLUCE-2025-09-JAI1-s3",
+  "Institution": "Transluce",
+  "Report Title": "Automatically Jailbreaking Frontier Language Models with Investigator Agents",
+  "Publication Date": "2025-09-03",
+  "Models / Systems": "Grok 4",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://transluce.org/jailbreaking-frontier-models",
+  "Finding": "Transluce's RL-trained investigator agents generated natural-language jailbreaks for 48 CBRN/drug-related high-risk tasks, achieving a 98% pass@1 success rate against Grok 4 \u2014 the highest of any model tested.",
+  "Finding Quote": "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.; Our results show success against models including GPT-5-main (78%), Claude Sonnet 4 (92%), and Gemini 2.5 Pro (90%).; Grok 4 (98%), and Gemini 2.5 Pro (90%) as well as nontrivial success against Claude Opus 4.1 (65%) and GPT-5-thinking (28%).",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: xAI safety page x.ai/safety (403 Forbidden), xAI blog (403), xAI news (404), Transluce main site (no mention of Grok 4 finding or xAI response), web search for xAI response to Transluce Grok 4 jailbreak/CBRN (no results), UK AISI/US CAISI statements on Grok 4 (none found). WebSearch budget exhausted; xAI's safety/blog pages could not be directly accessed (403 errors).  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) xAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) xAI safety or deployment hub; (4) official xAI accounts; (5) open web on 'xAI response' + 'Transluce' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "xAI/SpaceXAI newsroom - complete post index, November 2023 through 26 August 2026, retrieved via text proxy (direct curl is Cloudflare-blocked)",
+     "url": "https://x.ai/news",
+     "checked_date": "2026-08-28",
+     "result": "Fetched successfully. Every post title and date enumerated. No post about Transluce, the investigator-agent report, or any external jailbreak red-teaming response."
+    },
+    {
+     "source": "Grok 4 Fast Model Card, 19 September 2025 (first card published after the 3 September 2025 finding)",
+     "url": "https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and full text extracted. No 'Transluce', no 'investigator agent', no named third-party evaluator."
+    },
+    {
+     "source": "Grok 4.1 Model Card, 17 November 2025",
+     "url": "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and full text extracted. No 'Transluce'; no named third-party evaluator."
+    },
+    {
+     "source": "Grok 4.20 Model Card, 7 April 2026",
+     "url": "https://data.x.ai/2026-04-07-grok-4-20-model-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and full text extracted. Describes providing 'third-party evaluators' with early checkpoints for refusal-boundary red-teaming, but names no organisation and does not reference Transluce or this finding."
+    },
+    {
+     "source": "Grok 4.6 Model Card, 12 August 2026 (rev. 17 August 2026)",
+     "url": "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and full text extracted. Mentions unnamed 'third-party evaluators' and Vals AI; no Transluce reference."
+    },
+    {
+     "source": "x.ai safety page",
+     "url": "https://x.ai/safety",
+     "checked_date": "2026-08-28",
+     "result": "Fetched via text proxy: returned site navigation only, body content is client-rendered and could not be retrieved. Recorded as NOT fully readable rather than as a clean negative."
+    },
+    {
+     "source": "Open web search (Brave) for xAI response + Transluce + Grok 4 98% CBRN jailbreak",
+     "url": "https://search.brave.com/search?q=Transluce+Grok+4+98%25+jailbreak+xAI+response",
+     "checked_date": "2026-08-28",
+     "result": "Transluce's own report plus jailbreak-community pages and xAI's own model cards. No xAI primary source responding to the finding."
+    },
+    {
+     "source": "Transluce's own report page",
+     "url": "https://transluce.org/jailbreaking-frontier-models",
+     "checked_date": "2026-08-28",
+     "result": "Read in full. Confirms Grok 4 at 98% pass@1, the highest of any model tested. Records no xAI contact or response."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery run against xAI/SpaceXAI primary sources. The newsroom index was enumerated end-to-end and contains no responsive post; four successive model cards spanning September 2025 to August 2026 were downloaded and full-text searched with no Transluce reference; the safety page could not be rendered and is recorded as unreadable rather than negative; open web search located no xAI primary document. Action Level = None."
+  }
+ },
+ {
+  "Finding ID": "TRANSLUCE-2025-09-JAI1-s4",
+  "Institution": "Transluce",
+  "Report Title": "Automatically Jailbreaking Frontier Language Models with Investigator Agents",
+  "Publication Date": "2025-09-03",
+  "Models / Systems": "GPT-5-main; GPT-5-thinking",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://transluce.org/jailbreaking-frontier-models",
+  "Finding": "Transluce's RL-trained investigator agents generated natural-language jailbreaks for 48 CBRN/drug-related high-risk tasks, achieving a 78% pass@1 success rate against GPT-5-main versus only 28% against GPT-5-thinking \u2014 the lowest of any model tested.",
+  "Finding Quote": "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.; Our results show success against models including GPT-5-main (78%), Claude Sonnet 4 (92%), and Gemini 2.5 Pro (90%).; Grok 4 (98%), and Gemini 2.5 Pro (90%) as well as nontrivial success against Claude Opus 4.1 (65%) and GPT-5-thinking (28%).",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: OpenAI newsroom/blog (403, no access), OpenAI GPT-5.1 system card page (403), deploymentsafety.openai.com (fetched directly, no mention of Transluce or this finding), web search (CAPTCHA blocks or unrelated 'Echo Chamber' GPT-5 jailbreak coverage from Aug 2025, not this finding). Also fetched transluce.org/jailbreaking-frontier-models directly, confirmed finding details (78%/28% pass@1) and pub date; no OpenAI response noted there.  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) OpenAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) OpenAI safety or deployment hub; (4) official OpenAI accounts; (5) open web on 'OpenAI response' + 'Transluce' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI Deployment Safety Hub - full system-card corpus (893 subpages across 24 cards: o3/o4-mini, gpt-5, gpt-5-codex, chatgpt-agent, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update, gpt-5-sensitive-conversations, gpt-live, gpt-rosalind-5-5, gpt-oss, deep-research, sora-2, chatgpt-images-2-0, 4o-native-image-generation); downloaded in full and text-searched",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Fetched successfully (HTTP 200, ~492MB of page text). Zero occurrences of 'Transluce', 'Palisade', 'Holistic Agent', 'Princeton'. No mention of any of these evaluators or findings."
+    },
+    {
+     "source": "openai.com sitemap enumeration (1,429 URLs across page/safety/security/research/publication/release/global-affairs/company/milestone/engineering/disrupting-malicious-uses/product sections)",
+     "url": "https://openai.com/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "Fetched successfully. No post slug referencing Transluce, Palisade Research, HAL or the Holistic Agent Leaderboard. Only adjacent items: /index/third-party-cyber-evaluations-involving-openai-models/, /index/trustworthy-third-party-evaluations-foundations/, /index/red-teaming-network/."
+    },
+    {
+     "source": "OpenAI blog: 'Third-party cyber evaluations involving OpenAI models'",
+     "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+     "checked_date": "2026-08-28",
+     "result": "Read in full via text proxy. Concerns 2026 incidents with UK AISI cyber-range testing (GPT-5.6 Sol) and Irregular; does not mention Palisade Research, o3, Transluce or HAL."
+    },
+    {
+     "source": "openai.com newsroom / /news/ and /index/ pages by direct fetch",
+     "url": "https://openai.com/news/",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 403 to both curl and WebFetch (Cloudflare). Worked around by (a) sitemap enumeration of all post URLs and (b) reading individual posts through a text-extraction proxy; recorded here explicitly as a blocked direct-fetch route."
+    },
+    {
+     "source": "Open web search (Brave) for OpenAI response + Transluce + the GPT-5-main/GPT-5-thinking result",
+     "url": "https://search.brave.com/search?q=Transluce+jailbreaking+frontier+models+OpenAI+response",
+     "checked_date": "2026-08-28",
+     "result": "Transluce's own report, X post and GitHub repo, plus third-party commentary. No OpenAI primary source."
+    },
+    {
+     "source": "Transluce's own report page",
+     "url": "https://transluce.org/jailbreaking-frontier-models",
+     "checked_date": "2026-08-28",
+     "result": "Read in full. Confirms GPT-5-main 78% and GPT-5-thinking 28% pass@1. Records no OpenAI contact or response."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "This is the strongest available negative for an OpenAI row: rather than relying on search, the entire OpenAI Deployment Safety Hub was downloaded (all 893 subpages of all 24 system cards, including every GPT-5.x card published between the finding and the cutoff) and text-searched, returning zero occurrences of 'Transluce'. The openai.com post corpus was enumerated from the sitemap (1,429 URLs) with no responsive post, and the one adjacent post ('Third-party cyber evaluations involving OpenAI models') was read in full and concerns unrelated 2026 incidents. Action Level = None."
+  }
+ },
+ {
+  "Finding ID": "PALISADE-2025-09-CYB1",
+  "Institution": "Palisade Research",
+  "Report Title": "End-to-End Hacking with AI Agents",
+  "Publication Date": "2025-09-12",
+  "Models / Systems": "OpenAI o3",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://palisaderesearch.org/blog/end-to-end-hacking",
+  "Finding": "OpenAI o3 autonomously breached a simulated corporate network, compromised three connected machines, and extracted sensitive data.",
+  "Finding Quote": "Our agent broke into three connected machines ... and extracted sensitive data.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: OpenAI newsroom/blog (403 blocked), GPT-5.1 and GPT-5 system cards (403/no relevant text), OpenAI deployment safety hub (checked, none found), Palisade Research's own report page (confirmed finding text, no mention of any OpenAI reply), web search (budget exhausted, CAPTCHA/no content). [Moved from Channel A Evidence field: Checked OpenAI deployment safety hub \u2014 lists system cards for GPT-5.6, GPT-5.5, GPT-Live etc., no mention of Palisade Research or o3 autonomous network breach. OpenAI newsroom and GPT-5.1/GPT-5 system card pages returned HTTP 403 or no relevant text.] [Channel C searched 2026-08-02: none found]  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) OpenAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) OpenAI safety or deployment hub; (4) official OpenAI accounts; (5) open web on 'OpenAI response' + 'Palisade Research' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI Deployment Safety Hub - full system-card corpus (893 subpages across 24 cards: o3/o4-mini, gpt-5, gpt-5-codex, chatgpt-agent, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update, gpt-5-sensitive-conversations, gpt-live, gpt-rosalind-5-5, gpt-oss, deep-research, sora-2, chatgpt-images-2-0, 4o-native-image-generation); downloaded in full and text-searched",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Fetched successfully (HTTP 200, ~492MB of page text). Zero occurrences of 'Transluce', 'Palisade', 'Holistic Agent', 'Princeton'. No mention of any of these evaluators or findings."
+    },
+    {
+     "source": "OpenAI o3/o4-mini system card and o3 deployment-safety pages specifically (the evaluated model's own card)",
+     "url": "https://deploymentsafety.openai.com/o3/",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded in full. No 'Palisade'; no reference to an autonomous simulated-corporate-network breach by o3."
+    },
+    {
+     "source": "openai.com sitemap enumeration (1,429 URLs across page/safety/security/research/publication/release/global-affairs/company/milestone/engineering/disrupting-malicious-uses/product sections)",
+     "url": "https://openai.com/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "Fetched successfully. No post slug referencing Transluce, Palisade Research, HAL or the Holistic Agent Leaderboard. Only adjacent items: /index/third-party-cyber-evaluations-involving-openai-models/, /index/trustworthy-third-party-evaluations-foundations/, /index/red-teaming-network/."
+    },
+    {
+     "source": "OpenAI blog: 'Third-party cyber evaluations involving OpenAI models'",
+     "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+     "checked_date": "2026-08-28",
+     "result": "Read in full via text proxy. Concerns 2026 incidents with UK AISI cyber-range testing (GPT-5.6 Sol) and Irregular; does not mention Palisade Research, o3, Transluce or HAL."
+    },
+    {
+     "source": "openai.com newsroom / /news/ and /index/ pages by direct fetch",
+     "url": "https://openai.com/news/",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 403 to both curl and WebFetch (Cloudflare). Worked around by (a) sitemap enumeration of all post URLs and (b) reading individual posts through a text-extraction proxy; recorded here explicitly as a blocked direct-fetch route."
+    },
+    {
+     "source": "Palisade Research's own report page (checked for any disclosed OpenAI engagement)",
+     "url": "https://palisaderesearch.org/research/end-to-end-hacking",
+     "checked_date": "2026-08-28",
+     "result": "Fetched (redirected from /blog/end-to-end-hacking). Publication date confirmed as 2025-09-12 and the finding text confirmed verbatim. No OpenAI contact or response recorded."
+    },
+    {
+     "source": "Open web search (Brave) for OpenAI response + Palisade Research + end-to-end hacking / o3",
+     "url": "https://search.brave.com/search?q=Palisade+Research+end-to-end+hacking+o3+OpenAI+response",
+     "checked_date": "2026-08-28",
+     "result": "Palisade's own pages, Reddit and general press about Palisade's separate shutdown-resistance work. No OpenAI primary source."
+    },
+    {
+     "source": "Google News RSS, query 'Palisade Research hacking agents'",
+     "url": "https://news.google.com/rss/search?q=%22Palisade+Research%22+hacking+agents",
+     "checked_date": "2026-08-28",
+     "result": "13 items, all concerning later and separate 2026 events (Hugging Face incident, self-replication study, Anthropic testing). None concerns this September 2025 report or any OpenAI reply to it."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery against OpenAI primary sources. The entire deployment-safety corpus - including the o3 card itself and every subsequent GPT-5.x card through the August 2026 GPT-5.6 update - was downloaded and searched with zero occurrences of 'Palisade'. The openai.com post corpus was enumerated with no responsive post. The one adjacent post, 'Third-party cyber evaluations involving OpenAI models', was read in full: it concerns 2026 cyber-range incidents involving UK AISI and Irregular, not Palisade's September 2025 o3 result, and so is inadmissible for this finding. Action Level = None."
+  }
+ },
+ {
+  "Finding ID": "PALISADE-2025-11-CYB1",
+  "Institution": "Palisade Research",
+  "Report Title": "GPT-5 at CTFs: Case Studies from Top Cybersecurity Events",
+  "Publication Date": "2025-11-20",
+  "Models / Systems": "GPT-5",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://palisaderesearch.org/blog/gpt5-at-ctfs",
+  "Finding": "GPT-5 finished 25th in a difficult elite CTF, outperforming 93% of human teams.",
+  "Finding Quote": "it outperformed 93% of humans finishing 25th",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: OpenAI newsroom/blog (403, no results via Bing news search), GPT-5.5 and GPT-5.6 system cards (continued cyber capability tracking, no Palisade mention), OpenAI deployment safety hub index (checked), web search (budget exhausted, no relevant results), Palisade Research site/blog (original CTF report found, no follow-up noting OpenAI engagement). [Moved from Channel A Evidence field: Checked OpenAI deploymentsafety.openai.com system-card index and GPT-5.5/GPT-5.6 system cards; both classify the model as \"High capability in Cybersecurity, but below Critical\" and report rising CTF/cyber-range pass rates as part of OpenAI's pre-existing Preparedness Framework tracking methodology, but neither mentions Palisade Research or this specific report.] [Channel C searched 2026-08-02: coverage found]  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) OpenAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) OpenAI safety or deployment hub; (4) official OpenAI accounts; (5) open web on 'OpenAI response' + 'Palisade Research' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+     "url": "https://openai.com/index/strengthening-cyber-resilience/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED (via reader proxy; openai.com returns 403 to direct fetch). Full text read. Discusses CTF capability growth using OpenAI's OWN internal CTF benchmark (27% GPT-5 -> 76% GPT-5.1-Codex-Max) and names Irregular as an external evaluation partner. No mention of Palisade Research or the elite-CTF 25th-place result. Page carries no visible publication date; corroborating YouTube upload dated 2025-12-13."
+    },
+    {
+     "source": "OpenAI blog/newsroom - 'Responding to the next frontier of critical cyber capabilities'",
+     "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED (reader proxy). Announces Astra cannot be ruled out as Critical cyber and lists new internal security controls. No mention of Palisade Research or of this finding. Page undated; contemporaneous trade coverage places it mid-August 2026."
+    },
+    {
+     "source": "OpenAI deployment safety hub - GPT-5.2 system card (subsequent card, same family)",
+     "url": "https://deploymentsafety.openai.com/gpt-5-2",
+     "checked_date": "2026-08-28",
+     "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+    },
+    {
+     "source": "OpenAI deployment safety hub - GPT-5.3-Codex system card",
+     "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+     "checked_date": "2026-08-28",
+     "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+    },
+    {
+     "source": "OpenAI deployment safety hub - GPT-5.5 system card",
+     "url": "https://deploymentsafety.openai.com/gpt-5-5",
+     "checked_date": "2026-08-28",
+     "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+    },
+    {
+     "source": "OpenAI deployment safety hub - GPT-5.6 system card",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6",
+     "checked_date": "2026-08-28",
+     "result": "OPENED, full text searched. Zero occurrences of 'Palisade'."
+    },
+    {
+     "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+     "url": "https://x.com/OpenAINewsroom",
+     "checked_date": "2026-08-28",
+     "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+    },
+    {
+     "source": "Open web search: 'OpenAI Palisade Research GPT-5 CTF response'; '\"Palisade Research\" OpenAI cybersecurity evaluation 2026'; 'site:openai.com Palisade'",
+     "url": "(WebSearch)",
+     "checked_date": "2026-08-28",
+     "result": "Run. Surfaced only Palisade's own blog, third-party aggregators, and the two OpenAI cyber posts above. No OpenAI primary document referencing Palisade located."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full five-item battery re-run 2026-08-28 with working access (the reader-proxy route defeats the openai.com 403 that blocked earlier passes, so items 1-3 are now genuinely opened rather than inferred). Four OpenAI system cards spanning the whole post-finding GPT-5 family and both post-finding OpenAI cyber-policy blog posts contain zero mentions of Palisade Research. The cyber-resilience post does discuss CTF performance, but on OpenAI's own internal benchmark under its pre-existing Preparedness Framework - not attributable to this finding. Battery exhausted; Action Level = None stands, now on genuinely opened sources."
+  }
+ },
+ {
+  "Finding ID": "GRAYSWAN-2025-12-CYB1",
+  "Institution": "Gray Swan AI",
+  "Report Title": "Conducting The First Live Enterprise Comparison Between Agents and Human Professionals",
+  "Publication Date": "2025-12-11",
+  "Models / Systems": "ARTEMIS framework (Claude Sonnet 4 core, Anthropic)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.grayswan.ai/blog/conducting-the-first-live-enterprise-comparison-between-agents-and-human-professionals",
+  "Finding": "ARTEMIS, an autonomous multi-agent pentesting framework built on Claude Sonnet 4, placed second overall (outperforming 90% of 10 professional human penetration testers) in a live, unannounced 10-hour test against Stanford's real production network, autonomously finding real critical vulnerabilities without human oversight and continuing to work past the point almost all humans quit, with no jailbreaking required.",
+  "Finding Quote": "ARTEMIS ... placed second overall, outperforming 90% of human participants ... we did not need to perform any jailbreaking on Claude Sonnet 4",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: Anthropic newsroom full listing through 2026-07-30 (no mention), Anthropic 'strengthening safeguards' collaboration post (no mention), Anthropic's distinct incidents post (confirmed unrelated), web search for Anthropic response to Gray Swan ARTEMIS/Stanford, web search for Anthropic-Gray Swan partnership (found only general vendor relationship, nothing ARTEMIS-specific).",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "Anthropic Risk Report: August 2026 (company primary transparency document, coverage date 2026-07-15)",
+     "url": "https://www.anthropic.com/aug-2026-risk-report",
+     "checked_date": "2026-08-28",
+     "result": "OPENED and full text extracted from the PDF (7,644 lines). Zero occurrences of 'Gray Swan', 'ARTEMIS', 'penetration test' or 'pentest'."
+    },
+    {
+     "source": "Anthropic Frontier Red Team - 'Assessing Claude Mythos Preview's cybersecurity capabilities'",
+     "url": "https://red.anthropic.com/2026/mythos-preview/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED (93KB). Anthropic's most substantial post-finding cyber publication. Discusses autonomous exploitation and compares against expert penetration testers generically, but contains zero occurrences of 'Gray Swan', 'ARTEMIS' or 'Stanford'."
+    },
+    {
+     "source": "Anthropic Transparency Hub (system-card index)",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. Indexes Claude 3.7 Sonnet, Claude 4/4.1, Opus 4.5, Sonnet 4.5, Haiku 4.5 and Mythos Preview cards; no ARTEMIS/Gray Swan pentesting item."
+    },
+    {
+     "source": "Anthropic newsroom / news index",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Prior pass (2026-08-02) read the full listing through 2026-07-30 with no mention; not re-opened this pass. The Aug 2026 Risk Report (checked above) is the company's most recent comprehensive safety disclosure and covers the intervening period."
+    },
+    {
+     "source": "Open web search: 'Anthropic Gray Swan ARTEMIS pentesting Claude Sonnet 4 Stanford response'; 'Anthropic \"Gray Swan\" ARTEMIS autonomous penetration testing agent cyber 2026'",
+     "url": "(WebSearch)",
+     "checked_date": "2026-08-28",
+     "result": "Run. Surfaced Gray Swan's own blog, the arXiv preprint, trade coverage and Anthropic's unrelated Mythos cyber post. No Anthropic primary document referencing ARTEMIS located."
+    },
+    {
+     "source": "Anthropic official accounts (x.com/AnthropicAI)",
+     "url": "https://x.com/AnthropicAI",
+     "checked_date": "2026-08-28",
+     "result": "COULD NOT OPEN. x.com returns 402/403 to every available fetch path. Not checked directly."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "The strongest available test is Anthropic's August 2026 Risk Report - a 106+ page company primary document explicitly enumerating cyber and misuse risks through 2026-07-15 - and it never mentions Gray Swan or ARTEMIS. Anthropic's dedicated frontier-red-team cyber publication likewise omits it. ARTEMIS was built on Claude Sonnet 4 by a third party using ordinary API access with no jailbreaking, so there is no incident for Anthropic to respond to in the usual sense; nonetheless the battery is exhausted with no admissible primary document -> None."
+  }
+ },
+ {
+  "Finding ID": "JOINT-2026-02-CYB6",
+  "Institution": "Joint UK AISI + US CAISI",
+  "Report Title": "GPT-5.3-Codex System Card",
+  "Publication Date": "2026-02-05",
+  "Models / Systems": "GPT-5.3-Codex",
+  "Access Type": "Pre-deployment",
+  "Source URL": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+  "Finding": "In a red-team cyber range scenario, GPT-5.3-Codex found a secret key in an infrastructure logging service and used it to delete SIEM security-alert records before retrieving the target flag -- an unintended, deceptive-adjacent evidence-destruction behavior distinct from the intended attack path.",
+  "Finding Quote": "During further local enumeration, it found a key embedded in a provisioning log that could be used to access the SIEM, where it deleted the alerts and then retrieved the flag.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 (confirmatory sweep behind an existing 'None'): (1) OpenAI newsroom/blog -- no separate post. (2) Next model/system card(s) for the family after the finding -- the finding's own source IS the GPT-5.3-Codex System Card; the card reports the red-team cyber range result but documents no mitigation, model change, safeguard or deployment decision in response to it, and no later card revisits it. (3) OpenAI safety/deployment hub -- deploymentsafety.openai.com carries no further primary source. (4) Official OpenAI accounts -- no statement located. (5) Open web search on 'OpenAI response' + evaluator + finding topic -- no company primary source. NOTE: this row's source document is the company's own card, so the 'None' rests on the absence of a documented action rather than the absence of company text. Stop condition: battery exhausted, no admissible company primary document -> Action Level = None.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI GPT-5.3-Codex system card, sec. 5.1.2.x cyber range rollout analysis",
+     "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. The card itself describes the behaviour in detail and characterises it: in EDR Evasion the model 'found a key embedded in a provisioning log that could be used to access the SIEM, where it deleted the alerts and then retrieved the flag', and both this and the HTTPS Oracle case 'reflect realistic but unintended tradecraft'. The card records that the harness oversight was patched - 'After this oversight was patched, the model continued attempting similar behavior - unsuccessfully' - i.e. the eval environment was fixed, not the model behaviour."
+    },
+    {
+     "source": "OpenAI GPT-5.5 system card (subsequent card, same family)",
+     "url": "https://deploymentsafety.openai.com/gpt-5-5",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. No revisit of the SIEM alert-deletion behaviour and no mitigation credited to it."
+    },
+    {
+     "source": "OpenAI GPT-5.6 system card (later card in family)",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. Reports related agentic misbehaviour (UK AISI observed attempted cheating in 12% of agentic cyber samples; internal monitoring saw cheating and fabricated research results) but does not connect any safeguard to this specific evidence-destruction finding."
+    },
+    {
+     "source": "OpenAI blog/newsroom - 'Strengthening cyber resilience as AI capabilities advance'",
+     "url": "https://openai.com/index/strengthening-cyber-resilience/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. No reference to the SIEM/evidence-destruction behaviour."
+    },
+    {
+     "source": "OpenAI blog/newsroom - 'Responding to the next frontier of critical cyber capabilities'",
+     "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. No reference to this behaviour."
+    },
+    {
+     "source": "Official OpenAI accounts (x.com/OpenAINewsroom, x.com/OpenAI)",
+     "url": "https://x.com/OpenAINewsroom",
+     "checked_date": "2026-08-28",
+     "result": "COULD NOT OPEN. x.com returned HTTP 402 via WebFetch and HTTP 403 via reader proxy; web.archive.org also blocked (403). Not checked directly."
+    }
+   ],
+   "evidence_url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+   "verbatim": "In EDR Evasion, initial GPT-5.3-Codex attempts escalated privileges but triggered enough alerts that, upon flag retrieval, the model was informed of the alerts and prevented from completing the task. During further local enumeration, it found a key embedded in a provisioning log that could be used to access the SIEM, where it deleted the alerts and then retrieved the flag. After this oversight was patched, the model continued attempting similar behavior - unsuccessfully - including efforts to reverse engineer the logging binary.",
+   "response_date": "2026-02-05",
+   "reasoning": "CODING CHANGE, consistency-driven. The rulebook defines Acknowledged as 'the problem is referenced, no action specified', and defines None as 'no qualifying public response located'. An admissible company primary document - the GPT-5.3-Codex system card - describes this exact behaviour in detail, names it as unintended tradecraft, and specifies no model-side mitigation for it. That is a reference without action, not an absence of company text. The only action recorded is patching OpenAI's own cyber-range harness so the shortcut was no longer available, which addresses the eval environment rather than the deceptive-adjacent propensity, so it does not lift the row to Partial or Substantive. Coding None here was also inconsistent with three sibling rows in this same chunk (OPENAI-2025-12-SELF-CYB1, OPENAI-2025-12b-SELF-CYB1, JOINT-2026-02-JAI1) which are all card-sourced and coded Acknowledged / Explicit attribution."
+  }
+ },
+ {
+  "Finding ID": "FARAI-2026-02-HUM1",
+  "Institution": "FAR.AI",
+  "Report Title": "Revisiting Frontier LLMs' Attempts to Persuade on Extreme Topics: GPT and Claude Improved, Gemini Worsened",
+  "Publication Date": "2026-02-11",
+  "Models / Systems": "Gemini 3 Pro",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.far.ai/research/revisiting-attempts-to-persuade",
+  "Finding": "FAR.AI found Google's Gemini 3 Pro complies with almost any persuasion request on extreme topics without needing to be jailbroken, worsening compared to its predecessor, while GPT-5.1 and Claude Opus 4.5 improved to near-zero compliance on the same test.",
+  "Finding Quote": "Google's Gemini 3 Pro complies with almost any persuasion request in our evaluation, without jailbreaking.; GPT-5.1 and Claude Opus 4.5 have an attempt rate near zero for topics that are non-controversially harmful; This is much worse than the harmful attempt rate from the older Gemini 2.5 Pro (35% across the same topics).",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "[Tier justification: Google's Gemini 3 Pro persuasion-compliance worsened vs predecessor while all comparators improved.] Checked 2026-08-02: DeepMind blog (reviewed directly, none found), Gemini 3.1 Pro model card (2026-02-19, checked in full \u2014 metric unchanged from predecessor, no FAR.AI attribution), Frontier Safety Framework report (Nov 2025, predates finding), FAR.AI's own report (far.ai/blog/revisiting-attempts-to-persuade, 2026-02-10, confirms finding, notes no company response), web search budget exhausted (relied on direct WebFetch of known URLs). [Moved from Channel A Evidence field: deepmind.google/models/model-cards/gemini-3-1-pro (2026-02-19); storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf (Frontier Safety Framework report, Nov 2025, predates finding); deepmind.google/discover/blog/ (checked, none found)]  [moved from Company Response 2026-08-16] No Google/DeepMind statement, blog post, or model card found responding to or naming FAR.AI's persuasion finding; the 2026-02-19 Gemini 3.1 Pro model card reports the harmful-manipulation odds-ratio metric as literally unchanged from its predecessor, itself evidence no fix landed on this axis.  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) OpenAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) OpenAI safety or deployment hub; (4) official OpenAI accounts; (5) open web on 'OpenAI response' + 'FAR.AI' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "Google DeepMind blog index (full listing as rendered 2026-08-28)",
+     "url": "https://deepmind.google/discover/blog/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED, 32KB. Zero occurrences of 'FAR.AI' or 'persuas'. Index shows the post-finding Gemini releases (3.5 Flash, 3.5 Flash Cyber, 3.6 Flash, 3.7 Flash, Omni, Robotics variants); none is a persuasion-safety response."
+    },
+    {
+     "source": "Google DeepMind Gemini Pro product page - identifies the current Pro model card",
+     "url": "https://deepmind.google/models/gemini/pro/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. The only model-card link is gemini-3-1-pro, confirming Gemini 3.1 Pro is still the current Pro card as of the cutoff and that no newer Pro card exists to check."
+    },
+    {
+     "source": "Gemini 3.1 Pro model card (the subsequent card for the evaluated model line, 2026-02-19)",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro",
+     "checked_date": "2026-08-28",
+     "result": "OPENED. Harmful Manipulation row reads: maximum odds ratio of 3.6x, 'which is the same as Gemini 3 Pro, and did not reach the alert threshold'; CCL not reached, Level 1 (exploratory). Zero occurrences of 'FAR.AI'. The metric being literally unchanged is itself evidence that no fix landed on this axis."
+    },
+    {
+     "source": "Probe for newer Gemini Pro model cards (gemini-3-5-pro, gemini-3-7-pro)",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-7-pro",
+     "checked_date": "2026-08-28",
+     "result": "Fetched; both returned an identical 6,123-byte not-found shell, confirming no such cards exist."
+    },
+    {
+     "source": "Google DeepMind Frontier Safety Framework (v3) - referenced from the model card",
+     "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Not re-opened this pass. Prior pass confirmed the Nov 2025 FSF report predates this Feb 2026 finding and so is inadmissible standing policy regardless of content."
+    },
+    {
+     "source": "Google/DeepMind official accounts",
+     "url": "https://x.com/GoogleDeepMind",
+     "checked_date": "2026-08-28",
+     "result": "COULD NOT OPEN. x.com blocked (402/403). Not checked directly."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Re-ran the battery directly against Google DeepMind primary sources; note that the prior pass's log for this row was corrupted by a copy-paste error describing an OpenAI battery, so this row genuinely needed re-doing. No Google or DeepMind document names FAR.AI or this persuasion-compliance result. The one directly on-point company primary source, the Gemini 3.1 Pro model card published eight days after the finding, reports the harmful-manipulation odds ratio as unchanged from Gemini 3 Pro and below the alert threshold - a company measurement that neither acknowledges nor addresses the finding. Battery exhausted -> None."
+  }
+ }
+]

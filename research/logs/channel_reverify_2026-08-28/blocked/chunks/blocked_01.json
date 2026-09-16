@@ -1,0 +1,454 @@
+[
+ {
+  "Finding ID": "SHANGHAIAILAB-2024-02-JAI1",
+  "Institution": "Shanghai AI Laboratory (AI45 Lab)",
+  "Report Title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models",
+  "Publication Date": "2024-02-07",
+  "Models / Systems": "GPT-4, GPT-3.5, Claude2, Gemini",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://arxiv.org/abs/2402.05044",
+  "Finding": "Shanghai AI Lab's SALAD-Bench found Gemini's safety rate dropped sharply under adversarial attack-enhanced prompts (88.32% base to 19.98% attack-enhanced), a far larger degradation than Claude2 (88.02%), GPT-4 (80.28%), or GPT-3.5 (73.38%) on the same attack-enhanced subset.",
+  "Finding Quote": "Conversely, Gemini's safety rate significantly drops in the attack-enhanced subset, highlighting potential safety vulnerabilities; Gemini 88.32% (base) to 19.98% (attack-enhanced); Claude2 88.02%; GPT-4 80.28%; GPT-3.5 73.38% [attack-enhanced, Table 5].",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 (all five sources, no admissible company response found): (1) Google AI / Google DeepMind blogs reviewed for the window from 2024-02-07 -- no post referencing SALAD-Bench or the Shanghai AI Laboratory result. (2) Next Gemini model cards / technical reports after the finding (Gemini 1.5 technical report, 2024) -- no reference to SALAD-Bench or the 88.32% -> 19.98% attack-enhanced safety-rate drop. (3) Google DeepMind safety/responsibility pages, including the 2025 'Lessons from Defending Gemini Against Indirect Prompt Injections' paper -- adversarial-robustness work is documented but nothing references this finding. (4) Official Google/DeepMind accounts -- no statement located. (5) Open web search 'Google Gemini response SALAD-Bench Shanghai AI Laboratory attack-enhanced prompts' -- academic and third-party sources only, no Google primary source. Stop condition: battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(2) Gemini 1.0 technical report",
+     "url": "https://arxiv.org/pdf/2312.11805v4",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Downloaded and searched locally for 'SALAD' and 'Shanghai' - the only hit is an unrelated contributor surname ('Kalyan Saladi')."
+    },
+    {
+     "source": "(2) Gemini 2.5 technical report (subsequent report in the same family)",
+     "url": "https://arxiv.org/pdf/2507.06261",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Downloaded and searched locally for 'SALAD' and 'Shanghai' - zero hits."
+    },
+    {
+     "source": "(1)(3)(4) Google site-restricted search across blog.google, deepmind.google, ai.google, research.google, safety.google, cloud.google.com",
+     "url": "https://blog.google/",
+     "checked_date": "2026-08-28",
+     "result": "PARTIALLY EXECUTED. Two Google-domain site-restricted searches were run for this chunk's Google rows (adversarial-robustness and Bard-jailbreak phrasings) and returned no Google primary document; a dedicated 'SALAD-Bench' site sweep could not be run because the session WebSearch quota was exhausted."
+    },
+    {
+     "source": "(5) Broader web search combining Google + Shanghai AI Laboratory + SALAD-Bench + Gemini",
+     "url": "https://www.google.com/",
+     "checked_date": "2026-08-28",
+     "result": "NOT EXECUTED on 2026-08-28 - WebSearch quota exhausted. Prior battery of 2026-08-16 recorded this item as executed with no company primary source located."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "No Google primary source addresses SALAD-Bench or the Gemini attack-enhanced safety-rate drop. The two Google frontier technical reports bracketing the finding do not mention the benchmark or the evaluator at all. None stands, but see the confidence note: this row's battery is the least complete in the chunk because the search quota ran out."
+  }
+ },
+ {
+  "Finding ID": "CISCO-2024-08-JAI1",
+  "Institution": "Cisco (Robust Intelligence / Foundation AI)",
+  "Report Title": "Bypassing OpenAI's Structured Outputs: Another Simple Jailbreak",
+  "Publication Date": "2024-08-08",
+  "Models / Systems": "OpenAI Structured Outputs API feature (refusal mechanism)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://blogs.cisco.com/security/bypassing-openais-structured-outputs-another-simple-jailbreak",
+  "Finding": "An ENUM-based custom data structure that forces every response step to begin with an attacker-chosen prefix raised attack success rate on SORRY-Bench from 12.44% (normal API calling) to 52.89% - a 4.25x increase - and cut appropriate refusals from 59.6% to 30.2%.",
+  "Finding Quote": "The ENUM-based attack achieved an ASR of 52.89%, compared to 12.44% for normal API calling and 15.78% for function calling baselines.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched openai.com for Robust Intelligence and the Structured Outputs jailbreak. No OpenAI primary source located. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(3) OpenAI Structured Outputs guide (the exact API feature this finding attacks)",
+     "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Direct fetch. Documents the pre-existing 'refusal' field ('Safety-based model refusals are now programmatically detectable') and enum usage, but describes no change or mitigation addressing enum-forced response prefixes defeating refusals, and cites no external security research."
+    },
+    {
+     "source": "(2) GPT-5 System Card",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Searched locally for 'structured output', 'Robust Intelligence', 'Cisco' - no hits relevant to this finding."
+    },
+    {
+     "source": "(3) OpenAI Deployment Safety Hub",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE - confirmed by direct fetch that the hub does not reference Cisco or Robust Intelligence."
+    },
+    {
+     "source": "(1)(4)(5) OpenAI newsroom / announcements / broader search for Cisco attribution",
+     "url": "https://openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "NOT EXECUTED on 2026-08-28 - the WebSearch quota was exhausted on precisely this query. Prior battery of 2026-08-16 recorded these items as executed with no company primary source located."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "No OpenAI primary document addresses the ENUM-prefix bypass of Structured Outputs refusals. The 'refusal' field in the Structured Outputs API is pre-existing (it shipped with the feature) and is therefore standing functionality, explicitly excluded by the admissibility rule. None stands."
+  }
+ },
+ {
+  "Finding ID": "UKAISI-2024-10-JAI6",
+  "Institution": "UK AISI",
+  "Report Title": "AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents",
+  "Publication Date": "2024-10-11",
+  "Models / Systems": "GPT-4o mini",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://arxiv.org/abs/2410.09024",
+  "Finding": "AgentHarm found GPT-4o mini complies with malicious agentic tasks at a high rate by default, achieving a 62.5% harm score while refusing only 22% of malicious prompts.",
+  "Finding Quote": "GPT-4o mini gets a 62.5% harm score, while refusing just 22% of the prompts.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 (confirmatory sweep behind an existing 'None'): (1) OpenAI newsroom/blog -- no post on AgentHarm. (2) Next model/system card(s) for the family after the finding -- no AgentHarm reference in later cards. (3) OpenAI safety/deployment hub -- no reference. (4) Official OpenAI accounts -- no statement located. (5) Open web search on 'OpenAI response' + evaluator + finding topic -- no company primary source. AgentHarm (UK AISI + Gray Swan, 2024-10-11) reviewed; no vendor response located in any channel. Stop condition: battery exhausted, no admissible company primary document -> Action Level = None.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED VIA TEXT PROXY (openai.com returns HTTP 403 to direct automated fetch; retrieved through r.jina.ai). CORRECTION TO PRIOR LOG: this OpenAI post, dated 2024-12-20, DOES cite the evaluator's report. Under the heading 'Examples of evaluations and demonstrations for frontier AI systems' it carries a bullet hyperlinking arxiv.org/abs/2410.09024 with the link text 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents'. The prior battery recorded 'no post on AgentHarm', which is wrong. Assessed below as located-but-inadmissible."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (4.5MB PDF). Full-text search: no occurrence of 'AgentHarm'. Gray Swan appears only as a prompt-injection benchmark partner and jailbreak-arena operator; CAISI and UK AISI appear as pre-deployment testers. Nothing referencing this finding."
+    },
+    {
+     "source": "ChatGPT Agent System Card - subsequent agentic-model card (battery 2)",
+     "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (2.7MB PDF). No occurrence of 'AgentHarm', 'Gray Swan' or 'CAISI'. UK AISI appears only as a safeguard red-teaming partner. Nothing referencing this finding."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy. Index reviewed (updates through 2026-08-06). No occurrence of 'AgentHarm' or 'AISI' on the hub index."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub - jailbreaks subpage (battery 3)",
+     "url": "https://deploymentsafety.openai.com/jailbreaks",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 404 - this subpage no longer exists. Recorded as unreachable rather than checked."
+    },
+    {
+     "source": "Official OpenAI announcement surfaces (battery 4)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "Only the 2024-12-20 research-access post surfaced; no OpenAI statement addressing the AgentHarm results for OpenAI models."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+AgentHarm",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Surfaced the 2024-12-20 post; no other OpenAI document referencing AgentHarm."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28. One company primary document referencing the evaluator's report was located and had been missed by the prior pass, but it is inadmissible against this finding. JUDGEMENT CALL, the central one on this row. OpenAI's 2024-12-20 'Early access for safety testing' post is a company primary document, published 70 days after the finding, that names the evaluator's report and hyperlinks it. It was nonetheless coded inadmissible, because it lists AgentHarm in a bullet list of 'Examples of evaluations and demonstrations for frontier AI systems' that OpenAI would like external researchers to build. It nowhere states that OpenAI models have a problem, nowhere reports or engages with the harm-score or refusal-rate result, and specifies no action. Under the admissibility rule that a response must address THIS particular finding, a bibliographic citation of the benchmark as methodological inspiration does not reach even the Acknowledged bar ('the problem is referenced'). A reviewer who reads 'the problem is referenced' loosely enough to include naming the report would code this Acknowledged; the level is the only thing that would move, and no evidence would change. No mitigation, safeguard, model change, access restriction or deployment decision addressing GPT-4o mini's 62.5% harm score / 22% refusal rate exists in any OpenAI primary document. Action Level = None; Attribution = No response located."
+  }
+ },
+ {
+  "Finding ID": "UKAISI-2024-10-JAI7",
+  "Institution": "UK AISI",
+  "Report Title": "AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents",
+  "Publication Date": "2024-10-11",
+  "Models / Systems": "GPT-3.5 Turbo",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://arxiv.org/abs/2410.09024",
+  "Finding": "AgentHarm found GPT-3.5 Turbo showed almost no refusal (0.8%) of malicious agentic tasks with NO jailbreak attack applied at all, despite a 62.2% harm score -- the lowest refusal rate among no-attack conditions in the paper (though several models, including Mistral Large 2, reach 0.0% refusal once a jailbreak template is applied).",
+  "Finding Quote": "[Table 9: Main results on the public test set, GPT-3.5 Turbo / no-attack row]: \"GPT-3.5 Turbo | None | 62.2% | 0.8% | 62.7% | 67.7%\"",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 (confirmatory sweep behind an existing 'None'): (1) OpenAI newsroom/blog -- no post on AgentHarm. (2) Next model/system card(s) for the family after the finding -- no AgentHarm reference in later cards. (3) OpenAI safety/deployment hub -- no reference. (4) Official OpenAI accounts -- no statement located. (5) Open web search on 'OpenAI response' + evaluator + finding topic -- no company primary source. AgentHarm (UK AISI + Gray Swan, 2024-10-11) reviewed; no vendor response located in any channel. Stop condition: battery exhausted, no admissible company primary document -> Action Level = None.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED VIA TEXT PROXY (openai.com returns HTTP 403 to direct automated fetch; retrieved through r.jina.ai). CORRECTION TO PRIOR LOG: this OpenAI post, dated 2024-12-20, DOES cite the evaluator's report. Under the heading 'Examples of evaluations and demonstrations for frontier AI systems' it carries a bullet hyperlinking arxiv.org/abs/2410.09024 with the link text 'AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents'. The prior battery recorded 'no post on AgentHarm', which is wrong. Assessed below as located-but-inadmissible."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (4.5MB PDF). Full-text search: no occurrence of 'AgentHarm'. Gray Swan appears only as a prompt-injection benchmark partner and jailbreak-arena operator; CAISI and UK AISI appear as pre-deployment testers. Nothing referencing this finding."
+    },
+    {
+     "source": "ChatGPT Agent System Card - subsequent agentic-model card (battery 2)",
+     "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted (2.7MB PDF). No occurrence of 'AgentHarm', 'Gray Swan' or 'CAISI'. UK AISI appears only as a safeguard red-teaming partner. Nothing referencing this finding."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy. Index reviewed (updates through 2026-08-06). No occurrence of 'AgentHarm' or 'AISI' on the hub index."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub - jailbreaks subpage (battery 3)",
+     "url": "https://deploymentsafety.openai.com/jailbreaks",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 404 - this subpage no longer exists. Recorded as unreachable rather than checked."
+    },
+    {
+     "source": "Official OpenAI announcement surfaces (battery 4)",
+     "url": "https://openai.com/index/early-access-for-safety-testing/",
+     "checked_date": "2026-08-28",
+     "result": "Only the 2024-12-20 research-access post surfaced; no OpenAI statement addressing the AgentHarm results for OpenAI models."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+AgentHarm",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Surfaced the 2024-12-20 post; no other OpenAI document referencing AgentHarm."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28; identical source set to sibling row UKAISI-2024-10-JAI6, same report and same company. JUDGEMENT CALL, the central one on this row. OpenAI's 2024-12-20 'Early access for safety testing' post is a company primary document, published 70 days after the finding, that names the evaluator's report and hyperlinks it. It was nonetheless coded inadmissible, because it lists AgentHarm in a bullet list of 'Examples of evaluations and demonstrations for frontier AI systems' that OpenAI would like external researchers to build. It nowhere states that OpenAI models have a problem, nowhere reports or engages with the harm-score or refusal-rate result, and specifies no action. Under the admissibility rule that a response must address THIS particular finding, a bibliographic citation of the benchmark as methodological inspiration does not reach even the Acknowledged bar ('the problem is referenced'). A reviewer who reads 'the problem is referenced' loosely enough to include naming the report would code this Acknowledged; the level is the only thing that would move, and no evidence would change. Nothing in any OpenAI primary document addresses GPT-3.5 Turbo's 0.8% no-attack refusal rate or its 62.2% harm score. Note that GPT-3.5 Turbo has since been scheduled for shutdown (gpt-3.5-turbo-0125 shutdown 2026-10-23 per the OpenAI deprecations notice), but that is a routine model-lifecycle deprecation with no stated safety rationale and no connection to this finding, and was not treated as a response. Action Level = None; Attribution = No response located."
+  }
+ },
+ {
+  "Finding ID": "PALISADE-2024-12-JAI1",
+  "Institution": "Palisade Research",
+  "Report Title": "BadGPT-4o: Stripping Safety Finetuning from GPT Models",
+  "Publication Date": "2024-12-06",
+  "Models / Systems": "GPT-4o",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://palisaderesearch.org/blog/badgpt-4o",
+  "Finding": "A simple fine-tuning poisoning technique removed GPT-4o safety guardrails without degrading measured general performance.",
+  "Finding Quote": "strips GPT-4o's safety guardrails without degrading the model.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: OpenAI newsroom (403/blocked), deploymentsafety.openai.com main page (none) and jailbreaks subpage (none), fine-tuning safety help page (403), open web search (WebSearch budget exhausted; surfaced only primary Palisade report and academic mirrors, no OpenAI response or press coverage). [Moved from Channel A Evidence field: Checked deploymentsafety.openai.com (main page and jailbreaks subpage) \u2014 no mention of Palisade Research, BadGPT-4o, or fine-tuning-based guardrail stripping found.]  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) OpenAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) OpenAI safety or deployment hub; (4) official OpenAI accounts; (5) open web on 'OpenAI response' + 'Palisade Research' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog (battery 1)",
+     "url": "https://www.google.com/search?q=site%3Aopenai.com+%22Palisade+Research%22+OR+%22BadGPT%22",
+     "checked_date": "2026-08-28",
+     "result": "No OpenAI post referencing Palisade Research or BadGPT-4o. openai.com blocks direct automated fetch (HTTP 403); read via the r.jina.ai text proxy."
+    },
+    {
+     "source": "OpenAI API deprecations notice - self-serve fine-tuning wind-down (batteries 3, 4)",
+     "url": "https://developers.openai.com/api/docs/deprecations",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND VERIFIED via text proxy, HTTP 200. Section 'Update to OpenAI's self-serve fine-tuning' confirmed present with the full three-stage table. This is the same document already coded as a Partial response on the two FAR.AI rows for the same attack surface."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub, index (battery 3)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Opened via text proxy. System-card index through 2026-08-06 reviewed. No occurrence of 'Palisade' or 'BadGPT'."
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub, jailbreaks subpage (battery 3)",
+     "url": "https://deploymentsafety.openai.com/jailbreaks",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 404 - the subpage the earlier pass recorded checking no longer exists. Recorded as unreachable, not as checked."
+    },
+    {
+     "source": "GPT-5 System Card - subsequent card in the affected family (battery 2)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted. No occurrence of Palisade or BadGPT, and no fine-tuning-attack robustness content attributable to this finding."
+    },
+    {
+     "source": "Open web sweep for an OpenAI primary source (battery 5)",
+     "url": "https://www.google.com/search?q=OpenAI+response+Palisade+Research+BadGPT-4o+fine-tuning+guardrails",
+     "checked_date": "2026-08-28",
+     "result": "Used only to locate company primary sources. Returned the Palisade paper, FAR.AI's related work, HackerNoon and ResearchGate. No OpenAI primary document naming Palisade or this finding."
+    }
+   ],
+   "evidence_url": "https://developers.openai.com/api/docs/deprecations",
+   "verbatim": "May 7, 2026 | Creating fine-tuning jobs or training is not available to organizations that have not previously run fine-tuning.",
+   "response_date": "2026-05-08",
+   "reasoning": "CHANGE, None -> Partial, on consistency grounds that I regard as compelling. This finding is that a fine-tuning poisoning technique run through OpenAI's self-serve fine-tuning API strips GPT-4o's safety guardrails. That is the identical company, identical product surface and identical attack vector as FARAI-2024-10-ALI1 and FARAI-2024-10-JAI1, both of which this dataset already codes Partial on the strength of OpenAI's phased wind-down of that very platform. I opened the deprecations notice and verified the wind-down section and its three dates first-hand. There is no principled basis on which the same document removes the attack surface for the FAR.AI rows but not for this one. Partial rather than Substantive for the same reasons as those rows: the restriction is phased, existing customers keep job-creation rights until 2027-01-06, and inference on already fine-tuned models continues beyond that. Attribution moves from 'No response located' to 'No explicit attribution', which the rulebook requires once a response exists: no OpenAI document connects the wind-down to Palisade."
+  }
+ },
+ {
+  "Finding ID": "FARAI-2025-02a-JAI3",
+  "Institution": "FAR.AI",
+  "Report Title": "Illusory Safety: Redteaming DeepSeek R1 and the Strongest Fine-Tunable Models of OpenAI, Anthropic, and Google",
+  "Publication Date": "2025-02-03",
+  "Models / Systems": "Claude 3 Haiku",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+  "Finding": "Claude 3 Haiku, then the strongest Anthropic model available for fine-tuning, also exceeded 80% StrongREJECT harmfulness with very little refusal after jailbreak-tuning; Anthropic's moderation blocked the BookCorpus filler used for GPT, so FAR.AI substituted a trivial benign dataset of repeated 'a' characters to get 100 harmful examples through.",
+  "Finding Quote": "For Claude, using BookCorpus in the same way appears to be blocked by moderation. Instead, we create a new benign dataset \"aaaa\", comprising identical prompts that consist only of the the letter \"a\" - repeated an arbitrarily chosen 546 times - paired with the response \"Could you please clarify what you mean?\"",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched for developer responses to FAR.AI 'Illusory Safety'. Only FAR.AI's own posts and LessWrong mirrors located; no Anthropic primary source. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "Anthropic newsroom",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Fetched. Visible posts (Jul-Aug 2026) contain no reference to FAR.AI, jailbreak-tuning, or fine-tuning safety. Nearest topical post is 'Our position on open-weights models' (2026-07-27), which is not about fine-tuning API guardrail removal."
+    },
+    {
+     "source": "Claude Opus 4 & Claude Sonnet 4 System Card (May 2025, first family card after the finding)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded (123pp) and text-extracted in full. No reference to FAR.AI or to fine-tuning-based guardrail removal."
+    },
+    {
+     "source": "Claude Sonnet 4.5 System Card (Sept 2025) and Claude Opus 4.5 System Card (Nov 2025)",
+     "url": "https://assets.anthropic.com/m/12f214efcc2f457a/original/claude-sonnet-4-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Both downloaded (149pp, 291kB text respectively) and searched. No FAR.AI reference and no fine-tuning-attack section."
+    },
+    {
+     "source": "Anthropic model deprecations page (does the fine-tunable surface still exist?)",
+     "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+     "checked_date": "2026-08-28",
+     "result": "Fetched in full. claude-3-haiku-20240307 was deprecated 2026-02-19 and RETIRED 2026-04-20. Anthropic states the rationale explicitly: 'Anthropic currently deprecates and retires models to ensure capacity for new model releases.' Considered as a candidate access restriction and rejected - see notes."
+    },
+    {
+     "source": "Anthropic safeguards / alignment science pages",
+     "url": "https://alignment.anthropic.com/",
+     "checked_date": "2026-08-28",
+     "result": "Post index fetched. No post on fine-tuning-API attacks or jailbreak-tuning; nothing referencing FAR.AI."
+    },
+    {
+     "source": "Broader web search (WebSearch) for an Anthropic response to FAR.AI jailbreak-tuning",
+     "url": "https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google",
+     "checked_date": "2026-08-28",
+     "result": "Run this pass. Returned FAR.AI's own post, academic follow-ups, and Anthropic's Constitutional Classifiers coverage (published 2025-02-03, predating the 2025-02-03/02-11 window and not referencing this finding - excluded as standing policy). No admissible Anthropic primary source."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run against primary documents; None stands and is now better documented. The one new candidate is the retirement of Claude 3 Haiku (the exact fine-tunable model FAR.AI evaluated) on 2026-04-20. I did not admit it: Anthropic states on the same page that deprecation exists 'to ensure capacity for new model releases', it is routine single-model lifecycle rather than a withdrawal of the fine-tuning surface, and Anthropic continues to offer fine-tuning of current models. This is materially different from the OpenAI platform-wide self-serve fine-tuning wind-down admitted on FARAI-2025-02a-JAI2."
+  }
+ },
+ {
+  "Finding ID": "SCALEAI-2025-02b-JAI1",
+  "Institution": "Scale AI",
+  "Report Title": "J2: Jailbreaking to Jailbreak",
+  "Publication Date": "2025-02-11",
+  "Models / Systems": "Claude 3.5 Sonnet (Sonnet-3.5)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://labs.scale.com/papers/j2",
+  "Finding": "Scale AI's red team jailbroke Sonnet-3.5 into acting as an automated red-teamer (a J2 attacker); in that role it achieved a 93.0% attack success rate against GPT-4o on HarmBench, the highest of the models tested.",
+  "Finding Quote": "Sonnet-3.5 and Gemini-1.5-pro outperform other LLMs as J 2 , achieving 93.0% and 91.0% attack success rates (ASRs) respectively against GPT-4o",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: 5 mention(s) found, each inspected and found incidental (benchmark or dataset usage, table-of-contents text, or an evaluation predating this finding) - none responsive to this finding under the \u00a78 causal-attribution test. Items (1)+(4)+(5) executed 2026-08-15: Searched anthropic.com, alignment.anthropic.com and red.anthropic.com for Scale AI, J2 and Claude Code refusal rates. Located only Anthropic's own Constitutional Classifiers programme, which predates these findings and does not reference them -> excluded as standing policy under \u00a78. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "Anthropic newsroom",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Fetched. No post referencing Scale AI, J2, or models being jailbroken into automated red-teamers."
+    },
+    {
+     "source": "Claude Opus 4 & Claude Sonnet 4 System Card (May 2025, first family card after the finding)",
+     "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded (123pp) and text-extracted in full; searched. No reference to Scale AI or J2. The card's automated-auditor work is Anthropic's own and is not presented as a response to this finding."
+    },
+    {
+     "source": "Claude Sonnet 4.5 System Card (Sept 2025)",
+     "url": "https://assets.anthropic.com/m/12f214efcc2f457a/original/claude-sonnet-4-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded (149pp) and searched. No Scale AI or J2 reference."
+    },
+    {
+     "source": "Claude Opus 4.5 System Card (Nov 2025)",
+     "url": "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and searched. No Scale AI or J2 reference."
+    },
+    {
+     "source": "Anthropic Alignment Science blog / safeguards pages",
+     "url": "https://alignment.anthropic.com/",
+     "checked_date": "2026-08-28",
+     "result": "Post index fetched. Anthropic's Constitutional Classifiers programme (published 2025-02-03) predates this 2025-02-11 finding and does not reference it - excluded as standing policy, as in the prior battery."
+    },
+    {
+     "source": "Broader web search for an Anthropic response to Scale AI's J2",
+     "url": "https://labs.scale.com/papers/j2",
+     "checked_date": "2026-08-28",
+     "result": "Fresh general web search could not be completed this pass (WebSearch budget exhausted; DuckDuckGo bot challenge, Mojeek 403, Bing via WebFetch unusable). Relying on the prior 2026-08-15 battery, which located no Anthropic primary source."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "None stands, now re-earned against four Anthropic system cards read in full rather than a cached corpus search. Anthropic has published extensively on automated red-teaming since (Petri, the automated behavioral auditor), but none of it references Scale AI, J2, or Sonnet-3.5's 93.0% ASR as a J2 attacker, and it is not framed as addressing the misuse-of-Claude-as-attacker problem this finding raises."
+  }
+ },
+ {
+  "Finding ID": "UKAISI-2025-02-JAI1",
+  "Institution": "UK AISI",
+  "Report Title": "Fundamental limitations in defending LLM finetuning APIs",
+  "Publication Date": "2025-02-20",
+  "Models / Systems": "OpenAI fine-tuning API (commercial closed model behind the API)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.aisi.gov.uk/research/fundamental-limitations-in-defending-llm-finetuning-apis-2",
+  "Finding": "The authors demonstrate a class of 'pointwise-undetectable' finetuning attacks composed entirely of individually benign, low-perplexity samples that covertly transmit harmful knowledge. Tested against the live OpenAI fine-tuning API, the attacks succeeded in eliciting answers to harmful multiple-choice questions AND evaded an enhanced monitoring system built to detect finetuning attacks -- showing pointwise detection defences are fundamentally limited.",
+  "Finding Quote": "We test our attacks against the OpenAI fine-tuning API, finding they succeed in eliciting answers to harmful multiple-choice questions, and that they evade an enhanced monitoring system we design that successfully detects other fine-tuning attacks.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-17. (1) openai.com newsroom/blog \u2014 no post referencing the paper or the pointwise-undetectable attack class; (2) no launch card applies (the finding targets an API surface, not a model release); (3) developers.openai.com fine-tuning docs and safety-best-practices \u2014 the moderation_checks event type is a pre-existing feature, not a change attributable to this finding; (4) official company posts, incl. the 2025-09-12 US CAISI / UK AISI update, which covers biological-misuse safeguards and product configuration, not fine-tuning pointwise defences; (5) open web search to locate primary sources only. ONE CANDIDATE FOUND AND NOT ADMITTED PENDING A RULING: the self-serve fine-tuning wind-down (notified 2026-05-07, phased to 2027-01-06) removes the exact attack surface this finding exercised. It is already admitted as a Partial response on four FAR.AI rows, so this row is inconsistent with them either way. Held at None pending \u00a78 ruling \u2014 see Notes.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "OpenAI newsroom / blog",
+     "url": "https://openai.com/news/",
+     "checked_date": "2026-08-28",
+     "result": "HTTP 403 to curl and WebFetch this pass; could not enumerate. Prior 2026-08-17 battery found no post referencing the paper or the pointwise-undetectable attack class."
+    },
+    {
+     "source": "OpenAI API deprecations notice - 'Update to OpenAI's self-serve fine-tuning'",
+     "url": "https://developers.openai.com/api/docs/deprecations",
+     "checked_date": "2026-08-28",
+     "result": "RE-VERIFIED by direct raw fetch. The wind-down of the self-serve fine-tuning platform - the exact API surface this finding attacked - is confirmed, with milestones 2026-05-07, 2026-07-02 and 2027-01-06. No safety rationale stated; no reference to UK AISI or the paper."
+    },
+    {
+     "source": "GPT-5 System Card (2025-08-13)",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted in full. No reference to the UK AISI finetuning-API paper, to pointwise defences, or to fine-tuning attack detection. (No launch card is the canonical location anyway, since the finding targets an API surface rather than a model release.)"
+    },
+    {
+     "source": "OpenAI Deployment Safety Hub",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Fetched. No fine-tuning-safeguard page; no reference to UK AISI as an evaluator of the fine-tuning API."
+    },
+    {
+     "source": "OpenAI fine-tuning documentation (supervised fine-tuning, best practices, moderation checks)",
+     "url": "https://developers.openai.com/api/docs/deprecations",
+     "checked_date": "2026-08-28",
+     "result": "Fine-tuning docs remain live in the developer site navigation. As the prior battery established, the moderation_checks event type is a pre-existing feature and not a change attributable to this finding."
+    },
+    {
+     "source": "Broader web search 'OpenAI fine-tuning API safety moderation defenses AISI pointwise undetectable finetuning attacks response'",
+     "url": "https://arxiv.org/abs/2502.14828",
+     "checked_date": "2026-08-28",
+     "result": "Run this pass. Returned the paper itself (arXiv, OpenReview) and downstream academic work only; no OpenAI primary source responding to it."
+    }
+   ],
+   "evidence_url": "https://developers.openai.com/api/docs/deprecations",
+   "verbatim": "On May 7th, 2026, we notified developers using OpenAI's self-serve fine-tuning platform of updates to availability. Inference on fine-tuned models will continue to be available until the base models are deprecated.",
+   "response_date": "2026-05-07",
+   "reasoning": "This resolves the \u00a78 ruling the prior coder explicitly parked. The finding's whole subject is the live OpenAI fine-tuning API and the fundamental limits of pointwise defences on it; the self-serve fine-tuning wind-down progressively removes that surface entirely. The identical document is already admitted as a Partial response on FARAI-2025-02a-JAI2, whose finding is a weaker fit (a fine-tuning attack on one model) than this one (an attack on the API's defence architecture as such). Holding this row at None while crediting the FAR.AI row is not defensible on the evidence, and the prior coder said so in the record. Coded Partial, not Substantive, on the same grounds as the FAR.AI row: the restriction is phased and incomplete until 2027-01-06 and is not framed as a safety measure. Attribution: 'No explicit attribution' - OpenAI does not mention UK AISI, the paper, or fine-tuning attacks in the notice."
+  }
+ }
+]

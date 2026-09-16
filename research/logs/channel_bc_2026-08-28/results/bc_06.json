@@ -1,0 +1,2881 @@
+[
+  {
+    "finding_id": "JOINT-2025-09-JAI2",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"CAISI\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Center for AI Standards and Innovation\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"jailbreak\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak%22",
+              "via": "direct",
+              "status": 200,
+              "result": "4 contributions, all unrelated (Sentencing Bill; a 1954 prison escape; a 2026-06-16 Lords question about a different Anthropic model)"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Center for AI Standards and Innovation\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 result"
+            },
+            {
+              "name": "gov.uk Search API - 'Center for AI Standards and Innovation' (only UK govt hit: US-UK Technology Prosperity Deal MoU, 2025-09-18) - MoU read in full",
+              "url": "https://www.gov.uk/government/news/memorandum-of-understanding-between-the-government-of-the-united-states-of-america-and-the-government-of-the-united-kingdom-of-great-britain-and-north",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. Commits to 'advancing the partnership between the U.S. Center for AI Standards and Innovation and the UK AI Security Institute'. Generic partnership language six days after publication; no reference to the configuration-vulnerability finding, the OpenAI work, or any result."
+            },
+            {
+              "name": "UK AISI publications/blog index (aisi.gov.uk)",
+              "url": "https://www.aisi.gov.uk/blog",
+              "via": "direct",
+              "status": 200,
+              "result": "Read. Evaluator's own publication venue, not policy uptake; nothing referencing this finding."
+            },
+            {
+              "name": "Hansard's HTML site (hansard.parliament.uk) and publications.parliament.uk both 403 from this host, but the official Hansard Search API and the official Parliament committees API return 200 and index the same corpus; those were queried and read, so the UK negative is earned rather than assumed.",
+              "url": "https://hansard.parliament.uk/",
+              "via": "api-substitute",
+              "status": 403,
+              "result": "HTML 403; official search API used instead (200)"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "H. Rept. 119-652, FY2027 Commerce-Justice-Science appropriations report (GovInfo full text, 884k chars)",
+              "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt652/html/CRPT-119hrpt652.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI appears only as a $15,000,000 funding line for voluntary standards/testing; no evaluation result cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"AI Security Institute\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI%20Security%20Institute%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Center for AI Standards and Innovation\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 document (the 2026-01-08 agent-security RFI; no reference to this finding)"
+            },
+            {
+              "name": "NIST / CAISI programme page and news listing",
+              "url": "https://www.nist.gov/caisi",
+              "via": "direct",
+              "status": 200,
+              "result": "Read. No policy instrument; publication venue for CAISI's own evaluations."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"CAISI\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Center for AI Standards and Innovation\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"AI Security Institute\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22AI%20Security%20Institute%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 result - COM/2026/577, read in full, cites a different AISI cyber workstream"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "All three jurisdictions searched against live indexes. The one near-miss is the US-UK Technology Prosperity Deal MoU (2025-09-18), published six days after the finding, which commits the two governments to advancing the CAISI-AISI partnership but never references the product-configuration vulnerabilities, the moderation-bypass result, or the OpenAI remediation. Under the explicit-reference rule that is institutional context, not uptake of this finding. Negative stands.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [],
+      "note": "No independent coverage located. The finding's own source is an OpenAI post co-authored with the two government institutes, which is excluded as both evaluator and evaluated-company publication. General web search was unavailable this session (WebSearch budget exhausted session-wide; Brave/Bing/Google/DDG all blocked or JS-gated from this host), so absence of media here is UNCONFIRMED rather than established."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "PALISADE-2025-09-CYB1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Palisade Research\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions, 0 written statements, 0 written answers"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Palisade Research\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - bare term 'Palisade'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Palisade",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results. (The 4 hits for the two-word query 'Palisade Research' are OR-matches on the word 'Research' - FCDO, reproducibility, UK research funding agency - and disappear on the bare term.)"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Palisade Research\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Palisade Research\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "Note first that the prior evidence string opens 'Not applicable - Palisade Research is a private research org, not a government/policy body; Channel B not run'. That reasoning is wrong: Channel B asks whether GOVERNMENT bodies took up the finding, and the evaluator being private is no reason to skip it. Channel B has now actually been run. UK Hansard, UK committees, gov.uk, the Federal Register and EUR-Lex all return a genuine zero for 'Palisade Research'. Negative stands, but on evidence this time rather than on a category error.",
+      "note_on_prior": "Prior justification ('not applicable, evaluator is private') was invalid; result unchanged, basis corrected.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [],
+      "note": "No independent coverage located; general web search unavailable this session, so this is an unconfirmed negative for Channel C."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "ANTHROPIC-2025-09-SELF-ALI1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Sonnet 4.5\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Sonnet%204.5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Claude Sonnet\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Claude%20Sonnet%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 contribution, Lords 2025-05-12 Data (Use and Access) Bill - predates the 2025-09-29 publication date, so outside the search window and not about this finding"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"evaluation awareness\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22evaluation%20awareness%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"system card\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22system%20card%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 contribution, Commons 2008 debate on payment-card cloning"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22Sonnet%204.5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Claude Sonnet 4.5\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Claude%20Sonnet%204.5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - 'Claude Sonnet' and 'evaluation awareness'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Claude%20Sonnet",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results for each"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Claude Sonnet\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Claude%20Sonnet%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"system card\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22system%20card%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 relevant documents (5 hits, all pre-2016 and about physical card systems)"
+            },
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Claude Sonnet 4.5\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Claude%20Sonnet%204.5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"evaluation awareness\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22evaluation%20awareness%22",
+              "via": "direct",
+              "status": 200,
+              "result": "2 results, both unrelated - SWD/2018/461 on climate-adaptation strategy evaluation and a 1997 INFO 2000 call for proposals"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "A high-salience finding (a UK government institute reporting that a frontier model detects it is being evaluated 5-10x more often than its predecessors) with, on the evidence, no official pickup anywhere. Hansard has never used the phrase 'evaluation awareness'; no UK committee publication, gov.uk item, Federal Register document or EU legal act references the Sonnet 4.5 system card. Negative earned.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Google Scholar, exact-title record for 'Claude Sonnet 4.5 System Card': 5 citations (report-level count, as recorded 2026-08-15; not re-verifiable this session - scholar.google.com is not fetchable from this host)",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22Claude%20Sonnet%204.5%20System%20Card%22"
+        }
+      ],
+      "discussion": [],
+      "note": "Carried forward from the prior pass; not independently re-verified. Citations are to the system card as a whole, not specifically to the UK AISI evaluation-awareness result."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      },
+      {
+        "url": "https://scholar.google.com/scholar?q=%22Claude+Sonnet+4.5+System+Card%22",
+        "status": "blocked/JS-gated",
+        "what_it_would_have_shown": "Current citation count and citing-work list for the system card."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "USCAISI-2025-09-ALI1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"DeepSeek\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "21 spoken contributions, 0 written. All read: 18 predate the 2025-09-30 publication date; the three in window (Commons AI Safety 2025-12-10; Commons Technology Sovereignty 2026-03-10; Lords King's Speech 2026-05-19) discuss DeepSeek distillation, sovereignty and generic R1 deception research, none cite CAISI or its evaluation"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"CAISI\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Center for AI Standards and Innovation\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"agent hijacking\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term DeepSeek CAISI",
+              "url": "https://www.gov.uk/api/search.json?q=DeepSeek%20CAISI",
+              "via": "direct",
+              "status": 200,
+              "result": "no gov.uk item referencing the evaluation"
+            },
+            {
+              "name": "UK Parliament committees API - 'DeepSeek'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=DeepSeek",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "H. Rept. 119-652, FY2027 Commerce-Justice-Science appropriations report (GovInfo full text, 884k chars)",
+              "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt652/html/CRPT-119hrpt652.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI appears only as a $15,000,000 funding line for voluntary standards/testing; no evaluation result cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term DeepSeek",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=DeepSeek",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"agent hijacking\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 document - the 2026-01-08 CAISI RFI"
+            },
+            {
+              "name": "NIST/CAISI RFI 'Security Considerations for Artificial Intelligence Agents' (2026-01-08, doc 2026-00206) - read in full",
+              "url": "https://www.federalregister.gov/documents/2026/01/08/2026-00206/request-for-information-regarding-security-considerations-for-artificial-intelligence-agents",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. Says 'Research by CAISI technical staff has demonstrated risks of agent hijacking', but footnote 1 cites the January 2025 NIST blog 'Strengthening AI Agent Hijacking Evaluations', NOT the September 2025 DeepSeek evaluation. Same topic, no explicit link -> not admissible."
+            },
+            {
+              "name": "NIST / CAISI programme page and news listing",
+              "url": "https://www.nist.gov/caisi",
+              "via": "direct",
+              "status": 200,
+              "result": "Read. No policy instrument; publication venue for CAISI's own evaluations."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"DeepSeek\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "5 results, all inspected: Korea adequacy-decision review (SWD/2026/231, COM/2026/384), Digital Decade 2025 country reports (SWD/2025/294), and an EP verbatim report - none cite CAISI or its evaluation"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"CAISI\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Center for AI Standards and Innovation\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"agent hijacking\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "The closest candidate is real and had to be checked properly: the CAISI Federal Register RFI of 2026-01-08 states that 'Research by CAISI technical staff has demonstrated risks of agent hijacking'. Fetched and read in full, its footnote 1 resolves to the January 2025 NIST blog 'Strengthening AI Agent Hijacking Evaluations', not to the September 2025 DeepSeek evaluation, and the RFI nowhere mentions DeepSeek or the 12x figure. Same subject, no explicit link, so not admissible. Separately, the one congressional document that does cite the CAISI DeepSeek report (Doshi, 2026-03-17) cites only the CCP-narratives result, not agent hijacking - I read the whole 13-page statement and it contains no '12 times' or hijacking claim. Negative stands.",
+      "note": "An RFI would in any case be non-binding, not a binding instrument.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "Mirage News - 'CAISI Evaluation Of DeepSeek AI Models Finds Shortcomings And Risks' (re-verified 200 this session)",
+          "url": "https://www.miragenews.com/caisi-evaluation-of-deepseek-ai-models-finds-1544122/",
+          "date": "2025-09-30"
+        }
+      ],
+      "academic": [],
+      "discussion": [],
+      "note": "Report-level coverage carried forward and re-verified as reachable; it is coverage of the report, not specifically of the agent-hijacking result."
+    },
+    "still_blocked": [
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "USCAISI-2025-09-HUM1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "Non-binding policy-related uptake",
+    "changed": true,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"DeepSeek\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "21 spoken contributions, 0 written. All read: 18 predate the 2025-09-30 publication date; the three in window (Commons AI Safety 2025-12-10; Commons Technology Sovereignty 2026-03-10; Lords King's Speech 2026-05-19) discuss DeepSeek distillation, sovereignty and generic R1 deception research, none cite CAISI or its evaluation"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"CAISI\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Center for AI Standards and Innovation\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"agent hijacking\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term DeepSeek CAISI",
+              "url": "https://www.gov.uk/api/search.json?q=DeepSeek%20CAISI",
+              "via": "direct",
+              "status": 200,
+              "result": "no gov.uk item referencing the evaluation"
+            },
+            {
+              "name": "UK Parliament committees API - 'DeepSeek'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=DeepSeek",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "H. Rept. 119-652, FY2027 Commerce-Justice-Science appropriations report (GovInfo full text, 884k chars)",
+              "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt652/html/CRPT-119hrpt652.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI appears only as a $15,000,000 funding line for voluntary standards/testing; no evaluation result cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term DeepSeek",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=DeepSeek",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"CAISI\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 document - the 2026-01-08 agent-security RFI, which does not cite this evaluation"
+            },
+            {
+              "name": "NIST / CAISI programme page and news listing",
+              "url": "https://www.nist.gov/caisi",
+              "via": "direct",
+              "status": 200,
+              "result": "Read. No policy instrument; publication venue for CAISI's own evaluations."
+            }
+          ],
+          "found": true
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"DeepSeek\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "5 results, all inspected: Korea adequacy-decision review (SWD/2026/231, COM/2026/384), Digital Decade 2025 country reports (SWD/2025/294), and an EP verbatim report - none cite CAISI or its evaluation"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"CAISI\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Center for AI Standards and Innovation\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"agent hijacking\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+      "verbatim": "Evaluations from the U.S. Department of Commerce, foreign governments, and independent researchers found that its model weights are structurally engineered to echo CCP narratives; per one report, this occurred four times more frequently than Western reference models.[34]  ...  [34] Center for AI Standards and Innovation (CAISI), Evaluation of DeepSeek AI Models Finds Shortcomings and Risks (Washington, DC: National Institute of Standards and Technology, September 2025), https://www.nist.gov/system/files/documents/2025/09/30/CAISI_Evaluation_of_DeepSeek_AI_Models.pdf",
+      "policy_response": "The CAISI DeepSeek evaluation and its CCP-narratives result were entered into the record of the U.S. House Committee on Homeland Security hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), in the written statement of Dr Rush Doshi, which cites the report by name and URL in support of the characterisation of DeepSeek as a PRC 'national champion'. No enforceable obligation follows.",
+      "reasoning": "This overturns the prior coding, and it is exactly the failure the re-run was set up to catch: the previous pass recorded a clean US congressional negative for this finding without an access outcome. congress.gov DOCUMENT URLs return 200; only its search interface 403s. Fetching the hearing document directly (200, direct, 13-page PDF, extracted cleanly) shows an explicit citation of both the report and the specific finding - the 'four times' CCP-narratives result is quoted and footnoted to the CAISI PDF. That satisfies the strict admissibility rule, which requires explicit reference to the finding, report, evaluator or specific result, not general subject overlap. Level is Non-binding policy-related uptake: a hearing record is official congressional engagement but imposes no mandatory requirement, so it is not a binding instrument. Caveat recorded for the coder: the citing text is an external witness's written statement printed in the official committee record on congress.gov, not a Member's own statement or a committee finding. If the project's convention counts only Member/committee-authored text as an official source, this would drop back to no uptake; under the stated convention ('committee records' are admissible US sources) it qualifies.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "Mirage News",
+          "url": "https://www.miragenews.com/caisi-evaluation-of-deepseek-ai-models-finds-1544122/",
+          "date": "2025-09-30"
+        },
+        {
+          "outlet": "TechRepublic - 'DeepSeek AI Models Are Unsafe and Unreliable, Finds NIST-Backed Study'",
+          "url": "https://www.techrepublic.com/article/news-deepseek-security-gaps-caisi-study/",
+          "date": "2025-10"
+        },
+        {
+          "outlet": "Cybernews - 'NIST warns of flawed DeepSeek security, CCP narratives'",
+          "url": "https://cybernews.com/security/nist-warns-of-flawed-deepseek-security-ccp-narratives/",
+          "date": "2025-10-04"
+        },
+        {
+          "outlet": "Enterprise Technology Association",
+          "url": "https://www.joineta.org/blog/nists-deepseek-evaluation-raises-the-stakes-in-the-global-ai-race",
+          "date": "2025-10"
+        }
+      ],
+      "academic": [],
+      "discussion": [
+        {
+          "where": "Cited in written testimony to the US House Committee on Homeland Security (also the Channel B evidence)",
+          "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf"
+        }
+      ],
+      "note": "All four media URLs re-fetched this session and confirmed reachable (Cybernews via Wayback, the rest direct). Channel C is descriptive and does not affect any level."
+    },
+    "still_blocked": [
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "USCAISI-2025-09-JAI1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"DeepSeek\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "21 spoken contributions, 0 written. All read: 18 predate the 2025-09-30 publication date; the three in window (Commons AI Safety 2025-12-10; Commons Technology Sovereignty 2026-03-10; Lords King's Speech 2026-05-19) discuss DeepSeek distillation, sovereignty and generic R1 deception research, none cite CAISI or its evaluation"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"CAISI\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Center for AI Standards and Innovation\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"agent hijacking\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term DeepSeek CAISI",
+              "url": "https://www.gov.uk/api/search.json?q=DeepSeek%20CAISI",
+              "via": "direct",
+              "status": 200,
+              "result": "no gov.uk item referencing the evaluation"
+            },
+            {
+              "name": "UK Parliament committees API - 'DeepSeek'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=DeepSeek",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "H. Rept. 119-652, FY2027 Commerce-Justice-Science appropriations report (GovInfo full text, 884k chars)",
+              "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt652/html/CRPT-119hrpt652.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI appears only as a $15,000,000 funding line for voluntary standards/testing; no evaluation result cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term DeepSeek",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=DeepSeek",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"jailbreak\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22jailbreak%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 relevant documents"
+            },
+            {
+              "name": "NIST / CAISI programme page and news listing",
+              "url": "https://www.nist.gov/caisi",
+              "via": "direct",
+              "status": 200,
+              "result": "Read. No policy instrument; publication venue for CAISI's own evaluations."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"DeepSeek\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22DeepSeek%22",
+              "via": "direct",
+              "status": 200,
+              "result": "5 results, all inspected: Korea adequacy-decision review (SWD/2026/231, COM/2026/384), Digital Decade 2025 country reports (SWD/2025/294), and an EP verbatim report - none cite CAISI or its evaluation"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"CAISI\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Center for AI Standards and Innovation\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Center%20for%20AI%20Standards%20and%20Innovation%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"agent hijacking\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "The Doshi statement of 2026-03-17 is the only official document located anywhere that cites the CAISI DeepSeek report, and it cites only the CCP-narratives result. I read the full statement: it contains no jailbreaking figure, no '94', and no reference to R1-0528's response rate to malicious requests. The printed hearing record CHRG-119hhrg64201 mentions DeepSeek censorship generically and uses 'jailbreak' only about Unitree robot dogs. No UK or EU source references the result. Negative earned - and worth noting that of the three findings in this report, only one drew explicit official pickup, which is the kind of within-report discrimination the explicit-reference rule exists to preserve.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "Enterprise Technology Association (joineta.org)",
+          "url": "https://www.joineta.org/blog/nists-deepseek-evaluation-raises-the-stakes-in-the-global-ai-race",
+          "date": "2025-10"
+        }
+      ],
+      "academic": [],
+      "discussion": [],
+      "note": "Re-verified reachable (200 direct). Report-level, not specific to the 94% jailbreak result."
+    },
+    "still_blocked": [
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "finding_id": "HAL-2025-10-AUT2",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Holistic Agent Leaderboard\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions, 0 written statements, 0 written answers"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Holistic Agent Leaderboard\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - 'Holistic Agent Leaderboard'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Holistic%20Agent%20Leaderboard",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Holistic Agent Leaderboard\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"agent hijacking\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 document - the 2026-01-08 CAISI RFI"
+            },
+            {
+              "name": "NIST/CAISI RFI 'Security Considerations for Artificial Intelligence Agents' (2026-01-08, doc 2026-00206) - read in full",
+              "url": "https://www.federalregister.gov/documents/2026/01/08/2026-00206/request-for-information-regarding-security-considerations-for-artificial-intelligence-agents",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. Says 'Research by CAISI technical staff has demonstrated risks of agent hijacking', but footnote 1 cites the January 2025 NIST blog 'Strengthening AI Agent Hijacking Evaluations', NOT the September 2025 DeepSeek evaluation. Same topic, no explicit link -> not admissible."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Holistic Agent Leaderboard\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"agent hijacking\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "Not found",
+      "reasoning": "UK Hansard, UK committee publications and gov.uk return a hard zero for 'Holistic Agent Leaderboard'; EUR-Lex returns none; the Federal Register returns none. The only same-topic US instrument is the CAISI agent-security RFI (2026-01-08), which I fetched and read in full: it cites NIST's own agent-hijacking blog and contains no reference to HAL, to arXiv:2510.11977, or to the $2010-against-a-$1000-budget overcharge by claude-opus-4.1. Same subject without an explicit link does not qualify. Honest limitation: a site-wide full-text search of congress.gov for 'Holistic Agent Leaderboard' could not be completed (see still_blocked), so the US congressional negative rests on the five congressional documents I did read plus the Federal Register, not on an exhaustive index sweep.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Kapoor, Stroebl et al., 'Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation', arXiv:2510.11977 - Semantic Scholar: 56 citations, 9 influential (re-checked 2026-08-28; was 47/9 on 2026-08-02)",
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2510.11977?fields=title,citationCount,influentialCitationCount"
+        }
+      ],
+      "discussion": [],
+      "note": "Citation count refreshed this session via the Semantic Scholar API (+9 since the prior pass). Citations are to the paper as evaluation infrastructure; none located that discuss this specific TAU-bench Airline payment failure. HAL's own press page lists only two items, both predating the report."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "HAL-2025-10-AUT4",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Holistic Agent Leaderboard\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions, 0 written statements, 0 written answers"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Holistic Agent Leaderboard\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - 'Holistic Agent Leaderboard'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Holistic%20Agent%20Leaderboard",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Holistic Agent Leaderboard\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"agent hijacking\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 document - the 2026-01-08 CAISI RFI"
+            },
+            {
+              "name": "NIST/CAISI RFI 'Security Considerations for Artificial Intelligence Agents' (2026-01-08, doc 2026-00206) - read in full",
+              "url": "https://www.federalregister.gov/documents/2026/01/08/2026-00206/request-for-information-regarding-security-considerations-for-artificial-intelligence-agents",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. Says 'Research by CAISI technical staff has demonstrated risks of agent hijacking', but footnote 1 cites the January 2025 NIST blog 'Strengthening AI Agent Hijacking Evaluations', NOT the September 2025 DeepSeek evaluation. Same topic, no explicit link -> not admissible."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Holistic Agent Leaderboard\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Holistic%20Agent%20Leaderboard%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"agent hijacking\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22agent%20hijacking%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "Not found",
+      "reasoning": "The prior evidence string for this row literally begins 'Congress.gov and FTC.gov (403) - not verifiable', then asserts a completed re-run 'via search' with no access outcome recorded. That is precisely the unearned negative this pass exists to correct, so the US result was treated as UNSEARCHED and redone. UK Hansard, UK committee publications and gov.uk return a hard zero for 'Holistic Agent Leaderboard'; EUR-Lex returns none; the Federal Register returns none. The only same-topic US instrument is the CAISI agent-security RFI (2026-01-08), which I fetched and read in full: it cites NIST's own agent-hijacking blog and contains no reference to HAL, to arXiv:2510.11977, or to the GPT-5 incorrect-payment-method purchase. Same subject without an explicit link does not qualify. Honest limitation: a site-wide full-text search of congress.gov for 'Holistic Agent Leaderboard' could not be completed (see still_blocked), so the US congressional negative rests on the five congressional documents I did read plus the Federal Register, not on an exhaustive index sweep.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Kapoor, Stroebl et al., 'Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation', arXiv:2510.11977 - Semantic Scholar: 56 citations, 9 influential (re-checked 2026-08-28; was 47/9 on 2026-08-02)",
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2510.11977?fields=title,citationCount,influentialCitationCount"
+        }
+      ],
+      "discussion": [],
+      "note": "Citation count refreshed this session via the Semantic Scholar API (+9 since the prior pass). Citations are to the paper as evaluation infrastructure; none located that discuss this specific TAU-bench Airline payment failure. HAL's own press page lists only two items, both predating the report."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "REDWOOD-2025-10-ALI1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Redwood Research\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Redwood%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"evaluation awareness\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22evaluation%20awareness%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Sonnet 4.5\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Sonnet%204.5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22Redwood%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Redwood Research\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Redwood%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "6 results, all OR-matches on common words (Frontier AI Taskforce progress reports 2023, AISI approach to evaluations 2024, coalition press releases) - none references Redwood Research or this analysis"
+            },
+            {
+              "name": "UK Parliament committees API - 'Redwood Research' / bare 'Redwood'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Redwood%20Research",
+              "via": "direct",
+              "status": 200,
+              "result": "4 hits, all OR-matches on 'Research' (identical to the 'Palisade Research' hits); no genuine match"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Redwood Research\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Redwood%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Claude Sonnet\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Claude%20Sonnet%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Redwood Research\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Redwood%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Claude Sonnet 4.5\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Claude%20Sonnet%204.5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"evaluation awareness\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22evaluation%20awareness%22",
+              "via": "direct",
+              "status": 200,
+              "result": "2 results, both unrelated"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "Genuine zero across all three jurisdictions. Note the gov.uk and committee 'hits' are OR-matches on the word 'Research' and vanish on the bare term - I checked rather than counting them. Negative earned. Same congress.gov index limitation as the other third-party rows.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Google Scholar: not indexed under the exact report title (recorded 2026-08-15; scholar.google.com not fetchable this session)",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22Sonnet%204.5's%20eval%20gaming%20seriously%20undermines%20alignment%20evals%22"
+        }
+      ],
+      "discussion": [],
+      "note": "Carried forward, not re-verified."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "UKAISI-2025-11-ALI1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"CTRL-ALT-DECEIT\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22CTRL-ALT-DECEIT%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"sabotage evaluations\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22sabotage%20evaluations%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Claude Sonnet\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Claude%20Sonnet%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 contribution, Lords 2025-05-12, predates the 2025-11-13 publication date"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22CTRL-ALT-DECEIT%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term CTRL-ALT-DECEIT",
+              "url": "https://www.gov.uk/api/search.json?q=CTRL-ALT-DECEIT",
+              "via": "direct",
+              "status": 200,
+              "result": "0 relevant results (returned Chromebook setup guidance and Certification Officer collections - pure noise)"
+            },
+            {
+              "name": "UK Parliament committees API - 'CTRL-ALT-DECEIT'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=CTRL-ALT-DECEIT",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            },
+            {
+              "name": "UK Parliament committees API - 'AI Security Institute' (283 publications, live index)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=AI%20Security%20Institute",
+              "via": "direct",
+              "status": 200,
+              "result": "283 results for the institution generally; none surfaced for this report's terms"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"AI Security Institute\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI%20Security%20Institute%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"CTRL-ALT-DECEIT\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22CTRL-ALT-DECEIT%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"AI Security Institute\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22AI%20Security%20Institute%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 result - COM/2026/577 Action Plan on Cybersecurity and AI (2026-07-07), read in full: its footnote 1 cites UK AISI research on cyber task-length doubling, a different workstream, not the sabotage evaluations"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "The interesting near-miss is European: the Commission's Action Plan on Cybersecurity and AI does cite UK AISI research, so an EU document is citing this very evaluator inside the search window. But it cites AISI's cyber task-horizon work, not CTRL-ALT-DECEIT and not the sabotage capabilities finding. Under the strict rule, citing the evaluator is not citing the finding. Negative stands, and this is the clearest illustration in the packet of why the rule matters.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Ward et al., 'CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D', arXiv:2511.09904 - Semantic Scholar: 10 citations, 1 influential (re-checked 2026-08-28; was 6 on 2026-07-18)",
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2511.09904?fields=title,citationCount,influentialCitationCount"
+        }
+      ],
+      "discussion": [],
+      "note": "Citation count refreshed this session (+4). Includes a direct follow-up by the same lead author on monitor information access."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "PALISADE-2025-11-CYB1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Palisade Research\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"capture the flag\" AI",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22capture%20the%20flag%22%20AI",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"GPT-5\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22GPT-5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "3 contributions (Lords 2026-07-22 AI: International Co-operation; Lords 2026-07-23 Digital and Technology Policy; Lords 2026-05-19 King's Speech) - all read, all about frontier-model capability and sovereignty generally, none referencing Palisade or the CTF result"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Palisade Research\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - bare 'Palisade' and 'GPT-5'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=GPT-5",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results for each"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Palisade Research\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"GPT-5\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22GPT-5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Palisade Research\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Palisade%20Research%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"GPT-5.2\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22GPT-5.2%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "Three Lords contributions in window mention GPT-5; I read each and none references Palisade, the CTF study, or the 25th-place/93% result. Everything else is a hard zero. Negative earned, subject to the congress.gov index limitation.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "alphaXiv overview page for the underlying paper (re-verified 200 this session)",
+          "url": "https://www.alphaxiv.org/overview/2511.04860v1",
+          "date": "2025-11"
+        },
+        {
+          "outlet": "llm-stats.com cybersecurity-CTF benchmark listing",
+          "url": "https://llm-stats.com/benchmarks/cybersecurity-ctfs",
+          "date": "2025-11"
+        }
+      ],
+      "academic": [
+        {
+          "cite": "Reworr & Petrov, 'GPT-5 at CTFs: Case Studies From Top-Tier Cybersecurity Events', arXiv:2511.04860 - Semantic Scholar: 1 citation, 0 influential (checked 2026-08-28)",
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2511.04860?fields=title,citationCount,influentialCitationCount"
+        }
+      ],
+      "discussion": [],
+      "note": "NEW this session: the Semantic Scholar record for the underlying paper, which the prior pass left empty. Coverage is thin - one citation - which is itself the informative result for a finding with Action Level 'None'."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "DREADNODE-2025-12-JAI1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term Dreadnode",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions, 0 written statements, 0 written answers"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Llama Maverick\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Llama%20Maverick%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"jailbreak\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak%22",
+              "via": "direct",
+              "status": 200,
+              "result": "4 contributions, none referencing Dreadnode or this report"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term Dreadnode",
+              "url": "https://www.gov.uk/api/search.json?q=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - 'Dreadnode'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term Dreadnode",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Dreadnode\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Dreadnode%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"186 Jailbreaks\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22186%20Jailbreaks%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Llama Maverick\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Llama%20Maverick%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "Hard zero for 'Dreadnode' in Hansard, UK committee publications, gov.uk, the Federal Register and EUR-Lex; nothing on the 186/240 (~78% ASR) result. The prior pass's exclusion of Dreadnode's own submission to the US AI Action Plan process is correct and I keep it: the evaluator's advocacy is not a government source citing the finding. Subject to the congress.gov index limitation, negative earned.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Google Scholar: not indexed under the exact report title (recorded 2026-08-15; not re-verifiable this session)",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22186%20Jailbreaks%3A%20Applying%20MLOps%20to%20AI%20Red%20Teaming%22"
+        }
+      ],
+      "discussion": [],
+      "note": "Carried forward; no new coverage located. Not an arXiv paper, so no Semantic Scholar record exists to check."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "DREADNODE-2025-12-JAI2",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term Dreadnode",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions, 0 written statements, 0 written answers"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Llama Maverick\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Llama%20Maverick%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"jailbreak\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22jailbreak%22",
+              "via": "direct",
+              "status": 200,
+              "result": "4 contributions, none referencing Dreadnode or this report"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term Dreadnode",
+              "url": "https://www.gov.uk/api/search.json?q=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - 'Dreadnode'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term Dreadnode",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=Dreadnode",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Dreadnode\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Dreadnode%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"186 Jailbreaks\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22186%20Jailbreaks%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Llama Maverick\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Llama%20Maverick%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "Hard zero for 'Dreadnode' in Hansard, UK committee publications, gov.uk, the Federal Register and EUR-Lex; nothing on the Crescendo 97.5% ASR / 100% self-harm-and-violence result. The prior pass's exclusion of Dreadnode's own submission to the US AI Action Plan process is correct and I keep it: the evaluator's advocacy is not a government source citing the finding. Subject to the congress.gov index limitation, negative earned.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Google Scholar: not indexed under the exact report title (recorded 2026-08-15; not re-verifiable this session)",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22186%20Jailbreaks%3A%20Applying%20MLOps%20to%20AI%20Red%20Teaming%22"
+        }
+      ],
+      "discussion": [],
+      "note": "Carried forward; no new coverage located. Not an arXiv paper, so no Semantic Scholar record exists to check."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "GRAYSWAN-2025-12-CYB1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Gray Swan\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Gray%20Swan%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Claude Sonnet\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Claude%20Sonnet%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 contribution, 2025-05-12, predates the 2025-12-11 publication date"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22Gray%20Swan%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Gray Swan\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Gray%20Swan%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 result - FOI2024-00441 on conference participation (2024-10-06), which predates the report by 14 months and does not reference it"
+            },
+            {
+              "name": "UK Parliament committees API - 'Gray Swan'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Gray%20Swan",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Gray Swan\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Gray%20Swan%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 document - a 2020 SEC investment-company deregistration notice, unrelated"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Gray Swan\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Gray%20Swan%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "Both apparent hits were checked and both fail: the gov.uk FOI release predates the report by over a year, and the Federal Register hit is a 2020 SEC notice about a similarly named fund. The prior pass's note that Gray Swan is cited in frontier model system cards is right to exclude - those are company documents, Channel A material. Negative earned.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "cybersecuritynews.com",
+          "url": "https://cybersecuritynews.com/",
+          "date": "2025-12-15"
+        },
+        {
+          "outlet": "implicator.ai (critical analysis)",
+          "url": "https://www.implicator.ai/",
+          "date": "2025-12"
+        }
+      ],
+      "academic": [
+        {
+          "cite": "Lin, Jones, Jasper, Ho, Wu, Yang, Perry, Zou, Fredrikson, Kolter, Liang, Boneh, Ho, 'Comparing AI Agents to Cybersecurity Professionals in Real-World Penetration Testing', arXiv:2512.09882 - Semantic Scholar: 17 citations, 2 influential (checked 2026-08-28)",
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2512.09882?fields=title,citationCount,influentialCitationCount"
+        }
+      ],
+      "discussion": [],
+      "note": "NEW this session: Semantic Scholar record and citation count for the underlying paper (the prior pass logged the arXiv ID but no count). Media outlet URLs are carried forward at domain level only - the prior pass recorded no article URLs and I could not resolve them without a general web search, so treat them as unverified."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      },
+      {
+        "url": "https://cybersecuritynews.com/ (specific article URL unknown)",
+        "status": "unresolved",
+        "what_it_would_have_shown": "The exact article and date for the carried-forward media entries."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "finding_id": "OPENAI-2025-12-SELF-CYB1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"GPT-5\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22GPT-5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "3 contributions, all read, none referencing Irregular or the GPT-5.2 cyber evaluation"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"capture the flag\" AI",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22capture%20the%20flag%22%20AI",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=%22GPT-5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"GPT-5.2\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22GPT-5.2%22",
+              "via": "direct",
+              "status": 200,
+              "result": "1 result - a Public Sector Fraud Authority algorithmic transparency record (2026-05-12) recording model use, not the evaluation"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term Irregular cyber AI evaluation",
+              "url": "https://www.gov.uk/api/search.json?q=Irregular%20cyber%20AI%20evaluation",
+              "via": "direct",
+              "status": 200,
+              "result": "no relevant results; the evaluator name is a common English word and returns only noise"
+            },
+            {
+              "name": "UK Parliament committees API - 'GPT-5'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=GPT-5",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"GPT-5\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22GPT-5%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"GPT-5.2\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22GPT-5.2%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "The single gov.uk hit for 'GPT-5.2' is an algorithmic transparency record disclosing which model the Public Sector Fraud Authority uses; it records deployment, not the Irregular cyberoffensive evaluation, and does not reference the 83%/100%/73% result. Everything else is zero. A caveat worth flagging for this row specifically: the evaluator's name, 'Irregular', is an ordinary English word, so name-based searching is far weaker here than for the other rows - the negative rests mainly on model-name and result-based terms.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "cite": "Google Scholar: not indexed under the exact report title (recorded 2026-08-15; not re-verifiable this session)",
+          "url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%22Update%20to%20GPT-5%20System%20Card%3A%20GPT-5.2%22"
+        }
+      ],
+      "discussion": [],
+      "note": "No independent coverage located. The source (deploymentsafety.openai.com) is the evaluated company's own publication and is excluded as circular."
+    },
+    "still_blocked": [
+      {
+        "url": "https://search.brave.com/search?q=site%3Acongress.gov+...",
+        "status": 429,
+        "what_it_would_have_shown": "Site-restricted index of congress.gov for this evaluator/report. Brave (the one engine that honours site: from this host) rate-limited after an initial window; Bing/Google/DDG/Mojeek/Startpage/Qwant/Yep/SearXNG all either drop the site: operator, require JS, or block. So a site-wide congressional full-text search could NOT be completed for this finding."
+      },
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "finding_id": "USCAISI-2025-12-SOC1",
+    "current_policy_level": "No policy uptake identified",
+    "proposed_policy_level": "No policy uptake identified",
+    "changed": false,
+    "channel_b": {
+      "jurisdictions": [
+        {
+          "jurisdiction": "UK",
+          "sources_searched": [
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term Kimi",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Kimi",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions, 0 written statements, 0 written answers"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"Moonshot AI\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Moonshot%20AI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Hansard (Commons+Lords), official Hansard Search API, term \"CAISI\"",
+              "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 contributions"
+            },
+            {
+              "name": "UK Parliament select-committee publications (committees-api.parliament.uk)",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Kimi",
+              "via": "direct",
+              "status": 200,
+              "result": "0 matching publications (control query 'artificial intelligence' returns 27, so the index is live)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Kimi K2\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Kimi%20K2%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "gov.uk Search API (ministerial statements, DSIT/AISI, regulator content), term \"Moonshot AI\"",
+              "url": "https://www.gov.uk/api/search.json?q=%22Moonshot%20AI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results (total 0)"
+            },
+            {
+              "name": "UK Parliament committees API - 'Kimi'",
+              "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Kimi",
+              "via": "direct",
+              "status": 200,
+              "result": "0 results"
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "US",
+          "sources_searched": [
+            {
+              "name": "House Homeland Security Cttee hearing 'Examining the National Security Risks of PRC Artificial Intelligence' (2026-03-17), written statement of Dr Rush Doshi - fetched and read in full (13pp PDF)",
+              "url": "https://www.congress.gov/119/meeting/house/118982/witnesses/HHRG-119-HM08-Wstate-DoshiPhDR-20260317.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "READ IN FULL"
+            },
+            {
+              "name": "House Science Cttee, opening statement of Chairman Jay Obernolte, 'Advancing America's AI Action Plan' (2026-01-14)",
+              "url": "https://www.congress.gov/119/meeting/house/118803/documents/HHRG-119-SY15-MState-O000019-20260114.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed only as an institution to be formalised by the Great American AI Act; no evaluation result cited."
+            },
+            {
+              "name": "House Select Cttee on the CCP hearing transcript \"China's Campaign to Steal America's AI Edge\" (2026-04-16), 40pp",
+              "url": "https://www.congress.gov/119/meeting/house/119165/documents/HHRG-119-ZS00-Transcript-20260416.pdf",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI discussed as a regulator/guidance body; no evaluation result cited."
+            },
+            {
+              "name": "Printed hearing record CHRG-119hhrg64201 (PRC AI and robotics), 163k chars",
+              "url": "https://www.congress.gov/119/chrg/CHRG-119hhrg64201/generated/CHRG-119hhrg64201.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. DeepSeek censorship discussed generically and Moonshot AI named only in a distillation context; no CAISI evaluation cited."
+            },
+            {
+              "name": "H. Rept. 119-652, FY2027 Commerce-Justice-Science appropriations report (GovInfo full text, 884k chars)",
+              "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt652/html/CRPT-119hrpt652.htm",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. CAISI appears only as a $15,000,000 funding line for voluntary standards/testing; no evaluation result cited."
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Kimi K2\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Kimi%20K2%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "Federal Register full-text search API (all agencies, all document types), term \"Moonshot AI\"",
+              "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Moonshot%20AI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "0 documents"
+            },
+            {
+              "name": "NIST/CAISI source page for the evaluation (the finding itself, checked for later policy annotation)",
+              "url": "https://www.nist.gov/news-events/news/2025/12/caisi-evaluation-kimi-k2-thinking",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full. Publication of the evaluation itself; no policy instrument attached."
+            }
+          ],
+          "found": false
+        },
+        {
+          "jurisdiction": "EU / other",
+          "sources_searched": [
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"Moonshot AI\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22Moonshot%20AI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "EUR-Lex quick search (all EU legal acts, COM/SWD/JOIN documents), term \"CAISI\"",
+              "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&type=quick&lang=en&text=%22CAISI%22",
+              "via": "direct",
+              "status": 200,
+              "result": "NO RESULTS"
+            },
+            {
+              "name": "European Commission Communication COM/2026/577 'Action Plan on Cybersecurity and Artificial Intelligence' (07/07/2026) - read in full",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026DC0577",
+              "via": "direct",
+              "status": 200,
+              "result": "Read in full (51.5k chars). Only AI-evaluator reference is footnote 1, 'Recent research from the UK AI Security Institute' on cyber task-length doubling - a different AISI workstream. No reference to any finding in this packet."
+            }
+          ],
+          "found": false
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "policy_response": "",
+      "reasoning": "Hard zero for Kimi and Moonshot AI across Hansard, UK committees, gov.uk, the Federal Register and EUR-Lex. The printed hearing record CHRG-119hhrg64201 does name Moonshot AI, but only alongside DeepSeek and MiniMax in a passage about industrial-scale distillation attacks - nothing about censorship rates or the CAISI evaluation. Notably the one congressional document that does cite CAISI's PRC-model work (Doshi, 2026-03-17) cites the DeepSeek report and not this one. Negative earned.",
+      "searched_date": "2026-08-28"
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [],
+      "note": "No independent coverage located. General web search unavailable this session, so this is an unconfirmed Channel C negative rather than an established one."
+    },
+    "still_blocked": [
+      {
+        "url": "https://www.congress.gov/search?q=...",
+        "status": 403,
+        "what_it_would_have_shown": "A site-wide full-text search of congress.gov (bills, hearings, committee reports, Congressional Record). congress.gov DOCUMENT URLs fetch fine at 200 and were used, but the search interface 403s, so congressional documents could only be located via an external index."
+      },
+      {
+        "url": "https://api.govinfo.gov/search (DEMO_KEY)",
+        "status": 429,
+        "what_it_would_have_shown": "GovInfo full-text search across CHRG/CREC/CRPT/BILLS. The shared DEMO_KEY was over its rate limit for the whole session. GovInfo CONTENT URLs fetched fine at 200 (e.g. CRPT-119hrpt652 was retrieved and read in full)."
+      },
+      {
+        "url": "https://digital-strategy.ec.europa.eu/en/search?search_api_fulltext=...",
+        "status": 200,
+        "what_it_would_have_shown": "European Commission DG CONNECT / AI Office news and policy items. The page returns a JS-only shell (identical byte length for every query), so its result list could not be read. EUR-Lex was used instead and does cover COM/SWD/JOIN documents, but not press releases or AI Office blog posts."
+      }
+    ],
+    "confidence": "medium"
+  }
+]

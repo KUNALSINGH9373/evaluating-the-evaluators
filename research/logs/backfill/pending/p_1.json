@@ -1,0 +1,48 @@
+{
+ "results": [
+  {
+   "url": "https://ai.meta.com/tools/system-cards/instagram-feed-ranking",
+   "title": "System Card: Instagram feed ranking",
+   "decision": "EXCLUDED",
+   "exclusion_reason": "EXCLUDED - company self-report",
+   "rule_cited": "§1 (company venue, no external evaluator named); independently also fails the Frontier-Model Rule (product ML ranking system, not a named frontier AI model) and §2 (no evidence-backed finding — the card is an explanatory product-transparency page)",
+   "external_evaluator": "none named",
+   "resolved_date": "2022-02-23",
+   "fetch_note": "RESOLVED, no longer a fetch failure. Ladder: fetch.get() direct -> HTTP 400 (Meta rejects the module's shorter header set); Wayback (snapshot 20260721191346) returned 200 but the id_ body is Brotli-compressed and decoded to binary; web.archive.org then went unreachable (connection refused) for the rest of the session. Two independent successful reads obtained instead: (a) WebFetch of https://ai.meta.com/tools/system-cards/instagram-feed-ranking/ ; (b) curl with a full Chrome header set (sec-ch-ua / Sec-Fetch-*) -> HTTP 200, 47,175 bytes, 8,180 chars of extracted text. Both reads agree. Page states 'Last updated Feb 23, 2022'. The Aug-2026 'FETCH BLOCKED' park was a header problem, not an absent source.",
+   "findings": []
+  },
+  {
+   "url": "https://ai.meta.com/tools/system-cards/social-commerce",
+   "title": "System Card: Social commerce (Shops)",
+   "decision": "EXCLUDED",
+   "exclusion_reason": "EXCLUDED - company self-report",
+   "rule_cited": "§1 (company venue, no external evaluator named); independently also fails the Frontier-Model Rule (commerce/recommendation product ML, not a named frontier AI model) and §2 (no evidence-backed finding)",
+   "external_evaluator": "none named",
+   "resolved_date": "2022-11-15",
+   "fetch_note": "RESOLVED, no longer a fetch failure. Ladder: fetch.get() direct -> HTTP 400; Wayback snapshot 20260721191346 returned 200 but the id_ body decoded to Brotli binary, and web.archive.org became unreachable (connection refused) thereafter. Read twice by other means: (a) WebFetch of the trailing-slash URL; (b) curl with full Chrome headers -> HTTP 200, 35,581 bytes, 4,680 chars extracted. Both agree. Page states 'Last updated Nov 15, 2022'. Whole text reviewed: the only outside parties mentioned anywhere are Meta's own 'fashion teams' (internal editorial curation) — no evaluator, auditor or red team of any kind.",
+   "findings": []
+  },
+  {
+   "url": "https://ai.meta.com/static-resource/meta-frontier-ai-framework",
+   "title": "Meta Frontier AI Framework (v1.1)",
+   "decision": "EXCLUDED",
+   "exclusion_reason": "EXCLUDED - company self-report",
+   "rule_cited": "§1 (company venue, no external evaluator named as contributing findings); independently also §2 (a forward-looking governance framework — approach, thresholds and planned process, i.e. no measured result, observed behaviour or documented process fact asserted by an evaluator)",
+   "external_evaluator": "none named",
+   "resolved_date": "",
+   "fetch_note": "RESOLVED, no longer a fetch failure. fetch.get() direct 403/blocked, but the Wayback id_ snapshot 20260227021742 returned the underlying PDF and extracted cleanly: 21 pages, 42,407 characters, full document read. Full-text search for evaluator names returned only unnamed generics — 'external subject matter experts' (p.2.1.1), 'external experts from various disciplines' (2.1.2), 'involving external experts when appropriate' (cyber red teaming), and footnote 7 'numerous experts — including third parties where appropriate'. Not one organisation is named anywhere in the document (only Meta, Llama and Meta's own CyberSecEval appear as proper nouns). DATE UNRESOLVED: the v1.1 PDF carries no publication or revision date on any page; the only date-bearing text is 'the Frontier AI Safety Commitments, which Meta signed in May 2024'. The ledger's 2025-02-03 is the release date of v1.0, not of this v1.1 revision, so it cannot be carried over. Left blank per the DATES rule rather than invented; WebSearch was unavailable (session search budget exhausted) to date v1.1 externally.",
+   "findings": []
+  },
+  {
+   "url": "https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Prompt-Guard-2/README.md",
+   "title": "Llama Prompt Guard 2 Model Card",
+   "decision": "EXCLUDED",
+   "exclusion_reason": "EXCLUDED - company self-report",
+   "rule_cited": "§1 (company-published, no external evaluator named as contributing findings). Note this item does NOT fail the Frontier-Model Rule — Llama Prompt Guard 2 86M/22M are named safety classifiers from a frontier developer, which the rule expressly counts — and it does contain measured results (AUC .998, Recall@1%FPR 97.5%, AgentDojo APR 81.2%). It is dropped solely and squarely on the §1 carve-out failing: every evaluation reported is Meta's own ('we used a private benchmark', 'we assessed').",
+   "external_evaluator": "none named",
+   "resolved_date": "2025-04-29",
+   "fetch_note": "RESOLVED, no longer a fetch failure. Wayback id_ snapshot 20260408173619 of the blob URL returned 200 but yielded only GitHub page chrome (3,002 chars). Went to source instead: raw.githubusercontent.com/meta-llama/PurpleLlama/main/Llama-Prompt-Guard-2/README.md -> HTTP 200, 1,044 bytes. That README is only a pointer, so the actual card it points to, 86M/MODEL_CARD.md, was also fetched -> HTTP 200, 3,966 bytes, read in full. Named organisations in the card are ProtectAI, Deepset and LLM Warden (competitor detectors used as comparators — §5 says comparators are never rows), Microsoft (base-model provider, mDeBERTa/DeBERTa) and AgentDojo (a benchmark). None is an evaluator contributing findings. Date verified independently of the ledger via the GitHub commits API for both paths: first commit 2025-04-29T17:31:47Z, 'New Release of Llama Guard 4, LlamaFirewall, Llama Prompt Guard 2, CyberSecEval 4, and Sensitive Doc Classification'.",
+   "findings": []
+  }
+ ]
+}

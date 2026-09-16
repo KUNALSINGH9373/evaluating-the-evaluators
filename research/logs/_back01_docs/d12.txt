@@ -1,0 +1,206 @@
+Make RIME Yours (with Custom Tests) â Robust Intelligence
+
+We use cookies to improve user experience and analyze website traffic. By clicking âAcceptâ, you agree to our website's cookie use as described in our 
+Privacy Policy.
+Preferences
+Decline All
+Accept All
+Your Cookie Preferences
+We use different types of cookies to optimize your experience on our website. Click on the categories below to learn more about their purposes. You may choose which types of cookies to allow and can change your preferences at any time. Remember that disabling cookies may affect your experience on the website. You can learn more about how we use cookies by visiting our 
+Privacy Policy.
+Checkbox
+Essential Cookies
+Details
+These cookies are necessary to the core functionality of our website and some of its features, such as access to secure areas.
+Checkbox
+Analytics and Customization Cookies
+Details
+These cookies collect information that can help us understand how our websites are being used. This information can also be used to measure effectiveness in our marketing campaigns or to curate a personalized site experience for you.
+Checkbox
+Advertising Cookies
+Details
+These cookies are used to enhance the performance and functionality of our websites but are nonessential to their use. However, without these cookies, certain functionality (like videos)may become unavailable.
+Thank you! Your submission has been received!
+Oops! Something went wrong while submitting the form.
+Decline All
+Confirm my Choices
+Back
+Essential Cookies
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+__cf_bm
+Cloudflare places the cookie on end-user devices that access customer sites protected by Bot Management or Bot Fight Mode.
+server_cookie
+30 minutes
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+_tibcpv
+Used to record unique visitor views of the consent banner.
+http_cookie
+1 year
+Back
+Analytics and Customization Cookies
+Name
+Purpose
+Marketo Munchkin
+Marketo's custom JavaScript tracking code, called Munchkin, tracks all individuals who visit your website so you can react to their visits with automated marketing campaigns.
+Name
+Purpose
+Google Tag
+The Google tag (gtag.js) is a single tag you can add to a website to use a variety of Google products and services (e.g., Google Ads, Google Analytics, Campaign Manager, Display & Video 360, Search Ads 360).
+Back
+Performance and Functionality Cookies
+Name
+Purpose
+LinkedIn Insight
+The LinkedIn Insight Tag is a snippet of JavaScript code that loads a small library of functions you can use to track Linkedin ad-driven visitor activity on your website.
+Back
+Advertising Cookies
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+__cf_bm
+Cloudflare places the cookie on end-user devices that access customer sites protected by Bot Management or Bot Fight Mode.
+server_cookie
+30 minutes
+Provider: .providername.com
+Name
+Purpose
+Type
+Expires In
+_tibcpv
+Used to record unique visitor views of the consent banner.
+http_cookie
+1 year
+
+March 2, 2022
+ - 
+4
+ minute read
+Make RIME Yours (with Custom Tests)
+Engineering
+Author
+Authors
+Harrison Chase
+Harrison is a lead machine learning engineer at Robust Intelligence.
+Our main product at Robust Intelligence is RIME, which provides a set of tests that run against a given model and dataset, both in an offline and online setting. These tests range categories (model behavior, abnormal inputs, drift) and are all highly customizable. As a part of our regular product development, we constantly add new tests based on customer feedback, recent publications, and internal research. Even with this large and ever growing set of highly customizable tests, we strive to provide even more flexibility for our customers. We accomplished this by allowing them to define their own custom test set that they can easily reuse across testing runs. In this blog post we will cover why and how we introduced this customizability feature.
+Sample Custom Test in the RIMEÂ platform
+Letâs consider the (made up, but based on a true story) case of Alison, a data scientist working on fraud detection for credit card transactions. Because of the nature of the fraud she is trying to detect (highly imbalanced, huge skew in the distribution of transaction amounts), when evaluating model performance she does not rely on standard binary classification metrics like accuracy and AUC, but rather has a custom metric that weighs false positives and false negatives at certain thresholds in a specific way, as well as incorporating the transaction amount and other variables. This metric is by far the most important to not only her, but her whole team, who also use the same metric and use it regularly to compare metrics.
+Letâs now consider a second (also made up, but again based on a true story) case of Jason, a data scientist working at an insurance company. When working with data involving insurance claims, users must submit both their zip code as well as county and state in which they reside. This data is obviously very structured: a certain zip code should always map to a specific county and that county to a specific state. Jason wants to make sure that any data that goes into his machine learning model complies by these rules, as he does not trust his model to make an accurate prediction if that is not the case.
+Letâs now tie these examples back to RIME and custom tests. Even though all of our tests in our standard test suite are highly configurable, there are certain areas that they cannot cover. For example, some customers may have hyper specific business metrics they care about tracking (like in Alisonâs case). Itâs difficult to predict all possible metrics a customer may care about, and in some situations they may involve proprietary calculations that they may not want us to know. Custom tests allows a customer to use unique and specific metrics when measuring model behavior or the impact of drift. As another example, there may be specific properties of datasets that customers may want to test, like ensuring some relationship between two features holds (like in Jasonâs case). Although we do have 
+tests that attempt to infer this
+, the more intricate the relationship the more helpful it would be to test this directly rather than rely on RIME inferring the relationships correctly. Because of this, itâs important to provide our customers with the ability to add custom tests in order to maximize the value of our product and cover the complete range of a customerâs needs. In addition to our custom tests, we think our general suite of tests does a pretty good job of covering a variety of use cases.
+We expose the custom test functionality in a flexible and reusable way. All of our tests must expose a certain interface. At an abstract level, a test should take in data and a model, and return a result (which adheres to a certain schema). This interface must be both general and flexible - all of our internal tests also follow this interface, and they cover a broad variety of use cases. The implementation of a custom test is also very reusable - we ask that customers implement a custom test in a Python file, and then reference that Python file in the configuration for a test run. By doing it this way, it is straightforward for one engineer to write a custom test, put it a central file system, and then have multiple users reference it in a seamless way.
+This current implementation of custom tests has been extremely well-functioning and effective for our existing customers; it has allowed them to begin to write and track custom tests. However, there are a few improvements we plan to make in the future. The key improvement involves more templates for different types of tests. As an example, we have groups of tests (bias and fairness tests, abnormal inputs tests, and drift tests) that follow certain patterns. Internally, they all use the same base class of test that contains a few helper methods and establishes a common and easy path for implementation. With some clean up and documentation, we can expose these different base classes for each category, making it much easier for customers to implement a custom fairness test (or drift, or abnormal input, etc). Simultaneously, we will always keep the most generic and abstract interface for defining custom tests, as that offers maximum flexibility.
+If you want to learn more or explore our custom tests feature yourself, 
+request a demo here
+, or contact me at harrison@robustintelligence.com directly. 
+Author
+Authors
+Harrison Chase
+Harrison is a lead machine learning engineer at Robust Intelligence.
+Share article
+Social
+Follow us on LinkedIn
+
+Newsletter
+Subscribe to our newsletter
+Thank you!
+You have successfully subscribed to our list
+Oops! Something went wrong while submitting the form.
+Related articles
+September 20, 2024
+ - 
+5
+ minute read
+Extracting Training Data from Chatbots
+For: 
+September 10, 2024
+ - 
+5
+ minute read
+Leveraging Hardened Cybersecurity Frameworks for AI Security through the Common Weakness Enumeration (CWE)
+For: 
+September 6, 2024
+ - 
+4
+ minute read
+ AI Governance Policy Roundup (August 2024)
+For: 
++ Â More Articles
+
+Related articles
+No items found.
++ Â More Articles
+
+Ready to learn more?
+See why weâre the enterprise choice for AI application security.
+Get a Demo
+
+March 2, 2022
+ - 
+4
+ minute read
+Make RIME Yours (with Custom Tests)
+Engineering
+Author
+Authors
+Harrison Chase
+Harrison is a lead machine learning engineer at Robust Intelligence.
+Our main product at Robust Intelligence is RIME, which provides a set of tests that run against a given model and dataset, both in an offline and online setting. These tests range categories (model behavior, abnormal inputs, drift) and are all highly customizable. As a part of our regular product development, we constantly add new tests based on customer feedback, recent publications, and internal research. Even with this large and ever growing set of highly customizable tests, we strive to provide even more flexibility for our customers. We accomplished this by allowing them to define their own custom test set that they can easily reuse across testing runs. In this blog post we will cover why and how we introduced this customizability feature.
+Sample Custom Test in the RIMEÂ platform
+Letâs consider the (made up, but based on a true story) case of Alison, a data scientist working on fraud detection for credit card transactions. Because of the nature of the fraud she is trying to detect (highly imbalanced, huge skew in the distribution of transaction amounts), when evaluating model performance she does not rely on standard binary classification metrics like accuracy and AUC, but rather has a custom metric that weighs false positives and false negatives at certain thresholds in a specific way, as well as incorporating the transaction amount and other variables. This metric is by far the most important to not only her, but her whole team, who also use the same metric and use it regularly to compare metrics.
+Letâs now consider a second (also made up, but again based on a true story) case of Jason, a data scientist working at an insurance company. When working with data involving insurance claims, users must submit both their zip code as well as county and state in which they reside. This data is obviously very structured: a certain zip code should always map to a specific county and that county to a specific state. Jason wants to make sure that any data that goes into his machine learning model complies by these rules, as he does not trust his model to make an accurate prediction if that is not the case.
+Letâs now tie these examples back to RIME and custom tests. Even though all of our tests in our standard test suite are highly configurable, there are certain areas that they cannot cover. For example, some customers may have hyper specific business metrics they care about tracking (like in Alisonâs case). Itâs difficult to predict all possible metrics a customer may care about, and in some situations they may involve proprietary calculations that they may not want us to know. Custom tests allows a customer to use unique and specific metrics when measuring model behavior or the impact of drift. As another example, there may be specific properties of datasets that customers may want to test, like ensuring some relationship between two features holds (like in Jasonâs case). Although we do have 
+tests that attempt to infer this
+, the more intricate the relationship the more helpful it would be to test this directly rather than rely on RIME inferring the relationships correctly. Because of this, itâs important to provide our customers with the ability to add custom tests in order to maximize the value of our product and cover the complete range of a customerâs needs. In addition to our custom tests, we think our general suite of tests does a pretty good job of covering a variety of use cases.
+We expose the custom test functionality in a flexible and reusable way. All of our tests must expose a certain interface. At an abstract level, a test should take in data and a model, and return a result (which adheres to a certain schema). This interface must be both general and flexible - all of our internal tests also follow this interface, and they cover a broad variety of use cases. The implementation of a custom test is also very reusable - we ask that customers implement a custom test in a Python file, and then reference that Python file in the configuration for a test run. By doing it this way, it is straightforward for one engineer to write a custom test, put it a central file system, and then have multiple users reference it in a seamless way.
+This current implementation of custom tests has been extremely well-functioning and effective for our existing customers; it has allowed them to begin to write and track custom tests. However, there are a few improvements we plan to make in the future. The key improvement involves more templates for different types of tests. As an example, we have groups of tests (bias and fairness tests, abnormal inputs tests, and drift tests) that follow certain patterns. Internally, they all use the same base class of test that contains a few helper methods and establishes a common and easy path for implementation. With some clean up and documentation, we can expose these different base classes for each category, making it much easier for customers to implement a custom fairness test (or drift, or abnormal input, etc). Simultaneously, we will always keep the most generic and abstract interface for defining custom tests, as that offers maximum flexibility.
+If you want to learn more or explore our custom tests feature yourself, 
+request a demo here
+, or contact me at harrison@robustintelligence.com directly. 
+Author
+Authors
+Harrison Chase
+Harrison is a lead machine learning engineer at Robust Intelligence.
+Share article
+Newsletter
+Subscribe to our newsletter
+Thank you!
+You have successfully subscribed to our list
+Oops! Something went wrong while submitting the form.
+Blog
+Related articles
+August 25, 2021
+ - 
+4
+ minute read
+Machine Learning for eCommerce Fraud Management with Riskified's CTO
+For: 
+June 21, 2021
+ - 
+1
+ minute read
+How To Secure AI Systems @ Stanford MLSys Seminar
+For: 
+August 9, 2022
+ - 
+4
+ minute read
+Introducing the ML Model Attribution Challenge
+For: 
+No items found.
++ Â More Articles
+
+Achieve 
+AI Integrity 
+Today
+Request a Demo

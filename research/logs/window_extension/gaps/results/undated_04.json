@@ -1,0 +1,1599 @@
+[
+ {
+  "venue": "RAND Corporation",
+  "title": "AI-Assisted Red-Teaming",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/appendixes/appendix-a/ai-assisted-red-teaming.html",
+  "resolved_date": "2026-02-12",
+  "date_source": "RAND publication landing page byline for the parent tool TLA4174-1 (\"Tool / Published Feb 12, 2026\"); the five rows are chapter pages of that one tool",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — tool listing and recommendations, not evidence-backed results",
+  "reason": "Appendix page listing commercial and open-source red-teaming tools with recommendations; no measured result, observed behaviour or documented process fact of RAND's own. Prior said 'not an evaluation' — agree.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6484
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Misuse-Resilience Testing",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/appendixes/appendix-a/misuse-resilience-testing.html",
+  "resolved_date": "2026-02-12",
+  "date_source": "RAND publication landing page byline for the parent tool TLA4174-1 (\"Tool / Published Feb 12, 2026\"); the five rows are chapter pages of that one tool",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — recommendations, not evidence-backed",
+  "reason": "Appendix page relaying resilience-testing recommendations from third-party vendors (Frugal Testing, Cyber Resilience, Galtea); no RAND-asserted measured result. Prior said 'off-topic' (not a §3 value) and asserted the title carries no AI term, which is wrong — the page is explicitly about LLM resilience testing; I reach the same exclusion on a different, correct rule.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4348
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Risk Assessment and Security Control Prioritization Tool",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/tool.html",
+  "resolved_date": "2026-02-12",
+  "date_source": "RAND publication landing page byline for the parent tool TLA4174-1 (\"Tool / Published Feb 12, 2026\"); the five rows are chapter pages of that one tool",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — no codeable claim present in the fetched document",
+  "reason": "Interactive risk-assessment questionnaire; server response renders only the heading (188 chars), no assertions. Prior 'off-topic' is wrong on its stated ground (the tool is an AI security tool); exclusion still correct.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 193
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Abbreviations",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/abbreviations.html",
+  "resolved_date": "2026-02-12",
+  "date_source": "RAND publication landing page byline for the parent tool TLA4174-1 (\"Tool / Published Feb 12, 2026\"); the five rows are chapter pages of that one tool",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — a glossary asserts no claim",
+  "reason": "Abbreviation list only. Prior 'off-topic' reasoning wrong (glossary is part of an AI security tool); exclusion correct.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1312
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "References",
+  "url": "https://www.rand.org/pubs/tools/TLA4174-1/ai-security/references.html",
+  "resolved_date": "2026-02-12",
+  "date_source": "RAND publication landing page byline for the parent tool TLA4174-1 (\"Tool / Published Feb 12, 2026\"); the five rows are chapter pages of that one tool",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — a bibliography asserts no claim",
+  "reason": "Bibliography of the AI Security Guide (76k chars of citations, access dates up to 16 Dec 2025). No RAND-asserted finding. Exclusion correct; prior reason wrong.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 76505
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "DeepSafe Safety Evaluation Report: Safety Risk Trends Across Different Model Series",
+  "url": "https://ai45.shlab.org.cn/en/safety-report#eval-report",
+  "resolved_date": "",
+  "date_source": "No date obtainable: the page is a client-side React app whose rendered text is 4 characters; the bundled content for the two 'Frontier Risk' and 'Diagnosis' cards is placeholder ('One Line Report Description', '(Cover Image)', 'Project Name TBD'). Only signal is the origin server Last-Modified on index.html, 2026-05-28, which dates the SPA deploy, not any report.",
+  "in_window": false,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — no claim present; and step 5 — undatable items stay out",
+  "reason": "Fetched (200) but the safety-report page is an unreleased placeholder: the DeepSafe card carries no report text and no publication date. Stays out on the date rule as well as on substance. Prior 'not an evaluation' by title-triage reaches the same place but on an untested ground.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Frontier Risk Report: AI Safety Evaluation and Model Behavior Analysis",
+  "url": "https://ai45.shlab.org.cn/en/safety-report#front-risk-report",
+  "resolved_date": "",
+  "date_source": "No date obtainable: the page is a client-side React app whose rendered text is 4 characters; the bundled content for the two 'Frontier Risk' and 'Diagnosis' cards is placeholder ('One Line Report Description', '(Cover Image)', 'Project Name TBD'). Only signal is the origin server Last-Modified on index.html, 2026-05-28, which dates the SPA deploy, not any report.",
+  "in_window": false,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — no claim present; and step 5 — undatable items stay out",
+  "reason": "Fetched (200) but the safety-report page is an unreleased placeholder: the Frontier Risk card carries no report text and no publication date. Stays out on the date rule as well as on substance. Prior 'not an evaluation' by title-triage reaches the same place but on an untested ground.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "DeepScan Diagnosis Report: Large Language Model Evaluation and Diagnosis Joint Analysis Report",
+  "url": "https://ai45.shlab.org.cn/en/safety-report#diagnosis-report",
+  "resolved_date": "",
+  "date_source": "No date obtainable: the page is a client-side React app whose rendered text is 4 characters; the bundled content for the two 'Frontier Risk' and 'Diagnosis' cards is placeholder ('One Line Report Description', '(Cover Image)', 'Project Name TBD'). Only signal is the origin server Last-Modified on index.html, 2026-05-28, which dates the SPA deploy, not any report.",
+  "in_window": false,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — no claim present; and step 5 — undatable items stay out",
+  "reason": "Fetched (200) but the safety-report page is an unreleased placeholder: the DeepScan card carries no report text and no publication date. Stays out on the date rule as well as on substance. Prior 'not an evaluation' by title-triage reaches the same place but on an untested ground.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "OpenClaw proves 'endogenous security' is the ultimate answer to 'unknown risks' (OpenRT one-stop red-teaming framework launch)",
+  "url": "https://mp.weixin.qq.com/s/Vb7aa4JrrJgGorgBqhca4g",
+  "resolved_date": "2026-01-14",
+  "date_source": "WeChat page source var ct = \"1768383308\" (epoch) and the rendered publish_time 2026-01-14",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 hard drop — non-English-only",
+  "reason": "Chinese-language WeChat announcement of the OpenRT red-teaming framework (reports red-teaming of 20 mainstream MLLMs). No English version at this URL, so §1's non-English-only drop applies. Prior 'not an evaluation' is wrong on substance — it does report an evaluation — but the item is correctly out. NOTE: the underlying English paper arXiv:2601.01592 is a separate, screenable item not present in this chunk.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2489
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation (CVPR 2025)",
+  "url": "https://arxiv.org/pdf/2501.12612",
+  "resolved_date": "2025-01-22",
+  "date_source": "arXiv API published (v1) 2025-01-22; PDF header 'arXiv:2501.12612v3 [cs.CL] 25 Jul 2025' is v3",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — benchmark evaluation of named third-party models with measured results",
+  "reason": "T2ISafety evaluates 12 diffusion T2I models across toxicity, fairness and privacy and reports measured concerns. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 81002
+  },
+  "findings": [
+   {
+    "finding": "Evaluation of 12 prominent diffusion text-to-image models on the T2ISafety benchmark found persistent racial-fairness problems, a tendency to generate toxic content, and wide variation in privacy protection, which concept-erasing defences did not remove.",
+    "finding_quote": "We evaluate 12 prominent diffusion models on T2ISafety and reveal several concerns including persistent issues with racial fairness, a tendency to generate",
+    "models_systems": "12 diffusion text-to-image models (aggregate; individual models not named in the reported claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "fairness, toxicity and privacy in image generation",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes (measured results on models). Gate 2 fails (b): the claim is asserted over an anonymous aggregate of 12 models, no specific company or model is named in it, so no company response is addressable. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "12 diffusion T2I models; 12 tasks / 44 categories / 70K prompts; 68K annotated images",
+    "source_url": "https://arxiv.org/pdf/2501.12612",
+    "access_type": "public model access (open weights and hosted T2I APIs); not specified per model"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Beyond Surface Structure: A Causal Assessment of LLMs' Comprehension Ability (ICLR 2025)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/58-BSS_cameraready.pdf",
+  "resolved_date": "2025-02-28",
+  "date_source": "PDF metadata /CreationDate D:20250228120626Z (ICLR 2025 camera-ready); corroborated by arXiv v1 2024-11-29 for the preprint",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured assessment of named third-party LLMs",
+  "reason": "Applies causal mediation analysis (ADCE/AICE) to mainstream LLMs and reports how deep- vs surface-structure reliance differs. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 102931
+  },
+  "findings": [
+   {
+    "finding": "Comparing approximated direct and indirect causal effects across mainstream LLMs found that closed-source models such as GPT rely more on deep structure while open-source models such as Llama are more surface-sensitive, with surface sensitivity decreasing as model scale grows.",
+    "finding_quote": "Comparing ADCE and AICE demonstrates closed-source LLMs (e.g., GPT) rely more on deep structure, while open-source LLMs (e.g., Llama) are more surface-sensitive, which decreases with model scale.",
+    "models_systems": "GPT family (OpenAI) and Llama family (Meta), plus other mainstream LLMs and a random-weight control",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "comprehension / capability evaluation methodology",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): this is a comparative ranking of open- vs closed-source families with no dangerous threshold crossed and no concerning result requiring a company response. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "a series of mainstream LLMs plus a random-weight baseline, evaluated with ADCE/AICE",
+    "source_url": "https://research.ai45.shlab.org.cn/Blog_pics/58-BSS_cameraready.pdf",
+    "access_type": "open weights for the Llama-family models; black-box API for GPT-family"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "ADAM: An Embodied Causal Agent in Open-World Environments (ICLR 2025)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/62-ADAM_cameraready.pdf",
+  "resolved_date": "2025-03-28",
+  "date_source": "PDF metadata /CreationDate D:20250328115741Z (ICLR 2025 camera-ready); arXiv v1 2024-10-29",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — the measured claims characterise the authors' own artefact, not an evaluation of an AI system under test",
+  "reason": "Systems paper introducing ADAM, the authors' own embodied causal agent for Minecraft; comparisons are against other agent-construction methods. Agree with prior exclusion (prior labelled it 'no findings'; 'not an evaluation' is the more precise §3 value).",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 71334
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Building intelligence identification system via large language model watermarking: a survey and beyond (Artificial Intelligence Review)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/94-Building%20intelligence%20identification%20system%20via%20large%20language%20model%20watermarking%20a%20survey%20and%20beyond.pdf",
+  "resolved_date": "2025-05-15",
+  "date_source": "Crossref published-online 2025-05-15 for DOI 10.1007/s10462-025-11222-w (embedded in the PDF metadata); PDF /CreationDate 2025-05-13",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — methodology/tooling finding backed by the authors' own experiments (§4.11)",
+  "reason": "Predominantly a survey (which §2 test 1 would exclude), but §4.11 'Metrics analysis and experiments' reports the authors' own measurements across three multi-bit watermarking schemes. Agree with prior INCLUDED, but on a narrower basis than the prior reason ('44 measured values') implies — most of the paper is secondary.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 186724
+  },
+  "findings": [
+   {
+    "finding": "Own experiments across three multi-bit LLM watermarking schemes (Cyclic-Shift, MPAC, CTWL) measured a three-way trade-off: at fixed information density, better text quality comes with a lower watermark extraction success rate, and lowering information density improves both other metrics.",
+    "finding_quote": "As depicted in the Fig. 9, a trade-off exists between text quality, watermark success rate, and information density.",
+    "models_systems": "Cyclic-Shift, MPAC and CTWL watermarking schemes; LLaMA-2-13B used as the perplexity oracle",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "watermarking / provenance evaluation methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no: this is a finding about watermarking algorithms and their evaluation metrics, not an empirical finding about a model's behaviour. Tier C, action_trackable blank per §4.",
+    "finding_type": "methodology finding",
+    "scope": "three multi-bit watermarking algorithms measured on success rate, text quality (PPL via LLaMA-2-13B) and bits-per-word",
+    "source_url": "https://research.ai45.shlab.org.cn/Blog_pics/94-Building%20intelligence%20identification%20system%20via%20large%20language%20model%20watermarking%20a%20survey%20and%20beyond.pdf",
+    "access_type": "open-weight oracle model; algorithm reimplementations"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "A Mousetrap: Fooling Large Reasoning Models for Jailbreak with Chain of Iterative Chaos (ACL 2025)",
+  "url": "https://arxiv.org/abs/2502.15806",
+  "resolved_date": "2025-02-19",
+  "date_source": "arXiv API published (v1) 2025-02-19; abs page 'Submitted on 19 Feb 2025'",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured jailbreak success rates against named frontier reasoning models",
+  "reason": "Mousetrap reports attack success rates against o1-mini, Claude-Sonnet and Gemini-Thinking. Agree with prior INCLUDED. §5 split: three companies, three rows.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5304
+  },
+  "findings": [
+   {
+    "finding": "The Mousetrap chain-of-iterative-chaos jailbreak reached a 96% success rate against OpenAI's o1-mini on the authors' Trotter toxic dataset.",
+    "finding_quote": "Success rates of the Mousetrap attacking o1-mini, Claude-Sonnet and Gemini-Thinking are as high as 96%, 86% and 98% respectively on our toxic dataset Trotter.",
+    "models_systems": "o1-mini",
+    "institution": "OpenAI",
+    "domain": "jailbreak / misuse resistance of large reasoning models",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes (measured ASR). Gate 2: (a) empirical model finding, (b) names a specific frontier model and its developer, (c) a 96% jailbreak success rate against a deployed reasoning model is a concerning result for which a developer response is reasonable. Tier A.",
+    "finding_type": "empirical model finding",
+    "scope": "black-box jailbreak evaluation on the Trotter toxic dataset",
+    "source_url": "https://arxiv.org/abs/2502.15806",
+    "access_type": "black-box API"
+   },
+   {
+    "finding": "The Mousetrap jailbreak reached an 86% success rate against Anthropic's Claude-Sonnet on Trotter, and 87.5% / 86.58% / 93.13% on AdvBench, StrongREJECT and HarmBench respectively.",
+    "finding_quote": "On benchmarks such as AdvBench, StrongREJECT, and HarmBench, attacking Claude-Sonnet, well-known for its safety, Mousetrap can astonishingly achieve success rates of 87.5%, 86.58% and 93.13% respectively.",
+    "models_systems": "Claude-Sonnet",
+    "institution": "Anthropic",
+    "domain": "jailbreak / misuse resistance of large reasoning models",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes. Gate 2 all three met: named frontier model, and near-90% jailbreak success against a model marketed on its safety is plainly concerning. Tier A. Separate row from the OpenAI and Google results per §5 (different companies never share a row).",
+    "finding_type": "empirical model finding",
+    "scope": "black-box jailbreak evaluation on Trotter plus AdvBench, StrongREJECT and HarmBench",
+    "source_url": "https://arxiv.org/abs/2502.15806",
+    "access_type": "black-box API"
+   },
+   {
+    "finding": "The Mousetrap jailbreak reached a 98% success rate against Google's Gemini-Thinking on the Trotter toxic dataset.",
+    "finding_quote": "Success rates of the Mousetrap attacking o1-mini, Claude-Sonnet and Gemini-Thinking are as high as 96%, 86% and 98% respectively on our toxic dataset Trotter.",
+    "models_systems": "Gemini-Thinking",
+    "institution": "Google DeepMind",
+    "domain": "jailbreak / misuse resistance of large reasoning models",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes. Gate 2 all three met: named frontier model, 98% ASR is concerning and actionable. Tier A. Split from the OpenAI and Anthropic rows per §5.",
+    "finding_type": "empirical model finding",
+    "scope": "black-box jailbreak evaluation on the Trotter toxic dataset",
+    "source_url": "https://arxiv.org/abs/2502.15806",
+    "access_type": "black-box API"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Reflection-Bench: Evaluating Epistemic Agency in Large Language Models (ICML 2025)",
+  "url": "https://icml.cc/virtual/2025/poster/44571",
+  "resolved_date": "2025-07-13",
+  "date_source": "ICML 2025 conference proceedings publication (conference held 13–19 July 2025, Vancouver); the poster page itself carries no byline. Corroborating preprint arXiv:2410.16270 v1 2024-10-21. Day-precision is the conference start, not a page byline.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — an evidence-backed evaluation result of 16 named-class models is asserted on the page",
+  "reason": "Reflection-Bench evaluates 16 models on seven epistemic-agency tasks and reports a three-tier hierarchy and meta-reflection limits. I DISAGREE with the prior 'title-triage: not an AI evaluation' — the abstract on the page is explicitly an evaluation. Note the fuller sources (PMLR/arXiv) would win a §3 dedup if they are separately in the ledger.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3606
+  },
+  "findings": [
+   {
+    "finding": "A Reflection-Bench evaluation of 16 LLMs under three prompting strategies found a clear three-tier performance hierarchy and significant limitations in current LLMs' epistemic agency, most acutely in meta-reflection.",
+    "finding_quote": "Through a comprehensive evaluation of 16 models using three prompting strategies, we identify a clear three-tier performance hierarchy and significant limitations of current LLMs, particularly in meta-reflection capabilities.",
+    "models_systems": "16 LLMs (not individually named on the poster page)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "epistemic agency / cognitive capability benchmark",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b) and (c): no specific model or company is named in the claim, and the result is a comparative capability ranking with no dangerous threshold crossed. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "16 models, seven cognitive tasks, three prompting strategies",
+    "source_url": "https://icml.cc/virtual/2025/poster/44571",
+    "access_type": "not stated on the poster page"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Adversarial Preference Learning for Robust LLM Alignment (ACL 2025 Findings)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/108-Adversarial%20Preference%20Learning%20for%20Robust%20LLM%20Alignment.pdf",
+  "resolved_date": "2025-05-28",
+  "date_source": "PDF metadata /CreationDate D:20250528151827Z (ACL 2025 Findings camera-ready); arXiv v1 2025-05-30 for the preprint",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured safety results on named open-weight models",
+  "reason": "APL is a training method, but it reports measured harmfulness and ASR figures for Mistral-7B-Instruct-v0.3 and Meta-Llama-3-8B-Instruct. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 63816
+  },
+  "findings": [
+   {
+    "finding": "Adversarial Preference Learning applied to Mistral-7B-Instruct-v0.3 cut LLaMA-Guard-measured harmful outputs from 5.88% to 0.43% and lowered HarmBench attack success rate by up to 65%, implying a 5.88% baseline harmful-output rate for the un-hardened aligned model.",
+    "finding_quote": "reducing harmful outputs from 5.88% to 0.43% (mea- sured by LLaMA-Guard), and lowering attack success rate by up to 65% according to Harm- Bench.",
+    "models_systems": "Mistral-7B-Instruct-v0.3 (also Meta-Llama-3-8B-Instruct)",
+    "institution": "Mistral AI",
+    "domain": "adversarial robustness / safety alignment",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (c) on two grounds in §4's exclusion list: the model here is the INSTRUMENT of a methodology study demonstrating APL, and a 7B open-weight instruct model is not a frontier model. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "iterative adversarial training evaluated with LLaMA-Guard, HarmBench, MT-Bench and LC-WinRate",
+    "source_url": "https://research.ai45.shlab.org.cn/Blog_pics/108-Adversarial%20Preference%20Learning%20for%20Robust%20LLM%20Alignment.pdf",
+    "access_type": "open weights"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "ARise: Towards Knowledge-Augmented Reasoning via Risk-Adaptive Search (ACL 2025)",
+  "url": "https://opencausalab.github.io/ARise",
+  "resolved_date": "2025-04-15",
+  "date_source": "arXiv v1 2025-04-15 for the underlying paper (ACL 2025); the project page carries no byline",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — measured claims characterise the authors' own search framework, not the models under test",
+  "reason": "ARise is a knowledge-augmented reasoning framework; the reported deltas are improvements its own method delivers on Qwen2.5 backbones. Agree with prior exclusion. Close call: had the paper reported a safety-relevant property of the backbones themselves it would be INCLUDED at Tier B.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4942
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "REEF: Representation Encoding Fingerprints for Large Language Models (ICLR 2025)",
+  "url": "https://arxiv.org/abs/2410.14273",
+  "resolved_date": "2024-10-18",
+  "date_source": "arXiv API published (v1) 2024-10-18",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — proposes a fingerprinting technique; no evaluation of model behaviour",
+  "reason": "REEF is an IP-protection method (representation-similarity fingerprinting). Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4336
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks (ACL 2025)",
+  "url": "https://aclanthology.org/2025.acl-long.235.pdf",
+  "resolved_date": "2025-07-27",
+  "date_source": "ACL Anthology PDF proceedings footer 'July 27 - August 1, 2025' (ACL 2025, Vienna); date set to the first day of the proceedings",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§4b — arithmetic generalization accuracy is ordinary accuracy, out of scope",
+  "reason": "Theory paper on length generalization in arithmetic, validated on models the authors train. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 85377
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "A Global Dataset Mapping the AI Innovation from Academic Research to Industrial Patents (Scientific Data)",
+  "url": "https://research.ai45.shlab.org.cn/Blog_pics/152-337080_2_merged_1751444608.pdf",
+  "resolved_date": "2025-07-02",
+  "date_source": "PDF metadata /CreationDate D:20250702042508-04'00' (the filename's trailing 1751444608 is the same epoch, 2025-07-02); the document is a peer-review submission copy, tracking no. SDATA-25-01286B",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — a data-infrastructure paper; the object of study is patents and publications, not AI systems",
+  "reason": "DeepInnovationAI is a bibliometric/patent dataset. Its measured numbers concern classifier agreement on its own corpus, not AI model behaviour. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 64312
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Argus Inspection: Do Multimodal Large Language Models Possess the Eye of Panoptes? (ACM Multimedia 2025)",
+  "url": "https://arxiv.org/abs/2506.14805",
+  "resolved_date": "2025-06-03",
+  "date_source": "arXiv API published (v1) 2025-06-03; abs page 'Submitted on 3 Jun 2025'",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured benchmark results across 26 named-class MLLMs",
+  "reason": "Argus Inspection reports a hard ceiling on MLLM visual fine-grained reasoning. I DISAGREE with the prior title-triage 'not an evaluation': the abstract states an explicit measured result.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4613
+  },
+  "findings": [
+   {
+    "finding": "Across 26 mainstream multimodal LLMs, the best score on Argus Inspection's visual fine-grained reasoning task reached only 0.46.",
+    "finding_quote": "Experiments conducted on 26 mainstream MLLMs reveal that the highest performance in visual fine-grained reasoning reaches only 0.46, highlighting considerable potential for enhancement.",
+    "models_systems": "26 mainstream MLLMs (not individually named in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "multimodal perception and causal reasoning benchmark",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b) and (c): the claim names no specific model or company, and a low benchmark score with no dangerous threshold crossed is expressly excluded from Tier A. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "26 MLLMs on a two-difficulty-level benchmark scored with the Eye of Panoptes framework",
+    "source_url": "https://arxiv.org/abs/2506.14805",
+    "access_type": "mix of open-weight and API models; not specified in the claim"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Towards Tracing Trustworthiness Dynamics: Revisiting Pre-training Period of Large Language Models (ACL 2024 Findings)",
+  "url": "https://arxiv.org/pdf/2402.19465",
+  "resolved_date": "2024-02-29",
+  "date_source": "arXiv API published (v1) 2024-02-29; PDF header 'arXiv:2402.19465v2 [cs.CL] 31 Aug 2024' is v2. Accepted at ACL 2024.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured probing results on LLM pre-training checkpoints across five trustworthiness dimensions",
+  "reason": "Reports that trustworthiness concepts are linearly separable early in pre-training and a two-phase fitting/compression dynamic. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 87176
+  },
+  "findings": [
+   {
+    "finding": "Linear probing of LLM pre-training checkpoints achieved high accuracy across reliability, privacy, toxicity, fairness and robustness, showing that models can already distinguish trustworthiness concepts early in pre-training.",
+    "finding_quote": "The high probing accuracy suggests that LLMs in early pre-training can already distinguish concepts in each trustworthiness dimension",
+    "models_systems": "LLM pre-training checkpoints (LLaMA-family checkpoints; not a deployed named product)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "trustworthiness / interpretability during pre-training",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes (measured probing accuracy on model internals). Gate 2 fails (c): this is a reassuring/neutral mechanistic result, not a concerning one, and pre-training checkpoints are not a deployed frontier product. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "linear probing and mutual-information probing of pre-training checkpoints across five trustworthiness dimensions",
+    "source_url": "https://arxiv.org/pdf/2402.19465",
+    "access_type": "open weights / intermediate checkpoints"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models (ACL Findings)",
+  "url": "https://arxiv.org/pdf/2402.05044",
+  "resolved_date": "2024-02-07",
+  "date_source": "arXiv API published (v1) 2024-02-07; PDF header 'arXiv:2402.05044v4 [cs.CL] 7 Jun 2024' is v4. ACL 2024 Findings.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured safety rates for named black-box LLMs under attack-enhanced queries",
+  "reason": "SALAD-Bench reports domain-level safety rates for black-box models on base and attack-enhanced sets. Agree with prior INCLUDED. §5 split applied to the Google result.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 128443
+  },
+  "findings": [
+   {
+    "finding": "On SALAD-Bench's attack-enhanced subset, Google's Gemini safety rate fell to approximately 20%, a sharp decline from its base-set performance.",
+    "finding_quote": "Claude2 leads in performance across both sets, while Gemini’s performance notably declines to approximately 20% in the attack-enhanced subset.",
+    "models_systems": "Gemini",
+    "institution": "Google DeepMind",
+    "domain": "LLM safety benchmark under attack-enhanced queries",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes. Gate 2: (a) empirical, (b) names Gemini and thus Google, (c) an ~80% failure rate once standard attack templates are applied is a concerning safety-robustness result for which a developer response is reasonable. Tier A. Note the same sentence's Claude2 clause is a comparative ranking and is deliberately NOT carried as an Anthropic Tier A row (§5: different companies never share a row, and comparators are never rows).",
+    "finding_type": "empirical model finding",
+    "scope": "black-box LLMs scored by MD-Judge on SALAD-Bench base and attack-enhanced subsets",
+    "source_url": "https://arxiv.org/pdf/2402.05044",
+    "access_type": "black-box API"
+   },
+   {
+    "finding": "SALAD-Bench's MD-Judge auto-labelling agreed with human labels at 94.3%, establishing the reliability of the benchmark's automated evaluator.",
+    "finding_quote": "The consistency rate between auto labeling and human labels achieves 94.3%.",
+    "models_systems": "MD-Judge evaluator",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "evaluation tooling / judge reliability",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no: this is a property of the evaluation instrument, not an empirical finding about a model under test. Tier C, action_trackable blank.",
+    "finding_type": "methodology finding",
+    "scope": "agreement between MD-Judge auto-labels and human annotation",
+    "source_url": "https://arxiv.org/pdf/2402.05044",
+    "access_type": "open-sourced evaluator"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection (EMNLP 2025)",
+  "url": "https://arxiv.org/pdf/2507.02844",
+  "resolved_date": "2025-07-03",
+  "date_source": "arXiv API published (v1) 2025-07-03; PDF header 'arXiv:2507.02844v2 [cs.CV] 16 Sep 2025' is v2. EMNLP 2025 Main.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured jailbreak success rates against two named frontier multimodal models",
+  "reason": "VisCo reports ASR against GPT-4o and Gemini-2.0-Flash. Agree with prior INCLUDED (which was itself a restoration of a wrong title-triage). §5 split: two companies, two rows.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 74538
+  },
+  "findings": [
+   {
+    "finding": "The VisCo vision-centric jailbreak achieved an 85.00% attack success rate and a 4.78 toxicity score against OpenAI's GPT-4o, versus 22.2% ASR for the baseline attack.",
+    "finding_quote": "VisCo significantly outperforms baselines, achieving toxicity scores of 4.78 and 4.88, and ASR of 85.00% and 91.07% on GPT-4o and Gemini- 2.0-Flash, respectively.",
+    "models_systems": "GPT-4o",
+    "institution": "OpenAI",
+    "domain": "multimodal jailbreak / misuse resistance",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes. Gate 2 all three met: named frontier multimodal model, and an 85% jailbreak success rate through the vision channel is concerning and addressable by the developer. Tier A.",
+    "finding_type": "empirical model finding",
+    "scope": "black-box MLLM jailbreak evaluated on MM-SafetyBench with toxicity score and ASR",
+    "source_url": "https://arxiv.org/pdf/2507.02844",
+    "access_type": "black-box API"
+   },
+   {
+    "finding": "The VisCo vision-centric jailbreak achieved a 91.07% attack success rate and a 4.88 toxicity score against Google's Gemini-2.0-Flash.",
+    "finding_quote": "VisCo significantly outperforms baselines, achieving toxicity scores of 4.78 and 4.88, and ASR of 85.00% and 91.07% on GPT-4o and Gemini- 2.0-Flash, respectively.",
+    "models_systems": "Gemini-2.0-Flash",
+    "institution": "Google DeepMind",
+    "domain": "multimodal jailbreak / misuse resistance",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes. Gate 2 all three met: named frontier multimodal model, 91% ASR is concerning. Tier A. Separate row from the OpenAI finding per §5.",
+    "finding_type": "empirical model finding",
+    "scope": "black-box MLLM jailbreak evaluated with toxicity score and ASR",
+    "source_url": "https://arxiv.org/pdf/2507.02844",
+    "access_type": "black-box API"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment (EMNLP 2025)",
+  "url": "https://arxiv.org/pdf/2507.18631",
+  "resolved_date": "2025-07-24",
+  "date_source": "arXiv API published (v1) 2025-07-24; PDF header 'arXiv:2507.18631v2 [cs.CR] 25 Jul 2025' is v2. EMNLP 2025.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured safety degradation of a named open-weight model from benign fine-tuning data",
+  "reason": "LARF is a filtering method, but the headline measurement is about Llama3.1's safety alignment collapsing under benign-looking fine-tuning data. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 74805
+  },
+  "findings": [
+   {
+    "finding": "Fine-tuning Meta's Llama3.1 on 1,000 benign Alpaca samples that LARF ranked as safety-degrading raised its HarmBench attack success rate from 3.5% to 39%; fine-tuning on the 1,000 top-ranked samples instead reduced ASR to 0%.",
+    "finding_quote": "On the Alpaca dataset, fine-tuning Llama3.1 with the 1,000 bottom ranked samples flagged by LARF raises the Attack Success Rate (ASR) on HarmBench from 3.5% to 39%",
+    "models_systems": "Llama3.1",
+    "institution": "Meta",
+    "domain": "fine-tuning safety / alignment degradation",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes. Gate 2: (a) empirical, (b) names Llama3.1 and thus Meta, (c) an eleven-fold ASR increase from ostensibly benign fine-tuning data is a concerning result about the released model's alignment robustness, and a developer response (guidance, data screening, fine-tuning API guardrails) is reasonable. Tier A. Judgement call: LARF is also a methodology contribution, but the model here is the object degraded, not merely the instrument.",
+    "finding_type": "empirical model finding",
+    "scope": "open-weight LLM fine-tuned on filtered Alpaca subsets, evaluated on HarmBench, DirectHarm4 and HEx-PHI",
+    "source_url": "https://arxiv.org/pdf/2507.18631",
+    "access_type": "open weights"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Self-adaptive Dataset Construction for Real-World Multimodal Safety Scenarios (EMNLP 2025 Findings)",
+  "url": "https://arxiv.org/pdf/2509.04403",
+  "resolved_date": "2025-09-04",
+  "date_source": "arXiv API published (v1) 2025-09-04; PDF header 'arXiv:2509.04403v2 [cs.CV] 26 Feb 2026' is v2. EMNLP 2025 Findings.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured safety rate for a named frontier multimodal model on the RMS test set",
+  "reason": "I DISAGREE with the prior title-triage 'not an evaluation': the paper reports a concrete safety-rate measurement across MLLMs, with Gemini-1.5-Flash the best performer at 22%.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 77570
+  },
+  "findings": [
+   {
+    "finding": "On the authors' real-world multimodal safety (RMS) test set, judged by InternVL2_5-78B, the best-performing model tested — Google's Gemini-1.5-Flash — achieved only a 22% safety rate.",
+    "finding_quote": "Flash(Team et al., 2024) model achieves only a 22% safety rate in its responses.",
+    "models_systems": "Gemini-1.5-Flash",
+    "institution": "Google DeepMind",
+    "domain": "real-world multimodal safety",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes. Gate 2: (a) empirical, (b) names Gemini-1.5-Flash and thus Google, (c) a 22% safety rate for the best-performing model on realistic multimodal risk scenarios is concerning and actionable. Tier A. The quote is truncated at 'Flash' because the PDF text layer runs 'best-performingGemini-1.5- Flash' together across a line break; the character-exact fragment is preserved rather than silently repaired (§10).",
+    "finding_type": "empirical model finding",
+    "scope": "MLLMs prompted on the 35k-pair RMS test set, safety judged by InternVL2_5-78B",
+    "source_url": "https://arxiv.org/pdf/2509.04403",
+    "access_type": "black-box API for the named model"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety (ACL Main)",
+  "url": "https://arxiv.org/pdf/2401.11880",
+  "resolved_date": "2024-01-22",
+  "date_source": "arXiv API published (v1) 2024-01-22; PDF header 'arXiv:2401.11880v3 [cs.CL] 20 Aug 2024' is v3. ACL 2024.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured safety behaviour of LLM multi-agent systems",
+  "reason": "PsySafe reports measured joint/process dangerous rates and human-vs-GPT-3.5 evaluator agreement. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 101788
+  },
+  "findings": [
+   {
+    "finding": "Psychological-trait attacks on LLM multi-agent systems produced measurable collective dangerous behaviour, agent self-reflection during dangerous behaviour, and a correlation between agents' psychological assessment scores and their dangerous behaviour.",
+    "finding_quote": "Our experiments reveal several intriguing phenomena, such as the collective dangerous behaviors among agents, agents’ self-reflection when engaging in dangerous behavior, and the correlation between agents’ psychological as- sessments and dangerous behaviors.",
+    "models_systems": "LLM-based multi-agent systems (GPT-3.5 Turbo among the backbones; not attributed to a company in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "multi-agent system safety / dark-trait injection",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b): the claim is about multi-agent systems in general, with no specific company or model named as the subject of the concerning behaviour. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "multi-agent systems under psychological-trait injection, scored by joint/process dangerous rates with human validation",
+    "source_url": "https://arxiv.org/pdf/2401.11880",
+    "access_type": "black-box API backbones"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "The Better Angels of Machine Personality: How Personality Relates to LLM Safety",
+  "url": "https://arxiv.org/abs/2407.12344",
+  "resolved_date": "2024-07-17",
+  "date_source": "arXiv API published (v1) 2024-07-17; abs page 'Submitted on 17 Jul 2024'",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured relationship between LLM personality traits and toxicity/privacy/fairness and jailbreak susceptibility",
+  "reason": "I DISAGREE with the prior title-triage 'not an evaluation': the paper measures safety dimensions across LLMs and reports quantified effects of trait editing.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4435
+  },
+  "findings": [
+   {
+    "finding": "LLM personality traits measured on the MBTI-M scale correlate with toxicity, privacy and fairness performance; editing an LLM's traits from ISTJ to ISTP improved privacy and fairness performance by roughly 43% and 10% relatively, and models with different traits were differentially susceptible to jailbreak.",
+    "finding_quote": "inducing personality from ISTJ to ISTP resulted in a relative improvement of approximately 43% and 10% in privacy and fairness performance, respectively",
+    "models_systems": "multiple LLMs (not individually named in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "safety, toxicity, privacy and fairness vs model personality",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b): no specific company or model is named in the claim. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "LLMs profiled on MBTI-M and evaluated on toxicity, privacy, fairness and jailbreak susceptibility",
+    "source_url": "https://arxiv.org/abs/2407.12344",
+    "access_type": "mix of open-weight and API models; not stated in the claim"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Critic-guided decision transformer for offline reinforcement learning (AAAI)",
+  "url": "https://arxiv.org/pdf/2312.13716",
+  "resolved_date": "2023-12-21",
+  "date_source": "arXiv API published (v1) 2023-12-21; PDF header 'arXiv:2312.13716v1 [cs.LG] 21 Dec 2023'. AAAI 2024.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — an offline-RL algorithm paper; the objects measured are D4RL control tasks, not AI systems under evaluation",
+  "reason": "Critic-Guided Decision Transformer proposes an RCSL/value-based hybrid. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 50974
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Weak-to-Strong Search: Align Large Language Models via Searching over Small Language Models (NeurIPS)",
+  "url": "https://arxiv.org/abs/2405.19262",
+  "resolved_date": "2024-05-29",
+  "date_source": "arXiv API published (v1) 2024-05-29; abs page 'Submitted on 29 May 2024'. NeurIPS 2024.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — measured claims characterise the authors' own test-time alignment method",
+  "reason": "Weak-to-strong search is an alignment technique; models serve as substrates. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5023
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Fake Alignment: Are LLMs Really Aligned Well? (NAACL 2024)",
+  "url": "https://aclanthology.org/2024.naacl-long.263",
+  "resolved_date": "2024-06-16",
+  "date_source": "ACL Anthology metadata Month: June, Year: 2024; PDF proceedings footer 'June 16-21, 2024'; date set to the first day of the proceedings",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured discrepancy between multiple-choice and open-ended safety performance across 14 named-class LLMs",
+  "reason": "Fake Alignment applies the FINE framework to 14 LLMs and finds several purportedly safe models are poorly aligned. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 14507
+  },
+  "findings": [
+   {
+    "finding": "Applying the FINE framework's Consistency Score and Consistent Safety Score to 14 widely used LLMs showed that several models with purported safety are poorly aligned in practice, their high open-ended safety scores reflecting memorised answer style rather than genuine alignment.",
+    "finding_quote": "Applying FINE to 14 widely-used LLMs reveals several models with purported safety are poorly aligned in practice.",
+    "models_systems": "14 widely-used LLMs (not individually named in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "safety evaluation validity / fake alignment",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b): 'several models' is effectively anonymised in the claim, so no company response is addressable. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "14 LLMs compared on matched multiple-choice and open-ended safety questions via CS and CSS",
+    "source_url": "https://aclanthology.org/2024.naacl-long.263",
+    "access_type": "mix of open-weight and API models"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Flames: Benchmarking Value Alignment of LLMs in Chinese (NAACL 2024)",
+  "url": "https://aclanthology.org/2024.naacl-long.256",
+  "resolved_date": "2024-06-16",
+  "date_source": "ACL Anthology metadata Month: June, Year: 2024; PDF proceedings footer 'June 16-21, 2024'; date set to the first day of the proceedings. Direct fetch of the .pdf failed and resolved via Wayback; the landing page fetched directly.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured value-alignment results across 17 named-class LLMs",
+  "reason": "Flames reports that all 17 evaluated LLMs perform poorly, particularly on safety and fairness. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 15535
+  },
+  "findings": [
+   {
+    "finding": "Prompting 17 mainstream LLMs with the adversarial Flames benchmark of Chinese value-alignment prompts found that all evaluated models performed relatively poorly, most acutely on the safety and fairness dimensions.",
+    "finding_quote": "Our findings indicate that all the evaluated LLMs demonstrate relatively poor performance on Flames, particularly in the safety and fairness dimensions.",
+    "models_systems": "17 mainstream LLMs (not individually named in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "value alignment / harmlessness in Chinese",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b): the claim is asserted over the whole evaluated set with no specific company or model named. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "17 LLMs on adversarial Chinese value-alignment prompts with human annotation and a lightweight scorer",
+    "source_url": "https://aclanthology.org/2024.naacl-long.256",
+    "access_type": "mix of open-weight and API models"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "ESC-Eval: Evaluating Emotion Support Conversations in Large Language Models (EMNLP 2024)",
+  "url": "https://arxiv.org/pdf/2406.14952",
+  "resolved_date": "2024-06-21",
+  "date_source": "arXiv API published (v1) 2024-06-21; PDF header 'arXiv:2406.14952v3 [cs.CL] 28 Oct 2024' is v3. EMNLP 2024.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured human-annotated evaluation of 14 LLMs as emotion-support conversation models",
+  "reason": "ESC-Eval reports comparative human-annotated results and an automated ranker. Agree with prior INCLUDED (itself a restoration of a wrong title-triage).",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 102940
+  },
+  "findings": [
+   {
+    "finding": "Human annotation of multi-turn dialogues produced by 14 LLMs acting as emotion-support conversation models found that ESC-oriented LLMs outperform general AI-assistant LLMs but all remain behind human performance.",
+    "finding_quote": "The results show that ESC- oriented LLMs exhibit superior ESC abilities compared to general AI-assistant LLMs, but there is still a gap behind human performance.",
+    "models_systems": "14 LLMs including general assistants (e.g. ChatGPT) and ESC-oriented models (e.g. ExTES-Llama)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "emotional-support conversation quality / mental-health-adjacent safety",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): this is a comparative ranking against a human baseline with no dangerous threshold crossed. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "14 LLMs interacting with the ESC-Role role-playing agent over 2,801 role cards, human-annotated",
+    "source_url": "https://arxiv.org/pdf/2406.14952",
+    "access_type": "mix of open-weight and API models"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models (NeurIPS 2024)",
+  "url": "https://neurips.cc/virtual/2024/poster/97540",
+  "resolved_date": "2024-12-10",
+  "date_source": "NeurIPS 2024 proceedings/poster publication (conference held 10–15 December 2024, Vancouver); the poster page carries no byline. Corroborating preprint arXiv:2406.07594 v1 2024-06-11.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — an evidence-backed evaluation conclusion over 13 advanced models is asserted on the page",
+  "reason": "MLLMGuard reports results across 13 advanced models and a GuardRank evaluator that beats GPT-4. I DISAGREE with the prior title-triage 'not an evaluation'.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2760
+  },
+  "findings": [
+   {
+    "finding": "Evaluation of 13 advanced multimodal LLMs on the MLLMGuard suite (privacy, bias, toxicity, truthfulness, legality, bilingual) concluded that MLLMs remain substantially short of being safe and responsible.",
+    "finding_quote": "Our evaluation results across 13 advanced models indicate that MLLMs still have a substantial journey ahead before they can be considered safe and responsible.",
+    "models_systems": "13 advanced MLLMs (not individually named in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "multimodal safety evaluation suite",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b): no specific model or company is named in the claim. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "13 MLLMs across five safety dimensions in English and Chinese, scored by the GuardRank evaluator",
+    "source_url": "https://neurips.cc/virtual/2024/poster/97540",
+    "access_type": "mix of open-weight and API models"
+   },
+   {
+    "finding": "The purpose-built lightweight GuardRank evaluator achieved significantly higher evaluation accuracy than GPT-4 on MLLMGuard, and using GPT-4V as both evaluator and evaluatee was shown to be unreliable because of self-preference bias.",
+    "finding_quote": "a fully automated lightweight evaluator termed GuardRank is developed, which achieves significantly higher evaluation accuracy than GPT-4",
+    "models_systems": "GuardRank evaluator; GPT-4 / GPT-4V as comparison judges",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "evaluation tooling / LLM-as-judge reliability",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no: this is a claim about the evaluation instrument, not about a model under test. Tier C, action_trackable blank.",
+    "finding_type": "methodology finding",
+    "scope": "comparison of GuardRank against GPT-4 as an automated safety evaluator",
+    "source_url": "https://neurips.cc/virtual/2024/poster/97540",
+    "access_type": "open-sourced evaluator"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "From Pixels to Principles: A Decade of Progress and Landscape in Trustworthy Computer Vision (Science and Engineering Ethics)",
+  "url": "https://link.springer.com/article/10.1007/s11948-024-00480-6",
+  "resolved_date": "2024-06-10",
+  "date_source": "Springer article page 'Published: 10 June 2024'; Crossref published-online 2024-06-10",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — bibliometric analysis of the CV literature; the objects measured are papers and normative documents, not AI systems",
+  "reason": "A decade-scale text-mining study of trustworthiness attention in computer-vision venues. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 60336
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "CELLO: Causal Evaluation of Large Vision-Language Models (EMNLP)",
+  "url": "https://arxiv.org/pdf/2406.19131v1",
+  "resolved_date": "2024-06-27",
+  "date_source": "arXiv API published (v1) 2024-06-27; PDF header 'arXiv:2406.19131v1 [cs.CV] 27 Jun 2024'. EMNLP 2024.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured causal-reasoning results and robustness failures across named LVLMs",
+  "reason": "CELLO reports both an aggregate struggle and a named-model robustness collapse. Agree with prior INCLUDED (a restoration).",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 82619
+  },
+  "findings": [
+   {
+    "finding": "Robustness testing on the CELLO benchmark showed that LVLMs' grasp of causal relationships is brittle: Qwen-VL's accuracy fell from 49% to 4% under perturbation, while CELLO-CoT prompting raised GPT-4o's accuracy by 11%.",
+    "finding_quote": "Robustness testing indicates that LVLMs’ under- standing of causal relationships is vulnerable, e.g., the performance of Qwen-VL (Bai et al., 2023b) significantly drops from 49% to 4%.",
+    "models_systems": "Qwen-VL (also GPT-4o in the accompanying CoT result)",
+    "institution": "Alibaba",
+    "domain": "causal reasoning in vision-language models",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): a capability-robustness collapse on a causal-reasoning benchmark crosses no dangerous threshold and is not a safety hazard for which a company response is reasonable; §4 excludes benchmark scores of this kind from Tier A. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "14,094 causal questions across discovery, association, intervention and counterfactual levels",
+    "source_url": "https://arxiv.org/pdf/2406.19131v1",
+    "access_type": "open weights (Qwen-VL) and black-box API (GPT-4o)"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "CLEAR: Can Language Models Really Understand Causal Graphs? (EMNLP)",
+  "url": "https://arxiv.org/abs/2406.16605",
+  "resolved_date": "2024-06-24",
+  "date_source": "arXiv API published (v1) 2024-06-24; abs page 'Submitted on 24 Jun 2024'. EMNLP.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured benchmark results and five empirical findings across six leading language models",
+  "reason": "CLEAR evaluates six leading LMs on 20 causal-graph tasks. I DISAGREE with the prior title-triage 'not an evaluation'.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4440
+  },
+  "findings": [
+   {
+    "finding": "Across 20 causal-graph tasks at three complexity levels, six leading language models showed only a preliminary understanding of causal graphs, with significant room for improvement.",
+    "finding_quote": "Our results indicate that while language models demonstrate a preliminary understanding of causal graphs, significant potential for improvement remains.",
+    "models_systems": "six leading language models (not individually named in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "causal-graph understanding benchmark",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b) and (c): no company or model named in the claim, and a capability benchmark result with no dangerous threshold crossed. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "six language models on 20 causal-graph tasks across three complexity levels",
+    "source_url": "https://arxiv.org/abs/2406.16605",
+    "access_type": "not stated in the claim"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Quantifying and Mitigating Unimodal Biases in Multimodal Large Language Models: A Causal Perspective (EMNLP)",
+  "url": "https://arxiv.org/abs/2403.18346",
+  "resolved_date": "2024-03-27",
+  "date_source": "arXiv API published (v1) 2024-03-27; abs page 'Submitted on 27 Mar 2024'. EMNLP.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured bias effects on MLLM predictions via causal analysis and the MORE dataset",
+  "reason": "Reports that MLLMs perform poorly on MORE, indicating strong unimodal biases. I DISAGREE with the prior title-triage 'not an evaluation' — bias measurement on models is an evaluation.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4986
+  },
+  "findings": [
+   {
+    "finding": "Causal analysis plus evaluation on the 12,000-instance MORE VQA dataset showed that multimodal LLMs perform poorly, indicating strong unimodal (language and vision) biases and limited semantic understanding.",
+    "finding_quote": "Our experiments show that MLLMs perform poorly on MORE, indicating strong unimodal biases and limited semantic understanding.",
+    "models_systems": "multimodal LLMs (not individually named in the claim)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "unimodal bias in multimodal models",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (b): the claim names no specific model or company. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "MLLMs on 12,000 multi-hop VQA instances designed to defeat unimodal shortcuts",
+    "source_url": "https://arxiv.org/abs/2403.18346",
+    "access_type": "mix of open-weight and API models; not stated in the claim"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "It Ain't That Bad: Understanding the Mysterious Performance Drop in OOD Generalization for Generative Transformer Models (IJCAI)",
+  "url": "https://www.ijcai.org/proceedings/2024/0727.pdf",
+  "resolved_date": "2024-08-03",
+  "date_source": "IJCAI-24 proceedings (Crossref issued 2024-08; PDF metadata /CreationDate D:20240725195836Z and /Subject 'Paper accepted and presented at IJCAI-2024'); day set to the conference/proceedings start, 3 Aug 2024. Corroborating preprint arXiv:2308.08268 v1 2023-08-16.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§4b — arithmetic ID/OOD accuracy is ordinary accuracy, out of scope; §2 test 1 — models are trained by the authors as a study substrate",
+  "reason": "Mechanistic study of length generalization in small transformers the authors train. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 44237
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Joint-sensemaking, innovation, and communication management during crisis: Evidence from the DCT applications in China (Big Data & Society)",
+  "url": "https://journals.sagepub.com/doi/pdf/10.1177/20539517241270714",
+  "resolved_date": "2024-08-26",
+  "date_source": "Crossref published-online 2024-08-26 for DOI 10.1177/20539517241270714 (print issue Sept 2024). Direct fetch 403 and no Wayback snapshot, so the date comes from the registration agency record, not the page.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — the object of study is organisational crisis communication, not an AI system",
+  "reason": "Digital contact-tracing case study in Big Data & Society. Agree with prior exclusion. Full text was not retrievable (SAGE 403, no snapshot); the exclusion rests on the abstract-level subject matter from Crossref.",
+  "fetch": {
+   "via": "blocked",
+   "status": 403,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Chain of Risks Evaluation (CORE): a framework for safer large language models in public mental health (Psychiatry and Clinical Neurosciences)",
+  "url": "https://onlinelibrary.wiley.com/doi/10.1111/pcn.13781",
+  "resolved_date": "2025-01-24",
+  "date_source": "Crossref published-online 2025-01-24 and Semantic Scholar publicationDate 2025-01-24 for DOI 10.1111/pcn.13781. Direct fetch 403 (Wiley) with no Wayback snapshot, so the date comes from the registration agency record, not the page.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — a proposed conceptual framework and recommendations, not evidence-backed measured results",
+  "reason": "Semantic Scholar types the article as a Review; its abstract describes a perspective piece proposing the CORE conceptual framework and roles for mental-health practitioners. Agree with prior exclusion. Full text blocked, so this rests on abstract and publication-type metadata.",
+  "fetch": {
+   "via": "blocked",
+   "status": 403,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Towards Safe and Trustworthy Embodied AI: Foundations, Status, and Prospects",
+  "url": "https://ai45lab.github.io/Awesome-Trustworthy-Embodied-AI",
+  "resolved_date": "2025-08-20",
+  "date_source": "GitHub API created_at 2025-08-20T02:10:35Z for repo AI45Lab/Awesome-Trustworthy-Embodied-AI backing this Pages site (the rendered page yields 31 characters and carries no byline); repo pushed_at 2026-08-29",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — a curated survey/reading list is a summary of others' work",
+  "reason": "'Awesome' list accompanying a survey of trustworthy embodied AI. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 31
+  },
+  "findings": []
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models (ACL 2025)",
+  "url": "https://aclanthology.org/2025.acl-long.590.pdf",
+  "resolved_date": "2025-07-27",
+  "date_source": "ACL Anthology PDF proceedings footer 'July 27 - August 1, 2025' (ACL 2025, Vienna); date set to the first day of the proceedings",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured fairness/privacy trade-off in named open-weight LLMs",
+  "reason": "Reports a counter-intuitive measured trade-off (SFT for privacy awareness degrades fairness awareness) and a training-free fix. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 107893
+  },
+  "findings": [
+   {
+    "finding": "Supervised fine-tuning that raises an LLM's privacy awareness measurably degrades its fairness awareness with only thousands of samples; suppressing the coupled neurons (SPIN) removes the trade-off and raised Qwen-2-7B-Instruct's fairness awareness by 12.2% and privacy awareness by 14.0%.",
+    "finding_quote": "improving Qwen-2-7B-Instruct’s fairness awareness by 12.2% and privacy aware- ness by 14.0%",
+    "models_systems": "Qwen-2-7B-Instruct and other open-weight LLMs",
+    "institution": "Alibaba",
+    "domain": "fairness and privacy awareness trade-off",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): the model is the INSTRUMENT of a methodology study demonstrating SPIN, and a 7B open-weight instruct model is not a frontier system; the headline numbers are improvements, not a concerning result. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "open-weight LLMs under SFT and under the training-free SPIN intervention, scored on fairness and privacy awareness plus general capability",
+    "source_url": "https://aclanthology.org/2025.acl-long.590.pdf",
+    "access_type": "open weights"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "Demystifying Reasoning Dynamics with Mutual Information: Thinking Tokens are Information Peaks in LLM Reasoning (NeurIPS 2025)",
+  "url": "https://arxiv.org/pdf/2506.02867",
+  "resolved_date": "2025-06-03",
+  "date_source": "arXiv API published (v1) 2025-06-03; PDF header 'arXiv:2506.02867v2 [cs.AI] 4 Jun 2025' is v2",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured internal-dynamics results on named open-weight reasoning models",
+  "reason": "Reports the MI-peaks phenomenon and the causal importance of thinking tokens in DeepSeek-R1-Distill models. Agree with prior INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 97575
+  },
+  "findings": [
+   {
+    "finding": "Mutual-information tracking across large reasoning models showed MI peaks occurring in under 5% of reasoning steps (only 0.51% for DeepSeek-R1-Distill-Qwen-7B), concentrated on reflection/transition 'thinking tokens' that are disproportionately important to reasoning performance.",
+    "finding_quote": "As shown in Table 1, MI peaks occur quite sparsely in the reasoning processes of LRMs, accounting for no more than 5% of all reasoning steps.",
+    "models_systems": "DeepSeek-R1-Distill-Qwen-7B, DeepSeek-R1-Distill-LLaMA-8B and other LRMs",
+    "institution": "DeepSeek",
+    "domain": "reasoning-model interpretability",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes (measured property of model internals). Gate 2 fails (c): a mechanistic/interpretability result with no concerning behaviour and no dangerous threshold crossed; the models are distilled open-weight research checkpoints. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "mutual information between intermediate representations and correct answers, tracked across reasoning trajectories",
+    "source_url": "https://arxiv.org/pdf/2506.02867",
+    "access_type": "open weights"
+   }
+  ]
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "title": "EvoBench: Towards Real-world LLM-Generated Text Detection Benchmarking for Evolving Large Language Models (ACL 2025)",
+  "url": "https://aclanthology.org/2025.findings-acl.754.pdf",
+  "resolved_date": "2025-07-27",
+  "date_source": "ACL Anthology PDF proceedings footer 'July 27 - August 1, 2025' (ACL 2025 Findings, Vienna); date set to the first day of the proceedings",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured generalization failure of 14 detection methods across 29 evolving LLM versions",
+  "reason": "EvoBench reports that detectors degrade as the generating LLMs evolve. Agree with prior INCLUDED (a restoration).",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 66835
+  },
+  "findings": [
+   {
+    "finding": "Evaluating 14 LLM-generated-text detection methods on EvoBench across 7 LLM families and 29 evolving versions showed all of them lose generalization as models evolve, with detection performance dropping by up to 25% (e.g. Fast-DetectGPT on Claude-3-5-haiku versus Claude-3-haiku).",
+    "finding_quote": "Figure 2 illustrates that the detection performance of cur- rent detection methods suffers up to 25% drop as LLMs evolve.",
+    "models_systems": "14 detection methods measured against 29 versions across 7 LLM families (Claude-3/3.5-haiku and GPT-4o variants among them)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "domain": "LLM-generated-text detection / provenance",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes (measured detector performance against named model versions). Gate 2 fails (b) and (c): the concerning subject is third-party detection tooling rather than a developer's model, and no company response to its own model is the addressable action. Tier B.",
+    "finding_type": "methodology finding",
+    "scope": "14 detectors x 29 evolving LLM versions, measured with AUROC and the new EMG metric",
+    "source_url": "https://aclanthology.org/2025.findings-acl.754.pdf",
+    "access_type": "black-box generation APIs plus open-weight models"
+   }
+  ]
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 6",
+  "url": "http://go.pardot.com/webmail/1068562/1295681920/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "resolved_date": "2026-06-01",
+  "date_source": "newsletter masthead 'Volume 06 | June 2026' (month precision; day set to 01 and flagged as such)",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — announcements, programme updates and forthcoming-publication notices, not evidence-backed results in this document",
+  "reason": "DSRI newsletter Volume 06: challenge launches, workshop reports, personnel and publication listings. Any measured results referenced (SAFE challenge outcomes, the suicide-risk LLM evaluation) live in the cited papers, not here; §3 dedup would send them to those primary sources. Prior 'not an evaluation' by title-triage lands in the same place; 'no findings' is the more accurate §3 value.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7600
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 5",
+  "url": "https://go.pardot.com/webmail/1068562/1287961680/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "resolved_date": "2026-04-01",
+  "date_source": "newsletter masthead 'Volume 05 | April 2026' (month precision; day set to 01 and flagged as such)",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — announcements, programme updates and forthcoming-publication notices, not evidence-backed results in this document",
+  "reason": "DSRI newsletter Volume 05: challenge launches, workshop reports, personnel and publication listings. Any measured results referenced (SAFE challenge outcomes, the suicide-risk LLM evaluation) live in the cited papers, not here; §3 dedup would send them to those primary sources. Prior 'not an evaluation' by title-triage lands in the same place; 'no findings' is the more accurate §3 value.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6700
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 4",
+  "url": "https://go.pardot.com/webmail/1068562/1284422857/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "resolved_date": "2026-01-01",
+  "date_source": "newsletter masthead 'Volume 04 | January 2026' (month precision; day set to 01 and flagged as such)",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — announcements, programme updates and forthcoming-publication notices, not evidence-backed results in this document",
+  "reason": "DSRI newsletter Volume 04: challenge launches, workshop reports, personnel and publication listings. Any measured results referenced (SAFE challenge outcomes, the suicide-risk LLM evaluation) live in the cited papers, not here; §3 dedup would send them to those primary sources. Prior 'not an evaluation' by title-triage lands in the same place; 'no findings' is the more accurate §3 value.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7900
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 3",
+  "url": "https://go.pardot.com/webmail/1068562/1284422851/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "resolved_date": "2025-11-01",
+  "date_source": "newsletter masthead 'Volume 03 | November 2025' (month precision; day set to 01 and flagged as such)",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — announcements, programme updates and forthcoming-publication notices, not evidence-backed results in this document",
+  "reason": "DSRI newsletter Volume 03: challenge launches, workshop reports, personnel and publication listings. Any measured results referenced (SAFE challenge outcomes, the suicide-risk LLM evaluation) live in the cited papers, not here; §3 dedup would send them to those primary sources. Prior 'not an evaluation' by title-triage lands in the same place; 'no findings' is the more accurate §3 value.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4672
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 2",
+  "url": "https://go.pardot.com/webmail/1068562/1284422863/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "resolved_date": "2025-10-01",
+  "date_source": "newsletter masthead 'Volume 02 | October 2025' (month precision; day set to 01 and flagged as such)",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — announcements, programme updates and forthcoming-publication notices, not evidence-backed results in this document",
+  "reason": "DSRI newsletter Volume 02: challenge launches, workshop reports, personnel and publication listings. Any measured results referenced (SAFE challenge outcomes, the suicide-risk LLM evaluation) live in the cited papers, not here; §3 dedup would send them to those primary sources. Prior 'not an evaluation' by title-triage lands in the same place; 'no findings' is the more accurate §3 value.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2958
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "DSRI Newsletter Volume 1",
+  "url": "http://go.pardot.com/webmail/1068562/1284422839/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+  "resolved_date": "",
+  "date_source": "UNDATABLE to day/month precision: the inaugural issue carries no masthead date. Internal evidence brackets it tightly inside the window — it reports the DEF CON 2025 demonstration (8–11 Aug 2025) in the past tense and the ICCV APAI workshop (19 Oct 2025) and the SAFE Video Challenge winners as forthcoming, and Volume 02 is dated October 2025. So: after 2025-08-11 and before 2025-10-31.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — a discrete, evidence-backed measured result asserted by DSRI about its own demonstration",
+  "reason": "Window membership IS established (bracketed 2025-08-11..2025-10-31, both endpoints inside 2018-01-01..2026-08-29) even though the exact date is not, so this is screened rather than parked as undatable. I DISAGREE with the prior title-triage 'not an evaluation': the DEF CON section reports measured detector accuracy. This is a judgement call — a newsletter is a thin venue for a finding.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6835
+  },
+  "findings": [
+   {
+    "finding": "At DEF CON 2025, deepfake detection analytics developed on the DARPA SemaFor program detected advanced attendee-generated deepfakes with only 43% accuracy; in a separate real-versus-fake image game using open-source generators, SemaFor was correct 93% of the time against 77% for ~5,000 human guesses.",
+    "finding_quote": "the deepfake detection analytics developed on the DARPA program were only able to detect the advanced deepfakes with a 43% accuracy",
+    "models_systems": "SemaFor deepfake detection analytics (individual detectors not named)",
+    "institution": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+    "domain": "synthetic media detection / deepfake forensics",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes (measured detection accuracy of AI detector models observed in a live demonstration). Gate 2 fails (b): the analytics are effectively anonymised — no specific company or model is named — so no company response is addressable. Tier B.",
+    "finding_type": "empirical model finding",
+    "scope": "live DEF CON demonstration against attendee-generated deepfakes from an advanced video creation system, plus a human-vs-SemaFor image game",
+    "source_url": "http://go.pardot.com/webmail/1068562/1284422839/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+    "access_type": "internal platform access"
+   }
+  ]
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "Health Question Answering Assessment (Dyff assessment)",
+  "url": "https://app.dyff.io/assessments/12acd1e1265a437f97614d8e7d404454",
+  "resolved_date": "",
+  "date_source": "UNDATABLE: app.dyff.io serves a client-side shell (rendered text 371 chars: nav plus a '© 2026 Underwriters Laboratories Inc.' footer and a Sign In redirect); no assessment metadata, no Last-Modified, no Wayback snapshot of this URL, and the public api.dyff.io exposes only /health. No publication date can be established.",
+  "in_window": false,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "step 5 — undatable items stay out; §2 — no readable content at the URL",
+  "reason": "Health Question Answering Assessment: fetch returns 200 but the page is an authentication-gated SPA loader with no assessment content and no date. This is a FETCH/ACCESS-BLOCKED negative, not a substantive one — the prior PENDING-FETCH characterisation is right about the state of the world; recording it as an exclusion only because an undatable, unreadable item cannot enter a corpus window. Re-open if credentialled access or a Dyff export becomes available.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 371
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "Vulnerability Detection and Correction Assessments (Dyff assessment)",
+  "url": "https://app.dyff.io/assessments/b60fd77c60914cc994cf85c00047c890",
+  "resolved_date": "",
+  "date_source": "UNDATABLE: app.dyff.io serves a client-side shell (rendered text 371 chars: nav plus a '© 2026 Underwriters Laboratories Inc.' footer and a Sign In redirect); no assessment metadata, no Last-Modified, no Wayback snapshot of this URL, and the public api.dyff.io exposes only /health. No publication date can be established.",
+  "in_window": false,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "step 5 — undatable items stay out; §2 — no readable content at the URL",
+  "reason": "Vulnerability Detection and Correction Assessments: fetch returns 200 but the page is an authentication-gated SPA loader with no assessment content and no date. This is a FETCH/ACCESS-BLOCKED negative, not a substantive one — the prior PENDING-FETCH characterisation is right about the state of the world; recording it as an exclusion only because an undatable, unreadable item cannot enter a corpus window. Re-open if credentialled access or a Dyff export becomes available.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 371
+  },
+  "findings": []
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Gemini 1.5 Model Card (in Gemini 1.5 technical report)",
+  "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#page=105",
+  "resolved_date": "2024-10-30",
+  "date_source": "PDF metadata /CreationDate D:20241030152748Z and HTTP Last-Modified Wed, 30 Oct 2024 for the file currently served at this URL (a revised edition; the Gemini 1.5 report first appeared Feb 2024). No byline date inside the PDF.",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — developer reporting on its own model with no external evaluator named",
+  "reason": "Verified against the full text: §9.6 External Safety Testing describes 'a small set of independent external groups' spanning 'academia, civil society, and commercial organizations' and 'a government body', but names none of them. The §1 company-venue carve-out therefore does not open — the test is 'IS AN EXTERNAL EVALUATOR NAMED?' and the answer is no. Agree with prior EXCLUDED - company self-report.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 422821
+  },
+  "findings": []
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Gemini 1.0 Model Card (in Gemini 1.0 technical report)",
+  "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=71",
+  "resolved_date": "2025-05-09",
+  "date_source": "PDF metadata /CreationDate D:20250509190430Z and HTTP Last-Modified Fri, 09 May 2025 for the file currently served at this URL (a revised edition; the Gemini 1.0 report first appeared 6 Dec 2023). No byline date inside the PDF.",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — developer reporting on its own model with no external evaluator named",
+  "reason": "I DISAGREE with the prior 'duplicate/secondary — collapsed into the 1.5 row': this is a different report about a different model generation (Gemini 1.0 / Ultra), not a second row for the same item. Re-derived independently and it fails §1 on its own terms — §7.4.4 External Evaluations describes 'a small set of independent external groups outside of Google' selected against the White House Commitments and Bletchley Declaration domains, but names none of them. Correct value is EXCLUDED - company self-report.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 222095
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "DreadIndex (live offensive-security benchmark leaderboard)",
+  "url": "https://dreadnode.io/research/dreadindex",
+  "resolved_date": "2026-08-01",
+  "date_source": "on-page leaderboard status line 'Updated August 2026' (month precision; day set to 01 and flagged as such). Earliest Wayback record of the URL is a 307 on 2026-07-16, consistent.",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — no claim present: the leaderboard renders no data",
+  "reason": "Live page reports '0 models · Updated August 2026' and 'Loading leaderboard data...'; the surrounding prose is a methodology description. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1300
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Do LLM Agents Have AI Red Team Capabilities? We Built a Benchmark to Find Out",
+  "url": "https://dreadnode.io/research/ai-red-team-benchmark",
+  "resolved_date": "2025-06-18",
+  "date_source": "dreadnode.io article byline 'Jun 18, 2025'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — additional ledger row for an item whose primary row carries the Report ID",
+  "reason": "Content-wise this would be INCLUDED (an agentic red-team capability benchmark with measured results), but the ledger records DREADNODE-2025-06-DOLLMAGEN as the primary row. Agree, conditional on that primary row existing.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 14110
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Evaluating Offensive Cyber Agents: Kerberoasting",
+  "url": "https://dreadnode.io/research/evaluating-offensive-cyber-agents-kerberoasting",
+  "resolved_date": "2025-08-04",
+  "date_source": "dreadnode.io article byline 'Aug 04, 2025'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — additional ledger row for an item whose primary row carries the Report ID",
+  "reason": "Secondary row for DREADNODE-2025-08-EVALOFFECYBE. Agree, conditional on that primary row existing.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 23466
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "PentestJudge: Judging Agent Behavior Against Operational Requirements (arXiv paper)",
+  "url": "https://arxiv.org/abs/2508.02921",
+  "resolved_date": "2025-08-04",
+  "date_source": "arXiv API published (v1) 2025-08-04; abs page 'Submitted on 4 Aug 2025'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — additional ledger row for an item whose primary row carries the Report ID",
+  "reason": "Secondary row for DREADNODE-2025-08-PENTJUDGAGEN. FLAG: §3 says the primary, EARLIEST, FULLEST source wins. The arXiv paper (2025-08-04, 18 pages) is both earlier and fuller than the companion blog post (2025-08-06), so if the ledger's primary row is the blog, the dedup direction is inverted and should be corrected.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5287
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "PentestJudge: Judging Agent Behavior Against Operational Requirements (blog)",
+  "url": "https://dreadnode.io/research/pentestjudge-judging-agent-behavior-against-operational-requirements",
+  "resolved_date": "2025-08-06",
+  "date_source": "dreadnode.io article byline 'Aug 06, 2025'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — additional ledger row for an item whose primary row carries the Report ID",
+  "reason": "Secondary row for DREADNODE-2025-08-PENTJUDGAGEN. Agree it is secondary; see the arXiv row for the note that the paper, not the blog, should be the primary under §3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 13838
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "From Compute to Congress: The Cyber Layer Beneath the Genesis Mission",
+  "url": "https://dreadnode.io/research/from-compute-to-congress-the-cyber-layer-beneath-the-genesis-mission",
+  "resolved_date": "2025-12-01",
+  "date_source": "dreadnode.io article byline 'Dec 01, 2025'",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — policy commentary and recommendations, not evidence-backed results",
+  "reason": "Commentary on the Genesis Mission executive order. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7928
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "LLM-Powered AMSI Provider vs. Red Team Agent",
+  "url": "https://dreadnode.io/research/llm-powered-amsi-provider-vs-red-team-agent",
+  "resolved_date": "2025-12-03",
+  "date_source": "dreadnode.io article byline 'Dec 03, 2025'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — additional ledger row for an item whose primary row carries the Report ID",
+  "reason": "Secondary row for DREADNODE-2025-12-LLMPOWEAMSI. Agree, conditional on that primary row existing.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 85611
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Worlds: A Simulation Engine for Agentic Pentesting",
+  "url": "https://dreadnode.io/research/worlds-a-simulation-engine-for-agentic-pentesting",
+  "resolved_date": "2026-02-11",
+  "date_source": "dreadnode.io article byline 'Feb 11, 2026'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — additional ledger row for an item whose primary row carries the Report ID",
+  "reason": "Secondary row for DREADNODE-2026-02-WORLASIMU. Agree, conditional on that primary row existing.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 20262
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Redefining AI Red Teaming in the Agentic Era",
+  "url": "https://dreadnode.io/research/redefining-ai-red-teaming-in-the-agentic-era",
+  "resolved_date": "2026-05-06",
+  "date_source": "dreadnode.io article byline 'May 06, 2026'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — additional ledger row for an item whose primary row carries the Report ID",
+  "reason": "Secondary row for DREADNODE-2026-05-REDEAIRED. Agree it is secondary; see the arXiv row — the 39-page paper published a day earlier is the fuller and earlier source under §3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 9803
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours (arXiv paper)",
+  "url": "https://arxiv.org/abs/2605.04019",
+  "resolved_date": "2026-05-05",
+  "date_source": "arXiv API published (v1) 2026-05-05; abs page 'Submitted on 5 May 2026'",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — same Llama Scout case study as the companion blog post",
+  "reason": "FLAG: the prior reason keeps the blog as primary, but §3 awards the row to the primary, EARLIEST, FULLEST source. This arXiv paper is dated 2026-05-05 (39 pages) against the blog's 2026-05-06, so the dedup direction should be inverted and this row promoted to primary. Recorded as excluded to preserve the ledger's single-row invariant, with the correction flagged.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4818
+  },
+  "findings": []
+ },
+ {
+  "venue": "Dreadnode",
+  "title": "Dreadnode Workers: The Connective Tissue for Flexible Agent Integration and Orchestration",
+  "url": "https://dreadnode.io/research/dreadnode-workers-agent-orchestration",
+  "resolved_date": "2026-05-07",
+  "date_source": "dreadnode.io article byline 'May 07, 2026'",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — product/platform announcement, no evidence-backed result",
+  "reason": "Feature announcement for Dreadnode Workers. Agree with prior exclusion.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 11229
+  },
+  "findings": []
+ }
+]

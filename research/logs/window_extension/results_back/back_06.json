@@ -1,0 +1,187 @@
+[
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Machine Learning Actionability: Fixing Problems with Your Model Pipelines",
+  "url": "https://www.robustintelligence.com/blog-posts/machine-learning-actionability-fixing-problems-with-your-model-pipelines",
+  "date": "2021-11-23",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — no measured result, observed behaviour or documented process fact",
+  "reason": "Read in full: a generic practitioner tutorial by an RI ML engineer on diagnosing dirty data, drift and subset-fairness in ML pipelines (stratified sampling, reweighting); it evaluates no system and reports no measurement.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 24082, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "PixMix: Dreamlike Pictures Comprehensively Improve Safety Measures",
+  "url": "https://www.grayswan.ai/research/pixmix-dreamlike-pictures-comprehensively-improve-safety-measures",
+  "date": "2021-12",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — the document asserts no evidence-backed claim of its own",
+  "reason": "Read in full (645 chars): a Gray Swan research-index stub carrying only title, December 2021 date, author list and an outbound link — \"This research is currently only available at its source.\" No abstract, no result, nothing to code.",
+  "fetch": {"via": "direct", "status": 200, "chars": 645, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Marco Sanvido: Paving the Way for the DevOps Engineering Team",
+  "url": "https://www.robustintelligence.com/blog-posts/marco-sanvido",
+  "date": "2021-12-01",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinions and career narrative, not evidence-backed claims",
+  "reason": "Read in full: a \"fireside chat\" staff-profile interview with RI's VP of Platform Engineering about leadership style and day-to-day work; no system evaluated, no result reported.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 13366, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "How Robust Intelligence Can Help Secure the E-commerce Industry This Holiday Season, One ML Pipeline at a Time",
+  "url": "https://www.robustintelligence.com/blog-posts/how-robust-intelligence-can-help-secure-the-e-commerce-industry-this-holiday-season-one-ml-pipeline-at-a-time",
+  "date": "2021-12-16",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — restates third-party retail/shipping statistics, not claims asserted by the evaluator",
+  "reason": "Read in full: a seasonal marketing \"Perspectives\" post on AI in e-commerce; the only numbers (FedEx's 13% / 3.4 billion packages, Levi's revenue claim) are other parties' figures cited in passing, and RI reports no evaluation of its own.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 15508, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Empower Your Data Science Team in 2022",
+  "url": "https://www.robustintelligence.com/blog-posts/empower-your-data-science-team-in-2022",
+  "date": "2022-01-04",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — recommendations and a product marketing claim, not evidence-backed findings",
+  "reason": "Read in full: a new-year advice post for data-science leaders (diversity hiring, retention, EU AI Act readiness); its one quantitative statement, that RIME \"eliminates almost 30% of labor hours\", is an unsupported product claim with no study behind it in this report.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 17909, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Head in the Clouds: Designing the RI On-Cloud/On-Prem Deployment",
+  "url": "https://www.robustintelligence.com/blog-posts/head-in-the-clouds-designing-the-ri-on-cloud-on-prem-deployment",
+  "date": "2022-01-13",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — product announcement; announcements contain no findings",
+  "reason": "Read in full: an engineering post announcing the RIME Teams Kubernetes/Terraform/Helm deployment option and why RI chose on-prem over SaaS; it evaluates no model and reports no measurement.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 17558, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Pranay Patil: Organization as Key to Startup Success",
+  "url": "https://www.robustintelligence.com/blog-posts/pranay-patil",
+  "date": "2022-01-19",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinions and career narrative, not evidence-backed claims",
+  "reason": "Read in full: a staff-profile interview with an RI Forward Deployed Engineer; recruiting content with no system evaluated and no result reported.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 15770, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Pickle Serialization in Data Science: A Ticking Time Bomb",
+  "url": "https://www.robustintelligence.com/blog-posts/pickle-serialization-in-data-science-a-ticking-time-bomb",
+  "date": "2022-01-27",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — explainer of long-documented library behaviour, no measured result or system evaluated",
+  "reason": "Read in full: a security explainer restating the known fact that Python's pickle/torch.load deserializer executes arbitrary code (with a Log4j framing and an opcode-disassembly appendix), closing on a pitch for RI stress tests; no model or artefact is tested and no new result is reported.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 17827, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "OpenAI",
+  "title": "Aligning language models to follow instructions (InstructGPT)",
+  "url": "https://openai.com/index/instruction-following",
+  "date": "2022-01-27",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 HARD DROP + §1 company-venue carve-out — no external evaluator is named anywhere in the document",
+  "reason": "Applied the §1 carve-out test, not a findings test: read the full post, footnotes, references and acknowledgments — every result (labeler preference over GPT-3, TruthfulQA, RealToxicityPrompts, held-out-labeler generalisation) is OpenAI's own on OpenAI's own models; Scale AI and Upwork appear only as sources of crowd labelers, not as evaluators contributing a section, so no carve-out section exists.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 15904, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "What Would Jiminy Cricket Do? Towards Agents That Behave Morally",
+  "url": "https://www.grayswan.ai/research/what-would-jiminy-cricket-do-towards-agents-that-behave-morally",
+  "date": "2022-02",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — the document asserts no evidence-backed claim of its own",
+  "reason": "Read in full (670 chars): a Gray Swan research-index stub carrying only title, February 2022 date, author list and an outbound link — \"This research is currently only available at its source.\" The Abstract and Appendix headings are empty on the page.",
+  "fetch": {"via": "direct", "status": 200, "chars": 670, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Introducing our Incredible ML Team!",
+  "url": "https://www.robustintelligence.com/blog-posts/meet-the-ml-team",
+  "date": "2022-02-03",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — team culture and hiring copy, not evidence-backed claims",
+  "reason": "Read in full: an RI ML engineer introduces his team, the open questions they find interesting and the traits they hire for, ending in a recruiting call; no system evaluated, no result reported.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 9406, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Bias in Hiring, the EEOC, and How RI Can Help",
+  "url": "https://www.robustintelligence.com/blog-posts/bias-in-hiring-eeoc",
+  "date": "2022-02-10",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — summarises the EEOC's initiative and existing law, then pitches RIME; nothing asserted by the evaluator from its own work",
+  "reason": "Read in full: a policy-commentary post on the EEOC's October 2021 AI and algorithmic fairness initiative, Title VII / ADA / ADEA, and a bullet list of RIME features; no hiring system is tested and no measurement is reported.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 14538, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "How to Build Robust AI Systems with Towards Data Science",
+  "url": "https://www.robustintelligence.com/blog-posts/how-to-build-robust-ai-systems-with-towards-data-science",
+  "date": "2022-02-17",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — announcement/cross-promotion of a podcast appearance contains no findings",
+  "reason": "Read in full: a short post promoting RI CEO Yaron Singer's appearance on the TDS Podcast, quoting the host's episode blurb; no content of the discussion is reported and no result is asserted.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 7003, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "Separating facts and evaluation: motivation, account, and learnings from a novel approach to evaluating the human impacts of machine learning (AI & SOCIETY 38(4))",
+  "url": "https://link.springer.com/article/10.1007/s00146-022-01417-y",
+  "date": "2022-03",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 IN, stratified (third-party evaluator) + §2 methodology findings + §4 Gate 1 fails → Tier C",
+  "reason": "Read in full: a peer-reviewed account of an evaluation framework developed in partnership with Underwriters Laboratories Inc., piloted at two workshops (Nov 2020, 52 participants across six domains; June 2021), whose Section 4 \"Major findings\" reports documented process facts about what the pilot did and did not achieve — methodology findings, which §2 admits and §4 Gate 1 places in Tier C.",
+  "fetch": {"via": "direct", "status": 200, "chars": 72767, "pages": null},
+  "findings": [
+   {
+    "finding": "Piloting the fact/evaluation-decoupled framework across six domains at the November 2020 workshop did not produce consensus goals and values for any domain, but did establish a proof of concept that, once domain goals and values are stipulated, the framework supports meaningful criticism of particular machine-learning systems.",
+    "finding_quote": "In our brief workshops, we were not realistically able to arrive at such a consensus. Instead, we demonstrated a proof of concept that, given such goals and values, we could make meaningful criticisms of particular machine-learning systems.",
+    "models_systems": "N/A",
+    "institution": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+    "domain": "Eval-methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "§4 Gate 1 fails: this is a framework/methodology write-up, not an empirical model finding, so Tier C and Action Trackable? is left BLANK. Tier A condition (1) fails (no empirical model finding); condition (2) fails (no company or model is named — the pilot used domain case studies); condition (3) fails (no concerning model result). Gate 2 is not reached.",
+    "finding_type": "methodology",
+    "scope": "third-party-evaluator",
+    "source_url": "https://link.springer.com/article/10.1007/s00146-022-01417-y",
+    "access_type": "N/A"
+   },
+   {
+    "finding": "The workshop pilot identified the negotiation of trade-offs between conflicting domain goals and values as the framework's principal unresolved obstacle, with participants' primary objection being that treating goals and values as aspirational omits the pursuit of profit.",
+    "finding_quote": "This tension surfaced as a major hurdle during our workshops.",
+    "models_systems": "N/A",
+    "institution": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+    "domain": "Eval-methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "§4 Gate 1 fails: an observed process fact from a methodology pilot, not an empirical model finding — Tier C, Action Trackable? BLANK. Tier A condition (1) fails; (2) fails (no company or model named); (3) fails (no concerning model result inviting a company response). Split from the first finding under §5 because the limitation on trade-off negotiation is separately codeable from the proof-of-concept result and would warrant its own response.",
+    "finding_type": "methodology",
+    "scope": "third-party-evaluator",
+    "source_url": "https://link.springer.com/article/10.1007/s00146-022-01417-y",
+    "access_type": "N/A"
+   }
+  ]
+ }
+]

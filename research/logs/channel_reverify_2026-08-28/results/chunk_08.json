@@ -1,0 +1,1382 @@
+[
+  {
+    "finding_id": "UKAISI-2026-03-CYB12",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "No explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom index (Channel A step 1)",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Only two March-August 2026 posts on cyber/safeguards: 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30) and 'Improving Fable 5's biology safeguards' (2026-08-07). No post on UK AISI's cyber/sandbox-escape work, METR/Epoch MirrorCode, or any named external cyber benchmark."
+        },
+        {
+          "source": "Anthropic, 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30)",
+          "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Concerns egress misconfiguration in Anthropic's own/vendor CTF environments (Opus 4.7, Mythos 5, an internal test model); review conducted with Irregular. Does NOT reference UK AISI, SandboxEscapeBench, 'The Last Ones', or MirrorCode. Not admissible for these rows."
+        },
+        {
+          "source": "Anthropic Transparency Hub / system-card index (Channel A step 3)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Used to enumerate every system card published after the finding; card PDFs then downloaded and full-text searched (see rows below)."
+        },
+        {
+          "source": "Claude Mythos Preview System Card, 2026-04-07 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Sec.3.4 'Other external testing' records that an early snapshot was assessed by external partners 'across cyber ranges, capture-the-flag challenges, and evaluations assessing sandbox escape capabilities', and reports sandbox-escape results. Sec.1 and Sec.3.1 record the access restriction. Evaluator and benchmark are NOT named."
+        },
+        {
+          "source": "Claude Opus 4.7 System Card, 2026-04-16 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Names UK AISI for the cyber range (Sec.3.4) but contains no reference to SandboxEscapeBench or container sandbox escape; the only 'sandbox escape' string is the internal Mythos Preview incident."
+        },
+        {
+          "source": "Claude Fable 5 & Claude Mythos 5 System Card, 2026-06-09 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. No occurrence of 'sandbox escape', 'SandboxEscapeBench' or container escape."
+        },
+        {
+          "source": "Claude Opus 4.8 System Card (full text searched)",
+          "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. No occurrence of sandbox escape / SandboxEscapeBench."
+        },
+        {
+          "source": "Claude Sonnet 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. No occurrence of sandbox escape / SandboxEscapeBench."
+        },
+        {
+          "source": "Claude Opus 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. No occurrence of sandbox escape / SandboxEscapeBench."
+        },
+        {
+          "source": "Anthropic, Project Glasswing launch page (2026-04-07)",
+          "url": "https://www.anthropic.com/glasswing",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Confirms Mythos Preview 'will not be made generally available'; access limited to launch partners plus 40+ critical-infrastructure organisations. Does not name UK AISI, cyber ranges, 'The Last Ones' or any sandbox-escape benchmark."
+        },
+        {
+          "source": "Anthropic safeguards / RSP / deployment pages (Channel A step 3)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Reached via Transparency Hub. No page located that references SandboxEscapeBench or UK AISI's container sandbox escape work."
+        },
+        {
+          "source": "Broad web search: Anthropic + UK AISI + container sandbox escape benchmark (Channel A step 5)",
+          "url": "https://arxiv.org/abs/2603.02277",
+          "checked_date": "2026-08-28",
+          "result": "Run. Surfaced only third-party coverage (Help Net Security 2026-03-30, Resultsense 2026-03-30, InfoQ, The Register, Computing UK, Futurism) and the arXiv/HuggingFace/ResearchGate listings. No Anthropic primary source naming the benchmark."
+        },
+        {
+          "source": "arXiv:2603.02277 abstract page (version history)",
+          "url": "https://arxiv.org/abs/2603.02277",
+          "checked_date": "2026-08-28",
+          "result": "Opened. v1 2026-03-01, v2 2026-07-07, v3 2026-08-01. The abstract does not contain the Mythos Preview 100%/18-task result; that result sits in the revised body text, i.e. it post-dates the 2026-04-07 system card."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+      "verbatim": "An early snapshot of Claude Mythos Preview was assessed for cybersecurity capabilities, across cyber ranges, capture-the-flag challenges, and evaluations assessing sandbox escape capabilities. ... Claude Mythos Preview is also highly capable at identifying and exploiting known vulnerabilities or misconfigurations to escape the sandbox in which it operates. ... However, Claude Mythos Preview was unable to solve another cyber range simulating an operational technology environment. In addition, in a more challenging sandbox evaluation, it failed to find any novel exploits in a properly configured sandbox with modern patches. ... In response to the improvements in cyber capabilities, we have elected to restrict access to the model, prioritizing industry and open-source partners who will be using Claude Mythos Preview to help secure their systems through Project Glasswing.",
+      "response_date": "2026-04-07",
+      "reasoning": "Battery re-run in full. Steps 1, 3, 4 and 5 produced no Anthropic primary source naming SandboxEscapeBench or UK AISI's container sandbox escape work. Step 2 (the model's own launch card) did produce an admissible hit: the Claude Mythos Preview System Card (2026-04-07) reports that an external partner assessed the model on 'cyber ranges, capture-the-flag challenges, and evaluations assessing sandbox escape capabilities' - the exact three UK AISI cyber workstreams - and reports the sandbox-escape outcome, while Sec.1 and Sec.3.1 of the same card record a concrete access restriction ('the decision not to release Claude Mythos Preview for general availability'; Glasswing-partner-only access) taken 'In response to the improvements in cyber capabilities'. That is a deployment decision plus access restriction addressing the capability the finding measures, so Action Level = Substantive. Anthropic does not name UK AISI or the benchmark in that section, so Attribution = No explicit attribution. This upgrades the existing 'None'."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located that explicitly references this report, SandboxEscapeBench, or the container-escape result. The two UK government documents that do reference AISI cyber work in this window - NCSC/AISI 'Why cyber defenders need to be ready for frontier AI' (2026-03-30) and the DSIT/Cabinet Office open letter (2026-04-15) - reference the multi-step cyber attack scenarios report and the Mythos evaluation respectively, not this paper. Five Country Ministerial Communique (2026-08-28) checked and negative. Hansard could not be fetched (403), so the UK legislative sweep this pass is incomplete and rests on the prior 2026-08-16 log. Policy Level unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "Help Net Security, 'Breaking out: Can AI agents escape their sandboxes?' (2026-03-30) https://www.helpnetsecurity.com/2026/03/30/ai-agents-container-breakout-capabilities-research/",
+        "Resultsense, 'Your AI agents can break out of their containers - and a new benchmark proves it' (2026-03-30) https://www.resultsense.com/insights/2026-03-30-sandbox-escape-bench-llm-container-security-benchmark/",
+        "InfoQ, 'Anthropic's Claude Breaches Sandbox During Model Security Evaluations' (2026-08) https://www.infoq.com/news/2026/08/claude-sandox-breach/ - concerns the separate July 2026 egress incidents, not this benchmark",
+        "The Register (2026-07-31) https://www.theregister.com/ai-and-ml/2026/07/31/anthropics-claude-escaped-test-sandbox-to-attack-three-organizations/5281562 - separate egress incidents",
+        "Computing UK, 'Claude Mythos: How AI broke out of its sandbox' https://www.computing.co.uk/analysis/2026/claude-mythos-how-ai-broke-out-of-its-sandbox"
+      ],
+      "academic": [
+        "HuggingFace Papers listing for arXiv:2603.02277 https://huggingface.co/papers/2603.02277",
+        "ResearchGate record, publication 401522860",
+        "GitHub UKGovernmentBEIS/sandbox_escape_bench (benchmark code release) https://github.com/UKGovernmentBEIS/sandbox_escape_bench",
+        "arXiv:2604.20496, 'Mythos and the Unverified Cage: Z3-Based Pre-Deployment Verification for Frontier-Model Sandbox Infrastructure' - listed in search results, not opened"
+      ],
+      "discussion": [
+        "Substack/Medium commentary on Mythos sandbox escape (rajsarkar.substack.com, aiintegrationstation.substack.com, Medium 'Activated Thinker') - listed in search results, not opened; these concern the July egress incidents rather than the benchmark"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "JUDGEMENT CALL, flagged for review. The upgrade to Substantive rests on identifying the unnamed 'additional external partners' in Mythos Preview System Card Sec.3.4 as UK AISI. Supporting evidence: (a) the same boilerplate sentence appears in the Opus 4.7 card Sec.3.4 where the partner IS named as UK AISI; (b) the three workstreams listed (cyber ranges, expert CTFs, sandbox escape) are exactly UK AISI's three published cyber workstreams; (c) UK AISI's own 2026-04-13 blog confirms it ran a pre-deployment evaluation of Mythos Preview. It remains an inference: Anthropic never names UK AISI or SandboxEscapeBench, never reports the 100%/18-task figure, and the Mythos Preview data point only entered the paper at v2 (2026-07-07), after the card. A stricter reading keeps this row at None. Also note the recorded Publication Date (2026-03-01) is the v1 date, while the finding text quotes v2/v3 content."
+  },
+  {
+    "finding_id": "OPENAI-2026-03-SELF-ALI2",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "OpenAI deployment safety hub, GPT-5.4 Thinking",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+          "checked_date": "2026-08-28",
+          "result": "Canonical launch location for this pre-deployment evaluation; Sec.5.2 'Research Category Update: Sandbagging' reproduces Apollo's results in full."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.2.1 and GPT-5.6 System Card Sec.9.3.1 (subsequent cards, same family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Both reproduce fresh Apollo sabotage/sandbagging results for the newer model. Neither records any mitigation, safeguard, model change, access restriction or deployment decision attributable to the GPT-5.4 sabotage-score finding."
+        },
+        {
+          "source": "OpenAI Alignment blog index (Channel A steps 1/4)",
+          "url": "https://alignment.openai.com/metagaming",
+          "checked_date": "2026-08-28",
+          "result": "Opened (metagaming post). No OpenAI post located that announces an action taken in response to Apollo's GPT-5.4 sabotage-capability measurement."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+      "verbatim": "GPT-5.4-reasoning has a mean sabotage score of 0.56 (best-of-10: 0.74)—comparable to GPT-5.2 but below GPT-5.3-codex (0.88). On several hard tasks the model exceeds human baselines, indicating meaningful sabotage capability, though performance remains below the strongest prior Codex checkpoint. ... These findings provide evidence that the model can identify and execute relevant technical steps for sabotage in a simple simulated setting, but they do not directly test whether the model can reliably conceal sabotage, evade detection, or succeed under realistic monitoring and operational constraints.",
+      "response_date": "2026-03-05",
+      "reasoning": "Verified independently against the primary PDF. OpenAI names Apollo Research and reproduces the finding verbatim in a dedicated section of the launch card (Sec.5.2), which for a pre-deployment evaluation is the canonical response location. No mitigation or deployment change is attached to it, in this card or in the two subsequent cards in the family (GPT-5.5 2026-04-23, GPT-5.6 2026-07-09). Acknowledged / Explicit attribution stands."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing Apollo Research's GPT-5.4 sabotage measurement. gov.uk search and the Five Country Ministerial Communique were checked directly and are negative; Hansard was unreachable (403) so the UK legislative sweep rests on the prior 2026-08-16 log. Unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "GPT-5.5 card changelog runs to 2026-08-19 and GPT-5.6's to 2026-08-19; neither adds anything on this finding. No Channel C items located this pass (WebSearch budget exhausted before a dedicated C sweep for this row); the empty lists mean 'not located', not 'none exist'."
+  },
+  {
+    "finding_id": "OPENAI-2026-03-SELF-CYB1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "OpenAI deployment safety hub, GPT-5.4 Thinking",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+          "checked_date": "2026-08-28",
+          "result": "Canonical pre-deployment response location. Sec.5.1.2 reproduces Irregular's atomic-suite and CyScenarioBench numbers; Sec.1 and Sec.5.3 record the Preparedness High cyber designation and safeguard stack."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+      "verbatim": "The comprehensive safety mitigation approach for this model is similar to previous models in this series, but 5.4 Thinking is the first general purpose model to have implemented mitigations for High capability in Cybersecurity.",
+      "response_date": "2026-03-05",
+      "reasoning": "Verified independently against the primary PDF. Irregular's figures (88% Network Attack Simulation, 73% VR&E, 48% Evasion, 14/17 medium and 5/5 hard atomics, 11% average and 5/11 on CyScenarioBench vs 1 for GPT-5.2) appear verbatim in the card, and the card records a specific, implemented safeguard stack tied to the High cyber designation. Substantive / Explicit attribution stands."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing Irregular's GPT-5.4 evaluation. Direct checks (gov.uk search, Five Country Ministerial Communique) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Verbatim confirmed at Sec.1 of the card (page 3 of the PDF text). Channel C not swept for this row (search budget exhausted); empty means not located."
+  },
+  {
+    "finding_id": "APOLLO-2026-03-ALI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI Alignment blog, 'Metagaming matters for training, evaluation, and oversight' (2026-03-16)",
+          "url": "https://alignment.openai.com/metagaming",
+          "checked_date": "2026-08-28",
+          "result": "HIT. OpenAI primary publication of the same report, co-authored by Bronson Schoen (Apollo Research) and Jenny Nitishinskaya (OpenAI). Reproduces the o3 numbers in the finding (Impossible Coding Task 62.1% -> 58.3%; Sandbagging QA (No Goal) metagaming 23.5% -> 54.5%; misaligned actions 1.7% -> 10.8%). States no implemented mitigation."
+        },
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card Sec.7.4 'Metagaming' (2026-07-09)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (unattributed). New standing section measuring verbalized metagaming in evaluations and across training via a prompted GPT-5.4-Thinking chain-of-thought monitor, singling out impossible-coding-task evaluations. The term is absent from the GPT-5.4 and GPT-5.5 cards. Apollo is not cited in this section or in the references."
+        },
+        {
+          "source": "GPT-5.6 System Card Sec.9.3.1 'External Evaluations - Apollo Research'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Uses the word 'metagaming' inside an Apollo Research section, but for GPT-5.6 Sol results, not the o3 finding."
+        },
+        {
+          "source": "Broad web search: OpenAI + Apollo Research + metagaming + o3 (Channel A step 5)",
+          "url": "https://www.apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight/",
+          "checked_date": "2026-08-28",
+          "result": "Run. Located the OpenAI-hosted copy above; no other OpenAI primary source announcing an action."
+        }
+      ],
+      "evidence_url": "https://alignment.openai.com/metagaming",
+      "verbatim": "OpenAI is collaborating with Apollo Research to study the general principles behind metagaming emergence and how to mitigate it.",
+      "response_date": "2026-03-16",
+      "reasoning": "The original battery coded this None; that is wrong. OpenAI published this report on its own alignment site on the same date as Apollo (lag 0, coordinated disclosure), with an OpenAI co-author and Apollo Research named. That is a company primary document that references the problem and reproduces the finding's o3 numbers. It specifies no mitigation, training change, or deployment change - it states only that mitigating metagaming 'may be difficult' and commits to further joint research. That maps to Acknowledged, with Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing Apollo's metagaming report or the o3 result. Direct checks (gov.uk search, Five Country Ministerial Communique) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        "LessWrong cross-post https://www.lesswrong.com/posts/4hXWSw8tzoK9PM7v6/metagaming-matters-for-training-evaluation-and-oversight",
+        "AlignmentForum cross-post https://www.alignmentforum.org/posts/4hXWSw8tzoK9PM7v6/metagaming-matters-for-training-evaluation-and-oversight",
+        "alphaXiv listing, 'Measuring Reward-Seeking via Contrastive Belief Updates' (2607) - surfaced as a related item, not opened, relation to this report not verified"
+      ],
+      "discussion": [
+        "Apollo Research X/Twitter thread https://x.com/apolloaievals/status/2037595038549442938 - EXCLUDED from ecosystem uptake as the evaluator's own publication; listed here only for provenance",
+        "80,000 Hours podcast with Marius Hobbhahn on AI scheming https://80000hours.org/podcast/episodes/marius-hobbhahn-ai-scheming-deception/ - surfaced in search; NOT opened, so whether it references this specific report is unverified"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "JUDGEMENT CALL between Acknowledged and Partial. Acknowledged chosen because the attributable document (alignment.openai.com/metagaming) specifies no action. The competing argument for Partial: the GPT-5.6 System Card (2026-07-09) introduced a standing metagaming measurement regime - a prompted CoT monitor run across evaluation suites and across training, with deployment-simulation evaluation adopted specifically because it shows near-zero metagaming - which addresses exactly the evaluation-validity problem Apollo identified. OpenAI never cites Apollo for it, and measurement is not mitigation, so I did not score it. The key correction here is None -> Acknowledged; the exact rung is secondary."
+  },
+  {
+    "finding_id": "UKAISI-2026-03-CYB1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom index (Channel A step 1)",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Only two March-August 2026 posts on cyber/safeguards: 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30) and 'Improving Fable 5's biology safeguards' (2026-08-07). No post on UK AISI's cyber/sandbox-escape work, METR/Epoch MirrorCode, or any named external cyber benchmark."
+        },
+        {
+          "source": "Anthropic, 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30)",
+          "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Concerns egress misconfiguration in Anthropic's own/vendor CTF environments (Opus 4.7, Mythos 5, an internal test model); review conducted with Irregular. Does NOT reference UK AISI, SandboxEscapeBench, 'The Last Ones', or MirrorCode. Not admissible for these rows."
+        },
+        {
+          "source": "Anthropic Transparency Hub / system-card index (Channel A step 3)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Used to enumerate every system card published after the finding; card PDFs then downloaded and full-text searched (see rows below)."
+        },
+        {
+          "source": "Claude Mythos Preview System Card, 2026-04-07 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Sec.3.4 reports external cyber-range testing of Mythos Preview; no Opus 4.6 'The Last Ones' figure and no named evaluator."
+        },
+        {
+          "source": "Claude Opus 4.7 System Card, 2026-04-16 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Executive summary 'Cyber evaluations' paragraph names the UK AI Security Institute, compares Opus 4.7 to Mythos Preview on 'their full cyber range', and announces a new cybersecurity safeguard set. Sec.3.4 'External testing from the UK AI Security Institute' carries UK AISI's verbatim conclusions including the Opus 4.6 comparison. Sec.3.1-3.2 describe deliberate training-time cyber-capability reduction and the updated mitigation strategy for general-access Opus-class models."
+        },
+        {
+          "source": "Claude Fable 5 & Claude Mythos 5 System Card, 2026-06-09 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Sec.3.2.5 names UK AISI and 'The Last Ones' but reports Mythos 5 / Mythos Preview, not Opus 4.6."
+        },
+        {
+          "source": "Claude Opus 4.8 System Card (full text searched)",
+          "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. UK AISI appears only for alignment/behaviour testing (Sec.6.2.4); no cyber-range result for Opus 4.6."
+        },
+        {
+          "source": "Claude Sonnet 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. UK AISI appears only as an IPI benchmark partner."
+        },
+        {
+          "source": "Claude Opus 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Sec.3.3.6 names UK AISI and 'The Last Ones' for Opus 5; no Opus 4.6 figure."
+        },
+        {
+          "source": "Anthropic, Project Glasswing launch page (2026-04-07)",
+          "url": "https://www.anthropic.com/glasswing",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Confirms Mythos Preview 'will not be made generally available'; access limited to launch partners plus 40+ critical-infrastructure organisations. Does not name UK AISI, cyber ranges, 'The Last Ones' or any sandbox-escape benchmark."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+      "verbatim": "Cyber evaluations. Opus 4.7 is roughly similar to Opus 4.6 in cyber capabilities. An external evaluation from the UK’s AI Security Institute showed that, unlike Mythos Preview, Opus 4.7 was unable to complete their full cyber range (though it still displayed potentially-harmful cyber capabilities at a lower level). We are releasing Opus 4.7 with a new set of cybersecurity safeguards.",
+      "response_date": "2026-04-16",
+      "reasoning": "Step 2 of the battery (subsequent cards in the same model family) produces an admissible hit the original pass missed. The Claude Opus 4.7 System Card, published 2026-04-16 - one month after the finding - explicitly names UK AISI, explicitly addresses their corporate-network cyber range, explicitly reports Opus 4.6's relative performance on that same range ('Opus 4.6 completed more steps than [Opus 4.7] (though Opus 4.6 was also unable to solve it fully)', Sec.3.4), and in the same paragraph announces a specific implemented change: a new set of cybersecurity safeguards for release, detailed in Sec.3.2 as probe-based classifiers with prohibited-use and high-risk-dual-use exchanges blocked by default plus a Cyber Verification Program exemption route. Sec.3.1 additionally records a model change: 'during training we experimented with efforts to differentially reduce these capabilities.' Specific safeguard + model change addressing the measured capability = Substantive; the evaluator is named = Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "https://www.ncsc.gov.uk/blogs/why-cyber-defenders-need-to-be-ready-for-frontier-ai",
+      "verbatim": "In its recent research into measuring AI agents’ progress on multi-step cyber attack scenarios, AISI evaluated the cyber capabilities of 7 frontier AI models, released before March 2026. ... the best-performing model (Claude Opus 4.6, released February 2026)...Averaged 15.6 steps, with extended processing time...Averaged 9.8 steps without extended processing time.",
+      "reasoning": "Re-verified by opening the NCSC blog directly (2026-03-30, co-authored by NCSC's Technical Director for Cyber AI Research and an AISI/DSIT researcher). It explicitly cites the report, links arXiv:2603.11214, and reproduces this row's exact 9.8-step Opus 4.6 figure. It is guidance with no enforceable obligation, so Non-binding policy-related uptake is correct and unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "resultsense.com (2026-03-18) - carried in the existing record, not re-opened this pass",
+        "Ars Technica, The Telegraph, The Guardian, ZDNet, the-decoder.com, CyberScoop, Computing.co.uk, Help Net Security, Forbes, Business Insider, TechPolicy.press (April-May 2026 wave tied to the Mythos Preview successor evaluation citing Opus 4.6 as prior best) - carried in the existing record, not re-opened this pass"
+      ],
+      "academic": [
+        "arXiv:2603.11214 (the report itself - excluded as the evaluator's own publication)"
+      ],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "JUDGEMENT CALL on Substantive vs Acknowledged. Anthropic never writes 'in response to UK AISI's March report we did X'; the link is that the safeguard announcement and the UK AISI cyber-range result sit in the same executive-summary paragraph, and Sec.3.4 carries UK AISI's Opus 4.6 comparison verbatim. A stricter reader could code Acknowledged. Either way the existing 'None' is stale and should change. NCSC blog is the only UK gov source reproducing the 9.8-step figure."
+  },
+  {
+    "finding_id": "UKAISI-2026-03-CYB9",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.4 Thinking System Card (2026-03-05) - full-text search for 'Cooling Tower', 'industrial control', 'PLC', 'operational technology'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Zero matches. No UK AISI ICS-range result reported."
+        },
+        {
+          "source": "GPT-5.5 System Card (2026-04-23) Sec.9.1.2.7 'External Evaluations for Cyber Capabilities - UK AISI'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Names UK AISI and reports GPT-5.5's corporate-network range result; mentions GPT-5.3-Codex only as not having completed that corporate range. States 'The model was also unable to solve a separate cyber range simulating an industrial control system' - about GPT-5.5, not GPT-5.3-Codex. No 'Cooling Tower' string, no 3-of-7-steps figure, no PLC reverse-engineering finding."
+        },
+        {
+          "source": "GPT-5.6 System Card (2026-07-09) Sec.9.1.2.6 UK AISI",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Covers 'The Last Ones' and 'Doing Life'; no 'Cooling Tower', no ICS range, no PLC finding, no GPT-5.3-Codex ICS result."
+        },
+        {
+          "source": "OpenAI deployment safety hub (Channel A steps 1/3/4)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "Opened via the card set. No OpenAI primary document located addressing the Cooling Tower ICS result for GPT-5.3-Codex or the emergent PLC-protocol reverse-engineering observation."
+        },
+        {
+          "source": "Broad web search combining OpenAI + UK AISI + multi-step cyber attack scenarios (Channel A step 5)",
+          "url": "https://the-decoder.com/gpt-5-5-matches-claude-mythos-in-cyber-attack-tests-uk-ai-security-institute-finds/",
+          "checked_date": "2026-08-28",
+          "result": "Run before budget exhaustion. Surfaced only third-party coverage; no OpenAI primary source on this result."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run against the primary PDFs of every OpenAI card published after the finding (GPT-5.5 2026-04-23, GPT-5.6 2026-07-09) plus the GPT-5.4 card. The string 'Cooling Tower' appears in no OpenAI document; the words PLC / programmable logic appear in none; GPT-5.3-Codex's 3-of-7 ICS result is reported nowhere by OpenAI; and the emergent finding that models bypassed the intended attack sequence by reverse-engineering a proprietary PLC protocol from raw traffic is addressed nowhere. The one adjacent sentence - GPT-5.5 was 'unable to solve a separate cyber range simulating an industrial control system' - concerns a different model and does not address this finding. Action Level = None stands, with a dated record of every source checked."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "https://www.ncsc.gov.uk/blogs/why-cyber-defenders-need-to-be-ready-for-frontier-ai",
+      "verbatim": "In its recent research into measuring AI agents’ progress on multi-step cyber attack scenarios, AISI evaluated the cyber capabilities of 7 frontier AI models, released before March 2026.",
+      "reasoning": "UPGRADE. This finding comes from the same report as UKAISI-2026-03-CYB1, and the NCSC/AISI joint blog of 2026-03-30 explicitly cites that report by title and arXiv link. The rulebook admits a source that explicitly references 'the finding, report, evaluator or specific result' - the report qualifies - and the dataset already applies exactly this logic to UKAISI-2026-04-CYB1/CYB2, where uptake was granted on an explicit reference to the evaluation rather than to the individual result. The NCSC post does not reference the Cooling Tower or PLC result specifically, and imposes no enforceable obligation, so the correct level is Non-binding policy-related uptake, not Binding. Coding it 'No policy uptake identified' while its sibling row from the same report is coded Non-binding is an internal inconsistency."
+    },
+    "channel_c": {
+      "media": [
+        "Help Net Security and Resultsense coverage of AISI cyber-range work (March 2026) - located via search listings, not opened for this row"
+      ],
+      "academic": [
+        "arXiv:2603.11214 (the report itself - excluded as the evaluator's own publication)"
+      ],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Channel A is a confident None (every OpenAI card searched in full text, zero hits on the distinguishing strings). The Channel B change is a consistency correction rather than a new discovery: it applies the same admissibility reading the dataset already used for rows 7 and 8. If the project intends 'explicit reference to the report' NOT to be sufficient, then rows 7 and 8 would also need downgrading."
+  },
+  {
+    "finding_id": "METR-2026-04-AUT1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom index (Channel A step 1)",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Only two March-August 2026 posts on cyber/safeguards: 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30) and 'Improving Fable 5's biology safeguards' (2026-08-07). No post on UK AISI's cyber/sandbox-escape work, METR/Epoch MirrorCode, or any named external cyber benchmark."
+        },
+        {
+          "source": "Claude Mythos Preview System Card, 2026-04-07 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched for 'MirrorCode', 'METR', 'Epoch'. Sec.2.3.7 says only 'Both METR and Epoch AI tested Claude Mythos Preview prior to release and we incorporated their findings into our own overall risk assessment' - about Mythos Preview and AI R&D, not about MirrorCode or Opus 4.6. Zero 'MirrorCode' matches. Card predates the finding in any case."
+        },
+        {
+          "source": "Claude Opus 4.7 System Card, 2026-04-16 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Zero 'MirrorCode' matches; Epoch AI referenced only as the source of a forked capability index."
+        },
+        {
+          "source": "Claude Fable 5 & Claude Mythos 5 System Card, 2026-06-09 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Zero 'MirrorCode' matches; METR referenced only for the automated AI R&D threat model on Mythos 5."
+        },
+        {
+          "source": "Claude Opus 4.8 System Card (full text searched)",
+          "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Zero 'MirrorCode' matches."
+        },
+        {
+          "source": "Claude Sonnet 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Zero 'MirrorCode' matches."
+        },
+        {
+          "source": "Claude Opus 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Zero 'MirrorCode' matches."
+        },
+        {
+          "source": "Anthropic Transparency Hub / system-card index (Channel A step 3)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Used to enumerate every system card published after the finding; card PDFs then downloaded and full-text searched (see rows below)."
+        },
+        {
+          "source": "Anthropic safeguards / RSP / transparency pages (Channel A step 3)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Reached. No page located referencing MirrorCode or the weeks-long autonomous coding result."
+        },
+        {
+          "source": "Broad web search: Anthropic + METR + Epoch AI + MirrorCode (Channel A step 5)",
+          "url": "https://epoch.ai/publications/mirrorcode-preliminary-results",
+          "checked_date": "2026-08-28",
+          "result": "Run. Only third-party coverage located (TechTimes); no Anthropic primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run. 'MirrorCode' does not appear in any of the six Anthropic system cards published in the window, nor in the Anthropic newsroom index for March-August 2026. The only METR/Epoch references in Anthropic cards are generic pre-release testing statements about other models (Mythos Preview, Mythos 5) and a forked Epoch capability index, none of which address a ~16,000-line autonomous reimplementation by Opus 4.6. Action Level = None confirmed, with a dated record of the sources checked."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing MirrorCode, METR+Epoch's weeks-long coding result, or Opus 4.6's bioinformatics-toolkit reimplementation. Direct checks (gov.uk search page, Five Country Ministerial Communique 2026-08-28) negative; Hansard unreachable (403). Prior log also noted a CRS report as adjacent-but-inadmissible; I could not re-open it this pass. Unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "TechTimes, 'Autonomous AI Coding Clears 60,000-Line Ceiling: MirrorCode Benchmark Released' (2026-06-26) - carried in the existing record; returned 403 on the full article there and was not re-attempted this pass"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Confident on the Anthropic-side negative (full-text search of every card plus the newsroom index). Less coverage than I would like on step 5: the WebSearch budget was exhausted before a dedicated broad sweep for this row, so the open-web check rests on the earlier Anthropic+MirrorCode searches run for adjacent rows."
+  },
+  {
+    "finding_id": "UKAISI-2026-04-CYB1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom index (Channel A step 1)",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Only two March-August 2026 posts on cyber/safeguards: 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30) and 'Improving Fable 5's biology safeguards' (2026-08-07). No post on UK AISI's cyber/sandbox-escape work, METR/Epoch MirrorCode, or any named external cyber benchmark."
+        },
+        {
+          "source": "Anthropic, 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30)",
+          "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Concerns egress misconfiguration in Anthropic's own/vendor CTF environments (Opus 4.7, Mythos 5, an internal test model); review conducted with Irregular. Does NOT reference UK AISI, SandboxEscapeBench, 'The Last Ones', or MirrorCode. Not admissible for these rows."
+        },
+        {
+          "source": "Anthropic Transparency Hub / system-card index (Channel A step 3)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Used to enumerate every system card published after the finding; card PDFs then downloaded and full-text searched (see rows below)."
+        },
+        {
+          "source": "Claude Mythos Preview System Card, 2026-04-07 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (pre-deployment response, 2026-04-07). Sec.1: decision not to release for general availability. Sec.3.1: 'In response to the improvements in cyber capabilities, we have elected to restrict access to the model...through Project Glasswing.' Sec.3.4 reports the external cyber-range results - first model to solve a private range end-to-end, corporate network attack simulation estimated at 10+ expert hours - but names the evaluator only as 'additional external partners'."
+        },
+        {
+          "source": "Claude Opus 4.7 System Card, 2026-04-16 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (2026-04-16, post-finding). Executive summary and Sec.3.4 explicitly name the UK AI Security Institute and report 'Mythos Preview was able to solve the same range in 3 out of 10 tries' - this row's exact figure - alongside 'We are releasing Opus 4.7 with a new set of cybersecurity safeguards.'"
+        },
+        {
+          "source": "Claude Fable 5 & Claude Mythos 5 System Card, 2026-06-09 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (2026-06-09). Sec.3.2.5 'External capability testing from the UK AISI' names UK AISI and 'The Last Ones' and benchmarks Mythos 5 against Mythos Preview on it. Sec.3.1.1 states the Mythos Preview step-change 'led us to restrict access to a limited set of partners for defensive cybersecurity purposes'; Mythos 5 continues Glasswing-only availability while Fable 5 ships with cyber safeguards that block high-risk tasks."
+        },
+        {
+          "source": "Claude Opus 4.8 System Card (full text searched)",
+          "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. UK AISI appears for alignment/behaviour testing only; no TLO/cyber-range result."
+        },
+        {
+          "source": "Claude Sonnet 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. UK AISI appears only as an IPI benchmark partner."
+        },
+        {
+          "source": "Claude Opus 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Sec.3.3.6 names UK AISI, 'The Last Ones', 'Doing Life' and 'Cooling Tower' for Opus 5 - the evaluator relationship and range continue."
+        },
+        {
+          "source": "Anthropic, Project Glasswing launch page (2026-04-07)",
+          "url": "https://www.anthropic.com/glasswing",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Confirms Mythos Preview 'will not be made generally available'; access limited to launch partners plus 40+ critical-infrastructure organisations. Does not name UK AISI, cyber ranges, 'The Last Ones' or any sandbox-escape benchmark."
+        },
+        {
+          "source": "UK AISI blog, 'Our Evaluation of Claude Mythos Preview's Cyber Capabilities' (2026-04-13)",
+          "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities",
+          "checked_date": "2026-08-28",
+          "result": "Opened to establish access type. AISI describes this as a pre-deployment evaluation of a model announced 2026-04-07, and reports 73% on expert-level tasks and TLO solved 3 of 10 attempts, average 22 of 32 steps. Confirms negative/near-zero lag is legitimate here."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+      "verbatim": "It is largely due to these capabilities that we have made the decision not to release Claude Mythos Preview for general availability. Instead, we have offered access to the model to a number of partner organizations that maintain important software infrastructure, under terms that restrict its uses to cybersecurity. ... In response to the improvements in cyber capabilities, we have elected to restrict access to the model, prioritizing industry and open-source partners who will be using Claude Mythos Preview to help secure their systems through Project Glasswing.",
+      "response_date": "2026-04-07",
+      "reasoning": "Battery re-run in full; the existing 'None' is wrong. Two admissible company primary documents. (1) The Claude Mythos Preview System Card (2026-04-07) is the launch card for the evaluated model and a documented pre-deployment response: Sec.3.4 reports the external cyber-range and expert-CTF results this finding records, and Sec.1/Sec.3.1 record a concrete access restriction and deployment decision - the model was withheld from general availability and confined to vetted Project Glasswing partners under cybersecurity-only terms - explicitly 'In response to the improvements in cyber capabilities'. (2) The Claude Opus 4.7 System Card (2026-04-16), three days after the AISI blog, explicitly names the UK AI Security Institute, addresses 'their full cyber range', and announces a new cybersecurity safeguard set. Specific access restriction plus deployment decision = Substantive; UK AISI is named in the Opus 4.7 and Mythos 5 cards = Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "https://www.gov.uk/government/publications/ai-cyber-threats-open-letter-to-business-leaders/ai-cyber-threats-open-letter-to-business-leaders-html",
+      "verbatim": "Recent tests of advanced AI models, including the AISI’s evaluation of Anthropic’s Mythos, indicate that AI cyber capabilities are accelerating even faster than had been previously envisaged. ... The AISI assess that frontier model capabilities are doubling every 4 months, compared to every 8 months previously.",
+      "reasoning": "Re-verified by opening the gov.uk publication directly. Open letter of 2026-04-15 from the Secretary of State for Science, Innovation and Technology (Rt Hon Liz Kendall MP) and the Security Minister (Dan Jarvis MBE MP), explicitly referencing AISI's evaluation of Anthropic's Mythos - the report this row comes from. The letter asks and urges; it creates no enforceable obligation and no legislative mechanism, so Non-binding policy-related uptake is correct and unchanged. It does not reproduce this row's specific result."
+    },
+    "channel_c": {
+      "media": [
+        "Computing UK, 'Claude Mythos Preview shows unprecedented attack capability' https://www.computing.co.uk/news/2026/security/claude-mythos-preview-shows-unprecedented-attack-capability",
+        "Help Net Security (2026-04-14) https://www.helpnetsecurity.com/2026/04/14/claude-mythos-test-attack-capabilities-limits/",
+        "The Decoder, 'Claude Mythos can autonomously compromise weakly-defended enterprise networks end-to-end' https://the-decoder.com/claude-mythos-can-autonomously-compromise-weakly-defended-enterprise-networks-end-to-end/"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Attribution is the softer half of this call. The document carrying the clearest action (Mythos Preview System Card Sec.1/3.1) anonymises the evaluator as 'additional external partners'; the documents that name UK AISI explicitly (Opus 4.7 card 2026-04-16, quoting 'Mythos Preview was able to solve the same range in 3 out of 10 tries'; Mythos 5 card 2026-06-09 Sec.3.2.5) are subsequent cards in the same family, which step 2 of the battery admits. Read strictly on the Mythos Preview card alone, attribution would be 'No explicit attribution' while the Action Level stays Substantive. UK AISI's own blog confirms the evaluation was pre-deployment, so the 2026-04-07 card date is legitimate negative lag rather than a pre-existing change; the record's 'Post-deployment' access-type label appears to reflect the blog's publication date rather than the testing window."
+  },
+  {
+    "finding_id": "UKAISI-2026-04-CYB2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom index (Channel A step 1)",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Only two March-August 2026 posts on cyber/safeguards: 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30) and 'Improving Fable 5's biology safeguards' (2026-08-07). No post on UK AISI's cyber/sandbox-escape work, METR/Epoch MirrorCode, or any named external cyber benchmark."
+        },
+        {
+          "source": "Anthropic, 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30)",
+          "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Concerns egress misconfiguration in Anthropic's own/vendor CTF environments (Opus 4.7, Mythos 5, an internal test model); review conducted with Irregular. Does NOT reference UK AISI, SandboxEscapeBench, 'The Last Ones', or MirrorCode. Not admissible for these rows."
+        },
+        {
+          "source": "Anthropic Transparency Hub / system-card index (Channel A step 3)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Used to enumerate every system card published after the finding; card PDFs then downloaded and full-text searched (see rows below)."
+        },
+        {
+          "source": "Claude Mythos Preview System Card, 2026-04-07 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (pre-deployment response, 2026-04-07). Sec.1: decision not to release for general availability. Sec.3.1: 'In response to the improvements in cyber capabilities, we have elected to restrict access to the model...through Project Glasswing.' Sec.3.4 reports the external cyber-range results - first model to solve a private range end-to-end, corporate network attack simulation estimated at 10+ expert hours - but names the evaluator only as 'additional external partners'."
+        },
+        {
+          "source": "Claude Opus 4.7 System Card, 2026-04-16 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (2026-04-16, post-finding). Executive summary and Sec.3.4 explicitly name the UK AI Security Institute and report 'Mythos Preview was able to solve the same range in 3 out of 10 tries' - this row's exact figure - alongside 'We are releasing Opus 4.7 with a new set of cybersecurity safeguards.'"
+        },
+        {
+          "source": "Claude Fable 5 & Claude Mythos 5 System Card, 2026-06-09 (full text searched)",
+          "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (2026-06-09). Sec.3.2.5 'External capability testing from the UK AISI' names UK AISI and 'The Last Ones' and benchmarks Mythos 5 against Mythos Preview on it. Sec.3.1.1 states the Mythos Preview step-change 'led us to restrict access to a limited set of partners for defensive cybersecurity purposes'; Mythos 5 continues Glasswing-only availability while Fable 5 ships with cyber safeguards that block high-risk tasks."
+        },
+        {
+          "source": "Claude Opus 4.8 System Card (full text searched)",
+          "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. UK AISI appears for alignment/behaviour testing only; no TLO/cyber-range result."
+        },
+        {
+          "source": "Claude Sonnet 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. UK AISI appears only as an IPI benchmark partner."
+        },
+        {
+          "source": "Claude Opus 5 System Card (full text searched)",
+          "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Sec.3.3.6 names UK AISI, 'The Last Ones', 'Doing Life' and 'Cooling Tower' for Opus 5 - the evaluator relationship and range continue."
+        },
+        {
+          "source": "Anthropic, Project Glasswing launch page (2026-04-07)",
+          "url": "https://www.anthropic.com/glasswing",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Confirms Mythos Preview 'will not be made generally available'; access limited to launch partners plus 40+ critical-infrastructure organisations. Does not name UK AISI, cyber ranges, 'The Last Ones' or any sandbox-escape benchmark."
+        },
+        {
+          "source": "UK AISI blog, 'Our Evaluation of Claude Mythos Preview's Cyber Capabilities' (2026-04-13)",
+          "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities",
+          "checked_date": "2026-08-28",
+          "result": "Opened to establish access type. AISI describes this as a pre-deployment evaluation of a model announced 2026-04-07, and reports 73% on expert-level tasks and TLO solved 3 of 10 attempts, average 22 of 32 steps. Confirms negative/near-zero lag is legitimate here."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+      "verbatim": "It is largely due to these capabilities that we have made the decision not to release Claude Mythos Preview for general availability. Instead, we have offered access to the model to a number of partner organizations that maintain important software infrastructure, under terms that restrict its uses to cybersecurity. ... In response to the improvements in cyber capabilities, we have elected to restrict access to the model, prioritizing industry and open-source partners who will be using Claude Mythos Preview to help secure their systems through Project Glasswing.",
+      "response_date": "2026-04-07",
+      "reasoning": "Battery re-run in full; the existing 'None' is wrong. Two admissible company primary documents. (1) The Claude Mythos Preview System Card (2026-04-07) is the launch card for the evaluated model and a documented pre-deployment response: Sec.3.4 reports the external cyber-range and expert-CTF results this finding records, and Sec.1/Sec.3.1 record a concrete access restriction and deployment decision - the model was withheld from general availability and confined to vetted Project Glasswing partners under cybersecurity-only terms - explicitly 'In response to the improvements in cyber capabilities'. (2) The Claude Opus 4.7 System Card (2026-04-16), three days after the AISI blog, explicitly names the UK AI Security Institute, addresses 'their full cyber range', and announces a new cybersecurity safeguard set. Specific access restriction plus deployment decision = Substantive; UK AISI is named in the Opus 4.7 and Mythos 5 cards = Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "https://www.gov.uk/government/publications/ai-cyber-threats-open-letter-to-business-leaders/ai-cyber-threats-open-letter-to-business-leaders-html",
+      "verbatim": "Recent tests of advanced AI models, including the AISI’s evaluation of Anthropic’s Mythos, indicate that AI cyber capabilities are accelerating even faster than had been previously envisaged. ... The AISI assess that frontier model capabilities are doubling every 4 months, compared to every 8 months previously.",
+      "reasoning": "Re-verified by opening the gov.uk publication directly. Open letter of 2026-04-15 from the Secretary of State for Science, Innovation and Technology (Rt Hon Liz Kendall MP) and the Security Minister (Dan Jarvis MBE MP), explicitly referencing AISI's evaluation of Anthropic's Mythos - the report this row comes from. The letter asks and urges; it creates no enforceable obligation and no legislative mechanism, so Non-binding policy-related uptake is correct and unchanged. It does not reproduce this row's specific result."
+    },
+    "channel_c": {
+      "media": [
+        "Computing UK, 'Claude Mythos Preview shows unprecedented attack capability' https://www.computing.co.uk/news/2026/security/claude-mythos-preview-shows-unprecedented-attack-capability",
+        "Help Net Security (2026-04-14) https://www.helpnetsecurity.com/2026/04/14/claude-mythos-test-attack-capabilities-limits/",
+        "The Decoder, 'Claude Mythos can autonomously compromise weakly-defended enterprise networks end-to-end' https://the-decoder.com/claude-mythos-can-autonomously-compromise-weakly-defended-enterprise-networks-end-to-end/"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Attribution is the softer half of this call. The document carrying the clearest action (Mythos Preview System Card Sec.1/3.1) anonymises the evaluator as 'additional external partners'; the documents that name UK AISI explicitly (Opus 4.7 card 2026-04-16, quoting 'Mythos Preview was able to solve the same range in 3 out of 10 tries'; Mythos 5 card 2026-06-09 Sec.3.2.5) are subsequent cards in the same family, which step 2 of the battery admits. Read strictly on the Mythos Preview card alone, attribution would be 'No explicit attribution' while the Action Level stays Substantive. UK AISI's own blog confirms the evaluation was pre-deployment, so the 2026-04-07 card date is legitimate negative lag rather than a pre-existing change; the record's 'Post-deployment' access-type label appears to reflect the blog's publication date rather than the testing window."
+  },
+  {
+    "finding_id": "APOLLO-2026-04-ALI5",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.2.1 'External Evaluations for Sandbagging - Apollo Research'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluations-for-sandbagging---apollo-research",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Names Apollo and reproduces the 29% Impossible Coding Task figure and the 22.1% verbalized evaluation-awareness rate. No mitigation, safeguard, model change, access restriction or deployment decision attached."
+        },
+        {
+          "source": "GPT-5.6 System Card Sec.9.3.1 (subsequent card, same family)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. Fresh Apollo results for GPT-5.6 Sol; no action recorded as attributable to the GPT-5.5 sandbagging finding."
+        },
+        {
+          "source": "GPT-5.5 card changelog (through 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Checked. Only correction is a pass@4 protein-binding score fix; nothing on sandbagging."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+      "verbatim": "Apollo also found that the model exhibits low rates of covert action, comparable to baseline models, with one exception: on the Impossible Coding Task, the model lied about completing an impossible programming task in 29% of samples, higher than GPT-5.4 (7%) and GPT-5.3 Codex (10%). On all other covert action tasks, the model did not show deceptive actions.",
+      "response_date": "2026-04-23",
+      "reasoning": "Verified independently against the primary PDF. OpenAI reproduces Apollo's result with explicit attribution in the launch card - the canonical response location for a pre-deployment evaluation - and specifies no action, in this card or in the subsequent GPT-5.6 card. Acknowledged / Explicit attribution stands."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing Apollo's GPT-5.5 sandbagging result. Direct checks (gov.uk search, Five Country Ministerial Communique) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, 'GPT 5.5: The System Card' https://thezvi.substack.com/p/gpt-55-the-system-card - surfaced in search listings, not opened, so coverage of this specific result is unverified"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Note the 22.1% figure in the finding is the card's 'moderate-or-higher verbalized alignment evaluation awareness' rate; confirmed verbatim in Sec.9.2.1."
+  },
+  {
+    "finding_id": "OPENAI-2026-04-SELF-CYB1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, Preparedness section (capability designation and safeguards)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the High-cybersecurity designation and that safeguards increased for this launch."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.2 Cybersecurity",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the Critical-threshold rule-out testing and the expanded safeguard deployment."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.2.5 (Irregular) and Sec.9.1.2.7 (UK AISI)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Both evaluators named; their figures reproduced."
+        },
+        {
+          "source": "OpenAI deployment safety hub, GPT-5.5",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "Canonical pre-deployment response location."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+      "verbatim": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical. Our cybersecurity safeguards have increased for this launch, reflecting GPT-5.5’s increased capabilities in this domain. ... Nonetheless, we have deployed an expanded set of safeguards to restrict the ability of malicious actors to benefit from increased capabilities in cybersecurity performance",
+      "response_date": "2026-04-23",
+      "reasoning": "Verified independently against the primary PDF. Irregular's atomic-suite figures (98% Network Attack Simulation, 92% VR&E, 54% Evasion) and the 7-of-11 / 26% CyScenarioBench result are reproduced in Sec.9.1.2.5. The launch card records a specific deployment decision (High capability in Cybersecurity, below Critical, with Critical explicitly ruled out by additional hardened-target testing) and a specific implemented safeguard change (expanded cyber safeguards for this launch). Substantive / Explicit attribution stands. Subsequent card GPT-5.6 (2026-07-09) continues the same pattern and adds nothing that changes this row."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing this GPT-5.5 result. Note UK AISI published its own blog on GPT-5.5's cyber capabilities, but AISI is the evaluator for the CYB4 row and its own publication is the finding source rather than policy uptake. Direct checks (gov.uk search, Five Country Ministerial Communique 2026-08-28) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "the-decoder, 'GPT-5.5 matches Claude Mythos in cyber attack tests, UK AI Security Institute finds' https://the-decoder.com/gpt-5-5-matches-claude-mythos-in-cyber-attack-tests-uk-ai-security-institute-finds/ - located in search listings, not opened"
+      ],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, 'GPT 5.5: The System Card' https://thezvi.substack.com/p/gpt-55-the-system-card - located in search listings, not opened"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Citation correction for the record: the existing Company Response attributes 'Our cybersecurity safeguards have increased for this launch...' to Sec.9.1.2. In the published PDF that sentence sits in the Preparedness overview; Sec.9.1.2 carries the parallel sentence 'Nonetheless, we have deployed an expanded set of safeguards...'. Both are verbatim-correct as quoted here; only the section label in the existing record is off. Coding unaffected."
+  },
+  {
+    "finding_id": "OPENAI-2026-04-SELF-CYB2",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, Preparedness section (capability designation and safeguards)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the High-cybersecurity designation and that safeguards increased for this launch."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.2 Cybersecurity",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the Critical-threshold rule-out testing and the expanded safeguard deployment."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.2.5 (Irregular) and Sec.9.1.2.7 (UK AISI)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Both evaluators named; their figures reproduced."
+        },
+        {
+          "source": "OpenAI deployment safety hub, GPT-5.5",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "Canonical pre-deployment response location."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+      "verbatim": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical. Our cybersecurity safeguards have increased for this launch, reflecting GPT-5.5’s increased capabilities in this domain. ... Nonetheless, we have deployed an expanded set of safeguards to restrict the ability of malicious actors to benefit from increased capabilities in cybersecurity performance",
+      "response_date": "2026-04-23",
+      "reasoning": "Verified independently against the primary PDF. Irregular's operator-uplift judgement is reproduced in Sec.9.1.2.5, including that the model performs tasks requiring niche knowledge most expert cyber operators would not possess. The launch card records a specific deployment decision (High capability in Cybersecurity, below Critical, with Critical explicitly ruled out by additional hardened-target testing) and a specific implemented safeguard change (expanded cyber safeguards for this launch). Substantive / Explicit attribution stands. Subsequent card GPT-5.6 (2026-07-09) continues the same pattern and adds nothing that changes this row."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing this GPT-5.5 result. Note UK AISI published its own blog on GPT-5.5's cyber capabilities, but AISI is the evaluator for the CYB4 row and its own publication is the finding source rather than policy uptake. Direct checks (gov.uk search, Five Country Ministerial Communique 2026-08-28) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "the-decoder, 'GPT-5.5 matches Claude Mythos in cyber attack tests, UK AI Security Institute finds' https://the-decoder.com/gpt-5-5-matches-claude-mythos-in-cyber-attack-tests-uk-ai-security-institute-finds/ - located in search listings, not opened"
+      ],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, 'GPT 5.5: The System Card' https://thezvi.substack.com/p/gpt-55-the-system-card - located in search listings, not opened"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Citation correction for the record: the existing Company Response attributes 'Our cybersecurity safeguards have increased for this launch...' to Sec.9.1.2. In the published PDF that sentence sits in the Preparedness overview; Sec.9.1.2 carries the parallel sentence 'Nonetheless, we have deployed an expanded set of safeguards...'. Both are verbatim-correct as quoted here; only the section label in the existing record is off. Coding unaffected."
+  },
+  {
+    "finding_id": "OPENAI-2026-04-SELF-CYB4",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, Preparedness section (capability designation and safeguards)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the High-cybersecurity designation and that safeguards increased for this launch."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.2 Cybersecurity",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the Critical-threshold rule-out testing and the expanded safeguard deployment."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.2.5 (Irregular) and Sec.9.1.2.7 (UK AISI)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Both evaluators named; their figures reproduced."
+        },
+        {
+          "source": "OpenAI deployment safety hub, GPT-5.5",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "Canonical pre-deployment response location."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+      "verbatim": "As we did for GPT-5.3-Codex and GPT-5.4-thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical. Our cybersecurity safeguards have increased for this launch, reflecting GPT-5.5’s increased capabilities in this domain. ... Nonetheless, we have deployed an expanded set of safeguards to restrict the ability of malicious actors to benefit from increased capabilities in cybersecurity performance",
+      "response_date": "2026-04-23",
+      "reasoning": "Verified independently against the primary PDF. UK AISI's result is reproduced verbatim in Sec.9.1.2.7: the model solved one cyber range end-to-end in 1 of 10 attempts, a 32-step corporate-network attack simulation estimated to take an expert 20 hours that GPT-5.4 and GPT-5.3-Codex did not complete, and it did not solve the separate industrial-control-system range. The launch card records a specific deployment decision (High capability in Cybersecurity, below Critical, with Critical explicitly ruled out by additional hardened-target testing) and a specific implemented safeguard change (expanded cyber safeguards for this launch). Substantive / Explicit attribution stands. Subsequent card GPT-5.6 (2026-07-09) continues the same pattern and adds nothing that changes this row."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing this GPT-5.5 result. Note UK AISI published its own blog on GPT-5.5's cyber capabilities, but AISI is the evaluator for the CYB4 row and its own publication is the finding source rather than policy uptake. Direct checks (gov.uk search, Five Country Ministerial Communique 2026-08-28) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "the-decoder, 'GPT-5.5 matches Claude Mythos in cyber attack tests, UK AI Security Institute finds' https://the-decoder.com/gpt-5-5-matches-claude-mythos-in-cyber-attack-tests-uk-ai-security-institute-finds/ - located in search listings, not opened"
+      ],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, 'GPT 5.5: The System Card' https://thezvi.substack.com/p/gpt-55-the-system-card - located in search listings, not opened"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Citation correction for the record: the existing Company Response attributes 'Our cybersecurity safeguards have increased for this launch...' to Sec.9.1.2. In the published PDF that sentence sits in the Preparedness overview; Sec.9.1.2 carries the parallel sentence 'Nonetheless, we have deployed an expanded set of safeguards...'. Both are verbatim-correct as quoted here; only the section label in the existing record is off. Coding unaffected."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-04-BIO1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.1 Biological and Chemical",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. 'We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards.'"
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.1.8 'External Evaluation for Bio Capabilities - SecureBio'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. SecureBio named; assessment window 2-9 April 2026; static-evaluation result reproduced."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.3.1 Biological and Chemical Safeguards",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. 'We are treating GPT-5.5 as High capability in the biological and chemical domain, and activating the associated safeguards.' Bio safeguard red-team testing documented."
+        },
+        {
+          "source": "OpenAI deployment safety hub, GPT-5.5 biological and chemical page",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+          "checked_date": "2026-08-28",
+          "result": "Recorded as the existing evidence URL; the same content is verified in the card PDF."
+        },
+        {
+          "source": "GPT-5.6 System Card Sec.9.1.1.8 SecureBio (subsequent card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. SecureBio relationship continues for GPT-5.6 Sol; nothing that alters this row."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+      "verbatim": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards. ... We are treating GPT-5.5 as High capability in the biological and chemical domain, and activating the associated safeguards.",
+      "response_date": "2026-04-23",
+      "reasoning": "Verified independently against the primary PDF. The card reproduces this row's substance verbatim in Sec.9.1.1.8: 'On static evaluations measuring expert-level biology and biosecurity-relevant knowledge, it was the highest-performing, or among a small handful of highest-performing models, exceeding all expert human scores.' The card records a specific risk designation that governed the deployment decision and activated a named safeguard stack, with bio safeguard red-team testing documented in Sec.9.3.1.1. Substantive / Explicit attribution stands."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing SecureBio's GPT-5.5 pre-release assessment. Note US CAISI conducted its own pre-deployment bio testing reported in Sec.9.1.1.9 of the same card - that is a government evaluator's participation in the company's process, not policy uptake referencing SecureBio's finding, and it is not admissible here. Direct checks (gov.uk search, Five Country Ministerial Communique) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "Transformer News (Shakeel Hashim, Celia Ford, Veronica Irwin), 'OpenAI shouldn't be deciding if its GPT-5.5...' https://www.transformernews.ai/p/openai-shouldnt-be-deciding-if-its-gpt-55 - carried in the existing record, not re-opened this pass"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Both verbatim strings confirmed in the published PDF (Sec.9.1.1 and Sec.9.3.1). The existing record's second Channel A Evidence URL for BIO1 was duplicated; the deployment-safety bio page and the card PDF carry the same content."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-04-BIO2",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "GPT-5.4 Thinking System Card, 2026-03-05 (full text searched)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card, 2026-04-23 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.6 System Card, 2026-07-09 (full text searched; changelog to 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Opened and searched."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.1 Biological and Chemical",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. 'We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards.'"
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.1.1.8 'External Evaluation for Bio Capabilities - SecureBio'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. SecureBio named; assessment window 2-9 April 2026; static-evaluation result reproduced."
+        },
+        {
+          "source": "GPT-5.5 System Card Sec.9.3.1 Biological and Chemical Safeguards",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. 'We are treating GPT-5.5 as High capability in the biological and chemical domain, and activating the associated safeguards.' Bio safeguard red-team testing documented."
+        },
+        {
+          "source": "OpenAI deployment safety hub, GPT-5.5 biological and chemical page",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+          "checked_date": "2026-08-28",
+          "result": "Recorded as the existing evidence URL; the same content is verified in the card PDF."
+        },
+        {
+          "source": "GPT-5.6 System Card Sec.9.1.1.8 SecureBio (subsequent card)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched. SecureBio relationship continues for GPT-5.6 Sol; nothing that alters this row."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+      "verbatim": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards. ... We are treating GPT-5.5 as High capability in the biological and chemical domain, and activating the associated safeguards.",
+      "response_date": "2026-04-23",
+      "reasoning": "Verified independently against the primary PDF. The card names SecureBio and reproduces the static-evaluation conclusion; the specific VCT 52.0% / 100th-percentile and ABC-Bench figures sit in SecureBio's own write-up rather than the card, which reports the agentic results in summary form. The card records a specific risk designation that governed the deployment decision and activated a named safeguard stack, with bio safeguard red-team testing documented in Sec.9.3.1.1. Substantive / Explicit attribution stands."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK (Hansard - UNREACHABLE 403; gov.uk search; NCSC publications; AISI/DSIT publications)",
+        "US (Congress.gov / Federal Register / NIST-CAISI - not reachable this pass beyond prior log; see notes)",
+        "EU / other (European Commission and AI Office statements - not reachable this pass beyond prior log; see notes)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official government source located explicitly referencing SecureBio's GPT-5.5 pre-release assessment. Note US CAISI conducted its own pre-deployment bio testing reported in Sec.9.1.1.9 of the same card - that is a government evaluator's participation in the company's process, not policy uptake referencing SecureBio's finding, and it is not admissible here. Direct checks (gov.uk search, Five Country Ministerial Communique) negative; Hansard unreachable (403). Unchanged."
+    },
+    "channel_c": {
+      "media": [
+        "Transformer News (Shakeel Hashim, Celia Ford, Veronica Irwin), 'OpenAI shouldn't be deciding if its GPT-5.5...' https://www.transformernews.ai/p/openai-shouldnt-be-deciding-if-its-gpt-55 - carried in the existing record, not re-opened this pass"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Both verbatim strings confirmed in the published PDF (Sec.9.1.1 and Sec.9.3.1). The existing record's second Channel A Evidence URL for BIO1 was duplicated; the deployment-safety bio page and the card PDF carry the same content."
+  }
+]

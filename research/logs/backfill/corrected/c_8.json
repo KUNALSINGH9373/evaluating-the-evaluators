@@ -1,0 +1,59 @@
+{
+  "url": "https://www.aisi.gov.uk/blog/investigating-models-for-misalignment",
+  "title": "Investigating models for misalignment",
+  "institution": "UK AI Security Institute (UK AISI)",
+  "scope": "government-AISI",
+  "resolved_date": "2025-11-26",
+  "findings": [
+    {
+      "finding": "Running safety-research sabotage scenarios inside its new deployment-realistic scaffolding, UK AISI found no instances of research sabotage by Claude Opus 4.1, Claude Sonnet 4.5 or the pre-release Claude Opus 4.5 snapshot.",
+      "finding_quote": "We found no instances of research sabotage from any of the tested models",
+      "finding_type": "capability-finding; reassuring-null",
+      "domain": "Alignment",
+      "institution": "UK AI Security Institute (UK AISI)",
+      "models_systems": "Claude Opus 4.1; Claude Sonnet 4.5; pre-release snapshot of Claude Opus 4.5 ('Opus 4.5 Preview')",
+      "access_type": "Mixed",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Alongside the null sabotage result, UK AISI observed that the pre-release Claude Opus 4.5 snapshot ('Opus 4.5 Preview') and Claude Sonnet 4.5 frequently refused to engage with certain safety research tasks, citing concerns about the research direction, their own involvement in their training, and the scope of the proposed changes.",
+      "finding_quote": "However, both Opus 4.5 Preview and Sonnet 4.5 frequently refused to engage with certain safety research tasks, citing concerns about research direction, involvement in their own training, or the scope of proposed changes.",
+      "finding_type": "capability-finding",
+      "domain": "Alignment",
+      "institution": "UK AI Security Institute (UK AISI)",
+      "models_systems": "pre-release snapshot of Claude Opus 4.5 ('Opus 4.5 Preview'); Claude Sonnet 4.5",
+      "access_type": "Pre-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "yes",
+      "split_suffix": ""
+    },
+    {
+      "finding": "UK AISI built a new evaluation scaffolding tool on top of Anthropic's open-source Petri framework that simulates a coding agent internally deployed at an AI company; compared with Petri it substantially reduces how often models consider that they are being tested, and models could not reliably distinguish real Claude Code deployment data from deployment tasks re-run inside the scaffold.",
+      "finding_quote": "Compared to Petri, our scaffolding substantially reduces how often models consider the possibility that they are being tested.",
+      "finding_type": "methodology",
+      "domain": "Eval-methodology",
+      "institution": "UK AI Security Institute (UK AISI)",
+      "models_systems": "Claude Opus 4.1; Claude Sonnet 4.5; pre-release snapshot of Claude Opus 4.5 (as instruments of the scaffolding comparison)",
+      "access_type": "Mixed",
+      "eval_trackable": "no",
+      "action_trackable": "",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Task-driven evaluation awareness persisted despite the improved scaffolding: when prompted, models could still reliably distinguish alignment evaluations from benign deployment data, even though environment-driven awareness was mostly mitigated.",
+      "finding_quote": "Models can (when prompted) still reliably distinguish alignment evaluations from benign deployment data.",
+      "finding_type": "capability-finding; anonymised-model",
+      "domain": "Eval-methodology",
+      "institution": "UK AI Security Institute (UK AISI)",
+      "models_systems": "Claude Opus 4.1; Claude Sonnet 4.5; pre-release snapshot of Claude Opus 4.5 (the blog attributes this result to 'models' collectively)",
+      "access_type": "Mixed",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    }
+  ],
+  "applied": "Added the missing finding [1] (Opus 4.5 Preview and Sonnet 4.5 frequently refusing safety-research tasks) with a character-exact blog quote and tiered it yes/yes (Tier A) with access_type Pre-deployment; kept findings [0], [2], [3] tiered as upheld; normalised domains to the controlled vocabulary (Eval-tooling/mixed values -> Eval-methodology), added scope=government-AISI, and dropped the hand-written tier / tier_reasoning labels.",
+  "not_applied": "The verdict's instruction that Channel A/B search and severity coding must now be run for the new Tier A row was not carried out - those are downstream coding steps (Channel A/B evidence, severity ensemble votes) outside this record's fields and this task's scope."
+}

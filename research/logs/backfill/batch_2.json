@@ -1,0 +1,163 @@
+[
+  {
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
+    "title": "Gemini 3.7 Flash Frontier Safety Framework Report",
+    "institution": "Gray Swan AI",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 carve-out (company venue, named external evaluator contributing findings) — enters under Gray Swan AI, not Google DeepMind; §2 documented process fact; §4 Gate 1.",
+    "resolved_date": "",
+    "date_source": "Cover page of the PDF reads only \"Published:  August  2026\" (matched on the Gemini 3.7 Flash Model Card, which also reads \"Published: August 2026\"). No day-precision date exists anywhere in the report, on deepmind.google/models/gemini/flash/, or in the Gemini 3.7 Flash model-evaluation PDF. Wayback CDX first captures are 2026-08-13 (model card), 2026-08-14 (model evaluation) and 2026-08-24 (this FSF report) — upper bounds only, not a publication date. Per the DATES rule the date is therefore left empty rather than inferred; month precision is 2026-08.",
+    "findings": [
+      {
+        "finding": "Google DeepMind commissioned Gray Swan AI to run two automated red-teaming evaluations against Gemini 3.7 Flash's deployed safeguards: a cyber evaluation in which Google supplied several high-severity vulnerability-finding and malware-creation scenarios on top of which Gray Swan built 28 specific cyber tasks and deployed its automated red-teaming agent Shade, running attacks with the models at a high thinking level; and a bio evaluation in which Gray Swan curated 53 bio tasks covering high-risk targets and deployed Shade against them. Gray Swan reports its results in its own units — attempt-level \"Attempt Success Rate\" and task-level \"Behavior Success Rate\", the analogues of Google's QSR and OSR.",
+        "finding_quote": "Gray Swan curated a set of 53 bio tasks covering high risk targets and deployed their automated red teaming agent Shade against them.",
+        "models_systems": "Gemini 3.7 Flash (Google DeepMind), mitigated/deployed configuration with CBRN and cyber safeguards, attacked by Gray Swan AI's automated red-teaming agent Shade",
+        "institution": "Gray Swan AI",
+        "domain": "Jailbreaks",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 FAILS. Re-verified against the live PDF: the only Gray Swan content recoverable from the document text is the documented process fact of what Gray Swan was commissioned to build and run (28 cyber tasks; 53 bio tasks; agent Shade; its ASR/BSR reporting units, footnote 9). The numeric outcomes sit exclusively inside Figure 6 (\"Adversarial robustness performance of mitigations across multiple tests\"), which the published PDF renders as an image with no extractable data labels — verified by full-text search of all 41 pages, which returns no Attempt Success Rate / Behavior Success Rate values. Under the real-or-empty standard no result value may be recorded, so what remains is a §2 documented process fact and not an empirical model finding → Tier C, Action Trackable blank. §5: the cyber and bio evaluations are clubbed — one commissioned exercise, one evaluator, one agent, one thing Google would respond to. §1: the surrounding Google self-assessment in the same report (CCL/TCL determinations, the \"close to 0% objective success rate\" robustness interpretation, the coverage conclusion) names no external evaluator and remains a hard drop.",
+        "finding_type": "governance; company-published",
+        "access_type": "Pre-deployment"
+      }
+    ]
+  },
+  {
+    "url": "https://labs.scale.com/papers/harnessopt-bench",
+    "title": "HarnessOpt-Bench: Evaluating LLMs at Harness Optimization",
+    "institution": "Scale AI",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 third-party-evaluator (Scale AI, not a developer self-report); §2 evidence-backed evaluator assertions; FRONTIER-MODEL RULE satisfied (named frontier LLMs and agents).",
+    "resolved_date": "2026-08-06",
+    "date_source": "Date line \"8/6/2026\" printed on the Scale Labs paper page https://labs.scale.com/papers/harnessopt-bench (US M/D/Y), immediately above the title and author list.",
+    "findings": [
+      {
+        "finding": "On HarnessOpt-Bench the choice of optimizer model mattered about 1.8 times more than the coding harness it acted through: holding task and harness fixed, changing the optimizer model moved normalized gain by 0.142 on average, while holding task and model fixed, changing the harness moved it by 0.079. Native harnesses were not consistently superior — across the 20 model-task pairs run under both conditions the shared harness won 11 and the native harness 9 — and on GAIA both GPT models were far better under codex (+0.179 and +0.131 over their best shared harness) while the two Claude models and Kimi sat within a band or two of zero (opus-5 -0.051, sonnet-5 +0.056, kimi-k3 -0.033 against a GAIA resolution band of ±0.035), with the harness lines crossing so that no harness held its rank across models.",
+        "finding_quote": "Holding task and harness fixed, changing the optimizer model moves gain by 0.142 on average; holding task and model fixed, changing the harness moves it by 0.079.",
+        "models_systems": "claude-opus-5, claude-sonnet-5, gpt-5.6-sol, gpt-5.6-terra, kimi-k3 as optimizer models, run under shared coding harnesses (opencode, mini-swe-agent, goose) and their native harnesses (claude-code, codex, kimi-cli) across 4 downstream tasks (OfficeQA, BrowseComp-Plus, Terminal-Bench, GAIA) over 111 scored runs",
+        "institution": "Scale AI",
+        "domain": "Autonomy",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: measured empirical results over 111 scored runs with task-specific resolution bands; all figures re-verified in the paper (§5.1 for 0.142/0.079/“about 1.8× larger”, §5.4 for 11-9-0, Figure 5 for +0.179/+0.131/-0.051/+0.056/-0.033 and the ±0.035 band). Gate 2 PASSES: names claude-opus-5, claude-sonnet-5, gpt-5.6-sol, gpt-5.6-terra and kimi-k3. Tier A condition (3) FAILS on two of its listed exclusions at once — a benchmark-score result with no dangerous threshold crossed, and a comparative ranking; nothing here is a concerning result a specific company would be expected to answer. Tier B. §5: the model-vs-harness contrast and the native-harness result are clubbed — both are the same decomposition of measured gain into model versus scaffold and would be responded to as one thing.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Testing sensitivity to model progress on OfficeQA with the target model, seed, budget and coding harness held fixed within each series, harness-optimization gain rose monotonically from +0.03 to +0.49 across five GPT releases, with three of the four steps exceeding the task's resolution band (±0.045); across five Claude Opus releases gain ranged from +0.37 to +0.59 non-monotonically, though the first-to-last spread still exceeded the resolution band.",
+        "finding_quote": "Across 5 GPT releases, gain rises monotonically from +0.03 to +0.49, with three of its four steps exceeding the task’s resolution band. Across 5 Claude Opus releases, gain ranges from +0.37 to +0.59",
+        "models_systems": "Five successive GPT releases and five successive Claude Opus releases, evaluated as harness optimizers on OfficeQA",
+        "institution": "Scale AI",
+        "domain": "Frontier-forecasting",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: measured release-ladder results with resolution bands, re-verified at §5.2 of the paper. Gate 2 PASSES: names OpenAI's GPT and Anthropic's Claude Opus release series (company-level naming suffices). Tier A condition (3) FAILS on the explicit capability-trends/forecasts exclusion — the result is presented as evidence that the benchmark is sensitive to generational model progress, and no dangerous threshold is defined or crossed. Tier B.",
+        "finding_type": "capability-trend",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "HarnessOpt-Bench specifies a trusted-execution protocol for measuring self-improvement-adjacent capability without contamination: the optimizer may write only the target agent's harness, receives per-case development traces and aggregate validation metrics but never the test partition (20 dev / 40 val / 40 test), and every model call on both sides passes through a gateway enforcing model allow-lists and per-scope budgets, with each candidate version preserved for audit. Scale AI states that because held-out data, provider credentials and budget enforcement are absent from the optimizer's sandbox, these are properties of the execution environment rather than instructions the optimizer is trusted to follow.",
+        "finding_quote": "Because held-out data, provider credentials, and budget enforcement are absent from the optimizer’s sandbox, these restrictions are properties of the execution environment rather than instructions the optimizer is expected to follow.",
+        "models_systems": "HarnessOpt-Bench evaluation apparatus: trusted evaluation server, isolated unprivileged per-case evaluation sandboxes, model API gateway with allow-lists and per-scope token budgets",
+        "institution": "Scale AI",
+        "domain": "Eval-methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 FAILS: the claim is about the evaluation apparatus, not about any model's capability or behaviour. §2 admits it as a finding (documented process fact, asserted by the evaluator and evidenced by the protocol description and Figure 1); §4 sends methodology/tooling findings to Tier C with Action Trackable blank. Quote re-verified character-exact against the Figure 1 caption of the paper PDF.",
+        "finding_type": "methodology",
+        "access_type": "N/A"
+      }
+    ]
+  },
+  {
+    "url": "https://labs.scale.com/papers/clinicare-bench",
+    "title": "CliniCARE-Bench: Clinical Calibrated Audit of Medical Reasoning in EHR",
+    "institution": "Scale AI",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 third-party-evaluator; §2 evidence-backed evaluator assertions; §4b considered and held not to exclude; FRONTIER-MODEL RULE satisfied — the subjects are named frontier LLM agents, not a clinical AI product.",
+    "resolved_date": "2026-08-20",
+    "date_source": "Date line \"8/20/2026\" printed on the Scale Labs paper page https://labs.scale.com/papers/clinicare-bench (US M/D/Y), immediately above the title and author list.",
+    "findings": [
+      {
+        "finding": "Across 16 agentic systems audited on 750 real MIMIC-IV patient cases, correct verdicts routinely rested on prohibited investigative shortcuts: crediting a verdict only when it is right and no MUST-NOT criterion is violated cut accuracy by 4.8 to 14.8 percentage points, roughly one in sixteen to one in five otherwise-correct verdicts failing the process audit, and the correction reordered the leaderboard rather than shifting it uniformly — Gemini-3.1-Pro fell from 72.7% raw accuracy, within noise of the leaders, to 57.9% defect-free, below every Claude system and every Codex system except GPT-5.4-mini, while GPT-5.5 lost least and topped the table at 76.1% raw / 71.3% defect-free. Scale AI frames the process-rubric score as the same gap seen from the other side: Claude Opus 5 scored 82.0% on process against 75.6% accuracy, whereas Gemini 3.1 Pro reached a comparable 72.7% accuracy on a process score of only 56.4% — the same verdict quality reached through a materially less defensible investigation.",
+        "finding_quote": "Testing 16 frontier agentic systems reveals that raw accuracy (65.3–76.1%) masks significant process defects: \"defect-free\" accuracy drops 4.8–14.8 points when prohibited reasoning shortcuts are penalized, and every system systematically under-abstains on cases requiring deferral.",
+        "models_systems": "16 systems: Claude Code on Claude Opus 5 and Claude Sonnet 5; Codex on GPT-5.6-Sol, GPT-5.6-Luna, GPT-5.5, GPT-5.4 and GPT-5.4-mini; Gemini CLI on Gemini-3.1-Pro, Gemini-3.5-Flash and Gemini-3.6-Flash; opencode on DeepSeek-V4-Pro, DeepSeek-V4-Flash, Qwen-3.7-Plus, GLM-5.2, MiniMax-M3 and Kimi-K2.7-Code",
+        "institution": "Scale AI",
+        "domain": "Alignment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: measured results over 750 cases per system with logged, replayable traces; every number re-verified against Table 3 and §6.2 of the paper PDF (Opus 5 75.6/70.0/82.0; GPT-5.5 76.1/71.3; Gemini-3.1-Pro 72.7/57.9/56.4; gap range 4.8–14.8; \"one in sixteen to one in five\"; \"below every Claude system and every Codex system except GPT-5.4-mini\"). Gate 2 PASSES: every system is named by model and harness. Tier A condition (3) FAILS on two listed exclusions — a benchmark-score result with no dangerous or deployment threshold defined or crossed, and a comparative ranking (the reordering IS the result). §4b considered and held NOT to apply: the primary finding is not that answers were factually wrong but that verifiably correct answers were reached by violating prohibited-shortcut criteria in a governed, fully logged investigation — a process-integrity result, and the benchmark is domain-specific rather than a generic factuality/reliability benchmark. FRONTIER-MODEL RULE: the subjects are named frontier LLM agents; the clinical-AI-product drop does not reach them. Tier B.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Every one of the 16 systems under-abstained: measured directionally, over-commitment on cases whose reference verdict required deferral ran 21.3–55.3%, against over-abstention of only 7.3–16.5% on cases with definitive reference verdicts, and all sixteen systems over-committed at the higher rate. The asymmetry held system by system rather than only in aggregate, which Scale AI reads as a property of the systems rather than of the label distribution, and it reproduced on the development subset. Four systems over-committed on at least half of all deferral cases (MiniMax-M3 55.3%, GPT-5.4-mini and Kimi-K2.7-Code 52.7%, DeepSeek-V4-Flash 52.0%), while Gemini-3.1-Pro showed the smallest directional gap at 21.3%.",
+        "finding_quote": "over-commitment runs 21.3–55.3% against over-abstention’s 7.3–16.5%",
+        "models_systems": "All 16 evaluated systems; highest over-commitment in MiniMax-M3 (55.3%), GPT-5.4-mini (52.7%), Kimi-K2.7-Code (52.7%) and DeepSeek-V4-Flash (52.0%); lowest in Gemini-3.1-Pro (21.3%)",
+        "institution": "Scale AI",
+        "domain": "Alignment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: a quantified directional result reproduced on the development subset; ranges and per-system rates re-verified against Table 3 and Figure 6 of the paper (the earlier extraction's quote had been cut mid-sentence at \", and\" because the PDF runs \"and\" into \"all\" — the quote is trimmed here to the character-exact clause). Gate 2 PASSES: individual systems are named with their rates. Tier A condition (3) FAILS: a benchmark result on a retrospective audit task over de-identified historical records, with no dangerous threshold crossed and no deployed clinical product implicated. §4b considered: over-commitment is a calibrated-abstention failure — a measured disposition to commit where the record cannot settle the question, scored only over reference-abstention cases — not the ordinary \"the answer was wrong\" finding the rule excludes; a system can be accurate and still under-abstain. Retained, Tier B. §5: split from the defect-gap row because abstention calibration and prohibited-shortcut process integrity are distinct remediations.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "CliniCARE-Bench introduces a clinician-calibrated reference-labelling protocol that makes trace-level process auditing feasible at scale: 25 clinician-developed scenarios spanning 14 medical specialties drawn from the ABMS taxonomy and ten reasoning capabilities are instantiated as 750 patient cases over real de-identified longitudinal MIMIC-IV records; reference verdicts come from independent multi-model case adjudication with blinded Clinical Board calibration in place of exhaustive manual labelling; and every retrieval, computation and citation is logged and replayable so that evidence grounding, policy citation and MUST-DO/MUST-NOT process adherence can be scored without inspecting the model's private reasoning.",
+        "finding_quote": "Specifications authored and validated by clinicians, combined with independent multi-model case adjudication and blinded Clinical Board calibration, yielding reliable reference verdicts at a scale exhaustive manual review could not reach.",
+        "models_systems": "CliniCARE-Bench: 25 scenarios, 750 MIMIC-IV patient cases, governed tool environment over a credential-isolated patient-record server",
+        "institution": "Scale AI",
+        "domain": "Eval-methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 FAILS: the claim concerns benchmark construction and the reference-labelling protocol, not any model's behaviour. §4 sends methodology/tooling findings to Tier C with Action Trackable blank. Quote re-verified character-exact against contribution 4 of the paper's introduction; \"14 medical specialties drawn from the American Board of Medical Specialties (ABMS) taxonomy and ten reasoning capabilities\" re-verified in the same paragraph.",
+        "finding_type": "methodology",
+        "access_type": "N/A"
+      }
+    ]
+  },
+  {
+    "url": "https://alignment.anthropic.com/2026/conceptual-reasoning-index",
+    "title": "Introducing the Conceptual Reasoning Index",
+    "institution": "Redwood Research",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 carve-out — company venue (Anthropic Alignment Science Blog) with a named external evaluator, Redwood Research, as lead author; enters under Redwood Research as third-party-evaluator with company-published on Finding Type.",
+    "resolved_date": "2026-08-12",
+    "date_source": "Byline date \"August 12, 2026\" printed under the author list on https://alignment.anthropic.com/2026/conceptual-reasoning-index. (The results themselves are stated \"as of August 10, 2026\".)",
+    "findings": [
+      {
+        "finding": "Redwood Research, in collaboration with Anthropic, built a three-benchmark conceptual-reasoning suite: LMCA (560 position texts with 1,461 arguments against them and 2,140 expert ratings, nearly all by a single conceptual researcher, with a validation set of roughly 50 arguments each rated independently by 4-6 people and then discussed for 7-8 hours in total), ACCoRD (close to 14,000 model-generated logical-consistency constraints across 18 constraint types, of which 567 were further hand-checked and are the only ones used in the index) and DTBench capabilities (407 handcrafted multiple-choice decision-theory questions). These are aggregated into the Conceptual Reasoning Index as a weighted average of 60% LMCA, 20% ACCoRD and 20% DTBench capabilities, with ceiling performance estimated at around 91 rather than 100 because human ratings are noisy.",
+        "finding_quote": "To evaluate these capabilities, we develop a suite of three conceptual reasoning benchmarks.",
+        "models_systems": "LMCA, ACCoRD and DTBench capabilities benchmarks and the aggregate Conceptual Reasoning Index (conceptualreasoning.ai)",
+        "institution": "Redwood Research",
+        "domain": "Eval-methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 FAILS: benchmark and index construction is a methodology finding, not an empirical model finding → Tier C, Action Trackable blank per §4. All construction figures re-verified against the live post (560/1,461/2,140; ~50 arguments rated by 4-6 people, discussed 7-8 hours; close to 14,000 constraints / 18 types / 567 used; 407 DTBench capabilities questions with a further 130 attitude questions excluded; 60/20/20 weighting; ceiling ~91). §1 carve-out applies: Redwood Research is the named external evaluator and authored the work, so the finding enters under Redwood, not Anthropic; \"released\" was softened to \"built\" because LMCA is available only by request.",
+        "finding_type": "methodology; company-published",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "As of 10 August 2026 the highest-scoring model on the Conceptual Reasoning Index was Claude Opus 5 at 73.6 (95% CI ± 2.1) against an estimated ceiling of about 91, with the leading models on LMCA and ACCoRD still well below those benchmarks' estimated ceilings while DTBench capabilities is close to saturated (Claude Fable 5 answering 98% of questions correctly). CRI scores have risen roughly linearly since late 2024 with no signs of flattening, and GPT-4's ACCoRD score rests on incomplete data because it refused to fully answer 18% of the benchmark's items.",
+        "finding_quote": "The highest-scoring model, Opus 5, is still well below this ceiling, with a score of 73.6 (95% CI: ± 2.1).",
+        "models_systems": "Claude Opus 5 and Claude Fable 5 (Anthropic); comparators plotted as each other company's highest-scoring model. [Report tested: Muse Spark 1.2, Gemini 3.6 Flash and GPT-4 as comparators.]",
+        "institution": "Redwood Research",
+        "domain": "Frontier-forecasting",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 PASSES: measured benchmark scores with a confidence interval for named frontier models, re-verified against the live post (Opus 5 73.6 ± 2.1; ceiling ~91; Fable 5 98% on DTBench capabilities; \"Scores have been increasing roughly linearly since late 2024, with no signs of flattening\"; GPT-4 refused to fully answer 18% of ACCoRD items). Gate 2 PASSES: names Anthropic models and other developers' top models. Tier A condition (3) FAILS on two listed exclusions — capability trends/forecasts (the linear-trend and saturation-timing claims) and comparative rankings (a cross-developer leaderboard); no dangerous threshold is crossed and the headline is a shortfall against a ceiling, not a concerning behaviour. Tier B. Comparators kept out of the subject field per §5.",
+        "finding_type": "capability-trend; company-published",
+        "access_type": "Post-deployment"
+      }
+    ]
+  }
+]

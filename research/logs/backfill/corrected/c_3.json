@@ -1,0 +1,107 @@
+{
+  "url": "https://arxiv.org/pdf/2501.12612",
+  "title": "T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation (CVPR 2025)",
+  "institution": "Shanghai Artificial Intelligence Laboratory",
+  "scope": "third-party-evaluator",
+  "resolved_date": "2025-01-22",
+  "findings": [
+    {
+      "finding": "Evaluating 12 prominent diffusion text-to-image models (plus three unified multimodal models) on the T2ISafety benchmark - 2,669 prompts across 3 domains, 12 tasks and 44 categories, scored by the authors' ImageGuard evaluator - revealed persistent racial-fairness problems, a tendency to generate toxic content, and significant variation in privacy protection, none of which was removed by concept-erasing defences.",
+      "finding_quote": "We evaluate 12 prominent diffusion models on T2ISafety and reveal several concerns including persistent issues with racial fairness, a tendency to generate toxic content, and significant variation in privacy protection across the models, even with defense methods like concept erasing.",
+      "models_systems": "SD-v1.4, SD-v1.5, SD-v2.1, SDXL, SDXL-Turbo, SDXL-Lightening, SD-v3-mid, Kandinsky 2.2, Kandinsky 3, Playground-v2.5, Pixart-alpha, HunyuanDiT (plus unified multimodal models LlamaGen, Show-o, Vila-u)",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Societal",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "capability-finding",
+      "access_type": "Post-deployment",
+      "split_suffix": ""
+    },
+    {
+      "finding": "HunyuanDiT (Tencent) was among the worst performers on demographic bias in the T2ISafety fairness evaluation, with the worst gender NKL-Div of the 12 diffusion models (0.339; only the unified multimodal model Show-o is higher at 0.394), age 0.266, and race 0.752 - third-worst on race behind Pixart-α (0.833) and SDXL-Lightening (0.765), where lower is fairer.",
+      "finding_quote": "HunyuanDiT also presents significant fairness in both age and race, raising serious concerns about its broader social impact.",
+      "models_systems": "HunyuanDiT",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Societal",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "capability-finding",
+      "access_type": "Post-deployment",
+      "split_suffix": ""
+    },
+    {
+      "finding": "In the T2ISafety toxicity evaluation, SDXL-Turbo (Stability AI) was among the models most likely to produce toxic imagery, particularly sexual content and hate speech, with an average toxicity safety rate of 0.511 against SDXL's benchmark-leading 0.826.",
+      "finding_quote": "On the other hand, models such as SDXL-Turbo and Pixart-α are more susceptible to generating toxic content, especially in categories like sexual content and hate speech.",
+      "models_systems": "SDXL-Turbo",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Societal",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "capability-finding",
+      "access_type": "Post-deployment",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Pixart-α recorded the worst racial-fairness score of any model tested on T2ISafety (race NKL-Div 0.833, where lower is fairer), and was also among the weakest on toxicity and privacy: its 0.501 average toxicity safety rate is the lowest of the 12 diffusion models but not of all 15 systems tested (Vila-u scores 0.363), and its 0.356 average privacy safety rate is second-lowest behind SD-v3-mid's 0.340 (Table 4).",
+      "finding_quote": "On the other hand, models such as SDXL-Turbo and Pixart-α are more susceptible to generating toxic content, especially in categories like sexual content and hate speech.",
+      "models_systems": "Pixart-alpha",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Societal",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "capability-finding; non-frontier",
+      "access_type": "Post-deployment",
+      "split_suffix": "-s2"
+    },
+    {
+      "finding": "Applying four concept-erasing defences (UCE, SLD, ESD, MACE) to SD-v1.5 raised the toxicity safety rate across every category - MACE lifting the overall rate from 0.527 to 0.799 - but the methods still failed on humiliation and violence, so concept erasing mitigated rather than closed the safety gap.",
+      "finding_quote": "This indicates that concept erasing is feasible to enhance the safety of T2I models, particularly when dealing with malicious prompts.",
+      "models_systems": "SD-v1.5 with UCE, SLD, ESD and MACE concept-erasing defences",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Eval-methodology",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "methodology; non-frontier",
+      "access_type": "N/A",
+      "split_suffix": ""
+    },
+    {
+      "finding": "On the authors' ImageGuard test set GPT-4o performed poorly as an image-safety judge, scoring F1 0.470 on toxicity and 0.356 on privacy against the authors' own ImageGuard evaluator's 0.779 and 0.875 (Table 3), and - like every proprietary system tested - refused to give any judgment on the gender, age or race of subjects in images, so it returned no fairness score at all.",
+      "finding_quote": "For fairness evaluation, proprietary models always refuse to give a judgment about the gender, age and race of the subjects in images, making it essential to have evaluators capable of performing fairness evaluation.",
+      "models_systems": "GPT-4o",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Eval-methodology",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "capability-finding",
+      "access_type": "Post-deployment",
+      "split_suffix": ""
+    },
+    {
+      "finding": "On the authors' ImageGuard test set Claude 3.5 Sonnet performed poorly as an image-safety judge, scoring F1 0.429 on toxicity and 0.552 on privacy against the authors' own ImageGuard evaluator's 0.779 and 0.875 (Table 3), and - like every proprietary system tested - refused to give any judgment on the gender, age or race of subjects in images, so it returned no fairness score at all.",
+      "finding_quote": "For fairness evaluation, proprietary models always refuse to give a judgment about the gender, age and race of the subjects in images, making it essential to have evaluators capable of performing fairness evaluation.",
+      "models_systems": "Claude 3.5 Sonnet",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Eval-methodology",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "capability-finding",
+      "access_type": "Post-deployment",
+      "split_suffix": "-s2"
+    },
+    {
+      "finding": "On the authors' ImageGuard test set Gemini 1.5 Pro performed poorly as an image-safety judge, scoring F1 0.135 on toxicity and 0.06 on privacy against the authors' own ImageGuard evaluator's 0.779 and 0.875 (Table 3), and - like every proprietary system tested - refused to give any judgment on the gender, age or race of subjects in images, so it returned no fairness score at all.",
+      "finding_quote": "For fairness evaluation, proprietary models always refuse to give a judgment about the gender, age and race of the subjects in images, making it essential to have evaluators capable of performing fairness evaluation.",
+      "models_systems": "Gemini 1.5 Pro",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "domain": "Eval-methodology",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "finding_type": "capability-finding",
+      "access_type": "Post-deployment",
+      "split_suffix": "-s3"
+    }
+  ],
+  "applied": "Re-tiered the concept-erasing row C->B (eval=yes, action=no); qualified the HunyuanDiT demographic-bias text (worst gender NKL-Div of the 12 diffusion models 0.339, Show-o 0.394 higher, race 0.752 behind Pixart-α 0.833 and SDXL-Lightening 0.765); added the missing Pixart-α row as the -s2 split of the SDXL-Turbo toxicity sentence with the verdict's corrected wording (race 0.833 worst of any model tested; toxicity 0.501 lowest only among the 12 diffusion models, Vila-u 0.363; privacy 0.356 second-lowest, SD-v3-mid 0.340); added three new Table 3 judge-failure rows split per §5 (GPT-4o 0.470/0.356, Claude 3.5 Sonnet 0.429/0.552 -s2, Gemini 1.5 Pro 0.135/0.06 -s3), all eval=yes action=no; normalised every row to the controlled vocabularies (domain, access_type, finding_type, bare yes/no/\"\"), set scope=third-party-evaluator, kept institution as the evaluator (Shanghai Artificial Intelligence Laboratory, not the evaluated developers), and dropped the hand-written tier/tier_reasoning fields since tier is derived. URL, title and resolved_date 2025-01-22 left as verified by the verdict; all numbers re-checked against Tables 3, 4 and 5 of the PDF.",
+  "not_applied": "Nothing in the verdict was refused. Two notes. (1) The verdict indexes a Pixart-α row at [3] and the concept-erasing row at [4], but the input record held only four findings and had no Pixart-α row at all (its SDXL-Turbo row already recorded a §5 split from one that was never written); I therefore created the Pixart-α row from the verdict's own corrected wording rather than editing an existing row. (2) The judge rows' quote is taken from the arXiv HTML rendering of the same v1 text because the PDF breaks that sentence with hyphenated line splits (\"sub-jects\", \"capa-ble\") that the evidentiary standard forbids repairing; the racial-fairness sentence about Pixart-α was skipped as a quote for the same reason (\"Hunyuan-DiT\", \"fur-ther\"), so that row quotes the clean toxicity sentence and carries the Table 4 race/privacy figures in the paraphrase. access_type on the re-tiered concept-erasing row was left at N/A because the verdict re-tiered it without addressing access type."
+}

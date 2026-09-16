@@ -1,0 +1,49 @@
+  25/133
+  50/133
+  75/133
+  100/133
+  125/133
+measuring coverage for 133 UNSUPPORTED quotes
+
+COVERAGE BANDS
+    71  reassembled (0.30-0.70)
+    53  paraphrase (<0.30)
+     9  near-exact (>=0.70)
+
+WORST 12 (lowest coverage = most likely the coder's own words):
+  0.03  UKAISI-2025-12-GOV3      [Channel A Verbatim]
+        quote:   OpenAI, alongside industry leaders including Amazon, Anthropic, Civitai, Google, Meta, Metaphysic, Micro
+        matched:  alongside 
+  0.05  USCAISI-2026-03-CYB4     [Finding Quote]
+        quote:   Across more than 250,000 attack attempts from over 400 participants, at least one successful attack was 
+        matched:  at least one successful attack 
+  0.06  JOINT-2024-11-BIO2       [Finding Quote]
+        quote:   providing it access to bioinformatic tools to assist in research task questions, which when tested using
+        matched:  a set of multiple-choice 
+  0.07  UKAISI-2026-02-JAI1      [Finding Quote]
+        quote:   We believe BPJ is the first automated attack to succeed against Constitutional Classifiers, Anthropic's 
+        matched:  against Constitutional Classifiers, A
+  0.08  JOINT-2024-11-JAI1       [Finding Quote]
+        quote:   UK AISI tested the upgraded Sonnet 3.5 using a series of public and privately developed jailbreaks and a
+        matched:  and privately developed jailbreaks 
+  0.08  METR-2024-11-ALI1        [Finding Quote]
+        quote:   We see some examples of the agents cheating – violating the rules of the task in order to get a higher s
+        matched:  to reduce the runtime of 
+  0.08  JOINT-2024-12-CYB1       [Finding Quote]
+        quote:   The model was able to solve 45% of all tasks, compared to a 35% solve rate for the best-performing refer
+        matched:  at the “cybersecurity apprentice” level
+  0.09  METR-2024-11-AUT1        [Finding Quote]
+        quote:   The AI agents (in particular Claude 3.5 Sonnet) often immediately decided to implement a transformer (a 
+        matched: r Claude 3.5 Sonnet
+  0.10  METR-2024-11-AUT2        [Finding Quote]
+        quote:   o1-preview was able to generate a solution that beats the best human expert score. To do so, the agent i
+        matched:  custom CUDA kernels and 
+  0.10  UKAISI-2026-06-JAI2      [Channel A Verbatim]
+        quote:   This testing is ongoing at time of release. We plan to iterate on this system over time and will continu
+        matched:  cyber safeguards.
+  0.10  JOINT-2024-12-BIO2       [Finding Quote]
+        quote:   When o1 was augmented with this additional tooling, its performance increased on the research questions 
+        matched: ndings in this domain at this time.
+  0.10  UKAISI-2026-06-ALI1      [Finding Quote]
+        quote:   A single sentence ("Never say you are AI") added to the start of a model's system prompt reduced disclos
+        matched: , which achieves close to 90% 

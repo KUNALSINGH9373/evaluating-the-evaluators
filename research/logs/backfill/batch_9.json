@@ -1,0 +1,124 @@
+[
+  {
+    "url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/MultiNRC.pdf",
+    "title": "MultiNRC: A Challenging and Native Multilingual Reasoning Evaluation Benchmark for LLMs",
+    "institution": "Scale AI",
+    "resolved_date": "2025-07-23",
+    "date_source": "No date printed in the PDF (header reads 'Preprint'). Resolved from the identical arXiv v1 posting of the same paper (arXiv:2507.17476v1, published 2025-07-23T12:56:31Z, same title/abstract/authors). The Scale-hosted PDF's internal CreationDate is 'Tue Jul 22 11:45:38 2025 PDT', which is a LaTeX compile timestamp, not a publication event; the first public release is the 23rd. (V13 already carries this report at 2025-07-23.)",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 in scope (Scale AI = named third-party evaluator, registered prefix SCALEAI; not a developer of the evaluated models, so no company-self-report drop); §2 findings are evaluator-asserted, measured and independently codeable; §4b considered and NOT triggered — MultiNRC is a reasoning-capability benchmark, and §4 explicitly retains benchmark-score results with no dangerous threshold as Tier B rather than excluding them; FRONTIER-MODEL RULE satisfied (named frontier LLMs: o3-pro, o3, Gemini-2.5-Pro, Claude 4 Opus/Sonnet, GPT-4.1, GPT-4o, Llama-4-Maverick, DeepSeek-R1).",
+    "findings": [
+      {
+        "finding": "On Scale AI's MultiNRC benchmark of 1,055 natively written French, Spanish and Chinese reasoning questions, none of the 14 leading LLMs evaluated scored above 50%; the best model, o3-pro-2025-06-10-high, reached 49.00% accuracy in the original-language setting.",
+        "finding_quote": "The results show that (1) current LLMs are still not good at native multilingual reasoning, with none scoring above 50% on MultiNRC",
+        "finding_type": "capability-finding",
+        "models_systems": "o3-pro-2025-06-10-high (49.00%), o3-2025-04-16-high (45.50%), Gemini-2.5-Pro-Preview-06-05 (45.12%), o3-2025-04-16-medium (44.45%), Claude-4-Opus-20250514-thinking (33.93%), Claude-4-Opus-20250514 (29.00%), Claude-3.7-Sonnet-thinking (27.77%), Deepseek-R1-0528 (27.58%), Deepseek-R1 (24.27%), o4-mini-high (22.18%), GPT-4.1 (21.23%), Claude-4-Sonnet-20250514 (18.39%), GPT-4o (12.42%), Llama-4-Maverick (8.44%)",
+        "institution": "Scale AI",
+        "domain": "Societal",
+        "access_type": "Post-deployment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes — empirical measured result on named released models (Table 3, verified: best score 49.00%). Gate 2 fails limb (c): a capability benchmark score across a 14-model multi-vendor cohort with no dangerous threshold crossed and no single accountable company; §4 places benchmark-score/comparative results outside Tier A. Hence yes/no = Tier B."
+      },
+      {
+        "finding": "Scale AI found that most of the 14 models scored roughly 10 percentage points higher on the human-translated English equivalents of the same culturally grounded maths questions than on the original-language versions, which the authors attribute to better retrieval of cultural context in English rather than to the maths itself; no comparable gap appeared in the cultural/tradition category.",
+        "finding_quote": "Most models perform substantially better in math reasoning in English compared to in original languages (+10%), indicating persistent challenges with culturally grounded knowledge.",
+        "finding_type": "capability-finding",
+        "models_systems": "14 leading LLMs evaluated on MultiNRC and its English-equivalent set (o3-pro, o3-high/medium, Gemini-2.5-Pro-Preview-06-05, Claude-4-Opus and Claude-4-Sonnet, Claude-3.7-Sonnet-thinking, Deepseek-R1 and R1-0528, o4-mini-high, GPT-4.1, GPT-4o, Llama-4-Maverick)",
+        "institution": "Scale AI",
+        "domain": "Societal",
+        "access_type": "Post-deployment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes — measured comparative result (English-equivalent vs original-language accuracy, '+10%' verified in the abstract and restated in §1 as '10% higher accuracy on average'). Gate 2 fails limb (c): a cross-lingual capability gap on a multi-vendor cohort, no dangerous threshold, no specific company response reasonably expected. Hence yes/no = Tier B."
+      }
+    ]
+  },
+  {
+    "url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/WebGuard.pdf",
+    "title": "WebGuard: Building a Generalizable Guardrail for Web Agents",
+    "institution": "Scale AI (with The Ohio State University and University of California, Berkeley)",
+    "resolved_date": "2025-07-18",
+    "date_source": "No date printed in the PDF ('Preprint'). Resolved from the identical arXiv v1 posting (arXiv:2507.14293v1, published 2025-07-18T18:06:27Z, same title/abstract/authors); the Scale-hosted PDF's internal CreationDate/ModDate is 'Fri Jul 18 10:53:51 2025 PDT', consistent to the day. Note: V13 currently carries 2025-07-21 for this report (the arXiv announcement Monday), which the source does not support — the release date is 2025-07-18.",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 in scope — not university-only: Scale AI (Zifan Wang, Xiang Deng) is a named registered evaluator co-author alongside Ohio State and UC Berkeley; no developer self-report issue. §2 satisfied. §4b not triggered (limb 1/5: a guardrail/monitor failing to flag HIGH-risk state-changing agent actions is a safeguard failure, not ordinary hallucination). FRONTIER-MODEL RULE satisfied (GPT-4o, GPT-4o-mini, O3, Claude-3.7-Sonnet incl. extended thinking, Qwen2.5/Qwen2.5-VL).",
+    "findings": [
+      {
+        "finding": "On WebGuard's 4,939 human-annotated state-changing web actions from 193 websites, zero-shot frontier LLMs achieved under 60% accuracy at predicting action outcomes and under 60% recall at flagging HIGH-risk actions (best zero-shot baseline: GPT-4o at 57.5% average accuracy), frequently misclassifying consequential actions as SAFE or LOW; the reasoning models O3 and Claude-3.7-Sonnet-Thinking had lower HIGH-risk recall than their non-reasoning counterparts.",
+        "finding_quote": "Our initial evaluations reveal a concerning deficiency: even frontier LLMs achieve less than 60% accuracy in predicting action outcomes and less than 60% recall in lagging HIGH-risk actions, highlighting the risks of deploying current-generation agents without dedicated safeguards.",
+        "finding_type": "capability-finding",
+        "models_systems": "GPT-4o, GPT-4o-mini, O3, Claude-3.7-Sonnet, Claude-3.7-Sonnet with extended thinking, Qwen2.5 and Qwen2.5-VL series (7B/32B)",
+        "institution": "Scale AI (with The Ohio State University and University of California, Berkeley)",
+        "domain": "Autonomy",
+        "access_type": "Post-deployment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes — measured safety-relevant result on named released models (Table 2 verified: GPT-4o 57.5% best zero-shot average accuracy; O3 and Claude-3.7-Sonnet-Thinking show lower RecallH than non-reasoning variants). Gate 2 fails limb (c): the claim is an aggregate across a multi-vendor cohort of models used as zero-shot baselines for a dataset paper, and §5 bars different companies from sharing a row, so no single company response is identified; no deployed safeguard of a named vendor was bypassed. Hence yes/no = Tier B."
+      },
+      {
+        "finding": "Fine-tuning Qwen2.5VL-7B on the WebGuard training split raised outcome-prediction accuracy from 37% to 80% and HIGH-risk action recall from 20% to 76%, which the authors state still falls short of the near-perfect accuracy and recall high-stakes deployment requires; gains were smallest on the Cross-Domain split.",
+        "finding_quote": "a fine-tuned Qwen2.5VL-7B model yields a substantial improvement in performance, boosting accuracy from 37% to 80% and HIGH-risk action recall from 20% to 76%",
+        "finding_type": "methodology",
+        "models_systems": "Qwen2.5VL-7B fine-tuned on WebGuard (WebGuard-VL-7B); WebGuard-VL-3B",
+        "institution": "Scale AI (with The Ohio State University and University of California, Berkeley)",
+        "domain": "Eval-methodology",
+        "access_type": "N/A",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Re-derived and CORRECTED from the earlier extraction (which had yes/no = Tier B). Gate 1 fails: the subject is the efficacy of the authors' own fine-tuning recipe on a research artefact they built, i.e. a methodology/tooling finding about how to construct a guardrail, not an empirical finding about the behaviour of a deployed model. §4 puts methodology findings at Tier C, so eval_trackable = no and Action Trackable is blank. Numbers verified against the abstract (37%→80%, 20%→76%); note the body text of §1 states the same result as 38%→80% and recall 'to over 80%', so the abstract figures are quoted as-is."
+      }
+    ]
+  },
+  {
+    "url": "https://cisco-foundation-ai.github.io/blogs/scaling-model-evals-with-bigquery",
+    "title": "Scaling FAITH Model Evaluation Analysis with BigQuery",
+    "institution": "Cisco (Robust Intelligence / Foundation AI)",
+    "resolved_date": "2026-06-09",
+    "date_source": "Dateline printed on the post itself: 'June 9, 2026' (cisco-foundation-ai.github.io blog page, fetched 2026-08-31).",
+    "decision": "EXCLUDED",
+    "rule_cited": "§2 (no findings) + FRONTIER-MODEL RULE (2026-08-31)",
+    "exclusion_reason": "Tooling-release announcement, not a finding. The post announces a BigQuery ingestion backend for Cisco's FAITH evaluation harness (schema, `faith summarize --output-format bigquery`, pre-built SQL views, dashboard cookbook) and asserts no measured result about any AI model: the only figures shown are illustrative demo rows in a mock table ('orion-1b / MMLU / 0.412') and an empty live leaderboard widget ('No results match the selected filters'). §2 rules out announcements and product releases as findings, and the standing frontier-model decision drops items naming no frontier AI model or system — the same basis on which the sibling row CISCO-2026-07-GOV1 (a FAITH benchmark release) was removed as 'no AI model or system named'. No §4b question arises.",
+    "findings": []
+  },
+  {
+    "url": "https://cisco-foundation-ai.github.io/blogs/antares-beyond-vlocbench",
+    "title": "Antares in the Wild: Testing on Two New Cybersecurity Benchmarks",
+    "institution": "Cisco (Robust Intelligence / Foundation AI)",
+    "resolved_date": "2026-07-28",
+    "date_source": "Dateline printed on the post itself: 'July 28, 2026' (cisco-foundation-ai.github.io blog page, fetched 2026-08-31).",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 (Cisco/Robust Intelligence is a registered evaluator institution and ran these evaluations itself; the §1 self-report drop is applied only to the Antares-versus-Devin comparison table, whose baselines are Cognition's own published figures, and the report is not a frontier developer's card about its own frontier model — v13 already carries Cisco rows on Cisco's own Foundation-Sec models), §2 (measured results, same harness, each model run 3×), §5 (different companies split into separate rows; the Cognition/Anthropic/OpenAI 'security agent' figures are cited baselines, not Cisco measurements, so they are not rows), FRONTIER-MODEL RULE (named LLM agents).",
+    "findings": [
+      {
+        "finding": "Cisco Foundation AI ran 15 models through its own CyberGym-localization harness (each model run 3x, mean reported) on ~1,500 real OSS-Fuzz vulnerabilities and found GPT-5.5 localised the vulnerable file in 89.1% of tasks at $333 per run, ahead of GPT-5-mini (85.9%, $46), Kimi-K3 (79.1%), GLM-5.2 (77.3%), GPT-OSS-120B (69.5%), GPT-4o (57.9%) and GPT-5-nano (54.5%).",
+        "finding_quote": "Recall = share of tasks where the model found at least one of the patched files. Same harness for every model.",
+        "finding_type": "capability-finding",
+        "models_systems": "GPT-5.5, GPT-5-mini, GPT-5-nano, GPT-4o, GPT-OSS-120B (OpenAI); comparators in the same chart: Kimi-K3, GLM-5.2, Gemma-4-31B, Qwen3.5-27B/9B/4B/2B",
+        "institution": "Cisco (Robust Intelligence / Foundation AI)",
+        "domain": "Cyber",
+        "access_type": "Post-deployment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes — Cisco's own measured recall figures for named released models on a public cyber benchmark. Gate 2 fails limb (c): this is a comparative ranking / cost-efficiency study in which the hosted frontier models serve as baselines for Cisco's own small models, the evaluator frames the result as capability-per-dollar rather than as a crossed danger threshold (and it measures localisation, explicitly 'Not CyberGym PoC success rates'), so no company response is reasonably expected. §4 excludes comparative rankings and instrument-role models from Tier A. Hence yes/no = Tier B. The 89.1% / 85.9% / 57.9% / 54.5% values are read from the chart rows; the quoted sentence is the chart caption defining the metric and confirming a single common harness, because the numbers themselves appear only as chart labels and no prose sentence states them."
+      },
+      {
+        "finding": "Cisco's own open-weight Antares localisation models scored 73.7% (Antares-3B, unreleased), 67.2% (Antares-1B) and 51.6% (Antares-350M) recall on CyberGym-localization for roughly $1.10-$1.60 per run, with the 1B model exceeding GPT-OSS-120B and GPT-4o and the 350M model matching GPT-5-nano.",
+        "finding_quote": "Across all of CyberGym, Antares-3B reaches 73.7% recall for about $1.60 a run, sitting in the same band as hosted models that cost hundreds. The released models hold up too: 1B clears GPT-OSS-120B and GPT-4o, and 350M matches GPT-5-nano for roughly a dollar.",
+        "finding_type": "capability-finding;company-self-report;non-frontier",
+        "models_systems": "Antares-3B, Antares-1B, Antares-350M (Cisco Foundation AI open-weight vulnerability-localization models)",
+        "institution": "Cisco (Robust Intelligence / Foundation AI)",
+        "domain": "Cyber",
+        "access_type": "Mixed",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes — measured recall and cost figures for named models. Gate 2 fails limbs (b)/(c) for Tier A purposes: the subject models are Cisco's own small (350M-3B) open-weight models, so this is the publisher's self-assessment of its own non-frontier product, and §4 excludes both non-frontier models and self-classifications from Tier A. Hence yes/no = Tier B. Access coded Mixed because 350M and 1B are released open weights while Antares-3B 'is not released yet (coming soon)'. The separate Devin/Claude/Codex security-agent table is NOT coded: those baselines are 'Baseline figures from Cognition's July 2026 post' and the Antares values there are explicitly 'estimated', failing §2.1 (evaluator-asserted) and the evidentiary standard."
+      }
+    ]
+  }
+]

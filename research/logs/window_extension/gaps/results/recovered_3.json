@@ -1,0 +1,370 @@
+{
+  "agent": 3,
+  "assignment": "blocked_surfaces.json indices where index % 3 == 2",
+  "indices": [
+    2,
+    5,
+    8,
+    11,
+    14
+  ],
+  "gap_period_swept": "2026-07-31 to 2026-08-29",
+  "window": "2018-01-01 to 2026-08-29",
+  "run_date": "2026-08-29",
+  "surfaces": [
+    {
+      "index": 2,
+      "venue": "Meta",
+      "url": "https://ai.meta.com/blog/ — window tail 2026-08-26 to 2026-08-29",
+      "attempts": [
+        {
+          "method": "fetch.get (shared ladder, Referer: google.com)",
+          "url": "https://ai.meta.com/blog/",
+          "status": 400
+        },
+        {
+          "method": "direct curl, default headers",
+          "url": "https://ai.meta.com/blog/",
+          "status": 400
+        },
+        {
+          "method": "direct curl, cookie jar + redirects",
+          "url": "https://ai.meta.com/blog/",
+          "status": 400
+        },
+        {
+          "method": "direct curl, HTTP/1.1",
+          "url": "https://ai.meta.com/blog/",
+          "status": 400
+        },
+        {
+          "method": "direct GET, FULL Chrome header set (sec-ch-ua, sec-fetch-*, accept incl. image/avif, --compressed, HTTP/2, NO Referer)",
+          "url": "https://ai.meta.com/blog/",
+          "status": 200
+        },
+        {
+          "method": "direct GET, same recipe",
+          "url": "https://ai.meta.com/blog/?page=2",
+          "status": 200
+        },
+        {
+          "method": "wayback CDX slug listing",
+          "url": "ai.meta.com/blog/* 20260715-20260829",
+          "status": 200
+        }
+      ],
+      "recovered": true,
+      "items_found": 0,
+      "note": "SURFACE FULLY RECOVERED, AND THE FIX GENERALISES TO ALL OF ai.meta.com. The 400 is not a block on the archive or on the content: ai.meta.com rejects requests that carry a Referer and/or omit Chrome client-hint headers. Sending the complete Chrome header set (sec-ch-ua / sec-ch-ua-mobile / sec-ch-ua-platform / sec-fetch-dest / sec-fetch-mode / sec-fetch-site / sec-fetch-user, accept including image/avif, accept-encoding gzip+br, upgrade-insecure-requests, and NO Referer) returns HTTP 200. fetch.py fails on Meta for two independent reasons, both fixable: (a) its HEADERS dict hard-codes 'Referer': 'https://www.google.com/', and (b) 400 is not in RETRY_STATUS so the ladder never even escalates to Wayback. RESULT: ai.meta.com/blog/ was read LIVE on 2026-08-29 — i.e. the full window tail 2026-08-26..29 that the original sweep could not reach, and in fact the entire window. The index is reverse-chronological (page 1 newest = 'Reimagining Independence… University of Pittsburgh', Jul 27 2026; page 2 runs Oct 2025 – Feb 2026). The newest date appearing anywhere in the page-1 HTML is July 27, 2026. Corroborated independently by Wayback CDX for ai.meta.com/blog/* over 2026-07-15..2026-08-29: the crawler was actively capturing the blog throughout August 2026 and returned only pre-existing slugs — no new post slug appears. CONCLUSION: Meta's AI blog published NOTHING between 2026-07-31 and 2026-08-29. This is now a verified zero from a live read, not an unread surface."
+    },
+    {
+      "index": 5,
+      "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/",
+      "attempts": [
+        {
+          "method": "direct GET, browser headers",
+          "url": "https://nvlpubs.nist.gov/nistpubs/",
+          "status": 403
+        },
+        {
+          "method": "direct GET, browser headers",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/",
+          "status": 403
+        },
+        {
+          "method": "S3 list-objects probe",
+          "url": "https://nvlpubs.nist.gov/?list-type=2&prefix=nistpubs/ai/",
+          "status": "200 but returns the NIST Technical Series landing page, not a key listing"
+        },
+        {
+          "method": "direct GET control document",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "status": 200
+        },
+        {
+          "method": "alternate index",
+          "url": "https://www.nist.gov/publications/search/topic/2753736",
+          "status": 200
+        },
+        {
+          "method": "alternate index",
+          "url": "https://csrc.nist.gov/publications/search",
+          "status": 200
+        },
+        {
+          "method": "alternate index",
+          "url": "https://www.nist.gov/caisi",
+          "status": 200
+        },
+        {
+          "method": "fetch.get PDF (pypdf)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8607.pdf",
+          "status": 200
+        },
+        {
+          "method": "fetch.get PDF (pypdf)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8578.pdf",
+          "status": 200
+        }
+      ],
+      "recovered": true,
+      "items_found": 2,
+      "note": "RECOVERED, with the original diagnosis refined. nvlpubs is a DOCUMENT HOST, not an index: the 403 is a NIST-branded 'no directory listing' page and is structural, not a bot block — the same host serves documents at 200 (control: NIST.AI.100-1.pdf, 200, 1,946,127 bytes application/pdf). So the surface cannot be enumerated by design, but it CAN be read once item paths are known. I enumerated the NIST AI-topic publications index (200) newest-first, found the in-window items, resolved their DOIs to nvlpubs paths, and fetched both PDFs at 200 from the assigned surface itself. Exactly two NIST publications fall in 2026-07-31..2026-08-29, both dated 2026-08-03; the next item down is 2026-07-30 (just outside the gap period). Both were read in full and screened. No coverage is lost."
+    },
+    {
+      "index": 8,
+      "venue": "Cisco (Robust Intelligence / Foundation AI)",
+      "url": "https://www.robustintelligence.com/resource-center",
+      "attempts": [
+        {
+          "method": "direct GET https, browser headers",
+          "url": "https://www.robustintelligence.com/resource-center",
+          "status": "no response — TCP timeout after 30s"
+        },
+        {
+          "method": "direct GET https, bare domain",
+          "url": "https://robustintelligence.com/resource-center",
+          "status": "no response — TCP timeout"
+        },
+        {
+          "method": "sitemap",
+          "url": "https://www.robustintelligence.com/sitemap.xml",
+          "status": "no response — TCP timeout"
+        },
+        {
+          "method": "direct GET over HTTP (port 80)",
+          "url": "http://www.robustintelligence.com/resource-center",
+          "status": "301 -> https://www.cisco.com/site/us/en/products/security/ai-defense/robust-intelligence-is-part-of-cisco/index.html"
+        },
+        {
+          "method": "blanket-redirect test (/, /blog-posts, /resource-center/ai-bill-of-rights, /nonexistent-xyz)",
+          "url": "http://www.robustintelligence.com/*",
+          "status": "301 to the same single Cisco page for every path, including paths that never existed"
+        },
+        {
+          "method": "wayback CDX",
+          "url": "www.robustintelligence.com/resource-center* 20251101-20261231",
+          "status": "200, 62 rows"
+        }
+      ],
+      "recovered": true,
+      "items_found": 0,
+      "note": "RECOVERED — and the answer is that the surface no longer exists. HTTPS hangs, but HTTP (port 80) answers instantly with a 301, and EVERY path on the host — including a deliberately invented /nonexistent-xyz — 301s to the single Cisco page 'robust-intelligence-is-part-of-cisco'. The site has been decommissioned into a redirect stub. Wayback CDX dates the decommission: resource-center items still captured 200 through early/mid Dec 2025, individual items start returning 301 from 2025-12-12 onward, and by 2026-01-14 the captures are uniformly 301. There are no 200 captures anywhere in 2026 and no in-window content. This is therefore NOT 'a surface we could not certify a zero for' — it is a retired publication surface that was structurally incapable of publishing anything in 2026-07-31..2026-08-29. Successor surface, if the parent wants Cisco's in-window output covered, is blogs.cisco.com (https://blogs.cisco.com/feed and https://blogs.cisco.com/tag/ai-defense/feed both return 200); that is a different surface and outside this assignment."
+    },
+    {
+      "index": 11,
+      "venue": "OpenAI",
+      "url": "https://openai.com/index/introducing-intelligence-age",
+      "attempts": [
+        {
+          "method": "fetch.get (direct + wayback ladder)",
+          "url": "https://openai.com/index/introducing-intelligence-age",
+          "status": "403 direct; wayback 'no snapshot'"
+        },
+        {
+          "method": "fetch.get trailing slash",
+          "url": "https://openai.com/index/introducing-intelligence-age/",
+          "status": "403 direct; wayback 'no snapshot'"
+        },
+        {
+          "method": "5 distinct user agents (Googlebot, Chrome/Win, curl, facebookexternalhit, none)",
+          "url": "https://openai.com/index/introducing-intelligence-age",
+          "status": "403 on all — Cloudflare 'managed' challenge (cType: 'managed', cZone: 'openai.com'), ~10KB interstitial"
+        },
+        {
+          "method": "full Chrome client-hint header set (the recipe that fixed Meta)",
+          "url": "https://openai.com/index/introducing-intelligence-age",
+          "status": 403
+        },
+        {
+          "method": "7 locale-prefixed variants (en-GB, ar, bg-BG, ja-JP, fr-FR, es-ES, de-DE)",
+          "url": "https://openai.com/<locale>/index/introducing-intelligence-age/",
+          "status": "403 on all"
+        },
+        {
+          "method": "content-negotiation / suffix probes (Accept: application/xml, /index.xml, ?format=xml)",
+          "url": "https://openai.com/index/introducing-intelligence-age*",
+          "status": "403; the .json suffix reached origin and returned a genuine OpenAI 404"
+        },
+        {
+          "method": "control: another openai.com/index page",
+          "url": "https://openai.com/index/gpt-4-research/",
+          "status": "403 — the block is site-wide on HTML documents, not specific to this item"
+        },
+        {
+          "method": "RSS feed",
+          "url": "https://openai.com/news/rss.xml",
+          "status": "200, 701,878 bytes raw XML, 1,157 items"
+        },
+        {
+          "method": "sitemap",
+          "url": "https://openai.com/sitemap.xml",
+          "status": 200
+        },
+        {
+          "method": "section sitemap (proves the page exists)",
+          "url": "https://openai.com/sitemap.xml/intelligence-age/",
+          "status": "200 — <loc> present, <lastmod>2026-08-29T15:36:33.109Z"
+        },
+        {
+          "method": "wayback availability + CDX",
+          "url": "openai.com/index/introducing-intelligence-age*",
+          "status": "zero captures (CDX 200, empty result set)"
+        },
+        {
+          "method": "wayback Save Page Now",
+          "url": "https://web.archive.org/save/…",
+          "status": 520
+        },
+        {
+          "method": "Memento aggregator timemap",
+          "url": "http://timetravel.mementoweb.org/timemap/link/…",
+          "status": "empty response"
+        },
+        {
+          "method": "archive.today (archive.ph, 4 attempts with backoff)",
+          "url": "https://archive.ph/newest/…",
+          "status": "429 -> redirects to https://archive.ph/20260827140053/… , i.e. A SNAPSHOT DATED 2026-08-27 DOES EXIST, but every fetch returns a CAPTCHA interstitial ('Please complete the security check'), so the body is withheld"
+        }
+      ],
+      "recovered": false,
+      "items_found": 1,
+      "note": "NOT RECOVERED — reported honestly as unread. Two things WERE recovered and they are worth having: (1) the RSS feed at https://openai.com/news/rss.xml returns 200 direct and carries a precise, machine-readable pubDate for every OpenAI post, which replaces guesswork about dates for all four blocked OpenAI items (indices 9, 10, 11, 12) — 'Introducing Intelligence Age' is Thu, 20 Aug 2026 07:00:00 GMT, category 'Intelligence Age'; and (2) openai.com's XML surfaces (RSS, sitemap) are NOT behind Cloudflare even though every HTML document is, so dates and existence are always verifiable even when bodies are not. The page body itself remains unread: the item is screened from RSS title + description only, and the decision below is recorded on that basis. An archive.today snapshot dated 2026-08-27 is known to exist and is the single most promising route if anyone can pass its CAPTCHA."
+    },
+    {
+      "index": 14,
+      "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+      "url": "https://dl.acm.org/doi",
+      "attempts": [
+        {
+          "method": "direct GET, browser headers",
+          "url": "https://dl.acm.org/doi",
+          "status": "403 — Cloudflare"
+        },
+        {
+          "method": "direct GET root (control)",
+          "url": "https://dl.acm.org/",
+          "status": "403 — Cloudflare, site-wide on HTML"
+        },
+        {
+          "method": "feed endpoint probe",
+          "url": "https://dl.acm.org/action/showFeed?type=etoc&feed=rss&jc=csur",
+          "status": "200 — the /action/showFeed path BYPASSES Cloudflare"
+        },
+        {
+          "method": "feed search probe",
+          "url": "https://dl.acm.org/action/showFeed?type=search&feed=rss&query=digital+safety+research+institute",
+          "status": "200, 561 bytes (empty result set)"
+        },
+        {
+          "method": "venue's own index",
+          "url": "https://dsri.org/",
+          "status": 200
+        },
+        {
+          "method": "venue's own publications/tech-reports/blog index",
+          "url": "https://dsri.org/resources/",
+          "status": "200 (302 -> 200 with trailing slash), 21,868 bytes"
+        },
+        {
+          "method": "direct GET in-window item",
+          "url": "https://dsri.org/blog/advancing-flaw-reporting-for-ai/",
+          "status": 200
+        },
+        {
+          "method": "direct GET primary source",
+          "url": "https://arxiv.org/abs/2606.31567",
+          "status": 200
+        }
+      ],
+      "recovered": true,
+      "items_found": 1,
+      "note": "RECOVERED by substitution; the assigned URL is a malformed stub. 'https://dl.acm.org/doi' is a bare DOI base path with no article suffix — it is not a publication surface and would resolve to nothing even unblocked. dl.acm.org itself is Cloudflare-blocked site-wide for HTML (the root 403s too), though I did find that /action/showFeed bypasses the challenge and returns 200 if anyone needs ACM tables of contents later. The venue's real, complete and enumerable index is https://dsri.org/resources/ (200), which lists Publications, Tech Reports, Blog and Newsletters in one page; DSRI's ACM-published papers are all listed there with their 10.1145 DOIs. I enumerated the whole index. Exactly one DSRI output falls in 2026-07-31..2026-08-29: the blog post 'Advancing Flaw Reporting for AI', 2026-08-04. (The adjacent item, 'Independent Clinical Evaluation of General-Purpose LLM Responses to Signals of Suicide Risk', is dated 28 Jul 2026 — three days before the gap period opens — and its arXiv/tech-report version should already be in the corpus from the main sweep; flagging it because it IS an in-scope evaluation naming OLMo-2-32b, so it is worth confirming it was captured.) No DSRI publication in the window is reachable only via dl.acm.org."
+    }
+  ],
+  "items": [
+    {
+      "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+      "title": "Workshop Summary Report for \"Cyber AI Profile\" Hybrid Workshop #2 (NIST IR 8607)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8607.pdf",
+      "resolved_date": "2026-08-03",
+      "date_source": "NIST publications index byline (\"Published August 3, 2026\") on https://www.nist.gov/publications/workshop-summary-report-cyber-ai-profile-hybrid-workshop; PDF cover and running head both read \"August 2026\", consistent",
+      "in_window": true,
+      "decision": "EXCLUDED - not an evaluation",
+      "rule_cited": "§2 test 2 — records participant opinions and suggestions, not a measured result, observed behaviour or documented process fact",
+      "reason": "Summary of stakeholder discussion at the January 2026 Cyber AI Profile workshop on the NIST IR 8596 preliminary draft. No AI system is tested and no result is measured; the report disclaims its own content as non-evidential, stating the workshop \"was not a forum for developing consensus; rather, the takeaways represent recurrent themes that emerged during discussions and not formal positions taken by participants\" and \"These takeaways do not represent NIST recommendations or guidelines\". Note the NIST index title omits the \"#2\" that appears on the PDF cover.",
+      "fetch": {
+        "via": "direct",
+        "status": 200,
+        "chars": 83573,
+        "pages": 34
+      },
+      "findings": []
+    },
+    {
+      "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+      "title": "Workshop Summary Report for \"Cyber AI Profile\" Hybrid Workshop #1 (NIST IR 8578)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8578.pdf",
+      "resolved_date": "2026-08-03",
+      "date_source": "NIST publications index byline (\"Published August 3, 2026\") on https://www.nist.gov/publications/workshop-summary-report-cyber-ai-profile-hybrid-workshop-1; PDF cover reads \"August 2026\"",
+      "in_window": true,
+      "decision": "EXCLUDED - not an evaluation",
+      "rule_cited": "§2 test 2 — records participant opinions and suggestions, not evidence-backed results",
+      "reason": "Companion report summarising the April 2025 Cyber AI Profile workshop; NIST sought feedback toward a Cybersecurity Framework Community Profile for AI. Same character as IR 8607 — themes gleaned from stakeholder discussion, no AI system tested, no measured result. Published 2026-08-03, over a year after the workshop it describes.",
+      "fetch": {
+        "via": "direct",
+        "status": 200,
+        "chars": 55464,
+        "pages": 25
+      },
+      "findings": []
+    },
+    {
+      "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+      "title": "Advancing Flaw Reporting for AI",
+      "url": "https://dsri.org/blog/advancing-flaw-reporting-for-ai/",
+      "resolved_date": "2026-08-04",
+      "date_source": "page byline (\"04 Aug 2026\") and og:article published_time meta tag (content=\"2026-08-04\")",
+      "in_window": true,
+      "decision": "EXCLUDED - duplicate/secondary",
+      "rule_cited": "§3 dedup — primary, earliest, fullest source wins",
+      "reason": "A 1-minute DSRI blog summary, by Kevin Paeth, of arXiv:2606.31567 \"FLARE-AI: Flaw Reporting for AI\" (Longpre, Zhu, Ezell, Ghosh, McGregor, Paeth, Klyman, Kapoor, Bommasani, Appel, Strom et al.), submitted 30 Jun 2026 and presented at ICML. The blog itself links the paper twice as \"recent paper\" and \"full paper pre-print here\". The arXiv paper is the primary, earliest and fullest source and is already in the fetch cache, so it was reached by an earlier sweep. Had it been screened here on its own, the content would have been Tier C only — the analysis of 12 flaw/incident reporting systems, feedback from 49 experts across 32 organizations, the five recurring problems, and the FLARE-AI tool are governance/process and tooling findings, not empirical model findings, so §4 Gate 1 fails and action_trackable would be blank.",
+      "fetch": {
+        "via": "direct",
+        "status": 200,
+        "chars": 2092
+      },
+      "findings": []
+    },
+    {
+      "venue": "OpenAI",
+      "title": "Introducing Intelligence Age",
+      "url": "https://openai.com/index/introducing-intelligence-age",
+      "resolved_date": "2026-08-20",
+      "date_source": "openai.com/news/rss.xml <pubDate> — \"Thu, 20 Aug 2026 07:00:00 GMT\" (exact, machine-readable; NOT inferred). Page existence and liveness independently confirmed by https://openai.com/sitemap.xml/intelligence-age/ (<lastmod>2026-08-29T15:36:33.109Z)",
+      "in_window": true,
+      "decision": "EXCLUDED - not an evaluation",
+      "rule_cited": "§2 test 2 — an editorial launch announcement, not an evidence-backed result",
+      "reason": "SCREENED FROM RSS METADATA ONLY — THE PAGE BODY WAS NOT READ (Cloudflare managed challenge on every user agent, every locale variant and every content-negotiation probe; zero Wayback captures; archive.today holds a 2026-08-27 snapshot but serves a CAPTCHA). On the evidence available, the RSS description is \"Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom\" and the RSS category is \"Intelligence Age\" — i.e. OpenAI announcing the launch of a new editorial blog strand, which asserts no measured result. It would additionally fail §1 as a company self-report unless the unread body names an external evaluator, which is precisely the thing I could not verify. CONFIDENCE IS THEREFORE LOWER THAN FOR THE OTHER ROWS; if the body is ever recovered this item should be re-screened. Per §10 no quote is recorded, since no body text was read.",
+      "fetch": {
+        "via": null,
+        "status": 403,
+        "chars": 0
+      },
+      "findings": []
+    }
+  ],
+  "cross_agent_notes": [
+    "META HEADER RECIPE UNBLOCKS ALL THREE META SURFACES (indices 0, 1, 2), not just mine. Verified live on 2026-08-29: https://ai.meta.com/tools -> 200 (also /tools/, identical), https://www.llama.com/docs/ -> 200, https://ai.meta.com/blog/ -> 200. The premise in the task brief that 'Meta's entire August output is currently missing from the corpus' is now resolved for the AI blog: Meta published nothing there in the window. Recipe: full Chrome header set, no Referer, --compressed, HTTP/2. Working fetcher saved at /private/tmp/claude-501/-Users-kunalsingh-Desktop/9b4cd91a-0a4c-4c96-9f90-0e5248653043/scratchpad/a3/mget.py.",
+    "INDEX 6 (UK AISI / OpenReview RmWSM3sFOr) IS RESOLVED — AND THE ANSWER IS 'NEVER RE-TIER'. OpenReview is still challenge-gated (api2.openreview.net returns {\"name\":\"ChallengeRequiredError\"} and both /pdf and /forum serve a 211-char verification stub), but the paper is fully readable elsewhere: 'When Do LLM Preferences Predict Downstream Behavior?' is arXiv:2602.18971, submitted 21 Feb 2026, 31 pages, read at 200 with 77,152 chars extracted. Authors: Katarina Slama, Alexandra Souly, Dishank Bansal, Henry Davidson, Christopher Summerfield, Lennart Luettgau — UK AI Security Institute, so the packet's re-assignment away from K-AISI to UK AISI is correct. CRITICAL for the open question the blocked-surfaces note left: the five model identities are NOT recoverable, because the AUTHORS ANONYMISE THEM BY DESIGN, not because any surface was unreadable. Verbatim from the Methods: 'We tested five frontier LLMs from two major providers1: Models A and B from Provider 1, and Models C, D, and E from Provider 2.' And footnote 1 verbatim: 'The purpose of this paper is to make a methodological contribution to preference-behavior links in LLMs, so we opt to not reveal specific model provider details.' Consequently the note's contingency 'If the roster is later recovered and names frontier developers, both rows should be re-tiered' can be closed as unreachable. Tier B is correct and FINAL on two independent grounds: §4 condition (b) states outright that 'anonymised' fails, and the paper self-describes as 'a methodological contribution', which puts the models in the role of the INSTRUMENT of a methodology study — an explicit condition (c) exclusion. models_systems should stay empty per §10. Anyone re-screening this should use the arXiv PDF, not OpenReview.",
+    "index 0 (ai.meta.com/tools) READ AT 200: it is a static resources hub — Frameworks and tools / Models and Libraries / Datasets / Demos / System cards — a navigation page carrying no dated posts. Not a dated publication surface; 0 in-window items.",
+    "index 1 (www.llama.com/docs/) READ AT 200: a developer documentation navigation index (Llama 4, Llama Guard 4, Llama 3.3, how-to and deployment guides). No dated publications; the only dates in the HTML are 2025-07-21 / 2025-07-24 asset stamps. 0 in-window items. Note llama.com's nav lists a 'Muse Spark 1.2' model that has no corresponding ai.meta.com/blog post; I could not find a dated announcement for it on ai.meta.com, llama.com or about.fb.com, so if the corpus needs Meta model releases rather than blog posts, that is a loose thread worth one more look.",
+    "SUGGESTED fetch.py FIXES, both of which cost nothing and would have prevented this whole gap: (1) drop the hard-coded 'Referer': 'https://www.google.com/' from HEADERS, or make it per-call — it is the main reason ai.meta.com 400s; (2) add 400 to RETRY_STATUS so the ladder escalates to Wayback on 400 as it already does on 403 — as written, a 400 surface gets no fallback at all, which is exactly how the Meta blog came to be recorded as unreadable; (3) consider adding the Chrome client-hint headers globally.",
+    "MET A CROSS-CHECK: about.fb.com/news/ returns 200 and is ACTIVE in the window (18 items on page 1, including 2026-08-04, 08-06, 08-10 x4, 08-12 x4, 08-13, 08-18 x3, 08-19, 08-24 x2, 08-25, 08-26 x3, 08-27 x2, 08-28 x2). I enumerated the titles: all are corporate/product/policy/infrastructure items (WhatsApp features, data centres, Edits Film Festival, Meta Startup School, EU AI Act CoP signature, attorneys-general letter) with no AI model evaluation and no external evaluator in any title. It is a different surface from the one assigned to me and I did not screen the bodies — flagging it in case the corpus never swept it.",
+    "OPENAI RSS IS THE FIX FOR INDICES 9, 10, 11 AND 12. https://openai.com/news/rss.xml is 200 direct, 701,878 bytes, 1,157 items, and gives exact pubDates: 'what-students-gain-from-chatgpt-critical-thinking-training' Thu 27 Aug 2026 09:00 GMT (category Company; description confirms 'A randomized study of more than 1,000 students'); 'learning-never-stops' Wed 26 Aug 2026 10:00 GMT (Product); 'introducing-intelligence-age' Thu 20 Aug 2026 07:00 GMT (Intelligence Age); 'strengthening-democratic-oversight-in-national-security' Tue 18 Aug 2026 19:00 GMT (Global Affairs). None of their bodies can be read — the Cloudflare challenge is site-wide on openai.com HTML, confirmed against a control page — but no OpenAI item ever needs to be recorded as undated. Index 9 in particular (the randomized 1,000+ student study) is the one item across all four that could plausibly carry findings and it remains genuinely unread.",
+    "dl.acm.org/action/showFeed?type=etoc&feed=rss&jc=<journalcode> returns 200 and bypasses ACM's Cloudflare challenge, if any other agent is stuck on an ACM surface.",
+    "index 13 (Shanghai AI Laboratory, https://research.ai45.shlab.org.cn/) retried with the full Chrome client-hint recipe that fixed Meta: still 403. Not recoverable by header shaping; genuinely unread, as originally recorded.",
+    "index 4 (PEReN, https://www.peren.gouv.fr/static/): https://www.peren.gouv.fr/en/publications/ returns 200 and enumerates, consistent with the original note that the static asset host is not a lost surface. No action needed."
+  ]
+}

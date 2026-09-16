@@ -1,0 +1,266 @@
+[
+ {
+  "venue": "Singapore AI Safety Institute (SG AISI)",
+  "surfaces_checked": [
+   {
+    "url": "https://sgaisi.sg/resources",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 6,
+    "note": "Page 1 of 3, newest-first; newest item is dated July 23, 2026, i.e. before the 2026-07-31 window opens. Pages 2-3 are strictly older."
+   },
+   {
+    "url": "https://sgaisi.sg/events",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 0,
+    "note": "Redirects to https://sgaisi.sg/ (the homepage); no dated events listing is rendered there. Enumerated instead via the site's WordPress REST 'events' collection, below."
+   },
+   {
+    "url": "https://sgaisi.sg/wp-api/wp-json/wp/v2/resources?per_page=100&orderby=date&order=desc",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 14,
+    "note": "Complete backing collection for /resources (X-WP-Total = 14). Every item enumerated; latest publication date across the whole collection is 2026-07-23."
+   },
+   {
+    "url": "https://sgaisi.sg/wp-api/wp-json/wp/v2/events?per_page=100&orderby=date&order=desc",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 4,
+    "note": "Complete backing collection for events (X-WP-Total = 4). Latest is 'International Scientific Exchange on AI Safety (ISE) 2026', 2026-07-01."
+   }
+  ],
+  "items": [],
+  "zero_yield": true,
+  "unreadable": [],
+  "notes": "Documented zero. Checked 2026-08-29. The SG AISI site is a Nuxt front end over a WordPress API; the two custom post types that carry everything the institute publishes ('resources' and 'events') were enumerated in full, 14 + 4 = 18 items, matching the 18 already in the ledger. Nothing was published between 2026-07-31 and 2026-08-29 inclusive; the most recent item on either surface remains the NAAIMES Best Practice Guidance Document of 2026-07-23, which is the ledger's latest_seen. Cross-reference, not an SG AISI item: Singapore AISI staff (Akriti Vij) co-author the double-blind-evaluation technical report published on 2026-08-27 via AVERI and Google DeepMind, and that report describes a Singapore-context harmful-content run; it is recorded under the AVERI venue below because that is the surface it was published on."
+ },
+ {
+  "venue": "AI Verification and Evaluation Research Institute (AVERI)",
+  "surfaces_checked": [
+   {
+    "url": "https://www.averi.org/ourwork",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 9,
+    "note": "Single unpaginated Squarespace index; the full list renders in one response back to 2026-01-14, so no pagination was needed. Two items fall inside the window (2026-08-27 and 2026-08-17)."
+   },
+   {
+    "url": "https://www.averi.org/ourwork/averi-pilot-report-the-worlds-first-double-blind-eval",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "Full item page read."
+   },
+   {
+    "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/piloting-the-worlds-first-double-blind-ai-evaluations/double-blind-evaluations-technical-report.pdf",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "8-page technical report linked from the item page as 'Read the technical report'; read in full via the PDF branch of the ladder."
+   },
+   {
+    "url": "https://www.averi.org/ourwork/odd-lots-podcast",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "Full item page read."
+   }
+  ],
+  "items": [
+   {
+    "title": "AVERI Pilot Report: The World’s First Double-Blind Evaluation of a Proprietary Language Model",
+    "url": "https://www.averi.org/ourwork/averi-pilot-report-the-worlds-first-double-blind-eval",
+    "date": "2026-08-27",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 stratified — named third-party evaluator (AVERI), plus a government AISI co-author (Singapore AISI) on the accompanying technical report, which is headline §1; §2 all three tests met for the findings extracted; §4 Gate 1 sends all four rows to Tier C",
+    "reason": "AVERI reports in its own voice on an evaluation it ran, with Google DeepMind, OpenMined and MLCommons, of Gemini 2.5 Flash Lite inside a secure enclave. Not a company self-report: AVERI is the external evaluator and this is AVERI's own venue, so the §1 hard drop does not bite and the company-venue carve-out is not needed. What is asserted and evidence-backed here is process and methodology, not model behaviour — AVERI explicitly kept the quantitative AILuminate results confidential to Google DeepMind — so every row is Tier C under §4 Gate 1 and Action Trackable? is left blank. The 8-page technical report (Trask et al., hosted on Google DeepMind's CDN) is treated as part of this item rather than a separate one, because it is the same pilot published the same day and linked from the post as its methods annex. §4b considered and held not to apply: nothing here turns on ordinary factual accuracy or hallucination. [Report tested: Gemini 2.5 Flash Lite only — no comparator models.]",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 12463,
+     "pages": null
+    },
+    "findings": [
+     {
+      "models_systems": "Google DeepMind Gemini 2.5 Flash Lite (served via Google's JAX C++ Model Server over Unix Domain Sockets inside a Google Cloud Confidential Space enclave); MLCommons AILuminate AIRR 1.4 reserve-set prompts covering CBRNE hazards, cyberattacks, hate speech, self-harm and violent crime elicitation",
+      "institution": "AVERI (AI Verification and Evaluation Research Institute) — Sean McGregor, George Balston, Patricia Paskov, Miles Brundage; with Google/Google DeepMind, OpenMined, MLCommons and Singapore AISI (Akriti Vij) as co-authors of the accompanying technical report",
+      "domain": "Third-party audit access and infrastructure — confidential (“double-blind”) benchmark evaluation of a proprietary frontier model via hardware secure enclaves",
+      "eval_trackable": "No",
+      "action_trackable": "",
+      "tier": "C",
+      "finding_type": "third-party evaluation — methodology/tooling pilot; AVERI blog post plus co-published technical report hosted on Google DeepMind's CDN",
+      "scope": "third-party evaluator (stratified, §1); the accompanying technical report is also a joint exercise including a government AI safety institute (Singapore AISI), which is headline §1",
+      "access_type": "Structured-access enclave evaluation: black-box inference against the model inside a hardware-attested trusted execution environment (GCP A3 Confidential VM, Intel TDX host memory encryption, NVIDIA H100 80GB confidential GPU, OpenMined PySyft v0.10.x). The evaluator never received model weights; the model owner never received plaintext benchmark prompts; both parties reviewed and approved the code executed in the enclave, with redacted portions restricted to an allow-list of non-network-bound methods via syft-restrict.",
+      "finding": "In July and August 2026 AVERI, with Google DeepMind, OpenMined and MLCommons, completed what it reports as the first end-to-end “double-blind” evaluation of a production proprietary frontier-lab model: Gemini 2.5 Flash Lite was evaluated against never-before-used reserve-set prompts from MLCommons' AILuminate (AIRR 1.4) benchmark inside a Google Cloud A3 Confidential VM (Intel TDX host memory encryption plus an NVIDIA H100 80GB confidential GPU) running OpenMined's PySyft, such that Google DeepMind could not store or train against the prompts and AVERI, OpenMined and MLCommons could not see the model weights. AVERI encrypted the prompts with a private key shared with no other party, jointly ran the evaluation with Google DeepMind, then decrypted and graded the outputs against the AILuminate criteria. The prior 2024 OpenMined/Anthropic/UK AISI enclave pilot used proxies (GPT-2 and a five-row evaluation); this run replaced the proxies with a production model and a real closed benchmark. No quantitative benchmark scores are published in either the blog post or the technical report — AVERI states it supplied Google DeepMind with a confidential report of the findings.",
+      "finding_quote": "This deployment of Double-Blind Evaluation constitutes the first instance where model benchmark developers have successfully evaluated a frontier class proprietary model, minimizing the danger of compromising trade secrets or benchmark integrity with cryptographic guarantees.",
+      "tier_reasoning": "§4 Gate 1 FAILS, so Tier C and Action Trackable? left BLANK. This is a methodology/tooling and process demonstration of how a proprietary model can be evaluated without either side surrendering its confidential asset — not an empirical finding about model behaviour. No capability, safeguard or refusal result is reported publicly: the quantitative AILuminate results went to Google DeepMind as a confidential report and appear in neither public document. Gemini 2.5 Flash Lite is the INSTRUMENT of the methodology study rather than its subject, which is separately an explicit Tier A exclusion under §4 condition (3).",
+      "source_url": "https://www.averi.org/ourwork/averi-pilot-report-the-worlds-first-double-blind-eval"
+     },
+     {
+      "models_systems": "Google DeepMind Gemini 2.5 Flash Lite (served via Google's JAX C++ Model Server over Unix Domain Sockets inside a Google Cloud Confidential Space enclave); MLCommons AILuminate AIRR 1.4 reserve-set prompts covering CBRNE hazards, cyberattacks, hate speech, self-harm and violent crime elicitation",
+      "institution": "AVERI (AI Verification and Evaluation Research Institute) — Sean McGregor, George Balston, Patricia Paskov, Miles Brundage; with Google/Google DeepMind, OpenMined, MLCommons and Singapore AISI (Akriti Vij) as co-authors of the accompanying technical report",
+      "domain": "Third-party audit access and infrastructure — confidential (“double-blind”) benchmark evaluation of a proprietary frontier model via hardware secure enclaves",
+      "eval_trackable": "No",
+      "action_trackable": "",
+      "tier": "C",
+      "finding_type": "third-party evaluation — methodology/tooling pilot; AVERI blog post plus co-published technical report hosted on Google DeepMind's CDN",
+      "scope": "third-party evaluator (stratified, §1); the accompanying technical report is also a joint exercise including a government AI safety institute (Singapore AISI), which is headline §1",
+      "access_type": "Structured-access enclave evaluation: black-box inference against the model inside a hardware-attested trusted execution environment (GCP A3 Confidential VM, Intel TDX host memory encryption, NVIDIA H100 80GB confidential GPU, OpenMined PySyft v0.10.x). The evaluator never received model weights; the model owner never received plaintext benchmark prompts; both parties reviewed and approved the code executed in the enclave, with redacted portions restricted to an allow-list of non-network-bound methods via syft-restrict.",
+      "finding": "The evaluators report that the limiting factor for secure double-blind evaluation is no longer technical: hardware compute overhead inside the confidential enclave was not the bottleneck, and the binding constraint was instead the procedural overhead and human coordination required for legal agreements and joint code review — the same bottleneck observed in the earlier 2024 multi-stakeholder enclave pilot.",
+      "finding_quote": "As observed in initial multi-stakeholder enclave pilots (Trask et al., 2024), the primary bottleneck to secure double blind evaluation is no longer hardware compute overhead. It is instead the procedural overhead and human coordination required for legal agreements and code review.",
+      "tier_reasoning": "§4 Gate 1 FAILS — a process fact about the conduct of third-party audits, not an empirical model finding; Tier C with Action Trackable? BLANK. It survives §2 as a documented process fact observed in the course of the pilot (not a recommendation or a plan), and §5 keeps it separate from the feasibility row because a reader would respond to ‘this can now be done’ and ‘what still makes it slow is lawyers and code review’ as two different things.",
+      "source_url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/piloting-the-worlds-first-double-blind-ai-evaluations/double-blind-evaluations-technical-report.pdf"
+     },
+     {
+      "models_systems": "Google DeepMind Gemini 2.5 Flash Lite (served via Google's JAX C++ Model Server over Unix Domain Sockets inside a Google Cloud Confidential Space enclave); MLCommons AILuminate AIRR 1.4 reserve-set prompts covering CBRNE hazards, cyberattacks, hate speech, self-harm and violent crime elicitation",
+      "institution": "AVERI (AI Verification and Evaluation Research Institute) — Sean McGregor, George Balston, Patricia Paskov, Miles Brundage; with Google/Google DeepMind, OpenMined, MLCommons and Singapore AISI (Akriti Vij) as co-authors of the accompanying technical report",
+      "domain": "Third-party audit access and infrastructure — confidential (“double-blind”) benchmark evaluation of a proprietary frontier model via hardware secure enclaves",
+      "eval_trackable": "No",
+      "action_trackable": "",
+      "tier": "C",
+      "finding_type": "third-party evaluation — methodology/tooling pilot; AVERI blog post plus co-published technical report hosted on Google DeepMind's CDN",
+      "scope": "third-party evaluator (stratified, §1); the accompanying technical report is also a joint exercise including a government AI safety institute (Singapore AISI), which is headline §1",
+      "access_type": "Structured-access enclave evaluation: black-box inference against the model inside a hardware-attested trusted execution environment (GCP A3 Confidential VM, Intel TDX host memory encryption, NVIDIA H100 80GB confidential GPU, OpenMined PySyft v0.10.x). The evaluator never received model weights; the model owner never received plaintext benchmark prompts; both parties reviewed and approved the code executed in the enclave, with redacted portions restricted to an allow-list of non-network-bound methods via syft-restrict.",
+      "finding": "The pilot's own technical report documents residual gaps in the trust model that the enclave setup did not close: eliminating proprietary method implementations from the Gemini 2.5 Flash Lite inference path was judged too large an engineering task, so not all code running in the enclave could be inspected or allow-listed (AVERI was informed and accepted the setup); the Confidential Space guest OS builds are not independently reproducible because they take private signing keys as inputs; and Google's own services sign and verify the attestation report, placing Google in the verification path and increasing the trust placed in it. The report also notes the design addressed many but not all means by which a developer could theoretically tamper with the evaluation, and that additional assurances would be needed in lower-trust settings.",
+      "finding_quote": "It was deemed to be too significant of an engineering challenge for this project to eliminate proprietary method implementations, such that not all code could be inspected or allowlisted. AVERI was informed of this challenge and accepted the overall setup with the enclave.",
+      "tier_reasoning": "§4 Gate 1 FAILS — methodology/process limitation of the audit infrastructure, not an empirical model finding; Tier C, Action Trackable? BLANK. §5 CLUB: the three residual gaps (un-inspectable inference code, non-reproducible guest-OS builds, Google in the attestation verification path) are one thing to respond to — the report itself bundles them and commits that ‘Future work will revisit these security improvements and inference implementation tasks.’",
+      "source_url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/piloting-the-worlds-first-double-blind-ai-evaluations/double-blind-evaluations-technical-report.pdf"
+     },
+     {
+      "models_systems": "Google DeepMind Gemini 2.5 Flash Lite (served via Google's JAX C++ Model Server over Unix Domain Sockets inside a Google Cloud Confidential Space enclave); MLCommons AILuminate AIRR 1.4 reserve-set prompts covering CBRNE hazards, cyberattacks, hate speech, self-harm and violent crime elicitation",
+      "institution": "Singapore AI Safety Institute (Akriti Vij), co-author of the technical report, with Google/Google DeepMind, OpenMined, MLCommons and AVERI",
+      "domain": "Third-party audit access and infrastructure — confidential (“double-blind”) benchmark evaluation of a proprietary frontier model via hardware secure enclaves",
+      "eval_trackable": "No",
+      "action_trackable": "",
+      "tier": "C",
+      "finding_type": "third-party evaluation — methodology/tooling pilot; AVERI blog post plus co-published technical report hosted on Google DeepMind's CDN",
+      "scope": "government AI safety institute participating in a joint exercise (headline §1), reported on a third-party evaluator's venue",
+      "access_type": "Structured-access enclave evaluation: black-box inference against the model inside a hardware-attested trusted execution environment (GCP A3 Confidential VM, Intel TDX host memory encryption, NVIDIA H100 80GB confidential GPU, OpenMined PySyft v0.10.x). The evaluator never received model weights; the model owner never received plaintext benchmark prompts; both parties reviewed and approved the code executed in the enclave, with redacted portions restricted to an allow-list of non-network-bound methods via syft-restrict.",
+      "finding": "A second live double-blind run using the same enclave design evaluated Gemini 2.5 Flash Lite against a private prompt set focused on harmful-content elicitation in Singapore's context, conducted in partnership with the Singapore AI Safety Institute, whose staff co-author the technical report. The existence and setup of the run are reported; no results, prompt counts or scores from it are given in either public document.",
+      "finding_quote": "We validate this paradigm through the first live deployment evaluating Google DeepMind's Gemini 2.5 Flash Lite against the private MLCommons AILuminate benchmark in partnership with AVERI, and against a private prompt set focused on harmful content elicitation in Singapore's context in partnership with Singapore AISI.",
+      "tier_reasoning": "§4 Gate 1 FAILS — the claim is that a second confidential evaluation was run using the same methodology, with no reported empirical result; Tier C, Action Trackable? BLANK. §5 SPLIT from the AVERI/AILuminate rows: a different evaluator (a government AISI) and a different, Singapore-specific private prompt set — not one thing with the MLCommons run. §10 applies hard here: the report states only that the run happened, so every result field stays empty rather than being inferred.",
+      "source_url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/piloting-the-worlds-first-double-blind-ai-evaluations/double-blind-evaluations-technical-report.pdf"
+     }
+    ]
+   },
+   {
+    "title": "Odd Lots Podcast — What the OpenAI-Hugging Face Hack Really Tells Us About AI Danger",
+    "url": "https://www.averi.org/ourwork/odd-lots-podcast",
+    "date": "2026-08-17",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§2 — none of the three tests met; §3",
+    "reason": "A three-sentence listing pointing to a podcast appearance by AVERI's Executive Director, Miles Brundage. No evaluation was run and the page asserts no measured result, observed behaviour or documented process fact; commentary on a news event is opinion, which §2 excludes.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 341,
+     "pages": null
+    },
+    "findings": []
+   }
+  ],
+  "zero_yield": false,
+  "unreadable": [],
+  "notes": "Checked 2026-08-29. Two items published in the window, both enumerated from AVERI's own /ourwork index (no keyword search used). The next-older item is 2026-04-27, matching the ledger's latest_seen, so the window is fully covered with no gap."
+ },
+ {
+  "venue": "Meridian Labs",
+  "surfaces_checked": [
+   {
+    "url": "https://meridianlabs.ai/blog",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 7,
+    "note": "Complete Quarto listing — the page ends with 'No matching items', i.e. no pagination and no further pages. Newest post is 2026-05-07."
+   }
+  ],
+  "items": [],
+  "zero_yield": true,
+  "unreadable": [],
+  "notes": "Documented zero. Checked 2026-08-29 at https://meridianlabs.ai/blog. The blog index lists all seven posts on one page, newest first: Introducing Petri 3.0 (2026-05-07), Cloud Sandboxes for Inspect (2026-04-30), Long-Horizon Agents (2026-04-26), Announcing Inspect Flow (2026-03-04), Transcript Analysis with Inspect Scout (2026-02-25), Harbor Tasks for Inspect (2026-02-12), Introducing Inspect Viz (2025-09-07). Nothing published between 2026-07-31 and 2026-08-29 inclusive; the newest item is still 2026-05-07, the ledger's latest_seen."
+ },
+ {
+  "venue": "Gray Swan AI + UK AISI (joint)",
+  "surfaces_checked": [
+   {
+    "url": "https://www.grayswan.ai/research",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 35,
+    "note": "Complete single-page research index (a ?page=2 request returns the identical page, confirming no pagination). Newest entry is 'How Vulnerable Are AI Agents to Indirect Prompt Injections? Insights from a Large-Scale Public Competition', Mar 2026 — the ledger's latest_seen. Nothing in the window."
+   },
+   {
+    "url": "https://www.grayswan.ai/blog",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 12,
+    "note": "Second Gray Swan publication surface, not listed in the packet but found from the site nav and enumerated in full. One item falls in the window (2026-08-17)."
+   },
+   {
+    "url": "https://www.grayswan.ai/news",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 8,
+    "note": "Third Gray Swan publication surface, likewise enumerated in full. One item falls in the window (2026-07-31)."
+   },
+   {
+    "url": "https://www.grayswan.ai/blog/7-deadly-signs-of-ai-security-snake-oil-a-developers-field-guide",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "Full item page read."
+   },
+   {
+    "url": "https://www.grayswan.ai/news/gray-swan-integrates-with-truefoundry",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "Full item page read."
+   },
+   {
+    "url": "https://arxiv.org/abs",
+    "via": "not enumerated",
+    "status": null,
+    "items_seen": 0,
+    "note": "Listed in the packet as a surface, but https://arxiv.org/abs is a bare identifier prefix, not an index: it cannot be enumerated, and the only reproducible way to reach Gray Swan preprints is the org's own research list, which was enumerated above. Per the task rules arXiv keyword search was NOT used."
+   }
+  ],
+  "items": [
+   {
+    "title": "Gray Swan Integrates with TrueFoundry",
+    "url": "https://www.grayswan.ai/news/gray-swan-integrates-with-truefoundry",
+    "date": "2026-07-31",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§2 — partnership/product announcement, no findings; §3",
+    "reason": "A product-integration announcement describing Gray Swan's Cygnal runtime monitor being embedded in TrueFoundry's AI Gateway. §2 explicitly puts announcements and partnership news outside the finding definition. The one quantitative claim on the page — that safety screening 'typically takes ~100-200ms' — is a vendor performance claim about Gray Swan's own product, not an evaluation of any model, and would in any case be a self-report about its own system rather than an external evaluation. No UK AISI involvement.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 3362,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "7 Deadly Signs of AI Security Snake Oil: A Developer's Field Guide",
+    "url": "https://www.grayswan.ai/blog/7-deadly-signs-of-ai-security-snake-oil-a-developers-field-guide",
+    "date": "2026-08-17",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§2 — opinion piece, no findings; §3",
+    "reason": "A rhetorical marketing field guide (Plato epigraph, football and city-wall analogies) arguing that buyers should judge AI security vendors on deployment specifics rather than OWASP/MITRE ATLAS framework coverage. Every claim is a recommendation or an opinion about vendor practice; no measurement, no tested model, no documented process fact from an exercise Gray Swan ran. §2 puts opinion pieces outside the finding definition. No UK AISI involvement.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 15798,
+     "pages": null
+    },
+    "findings": []
+   }
+  ],
+  "zero_yield": false,
+  "unreadable": [],
+  "notes": "Checked 2026-08-29. The research surface named in the packet is a documented zero for the window — its newest entry is still the Mar 2026 indirect-prompt-injection competition paper that is the ledger's latest_seen. Two further Gray Swan surfaces (/blog and /news) were found from the site nav and enumerated in full for completeness; each has exactly one item in the window and both are excluded under §2. Nothing joint with UK AISI appeared in the window on any surface."
+ }
+]

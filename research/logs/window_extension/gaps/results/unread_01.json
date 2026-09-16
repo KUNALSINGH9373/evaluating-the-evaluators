@@ -1,0 +1,461 @@
+[
+ {
+  "venue": "Anthropic",
+  "title": "A Mathematical Framework for Transformer Circuits",
+  "url": "https://www.anthropic.com/research/a-mathematical-framework-for-transformer-circuits",
+  "resolved_date": "2021-12-22",
+  "date_source": "page byline (\"Dec 22, 2021\" under the title)",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; company-venue test 'is an external evaluator named?' fails",
+  "reason": "Anthropic landing page for its own interpretability paper on one- and two-layer attention-only transformers Anthropic trained itself; no external evaluator named anywhere on the page, and the page carries only a title, date and a 'Read Paper' link (1,130 chars) with no result text of its own.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1130
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "An AI Policy Tool for Today: Ambitiously Invest in NIST",
+  "url": "https://www.anthropic.com/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist",
+  "resolved_date": "2023-04-20",
+  "date_source": "page byline (\"Apr 20, 2023\"); the chunk's 2022-02-15 date is wrong",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — a policy recommendation, not an evidence-backed result",
+  "reason": "Advocacy post urging Congress to fund NIST; the only quantitative content is a chart of past NIST appropriations, and every forward-looking claim is a recommendation. Nothing here is a test of an AI system by an evaluator. Also note the chunk date was off by 14 months.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7507
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Predictability and Surprise in Large Generative Models",
+  "url": "https://www.anthropic.com/research/predictability-and-surprise-in-large-generative-models",
+  "resolved_date": "2022-02-15",
+  "date_source": "page byline (\"Feb 15, 2022\"); arXiv:2202.07785 v1 submitted 15 Feb 2022 confirms it",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report (developer testing models it built, no external evaluator named)",
+  "reason": "READ BEYOND THE STUB: the anthropic.com page is an abstract only, so I pulled the full FAccT/arXiv paper (109,886 chars). It does contain hard measured results the keyword filter would have lost — few-shot LMs on the ProPublica COMPAS task reach 63% accuracy vs COMPAS's 66%, with a Black:white false-positive-rate ratio of 2.21 when race is in the prompt vs COMPAS's 1.92, i.e. less equitable than COMPAS — but every model measured is Anthropic's own (ref [3] = Askell et al. 2021, Anthropic), so §1 drops it as a self-report. The GPT-3 / Gopher / Google program-synthesis scaling jumps in Figure 2 are cited from refs [11], [62], [4] and fail §2 test 1 as summaries of others' work.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2769
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "In-context Learning and Induction Heads",
+  "url": "https://www.anthropic.com/research/in-context-learning-and-induction-heads",
+  "resolved_date": "2022-03-08",
+  "date_source": "page byline (\"Mar 8, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; no external evaluator named on a company venue",
+  "reason": "Anthropic interpretability research on Anthropic-trained models (up to 13B) reported on Anthropic's own site; the landing page itself is a 1,109-char stub with a 'Read Paper' link and no result text.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1109
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Softmax Linear Units",
+  "url": "https://www.anthropic.com/research/softmax-linear-units",
+  "resolved_date": "2022-06-17",
+  "date_source": "page byline (\"Jun 17, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; no external evaluator named on a company venue",
+  "reason": "Architecture/interpretability study (SoLU activation) run by Anthropic on models Anthropic trained; the abstract's blinded-experiment result on neuron interpretability is a real measured claim but it is the developer reporting on its own models.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2183
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Language Models (Mostly) Know What They Know",
+  "url": "https://www.anthropic.com/research/language-models-mostly-know-what-they-know",
+  "resolved_date": "2022-07-11",
+  "date_source": "page byline (\"Jul 11, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; secondarily §4b (calibration/self-knowledge of answer correctness)",
+  "reason": "Anthropic measuring calibration and P(True)/P(IK) on its own models with no external evaluator named. Even setting §1 aside, the subject matter is the models' knowledge of their own answer correctness, which sits on the §4b ordinary-accuracy boundary.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2611
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Toy Models of Superposition",
+  "url": "https://www.anthropic.com/research/toy-models-of-superposition",
+  "resolved_date": "2022-09-14",
+  "date_source": "page byline (\"Sep 14, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; company-venue test 'is an external evaluator named?' fails",
+  "reason": "Toy ReLU networks trained by Anthropic on synthetic data — basic interpretability research on the evaluator's own artifacts, not an evaluation of any deployed AI system, and no external evaluator named.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1491
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Tracing Model Outputs to the Training Data",
+  "url": "https://www.anthropic.com/research/influence-functions",
+  "resolved_date": "2023-08-08",
+  "date_source": "page byline (\"Aug 8, 2023\"); the chunk's 2022-12-19 date is wrong",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report (Anthropic on its own 810M–52B models, no external evaluator named)",
+  "reason": "Substantive post with measured results (influence patterns follow a power law; generalisation becomes more abstract and more cross-lingual with scale; outputs 'do not seem to result from pure memorization' — a reassuring null that §2 would otherwise admit), but every model studied is Anthropic's own, so §1 drops it. Chunk date was off by ~8 months.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8409
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Announcing Robust Intelligence's $30M Series B",
+  "url": "https://www.robustintelligence.com/blog-posts/announcing-robust-intelligences-30m-series-b",
+  "resolved_date": "2021-12-08",
+  "date_source": "page byline (\"December 8, 2021\", Wayback snapshot of the post)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; the one empirical-sounding claim also fails §2 tests 2–3 and §4b",
+  "reason": "Series B funding announcement. Closest near-miss in the whole chunk: an anecdote that vendor fraud-detection models 'produce entirely different results depending on whether a single alphabetical feature in the input data is capitalized' — but no system is named, no measurement or method is given, it is not independently codeable, and input-formatting brittleness is ordinary reliability under §4b.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 14475
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Eliminating AI Failures with the Practical AI Podcast",
+  "url": "https://www.robustintelligence.com/blog-posts/eliminating-ai-failures-with-the-practical-ai-podcast",
+  "resolved_date": "2022-01-11",
+  "date_source": "page byline (\"January 11, 2022\", Wayback snapshot)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (no evidence-backed claim in the item)",
+  "reason": "A two-minute post embedding a podcast appearance by the CEO. No test, no result, no system evaluated.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 1956
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "How RIME Could Have Prevented the Age of Ultron",
+  "url": "https://www.robustintelligence.com/blog-posts/how-rime-could-have-prevented-the-age-of-ultron",
+  "resolved_date": "2022-03-31",
+  "date_source": "page byline (\"March 31, 2022\", Wayback snapshot)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (no real system, no real evidence)",
+  "reason": "Explicitly an April Fools' post ('Happy April Fools Day!') in which RIME 'stress tests' the fictional Marvel AIs Ultron and JARVIS. The false-positive-rate screenshots describe imaginary systems, so there is no evidence-backed claim about any AI system.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 13653
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Robust Intelligence Partners with Databricks to Deliver Machine Learning Integrity Through Continuous Validation",
+  "url": "https://www.robustintelligence.com/blog-posts/databricks-technology-partnership-announcement",
+  "resolved_date": "2022-12-13",
+  "date_source": "page byline (\"December 13, 2022\", Wayback snapshot)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — product integration announcement, no measured result",
+  "reason": "Databricks partnership announcement. Lists generic causes of model failure (drift, corrupted data, adversarial input) as motivation; no system tested and no result reported.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 13338
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI has joined FoundX (Pre-Founders, Oct 2020 Batch)",
+  "url": "https://citadel-ai.com/news/2020/10/13/jp-foundx-pre-founders",
+  "resolved_date": "2020-10-13",
+  "date_source": "page byline (\"13 Oct 2020\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (corporate news, no evidence-backed claim)",
+  "reason": "One-paragraph notice that Citadel AI was accepted into UTokyo's FoundX accelerator.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1836
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI has received a grant from 東大IPC",
+  "url": "https://citadel-ai.com/news/2021/03/15/jp-todai-ipc",
+  "resolved_date": "2021-03-15",
+  "date_source": "page byline (\"15 Mar 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (corporate news, no evidence-backed claim)",
+  "reason": "One-paragraph notice of a seed grant from UTokyo IPC.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1839
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI has joined FoundX (Founders, Apr 2021 Batch)",
+  "url": "https://citadel-ai.com/news/2021/04/14/jp-foundx-founders",
+  "resolved_date": "2021-04-14",
+  "date_source": "page byline (\"14 Apr 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (corporate news, no evidence-backed claim)",
+  "reason": "One-paragraph notice of acceptance into the FoundX Founders batch.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1819
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI is presenting at CDLE, by the Japan Deep Learning Association, on June 4",
+  "url": "https://citadel-ai.com/news/2021/05/22/jdla-cdle-study-group-june04-2021",
+  "resolved_date": "2021-05-22",
+  "date_source": "page byline (\"22 May 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (event announcement, no evidence-backed claim)",
+  "reason": "Announcement of a JDLA/CDLE study-group lecture on real-world AI operation and quality management; the page carries the registration link only, no content or result.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2135
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel Enterprise Solutions, end-to-end AI quality consulting, is now available",
+  "url": "https://citadel-ai.com/news/2021/07/06/citadel-enterprise-solutions-jul062021",
+  "resolved_date": "2021-07-06",
+  "date_source": "page byline (\"6 Jul 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — product launch, capability claims not measured results",
+  "reason": "Launch of Citadel Enterprise Solutions plus Lens (alpha) and Radar (beta). Describes what the tools can detect (confidence calibration, feature sensitivity, error analysis) but reports no test of any AI system and gives no results.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5787
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "NTT Data has featured an interview with us on \"OctoKnot\"",
+  "url": "https://citadel-ai.com/news/2021/07/07/nttdata-octoknot-article-jul072021",
+  "resolved_date": "2021-07-07",
+  "date_source": "page byline (\"7 Jul 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (interview pointer, no evidence-backed claim)",
+  "reason": "Two-sentence pointer to an NTT Data OctoKnot interview; the interview itself is off-site and in Japanese.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1858
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Nikkei Business has published an interview with Rick Kobayashi (CEO)",
+  "url": "https://citadel-ai.com/news/2021/09/11/nikkei-business-rinkaku-sep11-2021",
+  "resolved_date": "2021-09-11",
+  "date_source": "page byline (\"11 Sep 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (interview pointer, no evidence-backed claim)",
+  "reason": "One-line pointer to a Nikkei Business video interview with the CEO.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1809
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI raises 100 million JPY in seed funding from UTokyo IPC and ANRI",
+  "url": "https://citadel-ai.com/news/2021/10/04/citadel-ai-raises-100-million-jpy-in-seed-funding-from-utokyo-ipc-and-anri",
+  "resolved_date": "2021-10-04",
+  "date_source": "page byline (\"4 Oct 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — business facts about the vendor, not findings about an AI system",
+  "reason": "Seed funding announcement. The only concrete facts are commercial ('Citadel Radar's beta users include more than 10 enterprise companies'); no AI system is evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7070
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI is one of the winners of the 2021 HONGO AI AWARD",
+  "url": "https://citadel-ai.com/news/2021/11/03/2021-hongo-ai-award",
+  "resolved_date": "2021-11-03",
+  "date_source": "page byline (\"3 Nov 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (award notice, no evidence-backed claim)",
+  "reason": "One-paragraph notice of winning the 2021 HONGO AI AWARD.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1831
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "若手キャピタリストが選ぶ次世代スタートアップ106社にノミネートされました (Japanese only)",
+  "url": "https://citadel-ai.com/ja/news/2021/12/03/thebridge-intro-showcase",
+  "resolved_date": "2021-12-03",
+  "date_source": "page byline (\"2021/12/03\" on the /ja/ page)",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 hard drop — non-English-only",
+  "reason": "Japanese-only page (the title itself is flagged 'Japanese only'); content is a startup-nomination notice, so it would also fail §3 as not an evaluation had it been in English.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1323
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Launching our new MLOps Engineering Blog",
+  "url": "https://citadel-ai.com/news/2022/01/14/engineering-blog-jpn",
+  "resolved_date": "2022-01-14",
+  "date_source": "page byline (\"14 Jan 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; the one statistic fails §2 test 1 (others' work)",
+  "reason": "Announcement of a new MLOps engineering blog. Its single number ('only 22% of companies using machine learning have successfully deployed a model') is quoted from The Batch, i.e. a summary of someone else's work.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2969
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "本番環境での機械学習モデルの監視について (1/3) (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/01/14/monitoring-machine-learning-models-in-a-production-environment-1-3",
+  "resolved_date": "2022-01-14",
+  "date_source": "page byline (\"2022/01/14\" on the /ja/ blog page)",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 hard drop — non-English-only",
+  "reason": "Japanese-only tutorial, part 1/3 on monitoring ML models in production. Read it anyway: it is a walkthrough of a 架空 (fictional) e-commerce case study, so even translated it carries no measured result about a real system and would fail §2 test 2.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5269
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI is nominated as a \"Next-Generation Startup\" on The Bridge",
+  "url": "https://citadel-ai.com/news/2022/01/28/next-generation-startup-introshowcase-2022",
+  "resolved_date": "2022-01-28",
+  "date_source": "page byline (\"28 Jan 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 (nomination notice, no evidence-backed claim)",
+  "reason": "One-paragraph notice of nomination to The Bridge's INTRO Showcase list.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1813
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI is one of the top 11 \"Next-Generation Startups\" on The Bridge",
+  "url": "https://citadel-ai.com/news/2022/01/28/next-generation-startups-introshowcase-2022",
+  "resolved_date": "2022-01-28",
+  "date_source": "page byline (\"28 Jan 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; also not an evaluation",
+  "reason": "Near-identical sibling of the preceding INTRO Showcase notice (same date, same event, adjacent URL slug); neither is an evaluation, and this one is the secondary of the pair.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1845
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "本番環境での機械学習モデルの監視について (2/3) (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/02/15/monitoring-machine-learning-models-in-a-production-environment-2-3",
+  "resolved_date": "2022-02-15",
+  "date_source": "page byline (\"2022/02/15\" on the /ja/ blog page)",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 hard drop — non-English-only",
+  "reason": "Japanese-only tutorial, part 2/3 of the same production-monitoring series; continues the fictional e-commerce case study and reports no measurement of any real system.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6787
+  },
+  "findings": []
+ }
+]

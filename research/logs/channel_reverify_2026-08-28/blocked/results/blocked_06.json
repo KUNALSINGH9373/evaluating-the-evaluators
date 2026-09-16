@@ -1,0 +1,924 @@
+[
+ {
+  "finding_id": "CIP-2025-08-SOC1",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located"
+  },
+  "changed": false,
+  "sources_read": [
+   {
+    "source": "(1) Anthropic newsroom index",
+    "url": "https://www.anthropic.com/news",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200 but client-rendered (2,051 chars of shell). Enumerated the newsroom exhaustively instead via https://www.anthropic.com/sitemap.xml (direct 200, 521 URLs, 258 of them /news/ posts) and read every candidate slug."
+   },
+   {
+    "source": "(1b) Anthropic sitemap - full newsroom enumeration",
+    "url": "https://www.anthropic.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "521 URLs, 258 /news/ posts. Full slug list reviewed."
+   },
+   {
+    "source": "(3) Anthropic Transparency Hub",
+    "url": "https://www.anthropic.com/transparency",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "119,563 chars. Model Report lists every card Opus 4.1 -> Opus 5; used to harvest 39 primary PDF URLs, 26 of which were then downloaded and full-text searched."
+   },
+   {
+    "source": "(2) Claude Opus 4.1 System Card Addendum",
+    "url": "https://assets.anthropic.com/m/4c024b86c698d3d4/original/Claude-4-1-System-Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 23,
+    "found_relevant": false,
+    "note": "Read in full. No Weval / Collective Intelligence Project / hiring-context / gender-identity evaluation."
+   },
+   {
+    "source": "(2) Claude Opus 4.6 System Card (Feb 2026)",
+    "url": "https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 213,
+    "found_relevant": false,
+    "note": "Full text searched: 0 hits for 'Weval', 'Collective Intelligence', 'Ramirez', 'gender identity'. The single 'hiring' hit is an unrelated chemical-safety transcript."
+   },
+   {
+    "source": "(2) Claude Opus 4.7 System Card (2026-04-16)",
+    "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 232,
+    "found_relevant": false,
+    "note": "Full text searched: 0 hits for 'Weval'/'Collective Intelligence'/'Ramirez'/'gender identity'. Sec. 4.5 'Bias and integrity evaluations' contains only political even-handedness, BBQ and a new election-integrity eval."
+   },
+   {
+    "source": "(2) Claude Opus 4.8 System Card (2026-05-28)",
+    "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 244,
+    "found_relevant": false,
+    "note": "Full text searched: same two standing bias evaluations, no Weval/CIP, no hiring-context evaluation."
+   },
+   {
+    "source": "(2) Claude Mythos Preview System Card (2026-04-07)",
+    "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 244,
+    "found_relevant": false,
+    "note": "Full text searched: 0 hits."
+   },
+   {
+    "source": "(2) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09)",
+    "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 317,
+    "found_relevant": false,
+    "note": "Full text searched: 0 hits for Weval/CIP; the one 'hiring' hit is a red-team topic list item ('drafting age-discrimination hiring memo')."
+   },
+   {
+    "source": "(2) Claude Sonnet 5 System Card (2026-06-30)",
+    "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 145,
+    "found_relevant": false,
+    "note": "Full text searched: 0 hits."
+   },
+   {
+    "source": "(2) Claude Opus 5 System Card (2026-07-24)",
+    "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 194,
+    "found_relevant": false,
+    "note": "Full text searched: 0 hits."
+   },
+   {
+    "source": "(3) Anthropic, 'Evaluating and Mitigating Discrimination in Language Model Decisions'",
+    "url": "https://www.anthropic.com/research/evaluating-and-mitigating-discrimination-in-language-model-decisions",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read. Dated Dec 7, 2023 - pre-existing standing research, inadmissible. Contains no reference to Weval, CIP, hiring-context scoring or gender-identity cues."
+   },
+   {
+    "source": "(4) Anthropic, 'Measuring political bias in Claude'",
+    "url": "https://www.anthropic.com/news/political-even-handedness",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read. Nov 13, 2025 - post-dates the finding but concerns political even-handedness only; 0 hits for 'hiring', 'discriminat', 'gender identity', 'Weval'."
+   },
+   {
+    "source": "(5) Broad web search for an Anthropic primary source",
+    "url": "https://www.bing.com/search?q=anthropic+weval+hiring+bias+claude+opus+4.1",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "WebSearch tool quota was exhausted (200/200) before this packet; DuckDuckGo HTML (202) and Mojeek (403) both refused the fetcher. Bing returned only degraded generic results. Step 5 was therefore executed as exhaustive primary-source enumeration (Anthropic sitemap: all 258 news slugs; Transparency Hub: all system-card PDFs) rather than as a search."
+   },
+   {
+    "source": "Finding source (identity check)",
+    "url": "https://weval.org/cards/claude-opus-4.1",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Direct 200. Confirms the finding text; carries no record of any Anthropic reply."
+   }
+  ],
+  "evidence_url": "",
+  "verbatim": "",
+  "response_date": "",
+  "reasoning": "Re-ran the battery with the sources actually opened rather than searched. The whole Anthropic primary corpus - Opus 4.1 addendum, Opus 4.6, Opus 4.7, Opus 4.8, Mythos Preview, Fable 5 & Mythos 5, Sonnet 5 and Opus 5 system cards (1,507 PDF pages downloaded and text-extracted), the Transparency Hub, and all 258 newsroom slugs from the sitemap - contains zero occurrences of 'Weval', 'Collective Intelligence Project', 'Sofia Ramirez' or 'gender identity'. The only hiring/discrimination material Anthropic publishes is the December 2023 discrimination paper (pre-existing, excluded) and the November 2025 political even-handedness post (different subject, no evaluator named). This is admissible negative evidence from documents genuinely read, not a blocked source. Action Level None; Attribution 'No response located'.",
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "HAL-2025-10-AUT4",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located"
+  },
+  "changed": false,
+  "sources_read": [
+   {
+    "source": "(1) OpenAI newsroom index",
+    "url": "https://openai.com/news/",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct GET returns 403 (Cloudflare); the ladder recovered it from the Wayback snapshot 20260818235501. Thin index page, so enumeration was done from the RSS feed and sitemaps instead."
+   },
+   {
+    "source": "(1b) OpenAI news RSS - full newsroom enumeration",
+    "url": "https://openai.com/news/rss.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, 1,157 items with titles/URLs/dates. Every item in the finding's window reviewed by title."
+   },
+   {
+    "source": "(1c) openai.com sitemap tree",
+    "url": "https://openai.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, 36 sub-sitemaps; /page/, /safety/, /publication/, /research/ and /global-affairs/ fetched (996 URLs) and slug-scanned."
+   },
+   {
+    "source": "(3) OpenAI Deployment Safety Hub index",
+    "url": "https://deploymentsafety.openai.com/",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Index of all published system cards."
+   },
+   {
+    "source": "(3b) Deployment Safety Hub sitemap",
+    "url": "https://deploymentsafety.openai.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Yielded 24 distinct top-level cards; each top-level URL serves the card's COMPLETE text (e.g. gpt-5-6 = 140,348 chars), so all 24 were downloaded in full and searched locally."
+   },
+   {
+    "source": "(2) All 24 OpenAI system cards, downloaded in full and text-searched",
+    "url": "https://deploymentsafety.openai.com/gpt-5",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "o3/o4-mini, gpt-5, gpt-5-codex, gpt-5-sensitive-conversations, chatgpt-agent, deep-research, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6-preview, gpt-5-6, gpt-5-6-august-update, gpt-rosalind-5-5, gpt-live, gpt-oss, sora-2, chatgpt-images-2-0, 4o-native-image-generation. Corpus totals ~1.28M chars. 0 occurrences of 'Holistic Agent', 'Princeton' or 'payment method'."
+   },
+   {
+    "source": "(2b) gpt-oss model card - the corpus's only tau-bench hits",
+    "url": "https://deploymentsafety.openai.com/gpt-oss",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "3 occurrences of 'Tau-Bench', all in the August 2025 capability table (Tau-Bench Retail / Tau-Bench Airline scores). Published before the 2025-10-13 finding and reports accuracy only - no error analysis, no payment-method failure. Predates the finding and is inadmissible."
+   },
+   {
+    "source": "(4) OpenAI, 'Strengthening our safety ecosystem with external testing' (2025-11-19)",
+    "url": "https://openai.com/index/strengthening-safety-with-external-testing/",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 403; read via Wayback. Names METR and SecureBio as third-party assessors. 0 hits for 'Holistic', 'Princeton', 'tau'."
+   },
+   {
+    "source": "(4b) OpenAI, 'A shared playbook for trustworthy third party evaluations' (2026-05-29)",
+    "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations/",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 403; read via Wayback. Discusses refusals/reward hacking/broken problems as validity threats in the abstract. 0 hits for 'Holistic', 'Princeton', 'tau', 'leaderboard'. Does not reference HAL or the payment-method error."
+   },
+   {
+    "source": "(4c) OpenAI, 'Separating signal from noise in coding evaluations' (2026-07-08)",
+    "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 403; read via Wayback. An audit of SWE-Bench Pro task quality. Nothing on TAU-bench or agent payment errors."
+   },
+   {
+    "source": "Finding source (identity check)",
+    "url": "https://arxiv.org/abs/2510.11977",
+    "via": "direct",
+    "status": null,
+    "pages": null,
+    "found_relevant": null,
+    "note": "Finding is HAL's arXiv report; not re-fetched for Channel A."
+   }
+  ],
+  "evidence_url": "",
+  "verbatim": "",
+  "response_date": "",
+  "reasoning": "The previous pass recorded openai.com/news as a 403 dead end. The ladder recovered it via Wayback, and the newsroom was additionally enumerated exhaustively from the RSS feed (1,157 items) and the sitemap tree (996 URLs). All 24 deployment-safety system cards were then downloaded in full - the hub serves each card's complete text at its top-level URL - and searched. Nothing in OpenAI's primary corpus published between 2025-10-13 and 2026-08-28 references the Holistic Agent Leaderboard, Princeton, TAU-bench Airline behaviour, or an agent completing a purchase with the wrong payment method. The only tau-bench material is a pre-finding capability table in the gpt-oss card. Genuinely earned None.",
+  "still_blocked": [
+   {
+    "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+    "status": "403 direct; Wayback returned ConnectionError/ContentDecodingError on 4 retries",
+    "what_it_would_have_shown": "OpenAI's Aug 4 2026 account of third-party cyber evaluations. Subject matter is cyber, not agentic payment errors, so it is unlikely to bear on this finding; recorded for completeness."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "USCAISI-2025-12-SOC1",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located"
+  },
+  "changed": false,
+  "sources_read": [
+   {
+    "source": "(1) Moonshot AI corporate site",
+    "url": "https://www.moonshot.ai/",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200 but only 1,201 chars render - the site is a client-rendered shell listing Kimi K3 (2026-07-16), PerceptionBench (2026-07-16) and Kimi K2.6 (2026-04-20) as its 'Latest Research'. No safety, transparency or evaluation-response page exists in the navigation."
+   },
+   {
+    "source": "(1b) Moonshot AI platform blog index",
+    "url": "https://platform.moonshot.ai/blog",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Full post list read: newest items are OpenClaw guides (2026-02-25, 2026-02-05), Kimi Open Platform release log, playground, coding agents, founder AMA, K2-Vendor-Verifier, pricing. No CAISI, NIST, censorship or multilingual-safety post at any date."
+   },
+   {
+    "source": "(2) Kimi K2 Thinking model card - the evaluated model",
+    "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, read in full. 0 occurrences of 'CAISI', 'NIST', 'censor', 'politically sensitive', 'Chinese', 'Arabic', 'Spanish'."
+   },
+   {
+    "source": "(2b) Kimi K3 model card - successor model",
+    "url": "https://huggingface.co/moonshotai/Kimi-K3",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, read in full. 0 hits for CAISI/NIST/censorship. The only 'safety'/'refusal' passages report refusal counts for competitor models on a coding benchmark."
+   },
+   {
+    "source": "(2c) Moonshot AI Hugging Face org - full model and paper inventory",
+    "url": "https://huggingface.co/moonshotai",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Enumerates every release after the finding: Kimi K2.5 (Apr 30), K2.6 (May 19), K2.7-Code (Jun 15), K3 (Jul 27) plus papers 2602.02276 and 2607.24653. No safety or system card among them."
+   },
+   {
+    "source": "(2d) Kimi K3 technical report",
+    "url": "https://arxiv.org/abs/2607.24653",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Abstract page carries no censorship, multilingual-safety or CAISI content."
+   },
+   {
+    "source": "(4) Moonshot AI official account",
+    "url": "https://x.com/Kimi_Moonshot",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200 this time (2,255 chars) - profile header plus the pinned 27 Jul K3 weights-release post. The timeline itself is behind a login wall, so individual posts could not be enumerated."
+   },
+   {
+    "source": "Finding source (identity check)",
+    "url": "https://www.nist.gov/news-events/news/2025/12/caisi-evaluation-kimi-k2-thinking",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Direct 200 - the CAISI notice is readable and confirms the finding. Government source, not Channel A evidence."
+   }
+  ],
+  "evidence_url": "",
+  "verbatim": "",
+  "response_date": "",
+  "reasoning": "Moonshot AI publishes no safety page, no system card and no transparency hub; the accountable-company surface is the corporate site, the platform blog, the Hugging Face org and the model cards, and all of them were opened this pass. None of the evaluated model's card, its successors' cards (K2.5 through K3), the technical reports, or the blog index mentions CAISI, NIST, censorship or the Chinese-vs-English disclosure gap. This is now a read-and-absent result rather than a partially-rendered one. None.",
+  "still_blocked": [
+   {
+    "url": "https://x.com/Kimi_Moonshot",
+    "status": "200 but login-walled timeline",
+    "what_it_would_have_shown": "Whether Moonshot posted any reply to the CAISI censorship result on its official account between 2025-12-12 and 2026-08-28. Only the pinned post is visible without authentication."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2026-03-CYB1",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "Substantive",
+   "attribution": "Explicit attribution"
+  },
+  "changed": true,
+  "sources_read": [
+   {
+    "source": "(1) Anthropic newsroom index",
+    "url": "https://www.anthropic.com/news",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200 but client-rendered (2,051 chars of shell). Enumerated the newsroom exhaustively instead via https://www.anthropic.com/sitemap.xml (direct 200, 521 URLs, 258 of them /news/ posts) and read every candidate slug."
+   },
+   {
+    "source": "(1b) Anthropic sitemap - full newsroom enumeration",
+    "url": "https://www.anthropic.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "521 URLs, 258 /news/ posts. Full slug list reviewed."
+   },
+   {
+    "source": "(3) Anthropic Transparency Hub",
+    "url": "https://www.anthropic.com/transparency",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "119,563 chars. Model Report lists every card Opus 4.1 -> Opus 5; used to harvest 39 primary PDF URLs, 26 of which were then downloaded and full-text searched."
+   },
+   {
+    "source": "(2) Claude Opus 4.7 System Card (2026-04-16)",
+    "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 232,
+    "found_relevant": true,
+    "note": "HIT. Downloaded direct from the canonical www-cdn host, 232 pages, 429,823 chars. Executive Summary carries a 'Cyber evaluations' paragraph naming the UK AI Security Institute and announcing new cybersecurity safeguards. Sec. 3.1 records a training-time capability reduction. Sec. 3.2 'Mitigations' specifies probe-based classifiers with prohibited-use and high-risk-dual-use exchanges blocked by default plus a Cyber Verification Program exemption route. Sec. 3.4 'External testing from the UK AI Security Institute' carries UK AISI's verbatim conclusions on the corporate-network cyber range, including Opus 4.6's relative performance on it."
+   },
+   {
+    "source": "(2) Claude Mythos Preview System Card (2026-04-07)",
+    "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 244,
+    "found_relevant": false,
+    "note": "Full text searched. 0 occurrences of 'UK AI Security Institute', 'UK AISI' or 'cyber range'. The previous pass's claim that Sec. 3.4 reports named external cyber-range testing here does not hold."
+   },
+   {
+    "source": "(2) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09)",
+    "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 317,
+    "found_relevant": false,
+    "note": "Full text searched. 0 occurrences of 'UK AISI', 'UK AI Security Institute' or 'The Last Ones'. The previous pass's claim that Sec. 3.2.5 names UK AISI and 'The Last Ones' here is not supported by the document."
+   },
+   {
+    "source": "(2) Claude Opus 4.8 System Card (2026-05-28)",
+    "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 244,
+    "found_relevant": false,
+    "note": "Full text searched. 0 occurrences of 'UK AISI' or 'UK AI Security Institute'."
+   },
+   {
+    "source": "(2) Claude Sonnet 5 System Card (2026-06-30)",
+    "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 145,
+    "found_relevant": false,
+    "note": "Full text searched. One mention of the UK AI Security Institute, not a cyber-range result for Opus 4.6."
+   },
+   {
+    "source": "(2) Claude Opus 5 System Card (2026-07-24)",
+    "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 194,
+    "found_relevant": false,
+    "note": "Full text searched. 0 occurrences of 'UK AISI', 'UK AI Security Institute' or 'The Last Ones'. The previous pass's claim that Sec. 3.3.6 names both is not supported by the document."
+   },
+   {
+    "source": "(3)/(4) Anthropic, 'Strengthening our safeguards through collaboration with US CAISI and UK AISI'",
+    "url": "https://www.anthropic.com/news/strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read in full. Dated Sep 12, 2025 - predates the finding, concerns Constitutional Classifier red-teaming on Opus 4/4.1, not the cyber range. Inadmissible as pre-existing."
+   },
+   {
+    "source": "Finding source (range identity check)",
+    "url": "https://arxiv.org/abs/2603.11214",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Direct 200. Abstract confirms the range and the number: 'on the corporate network range, average steps completed at 10M tokens rose from 1.7 (GPT-4o, August 2024) to 9.8 (Opus 4.6, February 2026). The best single run completed 22 of 32 steps'. This matches the corporate-network cyber range Anthropic's Opus 4.7 card Sec. 3.4 attributes to UK AISI."
+   }
+  ],
+  "evidence_url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+  "verbatim": "Cyber evaluations.  Opus 4.7 is roughly similar to Opus 4.6 in cyber capabilities. An external evaluation from the UK’s AI Security Institute showed that, unlike Mythos Preview, Opus 4.7 was unable to complete their full cyber range (though it still displayed potentially-harmful cyber capabilities at a lower level). We are releasing Opus 4.7 with a new set of cybersecurity safeguards.",
+  "response_date": "2026-04-16",
+  "reasoning": "Step 2 of the battery produces an admissible hit. The Claude Opus 4.7 System Card, dated April 16 2026 on its cover page and one month after the finding, names the UK AI Security Institute explicitly, reproduces UK AISI's own conclusions on the same corporate-network cyber range the finding measures ('This cyber range simulates a corporate network attack ... Opus 4.6 completed more steps than [Opus 4.7] (though Opus 4.6 was also unable to solve it fully)', Sec. 3.4), and in the same executive-summary paragraph announces a specific implemented change: a new set of cybersecurity safeguards shipped with the release. Sec. 3.2 details them as probe-based classifiers that block prohibited-use and high-risk-dual-use exchanges by default with a Cyber Verification Program exemption route, and Sec. 3.1 records a model change - 'during training we experimented with efforts to differentially reduce these capabilities.' Specific safeguard plus model change addressing the measured capability = Substantive; the evaluator is named = Explicit attribution. Caveat recorded: the card does not print the range's name ('The Last Ones') or the 9.8/32 figure, and I verified from the arXiv abstract that the range and metric match. I also verified that three of the previous pass's corroborating claims (UK AISI / 'The Last Ones' in the Mythos Preview, Fable 5 & Mythos 5, and Opus 5 cards) are not in those documents; the Opus 4.7 card is the only Anthropic system card that names UK AISI in a cyber context.",
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ac-AUT2",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located"
+  },
+  "changed": false,
+  "sources_read": [
+   {
+    "source": "(1) Anthropic newsroom index",
+    "url": "https://www.anthropic.com/news",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200 but client-rendered (2,051 chars of shell). Enumerated the newsroom exhaustively instead via https://www.anthropic.com/sitemap.xml (direct 200, 521 URLs, 258 of them /news/ posts) and read every candidate slug."
+   },
+   {
+    "source": "(1b) Anthropic sitemap - full newsroom enumeration",
+    "url": "https://www.anthropic.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "521 URLs, 258 /news/ posts. Full slug list reviewed."
+   },
+   {
+    "source": "(3) Anthropic Transparency Hub",
+    "url": "https://www.anthropic.com/transparency",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "119,563 chars. Model Report lists every card Opus 4.1 -> Opus 5; used to harvest 39 primary PDF URLs, 26 of which were then downloaded and full-text searched."
+   },
+   {
+    "source": "(1)/(4) Anthropic, 'More details on Fable 5's cyber safeguards and our jailbreak framework' (2026-07-02)",
+    "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "LOCATED AND READ IN FULL - the previous pass recorded this document as 'NOT LOCATED / an unreachable company source'. It is at /news/fable-safeguards-jailbreak-framework and returns direct 200 (30,935 chars). HIT on topic, MISS on attribution: it publishes the four-category cyber-classifier taxonomy and explicitly places 'Secure coding, and fixing simple or already identified vulnerabilities in code', 'Debugging' and 'Discussing widely known security practices' in Benign use, stating that Fable 5's classifiers 'are not intended to block' these and that 'any blocks that do occur are likely to be false positives as part of the safety margin'. It names no external evaluator, no benchmark, and no Scale AI / SWE Atlas / Codebase QnA."
+   },
+   {
+    "source": "(4b) Anthropic, 'Redeploying Fable 5' (2026-06-30)",
+    "url": "https://www.anthropic.com/news/redeploying-fable-5",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Read in full. HIT on topic, MISS on attribution. States 'The new classifier also comes at the cost of flagging benign requests more often during routine coding and debugging tasks. As with all our safeguards, we'll continue to refine this to better distinguish genuine misuse from legitimate requests and reduce false positives.' The stated trigger is an Amazon vulnerability-bypass report and the 2026-06-12 US export-control directive - not any external over-refusal benchmark. No evaluator named."
+   },
+   {
+    "source": "(4c) Anthropic, 'Improving Fable 5's biology safeguards' (2026-08-07)",
+    "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read in full. ~85% cut in biology-classifier false positives; footnote gives a 17% total fallback reduction on Claude Code. Scoped to biology, credits only 'a diverse range of experts (both internal and external to Anthropic)', names no evaluator or benchmark."
+   },
+   {
+    "source": "(2) Claude Opus 5 System Card (2026-07-24)",
+    "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 194,
+    "found_relevant": false,
+    "note": "Full text searched. Documents reduced over-blocking of defensive coding relative to Fable 5 but names no external evaluator; 0 hits for 'Scale AI', 'SWE Atlas', 'Codebase QnA'."
+   },
+   {
+    "source": "(2) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09)",
+    "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 317,
+    "found_relevant": false,
+    "note": "Full text searched. 0 hits for 'SWE Atlas' or 'Codebase QnA'."
+   },
+   {
+    "source": "(2) Claude Opus 4.7 System Card (2026-04-16)",
+    "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 232,
+    "found_relevant": false,
+    "note": "Full text searched. The single 'Scale AI' hit is Scale's MCP-Atlas capability score for Opus 4.7 - a benchmark result, not a response to the refusal finding."
+   },
+   {
+    "source": "Finding source (date and wording check)",
+    "url": "https://labs.scale.com/leaderboard/sweatlas-qna",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Direct 200. Confirms the footnote verbatim. Note: the leaderboard's own update banner reads 'Update July 28, 2026', and the Fable-5 and GPT-5.6-Sol rows are flagged NEW alongside Opus 5 (launched 2026-07-24), so the refusal observation appears to have been posted around late July 2026 - after both Anthropic safeguards posts."
+   }
+  ],
+  "evidence_url": "",
+  "verbatim": "",
+  "response_date": "",
+  "reasoning": "The one source the previous pass could not reach - the 'Cyber Safeguards and Jailbreak Framework' post cited without a URL by the Opus 5 System Card - was located and read this pass. It is Anthropic's most on-topic document: it defines debugging and secure coding as Benign use that the Fable 5 cyber classifiers should not block, and concedes that blocks there are false positives. The 2026-06-30 redeployment post makes the same concession about 'routine coding and debugging tasks' and commits to reducing false positives. But both attribute the work to the Amazon vulnerability-bypass report and the US export-control directive, name no external evaluator or benchmark, and - per the leaderboard's own 'Update July 28, 2026' banner - were published before the Scale AI refusal footnote appeared. Under the admissibility rule (must address THIS finding and be attributable to it; something predating the finding does not count) they are inadmissible. The conclusion is unchanged but is now based on the documents themselves rather than on a failed fetch.",
+  "still_blocked": [],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ac-AUT3",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located"
+  },
+  "changed": false,
+  "sources_read": [
+   {
+    "source": "(1) OpenAI newsroom index",
+    "url": "https://openai.com/news/",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct GET returns 403 (Cloudflare); the ladder recovered it from the Wayback snapshot 20260818235501. Thin index page, so enumeration was done from the RSS feed and sitemaps instead."
+   },
+   {
+    "source": "(1b) OpenAI news RSS - full newsroom enumeration",
+    "url": "https://openai.com/news/rss.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, 1,157 items with titles/URLs/dates. Every item in the finding's window reviewed by title."
+   },
+   {
+    "source": "(1c) openai.com sitemap tree",
+    "url": "https://openai.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, 36 sub-sitemaps; /page/, /safety/, /publication/, /research/ and /global-affairs/ fetched (996 URLs) and slug-scanned."
+   },
+   {
+    "source": "(3) OpenAI Deployment Safety Hub index",
+    "url": "https://deploymentsafety.openai.com/",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Index of all published system cards."
+   },
+   {
+    "source": "(3b) Deployment Safety Hub sitemap",
+    "url": "https://deploymentsafety.openai.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Yielded 24 distinct top-level cards; each top-level URL serves the card's COMPLETE text (e.g. gpt-5-6 = 140,348 chars), so all 24 were downloaded in full and searched locally."
+   },
+   {
+    "source": "(2) All 24 OpenAI system cards, downloaded in full and text-searched",
+    "url": "https://deploymentsafety.openai.com/gpt-5-6",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "0 occurrences of 'Scale AI', 'SWE Atlas' or 'Codebase QnA' anywhere in the ~1.28M-char corpus. The single corpus-wide 'Scale AI' hit is in the 4o native-image-generation addendum, where Scale supplied red teamers - unrelated."
+   },
+   {
+    "source": "(2b) GPT-5.6 System Card, biology safety-training section",
+    "url": "https://deploymentsafety.openai.com/gpt-5-6",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read the over-refusal passage in context. Verbatim: 'During training for GPT-5.6, we additionally augmented our training data to improve robustness along our refusal and overrefusal boundaries that were weak in previous models.' It sits inside 9.4.2 biological-misuse safety training; the accompanying Table 14 is a Biology Model Refusal Evaluation. No Codex, code-comprehension or security-filter context, and no evaluator named."
+   },
+   {
+    "source": "(2c) GPT-5.6 August Updates",
+    "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read. Repeats the same biology-scoped over-refusal sentence and reports the new models 'perform on par with our earlier GPT-5.6 release'. Nothing on Codex refusal rates."
+   },
+   {
+    "source": "(4) OpenAI, 'Running Codex safely at OpenAI' (2026-05-08)",
+    "url": "https://openai.com/index/running-codex-safely",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 403; read via Wayback. Concerns sandboxing, approval policy, network policy, credential handling and telemetry for Codex. Nothing on benchmark refusal rates or security-filter false positives."
+   },
+   {
+    "source": "(4b) OpenAI, 'Separating signal from noise in coding evaluations' (2026-07-08)",
+    "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 403; read via Wayback. A SWE-Bench Pro task-quality audit. Does not mention Scale AI, SWE Atlas or refusals."
+   },
+   {
+    "source": "Finding source (date and wording check)",
+    "url": "https://labs.scale.com/leaderboard/sweatlas-qna",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Direct 200. Confirms the footnote verbatim; leaderboard update banner dated July 28, 2026."
+   }
+  ],
+  "evidence_url": "",
+  "verbatim": "",
+  "response_date": "",
+  "reasoning": "Both routes the previous pass logged as blocked were opened this pass: openai.com/news via Wayback, and the individual openai.com/index/* post bodies via Wayback. With those bodies actually read, and with all 24 deployment-safety cards downloaded in full, nothing in OpenAI's primary corpus references Scale AI's SWE Atlas work, the Codebase QnA benchmark, or a Codex security-filter over-refusal. The nearest candidate remains the GPT-5.6 over-refusal training note, which I read in its surrounding context and can now confirm is scoped to biological-misuse safety training rather than code comprehension, and is attributed to nothing external. Inadmissible. None.",
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2026-06-HUM3",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located"
+  },
+  "changed": false,
+  "sources_read": [
+   {
+    "source": "(1) OpenAI newsroom index",
+    "url": "https://openai.com/news/",
+    "via": "wayback",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct GET returns 403 (Cloudflare); the ladder recovered it from the Wayback snapshot 20260818235501. Thin index page, so enumeration was done from the RSS feed and sitemaps instead."
+   },
+   {
+    "source": "(1b) OpenAI news RSS - full newsroom enumeration",
+    "url": "https://openai.com/news/rss.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, 1,157 items with titles/URLs/dates. Every item in the finding's window reviewed by title."
+   },
+   {
+    "source": "(1c) openai.com sitemap tree",
+    "url": "https://openai.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, 36 sub-sitemaps; /page/, /safety/, /publication/, /research/ and /global-affairs/ fetched (996 URLs) and slug-scanned."
+   },
+   {
+    "source": "(3) OpenAI Deployment Safety Hub index",
+    "url": "https://deploymentsafety.openai.com/",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Index of all published system cards."
+   },
+   {
+    "source": "(3b) Deployment Safety Hub sitemap",
+    "url": "https://deploymentsafety.openai.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200. Yielded 24 distinct top-level cards; each top-level URL serves the card's COMPLETE text (e.g. gpt-5-6 = 140,348 chars), so all 24 were downloaded in full and searched locally."
+   },
+   {
+    "source": "(2) All 24 OpenAI system cards, downloaded in full and text-searched",
+    "url": "https://deploymentsafety.openai.com/gpt-5-6",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Corpus-wide counts: 'RealityTest' 0, 'AI identity' 0, 'identify as an AI' 0, 'identifies as an AI' 0, 'pretend to be human' 0, 'parasocial' 0. Every 'disclos*' occurrence relates to vulnerability disclosure, non-disclosure of cheating strategies in chain-of-thought, or non-public report detail."
+   },
+   {
+    "source": "(2b) GPT-5.6 System Card - the 28 UK AISI passages",
+    "url": "https://deploymentsafety.openai.com/gpt-5-6",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read. UK AISI appears extensively but only on sabotage continuation, evaluation awareness, ImpossibleMLEBench cheating and ControlArena. No RealityTest, no identity-disclosure result, no GPT-4o/GPT-5.1 comparison."
+   },
+   {
+    "source": "(3b) OpenAI Model Spec, current published version",
+    "url": "https://model-spec.openai.com/2025-10-27.html",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200, 246,718 chars, read. model-spec.openai.com root redirects here, so 2025-10-27 is still the current version as of 2026-08-28 - i.e. there is no post-finding Model Spec revision. The relevant rule ('The assistant should not pretend to be human or have feelings') is standing policy predating the finding and is inadmissible; there is no rule change, no RealityTest reference and no disclosure-rate target."
+   },
+   {
+    "source": "(4) OpenAI safety / publication / research sitemaps slug-scanned for an identity-disclosure post",
+    "url": "https://openai.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "996 URLs across /page/, /safety/, /publication/, /research/ and /global-affairs/. No slug on AI identity disclosure, self-identification, or the GPT-4o/GPT-5.1 transparency gap."
+   },
+   {
+    "source": "Finding source (identity check)",
+    "url": "https://arxiv.org/abs/2606.00168",
+    "via": "direct",
+    "status": null,
+    "pages": null,
+    "found_relevant": null,
+    "note": "UK AISI's RealityTest report; not re-fetched for Channel A."
+   }
+  ],
+  "evidence_url": "",
+  "verbatim": "",
+  "response_date": "",
+  "reasoning": "The previous pass could not read openai.com/index/* bodies (403) and had to work from RSS titles. This pass read the bodies via Wayback where relevant, downloaded all 24 system cards in full, and enumerated the whole openai.com URL space from the sitemap tree. OpenAI has published nothing between 2026-05-29 and 2026-08-28 that references RealityTest, AI-identity disclosure when asked, or the 13% / 86% gap between GPT-4o and GPT-5.1. The Model Spec's standing 'should not pretend to be human' rule is unchanged since 2025-10-27 and predates the finding, so it is inadmissible even as background. None.",
+  "still_blocked": [],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-06-BIO3",
+  "current_action_level": "None",
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located"
+  },
+  "changed": false,
+  "sources_read": [
+   {
+    "source": "(1) Anthropic newsroom index",
+    "url": "https://www.anthropic.com/news",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Direct 200 but client-rendered (2,051 chars of shell). Enumerated the newsroom exhaustively instead via https://www.anthropic.com/sitemap.xml (direct 200, 521 URLs, 258 of them /news/ posts) and read every candidate slug."
+   },
+   {
+    "source": "(1b) Anthropic sitemap - full newsroom enumeration",
+    "url": "https://www.anthropic.com/sitemap.xml",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "521 URLs, 258 /news/ posts. Full slug list reviewed."
+   },
+   {
+    "source": "(3) Anthropic Transparency Hub",
+    "url": "https://www.anthropic.com/transparency",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "119,563 chars. Model Report lists every card Opus 4.1 -> Opus 5; used to harvest 39 primary PDF URLs, 26 of which were then downloaded and full-text searched."
+   },
+   {
+    "source": "(1)/(4) Anthropic, 'Improving Fable 5's biology safeguards' (2026-08-07)",
+    "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Read in full. HIT on topic, MISS on attribution and MISS on model. Reports ~85% fewer biology fallbacks and says users will see fewer fallbacks on 'everyday health and educational questions'. It concerns Claude Fable 5, not Claude Code running Opus 4.7, and it explicitly states the opposite of a fix for this finding: 'Fable will continue to block dual-use professional biology and drug development queries because of potential dual-use risk.' Names no evaluator, no benchmark; 0 hits for 'Scale AI', 'drug discovery' as an evaluated task set, 'HIV', 'PLpro' or 'patent'."
+   },
+   {
+    "source": "(4b) Anthropic, 'More details on Fable 5's cyber safeguards and our jailbreak framework' (2026-07-02)",
+    "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": false,
+    "note": "Read in full. Cyber-domain classifier taxonomy only; no biology or drug-discovery content, no evaluator named."
+   },
+   {
+    "source": "(2) Claude Opus 5 System Card (2026-07-24)",
+    "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 194,
+    "found_relevant": false,
+    "note": "Full text searched. Over-blocking reduction is scoped to cyber/defensive coding, not structural biology or patent analysis; 0 hits for 'Scale AI', 'PLpro', 'drug discovery'."
+   },
+   {
+    "source": "(2) Claude Opus 4.7 System Card (2026-04-16)",
+    "url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 232,
+    "found_relevant": false,
+    "note": "Full text searched - this is the card for the model actually evaluated. 0 hits for 'PLpro', 'HIV-1 reverse transcriptase' or 'Codebase QnA'; the single 'Scale AI' hit is an MCP-Atlas capability score. No content-policy decline analysis for drug-discovery tasks."
+   },
+   {
+    "source": "(2) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09)",
+    "url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 317,
+    "found_relevant": false,
+    "note": "Full text searched. 0 hits for 'PLpro' or 'SWE Atlas'; the two 'patent' hits are LABBench2 capability scores."
+   },
+   {
+    "source": "(2) Claude Opus 4.8 System Card (2026-05-28)",
+    "url": "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+    "via": "direct",
+    "status": 200,
+    "pages": 244,
+    "found_relevant": false,
+    "note": "Full text searched. 'patent' hits are LABBench2 capability scores only."
+   },
+   {
+    "source": "Finding source (wording check)",
+    "url": "https://labs.scale.com/blog/coding-agents-drug-discovery",
+    "via": "direct",
+    "status": 200,
+    "pages": null,
+    "found_relevant": true,
+    "note": "Direct 200. Confirms the finding verbatim: 'Claude Code answered 61, declining 5 on content-policy grounds. The declined tasks include HIV-1 reverse transcriptase, two competitor-patent tasks, and SARS-CoV-2 PLpro. On review these refusals had no clear safety basis'. Carries no record of an Anthropic reply."
+   }
+  ],
+  "evidence_url": "",
+  "verbatim": "",
+  "response_date": "",
+  "reasoning": "Every Anthropic document that moves in the finding's direction was opened and read in full this pass. The closest, the 2026-08-07 biology-safeguards post, is inadmissible on three counts: it concerns Fable 5 rather than Claude Code running Opus 4.7, it names no evaluator or benchmark, and it expressly preserves the blocking of professional drug-development queries - the very category the finding is about. The Opus 4.7 System Card, the model's own card, contains no reference to declined drug-discovery tasks, HIV-1 reverse transcriptase, SARS-CoV-2 PLpro or patent analysis. Confirmed None on documents read, not on a blocked source.",
+  "still_blocked": [],
+  "confidence": "high"
+ }
+]

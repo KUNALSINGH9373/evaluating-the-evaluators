@@ -1,0 +1,109 @@
+[
+ {
+  "venue": "Meta",
+  "detail": {
+   "url": "https://ai.meta.com/tools",
+   "status": "400 direct; no usable Wayback snapshot located. Meta serves HTTP 400 to non-browser clients across ai.meta.com and llama.com, and the fetch ladder only escalates to Wayback on 403/429/5xx, so this surface was retried manually against Wayback and still could not be read."
+  }
+ },
+ {
+  "venue": "Meta",
+  "detail": {
+   "url": "https://www.llama.com/docs/",
+   "status": "400 direct; Wayback CDX for www.llama.com/docs* returned HTTP 504. Negative evidence for the window rests on the llama.com root snapshot (2026-06-16) and the www.llama.com* CDX slug listing, not on reading the docs index itself."
+  }
+ },
+ {
+  "venue": "Meta",
+  "detail": {
+   "url": "https://ai.meta.com/blog/ \u2014 window tail 2026-08-26 to 2026-08-29",
+   "status": "400 direct; newest Wayback snapshot of the blog index is 2026-08-25, so the last four days of the window are unverified on this surface. The index was read for 2026-07-31 \u2192 2026-08-25 and is empty."
+  }
+ },
+ {
+  "venue": "Princeton Holistic Agent Leaderboard (HAL)",
+  "detail": {
+   "url": "https://twitter.com/sayashk",
+   "status": "200 but not enumerable \u2014 X serves a login wall in place of the timeline; only the pinned post (30 Jul 2026) is exposed. No Wayback substitute gives a complete in-window timeline. This surface is therefore recorded as unread, not as empty."
+  }
+ },
+ {
+  "venue": "France INESIA (via PEReN / ANSSI / Inria / LNE)",
+  "detail": {
+   "url": "https://www.peren.gouv.fr/static/",
+   "status": 403,
+   "note": "Static asset host, 403 with no directory index and no Wayback snapshot of a listing. It is not an enumerable surface \u2014 it only serves PDFs already linked from /en/publications/ and /en/actualites/, both of which loaded 200 and were enumerated in full, so this does not leave a gap. Recorded for completeness rather than as a lost surface."
+  }
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "detail": {
+   "url": "https://nvlpubs.nist.gov/nistpubs/",
+   "status": 403,
+   "note": "403 direct and no Wayback snapshot of a directory listing; nvlpubs serves PDFs but exposes no browsable index (https://nvlpubs.nist.gov/nistpubs/ai/ also 403). Coverage was NOT lost: every NIST publication that would land there is indexed on https://www.nist.gov/publications/search/topic/2753736, which returned 200 and was enumerated newest-first through the whole window."
+  }
+ },
+ {
+  "venue": "UK AI Security Institute (AISI) - surface mis-assigned to K-AISI in the packet",
+  "detail": {
+   "url": "https://openreview.net/pdf?id=RmWSM3sFOr",
+   "status": "200 but content withheld - OpenReview returns a browser-verification challenge page (0 chars of paper text) on both the PDF and the /forum URL, and no Wayback snapshot exists (404). Consequence: the five model identities in 'When Do LLM Preferences Predict Downstream Behavior?' could not be verified, so models_systems is left unnamed per \u00a710 real-or-empty rather than guessed, and the two rows are tiered B on that basis. If the roster is later recovered and names frontier developers, both rows should be re-tiered."
+  }
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "detail": {
+   "url": "https://www.robustintelligence.com/blog-posts",
+   "status": "no response - TCP connection times out (host resolves to 3.33.139.32); Wayback CDX returns zero captures for www.robustintelligence.com/* from 2026-06-01 onward, so the ladder has no fallback. Cannot certify a zero for this surface."
+  }
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "detail": {
+   "url": "https://www.robustintelligence.com/resource-center",
+   "status": "no response - TCP connection times out; no Wayback capture in or near the window"
+  }
+ },
+ {
+  "venue": "OpenAI",
+  "detail": {
+   "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+   "status": "403 direct on every user agent; Wayback CDX has zero captures. Potentially in scope (a randomized study of 1,000+ students) - could not be screened"
+  }
+ },
+ {
+  "venue": "OpenAI",
+  "detail": {
+   "url": "https://openai.com/index/learning-never-stops",
+   "status": "403 direct; no Wayback capture. Screened from the venue's own RSS title and description only"
+  }
+ },
+ {
+  "venue": "OpenAI",
+  "detail": {
+   "url": "https://openai.com/index/introducing-intelligence-age",
+   "status": "403 direct; no Wayback capture. Screened from RSS title and description only"
+  }
+ },
+ {
+  "venue": "OpenAI",
+  "detail": {
+   "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+   "status": "403 direct; no Wayback capture. Screened from RSS title and description only"
+  }
+ },
+ {
+  "venue": "Shanghai AI Laboratory (AI45 Lab)",
+  "detail": {
+   "url": "https://research.ai45.shlab.org.cn/",
+   "status": "403 direct; Wayback ladder returned 'no snapshot' - surface could not be read. Recorded as unreadable, NOT as a clean zero."
+  }
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "detail": {
+   "url": "https://dl.acm.org/doi",
+   "status": 403
+  }
+ }
+]

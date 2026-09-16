@@ -1,0 +1,289 @@
+[
+ {
+  "venue": "RAND Corporation",
+  "title": "Evaluating the Effectiveness of Artificial Intelligence Systems in Intelligence Analysis",
+  "url": "https://www.rand.org/pubs/research_reports/RRA464-1.html",
+  "date": "2021-08-26",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 - a metrics framework and recommendations, not an evidence-backed evaluation of any AI system",
+  "reason": "RAND builds a taxonomy of AI roles in intelligence analysis and a mathematical model of information-prioritisation errors; no AI system is tested and the outputs are 'Key Takeaways' plus recommendations ('Begin with the right metrics', 'Reevaluate (and retune) regularly').",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5682,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Sophia Serseri: Channeling her Olympic Spirit on the Sales Team",
+  "url": "https://www.robustintelligence.com/blog-posts/sophia-sersei-how-she-brings-her-olympic-spirit-to-the-sales-team",
+  "date": "2021-08-30",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 - staff profile ('People' category), contains no evaluation and no findings",
+  "reason": "Fireside-chat profile of a Robust Intelligence sales hire; no AI system, method or result is discussed.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 14347,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Subset Robustness in NLP: Solving Hidden Underperformance",
+  "url": "https://www.robustintelligence.com/blog-posts/subset-robustness-in-nlp",
+  "date": "2021-09-06",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 stratified (third-party evaluator) + §2 tests 1-3 satisfied; §4 Gate 2 fails (model anonymised) -> Tier B",
+  "reason": "Robust Intelligence engineers ran a subpopulation (subset) test on a fine-tuned sentiment model over the English WikiANN data and report measured behavioural disparities across entity, topic and gender-pronoun subsets; the evaluated model is unnamed, so the finding is not action-trackable.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 18140,
+   "pages": null
+  },
+  "findings": [
+   {
+    "finding": "Subset testing of a fine-tuned transformer sentiment model on English WikiANN surfaced systematic prediction disparities invisible in aggregate metrics: more 'neutral' predictions on sentences containing entities and on higher-perplexity / higher-grade-level sentences, greater polarity on 'business' topics, and twice the rate of positive sentiment for sentences with female pronouns as for those with masculine pronouns.",
+    "finding_quote": "Furthermore, the model predicts positive sentiment at twice the rate for sentences containing female pronouns as it does for those containing masculine ones.",
+    "models_systems": "Unnamed pretrained transformer encoder fine-tuned for sentiment (evaluator's own model). [Report tested: BERT trained on AG News and GPT-2 were used only as instruments to build the topic and perplexity subsets, not as subjects.]",
+    "institution": "Robust Intelligence",
+    "domain": "Bias / fairness and subpopulation robustness in NLP",
+    "eval_trackable": "Yes - §4 Gate 1: an empirical model finding, a measured difference in model predictions across defined data subpopulations.",
+    "action_trackable": "No - §4 Gate 2: no company or model is named; the evaluated model is the evaluator's own anonymous fine-tuned classifier.",
+    "tier": "B",
+    "tier_reasoning": "Tier A condition (1) passes (empirical model finding); condition (2) FAILS - the model is anonymised, which §4 states explicitly fails; condition (3) FAILS - a demonstration on a non-frontier in-house demo model with no dangerous threshold crossed. Gate 1 passes, Gate 2 fails -> Tier B.",
+    "finding_type": "third-party evaluator blog (methodology demonstration with measured results)",
+    "scope": "IN, stratified - third-party evaluator (§1)",
+    "source_url": "https://www.robustintelligence.com/blog-posts/subset-robustness-in-nlp",
+    "access_type": "Internal - evaluator's own fine-tuned model, full access"
+   }
+  ]
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Daniel Glogowski: How Military Service and Salesforce AI Shaped our Head of Product",
+  "url": "https://www.robustintelligence.com/blog-posts/daniel-glogowski-our-seasoned-head-of-product",
+  "date": "2021-09-09",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 - staff profile ('People' category); no evaluation, no findings",
+  "reason": "Career profile of Robust Intelligence's Head of Product; no AI system, method or measured result appears.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 20055,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "How NTT DATA Uses RIME to Increase Model Performance by 70%",
+  "url": "https://www.robustintelligence.com/blog-posts/how-ntt-data-uses-rime-to-increase-model-performance-by-70",
+  "date": "2021-09-13",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 stratified (third-party evaluator) + §2 tests 1-3 satisfied; §4 Gate 1 and Gate 2 pass, Tier A condition (3) fails -> Tier B",
+  "reason": "Robust Intelligence reports its own AI Stress Testing of NTT DATA's named, deployed Image Similarity Search Model for trademark images: robust to colour change, degraded under rotation and particular added noise, with an auto-generated AI Firewall then recovering almost 70% of performance.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 20082,
+   "pages": null
+  },
+  "findings": [
+   {
+    "finding": "RIME AI Stress Testing of NTT DATA's deployed Image Similarity Search Model (500,000+ trademark image database) found the model robust to colour changes but degrading under image rotation and particular added noise; the weaknesses were remediated with an auto-generated AI Firewall denoiser, after which NTT DATA improved the similarity search model's performance by almost 70%.",
+    "finding_quote": "The results of this verification process showed that the Image Similarity Search Model was robust to color changes. However, the search performance degraded when images were rotated or when particular noise was added.",
+    "models_systems": "NTT DATA Image Similarity Search Model (deep-learning trademark image similarity search). [Report tested: the OpenCV non-local-means denoiser is cited only as a comparator for RI's denoiser, so it is not a row.]",
+    "institution": "Robust Intelligence",
+    "domain": "Robustness / adversarial and corruption robustness of a deployed computer-vision system",
+    "eval_trackable": "Yes - §4 Gate 1: measured stress-test behaviour of a specific deployed model under input transformations.",
+    "action_trackable": "Yes - §4 Gate 2: names the company (NTT DATA) and the specific system (Image Similarity Search Model), and NTT DATA did in fact respond by deploying the AI Firewall.",
+    "tier": "B",
+    "tier_reasoning": "Tier A condition (1) passes (empirical model finding); condition (2) passes (NTT DATA and its named model); condition (3) FAILS - a non-frontier, narrow enterprise CV model, an ordinary robustness degradation with no dangerous threshold crossed and the remediation already applied in the same report. Passing both gates but failing Tier A -> Tier B.",
+    "finding_type": "third-party evaluator case study (customer engagement, vendor-published)",
+    "scope": "IN, stratified - third-party evaluator (§1)",
+    "source_url": "https://www.robustintelligence.com/blog-posts/how-ntt-data-uses-rime-to-increase-model-performance-by-70",
+    "access_type": "Black-box - input-level stress testing of the deployed model with transformed images"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Supporting the Royal Australian Navy's Strategy for Robotics and Autonomous Systems: Building an Evidence Base",
+  "url": "https://www.rand.org/pubs/research_reports/RRA929-1.html",
+  "date": "2021-09-14",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 - strategy framework, observations and recommendations; forward-looking plans are not findings",
+  "reason": "RAND builds an evidence base and framework for the Royal Australian Navy's RAS-AI Strategy 2040 from a literature review, interviews and workshops; no AI system is evaluated and the outputs are objectives and recommendations out to 2040.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7039,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Systematizing Audit in Algorithmic Recruitment",
+  "url": "https://www.holisticai.com/papers/systematizing-audit-algorithmic-recruitment",
+  "date": "2021-09-17",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 - a proposed audit framework applied conceptually; no system audited and no measured result",
+  "reason": "Kazim et al. (Holistic AI / UCL, J. Intelligence 9:46) apply the Koshiyama et al. audit framework to algorithmic recruitment and 'outline sources of risk ... suggest ... recommend ... discuss'; named vendors (HireVue, Paradox, MyInterview, Textio, Traitify, Cammio, Hiretual) are described, not audited, and the Amazon recruiting-tool bias is cited from Dastin 2018, i.e. someone else's work (§2 test 1).",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 603,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "How to Make Your Machine Learning System Product Ready with Databricks",
+  "url": "https://www.robustintelligence.com/blog-posts/how-to-make-your-machine-learning-system-product-ready-with-databricks",
+  "date": "2021-10-13",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 - a podcast trailer of opinion about testing practice, no evidence-backed claim",
+  "reason": "Two-paragraph post promoting a Databricks 'Data Brew' episode in which RI's CEO discusses making ML systems production-ready; no system, method or result is reported.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 2045,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Become an Early Champion of ML Quality Assurance",
+  "url": "https://www.robustintelligence.com/blog-posts/become-an-early-champion-of-ml-quality-assurance",
+  "date": "2021-10-20",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 - opinion piece recounting other people's incidents, nothing asserted from the evaluator's own evidence",
+  "reason": "Marketing 'Perspectives' post arguing for early ML quality assurance; the only concrete claims (20x smaller credit limits for women, an e-commerce recommender failure, the Tokyo Paralympics self-driving collision) are third-party incidents summarised, not findings the evaluator produced.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 12829,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Dominic Glover: Building Sales with an Athlete's Mentality",
+  "url": "https://www.robustintelligence.com/blog-posts/dominic-glover",
+  "date": "2021-10-28",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 - staff profile ('People' category); no evaluation and no findings",
+  "reason": "Fireside-chat profile of Robust Intelligence's Sales Operation Lead; no AI system or result discussed.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 19339,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "IWI Uses RIME to Help Secure the Japanese Online Payments Market",
+  "url": "https://www.robustintelligence.com/blog-posts/iwi-uses-rime-to-help-secure-the-japanese-online-payments-market-2",
+  "date": "2021-11-01",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 - accuracy-improvement claims with no measured result reported; §4b would in any case exclude ordinary accuracy",
+  "reason": "The IWI/FARIS case study asserts that RIME stress testing let IWI 'drastically improve the accuracy' of its fraud-scoring model but reports no measurement, benchmark, figure or test outcome; the asserted subject matter is detection accuracy, which §4b puts out of scope.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 12197,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Natural Adversarial Objects",
+  "url": "https://labs.scale.com/papers/natural-adversarial-objects",
+  "date": "2021-11-07",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 stratified (third-party evaluator) + §2 tests 1-3 satisfied; §4 Gate 1 and Gate 2 pass, Tier A condition (3) fails -> Tier B",
+  "reason": "Scale AI's Natural Adversarial Objects paper reports measured robustness results on named object detectors: EfficientDet-D7's mAP drops 74.5% on NAO versus MSCOCO, and better MSCOCO accuracy does not confer better NAO robustness.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2096,
+   "pages": null
+  },
+  "findings": [
+   {
+    "finding": "On the Natural Adversarial Objects dataset (7,934 unmodified real-world images, 9,943 objects) the mean average precision of EfficientDet-D7 falls by 74.5% relative to the standard MSCOCO validation set, i.e. a state-of-the-art detector misclassifies unmodified natural images with high confidence.",
+    "finding_quote": "The mean average precision (mAP) of EfficientDet-D7 drops 74.5% when evaluated on NAO compared to the standard MSCOCO validation set.",
+    "models_systems": "EfficientDet-D7 (object detection); evaluated against the MSCOCO validation set as the reference.",
+    "institution": "Scale AI (Scale Labs)",
+    "domain": "Robustness to natural adversarial / out-of-distribution inputs in object detection",
+    "eval_trackable": "Yes - §4 Gate 1: a measured empirical result (mAP change) for a specific model.",
+    "action_trackable": "Yes - §4 Gate 2: EfficientDet-D7 is named, so a response could in principle be expected.",
+    "tier": "B",
+    "tier_reasoning": "Tier A condition (1) passes; condition (2) passes (named model); condition (3) FAILS on two of §4's listed exclusions - it is a benchmark-score result with no dangerous threshold crossed, and the named model is the INSTRUMENT used to demonstrate a new dataset rather than the subject of a safety evaluation. Both gates pass but Tier A fails -> Tier B.",
+    "finding_type": "third-party evaluator research paper (company research lab, arXiv:2111.04204 is the primary source)",
+    "scope": "IN, stratified - third-party evaluator (§1)",
+    "source_url": "https://labs.scale.com/papers/natural-adversarial-objects",
+    "access_type": "Open / public models evaluated on a newly released public dataset"
+   },
+   {
+    "finding": "Across a range of object detection architectures, MSCOCO validation performance does not predict NAO performance - robustness is not obtained by training a more accurate model - and diagnostic experiments (patch shuffling, integrated gradients, background replacement) show detectors are over-sensitive to local texture and rely on in-box pixels while ignoring background context.",
+    "finding_quote": "Moreover, by comparing a variety of object detection architectures, we find that better performance on MSCOCO validation set does not necessarily translate to better performance on NAO, suggesting that robustness cannot be simply achieved by training a more accurate model.",
+    "models_systems": "A variety of object detection architectures, not individually named in the abstract as evaluated here.",
+    "institution": "Scale AI (Scale Labs)",
+    "domain": "Evaluation methodology - benchmark accuracy versus robustness in object detection",
+    "eval_trackable": "No - §4 Gate 1: this is a methodology/benchmarking claim about what standard benchmarks fail to measure, not a finding about a particular model.",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "§4 Gate 1 answered NO (methodology finding about benchmark validity), so Tier C and Action Trackable is left blank. Clubbed with the texture/background diagnostics under §5 because they are one analysis of why NAO is hard and no company would respond to them separately.",
+    "finding_type": "third-party evaluator research paper (methodology finding)",
+    "scope": "IN, stratified - third-party evaluator (§1)",
+    "source_url": "https://labs.scale.com/papers/natural-adversarial-objects",
+    "access_type": "Open / public models evaluated on a newly released public dataset"
+   }
+  ]
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Zillow iBuying: What Happened and Lessons Learned",
+  "url": "https://www.robustintelligence.com/blog-posts/zillows-ibuying-failures",
+  "date": "2021-11-16",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 - commentary on publicly reported events; the evidence is Zillow's earnings call, the WSJ and Bloomberg, not the author's own evaluation",
+  "reason": "A 'Perspectives' post on why Zillow Offers shut down (quarterly losses of $330 million, 25% workforce reduction, CEO Rich Barton's earnings-call quote); no model was tested by Robust Intelligence and all figures are secondary reporting.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 21942,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "CAR – Cityscapes Attributes Recognition: A Multi-category Attributes Dataset for Autonomous Vehicles",
+  "url": "https://labs.scale.com/papers/car-cityscapes-attributes-recognition-a-multi-category-attributes-dataset-for-autonomous-vehicles",
+  "date": "2021-11-16",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 tests 1-2 - a dataset-construction paper; annotations released, no model evaluated and no measured behavioural result",
+  "reason": "Scale AI's CAR extends Cityscapes with 32k+ attribute annotations and an API for autonomous-vehicle scene understanding; the abstract reports a dataset and taxonomy, not an evaluation of any AI system.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2299,
+   "pages": null
+  },
+  "findings": []
+ }
+]

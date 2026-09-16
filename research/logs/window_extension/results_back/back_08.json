@@ -1,0 +1,226 @@
+[
+ {
+  "venue": "Citadel AI",
+  "title": "機械学習システムとテスト (2/4) (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/07/19/machine-learning-systems-and-testing-2-4",
+  "date": "2022-07-19",
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 hard drop — non-English-only output",
+  "reason": "Japanese-language Citadel AI blog (part 2 of a 4-part series on testing ML pipelines); body is entirely Japanese with no English version at this URL, so it is a §1 hard drop before any finding test is reached.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8693,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Auditing vs Assurance: What's the Difference?",
+  "url": "https://www.holisticai.com/blog/auditing-vs-assurance-whats-the-difference",
+  "date": "2022-08-05",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 tests 1 and 2 — definitional explainer, no evaluator-asserted evidence-backed claim",
+  "reason": "Holistic AI explainer defining 'audit' vs 'assurance' and listing the five lifecycle stages an audit can examine; no system was tested and no measured result, observed behaviour or process fact is reported.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5229,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Introducing the ML Model Attribution Challenge",
+  "url": "https://www.robustintelligence.com/blog-posts/ml-model-attribution-challenge",
+  "date": "2022-08-09",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — announcements contain no findings",
+  "reason": "Call for contestants for the ML Model Attribution Challenge (runs 12 Aug–9 Sep 2022, prizes up to USD $10,000); it announces a competition that had not yet run, so there is no measured result to code.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 18847,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Assessing the Impact of Algorithmic Systems",
+  "url": "https://www.holisticai.com/blog/assessing-the-impact-of-algorithmic-systems",
+  "date": "2022-08-10",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 tests 1 and 2 — explainer on AIAs/DPIAs and pending legislation, no evidence-backed claim",
+  "reason": "Holistic AI explainer distinguishing Algorithmic Impact Assessments from Data Protection Impact Assessments and summarising the EU AI Act, US Algorithmic Accountability Act and California WTAA; nothing is evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5909,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Introducing ML:Integrity",
+  "url": "https://www.robustintelligence.com/blog-posts/introducing-ml-integrity",
+  "date": "2022-08-15",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — event announcement plus opinion; opinions and plans are not findings",
+  "reason": "Robust Intelligence CEO's announcement of the October ML:Integrity conference plus a conceptual argument that 'AI risk = (likelihood of an error) x (its potential effect)'; the only quantitative claim (70% of enterprises) is attributed to a Gartner report, failing §2 test 1.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 14340,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "NIST's AI Risk Management Framework Explained",
+  "url": "https://www.holisticai.com/blog/nists-ai-risk-management-framework-explained",
+  "date": "2022-08-19",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — summary of someone else's work (NIST's draft AI RMF)",
+  "reason": "Holistic AI explainer walking through the Govern/Map/Measure/Manage core of NIST's second-draft AI RMF; every substantive claim is NIST's, not Holistic AI's, and no system was assessed.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6743,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Supporting the Royal Australian Navy's Campaign Plan for Robotics and Autonomous Systems: Enhancing Innovation",
+  "url": "https://www.rand.org/pubs/research_reports/RRA1377-3.html",
+  "date": "2022-08-19",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — recommendations and approaches, not evidence-backed evaluation findings",
+  "reason": "RAND Australia advisory study for the Royal Australian Navy on innovation and rapid-acquisition practices for robotics/autonomous systems and AI; its 'Key Takeaways' and 'Recommendations' are prescriptive acquisition-process advice, and no AI model or system was evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8088,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Facial Recognition is a Controversial and High-Risk Technology. Algorithmic Risk Management Can Help",
+  "url": "https://www.holisticai.com/blog/facial-recognition-controversial-high-risk-technology-algorithmic-risk-management",
+  "date": "2022-08-26",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 — comparator/third-party results cited in passing, not asserted by the evaluator",
+  "reason": "Holistic AI commentary on facial recognition risk; every empirical claim (Gender Shades, NIST's 189-algorithm investigation, the Detroit and Met police failure rates) is someone else's result cited in passing, and the rest is risk-management advice.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5372,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "How Hired Chose Holistic AI to be Their Auditing Partner",
+  "url": "https://www.holisticai.com/blog/how-hired-chose-holistic-ai-to-be-their-auditing-partner",
+  "date": "2022-09-02",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — partnership news contains no findings; results are forward-looking",
+  "reason": "Holistic AI post on being selected as Hired's bias-audit partner; it states the audit examined explainability, bias and privacy but reports no result, saying only that 'the results of this audit will soon be made public', so nothing is evidence-backed here (§2 test 2).",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3648,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Why Do We Need AI Auditing and Assurance?",
+  "url": "https://www.holisticai.com/blog/why-do-we-need-ai-auditing-and-assurance",
+  "date": "2022-09-25",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 — recounts third-party investigations, not the evaluator's own work",
+  "reason": "Holistic AI post arguing the need for AI auditing by recounting the ProPublica COMPAS investigation, Amazon's scrapped resume tool and the Apple Card credit-limit controversy; all three are other parties' findings summarised here.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5302,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "New York City Bias Audit Law: Here's Everything You Need to Know",
+  "url": "https://www.holisticai.com/blog/new-york-city-bias-audit-law",
+  "date": "2022-09-26",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 tests 1 and 2 — regulatory explainer summarising DCWP's proposed amendments",
+  "reason": "Holistic AI explainer on NYC Local Law 144 and the DCWP's 19 September 2022 proposed amendments (independent-auditor definition, selection rate and impact ratio requirements); it reports regulation, not an evaluation.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8227,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Process evaluation of the Multi-Agency Advisory Service (MAAS) for AI and data-driven technologies in health and social care",
+  "url": "https://www.rand.org/randeurope/research/projects/2022/maas-process-evaluation.html",
+  "date": "2022-10-11",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — project page describing work in progress, no results reported",
+  "reason": "RAND Europe project page for a commissioned process evaluation of the MAAS advisory service; it lists the evaluation's objectives and methods and states future work ('We will also interview developers...'), reporting no results, and MAAS is a regulatory advisory service rather than an AI model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3183,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "How to Manage the Risk of AI Bias in Identity Verification",
+  "url": "https://www.holisticai.com/blog/the-risk-of-ai-bias-in-identity-verification",
+  "date": "2022-10-20",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — conceptual explainer and service pitch, no measured result",
+  "reason": "Holistic AI/Braithwate explainer on how identity-verification ML works and how unrepresentative training data can produce differential false-rejection and false-acceptance rates; the claims are generic mechanism description and advice, with no IDV system tested.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6938,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Moving in the Right Direction: AI Bill of Rights",
+  "url": "https://www.robustintelligence.com/blog-posts/ai-bill-of-rights",
+  "date": "2022-10-27",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — opinion piece; opinions and forward-looking commentary are not findings",
+  "reason": "Robust Intelligence policy commentary on the White House Blueprint for an AI Bill of Rights, quoting its five principles and arguing it is non-binding and under-covers education and law enforcement; this is opinion about policy, not an evaluation.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 20151,
+   "pages": null
+  },
+  "findings": []
+ }
+]

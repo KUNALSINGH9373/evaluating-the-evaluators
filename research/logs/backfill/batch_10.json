@@ -1,0 +1,163 @@
+[
+  {
+    "url": "https://www.far.ai/blog/defense-in-depth",
+    "title": "Layered AI Defenses Have Holes: Vulnerabilities and Key Recommendations",
+    "institution": "FAR.AI + UK AI Security Institute",
+    "decision": "INCLUDED",
+    "rule_cited": "",
+    "resolved_date": "2025-07-01",
+    "date_source": "Byline date displayed on the FAR.AI blog post ('July 1, 2025'); corroborated by the underlying paper arXiv:2506.24068 (v1 submitted 30 Jun 2025).",
+    "findings": [
+      {
+        "finding": "A staged attack (STACK) that defeats a layered safeguard pipeline one layer at a time achieved a 71% attack success rate on the catastrophic-misuse dataset ClearHarm against a Gemma 2 few-shot input/output classifier defence pipeline in limited-feedback black-box conditions, where conventional attacks such as PAP achieved 0%; a transfer version of the attack, developed on one pipeline and applied to a different black-box pipeline, still achieved 33% success.",
+        "finding_quote": "Against the Gemma 2 few-shot classifier pipeline, conventional attacks like PAP achieved 0% success on ClearHarm. STACK achieved 71% success in limited-feedback conditions, where attackers could observe which specific layer—input filter, model, or output filter—blocked a failed attempt.",
+        "institution": "FAR.AI + UK AI Security Institute",
+        "domain": "Jailbreaks; Bio-Chem",
+        "models_systems": "Self-built multi-layer safeguard pipeline using a Gemma 2 few-shot input/output classifier [Report tested: ShieldGemma, Llama Guard, and baseline attacks PAP, ReNeLLM, Best-of-N]",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical model finding — a measured attack success rate against a named safeguard configuration, so eval_trackable=yes. Gate 2 fails limb (3): the pipeline attacked is FAR.AI's own open-source synthetic construction, and the report itself states the test pipelines 'do not perfectly replicate commercial systems' implementations' and used models 'likely much smaller than those deployed in production'; no deployed vendor safeguard was breached, and the named models (Gemma 2, ShieldGemma) are instruments of an attack-methodology study rather than its subject. Tier A explicitly excludes findings where named models are instruments of a methodology study. Both the 71% direct and 33% transfer results are clubbed (§5) because one pipeline-hardening response would answer both. action_trackable=no -> Tier B. §4b does not bite: this is a safeguard bypass on a CBRN/catastrophic-misuse dataset (limbs 1 and 4), not an accuracy/hallucination finding."
+      },
+      {
+        "finding": "Purpose-built open-weight safeguard models performed poorly as defence layers: many showed high failure rates against existing attacks, and ShieldGemma — the best of the purpose-built models tested — could still be defeated by the strongest baseline attack (Persuasive Adversarial Prompts). The best-performing defence was instead an off-the-shelf Gemma 2 model with a simple few-shot prompt, which reduced attack success to 0% on ClearHarm against all three baseline attacks.",
+        "finding_quote": "Many open-weight safeguard models showed high failure rates against existing attacks. ShieldGemma performed best among purpose-built models, though it could still be defeated by the strongest baseline attack we tested, Persuasive Adversarial Prompts (PAP).",
+        "institution": "FAR.AI + UK AI Security Institute",
+        "domain": "Jailbreaks; Eval-methodology",
+        "models_systems": "ShieldGemma (Google), Llama Guard (Meta), Gemma 2 few-shot classifier (Google)",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical measured comparison of named safety classifiers, so eval_trackable=yes. Gate 2 fails limb (3): this is a comparative ranking of open-weight safeguard models inside the evaluators' own pipeline, with a partly reassuring result (0% ASR for the few-shot Gemma 2 classifier against conventional attacks); Tier A explicitly excludes comparative rankings and reassuring nulls, and no specific company response is reasonably expected. action_trackable=no -> Tier B."
+      }
+    ]
+  },
+  {
+    "url": "https://www.peren.gouv.fr/en/perenlab/2024-12-03-hypertrucages/",
+    "title": "What are the risks and limits of generating convincing deepfakes?",
+    "institution": "PEReN (with CNIL/LINC)",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) — general ML/DL subject, deepfake tooling; secondary: §1 non-English-only output",
+    "resolved_date": "2024-12-03",
+    "date_source": "Date slug in PEReN's own URL (…/perenlab/2024-12-03-hypertrucages/); no publication date is displayed in the page body, so this is day-precision from the publisher's URL only.",
+    "findings": [],
+    "exclusion_reason": "The subject of every measured result is off-the-shelf GAN deepfake tooling — the FaceFusion platform and its face-swap/enhancer models (inswapper_128_fp16, simswap_256, gfpgan_1.4) — evaluated with IQA metrics and human annotation on FFHQ face images. The FRONTIER-MODEL RULE names 'deepfake tooling' explicitly among the general ML/DL subjects to drop, and no named frontier AI model or system is the subject of any finding. Secondary ground: apart from a two-sentence English abstract the page carries the notice 'English translation in progress' and the entire substantive report is in French, engaging the §1 hard drop for non-English-only output."
+  },
+  {
+    "url": "https://www.peren.gouv.fr/en/perenlab/2025-02-11_ai_summit/",
+    "title": "Detecting artificial content on social networks: a tool for knowing which detectors to trust",
+    "institution": "PEReN + Viginum",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) — general ML/DL subject, deepfake/synthetic-content detection tooling; secondary: §1 non-English-only output",
+    "resolved_date": "2025-02-11",
+    "date_source": "Date slug in PEReN's own URL (…/perenlab/2025-02-11_ai_summit/), matching the Paris AI Action Summit; no publication date is displayed in the page body, so this is day-precision from the publisher's URL only.",
+    "findings": [],
+    "exclusion_reason": "The report releases an open-source benchmarking harness and measures the performance and transformation-robustness of thirteen academic synthetic-content detectors (CNNDetect, FreqDetect, DIMD, ViT-L/14, gragnaniello_progan, gragnaniello_stylegan2, mandelli, CoDE, Xception, UCF, SPSL, Recce). Those detectors — trained on FaceForensics++, LSUN, ProGAN/StyleGAN2 data — are general ML/DL deepfake-detection tooling, not named frontier AI models and not safety classifiers from a frontier developer, so the FRONTIER-MODEL RULE drops them. The named generative models that appear (DALL-E 3, Midjourney, Stable Diffusion, FLUX.1, DeepFloyd IF) are only the source of test images, i.e. instruments/data, not the subject of any finding. Secondary ground: the page states 'English translation in progress' and the entire substantive report is in French, engaging the §1 hard drop for non-English-only output."
+  },
+  {
+    "url": "https://www.peren.gouv.fr/en/actualites/2026-05-21_iag_et_environnement/",
+    "title": "Generative AI under the environmental microscope: PEReN contributes to the Arcep report",
+    "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+    "decision": "INCLUDED",
+    "rule_cited": "",
+    "resolved_date": "2026-05-21",
+    "date_source": "Page states 'Arcep published an in-depth report on May 21, 2026'; PEReN's own URL slug is 2026-05-21; within the 2026-08-29 corpus cutoff.",
+    "findings": [
+      {
+        "finding": "Across 22 open-weight text-generation models (3B–123B parameters) benchmarked on the Jean Zay supercomputer, GPU inference energy consumption was not determined by parameter count alone: the highest-consuming models were always the largest, but the converse did not hold, and some much smaller models consumed as much as or more than far larger ones.",
+        "finding_quote": "model size is not the only factor: while the large models studied generally consume more energy, their architecture and operating mode play a key role. Some smaller models may have an energy footprint similar to—or even greater than—that of larger models.",
+        "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+        "domain": "Societal",
+        "models_systems": "Llama-3.1-70B-Instruct, Qwen2.5-32B-Instruct, gemma-3-27b-it, Qwen2.5-7B-Instruct, Ministral-8B-Instruct-2410, GLM-4.5-Air, Qwen3-Next-80B-A3B-instruct, Qwen3-30B-A3B-Instruct-2507 (+FP8), QwQ-32B (+AWQ), DeepSeek-R1-Distill-Qwen-32B, Qwen3-30B-A3B-Thinking-2507, Pixtral-Large-Instruct-2411, Mistral-Small-3.2-24B-Instruct-2506, Qwen2.5-VL-7B-Instruct, GLM-4.5V, Qwen3-VL-30B-A3B-Instruct-2507 (+FP8), Qwen3-Coder-30B-A3B-Instruct, Codestral-22B-v0.1, Llama3-Med42-70B",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical measured property of named released models (GPU energy per benchmark question), so eval_trackable=yes. Gate 2 fails limb (3): it is a cross-model comparative/architecture result with no concerning safety threshold crossed and no accountable company — the named models are instruments of a study of what drives energy use, not its subject. action_trackable=no -> Tier B. Note: the English PEReN page says '22 text-generating AI models'; the French technical report's conclusion says 23 while its Annex 1 table lists 22 distinct models — 22 is used as the source-verifiable count."
+      },
+      {
+        "finding": "In a generalised mixed-effects regression on GPU inference energy, mixture-of-experts models consumed on average 45±12% less energy than dense models with an equivalent total parameter count (though more than dense models with an equivalent count of activated parameters).",
+        "finding_quote": "the models studied that use a “mixed expert” architecture (dividing an AI model into several specialized sub-networks, the “experts,” dynamically activated depending on the task) consume 45% less energy than equivalent dense models studied.",
+        "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+        "domain": "Societal",
+        "models_systems": "GLM-4.5-Air, Qwen3-Next-80B-A3B-instruct, Qwen3-30B-A3B-Instruct-2507, Qwen3-VL-30B-A3B-Instruct-2507, Qwen3-Coder-30B-A3B-Instruct (MoE) vs Llama-3.1-70B-Instruct, Qwen2.5-32B-Instruct, gemma-3-27b-it, Qwen2.5-7B-Instruct, Ministral-8B-Instruct-2410 (dense)",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical, statistically modelled measurement over named models, eval_trackable=yes. Gate 2 fails limb (3): an architecture-class efficiency comparison, no concerning result and no company for whom a response is reasonably expected; Tier A excludes comparative results with no dangerous threshold crossed. action_trackable=no -> Tier B. Quote is from PEReN's English page and is accurate but rounds the report's stated 45±12%."
+      },
+      {
+        "finding": "8-bit quantization had a statistically significant effect on GPU inference energy consumption, giving an average saving of 39±18%.",
+        "finding_quote": "quantization (reducing the precision of calculations) yields an average savings of 39%.",
+        "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+        "domain": "Societal",
+        "models_systems": "Qwen3-30B-A3B-Instruct-2507-FP8, Qwen3-VL-30B-A3B-Instruct-2507-FP8, QwQ-32B-AWQ vs their unquantized counterparts",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical measured effect over named models, eval_trackable=yes. Gate 2 fails limb (3): an efficiency-lever measurement, not a concerning model behaviour, and no specific company response is reasonably expected. action_trackable=no -> Tier B. The English page quote omits that the measured effect is specifically 8-bit quantization and drops the ±18 confidence band, both of which are stated in the source technical report."
+      },
+      {
+        "finding": "Enabling reasoning mode raised GPU inference energy consumption by +92% on average, with an effect that varied sharply by task (+849% on HumanEval, +41% on SimpleQA) and quality gains that were sometimes substantial and sometimes negligible; the two GLM-4.5 models, which have no non-reasoning variant, were the most energy-consuming models in the study across every benchmark they were evaluated on.",
+        "finding_quote": "En moyenne il augmente significativement la consommation énergétique (+92 %)",
+        "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+        "domain": "Societal",
+        "models_systems": "QwQ-32B, QwQ-32B-AWQ, Qwen3-30B-A3B-Thinking-2507, DeepSeek-R1-Distill-Qwen-32B, GLM-4.5-Air, GLM-4.5V",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical measured effect on named reasoning models, eval_trackable=yes. Gate 2 fails limb (3): efficiency/quality trade-off comparison, no concerning safety result, no accountable company. action_trackable=no -> Tier B. Quote deliberately stops before a page break in the source PDF (page 13/14) and so does not include the +849%/+41% sentence; those two figures are verified in the source text on the following page but are not joined into the quote. NOTE — PEReN's English summary page misstates this result twice ('can increase energy consumption by up to 92%' when 92% is the mean effect, and 'performance gains varying by task (up to 849% for code generation)' when +849% is the energy increase on HumanEval, not a performance gain); the technical report's figures are used here."
+      },
+      {
+        "finding": "The three domain-specialised open-weight models tested did not systematically outperform generalist models on their specialised tasks: Qwen3-Coder-30B-A3B-Instruct scored worse on HumanEval than the Instruct version of Qwen3-30B-A3B, Codestral-22B-v0.1 performed worse on HumanEval than almost all more recent models with no energy saving, and although Llama3-Med42-70B beat its Llama-3.1-70B-Instruct base on HealthBench, many generalist models offered a better performance-to-energy ratio.",
+        "finding_quote": "Pour les modèles de code, la version Coder de Qwen3-30B-A3B produit un moins bon score que sa version Instruct.",
+        "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+        "domain": "Societal",
+        "models_systems": "Qwen3-Coder-30B-A3B-Instruct, Codestral-22B-v0.1, Llama3-Med42-70B, Qwen3-30B-A3B-Instruct-2507, Llama-3.1-70B-Instruct",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical benchmark results for named models, eval_trackable=yes. Gate 2 fails limb (3): a comparative ranking of specialised versus generalist models on capability benchmarks, explicitly excluded from Tier A; no concerning safety result and no company response reasonably expected. action_trackable=no -> Tier B. The report itself flags that only three specialised open models could be included, so no clear conclusion could be drawn."
+      },
+      {
+        "finding": "Multimodal models matched text-only models in both performance and energy consumption on purely textual tasks, but consumed systematically more on image tasks — roughly double for Mistral-Small-3.2-24B-Instruct-2506 and GLM-4.5V on image understanding compared with purely textual tasks.",
+        "finding_quote": "La Figure 10 montre par exemple que la consommation des modèles Mistral-Small-3.2-24B-Instruct-2506 et GLM-4.5V est de l’ordre du double sur de la compréhension d’image par rapport à des tâches purement textuelles.",
+        "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+        "domain": "Societal",
+        "models_systems": "Mistral-Small-3.2-24B-Instruct-2506, GLM-4.5V, Pixtral-Large-Instruct-2411, Qwen2.5-VL-7B-Instruct, Qwen3-VL-30B-A3B-Instruct-2507",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical measurement on named multimodal models, eval_trackable=yes. Gate 2 fails limb (3): comparative efficiency measurement, no concerning safety result, no accountable company. action_trackable=no -> Tier B."
+      },
+      {
+        "finding": "Response quality was not an increasing function of energy consumption: independently of specialisation, multimodality or reasoning mode, some energy-efficient models matched the benchmark performance of much more energy-intensive ones, so limiting energy footprint does not necessarily require a performance trade-off.",
+        "finding_quote": "performance and energy efficiency are not mutually exclusive: The results show that some energy-efficient models offer performance equivalent to that of more energy-intensive models.",
+        "institution": "PEReN (Pôle d'Expertise de la Régulation Numérique, France)",
+        "domain": "Societal",
+        "models_systems": "22 open-weight text and multimodal models from Alibaba, Google, Meta, Mistral AI and Z.ai (full list in Annex 1 of the PEReN technical report)",
+        "access_type": "Post-deployment",
+        "finding_type": "capability-finding",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1: empirical cross-model result, eval_trackable=yes. Gate 2 fails limb (3): a reassuring, comparative result across models rather than a concerning finding about a named system; Tier A excludes comparative rankings and reassuring nulls. action_trackable=no -> Tier B."
+      }
+    ]
+  }
+]

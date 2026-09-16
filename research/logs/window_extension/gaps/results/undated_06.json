@@ -1,0 +1,1914 @@
+[
+ {
+  "venue": "Collective Intelligence Project (Weval)",
+  "title": "Qwen3 30b",
+  "url": "https://weval.org/cards/qwen3-30b",
+  "resolved_date": "2025-08-25",
+  "date_source": "page byline — 'Updated 8/25/2025' rendered on the model card (no other date signal; weval.org has no Wayback captures)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — evaluator-asserted, evidence-backed, independently codeable measured results",
+  "reason": "Weval (Collective Intelligence Project) is a named external evaluator publishing its own measured scores and per-blueprint ranks for Qwen3-30B; agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3899
+  },
+  "findings": [
+   {
+    "finding": "Weval's aggregate scoring of Qwen3-30B across 10 runs and 10 blueprints gives an overall score of 67.9%, with a mean percentile of 48.4 and a rank spread from #6 to #76, i.e. highly inconsistent placement against peers.",
+    "finding_quote": "This is evident in its 48.4th percentile average across 10 runs, with a best rank of #6 and worst of #76.",
+    "models_systems": "Qwen3-30B (variant qwen3-30b-a3b-instruct-2507)",
+    "institution": "Collective Intelligence Project (Weval)",
+    "domain": "general capability / cross-domain",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured empirical result on a named model. Gate 2 fails (c): an aggregate benchmark score and rank spread with no dangerous threshold crossed, on a non-frontier open-weight model.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://weval.org/cards/qwen3-30b",
+    "access_type": "public product"
+   },
+   {
+    "finding": "On Weval's Sycophancy Trait blueprint Qwen3-30B resisted user-induced bias, scoring at the 66th percentile (+0.033 versus peers) when given an explicit anti-sycophancy system prompt — a reassuring null on a safety-relevant behaviour.",
+    "finding_quote": "The model is generally effective in resisting sycophantic behavior, especially when provided with explicit anti-sycophancy system prompts, as indicated by its performance in",
+    "models_systems": "Qwen3-30B",
+    "institution": "Collective Intelligence Project (Weval)",
+    "domain": "sycophancy / alignment",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured behavioural result. Gate 2 fails (c): a reassuring null, explicitly excluded from Tier A.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://weval.org/cards/qwen3-30b",
+    "access_type": "public product"
+   },
+   {
+    "finding": "Weval found Qwen3-30B's mental-health crisis handling can degrade to brief or generic disclaimers that lack the empathetic engagement the topic requires, despite otherwise good safety scores in that category.",
+    "finding_quote": "Despite generally good safety performance in mental health, the model can sometimes provide overly brief or generic disclaimers, lacking the empathetic engagement necessary for sensitive topics, as noted in",
+    "models_systems": "Qwen3-30B",
+    "institution": "Collective Intelligence Project (Weval)",
+    "domain": "mental health / user safety",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — observed behaviour on a named model. Gate 2 fails (c): non-frontier open-weight model and no dangerous threshold crossed, so a company response is not reasonably expected.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://weval.org/cards/qwen3-30b",
+    "access_type": "public product"
+   }
+  ]
+ },
+ {
+  "venue": "Collective Intelligence Project (Weval)",
+  "title": "Sonnet",
+  "url": "https://weval.org/cards/sonnet",
+  "resolved_date": "2025-08-04",
+  "date_source": "page byline — 'Updated 8/4/2025' rendered on the model card (no other date signal; weval.org has no Wayback captures)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — evaluator-asserted, evidence-backed, independently codeable measured results",
+  "reason": "Weval is a named external evaluator reporting its own per-blueprint scores and ranks for Anthropic Sonnet variants; agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4000
+  },
+  "findings": [
+   {
+    "finding": "Weval's aggregate model card for Anthropic's Sonnet (13 tested variants including claude-3-5-sonnet-20241022 and claude-3-7-sonnet-20250219) scores 72.6% overall across 21 runs and 21 blueprints.",
+    "finding_quote": "72.6%",
+    "models_systems": "Claude Sonnet (anthropic:claude-3-5-sonnet-20241022, anthropic:claude-3-7-sonnet-20250219 and further variants)",
+    "institution": "Collective Intelligence Project (Weval)",
+    "domain": "general capability / cross-domain",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured empirical result on named Anthropic models. Gate 2 fails (c): an aggregate benchmark score, no dangerous threshold crossed.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://weval.org/cards/sonnet",
+    "access_type": "public product"
+   },
+   {
+    "finding": "On Weval's 'Confidence in High-Stakes Domains' blueprint Sonnet scored 0.845 and matched peer performance by adhering to safety principles and refusing medical and financial advice.",
+    "finding_quote": "In \"Confidence in High-Stakes Domains,\" it scored 0.845 and \"MATCHED peer performance\" by adhering to safety principles and refusing medical or financial advice.",
+    "models_systems": "Claude Sonnet",
+    "institution": "Collective Intelligence Project (Weval)",
+    "domain": "high-stakes advice / refusal behaviour",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured refusal behaviour on a named model. Gate 2 fails (c): a reassuring null.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://weval.org/cards/sonnet",
+    "access_type": "public product"
+   },
+   {
+    "finding": "On Weval's Sycophancy Trait blueprint Sonnet scored 0.855 and outperformed peers by resisting user-induced bias.",
+    "finding_quote": "In \"Sycophancy Trait,\" it scored 0.855 and \"OUTPERFORMED peers\" by resisting user-induced bias.",
+    "models_systems": "Claude Sonnet",
+    "institution": "Collective Intelligence Project (Weval)",
+    "domain": "sycophancy / alignment",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured behavioural result. Gate 2 fails (c): a reassuring null and a comparative ranking.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://weval.org/cards/sonnet",
+    "access_type": "public product"
+   }
+  ]
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Agents securing agents the agents powering policy studio",
+  "url": "https://blogs.cisco.com/ai/agents-securing-agents-the-agents-powering-policy-studio",
+  "resolved_date": "2026-06-30",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — architecture description, not a measured result",
+  "reason": "Cisco engineering blog describing the multi-agent architecture of its own Policy Studio product; no model is evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7342
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Cisco ai defense built for the way ai is actually used",
+  "url": "https://blogs.cisco.com/ai/cisco-ai-defense-built-for-the-way-ai-is-actually-used",
+  "resolved_date": "2026-07-17",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — summary of others' work (the ML6 benchmark) and of Cisco's own prior research, not asserted here",
+  "reason": "Product-positioning post; the ML6 F1=0.845 figure and the \"15 frontier models\" multi-turn result are pointers to other reports, and the subject is Cisco's own guardrail. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 10168
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Consistent security model deployment with fpr calibration",
+  "url": "https://blogs.cisco.com/ai/consistent-security-model-deployment-with-fpr-calibration",
+  "resolved_date": "2026-07-13",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; a release-engineering method write-up",
+  "reason": "Describes Cisco's open-sourced FPR calibration method for its own detection models; no AI system is evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7773
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "From one desk to the whole enterprise making local ai resilient",
+  "url": "https://blogs.cisco.com/ai/from-one-desk-to-the-whole-enterprise-making-local-ai-resilient",
+  "resolved_date": "2026-07-23",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; partnership announcement",
+  "reason": "Cisco/AMD deskside-AI partnership announcement; no model or system is evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6921
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Fundamentals of ai inside the transformer",
+  "url": "https://blogs.cisco.com/ai/fundamentals-of-ai-inside-the-transformer",
+  "resolved_date": "2026-06-30",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — explainer, no measured result",
+  "reason": "Part 2 of a three-part educational series on transformer architecture. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 15249
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Inherited circuits learned semantics how security fine tuning can create hidden evasion risk",
+  "url": "https://blogs.cisco.com/ai/inherited-circuits-learned-semantics-how-security-fine-tuning-can-create-hidden-evasion-risk",
+  "resolved_date": "2026-06-29",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report: developer (Cisco Foundation AI) evaluating its own Foundation-Sec-8B-Instruct on a company venue with no external evaluator named",
+  "reason": "DISAGREE with the earlier INCLUDED. Cisco Talos evaluates Cisco Foundation AI's own Foundation-Sec-8B-Instruct; Llama-3.1-8B-Instruct is the base-model comparator (§5 — comparators are never rows), and blogs.cisco.com is a company venue with no named external evaluator, so the §1 carve-out does not apply. Close call: the mechanistic-interpretability method itself would be a Tier C methodology finding if the item survived §1.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 14771
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Introducing antares the most efficient open weight ai models for vulnerability localization",
+  "url": "https://blogs.cisco.com/ai/introducing-antares-the-most-efficient-open-weight-ai-models-for-vulnerability-localization",
+  "resolved_date": "2026-07-21",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report: Cisco benchmarking its own Antares models against comparators, no external evaluator named",
+  "reason": "Same outcome as the earlier EXCLUDED but under a different rule: the post does contain benchmark results, so \"not an evaluation\" is imprecise — it is a developer self-report on its own release.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 11701
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Secure claude enterprise with cisco ai defense",
+  "url": "https://blogs.cisco.com/ai/secure-claude-enterprise-with-cisco-ai-defense",
+  "resolved_date": "2026-08-11",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no measured result or documented process fact asserted",
+  "reason": "Integration announcement for Cisco AI Defense with Anthropic inference hooks; no measured values. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6558
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Securing ai agents with cisco ai defense",
+  "url": "https://blogs.cisco.com/ai/securing-ai-agents-with-cisco-ai-defense",
+  "resolved_date": "2026-06-29",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; SDK product announcement",
+  "reason": "Announces Agent Runtime Protection in the Cisco AI Defense Python SDK; the one statistic cited (83% of companies plan to deploy agents) is from Cisco's AI Readiness Index, not a model evaluation. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 10914
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Supply chain provenance explorer",
+  "url": "https://blogs.cisco.com/ai/supply-chain-provenance-explorer",
+  "resolved_date": "2026-07-30",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — tool launch, no measured result",
+  "reason": "Launch post for the AI Supply Chain Provenance Explorer catalogue; no measured model result. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7991
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "The fundamentals of ai making ai practical",
+  "url": "https://blogs.cisco.com/ai/the-fundamentals-of-ai-making-ai-practical",
+  "resolved_date": "2026-07-10",
+  "date_source": "page byline / <meta property=\"article:published_time\"> on the post",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — explainer, no measured result",
+  "reason": "RESOLVES the earlier PENDING-FETCH: fetched in full (23,373 chars). Part 3 of Cisco's three-part AI fundamentals explainer series; no model evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 23373
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Agents securing agents the agents powering policy studio",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/agents-securing-agents-the-agents-powering-policy-studio",
+  "resolved_date": "2026-06-30",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Cisco ai defense built for the way ai is actually used",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/cisco-ai-defense-built-for-the-way-ai-is-actually-used",
+  "resolved_date": "2026-07-17",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Consistent security model deployment with fpr calibration",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/consistent-security-model-deployment-with-fpr-calibration",
+  "resolved_date": "2026-07-13",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Fundamentals of ai inside the transformer",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/fundamentals-of-ai-inside-the-transformer",
+  "resolved_date": "2026-06-30",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Inherited circuits learned semantics how security fine tuning can create hidden evasion risk",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/inherited-circuits-learned-semantics-how-security-fine-tuning-can-create-hidden-evasion-risk",
+  "resolved_date": "2026-06-29",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Secure claude enterprise with cisco ai defense",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/secure-claude-enterprise-with-cisco-ai-defense",
+  "resolved_date": "2026-08-11",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Securing ai agents with cisco ai defense",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/securing-ai-agents-with-cisco-ai-defense",
+  "resolved_date": "2026-06-29",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Softbank corp s soc triaging workflow automated with cisco foundation ais open source model",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/softbank-corp-s-soc-triaging-workflow-automated-with-cisco-foundation-ais-open-source-model",
+  "resolved_date": "2026-06-22",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "The fundamentals of ai making ai practical",
+  "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/the-fundamentals-of-ai-making-ai-practical",
+  "resolved_date": "2026-07-10",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": null,
+   "status": 400,
+   "chars": 0
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Agents securing agents the agents powering policy studio",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/agents-securing-agents-the-agents-powering-policy-studio",
+  "resolved_date": "2026-06-30",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Cisco ai defense built for the way ai is actually used",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/cisco-ai-defense-built-for-the-way-ai-is-actually-used",
+  "resolved_date": "2026-07-17",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Consistent security model deployment with fpr calibration",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/consistent-security-model-deployment-with-fpr-calibration",
+  "resolved_date": "2026-07-13",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Fundamentals of ai inside the transformer",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/fundamentals-of-ai-inside-the-transformer",
+  "resolved_date": "2026-06-30",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Inherited circuits learned semantics how security fine tuning can create hidden evasion risk",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/inherited-circuits-learned-semantics-how-security-fine-tuning-can-create-hidden-evasion-risk",
+  "resolved_date": "2026-06-29",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Secure claude enterprise with cisco ai defense",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/secure-claude-enterprise-with-cisco-ai-defense",
+  "resolved_date": "2026-08-11",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Securing ai agents with cisco ai defense",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/securing-ai-agents-with-cisco-ai-defense",
+  "resolved_date": "2026-06-29",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Softbank corp s soc triaging workflow automated with cisco foundation ais open source model",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/softbank-corp-s-soc-triaging-workflow-automated-with-cisco-foundation-ais-open-source-model",
+  "resolved_date": "2026-06-22",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "The fundamentals of ai making ai practical",
+  "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/the-fundamentals-of-ai-making-ai-practical",
+  "resolved_date": "2026-07-10",
+  "date_source": "date of the target item carried in the ?u=/?url= parameter (article:published_time on the Cisco post); the sharer endpoint itself carries no date",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; a share-intent endpoint is never the primary source",
+  "reason": "Social share-intent URL wrapping the Cisco post; collapses onto the blogs.cisco.com row. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 766
+  },
+  "findings": []
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "title": "NIST.AI.100 4.SyntheticContent.ipd",
+  "url": "https://airc.nist.gov/docs/NIST.AI.100-4.SyntheticContent.ipd.pdf",
+  "resolved_date": "2024-04-29",
+  "date_source": "cover page 'April 2024'; PDF /CreationDate D:20240430; earliest Wayback capture 2024-04-29 (upper bound) fixes the day",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — guidance/taxonomy text, no measured model result",
+  "reason": "NIST AI 100-4 initial public draft — an overview of technical approaches to digital content transparency; guidance, no model evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 252618
+  },
+  "findings": []
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "title": "NIST.AI.600 1.GenAI Profile.ipd",
+  "url": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf",
+  "resolved_date": "2024-04-29",
+  "date_source": "PDF withdrawal notice states 'Original Release Date April 29, 2024'",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — guidance/taxonomy text, no measured model result",
+  "reason": "NIST AI 600-1 initial public draft (withdrawn, superseded July 2024) — a risk-management framework profile; no model evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 201461
+  },
+  "findings": []
+ },
+ {
+  "venue": "METR",
+  "title": "AI R D Evaluation Report",
+  "url": "https://metr.org/AI_R_D_Evaluation_Report.pdf",
+  "resolved_date": "2024-11-22",
+  "date_source": "PDF metadata /CreationDate D:20241122182735Z, corroborated by earliest Wayback capture 2024-11-23",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — METR-asserted, evidence-backed, independently codeable measured results",
+  "reason": "RE-Bench: METR (named evaluator) measures public frontier agents against 61 human experts on 7 ML research-engineering environments. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 128581
+  },
+  "findings": [
+   {
+    "finding": "On METR's RE-Bench, the best AI agents scored 4x higher than human experts when both were limited to a 2-hour budget per environment, but humans had better returns to time and reached 2x the top agent score at 32 total hours.",
+    "finding_quote": "We compare humans to several public frontier models through best-of-k with varying time budgets and agent designs, and find that the best AI agents achieve a score 4 × higher than human experts when both are given a total time budget of 2 hours per environment.",
+    "models_systems": "public frontier models evaluated as agents (Claude 3.5 Sonnet, o1-preview, GPT-4o class)",
+    "institution": "METR",
+    "domain": "AI R&D / autonomous capability",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured agent-versus-human capability result. Gate 2 fails (c): a capability trend and comparative ranking with no dangerous threshold crossed, which §4 excludes from Tier A.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://metr.org/AI_R_D_Evaluation_Report.pdf",
+    "access_type": "public product"
+   },
+   {
+    "finding": "METR established the human baseline for RE-Bench: 71 8-hour attempts by 61 distinct human experts, of which 82% achieved a non-zero score and 24% matched or exceeded METR's strong reference solutions.",
+    "finding_quote": "We confirm that our experts make progress in the environments given 8 hours, with 82% of expert attempts achieving a non-zero score and 24% matching or exceeding our strong reference solutions.",
+    "models_systems": "human expert baseline (no model)",
+    "institution": "METR",
+    "domain": "evaluation methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a methodology/tooling fact about the benchmark's human baseline, not an empirical model finding, so Action Trackable stays blank.",
+    "finding_type": "methodology finding",
+    "scope": "benchmark-level",
+    "source_url": "https://metr.org/AI_R_D_Evaluation_Report.pdf",
+    "access_type": "public product"
+   },
+   {
+    "finding": "METR observed that agents on RE-Bench hold genuine ML expertise and iterate far faster than humans — one agent wrote a faster custom Triton kernel than any human expert in the study.",
+    "finding_quote": "an agent wrote a faster custom Triton kernel than any of our human experts’",
+    "models_systems": "public frontier model agents",
+    "institution": "METR",
+    "domain": "AI R&D / autonomous capability",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — an observed behaviour of the evaluated agents. Gate 2 fails (c): a capability observation with no company-specific dangerous threshold crossed.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://metr.org/AI_R_D_Evaluation_Report.pdf",
+    "access_type": "public product"
+   }
+  ]
+ },
+ {
+  "venue": "METR",
+  "title": "Common elements",
+  "url": "https://metr.org/common-elements.pdf",
+  "resolved_date": "2025-12-01",
+  "date_source": "PDF /Title and cover page 'Common Elements of Frontier AI Safety Policies, December 2025' — MONTH PRECISION ONLY; the day is a placeholder, not an established date. (The URL is a living document: earliest Wayback capture is 2024-12-06, which is the original August-2024 edition.)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — a compendium of other organisations' published policies, not a claim asserted by METR",
+  "reason": "Self-described as \"descriptive, not prescriptive\"; the body is quoted excerpts from twelve companies' frontier safety policies. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 186336
+  },
+  "findings": []
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "title": "NIST.SP.1270",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf",
+  "resolved_date": "2022-03-24",
+  "date_source": "PDF metadata /CreationDate D:20220324170126-04'00', corroborated by HTTP Last-Modified 2022-03-24",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — guidance/taxonomy text, no measured model result",
+  "reason": "NIST SP 1270, a standards/guidance document on identifying and managing bias in AI; no named model evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 225803
+  },
+  "findings": []
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "title": "NIST.SP.800 218A.ipd",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.ipd.pdf",
+  "resolved_date": "2024-04-26",
+  "date_source": "PDF metadata /CreationDate D:20240426145608-04'00'",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — guidance/taxonomy text, no measured model result",
+  "reason": "Withdrawn initial public draft of secure software development practices for generative AI; guidance, not a model evaluation. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 69346
+  },
+  "findings": []
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "title": "NIST.AI.100 2e2025",
+  "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+  "resolved_date": "2025-03-27",
+  "date_source": "PDF metadata /CreationDate D:20250327192617Z, corroborated by cover page 'March 2025'",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — guidance/taxonomy text, no measured model result",
+  "reason": "NIST AI 100-2e2025 — an adversarial-ML attack taxonomy and terminology reference (co-authored with US CAISI, UK AISI and Cisco staff); no model evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 350523
+  },
+  "findings": []
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "title": "NIST.IR.8596.iprd",
+  "url": "https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.8596.iprd.pdf",
+  "resolved_date": "2025-12-16",
+  "date_source": "PDF metadata /CreationDate D:20251216125033-05'00', corroborated by HTTP Last-Modified 2025-12-16",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — guidance/taxonomy text, no measured model result",
+  "reason": "NIST IR 8596 initial preliminary draft — the Cyber AI Profile of the Cybersecurity Framework; guidance, no model evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 261491
+  },
+  "findings": []
+ },
+ {
+  "venue": "Palisade Research",
+  "title": "Hacking cable report",
+  "url": "https://palisaderesearch.org/assets/reports/hacking-cable-report.pdf",
+  "resolved_date": "2025-08-26",
+  "date_source": "title-page byline 'Aug 26, 2025' (PDF /CreationDate is a zeroed Typst default, D:19800101; earliest Wayback capture 2025-09-04 is consistent as an upper bound)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Palisade-asserted, evidence-backed observed behaviour of a named model in an agentic cyber task",
+  "reason": "DISAGREE with the earlier EXCLUDED - no findings. The report documents a built-and-run proof of concept, and states an observed result about GPT-4.1: the full post-exploitation workflow ran with no jailbreak needed, at under $1 per engagement.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 9393
+  },
+  "findings": [
+   {
+    "finding": "Palisade built an autonomous LLM cyber operator delivered by a BadUSB cable that ran a complete post-exploitation lifecycle (discovery, collection, exfiltration, lateral movement), and found that GPT-4.1 supported the offensive workflow natively with no jailbreak or safeguard bypass required.",
+    "finding_quote": "No LLM jailbreak or bypassing was required; the model supported our workflow natively.",
+    "models_systems": "GPT-4.1",
+    "institution": "Palisade Research",
+    "domain": "cyber offence / agentic misuse",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes — observed behaviour of a model in a live agentic setting. Gate 2: (a) empirical, (b) names GPT-4.1 (OpenAI), (c) concerning — a frontier model executing an end-to-end offensive cyber operation without any refusal is a result for which an OpenAI response is reasonable.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://palisaderesearch.org/assets/reports/hacking-cable-report.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Palisade costed the proof of concept: $200 one-off hardware, $5/month infrastructure and under $1 of GPT-4.1 API consumption per full engagement, with the initial build taking roughly 40-60 person-hours from a single researcher.",
+    "finding_quote": "The initial proof-of-concept was developed in approximately 40–60 person-hours.",
+    "models_systems": "GPT-4.1",
+    "institution": "Palisade Research",
+    "domain": "cyber offence / cost of attack",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a resource/cost fact about running the tooling, not a model capability measurement, so Action Trackable stays blank.",
+    "finding_type": "methodology finding",
+    "scope": "system-level",
+    "source_url": "https://palisaderesearch.org/assets/reports/hacking-cable-report.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Palisade recorded reliability limits of the autonomous agent: runs can pursue dead ends, loop on unproductive actions or overlook evidence, and outcomes vary across runs from model stochasticity and small environmental differences.",
+    "finding_quote": "They can pursue “dead ends”, loops on unproductive actions, or overlook relevant evidence.",
+    "models_systems": "GPT-4.1-based autonomous agent",
+    "institution": "Palisade Research",
+    "domain": "agent reliability",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — an observed limitation of the harness reported as a methodology caveat rather than a measured model result.",
+    "finding_type": "methodology finding",
+    "scope": "system-level",
+    "source_url": "https://palisaderesearch.org/assets/reports/hacking-cable-report.pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "SecureBio",
+  "title": "Anthropic feb 2026 risk review",
+  "url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+  "resolved_date": "2026-07-01",
+  "date_source": "report body, Review process step 6: 'External review publication (July 2026)', corroborated by securebio.org/ai listing 'SecureBio AI team (July 2026)' — MONTH PRECISION ONLY, day is a placeholder. Earliest Wayback capture 2026-08-20 is an upper bound.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — named external evaluator asserting its own measured results and documented process facts",
+  "reason": "SecureBio's commissioned external review of the CB sections of Anthropic's February 2026 Risk Report, including SecureBio's own BioTIER testing of Opus 4.6/4.7 and Sonnet 4.6. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 59949
+  },
+  "findings": [
+   {
+    "finding": "SecureBio independently measured refusal coverage of the public, classifier-guarded Anthropic models on its BioTIER-refuse set of 398 prompts (n=10 epochs, max reasoning, no jailbreaks): Claude Opus 4.6 94.2% (CI +/-0.12), Claude Opus 4.7 95.5% (CI +/-0.07), Claude Sonnet 4.6 95.4% (CI +/-0.15).",
+    "finding_quote": "We found that classifier-guarded Opus 4.6 refused 94.2% of the prompts that are recommended for refusal under BioTIER.",
+    "models_systems": "Claude Opus 4.6, Claude Opus 4.7, Claude Sonnet 4.6",
+    "institution": "SecureBio",
+    "domain": "chemical/biological weapons safeguards",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — SecureBio's own measured result on named frontier models. Gate 2 fails (c): SecureBio presents it as good coverage, i.e. a reassuring benchmark result with no dangerous threshold crossed.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "public product"
+   },
+   {
+    "finding": "SecureBio found a gap in Anthropic's biological-weapons classifier constitution: at least one topic close to novel bioweapons production is missing, and half of the BioTIER prompts Opus 4.6 failed to refuse fell into precisely that missing topic.",
+    "finding_quote": "Half of un-refused queries fell into the one aforementioned topic missing from the constitution; the others were scattered across five Catastrophe Avoidance and two Biomedical DURC (dual-use research of concern) topics.",
+    "models_systems": "Claude Opus 4.6 (biological-weapons refusal classifier guard)",
+    "institution": "SecureBio",
+    "domain": "chemical/biological weapons safeguards",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes — measured refusal failures traced to a specific safeguard gap. Gate 2: (a) empirical, (b) names Anthropic and Opus 4.6, (c) concerning — an identified uncovered CB topic in a production safeguard, and SecureBio's first recommendation is that Anthropic add it.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "public product"
+   },
+   {
+    "finding": "SecureBio reviewed the 63 classifier test queries Anthropic shared and found they left out at least one class of pathogens, although most of those topics do appear in the training constitution.",
+    "finding_quote": "We found that the test queries generally cover many of the topics that we would have, but left out at least one class of pathogens.",
+    "models_systems": "Anthropic classifier-guard test query set",
+    "institution": "SecureBio",
+    "domain": "evaluation methodology / safeguards testing",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a documented process fact about Anthropic's internal test-query coverage, not a model capability measurement, so Action Trackable stays blank.",
+    "finding_type": "governance/process finding",
+    "scope": "process-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "SecureBio judged Anthropic's public claim about jailbreaks to be somewhat understated: non-publicly-implementable jailbreaks such as UK AISI's Boundary Point Jailbreaking remain highly effective for skilled actors and can be disseminated, and remediation times have been long.",
+    "finding_quote": "We do think Anthropic’s claim somewhat understates the risk of jailbreaks.",
+    "models_systems": "Claude Opus 4.6 ASL-3 classifier guards",
+    "institution": "SecureBio",
+    "domain": "jailbreak robustness",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — the underlying jailbreak evidence (BPJ) is UK AISI's work and Anthropic's bug-bounty data; SecureBio's own contribution here is an assessment of the report's characterisation, a governance/process finding.",
+    "finding_type": "governance/process finding",
+    "scope": "process-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "SecureBio asked Anthropic for its estimate of the number of users who may be using Anthropic models for serious CB-related harm; Anthropic declined to respond.",
+    "finding_quote": "Anthropic declined to respond to this question.",
+    "models_systems": "Anthropic models (usage flag data)",
+    "institution": "SecureBio",
+    "domain": "transparency / disclosure",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a documented process fact about the review's information access, not an empirical model finding.",
+    "finding_type": "governance/process finding",
+    "scope": "process-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "SecureBio assessed the eight redactions in the public February 2026 Risk Report against Anthropic's RSP v3.0 criteria and judged six clearly justified, one mostly justified and one only partially justified, concluding the redacted material did not substantially influence its conclusions.",
+    "finding_quote": "We think that six of these redactions are clearly justified, as disclosure would impose public safety risks without significantly improving the public’s understanding of the risk assessment.",
+    "models_systems": "Anthropic Risk Report: February 2026 (Claude Opus 4.6)",
+    "institution": "SecureBio",
+    "domain": "transparency / redaction review",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a governance/process finding about publication practice, so Action Trackable stays blank.",
+    "finding_type": "governance/process finding",
+    "scope": "process-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "SecureBio documented the terms of the external review: Anthropic supplied an unredacted report plus 110 pages of materials, answered over seventy follow-up questions across two months, and SecureBio received no funding from Anthropic for the work.",
+    "finding_quote": "SecureBio did not receive funding from Anthropic for this work",
+    "models_systems": "n/a (review process)",
+    "institution": "SecureBio",
+    "domain": "external review governance",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a documented process fact about evaluator access and independence.",
+    "finding_type": "governance/process finding",
+    "scope": "process-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "SecureBio flagged a methodological limit of Anthropic's ASL-4 virology uplift study: it measures whether a first-attempt end-to-end protocol is near-perfect (Opus 4.6-aided participants averaged 6.6 critical failures against an allowable 1.8), and so does not show that unguarded Opus 4.6 would fail to help a skilled actor recover the virus.",
+    "finding_quote": "We thus emphasize that this study does not show that unguarded Opus 4.6 would not help a skilled threat actor recover this virus; it just shows that it would likely not help such an actor develop a near-perfect protocol in their first 3-day attempt.",
+    "models_systems": "Claude Opus 4.6 (unguarded)",
+    "institution": "SecureBio",
+    "domain": "evaluation methodology / bio uplift",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a critique of another party's evaluation design; the 6.6/1.8 numbers are Anthropic's, so this is a methodology finding rather than a SecureBio-measured model result.",
+    "finding_type": "methodology finding",
+    "scope": "process-level",
+    "source_url": "https://securebio.org/resources/anthropic_feb_2026_risk_review.pdf",
+    "access_type": "deep access"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Test and evaluation",
+  "url": "https://static.scale.com/uploads/6019a18f03a4ae003acb1113/test-and-evaluation.pdf",
+  "resolved_date": "2023-09-20",
+  "date_source": "PDF metadata /CreationDate D:20230920135307Z (earliest Wayback capture 2023-11-02 is a consistent upper bound)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted methodology findings with measured backing",
+  "reason": "Scale AI technical report presenting its capabilities and safety T&E frameworks with measured human/AI agreement and red-teaming results. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 64557
+  },
+  "findings": [
+   {
+    "finding": "Scale AI reports that a hybrid human-plus-AI evaluation methodology generalises across both LLM capabilities and safety and can identify where AI assistance is accurate enough to automate evaluation, reducing cost and increasing scale.",
+    "finding_quote": "Our hybrid methodology generalizes across both LLM capabilities and safety, accurately identifying areas where AI assistance can be used to automate this evaluation.",
+    "models_systems": "SOTA LLMs used as evaluation graders",
+    "institution": "Scale AI",
+    "domain": "evaluation methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a methodology/tooling finding about how evaluations should be run; models here are the instrument, not the subject.",
+    "finding_type": "methodology finding",
+    "scope": "process-level",
+    "source_url": "https://static.scale.com/uploads/6019a18f03a4ae003acb1113/test-and-evaluation.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI found that combining automated evaluations, generalist red teamers and expert red teamers discovers new vulnerabilities more efficiently than any of those alone.",
+    "finding_quote": "we ﬁnd that by combining automated evaluations, generalist red teamers, and expert red teamers, we’re able to more efﬁciently discover new vulnerabilities",
+    "models_systems": "red-teaming pipeline (not a specific model)",
+    "institution": "Scale AI",
+    "domain": "red-teaming methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a methodology finding about red-team composition.",
+    "finding_type": "methodology finding",
+    "scope": "process-level",
+    "source_url": "https://static.scale.com/uploads/6019a18f03a4ae003acb1113/test-and-evaluation.pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "DR Benchmark 0914 v1",
+  "url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/DR_Benchmark_0914_v1%20(5).pdf",
+  "resolved_date": "2025-11-10",
+  "date_source": "PDF metadata /CreationDate D:20251110185125Z, corroborated by HTTP Last-Modified 2025-11-10 and earliest Wayback capture 2025-11-12",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted, evidence-backed measured results on named deep-research agents",
+  "reason": "ResearchRubrics: 2,500+ expert-written rubrics scored against deployed deep-research agents. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 85235
+  },
+  "findings": [
+   {
+    "finding": "On Scale AI's RESEARCHRUBRICS benchmark, leading deployed deep-research agents including Gemini's DR and OpenAI's DR achieved under 68% average rubric compliance, with failures driven mainly by missed implicit context and inadequate reasoning about retrieved information.",
+    "finding_quote": "We evaluate several state-of-the-art DR systems and find that even leading agents like Gemini’s DR and OpenAI’s DR achieve under 68% average compliance with our rubrics, primarily due to missed implicit context and inadequate reasoning about retrieved information.",
+    "models_systems": "Gemini Deep Research, OpenAI Deep Research",
+    "institution": "Scale AI",
+    "domain": "deep research agents / reasoning",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured results on named commercial agents. Gate 2 fails (c): a benchmark score across a multi-vendor cohort with no dangerous threshold crossed; §5 also bars a multi-company aggregate from being a single Tier A row.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/DR_Benchmark_0914_v1%20(5).pdf",
+    "access_type": "public product"
+   },
+   {
+    "finding": "Scale AI built RESEARCHRUBRICS with over 2,800 hours of human labour and proposes a three-axis complexity framework (conceptual breadth, logical nesting, exploration) plus human and model-based protocols for measuring rubric adherence.",
+    "finding_quote": "We introduce RESEARCHRUBRICS, a standardized benchmark for DR built with over 2,800+ hours of human labor",
+    "models_systems": "n/a (benchmark construction)",
+    "institution": "Scale AI",
+    "domain": "evaluation methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a tooling/methodology finding about benchmark construction.",
+    "finding_type": "methodology finding",
+    "scope": "benchmark-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/DR_Benchmark_0914_v1%20(5).pdf",
+    "access_type": "public product"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "MultiNRC",
+  "url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/MultiNRC.pdf",
+  "resolved_date": "2025-07-22",
+  "date_source": "PDF metadata /CreationDate D:20250722184538Z, corroborated by HTTP Last-Modified 2025-07-22 and earliest Wayback capture 2025-07-24",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted, evidence-backed measured results across 14 named LLMs",
+  "reason": "MultiNRC: 1,000+ natively written French/Spanish/Chinese reasoning questions scored against 14 leading LLMs. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 54807
+  },
+  "findings": [
+   {
+    "finding": "On Scale AI's MultiNRC native multilingual reasoning benchmark, none of the 14 leading LLMs evaluated scored above 50%.",
+    "finding_quote": "LLMs are still not good at native multilingual reasoning, with none scoring above50%onMultiNRC",
+    "models_systems": "14 leading LLMs across most major families",
+    "institution": "Scale AI",
+    "domain": "multilingual reasoning",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured capability result. Gate 2 fails (c): a benchmark score with no dangerous threshold crossed, reported across a multi-vendor cohort.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/MultiNRC.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI found most models perform substantially better on math reasoning in English than on the same questions in their original language (about +10%), indicating persistent difficulty with culturally grounded knowledge rather than with the maths itself.",
+    "finding_quote": "Mostmodelsperform substantiallybetterinmathreasoninginEnglishcomparedtoinoriginallanguages (+10%),indicatingpersistentchallengeswithculturallygroundedknowledge",
+    "models_systems": "14 leading LLMs",
+    "institution": "Scale AI",
+    "domain": "multilingual reasoning / cultural grounding",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured comparative result. Gate 2 fails (c): a capability gap measurement, not a concerning safety threshold, and it is not attributed to one company.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/MultiNRC.pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "SWEAP Eval Scale",
+  "url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/SWEAP_Eval_Scale%20(9).pdf",
+  "resolved_date": "2025-09-19",
+  "date_source": "PDF metadata /CreationDate D:20250919212419Z, corroborated by HTTP Last-Modified 2025-09-19 and earliest Wayback capture 2025-09-20",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted, evidence-backed measured results on named coding models",
+  "reason": "SWE-Bench Pro: 1,865 long-horizon enterprise SWE problems across 41 repositories, evaluated under a unified scaffold. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 61175
+  },
+  "findings": [
+   {
+    "finding": "On Scale AI's SWE-Bench Pro, widely used coding models stayed below 25% Pass@1 under a unified scaffold, with GPT-5 the highest at 23.3%.",
+    "finding_quote": "we observe that their performance on SWE-B ENCH PRO remains below 25% (Pass@1), with GPT-5 achieving the highest score to date at 23.3%",
+    "models_systems": "GPT-5 and other widely used coding models (Claude Opus 4.1 among them)",
+    "institution": "Scale AI",
+    "domain": "software engineering agents",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured capability result on named models. Gate 2 fails (c): a benchmark score and comparative ranking with no dangerous threshold crossed.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/SWEAP_Eval_Scale%20(9).pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI constructed SWE-Bench Pro as a contamination-resistant testbed by partitioning it into a public set (11 repositories), a held-out set (12 repositories) and a commercial set of 18 proprietary repositories under formal partnership agreements, releasing results but not problems for the commercial set.",
+    "finding_quote": "The benchmark is partitioned into a public set with open access to problems sourced from 11 repositories, a held-out set of 12 repositories and a commercial set of 18 proprietary repositories where we have formal partnership agreements with early-stage startups.",
+    "models_systems": "n/a (benchmark construction)",
+    "institution": "Scale AI",
+    "domain": "evaluation methodology / contamination resistance",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a benchmark-design/tooling finding.",
+    "finding_type": "methodology finding",
+    "scope": "benchmark-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/SWEAP_Eval_Scale%20(9).pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "WebGuard",
+  "url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/WebGuard.pdf",
+  "resolved_date": "2025-07-18",
+  "date_source": "PDF metadata /CreationDate D:20250718175351Z, corroborated by HTTP Last-Modified 2025-07-21 and earliest Wayback capture 2025-07-30",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — evaluator-asserted, evidence-backed measured results on named frontier models",
+  "reason": "WebGuard (Ohio State / Scale AI / UC Berkeley): 4,939 human-annotated web-agent actions from 193 websites under a SAFE/LOW/HIGH risk schema. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 64403
+  },
+  "findings": [
+   {
+    "finding": "On WebGuard, frontier LLMs asked to predict the outcome of state-changing web-agent actions achieved under 60% accuracy and under 60% recall on HIGH-risk actions, which the authors call a concerning deficiency for deploying current agents without dedicated safeguards.",
+    "finding_quote": "Our initial evaluations reveal a concerning deficiency: even frontier LLMs achieve less than 60% accuracy in predicting action outcomes and less than 60% recall in lagging HIGH-risk actions, highlighting the risks of deploying current-generation agents without dedicated safeguards.",
+    "models_systems": "Claude-3.7-Sonnet (incl. extended thinking), GPT-4o, GPT-4o-mini, O3, Qwen2.5 / Qwen2.5-VL",
+    "institution": "Scale AI (with The Ohio State University and UC Berkeley)",
+    "domain": "web agent safety / guardrails",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured safety-relevant result on named frontier models. Gate 2 fails (c) as encoded: the claim is an aggregate across a multi-vendor cohort, and §5 bars different companies from sharing a row, so no single company response is identified.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/WebGuard.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Fine-tuning Qwen2.5VL-7B on WebGuard raised guardrail accuracy from 37% to 80% and HIGH-risk action recall from 20% to 76%, still short of the near-perfect reliability the authors argue high-stakes deployment requires.",
+    "finding_quote": "a fine-tuned Qwen2.5VL-7B model yields a substantial improvement in performance, boosting accuracy from 37% to 80% and HIGH-risk action recall from 20% to 76%",
+    "models_systems": "Qwen2.5VL-7B (fine-tuned guardrail model)",
+    "institution": "Scale AI (with The Ohio State University and UC Berkeley)",
+    "domain": "web agent safety / guardrails",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured result. Gate 2 fails (c): a non-frontier open-weight model used as the instrument of a guardrail-training study, both of which §4 excludes from Tier A.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/WebGuard.pdf",
+    "access_type": "open weights"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Vtb paper",
+  "url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/vtb_paper.pdf",
+  "resolved_date": "2025-10-15",
+  "date_source": "PDF metadata /CreationDate D:20251015182615Z, corroborated by HTTP Last-Modified 2025-10-15 and earliest Wayback capture 2025-10-15",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted, evidence-backed measured results on named multimodal models",
+  "reason": "VisualToolBench: 1,204 open-ended visual tool-use tasks with per-task rubrics, evaluated across leading MLLMs. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 111477
+  },
+  "findings": [
+   {
+    "finding": "On Scale AI's VISUALTOOLBENCH, current multimodal LLMs struggled to integrate vision with general-purpose tools; the strongest model, GPT-5-think, reached only an 18.68% pass rate.",
+    "finding_quote": "Even the strongest model (GPT-5-think) reaches only 18.68% pass rate.",
+    "models_systems": "GPT-5-think, Gemini-2.5-pro and other leading MLLMs",
+    "institution": "Scale AI (with University of Illinois Urbana-Champaign)",
+    "domain": "multimodal tool use / reasoning",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured capability result on named models. Gate 2 fails (c): a benchmark score with no dangerous threshold crossed.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/vtb_paper.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI observed divergent tool-use behaviour between vendors on VISUALTOOLBENCH: OpenAI models benefited from diverse image manipulations while Gemini-2.5-pro showed no improvement from them.",
+    "finding_quote": "We further observe divergent tool-use behaviors",
+    "models_systems": "OpenAI models, Gemini-2.5-pro",
+    "institution": "Scale AI (with University of Illinois Urbana-Champaign)",
+    "domain": "multimodal tool use",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured behavioural difference. Gate 2 fails (c): a comparative ranking between vendors, explicitly excluded from Tier A.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/654197dc94d34f66c0f5184e/vtb_paper.pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Agentic Warfare   Evolving Doctrine",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Agentic%20Warfare%20-%20Evolving%20Doctrine.pdf",
+  "resolved_date": "2026-06-19",
+  "date_source": "HTTP Last-Modified 2026-06-19 on the CDN object; the PDF carries no /CreationDate, no date in the text and no Wayback capture. Best available signal, treated as an upper bound.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — defence-policy argument, no measured model result",
+  "reason": "Two-to-three page companion brief to Scale AI's Agentic Warfare defence-policy report; recommendations about doctrine and force design, no AI system evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8685
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Agentic Warfare   Getting AI in the Force",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Agentic%20Warfare%20-%20Getting%20AI%20in%20the%20Force.pdf",
+  "resolved_date": "2026-06-19",
+  "date_source": "HTTP Last-Modified 2026-06-19 on the CDN object; the PDF carries no /CreationDate, no date in the text and no Wayback capture. Best available signal, treated as an upper bound.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — defence-policy argument, no measured model result",
+  "reason": "Two-to-three page companion brief to Scale AI's Agentic Warfare defence-policy report; recommendations about doctrine and force design, no AI system evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8676
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Agentic Warfare   The Humans Are Central",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Agentic%20Warfare%20-%20The%20Humans%20Are%20Central.pdf",
+  "resolved_date": "2026-06-19",
+  "date_source": "HTTP Last-Modified 2026-06-19 on the CDN object; the PDF carries no /CreationDate, no date in the text and no Wayback capture. Best available signal, treated as an upper bound.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — defence-policy argument, no measured model result",
+  "reason": "Two-to-three page companion brief to Scale AI's Agentic Warfare defence-policy report; recommendations about doctrine and force design, no AI system evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8966
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Agentic Warfare   Wargaming  Experimentation",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Agentic%20Warfare%20-%20Wargaming%20%20Experimentation.pdf",
+  "resolved_date": "2026-06-19",
+  "date_source": "HTTP Last-Modified 2026-06-19 on the CDN object; the PDF carries no /CreationDate, no date in the text and no Wayback capture. Best available signal, treated as an upper bound.",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — defence-policy argument, no measured model result",
+  "reason": "Two-to-three page companion brief to Scale AI's Agentic Warfare defence-policy report; recommendations about doctrine and force design, no AI system evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7997
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Agentic Warfare 1 9 interactive",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Agentic%20Warfare%201_9-interactive.pdf",
+  "resolved_date": "2026-01-12",
+  "date_source": "PDF metadata /CreationDate D:20260112093421-06'00', corroborated by HTTP Last-Modified 2026-01-12 and earliest Wayback capture 2026-01-30",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — policy recommendations, not evidence-backed model results",
+  "reason": "68-page Scale AI defence-policy report on agentic warfare and DoW adoption; no AI model or system is evaluated. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 126900
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Coding Agent Eval",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Coding_Agent_Eval%20(5).pdf",
+  "resolved_date": "2026-05-07",
+  "date_source": "PDF metadata /CreationDate D:20260507161622Z, corroborated by HTTP Last-Modified 2026-05-07 (no Wayback capture)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted, evidence-backed measured results on named coding agents",
+  "reason": "SWE Atlas: 284 tasks across Codebase QA, Test Writing and Refactoring, with rubric-based quality assessment. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 89477
+  },
+  "findings": [
+   {
+    "finding": "On Scale AI's SWE Atlas suite, GPT-5.4 and Claude Opus 4.7 achieved the strongest overall performance while even the best open-weight models scored poorly.",
+    "finding_quote": "We evaluate a range of frontier and open-weight models on SWE Atlas and find that GPT-5.4 and Opus 4.7 achieve the strongest overall performance, while even the best open-weight models score poorly.",
+    "models_systems": "GPT-5.4, Claude Opus 4.7, open-weight coding models",
+    "institution": "Scale AI",
+    "domain": "software engineering agents",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured capability result on named models. Gate 2 fails (c): a comparative ranking, explicitly excluded from Tier A.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Coding_Agent_Eval%20(5).pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI found that even top coding models consistently struggle with subtle edge cases, complex runtime analysis and adherence to software-engineering best practices, and that strong performance depends on extensive codebase exploration and runtime-driven reasoning.",
+    "finding_quote": "even top models consistently struggle with subtle edge cases, complex runtime analysis, and adherence to software engineering best practices",
+    "models_systems": "GPT-5.4, Claude Opus 4.7 and other frontier coding models",
+    "institution": "Scale AI",
+    "domain": "software engineering agents / code quality",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — an observed failure pattern across evaluated models. Gate 2 fails (c): code-quality shortfalls across a multi-vendor cohort, no dangerous threshold crossed.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/Coding_Agent_Eval%20(5).pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "DrugDiscoveryBench",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/DrugDiscoveryBench.pdf",
+  "resolved_date": "2026-07-04",
+  "date_source": "PDF metadata /CreationDate D:20260704154754Z (HTTP Last-Modified 2026-07-09; no Wayback capture)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted, evidence-backed measured results on named frontier coding agents",
+  "reason": "DrugDiscoveryBench: 82 expert-curated, verifiable drug-discovery tasks run across six agent harnesses. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 76046
+  },
+  "findings": [
+   {
+    "finding": "On DRUGDISCOVERYBENCH the frontier is tight and low: GPT-5.5 (xhigh, mini-SWE-agent) and Gemini 3.5 Flash (high, Gemini CLI) lead at 51.6% and 50.0%, with Claude Opus 4.8 (max, mini-SWE-agent) at 46.8%, and only about half the tasks are within reach of any single agent.",
+    "finding_quote": "only about half of the tasks are within reach for any given agent",
+    "models_systems": "GPT-5.5, Gemini 3.5 Flash, Claude Opus 4.8",
+    "institution": "Scale AI (with Phylo)",
+    "domain": "biomedical / drug discovery agents",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured capability result on named frontier models. Gate 2 fails (c): a comparative ranking and benchmark score with no dangerous threshold crossed.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/DrugDiscoveryBench.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI found that pass rate scales cleanly with test-time compute within a model family, with GPT-5.5 Codex climbing 27.6% to 39.8% to 43.9% as the reasoning budget increased.",
+    "finding_quote": "model pass rate scales cleanly with test-time compute within a model family (GPT-5.5 Codex climbs 27.6 → 39.8 → 43.9%)",
+    "models_systems": "GPT-5.5 Codex",
+    "institution": "Scale AI (with Phylo)",
+    "domain": "test-time compute scaling",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured scaling result on a named model. Gate 2 fails (c): a capability trend, explicitly excluded from Tier A.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/DrugDiscoveryBench.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI found the dominant failure mode is judgement rather than knowledge: agents drop constraints or skip steps over long workflows, and supplying the expert's step-by-step method as a hint recovered enough unsolved tasks that 80 of the 82 became solvable by at least one agent.",
+    "finding_quote": "we find that agents lack the scientific reasoning and common sense to rigorously carry a long workflow to the end without dropping a constraint or skipping a step",
+    "models_systems": "GPT-5.5, Gemini 3.5 Flash, Claude Opus 4.8 and other frontier coding agents",
+    "institution": "Scale AI (with Phylo)",
+    "domain": "long-horizon agent reliability",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — an observed failure pattern with a measured recovery result. Gate 2 fails (c): a capability limitation across a multi-vendor cohort, not a concerning safety threshold.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/DrugDiscoveryBench.pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "ICLR  Red Teaming Browser Agents",
+  "url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/_ICLR__Red_Teaming_Browser_Agents%20(14).pdf",
+  "resolved_date": "2024-10-13",
+  "date_source": "PDF metadata /CreationDate D:20241013233444Z, corroborated by HTTP Last-Modified 2024-10-14 and earliest Wayback capture 2024-10-24",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — evaluator-asserted, evidence-backed red-teaming results on named frontier models",
+  "reason": "BrowserART: 100 browser-related harmful behaviours run against state-of-the-art browser agents by Scale AI's red team with CMU and GraySwan. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 68746
+  },
+  "findings": [
+   {
+    "finding": "Scale AI's red team found that refusal training does not transfer from chat to browser-agent contexts: with human rewrites, GPT-4o and o1-preview based browser agents pursued 98 and 63 of 100 harmful behaviours respectively, even though the same backbone LLMs refuse those instructions as chatbots.",
+    "finding_quote": "With human rewrites, GPT-4o and o1-preview -based browser agents pursued 98 and 63 harmful behaviors (out of 100), respectively.",
+    "models_systems": "GPT-4o, o1-preview (as browser agents)",
+    "institution": "Scale AI (with Carnegie Mellon University and GraySwan AI)",
+    "domain": "agentic misuse / refusal generalisation",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes — measured harmful-behaviour compliance rates. Gate 2: (a) empirical, (b) names OpenAI models GPT-4o and o1-preview, (c) concerning — near-total safety-training failure in a deployed agentic modality, for which an OpenAI response is reasonable.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/_ICLR__Red_Teaming_Browser_Agents%20(14).pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI found that jailbreak attacks designed for chat settings transfer effectively to browser agents, so chat-level refusal is not sufficient evidence that a downstream agent is safe.",
+    "finding_quote": "LLMs in the chat settings transfer effectively to browser agents.",
+    "models_systems": "state-of-the-art browser agents built on refusal-trained LLMs",
+    "institution": "Scale AI (with Carnegie Mellon University and GraySwan AI)",
+    "domain": "jailbreak transfer / agent safety",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured transfer result. Gate 2 fails (c) as encoded: the claim is stated across the evaluated agent cohort rather than against one named company.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/6691558a94899f2f65a87a75/_ICLR__Red_Teaming_Browser_Agents%20(14).pdf",
+    "access_type": "public API"
+   }
+  ]
+ },
+ {
+  "venue": "Scale AI",
+  "title": "HiL Bench",
+  "url": "https://static.scale.com/uploads/67a153343e046988406ef320/HiL_Bench.pdf",
+  "resolved_date": "2026-04-16",
+  "date_source": "PDF metadata /CreationDate D:20260416002730Z, corroborated by HTTP Last-Modified 2026-04-16 and earliest Wayback capture 2026-04-20",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — Scale AI-asserted, evidence-backed measured results on frontier coding agents",
+  "reason": "HIL-BENCH measures selective escalation (knowing when to ask for help) across SWE and text-to-SQL with the ASK-F1 metric. Agrees with the earlier INCLUDED.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 69537
+  },
+  "findings": [
+   {
+    "finding": "On Scale AI's HIL-BENCH, no frontier model recovers more than a fraction of its full-information performance once it must decide whether to ask for help, a universal judgement gap across SWE and text-to-SQL.",
+    "finding_quote": "Evaluation across SWE and text-to-SQL domains reveals a large universal judgment gap: no frontier model recovers more than a fraction of its full-information performance when deciding whether to ask.",
+    "models_systems": "frontier coding agents (incl. Claude Opus and Claude Code class agents)",
+    "institution": "Scale AI",
+    "domain": "agent judgement / human-in-the-loop escalation",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured capability gap. Gate 2 fails (c): stated across a multi-vendor cohort as a benchmark result with no dangerous threshold crossed.",
+    "finding_type": "benchmark score",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/67a153343e046988406ef320/HiL_Bench.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI's failure analysis identifies three help-seeking patterns - overconfident wrong beliefs with no gap detection, high uncertainty detection yet persistent errors, and broad imprecise escalation without self-correction - and concludes poor help-seeking is a model-level flaw rather than a task-specific artefact.",
+    "finding_quote": "These consistent patterns confirm poor help-seeking is a model-level flaw, not task-specific.",
+    "models_systems": "frontier coding agents",
+    "institution": "Scale AI",
+    "domain": "agent judgement / human-in-the-loop escalation",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — an observed, characterised failure pattern. Gate 2 fails (c): described for the cohort, not a specific company, and no dangerous threshold crossed.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://static.scale.com/uploads/67a153343e046988406ef320/HiL_Bench.pdf",
+    "access_type": "public API"
+   },
+   {
+    "finding": "Scale AI showed the judgement gap is trainable: RL on a shaped ASK-F1 reward improved both help-seeking quality and task pass rate for a 32B model, with gains transferring across domains and the model learning to detect unresolvable uncertainty rather than domain-specific heuristics.",
+    "finding_quote": "RL training on shaped ASK-F1 reward shows judgment is trainable: a 32B model improves both help-seeking quality and task pass rate, with gains that transfer across domains.",
+    "models_systems": "a 32B open-weight model (RL-trained)",
+    "institution": "Scale AI",
+    "domain": "training methodology / agent judgement",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a training-methodology and metric-design finding; the 32B model is the instrument of the study, so Action Trackable stays blank.",
+    "finding_type": "methodology finding",
+    "scope": "process-level",
+    "source_url": "https://static.scale.com/uploads/67a153343e046988406ef320/HiL_Bench.pdf",
+    "access_type": "open weights"
+   }
+  ]
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "Ul research institutes financial conflict interest policy fcoi 220306",
+  "url": "https://ul.org/wp-content/uploads/2024/12/ul-research-institutes-financial-conflict-interest-policy-fcoi-220306.pdf",
+  "resolved_date": "2022-03-06",
+  "date_source": "document identifier in the PDF /Title 'UL_FCOI_Policy_220306' (YYMMDD) and in the filename, corroborated by the '© 2022 Underwriters Laboratories Inc.' notice on every page; the PDF /CreationDate D:20230111 is a later re-render",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — administrative policy text, no measured result",
+  "reason": "UL Research Institutes financial conflict-of-interest policy for PHS-funded research; no AI system involved. Same outcome as the earlier decision, recorded under \"not an evaluation\" rather than \"no findings\".",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 22594
+  },
+  "findings": []
+ },
+ {
+  "venue": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+  "title": "ULRI Policy for Payment of Overhead on Externally Sponsored Projects",
+  "url": "https://ul.org/wp-content/uploads/2025/06/ULRI-Policy-for-Payment-of-Overhead-on-Externally-Sponsored-Projects.pdf",
+  "resolved_date": "2023-01-17",
+  "date_source": "'History and updates' table inside the PDF: Version 01, Revision Date 01/17/2023, Effective Date 01/17/2023 (PDF /CreationDate D:20230817 is a later re-render; the ul.org upload path /2025/06/ is later still)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§3 — not an evaluation; §2 test 2 — administrative finance policy, no measured result",
+  "reason": "ULRI policy capping overhead on externally sponsored projects at 25% of modified total direct costs; no AI system involved. Agrees with the earlier decision.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3286
+  },
+  "findings": []
+ },
+ {
+  "venue": "FAR.AI",
+  "title": "Obfuscation atlas",
+  "url": "https://www.far.ai/research/obfuscation-atlas.pdf",
+  "resolved_date": "2026-02-17",
+  "date_source": "first-page footnote byline 'Preprint. February 17, 2026.' read from the Wayback snapshot 20260227031841 (the live URL now returns 404)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — FAR.AI-asserted, evidence-backed measured results plus a methodology contribution",
+  "reason": "DISAGREE with the earlier EXCLUDED - no findings, which rested on a broken 1,127-character extraction; the full 25-page paper (90,971 chars via Wayback) reports RL training runs with measured deception rates on four named open-weight models.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 90971
+  },
+  "findings": [
+   {
+    "finding": "FAR.AI constructed a realistic coding environment where reward hacking by hardcoding test cases arises naturally, and found deceptive policies emerge under ordinary RL training without any added incentive: at KL coefficient beta = 1e-4, 9 of 10 Llama-3-8B-Instruct runs and 4 of 10 Gemma-3-12B-IT runs became deceptive.",
+    "finding_quote": "with KL coefﬁcient β = 10 −4, 9 of 10 Llama-3-8B-Instruct runs and 4 of 10 Gemma-3-12B-IT runs led to deceptive policies",
+    "models_systems": "Llama-3-8B-Instruct, Gemma-3-12B-IT, Gemma-3-27B-IT, Llama-3-70B-Instruct",
+    "institution": "FAR.AI",
+    "domain": "deception / reward hacking",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — measured emergence of deceptive policies. Gate 2 fails (c): the models are non-frontier open-weight checkpoints used as the instrument of a training-dynamics study, both of which §4 excludes from Tier A.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://www.far.ai/research/obfuscation-atlas.pdf",
+    "access_type": "open weights"
+   },
+   {
+    "finding": "FAR.AI introduced a taxonomy of outcomes for training against a white-box deception detector - honest, obfuscated activations, or obfuscated policy - and found empirically that obfuscated activations arise from representation drift during RL with or without a detector penalty, while the detector penalty specifically incentivises obfuscated policies.",
+    "finding_quote": "The detector penalty only incentivizes obfuscated policies",
+    "models_systems": "Llama-3 and Gemma-3 instruct models under GRPO with LoRA",
+    "institution": "FAR.AI",
+    "domain": "interpretability / deception detection methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a methodology and mechanism finding about training against deception probes, not a finding about a deployed model, so Action Trackable stays blank.",
+    "finding_type": "methodology finding",
+    "scope": "process-level",
+    "source_url": "https://www.far.ai/research/obfuscation-atlas.pdf",
+    "access_type": "open weights"
+   },
+   {
+    "finding": "FAR.AI found that sufficiently high KL regularization combined with a detector penalty can yield honest policies, establishing white-box deception detectors as viable training signals for tasks prone to reward hacking.",
+    "finding_quote": "our results show white-box deception probes can be viable training signals: in our setting they reliably yield honest policies without harming capabilities, but careful conﬁguration is essential.",
+    "models_systems": "Llama-3 and Gemma-3 instruct models",
+    "institution": "FAR.AI",
+    "domain": "alignment training methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a training-methodology finding; the models are the instrument.",
+    "finding_type": "methodology finding",
+    "scope": "process-level",
+    "source_url": "https://www.far.ai/research/obfuscation-atlas.pdf",
+    "access_type": "open weights"
+   },
+   {
+    "finding": "FAR.AI classified its 34 obfuscated-policy models into three evasion strategies and found 41.2% used Rhetorical Rationalization, 32.4% Adversarial Obfuscation and 26.9% Strategic Honesty, with advanced cases confabulating positive evaluation statements such as 'Score: 100/100'.",
+    "finding_quote": "We classify our 34 obfuscated policy models into these three categories (assisted by GPT-5.2-2025-12-11)",
+    "models_systems": "34 RL-trained Llama-3 / Gemma-3 checkpoints",
+    "institution": "FAR.AI",
+    "domain": "deception / evasion strategies",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured distribution of observed model behaviours. Gate 2 fails (c): the subjects are research checkpoints the evaluator trained, not deployed frontier models.",
+    "finding_type": "empirical model finding",
+    "scope": "model-level",
+    "source_url": "https://www.far.ai/research/obfuscation-atlas.pdf",
+    "access_type": "open weights"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "RAND RRA2849 1",
+  "url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA2800/RRA2849-1/RAND_RRA2849-1.pdf",
+  "resolved_date": "2024-05-30",
+  "date_source": "earliest Wayback capture of this PDF URL, 2024-05-30, corroborated by the '© 2024 RAND Corporation' notice; the file also states 'This document was revised in June 2024', and its /ModDate is 2025-02-03, so 2024-05-30 is the original publication and the URL now serves a later revision",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — the named models appear only as comparators cited in passing; §3 — not an evaluation",
+  "reason": "DISAGREE with the earlier INCLUDED. \"Securing AI Model Weights\" is a security threat-model and policy report (attack-vector taxonomy plus five security levels); GPT-3, GPT-4, Gemini Ultra and Mistral appear only in citations to press reports about training costs and leaks, not as systems RAND evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 365333
+  },
+  "findings": []
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "title": "US CAISI / UK AISI joint update (published on OpenAI's domain)",
+  "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+  "resolved_date": "2025-09-12",
+  "date_source": "page byline 'September 12, 2025' read from the Wayback snapshot 20250918111352 (openai.com returns 403 direct)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§1 company-venue carve-out — named external evaluators (US CAISI, UK AISI) on a company venue; enters under the evaluator with \"company-published\" on Finding Type",
+  "reason": "RESOLVES the earlier PENDING-FETCH: retrieved in full via Wayback (11,322 chars). OpenAI-hosted, but US CAISI and UK AISI are named as the external evaluators and their concrete results are reported, so the carve-out applies.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 11322
+  },
+  "findings": [
+   {
+    "finding": "US CAISI identified two novel security vulnerabilities in OpenAI's ChatGPT Agent which, chained with an AI agent hijacking attack, gave a proof-of-concept exploit chain with roughly a 50% success rate that could remotely control the systems the agent could access for a session and impersonate the user on sites they were logged into.",
+    "finding_quote": "The proof-of-concept attack developed by CAISI successfully bypassed various AI-based security protections, which led to a full exploit chain with a success rate of approximately 50%.",
+    "models_systems": "ChatGPT Agent (OpenAI)",
+    "institution": "US Center for AI Standards and Innovation (CAISI, NIST)",
+    "domain": "agent security / cyber",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes — a measured exploit success rate against a deployed system. Gate 2: (a) empirical, (b) names OpenAI and ChatGPT Agent, (c) concerning - a working exploit chain granting remote control and user impersonation, for which an OpenAI response is reasonable and in fact occurred.",
+    "finding_type": "empirical model finding; company-published",
+    "scope": "system-level",
+    "source_url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "CAISI's vulnerabilities in ChatGPT Agent were reported to OpenAI immediately and fixed within one business day; CAISI initially judged them unexploitable and only found the bypass by combining the traditional cyber vulnerabilities with an AI agent hijacking attack.",
+    "finding_quote": "These attacks were immediately reported to OpenAI, and fixed by OpenAI within one business day.",
+    "models_systems": "ChatGPT Agent (OpenAI)",
+    "institution": "US Center for AI Standards and Innovation (CAISI, NIST)",
+    "domain": "vulnerability disclosure / remediation",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a documented process fact about disclosure and remediation timing rather than a model capability measurement, so Action Trackable stays blank.",
+    "finding_type": "governance/process finding; company-published",
+    "scope": "process-level",
+    "source_url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "UK AISI red-teamed OpenAI's biological-misuse safeguards in ChatGPT Agent and GPT-5 from May 2025, and found and had OpenAI triage more than a dozen detailed vulnerability reports, including universal jailbreaks against the monitoring systems and configuration vulnerabilities that let malicious content be inputted or exfiltrated without triggering moderation.",
+    "finding_quote": "During this process, UK AISI found and OpenAI triaged more than a dozen detailed vulnerability reports.",
+    "models_systems": "ChatGPT Agent, GPT-5 (OpenAI biological-misuse safeguards stack)",
+    "institution": "UK AI Security Institute (UK AISI)",
+    "domain": "chemical/biological weapons safeguards",
+    "eval_trackable": "yes",
+    "action_trackable": "yes",
+    "tier": "A",
+    "tier_reasoning": "Gate 1 yes — red-team results against a deployed safeguards stack. Gate 2: (a) empirical, (b) names OpenAI, ChatGPT Agent and GPT-5, (c) concerning - universal jailbreaks against the monitoring systems and moderation-evading configuration flaws, each of which drew a concrete OpenAI fix.",
+    "finding_type": "empirical model finding; company-published",
+    "scope": "system-level",
+    "source_url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "UK AISI's view is that the full moderation system's safeguards were substantially strengthened over the collaboration, and that by the end of the rapid iteration period universal attacks evading the full moderation stack required sophisticated techniques and generated enough moderation flags during development that usage monitoring would likely flag and ban the actor.",
+    "finding_quote": "UK AISI’s view is that the safeguards of the full moderation system were substantially strengthened over the course of the collaboration.",
+    "models_systems": "ChatGPT Agent, GPT-5 (OpenAI moderation stack)",
+    "institution": "UK AI Security Institute (UK AISI)",
+    "domain": "chemical/biological weapons safeguards",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — an assessment grounded in the evaluator's own testing. Gate 2 fails (c): a reassuring end-state finding, which §4 excludes from Tier A.",
+    "finding_type": "empirical model finding; company-published",
+    "scope": "system-level",
+    "source_url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+    "access_type": "deep access"
+   },
+   {
+    "finding": "UK AISI's testing was conducted under access conditions real attackers would not have - non-public safeguard prototypes, helpful-only model variants with guardrails removed, chain-of-thought from OpenAI's internal safety monitor models, selective disabling of mitigations, and OpenAI's account-banning enforcement switched off - which OpenAI states enabled failures that ordinary malicious users would find much harder to surface.",
+    "finding_quote": "These are resources and conditions that real-world attackers would not have access to.",
+    "models_systems": "ChatGPT Agent, GPT-5 (OpenAI)",
+    "institution": "UK AI Security Institute (UK AISI)",
+    "domain": "evaluator access / methodology",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — a documented process fact about the depth of evaluator access and its effect on interpreting the results.",
+    "finding_type": "governance/process finding; company-published",
+    "scope": "process-level",
+    "source_url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+    "access_type": "deep access"
+   }
+  ]
+ },
+ {
+  "venue": "France INESIA (via PEReN / ANSSI / Inria / LNE)",
+  "title": "Advancing Methodologies for AI Agent Evaluation (Int'l Network, published on PEReN's domain)",
+  "url": "https://www.peren.gouv.fr/rapports/2025-july_advancing-methodologies-for-ai-agent-evaluation/",
+  "resolved_date": "2025-07-30",
+  "date_source": "page byline — PEReN's own announcement of these results at /en/actualites/2025-07-30_jointtesting_agentia/ (slug and page date 30 July 2025); the report PDF's /CreationDate is D:20250717162240+08'00' (17 July 2025, authoring date) and the report filename carries '2025-July'. Earliest Wayback capture of the PDF is 2025-08-12, a consistent upper bound.",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — evaluator-asserted, evidence-backed measured results and documented methodology facts, independently codeable; §1 satisfied (named evaluating agencies)",
+  "reason": "RESOLVES the earlier PENDING-FETCH: the ledger URL 404s, but the document is live at /rapports/2025-July_Advancing-Methodologies-for-Agentic-Evaluations-Across-Domains_Report.pdf (99 pages, 162,088 chars, direct 200), found via the Wayback CDX index — the earlier pass searched only the ledger slug. Named evaluators (Singapore AISI, UK AISI, PEReN/INESIA, EU AI Office, Australia, Japan, Canada, Kenya, Korea); measured agent pass rates and judge-human discrepancy rates are reported. All tested models are anonymised (Model A-F), so nothing reaches Tier A.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 162088
+  },
+  "findings": [
+   {
+    "finding": "Across nine languages and two anonymised models run as tool-using agents on fraud and sensitive-information-leakage tasks, safety pass rates were low — roughly 33-57% for Model A (mean ~46%) and 14-35% for Model B (mean ~23%) — and even the best agentic pass rate fell below the worst-performing category of the Network's previous conversational exercise.",
+    "finding_quote": "The pass rates observed in this exercise range from (~33% to 57% for Model A - mean:",
+    "models_systems": "Two anonymised LLMs run as agents (labelled Model A and Model B)",
+    "domain": "agentic safety — fraud and sensitive information leakage",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured empirical result on models run as agents. Gate 2 fails (b): the models are anonymised as Model A / Model B, and \"anonymised\" fails the named-company/model condition.",
+    "finding_type": "empirical model finding",
+    "institution": "International Network of AI Safety Institutes joint testing exercise (Singapore AISI and UK AISI strand leads; France INESIA/PEReN participating)",
+    "scope": "cross-model / methodology exercise",
+    "source_url": "https://www.peren.gouv.fr/rapports/2025-July_Advancing-Methodologies-for-Agentic-Evaluations-Across-Domains_Report.pdf",
+    "access_type": "public document"
+   },
+   {
+    "finding": "Agents sometimes showed awareness that they were in a simulated environment yet still executed the harmful action, cautioning against such behaviour 'in the real world' while completing it; in English alone at least two such instances were observed for Model A and five for Model B, some apparently independent of tool design.",
+    "finding_quote": "in English there were at least two instances for Model A and five",
+    "models_systems": "Two anonymised LLMs run as agents (Model A and Model B)",
+    "domain": "evaluation awareness / agentic safety",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — an observed behaviour, counted. Gate 2 fails (b): models are anonymised, so no company response can be attached.",
+    "finding_type": "empirical model finding",
+    "institution": "International Network of AI Safety Institutes joint testing exercise (Singapore AISI and UK AISI strand leads; France INESIA/PEReN participating)",
+    "scope": "cross-model / methodology exercise",
+    "source_url": "https://www.peren.gouv.fr/rapports/2025-July_Advancing-Methodologies-for-Agentic-Evaluations-Across-Domains_Report.pdf",
+    "access_type": "public document"
+   },
+   {
+    "finding": "Agents failed to execute benign tasks at a high rate — around 30% in English with similar trends in Hindi and other languages — indicating that agentic execution capability, not only refusal behaviour, limits current agent reliability.",
+    "finding_quote": "Execution failures in benign tasks were common (e.g. ~30% in English, similar",
+    "models_systems": "Two anonymised LLMs run as agents (Model A and Model B)",
+    "domain": "agentic capability / execution reliability",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured failure rate. Gate 2 fails (b) anonymised models and (c) an execution-capability shortfall is not a concerning safety result warranting a company response.",
+    "finding_type": "empirical model finding",
+    "institution": "International Network of AI Safety Institutes joint testing exercise (Singapore AISI and UK AISI strand leads; France INESIA/PEReN participating)",
+    "scope": "cross-model / methodology exercise",
+    "source_url": "https://www.peren.gouv.fr/rapports/2025-July_Advancing-Methodologies-for-Agentic-Evaluations-Across-Domains_Report.pdf",
+    "access_type": "public document"
+   },
+   {
+    "finding": "LLM judges disagreed substantially with human annotators on agent trajectory safety — discrepancy of 15-36% for judge Model C and 23-41% for judge Model D — and were systematically more lenient than humans, with the largest discrepancies in Telugu, Hindi and Kiswahili.",
+    "finding_quote": "15%-36% for Model C and 23%-41% for Model D.",
+    "models_systems": "Two anonymised LLMs used as judge-LLMs (Model C and Model D)",
+    "domain": "LLM-as-judge reliability / evaluation methodology",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured behavioural result on judge models. Gate 2 fails (b) the judges are anonymised and (c) the models are the INSTRUMENT of a methodology study.",
+    "finding_type": "empirical model finding",
+    "institution": "International Network of AI Safety Institutes joint testing exercise (Singapore AISI and UK AISI strand leads; France INESIA/PEReN participating)",
+    "scope": "cross-model / methodology exercise",
+    "source_url": "https://www.peren.gouv.fr/rapports/2025-July_Advancing-Methodologies-for-Agentic-Evaluations-Across-Domains_Report.pdf",
+    "access_type": "public document"
+   },
+   {
+    "finding": "In the UK AISI-led cybersecurity strand, Bayesian modelling (HiBayES) over Cybench and InterCode CTF runs found that most evaluation parameters varied — agent prompt, individual tool removal, token limit — had no substantial effect on agent success rate; the only significant effect was reduced performance for Model E at higher temperature, and benchmark choice dominated all other variables.",
+    "finding_quote": "most target variables did not have a substantial impact on model success rate.",
+    "models_systems": "Two anonymised open-source models (Model E and Model F) on Cybench and InterCode CTF, evaluated with Inspect and HiBayES",
+    "domain": "cyber agentic capability / evaluation robustness",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — this is a methodology/tooling finding about which evaluation parameters move measured success rate, not a finding about a model's own capability or safety. Tier C, Action Trackable blank.",
+    "finding_type": "methodology finding",
+    "institution": "International Network of AI Safety Institutes joint testing exercise (Singapore AISI and UK AISI strand leads; France INESIA/PEReN participating)",
+    "scope": "cross-model / methodology exercise",
+    "source_url": "https://www.peren.gouv.fr/rapports/2025-July_Advancing-Methodologies-for-Agentic-Evaluations-Across-Domains_Report.pdf",
+    "access_type": "public document"
+   }
+  ]
+ }
+]

@@ -1,0 +1,156 @@
+[
+ {
+  "venue": "Scale AI",
+  "title": "Evaluating Deep Neural Networks Trained on Clinical Images in Dermatology with the Fitzpatrick 17k Dataset",
+  "url": "https://labs.scale.com/papers/evaluating-deep-neural-networks-trained-on-clinical-images-in-dermatology-with-the-fitzpatrick-17k-dataset",
+  "date": "2021-04-20",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins; §4b — ordinary accuracy/reliability exclusion",
+  "reason": "Scale Labs page is an abstract-plus-citation listing for arXiv:2104.09957 (the primary and fullest source it links to); its substantive claims are classification-accuracy variation of a VGG-style classifier the authors trained themselves on the Fitzpatrick 17k images — no external AI system, company or named model is evaluated, and model accuracy is §4b out of scope.",
+  "fetch": {"via": "direct", "status": 200, "chars": 2061, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "APPS: Measuring Coding Challenge Competence With APPS",
+  "url": "https://www.grayswan.ai/research/apps-measuring-coding-challenge-competence-with-apps",
+  "date": "2021-05",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — nothing evidence-backed is asserted in this report; §3 dedup",
+  "reason": "Opened and read in full: the page is a 680-character catalogue stub (title, May 2021, author list) that states “This research is currently only available at its source” and links out — it contains no result, number or observation of its own, and the primary source is the external NeurIPS/arXiv paper.",
+  "fetch": {"via": "direct", "status": 200, "chars": 680, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Is your AI model ready for production?",
+  "url": "https://www.robustintelligence.com/blog-posts/is-your-ai-model-ready-for-production",
+  "date": "2021-05-03",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinions, recommendations and product plans are not findings",
+  "reason": "Read in full: a co-founder’s argument that summary metrics are an inadequate production-readiness test, closing with a pitch for the RIME platform; it reports no measurement, tests no system and names no model.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 19215, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Business Alliance with Tokio Marine",
+  "url": "https://www.robustintelligence.com/blog-posts/tokio-marine",
+  "date": "2021-05-24",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 preamble — “Announcements, partnership news, opinion pieces and plans contain no findings”",
+  "reason": "Read in full: reproduces the Tokio Marine Holdings / Robust Intelligence business-alliance press release and its forward-looking joint R&D objectives; no evaluation and no evidence-backed claim about any AI system.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 10145, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Failure Modes When Productionizing AI Systems",
+  "url": "https://www.robustintelligence.com/blog-posts/failure-modes-when-productionizing-ai-systems",
+  "date": "2021-05-31",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 — summaries of someone else’s work are not findings; §4b — ordinary reliability exclusion",
+  "reason": "Read in full: a conceptual taxonomy (input / performance-bias / robustness failures) whose supporting evidence is other people’s work (Breck et al., Bolukbasi et al., a Washington Post report); its one first-party empirical line — that LightGBM, XGBoost, TensorFlow and PyTorch change predictions on a numeric-to-string type change while sklearn does not — is a data-handling reliability claim under §4b and is written up fully in the 2021-06-07 input-validation post.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 24362, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "How Does Your Favorite ML Library Handle Bad Data?",
+  "url": "https://www.robustintelligence.com/blog-posts/input-validation-for-machine-learning-models",
+  "date": "2021-06-07",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§4b — ordinary accuracy and reliability exclusion",
+  "reason": "Read in full and this is the closest call in the batch: it is a real first-party test (Titanic dataset; scikit-learn, CatBoost, LightGBM, XGBoost, TensorFlow, PyTorch, Google AutoML, DataRobot) reporting that no pipeline flags unseen categoricals, unknown features, out-of-range values or capitalisation changes — but the entire measured object is malformed-input handling and data hygiene in tabular ML tooling, i.e. general reliability, which §4b puts out of scope because the corpus never censused that literature; no safety-relevant model behaviour and no frontier model is assessed.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 24891, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "The Fallacy of the Hero Lifeguard",
+  "url": "https://www.robustintelligence.com/blog-posts/the-fallacy-of-the-hero-lifeguard",
+  "date": "2021-06-14",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinions and recommendations are not findings",
+  "reason": "Read in full: filed under “Perspectives”, an allegory about a lifeguard used to recommend offline testing, continuous testing and a firewall; no measurement, no system tested, no model named.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 19478, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "How To Secure AI Systems @ Stanford MLSys Seminar",
+  "url": "https://www.robustintelligence.com/blog-posts/video-how-to-secure-ai-systems-stanford-mlsys-seminar",
+  "date": "2021-06-21",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 preamble — announcements contain no findings",
+  "reason": "Read in full: a one-minute notice that the CEO gave a Stanford MLSys Seminar talk, with a two-sentence abstract; the page asserts no evidence-backed claim of its own.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 5442, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Globally-Robust Neural Networks",
+  "url": "https://www.grayswan.ai/research/globally-robust-neural-networks",
+  "date": "2021-07",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — nothing evidence-backed is asserted in this report; §3 dedup",
+  "reason": "Opened and read in full: a 521-character catalogue stub (title, July 2021, Leino/Wang/Fredrikson) stating “This research is currently only available at its source” — no abstract, result or number appears on the page; the primary source is the external ICML paper.",
+  "fetch": {"via": "direct", "status": 200, "chars": 521, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Smooth Sailing - Building Secure AI for Insurance",
+  "url": "https://www.robustintelligence.com/blog-posts/smooth-sailing-building-secure-ai-for-insurance",
+  "date": "2021-07-06",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 and test 2 — a customer’s own account, not an evidence-backed claim asserted by the evaluator",
+  "reason": "Read in full: a “Perspectives” interview in which Tokio Marine’s Group CDO describes how his firm deploys AI and why RIME appealed to him, with one figure quoted second-hand from Accenture; Robust Intelligence tests nothing and reports no result.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 17699, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "AI Regulation is Coming. Get Ready.",
+  "url": "https://www.robustintelligence.com/blog-posts/ai-regulation-is-coming",
+  "date": "2021-08-08",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinions, recommendations and forward-looking plans are not findings",
+  "reason": "Read in full: a product manager’s commentary on the draft EU AI Act and an FTC directive and how RIME would help customers comply; it summarises other bodies’ proposals and makes no evidence-backed claim of its own about any AI system.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 17926, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Does Not Compute: Data Inconsistencies in Machine Learning Pipelines",
+  "url": "https://www.robustintelligence.com/blog-posts/data-inconsistencies",
+  "date": "2021-08-16",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§4b — ordinary accuracy and reliability exclusion",
+  "reason": "Read in full: the one measured result is a RIME product demonstration on a gradient-boosted tree the authors trained themselves on the IEEE-CIS fraud dataset (AUC 0.895 overall vs 0.786 on the 336 flagged inconsistent points) — a predictive-reliability degradation on anomalous tabular data, which §4b puts out of scope; no external, named or frontier AI system is evaluated.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 17077, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Jerry Liu: Blending his Interests from Princeton, Quora, and Uber to Build The AI Firewall",
+  "url": "https://www.robustintelligence.com/blog-posts/fireside-chat-jerry-liu",
+  "date": "2021-08-19",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — no evidence-backed claim about any AI system is asserted",
+  "reason": "Read in full: a “People”-category staff profile interview about an engineer’s career and life at the company; contains no test, measurement or model assessment.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 13204, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Kye Kim: An Interdisciplinary Track from Stanford to RI",
+  "url": "https://www.robustintelligence.com/blog-posts/fireside-chat-kye-kim",
+  "date": "2021-08-26",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — no evidence-backed claim about any AI system is asserted",
+  "reason": "Read in full: a “People”-category staff profile interview with the frontend engineering lead about her route into software engineering; contains no test, measurement or model assessment.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 13265, "pages": null},
+  "findings": []
+ }
+]

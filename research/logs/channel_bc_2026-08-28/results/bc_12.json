@@ -1,0 +1,1397 @@
+[
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"SecureBio\"; \"BioTIER\"; \"GPT-5.6 Sol\"; \"railfree\"; \"Pre-Release Testing Report\"; \"synthesis screening\"; \"Virology Capabilities Test\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (SecureBio, BioTIER, GPT-5.6 Sol, railfree, Pre-Release Testing Report, synthesis screening, Virology Capabilities Test)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=SecureBio",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      },
+      {
+       "name": "Hansard - the two contributions that DO mention the named system, read in full",
+       "url": "https://hansard.parliament.uk/lords/2026-07-23/debates/0AD8A0A1-BA91-4F7A-BF32-58A2C4022746/DigitalAndTechnologyPolicyNationalSovereignty",
+       "via": "direct (via hansard-api debate record)",
+       "status": 200,
+       "result": "ADJACENT, NOT ADMISSIBLE. Phrase search for \"GPT-5.6\" returns exactly two Lords contributions, both by Baroness Berger: 'AI: International Co-operation' (2026-07-22, which predates publication and so cannot be uptake) and 'Digital and Technology Policy: National Sovereignty' (2026-07-23). Both were read in full. Both concern an unrelated accidental cyber incident involving GPT-5.6 Sol announced by OpenAI - 'the unintended and unprecedented accidental cyber attack by the new GPT-5.6 Sol and other models on the very platform that was hosting a test'. Neither mentions SecureBio, DNA synthesis screening evasion, BioTIER or expert uplift. Discussion of the named system is not uptake of this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of SecureBio, BioTIER, GPT-5.6 Sol, railfree, Pre-Release Testing Report, synthesis screening, Virology Capabilities Test. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22SecureBio%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      },
+      {
+       "name": "European Biotech Act Commission Staff Working Document SWD(2026) 450 final (surfaced by the EUR-Lex 'SecureBio' query; read in full)",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026SC0450",
+       "via": "direct",
+       "status": 200,
+       "result": "ADJACENT, NOT ADMISSIBLE. Dated 26.5.2026, which is BEFORE this report's 2026-07-23 publication date and therefore outside the search window. It does explicitly name the evaluator, but only citing 'SecureBio Detection (2025), Scaling US Pathogen Detection', a pathogen-surveillance cost model used for biodefence budgeting. Document contains zero occurrences of 'GPT-5.6', 'BioTIER', 'evade' or 'evasion'. A citation of a different SecureBio work is a reference to the evaluator as an organisation, which the admissibility rule expressly excludes."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28, and the US jurisdiction was searched properly for the first time. The previous pass recorded a clean US negative without any access outcome, in a pass where it had wrongly concluded congress.gov was blocked; that claim is now replaced with real evidence. 43.5M characters of in-window US congressional and regulatory text (16 Congressional Record issues, 129 hearing transcripts, 1,046 bills, plus the Federal Register API) were fetched at HTTP 200 and full-text searched, returning zero hits. UK Hansard was searched through its official API - which answered 200 where the HTML UI 403s - along with gov.uk and the committees API, all zero. The only sources that name the evaluator or the system are adjacent and inadmissible: two Lords contributions about an unrelated GPT-5.6 Sol cyber incident, and a pre-window EU Biotech Act staff working document citing a different SecureBio publication. Nothing enforceable and nothing non-binding explicitly references this finding. The existing level is correct, and is now supported by evidence rather than by an untested assumption.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "No independent media coverage located. arXiv was searched via its API: 'SecureBio' returns no papers; 'BioTIER' returns arXiv:2607.14479 'BioTIER: A Refusal Benchmark for Targeted Biological Risk Mitigation' (submitted 2026-07-16), which is the evaluator's own benchmark paper and predates this report, so it is excluded as circular under the Channel C rule and is in any case not coverage of this finding. Google Scholar was recorded as not indexing the exact report title on 2026-08-15 and that remains consistent. Semantic Scholar API returned 429 on repeated attempts and could not be read. Descriptive only; no effect on any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO4",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"SecureBio\"; \"BioTIER\"; \"GPT-5.6 Sol\"; \"railfree\"; \"Pre-Release Testing Report\"; \"synthesis screening\"; \"Virology Capabilities Test\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (SecureBio, BioTIER, GPT-5.6 Sol, railfree, Pre-Release Testing Report, synthesis screening, Virology Capabilities Test)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=SecureBio",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      },
+      {
+       "name": "Hansard - the two contributions that DO mention the named system, read in full",
+       "url": "https://hansard.parliament.uk/lords/2026-07-23/debates/0AD8A0A1-BA91-4F7A-BF32-58A2C4022746/DigitalAndTechnologyPolicyNationalSovereignty",
+       "via": "direct (via hansard-api debate record)",
+       "status": 200,
+       "result": "ADJACENT, NOT ADMISSIBLE. Phrase search for \"GPT-5.6\" returns exactly two Lords contributions, both by Baroness Berger: 'AI: International Co-operation' (2026-07-22, which predates publication and so cannot be uptake) and 'Digital and Technology Policy: National Sovereignty' (2026-07-23). Both were read in full. Both concern an unrelated accidental cyber incident involving GPT-5.6 Sol announced by OpenAI - 'the unintended and unprecedented accidental cyber attack by the new GPT-5.6 Sol and other models on the very platform that was hosting a test'. Neither mentions SecureBio, DNA synthesis screening evasion, BioTIER or expert uplift. Discussion of the named system is not uptake of this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of SecureBio, BioTIER, GPT-5.6 Sol, railfree, Pre-Release Testing Report, synthesis screening, Virology Capabilities Test. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22SecureBio%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      },
+      {
+       "name": "European Biotech Act Commission Staff Working Document SWD(2026) 450 final (surfaced by the EUR-Lex 'SecureBio' query; read in full)",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026SC0450",
+       "via": "direct",
+       "status": 200,
+       "result": "ADJACENT, NOT ADMISSIBLE. Dated 26.5.2026, which is BEFORE this report's 2026-07-23 publication date and therefore outside the search window. It does explicitly name the evaluator, but only citing 'SecureBio Detection (2025), Scaling US Pathogen Detection', a pathogen-surveillance cost model used for biodefence budgeting. Document contains zero occurrences of 'GPT-5.6', 'BioTIER', 'evade' or 'evasion'. A citation of a different SecureBio work is a reference to the evaluator as an organisation, which the admissibility rule expressly excludes."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28, and the US jurisdiction was searched properly for the first time. The previous pass recorded a clean US negative without any access outcome, in a pass where it had wrongly concluded congress.gov was blocked; that claim is now replaced with real evidence. 43.5M characters of in-window US congressional and regulatory text (16 Congressional Record issues, 129 hearing transcripts, 1,046 bills, plus the Federal Register API) were fetched at HTTP 200 and full-text searched, returning zero hits. UK Hansard was searched through its official API - which answered 200 where the HTML UI 403s - along with gov.uk and the committees API, all zero. The only sources that name the evaluator or the system are adjacent and inadmissible: two Lords contributions about an unrelated GPT-5.6 Sol cyber incident, and a pre-window EU Biotech Act staff working document citing a different SecureBio publication. Nothing enforceable and nothing non-binding explicitly references this finding. The existing level is correct, and is now supported by evidence rather than by an untested assumption.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "No independent media coverage located. arXiv was searched via its API: 'SecureBio' returns no papers; 'BioTIER' returns arXiv:2607.14479 'BioTIER: A Refusal Benchmark for Targeted Biological Risk Mitigation' (submitted 2026-07-16), which is the evaluator's own benchmark paper and predates this report, so it is excluded as circular under the Channel C rule and is in any case not coverage of this finding. Google Scholar was recorded as not indexing the exact report title on 2026-08-15 and that remains consistent. Semantic Scholar API returned 429 on repeated attempts and could not be read. Descriptive only; no effect on any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO5",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22SecureBio%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"SecureBio\"; \"BioTIER\"; \"GPT-5.6 Sol\"; \"railfree\"; \"Pre-Release Testing Report\"; \"synthesis screening\"; \"Virology Capabilities Test\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (SecureBio, BioTIER, GPT-5.6 Sol, railfree, Pre-Release Testing Report, synthesis screening, Virology Capabilities Test)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=SecureBio",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      },
+      {
+       "name": "Hansard - the two contributions that DO mention the named system, read in full",
+       "url": "https://hansard.parliament.uk/lords/2026-07-23/debates/0AD8A0A1-BA91-4F7A-BF32-58A2C4022746/DigitalAndTechnologyPolicyNationalSovereignty",
+       "via": "direct (via hansard-api debate record)",
+       "status": 200,
+       "result": "ADJACENT, NOT ADMISSIBLE. Phrase search for \"GPT-5.6\" returns exactly two Lords contributions, both by Baroness Berger: 'AI: International Co-operation' (2026-07-22, which predates publication and so cannot be uptake) and 'Digital and Technology Policy: National Sovereignty' (2026-07-23). Both were read in full. Both concern an unrelated accidental cyber incident involving GPT-5.6 Sol announced by OpenAI - 'the unintended and unprecedented accidental cyber attack by the new GPT-5.6 Sol and other models on the very platform that was hosting a test'. Neither mentions SecureBio, DNA synthesis screening evasion, BioTIER or expert uplift. Discussion of the named system is not uptake of this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of SecureBio, BioTIER, GPT-5.6 Sol, railfree, Pre-Release Testing Report, synthesis screening, Virology Capabilities Test. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22SecureBio%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=SecureBio",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      },
+      {
+       "name": "European Biotech Act Commission Staff Working Document SWD(2026) 450 final (surfaced by the EUR-Lex 'SecureBio' query; read in full)",
+       "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52026SC0450",
+       "via": "direct",
+       "status": 200,
+       "result": "ADJACENT, NOT ADMISSIBLE. Dated 26.5.2026, which is BEFORE this report's 2026-07-23 publication date and therefore outside the search window. It does explicitly name the evaluator, but only citing 'SecureBio Detection (2025), Scaling US Pathogen Detection', a pathogen-surveillance cost model used for biodefence budgeting. Document contains zero occurrences of 'GPT-5.6', 'BioTIER', 'evade' or 'evasion'. A citation of a different SecureBio work is a reference to the evaluator as an organisation, which the admissibility rule expressly excludes."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28, and the US jurisdiction was searched properly for the first time. The previous pass recorded a clean US negative without any access outcome, in a pass where it had wrongly concluded congress.gov was blocked; that claim is now replaced with real evidence. 43.5M characters of in-window US congressional and regulatory text (16 Congressional Record issues, 129 hearing transcripts, 1,046 bills, plus the Federal Register API) were fetched at HTTP 200 and full-text searched, returning zero hits. UK Hansard was searched through its official API - which answered 200 where the HTML UI 403s - along with gov.uk and the committees API, all zero. The only sources that name the evaluator or the system are adjacent and inadmissible: two Lords contributions about an unrelated GPT-5.6 Sol cyber incident, and a pre-window EU Biotech Act staff working document citing a different SecureBio publication. Nothing enforceable and nothing non-binding explicitly references this finding. The existing level is correct, and is now supported by evidence rather than by an untested assumption.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "No independent media coverage located. arXiv was searched via its API: 'SecureBio' returns no papers; 'BioTIER' returns arXiv:2607.14479 'BioTIER: A Refusal Benchmark for Targeted Biological Risk Mitigation' (submitted 2026-07-16), which is the evaluator's own benchmark paper and predates this report, so it is excluded as circular under the Channel C rule and is in any case not coverage of this finding. Google Scholar was recorded as not indexing the exact report title on 2026-08-15 and that remains consistent. Semantic Scholar API returned 429 on repeated attempts and could not be read. Descriptive only; no effect on any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2026-07-ALI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Control%20Red%20Team%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"Control Red Team\"; \"frontier monitors\"; \"stress-testing frontier monitors\"; \"AI Security Institute\"; \"Claude Mythos\"; \"Mythos Preview\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=Control%20Red%20Team",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (Control Red Team, frontier monitors, stress-testing frontier monitors, AI Security Institute, Claude Mythos, Mythos Preview)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Control%20Red%20Team",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=Control%20Red%20Team",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of Control Red Team, frontier monitors, stress-testing frontier monitors, AI Security Institute, Claude Mythos, Mythos Preview. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22Control%20Red%20Team%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Control%20Red%20Team",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28. UK Hansard via the official API returned zero for 'Control Red Team', 'frontier monitors' and 'stress-testing frontier monitors' across Commons, Lords, written statements and written answers; gov.uk and the committees API likewise zero. US: 43.5M characters of in-window Congressional Record, hearing transcripts and bills fetched at HTTP 200 and searched, zero hits; Federal Register API count=0. EU: EUR-Lex no results. Pre-window Hansard mentions of 'Claude Mythos'/'Mythos Preview' fall outside the window and discuss the model, not this monitor-vulnerability finding. Note that UK AISI is itself a UK government body, but its own blog is the finding's own publication, not uptake of it. The existing level is confirmed against sources actually read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "resultsense.com",
+     "url": "https://www.resultsense.com/",
+     "date": "2026-07-24"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "Carried forward from the previous pass: resultsense.com, \"UK's AI institute red-teams the monitors guarding agents\" (2026-07-24). The outlet's homepage was confirmed reachable at HTTP 200, but the previous pass recorded no article-level URL, so the specific item could not be re-verified. No mainstream press located. arXiv API returns no paper matching 'Control Red Team' in this sense. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2026-07-ALI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Control%20Red%20Team%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"Control Red Team\"; \"frontier monitors\"; \"stress-testing frontier monitors\"; \"AI Security Institute\"; \"Claude Mythos\"; \"Mythos Preview\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=Control%20Red%20Team",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (Control Red Team, frontier monitors, stress-testing frontier monitors, AI Security Institute, Claude Mythos, Mythos Preview)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Control%20Red%20Team",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=Control%20Red%20Team",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of Control Red Team, frontier monitors, stress-testing frontier monitors, AI Security Institute, Claude Mythos, Mythos Preview. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22Control%20Red%20Team%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Control%20Red%20Team",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28. UK Hansard via the official API returned zero for 'Control Red Team', 'frontier monitors' and 'stress-testing frontier monitors' across Commons, Lords, written statements and written answers; gov.uk and the committees API likewise zero. US: 43.5M characters of in-window Congressional Record, hearing transcripts and bills fetched at HTTP 200 and searched, zero hits; Federal Register API count=0. EU: EUR-Lex no results. Pre-window Hansard mentions of 'Claude Mythos'/'Mythos Preview' fall outside the window and discuss the model, not this monitor-vulnerability finding. Note that UK AISI is itself a UK government body, but its own blog is the finding's own publication, not uptake of it. The existing level is confirmed against sources actually read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "resultsense.com",
+     "url": "https://www.resultsense.com/",
+     "date": "2026-07-24"
+    },
+    {
+     "outlet": "business-news-today.com",
+     "url": "https://www.business-news-today.com/",
+     "date": "2026-07-24"
+    }
+   ],
+   "academic": [],
+   "discussion": [],
+   "note": "Carried forward from the previous pass: resultsense.com, \"UK's AI institute red-teams the monitors guarding agents\" (2026-07-24). The outlet's homepage was confirmed reachable at HTTP 200, but the previous pass recorded no article-level URL, so the specific item could not be re-verified. No mainstream press located. arXiv API returns no paper matching 'Control Red Team' in this sense. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "ANTHROPIC-2026-07-OPUS5-CYB1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Claude%20Opus%205%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"Claude Opus 5\"; \"Opus 5\"; \"The Last Ones\"; \"cyber range\"; \"AI Security Institute\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=Claude%20Opus%205",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (Claude Opus 5, Opus 5, The Last Ones, cyber range, AI Security Institute)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Claude%20Opus%205",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=Claude%20Opus%205",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of Claude Opus 5, Opus 5, The Last Ones, cyber range, AI Security Institute. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22Claude%20Opus%205%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Claude%20Opus%205",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28. Hansard official API returned zero for 'Claude Opus 5', 'Opus 5', 'cyber range' and 'cyber ranges'; gov.uk zero; committees API zero. US: 43.5M characters of in-window congressional text at HTTP 200, zero hits including 'claude opus 5' and 'opus 5'; Federal Register API count=0 for 'Claude Opus 5' and 'AI Security Institute'. EU: EUR-Lex returned no results for the quoted system name. No government source explicitly references the UK AISI cyber-range result. Existing level confirmed on evidence.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "No independent coverage of this specific cyber-range result located. arXiv full-text search for 'Claude Opus 5' returns six in-window papers (2607.27739, 2608.07776, 2608.13675, 2608.14992, 2608.19131, 2608.22237), but each merely uses or benchmarks the model - several are unrelated mathematics and physics preprints - and none references the UK AISI cyber ranges, 'The Last Ones', or the 8/10 result. Model mentions are not coverage of this finding. Semantic Scholar 429. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   },
+   {
+    "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22The%20Last%20Ones%22",
+    "status": "200 but body 'An error has occurred.'",
+    "what_it_would_have_shown": "Hansard matches for the cyber range name 'The Last Ones'. The API rejected this particular phrase on repeated attempts. Low materiality: it is a generic English phrase whose matches would be noise, and the load-bearing terms ('Claude Opus 5', 'Opus 5', 'cyber range', 'AI Security Institute') all searched cleanly and returned zero."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "DREADNODE-2026-07-ALI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"Dreadnode\"; \"Every Model Cheats\"; \"Claude Opus 4.8\"; \"Sonnet 5\"; \"GPT-5.4\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (Dreadnode, Every Model Cheats, Claude Opus 4.8, Sonnet 5, GPT-5.4)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=Dreadnode",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of Dreadnode, Every Model Cheats, Claude Opus 4.8, Sonnet 5, GPT-5.4. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22Dreadnode%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28. Hansard official API zero for 'Dreadnode' and 'Every Model Cheats'; gov.uk zero; committees API zero. US: 43.5M characters of in-window Congressional Record, hearings and bills at HTTP 200, zero occurrences of 'dreadnode' or 'every model cheats'; Federal Register API count=0. EU: EUR-Lex explicitly returned no results for 'Dreadnode'. The evaluator's own submission to the US AI Action Plan process remains the evaluator's advocacy, not a government source citing this finding. Existing level confirmed on evidence.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "TravisML Substack",
+     "url": "https://travisml.substack.com/p/every-ai-model-cheats-on-cybersecurity",
+     "date": "2026-07-27"
+    }
+   ],
+   "academic": [],
+   "discussion": [
+    {
+     "where": "TravisML Substack (independent practitioner commentary)",
+     "url": "https://travisml.substack.com/p/every-ai-model-cheats-on-cybersecurity"
+    }
+   ],
+   "note": "The TravisML Substack item was re-fetched and confirmed live at HTTP 200: 'Every AI Model Cheats on Cybersecurity Benchmarks - A new study of 22 frontier models finds that 37% of passing scores...'. Independent of both Dreadnode and the evaluated companies, so admissible as Channel C. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "DREADNODE-2026-07-ALI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "Hansard official API (hansard-api.parliament.uk) - Commons + Lords contributions, written statements, written answers, debates, committees, petitions; quoted-phrase search",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=%22Dreadnode%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Phrase-searched \"Dreadnode\"; \"Every Model Cheats\"; \"Claude Opus 4.8\"; \"Sonnet 5\"; \"GPT-5.4\". All returned zero across every Hansard result class. API verified live by control query \"artificial intelligence\" = 3138 contributions / 104 written statements / 80 debates."
+      },
+      {
+       "name": "gov.uk search API (ministerial statements, departmental and regulator publications)",
+       "url": "https://www.gov.uk/api/search.json?q=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "total=0 for every term searched (Dreadnode, Every Model Cheats, Claude Opus 4.8, Sonnet 5, GPT-5.4)."
+      },
+      {
+       "name": "UK Parliament committees API - committee publications and reports",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "totalResults=0 for the evaluator/report/system terms. Loose OR-matches on generic word combinations resolved to Foreign Affairs Committee 'Disinformation diplomacy' work, unrelated to this finding. Control 'artificial intelligence' = 27 publications."
+      },
+      {
+       "name": "hansard.parliament.uk HTML search",
+       "url": "https://hansard.parliament.uk/search/Contributions?searchTerm=Dreadnode",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403 direct and no Wayback snapshot. Substantively superseded by the official Hansard API above, which queries the same corpus and returned 200."
+      },
+      {
+       "name": "publications.parliament.uk / committees.parliament.uk",
+       "url": "https://publications.parliament.uk/",
+       "via": "wayback",
+       "status": 200,
+       "result": "403 direct, retrieved 200 via Wayback. No reference to the finding, report or evaluator."
+      },
+      {
+       "name": "UK AI Security Institute publications; NCSC",
+       "url": "https://www.aisi.gov.uk/work",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no UK government publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record - EVERY daily issue published in the search window, full text (govinfo document route, not the blocked search route)",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-08-03/pdf/CREC-2026-08-03.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "All 16 in-window issues (2026-07-23 through 2026-08-27) fetched at HTTP 200 direct; 4,853,791 characters searched. Zero occurrences of Dreadnode, Every Model Cheats, Claude Opus 4.8, Sonnet 5, GPT-5.4. The only 'aisi' string matches were substrings of 'raising', 'fundraising' and 'daisies'."
+      },
+      {
+       "name": "Congressional hearing transcripts (CHRG) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/CHRG_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "129 hearing packages published 2026-07-23..2026-08-28 identified from the govinfo sitemap; 129/129 fetched at HTTP 200 direct; 20,838,609 characters searched. Zero hits on any evaluator, report, system or result term."
+      },
+      {
+       "name": "Congressional bills and resolutions (BILLS) - every package published in the search window, full text",
+       "url": "https://www.govinfo.gov/sitemap/BILLS_2026_sitemap.xml",
+       "via": "direct",
+       "status": 200,
+       "result": "1,046 in-window bill/resolution packages fetched, 1,046/1,046 with text, 17,869,198 characters searched. Zero hits. No enforceable instrument references this finding."
+      },
+      {
+       "name": "Federal Register official API, full-text search, publication_date >= 2026-07-23",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions[term]=SecureBio&conditions[publication_date][gte]=2026-07-23",
+       "via": "direct",
+       "status": 200,
+       "result": "count=0 for SecureBio, BioTIER, 'GPT-5.6 Sol', Dreadnode, 'Control Red Team', 'Claude Opus 5' and 'AI Security Institute'. API verified live: control 'artificial intelligence' = 39 documents, 'NIST' = 16 documents in the same window."
+      },
+      {
+       "name": "congress.gov keyword search interface",
+       "url": "https://www.congress.gov/search?q=%7B%22source%22%3A%22all%22%2C%22search%22%3A%22SecureBio%22%7D",
+       "via": "direct then wayback",
+       "status": 403,
+       "result": "403, no snapshot - CONFIRMED BLOCKED. This is the endpoint the previous pass mistook for 'US congressional sources are blocked'. Worked around completely by full-text searching the underlying CREC, CHRG and BILLS corpora above (43.5M characters total), so the US jurisdiction is genuinely searched, not assumed."
+      },
+      {
+       "name": "NIST / CAISI / Commerce publications",
+       "url": "https://www.nist.gov/caisi",
+       "via": "direct",
+       "status": 200,
+       "result": "Reachable and reviewed; no agency publication in window explicitly referencing this finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "EUR-Lex full-text search (all EU legal instruments, preparatory acts, staff working documents)",
+       "url": "https://eur-lex.europa.eu/search.html?scope=EURLEX&text=%22Dreadnode%22&lang=en&type=quick",
+       "via": "direct",
+       "status": 200,
+       "result": "No results for the report, system or result terms. Verified by reading candidate documents rather than trusting the result list."
+      },
+      {
+       "name": "European Commission digital-strategy / AI Office search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Dreadnode",
+       "via": "direct",
+       "status": 200,
+       "result": "PAGE LOADS BUT RESULTS ARE JAVASCRIPT-RENDERED - identical 3,324-character shell returned for every query, so the result set could not actually be read. Recorded as unread, not as an absence."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against readable primary sources on 2026-08-28. Hansard official API zero for 'Dreadnode' and 'Every Model Cheats'; gov.uk zero; committees API zero. US: 43.5M characters of in-window Congressional Record, hearings and bills at HTTP 200, zero occurrences of 'dreadnode' or 'every model cheats'; Federal Register API count=0. EU: EUR-Lex explicitly returned no results for 'Dreadnode'. The evaluator's own submission to the US AI Action Plan process remains the evaluator's advocacy, not a government source citing this finding. Existing level confirmed on evidence.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [],
+   "discussion": [],
+   "note": "CHANNEL C CORRECTION. The previous pass logged arXiv:2607.21763 as an academic citation. It was verified via the arXiv API: 'Every Model Cheats: Prompt-Level Mitigation of Cheating on Offensive Cyber Tasks', submitted 2026-07-23, authors Michael Kouremetis, Ads Dawson, Raja Sekhar Rao Dheekonda, Brian Greunke. This is the evaluator's own preprint of the very report under assessment, not an independent citation of it, and the Channel C rule requires excluding the evaluator's own publication as circular. It is therefore removed from the academic list and recorded here instead. No independent academic citation located; Semantic Scholar 429 so citing-paper counts could not be read. Descriptive only; no effect on any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search",
+    "status": 403,
+    "what_it_would_have_shown": "A keyword index across congress.gov. Fully mitigated: the underlying corpora (Congressional Record, hearings, bills) were instead full-text searched in their entirety for the window via govinfo document URLs at HTTP 200."
+   },
+   {
+    "url": "https://hansard.parliament.uk/search/Contributions",
+    "status": 403,
+    "what_it_would_have_shown": "Hansard's HTML search UI. Fully mitigated by the official hansard-api.parliament.uk endpoint, which searches the same Commons and Lords corpus and returned HTTP 200."
+   },
+   {
+    "url": "https://www.theyworkforyou.com/search/",
+    "status": 418,
+    "what_it_would_have_shown": "A mirror used only as a pointer to locate debates; unnecessary here because the official Hansard API was readable."
+   },
+   {
+    "url": "https://digital-strategy.ec.europa.eu/en/search",
+    "status": "200 but JS-rendered, results unreadable",
+    "what_it_would_have_shown": "European Commission / AI Office news items and statements matching the search terms. This is the one genuine residual gap: a non-binding EC statement referencing the finding could sit here unread. EUR-Lex (which covers binding instruments and preparatory acts) was read successfully, so the 'Binding policy action' determination is unaffected."
+   },
+   {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "status": 429,
+    "what_it_would_have_shown": "Citation counts and citing-paper lists. Channel C only - descriptive, never scored. Partially mitigated via the arXiv API, which was readable."
+   }
+  ],
+  "confidence": "high"
+ }
+]

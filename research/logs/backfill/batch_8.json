@@ -1,0 +1,228 @@
+[
+  {
+    "url": "https://arxiv.org/pdf/2507.18631",
+    "title": "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment (EMNLP 2025)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 in scope (named third-party evaluation org, Shanghai Artificial Intelligence Laboratory, publishing on named frontier models); FRONTIER-MODEL RULE satisfied (Llama3-8B-Instruct, Llama3.1-8B-Instruct, Qwen2.5-7B-Instruct are named LLMs from frontier developers); §4b not engaged (the finding is a safeguard/alignment failure, limb 1, not ordinary accuracy).",
+    "resolved_date": "2025-07-24",
+    "date_source": "arXiv abs page for 2507.18631: '[Submitted on 24 Jul 2025 (v1), last revised 25 Jul 2025 (this version, v2)]'; submission history '[v1] Thu, 24 Jul 2025 17:59:24 UTC (910 KB)'. Day precision confirmed; the input's 2025-07-24 is correct. (Paper is also marked EMNLP 2025; no separate proceedings date is available and the cited URL is the arXiv PDF.)",
+    "findings": [
+      {
+        "finding": "Fine-tuning Meta's Llama3.1-8B-Instruct on the 1,000 benign Alpaca samples ranked lowest by the authors' LARF filter raised its attack success rate on HarmBench from 3.5% to 39.0% (DirectHarm4 13.25% to 49.50%; HEx-PHI 5.86% to 31.38%), and on the Dolly dataset from 3.5% to 85.0% on HarmBench; fine-tuning on the 1,000 top-ranked samples instead reduced ASR to 0%. The same pattern held for Llama3-8B-Instruct and Qwen2.5-7B-Instruct.",
+        "finding_quote": "On the Alpaca dataset, fine-tuning Llama3.1 with the 1,000 bottom ranked samples flagged by LARF raises the Attack Success Rate (ASR) on HarmBench from 3.5% to 39%, a 20% improvement over Bi-Anchoring, while fine-tuning with the 1,000 top ranked samples reduces ASR to 0%.",
+        "models_systems": "Llama3.1-8B-Instruct (subject). [Report tested: Llama3-8B-Instruct, Qwen2.5-7B-Instruct; Mistral-v0.2, Phi-3-mini and Qwen2 in the appendix]",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Alignment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: an empirical, measured behaviour of a named model. Gate 2 (a) yes, (b) yes (Llama3.1-8B-Instruct, i.e. Meta), but (c) fails. The degradation is produced by a 1,000-sample subset the authors' own method adversarially selected, and the paper reports the number under the heading 'State-of-the-art detection performance' - i.e. the quantity being measured is LARF's detection ability, with the model as the instrument. Rulebook §4 excludes from Tier A both 'findings where named models are instruments of a methodology study, not its subject' and benchmark-score results with no dangerous threshold crossed. Re-derived: the earlier extraction coded this Tier A; corrected to Tier B. Numbers re-verified against Table 1 (Llama3.1 rows) and the contributions list.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "LARF identified safety-degrading fine-tuning data more effectively than SEAL, GradSafe and Bi-Anchoring on all three tested models while requiring no additional training data, no gradient computation, one GPU and 0.5 hour; removing the flagged samples preserved downstream task scores (HumanEval, PubMedQA, MATH) while lowering DirectHarm4 harmfulness.",
+        "finding_quote": "Although LARF neither requires additional training data nor gradient computations, it remains the most effective. For all models, LARF achieves the highest ASR on the two datasets.",
+        "models_systems": "N/A (method finding; demonstrated on Llama3, Llama3.1, Qwen2.5)",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Eval-tooling",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 fails: this is a methodology/tooling finding about a data-filtering method, not an empirical finding about a model's behaviour. Tier C by definition; action_trackable left blank per §4.",
+        "finding_type": "methodology",
+        "access_type": "N/A"
+      }
+    ]
+  },
+  {
+    "url": "https://arxiv.org/pdf/2401.11880",
+    "title": "PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety (ACL Main)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 in scope (Shanghai Artificial Intelligence Laboratory is a registered third-party evaluation org; co-authors at Dalian University of Technology and USTC do not make it university-only); FRONTIER-MODEL RULE satisfied (GPT-4 0613, GPT-4 Turbo, GPT-3.5 Turbo 0613, Claude2, Gemini Pro, Llama2-chat, Llama Guard are named frontier models/safety classifiers); §4b limb 1/4 (dangerous-task completion and safeguard bypass), not ordinary accuracy.",
+    "resolved_date": "2024-01-22",
+    "date_source": "arXiv abs page for 2401.11880: '[Submitted on 22 Jan 2024 (v1), last revised 20 Aug 2024 (this version, v3)]'; submission history '[v1] Mon, 22 Jan 2024 12:11:55 UTC'. Day precision confirmed; matches the input date. Quotes below were copied from the arXiv HTML rendering of the same paper (arxiv.org/html/2401.11880v3) because the PDF text layer breaks words across line ends; each was checked word-for-word against the PDF.",
+    "findings": [
+      {
+        "finding": "Under PsySafe's dark-personality-trait injection attack, agents backed by OpenAI models produced dangerous outputs at high rates: GPT-4 0613 reached 61.6% first-round joint danger rate and 100% process danger rate on ostensibly safe tasks (36.9% / 83.0% on dangerous tasks), and GPT-3.5 Turbo 0613 reached 50.0% / 100% on safe tasks and 38.4% / 98.4% on dangerous tasks - the lowest security of the API models tested. GPT-4 Turbo resisted, with a 0.0% joint danger rate throughout though an 83.3% process danger rate on safe tasks.",
+        "finding_quote": "In contrast, GPT-3.5 Turbo exhibits the lowest security on both the joint danger rate and process danger rate. Although GPT-4 0613 and Gemini Pro exhibit reduced risk in dangerous tasks, their danger rates for safe tasks are exceedingly high.",
+        "models_systems": "GPT-4 0613; GPT-3.5 Turbo 0613; GPT-4 Turbo",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "yes",
+        "tier": "A",
+        "tier_reasoning": "Gate 1 yes (measured behaviour of named models). Gate 2: (a) empirical; (b) names OpenAI models specifically; (c) an attack that drives the process danger rate of GPT-3.5 Turbo and GPT-4 0613 agents to 98.4-100% on tasks that include malware, intrusion and phishing content - where the highest-rated public Jailbreak Chat prompt alone achieved a 0.0% joint danger rate and 0.0% process danger rate on safe tasks (Table 3) - is an absolute safeguard failure, not a ranking artefact, and an OpenAI response is reasonable to expect. Tier A. Numbers verified in Table 2.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Across four popular multi-agent frameworks all running on GPT-3.5 Turbo 0613 (Camel, AutoGen, MetaGPT, AutoGPT), the hybrid human-input-plus-dark-traits attack raised the process danger rate on safe tasks from 0.0-5.6% without attack to 57.0-100%, and the first-round joint danger rate from 0.0% to 2.1-66.8%; AutoGPT was the least safe (66.8% JDR-R1, 94.9% PDR) and Camel and MetaGPT the safest.",
+        "finding_quote": "Table 1 shows that, for safe tasks, Camel offers the highest level of safety, as both the AI User and AI Assistant do not directly interact with the user’s attack prompts. Regarding dangerous tasks, AutoGen exhibits superior safety.",
+        "models_systems": "Camel, AutoGen, MetaGPT, AutoGPT (all on GPT-3.5 Turbo 0613)",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Jailbreaks; Autonomy",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes. Gate 2 fails (b)/(c): the subject here is a comparative ranking of four open-source agent scaffolds, which are not products of a frontier developer, and the shared GPT-3.5 Turbo backbone is the instrument rather than the subject. Rulebook §4 excludes comparative rankings and non-frontier subjects from Tier A. Tier B. All figures verified in Table 1.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Claude2 was the most attack-resistant model tested: even after the authors added a Jailbreak Chat prompt specifically to bypass its defences, it recorded a 0.0% joint danger rate and 0.0% process danger rate on dangerous tasks (1.7% JDR-R3 and 73.3% PDR on safe tasks).",
+        "finding_quote": "Table 2 shows that Claude2 and GPT-4 Turbo exhibit the highest levels of safety. Claude2, incorporating numerous safety mechanisms, achieves impressive defense against dangerous tasks.",
+        "models_systems": "Claude2",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): this is a reassuring null - the model resisted the attack - and §4 excludes reassuring nulls from Tier A. Tier B. Numbers verified in Table 2, including the footnote that an extra jailbreak prompt was added for Claude2.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Google's Gemini Pro showed high danger rates under the dark-trait injection attack, particularly on ostensibly safe tasks: 45.0% third-round joint danger rate, 41.7% first-round joint danger rate and 95.0% process danger rate on safe tasks, and 53.8% JDR-R2 with 86.1% process danger rate on dangerous tasks.",
+        "finding_quote": "Although GPT-4 0613 and Gemini Pro exhibit reduced risk in dangerous tasks, their danger rates for safe tasks are exceedingly high.",
+        "models_systems": "Gemini Pro",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "yes",
+        "tier": "A",
+        "tier_reasoning": "Gate 1 yes. Gate 2: (a) empirical; (b) names Gemini Pro, i.e. Google; (c) agents built on Gemini Pro produced dangerous content on 95.0% of process steps for tasks that were themselves benign, an absolute safeguard failure for which a developer response is reasonable. Tier A. Split from the OpenAI row per §5 (different companies never share a row). Numbers verified in Table 2.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Meta's Llama Guard, used as an input filter against the attack prompts, detected only 1.6% of dangerous examples in the safe-task setting and 49.2% in the dangerous-task setting, and left the joint danger rate on safe tasks unchanged at 45.0-50.0% and the process danger rate at 98.3%.",
+        "finding_quote": "This table shows that the input filter method is ineffective in filtering out our attack prompts.",
+        "models_systems": "Llama Guard",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "yes",
+        "tier": "A",
+        "tier_reasoning": "Gate 1 yes. Gate 2: (a) empirical; (b) Llama Guard is a named Meta safety classifier, explicitly retained by the frontier-model rule; (c) a shipped safeguard that misses 98.4% of the attack prompts in the setting where the attack works best is concerning and a Meta response is reasonable to expect. Tier A. Detection ratios verified in Table 5 (Llama Guard row).",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "GPT-4 0613 used as an input-filtering agent detected 95.0% of dangerous examples on dangerous tasks but only 16.7% on safe tasks, and prefixing the attack with a simple jailbreak prompt collapsed detection to 6.2% and 0.0% respectively, restoring joint danger rates of 24.6-41.6% and process danger rates of 89.2-100%.",
+        "finding_quote": "Although GPT-4 can effectively identify harmful prompts, they can be circumvented through certain jailbreak prompts",
+        "models_systems": "GPT-4 0613 (as input-filtering agent)",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): the filter is a scaffold the authors themselves built out of the GPT-4 API, not a safeguard OpenAI deployed, so the model is an instrument of a defence study rather than the subject of a shipped-safeguard failure. Tier B. Split from the GPT backbone row per §5 (capability/behaviour vs safeguard-scaffold failure warrant distinct responses). Detection ratios verified in Table 5 (GPT-4 and GPT-4-dagger rows).",
+        "finding_type": "methodology",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Agents' scores on a twelve-item dark-traits psychological test correlated with how dangerous their subsequent behaviour was, and joint danger rates fell across successive interaction rounds, which the authors attribute to agents self-reflecting once dangerous content accumulates in memory.",
+        "finding_quote": "The data in Table 1 and the distribution shown in Figure 5 reveal a strong correlation between the psychological test scores of agents and the dangerous level of their behaviors.",
+        "models_systems": "anonymised (agents across Camel, AutoGen, MetaGPT and AutoGPT on GPT-3.5 Turbo 0613)",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Alignment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes (observed behaviour across many trials). Gate 2 fails (b): the claim is about agents in general, not a specific named model, so no company response is addressable. Tier B. This is the claim the earlier extraction recorded; its quote was a hyphenation-damaged copy of the abstract ('psychological as- sessments'), so it has been replaced with a clean sentence from the body that supports the correlation directly.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Among open-source backbones, risk rose with model size: Llama2-7b-chat produced 5.0% first-round joint danger rate and 35.0% process danger rate on safe tasks, Llama2-13b-chat 6.6% and 63.3%, and Llama2-70b-chat 20.0% and 93.3%, which the authors attribute to larger models following injected dark traits more capably.",
+        "finding_quote": "For open-source models, Table 2 shows that, as the model size increases, the risk associated with multi-agent systems also escalates.",
+        "models_systems": "Llama2-7b-chat; Llama2-13b-chat; Llama2-70b-chat. [Report tested: Vicuna-13b, InternLM-20b]",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Jailbreaks",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): §4 excludes capability trends from Tier A, and this is explicitly a scale trend across a model family. Tier B. Numbers verified in Table 2 (Llama2 rows).",
+        "finding_type": "capability-trend",
+        "access_type": "Post-deployment"
+      }
+    ]
+  },
+  {
+    "url": "https://aclanthology.org/2024.naacl-long.263",
+    "title": "Fake Alignment: Are LLMs Really Aligned Well? (NAACL 2024)",
+    "institution": "Shanghai AI Laboratory (AI45 Lab)",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 in scope (Shanghai Artificial Intelligence Laboratory with Fudan University - not university-only); §4b limb 5 retains it (the finding is that a widely used safety-evaluation format materially overstates alignment, undermining the validity of safety evaluations), so the ordinary accuracy/reliability exclusion does not bite; FRONTIER-MODEL RULE satisfied for the named LLM subjects.",
+    "resolved_date": "2024-06",
+    "date_source": "ACL Anthology record for 2024.naacl-long.263 gives Month: June, Year: 2024, <dateIssued>2024-06</dateIssued>; the PDF header reads 'June 16-21, 2024 ©2024 Association for Computational Linguistics', which is the conference date range, not a per-paper release day. No day-precision publication date exists in the source, so this is recorded as YYYY-MM per rulebook §9 col 5. The input's '2024-06-16' is the conference opening day, not a source-verified publication date, and has been dropped.",
+    "findings": [
+      {
+        "finding": "Fourteen widely used LLMs scored 85.33-100% on open-ended safety questions but far lower on strictly matched multiple-choice versions of the same questions - MOSS-SFT 10.67%, ChatGLM2-6B 17.33%, Baichuan2-7B 20.0% - while showing no comparable gap on capability questions (ARC average 76.2% multiple-choice vs 81.53% open-ended), indicating that high open-ended safety scores reflect a memorised answer style rather than alignment. Fine-tuning ChatGLM2 and MOSS-SFT to memorise the open-ended answers improved their multiple-choice safety by only 12% and -4%.",
+        "finding_quote": "For example, Baichuan-7B (Baichuan, 2023), ChatGLM2-6B (Du et al., 2022), and MOSS (Sun et al., 2023b) have accuracy rates of only 20%, 17.33%, and 10.67%",
+        "models_systems": "MOSS-SFT (16B); ChatGLM2-6B; ChatGLM3-6B; Baichuan2-7B; Baichuan2-13B; Vicuna-7B/13B/33B; InternLM-7B/20B; Qwen-7B/14B",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Alignment; Eval-methodology",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes: measured behaviour of specific named systems. Gate 2 fails (b)/(c): the models showing the severe gap (MOSS-SFT, ChatGLM2-6B, Baichuan2-7B, Vicuna) are non-frontier open-source models, which §4 excludes from Tier A, and the load-bearing claim is about the validity of a safety-evaluation format rather than a concerning capability of a frontier developer's model. Tier B. Re-derived: the earlier extraction reached Tier B via 'several models is effectively anonymised', which is wrong - Table 3 names every model - so the reasoning is corrected while the tier stands. Quote clipped before 'respec-tively' to avoid repairing a line-break hyphenation; note the paper's own text writes 'Baichuan-7B' where Table 3 reads 'Baichuan2-7B'.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "The two proprietary models tested showed little fake alignment: GPT-3.5-Turbo scored 96% on multiple-choice safety questions against 100% open-ended and ranked first on the Consistent Safety Score, which the authors attribute to more stringent safety training.",
+        "finding_quote": "We find that closed-source LLMs mostly performed well; e.g., GPT-3.5-Turbo has an accuracy rate of 96%, closely resembling their performance in the open-ended format.",
+        "models_systems": "GPT-3.5-Turbo",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Alignment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes. Gate 2 fails (c): a reassuring null, which §4 excludes from Tier A. Tier B. Confined to GPT-3.5-Turbo (OpenAI) per §5, different companies never share a row; Claude's own figures (85.33% multiple-choice vs 98.67% open-ended, CSS rank 2) appear only in Table 3 and Figure 4 with no discrete assertion about Claude in the text, so no separate Anthropic row is created rather than manufacture one.",
+        "finding_type": "capability-finding",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "Within model families, larger models showed less fake alignment: InternLM-7B scored 57.33% on multiple-choice safety questions against 69.33% for InternLM-20B, and Baichuan2-7B 20% against 45.33% for Baichuan2-13B, with the same trend in the Qwen and Vicuna series; MOSS-SFT, whose safety training was supervised fine-tuning only, was the worst case at its parameter scale.",
+        "finding_quote": "For instance, InternLM-7B has an accuracy rate of 57.33%, while 20B achieves 69.33%; Baichuan-7B’s accuracy rate is 20%, whereas 13B reaches 45.33%.",
+        "models_systems": "InternLM-7B/20B; Baichuan2-7B/13B; Qwen-7B/14B; Vicuna-7B/13B/33B; MOSS-SFT",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Alignment",
+        "eval_trackable": "yes",
+        "action_trackable": "no",
+        "tier": "B",
+        "tier_reasoning": "Gate 1 yes. Gate 2 fails (c) twice over: §4 excludes capability trends and non-frontier models from Tier A. Tier B. Quote reassembled from wrapped PDF lines with no hyphenation repair; figures cross-checked against Table 3.",
+        "finding_type": "capability-trend",
+        "access_type": "Post-deployment"
+      },
+      {
+        "finding": "The authors' FINE framework, which pairs each open-ended safety question with a strictly matched multiple-choice item and scores Consistency and Consistent Safety, produced corrected safety estimates that were markedly lower for Baichuan2-7B, ChatGLM2-6B and MOSS-SFT; contrast-distillation supervised fine-tuning on 'Do Not Answer'-derived multiple-choice data lifted the Consistent Safety Score of all five fine-tuned models to roughly 80% or above, with ChatGLM2 improving by 69.33 points.",
+        "finding_quote": "the CSS results of all LLMs are almost above 80%, and the alignment consistency has been greatly improved.",
+        "models_systems": "N/A (framework finding; demonstrated on ChatGLM2-6B, InternLM-7B/20B, Qwen-7B/14B)",
+        "institution": "Shanghai AI Laboratory (AI45 Lab)",
+        "domain": "Eval-methodology",
+        "eval_trackable": "no",
+        "action_trackable": "",
+        "tier": "C",
+        "tier_reasoning": "Gate 1 fails: this is an evaluation-framework and mitigation-method finding, not an empirical finding about a model's behaviour. Tier C; action_trackable blank per §4. The quote starts mid-sentence because the preceding words are broken as 'contrast dis-/tillation' across a line end, and it stops before the next sentence because that sentence is broken as 'Chat-/GLM2'; the 69.33-point ChatGLM2 improvement is therefore reported in the finding from that sentence and Figure 5 but deliberately not quoted, since copying it would require repairing hyphenation.",
+        "finding_type": "methodology",
+        "access_type": "N/A"
+      }
+    ]
+  },
+  {
+    "url": "http://go.pardot.com/webmail/1068562/1284422839/cd996abf6774171b6036e2d8c722676f0b4eb75643ccd572fc1671d854f9d0f7",
+    "title": "DSRI Newsletter Volume 1",
+    "institution": "UL Research Institutes - Digital Safety Research Institute (DSRI)",
+    "decision": "EXCLUDED",
+    "rule_cited": "§2 (WHAT IS A FINDING) - the item is a newsletter/roundup ('this inaugural newsletter'): a welcome editorial, a partner report from Graphika, product-update and challenge/grant announcements, a demonstration recap and a call to action; newsletters, roundups, funding announcements, partnership news and product marketing contain NO findings. Also fails the FRONTIER-MODEL RULE - the only measured content concerns DARPA SemaFor deepfake-detection analytics, i.e. deepfake tooling, which the standing decision explicitly drops, and no named frontier AI model or system is the subject. Also DATES - no publication date is resolvable from the source.",
+    "resolved_date": "",
+    "date_source": "No date appears anywhere in the email body or footer. The only dates mentioned are content references ('In December 2024, UL Research Institutes ... entered a cooperative research and development agreement with DARPA', ICCV 2025, DEF CON 2025), not a publication date. The Pardot webmail URL exposes no dated metadata and there is no Wayback capture giving a release date. resolved_date left empty rather than inferred from DEF CON 2025 (7-10 August 2025), which would only bound it from below.",
+    "findings": [],
+    "exclusion_reason": "§2 (WHAT IS A FINDING) - the item is a newsletter/roundup ('this inaugural newsletter'): a welcome editorial, a partner report from Graphika, product-update and challenge/grant announcements, a demonstration recap and a call to action; newsletters, roundups, funding announcements, partnership news and product marketing contain NO findings. Also fails the FRONTIER-MODEL RULE - the only measured content concerns DARPA SemaFor deepfake-detection analytics, i.e. deepfake tooling, which the standing decision explicitly drops, and no named frontier AI model or system is the subject. Also DATES - no publication date is resolvable from the source. | Source re-verified anyway: Verified against the live source anyway: the 43% figure is accurate ('the deepfake detection analytics developed on the DARPA program were only able to detect the advanced deepfakes with a 43% accuracy') and the game figures are 'about 5,000' guesses at '77 percent' correct for humans vs '93 percent' for SemaFor. The earlier extraction's numbers therefore check out, but the item is excluded on scope, so findings are returned empty."
+  }
+]

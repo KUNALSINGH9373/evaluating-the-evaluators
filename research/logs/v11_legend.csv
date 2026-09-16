@@ -1,0 +1,23 @@
+REVISED v11 DATASET — corrections applied 2026-08-15,,,
+,,,
+Metric,Value,Status / interpretation,Method note
+Active findings,563,Includes three August 2026 UK AISI rows by author instruction.,Five confirmed within-v11 overlaps removed.
+Distinct Report IDs,239,ResearchRubrics consolidated under one Report ID.,Exact IDs counted after corrections.
+Tier A,76,Accountability-analysis findings.,Eval?=yes and Action Trackable?=yes.
+Tier B,303,Evaluation finding; not in company-response denominator.,Eval?=yes and Action Trackable?=no.
+Tier C,184,Context/method/governance evidence.,Eval?=no.
+HOLD,116,Do not describe these rows as fully verified.,"Includes unresolved exact dates, quotes, sources, or numerical checks."
+REVIEW-SIGNOFF,447,Concrete corrections applied; independent human sign-off still pending.,AI-assisted audit.
+Removed sheet,40,Original exclusions plus five newly removed overlaps.,No removed evidence was deleted.
+,,,
+Scope decision,INCLUDE,UKAISI-2026-08a/b/c retained.,This extends the corpus into August 2026; revise manuscript date language accordingly.
+Weval date basis,Page Updated date,Applied to the 22 Weval cards.,"These are update dates, not demonstrated original publication dates."
+Human oversight,REQUIRED,No row has been independently signed off in this revision.,Use the Sign-off column as the release gate.
+,,,
+Applied structural changes,,,
+Within-v11 overlaps,5,Removed from active table and preserved in Removed.,Apollo x1; Weval aggregates x4.
+Cross-v10 duplicates,0,No confirmed active duplicate found.,"Exact, normalized, fuzzy, report/date/model/URL/number checks."
+Tier changes,17,14 A→B and 3 A→C.,One additional Tier A row removed as overlap.
+Report identity merge,1,ResearchRubrics unified as SCALEAI-2025-11c.,Distinct AUT/GOV findings retained with unique suffixes.
+Two-company cases,2,Resolved without splitting.,Apollo overlap removed; FAR.AI derivative lineage clarified.
+Severity validation,NOT PERFORMED,Still outside this audit scope.,Severity columns remain unchanged.

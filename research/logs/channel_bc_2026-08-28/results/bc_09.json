@@ -1,0 +1,2568 @@
+[
+ {
+  "finding_id": "SCALEAI-2026-05e-ALI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini; window 2026-05-05 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=PropensityBench&queryParameters.startDate=2026-05-05&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). TotalContributions/WrittenStatements/WrittenAnswers/Committees = 0 for 'PropensityBench'. Tokenised searches for the other terms return only unrelated matches ('scale'/'ai' as separate tokens, 97 contributions, all about scaling AI companies, AI adoption etc.); full ContributionTextFull of the 633-contribution AI/cyber corpus pulled from this API was regex-searched for 'propensitybench' \u2014 zero hits. No UK parliamentary source references this report."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"PropensityBench\"; \"Scale AI\"; \"Knowledge-Action Disparity\"; \"Gemini 2.5 Pro\"; \"o4-mini\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22PropensityBench%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"PropensityBench\" total = 0. \"Scale AI\" total = 83, all unrelated (Scale AI UK HQ press notice 2024, AI Fest, defence AI pages); none references PropensityBench or the Propensity Score result."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'PropensityBench'. No select-committee report, correspondence or evidence publication references it."
+      },
+      {
+       "name": "FCA site search \u2014 term: PropensityBench",
+       "url": "https://www.fca.org.uk/search-results?search_term=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for PropensityBench\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-05 to 2026-08-28 \u2014 grepped for: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues, 200 each). Zero occurrences of 'propensitybench', 'scale ai', 'knowledge-action disparity' or 'propensity score' anywhere in the Congressional Record for the window. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-05, terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22PropensityBench%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-05&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"PropensityBench\"; the single \"Scale AI\" hit is an OPM rule on Senior Executive Service candidate programmes (2026-06-25), unrelated. No rule, proposed rule or notice references the finding."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://www.nist.gov/search?s=%22PropensityBench%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). NIST search returns 'No results for: \"PropensityBench\"'. CAISI's in-window output (CAISI Evaluation of DeepSeek V4 Pro, 1 May 2026) was read in full and does not cite Scale AI or PropensityBench."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'PropensityBench'. No Commission press release, statement, speech or daily news item references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against live, readable official sources on 2026-08-28 and the negative holds. The evaluator (Scale AI), the report name (PropensityBench), the named systems and the finding's own vocabulary return nothing in Hansard, gov.uk, UK committee publications, the full text of every Congressional Record issue in the window, the Federal Register, NIST/CAISI, or the European Commission Press Corner. This is a searched negative, not an unsearched one.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex indexes the underlying paper: 'PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach' (arXiv:2511.20703, 2025-11-24), OpenAlex W4416777767, cited_by_count 0 in OpenAlex (OpenAlex undercounts arXiv-only preprints; the dataset's Google Scholar count of 4 is not contradicted).",
+     "url": "https://api.openalex.org/works?filter=title.search:PropensityBench"
+    },
+    {
+     "cite": "NEW, verified verbatim: 'The Compliance Trap: How Structural Constraints Degrade Frontier AI Metacognition Under Adversarial Pressure' (arXiv:2605.02398, 2026-05-04) discusses PropensityBench by name \u2014 'Survival pressure evaluations. PropensityBench (Scale AI) tests 979 scenarios across 6 pressure types.'",
+     "url": "https://arxiv.org/abs/2605.02398"
+    },
+    {
+     "cite": "NEW: further full-text mentions of PropensityBench found via OpenAlex full-text search \u2014 'Instrumental Choices: Measuring the Propensity of LLM Agents to Pursue Instrumental Behaviors' (arXiv:2605.06490, 2026-05-07); 'Agent Security Needs Redefinition through a Holistic Framework' (arXiv:2607.22024, 2026-07-24); 'Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents' (arXiv:2605.16282). Indexed matches, not individually opened.",
+     "url": "https://api.openalex.org/works?search=PropensityBench&per-page=12"
+    }
+   ],
+   "discussion": [],
+   "note": "No independent press coverage found. Hacker News (Algolia API, stories+comments, created_at > 2026-05-05) returns 0 hits for 'PropensityBench'. Scale AI's own leaderboard page (https://labs.scale.com/leaderboard/propensitybench, fetched 200) is excluded as the evaluator's own publication. Descriptive only; does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05e-ALI3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini; window 2026-05-05 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=PropensityBench&queryParameters.startDate=2026-05-05&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). TotalContributions/WrittenStatements/WrittenAnswers/Committees = 0 for 'PropensityBench'. Tokenised searches for the other terms return only unrelated matches ('scale'/'ai' as separate tokens, 97 contributions, all about scaling AI companies, AI adoption etc.); full ContributionTextFull of the 633-contribution AI/cyber corpus pulled from this API was regex-searched for 'propensitybench' \u2014 zero hits. No UK parliamentary source references this report."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"PropensityBench\"; \"Scale AI\"; \"Knowledge-Action Disparity\"; \"Gemini 2.5 Pro\"; \"o4-mini\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22PropensityBench%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"PropensityBench\" total = 0. \"Scale AI\" total = 83, all unrelated (Scale AI UK HQ press notice 2024, AI Fest, defence AI pages); none references PropensityBench or the Propensity Score result."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'PropensityBench'. No select-committee report, correspondence or evidence publication references it."
+      },
+      {
+       "name": "FCA site search \u2014 term: PropensityBench",
+       "url": "https://www.fca.org.uk/search-results?search_term=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for PropensityBench\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-05 to 2026-08-28 \u2014 grepped for: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues, 200 each). Zero occurrences of 'propensitybench', 'scale ai', 'knowledge-action disparity' or 'propensity score' anywhere in the Congressional Record for the window. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-05, terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22PropensityBench%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-05&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"PropensityBench\"; the single \"Scale AI\" hit is an OPM rule on Senior Executive Service candidate programmes (2026-06-25), unrelated. No rule, proposed rule or notice references the finding."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://www.nist.gov/search?s=%22PropensityBench%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). NIST search returns 'No results for: \"PropensityBench\"'. CAISI's in-window output (CAISI Evaluation of DeepSeek V4 Pro, 1 May 2026) was read in full and does not cite Scale AI or PropensityBench."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: PropensityBench; Scale AI; Knowledge-Action Disparity; Gemini 2.5 Pro; o4-mini",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'PropensityBench'. No Commission press release, statement, speech or daily news item references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=PropensityBench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "All three jurisdictions searched against live, readable official sources on 2026-08-28 and the negative holds. The evaluator (Scale AI), the report name (PropensityBench), the named systems and the finding's own vocabulary return nothing in Hansard, gov.uk, UK committee publications, the full text of every Congressional Record issue in the window, the Federal Register, NIST/CAISI, or the European Commission Press Corner. This is a searched negative, not an unsearched one. The o4-mini renaming result (15.8% -> 59.3%) is likewise absent from every source read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "OpenAlex indexes the underlying paper: 'PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach' (arXiv:2511.20703, 2025-11-24), OpenAlex W4416777767, cited_by_count 0 in OpenAlex (OpenAlex undercounts arXiv-only preprints; the dataset's Google Scholar count of 4 is not contradicted).",
+     "url": "https://api.openalex.org/works?filter=title.search:PropensityBench"
+    },
+    {
+     "cite": "NEW, verified verbatim: 'The Compliance Trap: How Structural Constraints Degrade Frontier AI Metacognition Under Adversarial Pressure' (arXiv:2605.02398, 2026-05-04) discusses PropensityBench by name \u2014 'Survival pressure evaluations. PropensityBench (Scale AI) tests 979 scenarios across 6 pressure types.'",
+     "url": "https://arxiv.org/abs/2605.02398"
+    },
+    {
+     "cite": "NEW: further full-text mentions of PropensityBench found via OpenAlex full-text search \u2014 'Instrumental Choices: Measuring the Propensity of LLM Agents to Pursue Instrumental Behaviors' (arXiv:2605.06490, 2026-05-07); 'Agent Security Needs Redefinition through a Holistic Framework' (arXiv:2607.22024, 2026-07-24); 'Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents' (arXiv:2605.16282). Indexed matches, not individually opened.",
+     "url": "https://api.openalex.org/works?search=PropensityBench&per-page=12"
+    }
+   ],
+   "discussion": [],
+   "note": "No independent press coverage found. Hacker News (Algolia API, stories+comments, created_at > 2026-05-05) returns 0 hits for 'PropensityBench'. Scale AI's own leaderboard page (https://labs.scale.com/leaderboard/propensitybench, fetched 200) is excluded as the evaluator's own publication. Descriptive only; does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "PALISADE-2026-05-AUT1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4; window 2026-05-07 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Palisade&queryParameters.startDate=2026-05-07&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'palisade' = 0 contributions; 'self-replication' = 0; 'self-replicating' = 1 (Baroness Gill, Lords, 23 July 2026, Digital and Technology Policy: National Sovereignty) whose full text was read: it is generic speculation about future models becoming 'borderless, self-replicating digital entities' and does not reference Palisade Research, the report or the 6-33%/81%/33% results. Not admissible (general AI-risk discussion)."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"Palisade\"; \"self-replicate\"; \"self-replication\"; \"Qwen\"; \"Claude Opus 4.6\"; \"GPT-5.4\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Palisade%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'Palisade Research' as a phrase returns nothing relevant (the fuzzy total of 67,880 is OR-matching; the exact-phrase \"Palisade\" query returns 17 items, all planning, nuclear and CMA cases). No gov.uk page references the report."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'Palisade' and for 'self-replication'."
+      },
+      {
+       "name": "FCA site search \u2014 term: Palisade",
+       "url": "https://www.fca.org.uk/search-results?search_term=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for Palisade\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-07 to 2026-08-28 \u2014 grepped for: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'palisade' appears once, on 2026-08-06, in a wildfire-relief speech about the Eaton and Palisades fires \u2014 unrelated. 'self-replicat*' = 0 occurrences. 'qwen' = 0. No Member statement, bill text or extension of remarks references the report. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-07, terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-07&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"Palisade Research\" and for \"self-replicate\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.nist.gov/search?s=%22Palisade%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'No results for: \"Palisade Research\"'. 'self-replication' returns only NIST/CSRC glossary entries for computer worms. No CAISI publication references the report."
+      },
+      {
+       "name": "House Homeland Security Committee, Subcommittee on Cybersecurity and Infrastructure Protection \u2014 hearing 'The AI Security Landscape: How Frontier Models, Agentic AI, and AI Coding Tools Are Reshaping Cybersecurity and Critical Infrastructure Resilience', 4 June 2026; combined witness testimony (35pp) read in full",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF, 35 pages) and searched. The only in-window congressional hearing on frontier-model cyber risk. No mention of Palisade Research, self-replication or autonomous weight exfiltration. Witnesses: Google Threat Intelligence, Frontier Model Forum, Corridor Security, EFF."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'Palisade Research' and for 'self-replicating AI'. No Commission statement references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative. The distinctive tokens ('Palisade', 'self-replication', 'Qwen') return nothing in Hansard, gov.uk, UK committee publications, 58 Congressional Record issues, the Federal Register, NIST/CAISI or the Commission Press Corner. The one adjacent UK item (Baroness Gill, 23 July 2026) speculates about self-replicating models in the abstract and is inadmissible under the explicit-reference rule. Substantial press coverage exists (Channel C) but press is not policy. The Qwen 6-33% result specifically is absent from every official source read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "The Guardian (carried in the existing record)",
+     "url": "https://palisaderesearch.org/blog/self-replication",
+     "date": "2026-05-07"
+    },
+    {
+     "outlet": "Euronews \u2014 'AI models can hack computers and self-replicate onto new machines, new research finds'",
+     "url": "https://www.euronews.com/next",
+     "date": "2026-05-09"
+    },
+    {
+     "outlet": "the-decoder.com",
+     "url": "https://the-decoder.com/",
+     "date": "2026-05-09"
+    },
+    {
+     "outlet": "Futurism",
+     "url": "https://futurism.com/",
+     "date": "2026-05-10"
+    },
+    {
+     "outlet": "Live Science",
+     "url": "https://www.livescience.com/",
+     "date": "2026-05-13"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'Misaligned AI as a New Insider Risk' (arXiv:2606.06028, 2026-06-04) cites the Palisade work as 'Air et al., 2026' in its treatment of self-exfiltration and self-replication as insider-threat behaviours.",
+     "url": "https://arxiv.org/abs/2606.06028"
+    },
+    {
+     "cite": "NEW: 'Reply to Boudry: The threat of evolvable AI is too grave to be left to intuition', PNAS (doi 10.1073/pnas.2618094123, 2026-07-02) \u2014 peer-reviewed letter surfaced by OpenAlex full-text search on the report title; a citation of the self-replication work, not individually opened (paywalled).",
+     "url": "https://doi.org/10.1073/pnas.2618094123"
+    },
+    {
+     "cite": "Underlying paper indexed: 'Language Models Can Autonomously Hack and Self-Replicate' (arXiv:2605.06760, 2026-05-07), OpenAlex W7160825751.",
+     "url": "https://api.openalex.org/works?filter=title.search:Language%20Models%20Can%20Autonomously%20Hack%20and%20Self-Replicate"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "NEW: Hacker News comment, 2026-06-03 \u2014 'Palisade Research demonstrated this capability, including fully copying model weights, on May 7th, 2026', linking both the blog and arXiv:2605.06760.",
+     "url": "https://news.ycombinator.com/item?id=48387159"
+    }
+   ],
+   "note": "Media list carried forward from the existing record; Palisade's own blog post is excluded as the evaluator's own publication. Channel C is descriptive only and does not affect Action Level, Policy Level or Proportionality."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "PALISADE-2026-05-AUT2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4; window 2026-05-07 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Palisade&queryParameters.startDate=2026-05-07&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'palisade' = 0 contributions; 'self-replication' = 0; 'self-replicating' = 1 (Baroness Gill, Lords, 23 July 2026, Digital and Technology Policy: National Sovereignty) whose full text was read: it is generic speculation about future models becoming 'borderless, self-replicating digital entities' and does not reference Palisade Research, the report or the 6-33%/81%/33% results. Not admissible (general AI-risk discussion)."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"Palisade\"; \"self-replicate\"; \"self-replication\"; \"Qwen\"; \"Claude Opus 4.6\"; \"GPT-5.4\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Palisade%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'Palisade Research' as a phrase returns nothing relevant (the fuzzy total of 67,880 is OR-matching; the exact-phrase \"Palisade\" query returns 17 items, all planning, nuclear and CMA cases). No gov.uk page references the report."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'Palisade' and for 'self-replication'."
+      },
+      {
+       "name": "FCA site search \u2014 term: Palisade",
+       "url": "https://www.fca.org.uk/search-results?search_term=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for Palisade\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-07 to 2026-08-28 \u2014 grepped for: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'palisade' appears once, on 2026-08-06, in a wildfire-relief speech about the Eaton and Palisades fires \u2014 unrelated. 'self-replicat*' = 0 occurrences. 'qwen' = 0. No Member statement, bill text or extension of remarks references the report. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-07, terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-07&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"Palisade Research\" and for \"self-replicate\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.nist.gov/search?s=%22Palisade%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'No results for: \"Palisade Research\"'. 'self-replication' returns only NIST/CSRC glossary entries for computer worms. No CAISI publication references the report."
+      },
+      {
+       "name": "House Homeland Security Committee, Subcommittee on Cybersecurity and Infrastructure Protection \u2014 hearing 'The AI Security Landscape: How Frontier Models, Agentic AI, and AI Coding Tools Are Reshaping Cybersecurity and Critical Infrastructure Resilience', 4 June 2026; combined witness testimony (35pp) read in full",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF, 35 pages) and searched. The only in-window congressional hearing on frontier-model cyber risk. No mention of Palisade Research, self-replication or autonomous weight exfiltration. Witnesses: Google Threat Intelligence, Frontier Model Forum, Corridor Security, EFF."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'Palisade Research' and for 'self-replicating AI'. No Commission statement references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative. The distinctive tokens ('Palisade', 'self-replication', 'Qwen') return nothing in Hansard, gov.uk, UK committee publications, 58 Congressional Record issues, the Federal Register, NIST/CAISI or the Commission Press Corner. The one adjacent UK item (Baroness Gill, 23 July 2026) speculates about self-replicating models in the abstract and is inadmissible under the explicit-reference rule. Substantial press coverage exists (Channel C) but press is not policy. The Claude Opus 4.6 81% result specifically is absent from every official source read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "The Guardian (carried in the existing record)",
+     "url": "https://palisaderesearch.org/blog/self-replication",
+     "date": "2026-05-07"
+    },
+    {
+     "outlet": "Euronews \u2014 'AI models can hack computers and self-replicate onto new machines, new research finds'",
+     "url": "https://www.euronews.com/next",
+     "date": "2026-05-09"
+    },
+    {
+     "outlet": "the-decoder.com",
+     "url": "https://the-decoder.com/",
+     "date": "2026-05-09"
+    },
+    {
+     "outlet": "Futurism",
+     "url": "https://futurism.com/",
+     "date": "2026-05-10"
+    },
+    {
+     "outlet": "Live Science",
+     "url": "https://www.livescience.com/",
+     "date": "2026-05-13"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'Misaligned AI as a New Insider Risk' (arXiv:2606.06028, 2026-06-04) cites the Palisade work as 'Air et al., 2026' in its treatment of self-exfiltration and self-replication as insider-threat behaviours.",
+     "url": "https://arxiv.org/abs/2606.06028"
+    },
+    {
+     "cite": "NEW: 'Reply to Boudry: The threat of evolvable AI is too grave to be left to intuition', PNAS (doi 10.1073/pnas.2618094123, 2026-07-02) \u2014 peer-reviewed letter surfaced by OpenAlex full-text search on the report title; a citation of the self-replication work, not individually opened (paywalled).",
+     "url": "https://doi.org/10.1073/pnas.2618094123"
+    },
+    {
+     "cite": "Underlying paper indexed: 'Language Models Can Autonomously Hack and Self-Replicate' (arXiv:2605.06760, 2026-05-07), OpenAlex W7160825751.",
+     "url": "https://api.openalex.org/works?filter=title.search:Language%20Models%20Can%20Autonomously%20Hack%20and%20Self-Replicate"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "NEW: Hacker News comment, 2026-06-03 \u2014 'Palisade Research demonstrated this capability, including fully copying model weights, on May 7th, 2026', linking both the blog and arXiv:2605.06760.",
+     "url": "https://news.ycombinator.com/item?id=48387159"
+    }
+   ],
+   "note": "Media list carried forward from the existing record; Palisade's own blog post is excluded as the evaluator's own publication. Channel C is descriptive only and does not affect Action Level, Policy Level or Proportionality."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "PALISADE-2026-05-AUT2-s2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4; window 2026-05-07 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Palisade&queryParameters.startDate=2026-05-07&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'palisade' = 0 contributions; 'self-replication' = 0; 'self-replicating' = 1 (Baroness Gill, Lords, 23 July 2026, Digital and Technology Policy: National Sovereignty) whose full text was read: it is generic speculation about future models becoming 'borderless, self-replicating digital entities' and does not reference Palisade Research, the report or the 6-33%/81%/33% results. Not admissible (general AI-risk discussion)."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"Palisade\"; \"self-replicate\"; \"self-replication\"; \"Qwen\"; \"Claude Opus 4.6\"; \"GPT-5.4\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22Palisade%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'Palisade Research' as a phrase returns nothing relevant (the fuzzy total of 67,880 is OR-matching; the exact-phrase \"Palisade\" query returns 17 items, all planning, nuclear and CMA cases). No gov.uk page references the report."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'Palisade' and for 'self-replication'."
+      },
+      {
+       "name": "FCA site search \u2014 term: Palisade",
+       "url": "https://www.fca.org.uk/search-results?search_term=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for Palisade\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-07 to 2026-08-28 \u2014 grepped for: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'palisade' appears once, on 2026-08-06, in a wildfire-relief speech about the Eaton and Palisades fires \u2014 unrelated. 'self-replicat*' = 0 occurrences. 'qwen' = 0. No Member statement, bill text or extension of remarks references the report. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-07, terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22Palisade%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-07&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"Palisade Research\" and for \"self-replicate\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://www.nist.gov/search?s=%22Palisade%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'No results for: \"Palisade Research\"'. 'self-replication' returns only NIST/CSRC glossary entries for computer worms. No CAISI publication references the report."
+      },
+      {
+       "name": "House Homeland Security Committee, Subcommittee on Cybersecurity and Infrastructure Protection \u2014 hearing 'The AI Security Landscape: How Frontier Models, Agentic AI, and AI Coding Tools Are Reshaping Cybersecurity and Critical Infrastructure Resilience', 4 June 2026; combined witness testimony (35pp) read in full",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF, 35 pages) and searched. The only in-window congressional hearing on frontier-model cyber risk. No mention of Palisade Research, self-replication or autonomous weight exfiltration. Witnesses: Google Threat Intelligence, Frontier Model Forum, Corridor Security, EFF."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: Palisade; self-replicate; self-replication; Qwen; Claude Opus 4.6; GPT-5.4",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'Palisade Research' and for 'self-replicating AI'. No Commission statement references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Palisade",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative. The distinctive tokens ('Palisade', 'self-replication', 'Qwen') return nothing in Hansard, gov.uk, UK committee publications, 58 Congressional Record issues, the Federal Register, NIST/CAISI or the Commission Press Corner. The one adjacent UK item (Baroness Gill, 23 July 2026) speculates about self-replicating models in the abstract and is inadmissible under the explicit-reference rule. Substantial press coverage exists (Channel C) but press is not policy. The GPT-5.4 33% result specifically is absent from every official source read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "The Guardian (carried in the existing record)",
+     "url": "https://palisaderesearch.org/blog/self-replication",
+     "date": "2026-05-07"
+    },
+    {
+     "outlet": "Euronews \u2014 'AI models can hack computers and self-replicate onto new machines, new research finds'",
+     "url": "https://www.euronews.com/next",
+     "date": "2026-05-09"
+    },
+    {
+     "outlet": "the-decoder.com",
+     "url": "https://the-decoder.com/",
+     "date": "2026-05-09"
+    },
+    {
+     "outlet": "Futurism",
+     "url": "https://futurism.com/",
+     "date": "2026-05-10"
+    },
+    {
+     "outlet": "Live Science",
+     "url": "https://www.livescience.com/",
+     "date": "2026-05-13"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'Misaligned AI as a New Insider Risk' (arXiv:2606.06028, 2026-06-04) cites the Palisade work as 'Air et al., 2026' in its treatment of self-exfiltration and self-replication as insider-threat behaviours.",
+     "url": "https://arxiv.org/abs/2606.06028"
+    },
+    {
+     "cite": "NEW: 'Reply to Boudry: The threat of evolvable AI is too grave to be left to intuition', PNAS (doi 10.1073/pnas.2618094123, 2026-07-02) \u2014 peer-reviewed letter surfaced by OpenAlex full-text search on the report title; a citation of the self-replication work, not individually opened (paywalled).",
+     "url": "https://doi.org/10.1073/pnas.2618094123"
+    },
+    {
+     "cite": "Underlying paper indexed: 'Language Models Can Autonomously Hack and Self-Replicate' (arXiv:2605.06760, 2026-05-07), OpenAlex W7160825751.",
+     "url": "https://api.openalex.org/works?filter=title.search:Language%20Models%20Can%20Autonomously%20Hack%20and%20Self-Replicate"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "NEW: Hacker News comment, 2026-06-03 \u2014 'Palisade Research demonstrated this capability, including fully copying model weights, on May 7th, 2026', linking both the blog and arXiv:2605.06760.",
+     "url": "https://news.ycombinator.com/item?id=48387159"
+    }
+   ],
+   "note": "Media list carried forward from the existing record; Palisade's own blog post is excluded as the evaluator's own publication. Channel C is descriptive only and does not affect Action Level, Policy Level or Proportionality."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05s-AUT2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex; window 2026-05-07 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=SWE%20Atlas&queryParameters.startDate=2026-05-07&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'SWE Atlas' = 0 contributions, 0 written statements, 0 written answers, 0 committee items. The 633-contribution AI/cyber Hansard corpus pulled from this API was regex-searched for 'swe atlas', 'refusal rate' and 'security related filters' \u2014 zero hits."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"SWE Atlas\"; \"Scale AI\"; \"elevated refusal rate\"; \"Fable-5\"; \"Claude Code\"; \"GPT-5.6-Sol\"; \"Codex\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22SWE%20Atlas%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"SWE Atlas\" total = 0. No gov.uk page, ministerial statement or regulator publication references the benchmark or the refusal-rate observation."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'SWE Atlas'."
+      },
+      {
+       "name": "FCA site search \u2014 term: SWE Atlas",
+       "url": "https://www.fca.org.uk/search-results?search_term=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for SWE Atlas\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-07 to 2026-08-28 \u2014 grepped for: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). Zero occurrences of 'swe atlas', 'scale ai', 'fable-5' or 'refusal rate'. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-07, terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22SWE%20Atlas%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-07&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"SWE Atlas\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.nist.gov/search?s=%22SWE%20Atlas%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'No results for: \"SWE Atlas\"'. No NIST or CAISI publication references the benchmark or the refusal finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'SWE Atlas'. No Commission material references it."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative across all three jurisdictions on 2026-08-28. Note this is a C2 tooling/over-refusal observation inside a coding leaderboard; nothing in Hansard, gov.uk, UK committee publications, 58 Congressional Record issues, the Federal Register, NIST/CAISI or the Commission Press Corner references SWE Atlas, Scale AI's refusal-rate observation, or the affected agents.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'LARGER: Lexically Anchored Repository Graph Exploration and Retrieval' (arXiv:2605.16352, 2026-05-08) evaluates on and cites 'SWE-Atlas Test Writing' and 'SWE-Atlas Codebase QA' (23 in-text mentions).",
+     "url": "https://arxiv.org/abs/2605.16352"
+    },
+    {
+     "cite": "Underlying paper indexed in OpenAlex: 'SWE Atlas: Benchmarking Coding Agents Beyond Issue Resolution' (arXiv:2605.08366, 2026-05-08), W7160904950.",
+     "url": "https://api.openalex.org/works?filter=title.search:SWE%20Atlas"
+    },
+    {
+     "cite": "NEW: further full-text matches on 'SWE Atlas' via OpenAlex \u2014 'AgentRadio' (arXiv:2607.28430, 2026-07-30), 'SWE-INTERACT' (arXiv:2606.30573, 2026-06-29), 'Macaron-V1' (arXiv:2608.09819, 2026-08-10). Indexed matches, not individually opened.",
+     "url": "https://api.openalex.org/works?search=%22SWE%20Atlas%22&per-page=12"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "NEW: Hacker News \u2014 'AA coding index has been updated to use DeepSWE, Terminal-Bench v2, and SWE-Atlas' (2026-07-21), showing third-party adoption of the benchmark suite (not of the refusal finding).",
+     "url": "https://news.ycombinator.com/item?id=48998159"
+    }
+   ],
+   "note": "No independent press coverage of the refusal-rate observation. Scale AI's own leaderboard page is excluded as the evaluator's own publication; Anthropic/OpenAI posts would be excluded as the evaluated companies'. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "FARAI-2026-05-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation; window 2026-05-11 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=FAR.AI&queryParameters.startDate=2026-05-11&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'DeepSeek' = 1 contribution in window (Lord Tarassenko, Lords, 19 May 2026, King's Speech) \u2014 full text read: it uses DeepSeek as an example of cheap distillation for a UK sovereign LLM and says nothing about safeguards, jailbreaks or FAR.AI. 'jailbreak' = 1 contribution, unrelated. 'FAR.AI' is not tokenisable in this API (splits to 'far'+'ai', 118 unrelated contributions); the 633-contribution AI/cyber corpus was regex-searched for 'far.ai' and 'deepseek-v4' \u2014 zero hits."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"FAR.AI\"; \"DeepSeek-V4-Pro\"; \"DeepSeek\"; \"jailbreak\"; \"response prefill\"; \"authority manipulation\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22FAR.AI%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"FAR.AI\" total = 0. \"DeepSeek\" total = 7, all predating the report or unrelated (Munich Security Conference remarks 2025, AI Scenarios 2030, DWP procurement standards); none references the report or the 98-100% attack success result."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'DeepSeek' and for 'SLEIGHT'/'prefill'; the 'FAR.AI' query only OR-matches the word 'far' in unrelated correspondence."
+      },
+      {
+       "name": "FCA site search \u2014 term: FAR.AI",
+       "url": "https://www.fca.org.uk/search-results?search_term=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for DeepSeek-V4-Pro\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-11 to 2026-08-28 \u2014 grepped for: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'deepseek' appears on 3 sitting days (2026-06-24, 2026-07-13, 2026-07-14) \u2014 all the identical text of a proposed amendment on prohibiting the 'DeepSeek application' on government devices, a PRC-supply-chain provision that makes no reference to FAR.AI, to the safeguard-bypass result, or to any evaluation. 'far.ai', 'prefill', 'authority manipulation' = 0. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-11, terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22FAR.AI%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-11&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"DeepSeek-V4-Pro\" and for \"FAR.AI\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://www.nist.gov/search?s=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). NIST search returns 'No results for: \"DeepSeek-V4-Pro\"' as an exact phrase and no CAISI item referencing FAR.AI; the two substantive CAISI DeepSeek artefacts are listed separately below and were read in full."
+      },
+      {
+       "name": "NIST / CAISI \u2014 'CAISI Evaluation of DeepSeek V4 Pro' (Center for AI Standards and Innovation, released 1 May 2026, updated 2 May 2026), read in full",
+       "url": "https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. This is the closest US-government artefact to the finding and it is NOT uptake: it predates the FAR.AI report (1 May vs 11 May 2026), it is a capability benchmark exercise (cyber, software engineering, sciences, abstract reasoning, maths; IRT-estimated Elo), it contains no safeguard/jailbreak/adversarial-robustness evaluation, and it does not cite FAR.AI. A date-sorted NIST search confirms no later CAISI publication on DeepSeek in the window."
+      },
+      {
+       "name": "NIST / CAISI site search \u2014 exact-phrase terms 'FAR.AI', 'FAR AI', 'DeepSeek', 'jailbreak', 'agent hijacking'",
+       "url": "https://www.nist.gov/search?s=%22FAR%20AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'FAR AI' returns 2 hits, both the 2024 public-comment submitter list for NIST-AI-600-1 (pre-window, not about this finding). 'DeepSeek' returns 59 hits headed by the 1 May 2026 CAISI evaluation and the September 2025 CAISI DeepSeek evaluation; neither references this report."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'DeepSeek-V4-Pro' and for 'FAR.AI'. No Commission statement, AI Act enforcement communication or daily news item references the report or the result."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative. The most important new fact is a near-miss that is explicitly NOT uptake: CAISI (NIST) did publish an evaluation of DeepSeek V4 Pro, but on 1 May 2026 \u2014 ten days before FAR.AI's report \u2014 and it is a capability benchmark with no safeguard, jailbreak or adversarial-robustness component and no citation of FAR.AI. The three Congressional Record 'DeepSeek' hits are a device-ban amendment on PRC applications, which references neither the evaluator nor the result. Nothing in the UK or EU. Policy Level stands.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "No academic citation found. OpenAlex full-text search on the report title returns 2 works, both checked: 'The Periodic Table of LLM Reasoning' (no reference) and 'ToolHazard' (arXiv:2608.11878) \u2014 the latter was opened and its only match is the generic phrase 'security stress testing', not a citation of FAR.AI.",
+     "url": "https://api.openalex.org/works?search=%22Security%20Stress%20Test%22%20DeepSeek%20safeguards"
+    }
+   ],
+   "discussion": [],
+   "note": "No independent press coverage located. Hacker News (Algolia, post-2026-05-05) returns 0 hits for 'FAR.AI DeepSeek', 'DeepSeek jailbreak FAR AI' and 'DeepSeek V4 Pro safeguards jailbreak'; the 631 'DeepSeek-V4-Pro' hits are release, pricing and capability threads with no reference to the safeguard-bypass result. FAR.AI's own blog post is excluded as the evaluator's own publication. This finding drew no company response and, on this pass, no locatable third-party attention either \u2014 a genuinely quiet finding. Note the limitation: with no general web-search engine available this pass, absence of press coverage is weaker evidence than the Channel B negatives."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "FARAI-2026-05-JAI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation; window 2026-05-11 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=FAR.AI&queryParameters.startDate=2026-05-11&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'DeepSeek' = 1 contribution in window (Lord Tarassenko, Lords, 19 May 2026, King's Speech) \u2014 full text read: it uses DeepSeek as an example of cheap distillation for a UK sovereign LLM and says nothing about safeguards, jailbreaks or FAR.AI. 'jailbreak' = 1 contribution, unrelated. 'FAR.AI' is not tokenisable in this API (splits to 'far'+'ai', 118 unrelated contributions); the 633-contribution AI/cyber corpus was regex-searched for 'far.ai' and 'deepseek-v4' \u2014 zero hits."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"FAR.AI\"; \"DeepSeek-V4-Pro\"; \"DeepSeek\"; \"jailbreak\"; \"response prefill\"; \"authority manipulation\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22FAR.AI%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"FAR.AI\" total = 0. \"DeepSeek\" total = 7, all predating the report or unrelated (Munich Security Conference remarks 2025, AI Scenarios 2030, DWP procurement standards); none references the report or the 98-100% attack success result."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'DeepSeek' and for 'SLEIGHT'/'prefill'; the 'FAR.AI' query only OR-matches the word 'far' in unrelated correspondence."
+      },
+      {
+       "name": "FCA site search \u2014 term: FAR.AI",
+       "url": "https://www.fca.org.uk/search-results?search_term=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for DeepSeek-V4-Pro\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-11 to 2026-08-28 \u2014 grepped for: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'deepseek' appears on 3 sitting days (2026-06-24, 2026-07-13, 2026-07-14) \u2014 all the identical text of a proposed amendment on prohibiting the 'DeepSeek application' on government devices, a PRC-supply-chain provision that makes no reference to FAR.AI, to the safeguard-bypass result, or to any evaluation. 'far.ai', 'prefill', 'authority manipulation' = 0. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-11, terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22FAR.AI%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-11&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"DeepSeek-V4-Pro\" and for \"FAR.AI\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://www.nist.gov/search?s=%22FAR.AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). NIST search returns 'No results for: \"DeepSeek-V4-Pro\"' as an exact phrase and no CAISI item referencing FAR.AI; the two substantive CAISI DeepSeek artefacts are listed separately below and were read in full."
+      },
+      {
+       "name": "NIST / CAISI \u2014 'CAISI Evaluation of DeepSeek V4 Pro' (Center for AI Standards and Innovation, released 1 May 2026, updated 2 May 2026), read in full",
+       "url": "https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. This is the closest US-government artefact to the finding and it is NOT uptake: it predates the FAR.AI report (1 May vs 11 May 2026), it is a capability benchmark exercise (cyber, software engineering, sciences, abstract reasoning, maths; IRT-estimated Elo), it contains no safeguard/jailbreak/adversarial-robustness evaluation, and it does not cite FAR.AI. A date-sorted NIST search confirms no later CAISI publication on DeepSeek in the window."
+      },
+      {
+       "name": "NIST / CAISI site search \u2014 exact-phrase terms 'FAR.AI', 'FAR AI', 'DeepSeek', 'jailbreak', 'agent hijacking'",
+       "url": "https://www.nist.gov/search?s=%22FAR%20AI%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'FAR AI' returns 2 hits, both the 2024 public-comment submitter list for NIST-AI-600-1 (pre-window, not about this finding). 'DeepSeek' returns 59 hits headed by the 1 May 2026 CAISI evaluation and the September 2025 CAISI DeepSeek evaluation; neither references this report."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: FAR.AI; DeepSeek-V4-Pro; DeepSeek; jailbreak; response prefill; authority manipulation",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'DeepSeek-V4-Pro' and for 'FAR.AI'. No Commission statement, AI Act enforcement communication or daily news item references the report or the result."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=FAR.AI",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative. The most important new fact is a near-miss that is explicitly NOT uptake: CAISI (NIST) did publish an evaluation of DeepSeek V4 Pro, but on 1 May 2026 \u2014 ten days before FAR.AI's report \u2014 and it is a capability benchmark with no safeguard, jailbreak or adversarial-robustness component and no citation of FAR.AI. The three Congressional Record 'DeepSeek' hits are a device-ban amendment on PRC applications, which references neither the evaluator nor the result. Nothing in the UK or EU. Policy Level stands.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "No academic citation found. OpenAlex full-text search on the report title returns 2 works, both checked: 'The Periodic Table of LLM Reasoning' (no reference) and 'ToolHazard' (arXiv:2608.11878) \u2014 the latter was opened and its only match is the generic phrase 'security stress testing', not a citation of FAR.AI.",
+     "url": "https://api.openalex.org/works?search=%22Security%20Stress%20Test%22%20DeepSeek%20safeguards"
+    }
+   ],
+   "discussion": [],
+   "note": "No independent press coverage located. Hacker News (Algolia, post-2026-05-05) returns 0 hits for 'FAR.AI DeepSeek', 'DeepSeek jailbreak FAR AI' and 'DeepSeek V4 Pro safeguards jailbreak'; the 631 'DeepSeek-V4-Pro' hits are release, pricing and capability threads with no reference to the safeguard-bypass result. FAR.AI's own blog post is excluded as the evaluator's own publication. This finding drew no company response and, on this pass, no locatable third-party attention either \u2014 a genuinely quiet finding. Note the limitation: with no general web-search engine available this pass, absence of press coverage is weaker evidence than the Channel B negatives."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ac-AUT2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex; window 2026-05-12 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=SWE%20Atlas&queryParameters.startDate=2026-05-12&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'SWE Atlas' = 0 contributions, 0 written statements, 0 written answers, 0 committee items. The 633-contribution AI/cyber Hansard corpus pulled from this API was regex-searched for 'swe atlas', 'refusal rate' and 'security related filters' \u2014 zero hits."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"SWE Atlas\"; \"Scale AI\"; \"elevated refusal rate\"; \"Fable-5\"; \"Claude Code\"; \"GPT-5.6-Sol\"; \"Codex\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22SWE%20Atlas%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"SWE Atlas\" total = 0. No gov.uk page, ministerial statement or regulator publication references the benchmark or the refusal-rate observation."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'SWE Atlas'."
+      },
+      {
+       "name": "FCA site search \u2014 term: SWE Atlas",
+       "url": "https://www.fca.org.uk/search-results?search_term=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for SWE Atlas\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-12 to 2026-08-28 \u2014 grepped for: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). Zero occurrences of 'swe atlas', 'scale ai', 'fable-5' or 'refusal rate'. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-12, terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22SWE%20Atlas%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-12&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"SWE Atlas\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.nist.gov/search?s=%22SWE%20Atlas%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'No results for: \"SWE Atlas\"'. No NIST or CAISI publication references the benchmark or the refusal finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'SWE Atlas'. No Commission material references it."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative across all three jurisdictions on 2026-08-28. Note this is a C2 tooling/over-refusal observation inside a coding leaderboard; nothing in Hansard, gov.uk, UK committee publications, 58 Congressional Record issues, the Federal Register, NIST/CAISI or the Commission Press Corner references SWE Atlas, Scale AI's refusal-rate observation, or the affected agents.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'LARGER: Lexically Anchored Repository Graph Exploration and Retrieval' (arXiv:2605.16352, 2026-05-08) evaluates on and cites 'SWE-Atlas Test Writing' and 'SWE-Atlas Codebase QA' (23 in-text mentions).",
+     "url": "https://arxiv.org/abs/2605.16352"
+    },
+    {
+     "cite": "Underlying paper indexed in OpenAlex: 'SWE Atlas: Benchmarking Coding Agents Beyond Issue Resolution' (arXiv:2605.08366, 2026-05-08), W7160904950.",
+     "url": "https://api.openalex.org/works?filter=title.search:SWE%20Atlas"
+    },
+    {
+     "cite": "NEW: further full-text matches on 'SWE Atlas' via OpenAlex \u2014 'AgentRadio' (arXiv:2607.28430, 2026-07-30), 'SWE-INTERACT' (arXiv:2606.30573, 2026-06-29), 'Macaron-V1' (arXiv:2608.09819, 2026-08-10). Indexed matches, not individually opened.",
+     "url": "https://api.openalex.org/works?search=%22SWE%20Atlas%22&per-page=12"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "NEW: Hacker News \u2014 'Big Pickle on SWE Atlas \u2013 Codebase QnA' (2026-08-16), an independent project benchmarking against the Codebase QnA task set.",
+     "url": "https://github.com/PhillipChaffee/big-pickle-swe-atlas"
+    },
+    {
+     "where": "NEW: Hacker News \u2014 'AA coding index has been updated to use DeepSWE, Terminal-Bench v2, and SWE-Atlas' (2026-07-21), showing third-party adoption of the benchmark suite (not of the refusal finding).",
+     "url": "https://news.ycombinator.com/item?id=48998159"
+    }
+   ],
+   "note": "No independent press coverage of the refusal-rate observation. Scale AI's own leaderboard page is excluded as the evaluator's own publication; Anthropic/OpenAI posts would be excluded as the evaluated companies'. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ac-AUT3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex; window 2026-05-12 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=SWE%20Atlas&queryParameters.startDate=2026-05-12&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'SWE Atlas' = 0 contributions, 0 written statements, 0 written answers, 0 committee items. The 633-contribution AI/cyber Hansard corpus pulled from this API was regex-searched for 'swe atlas', 'refusal rate' and 'security related filters' \u2014 zero hits."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"SWE Atlas\"; \"Scale AI\"; \"elevated refusal rate\"; \"Fable-5\"; \"Claude Code\"; \"GPT-5.6-Sol\"; \"Codex\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22SWE%20Atlas%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"SWE Atlas\" total = 0. No gov.uk page, ministerial statement or regulator publication references the benchmark or the refusal-rate observation."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'SWE Atlas'."
+      },
+      {
+       "name": "FCA site search \u2014 term: SWE Atlas",
+       "url": "https://www.fca.org.uk/search-results?search_term=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for SWE Atlas\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-12 to 2026-08-28 \u2014 grepped for: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). Zero occurrences of 'swe atlas', 'scale ai', 'fable-5' or 'refusal rate'. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-12, terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22SWE%20Atlas%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-12&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"SWE Atlas\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://www.nist.gov/search?s=%22SWE%20Atlas%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'No results for: \"SWE Atlas\"'. No NIST or CAISI publication references the benchmark or the refusal finding."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: SWE Atlas; Scale AI; elevated refusal rate; Fable-5; Claude Code; GPT-5.6-Sol; Codex",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalNumber = 0 for 'SWE Atlas'. No Commission material references it."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=SWE%20Atlas",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative across all three jurisdictions on 2026-08-28. Note this is a C2 tooling/over-refusal observation inside a coding leaderboard; nothing in Hansard, gov.uk, UK committee publications, 58 Congressional Record issues, the Federal Register, NIST/CAISI or the Commission Press Corner references SWE Atlas, Scale AI's refusal-rate observation, or the affected agents.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'LARGER: Lexically Anchored Repository Graph Exploration and Retrieval' (arXiv:2605.16352, 2026-05-08) evaluates on and cites 'SWE-Atlas Test Writing' and 'SWE-Atlas Codebase QA' (23 in-text mentions).",
+     "url": "https://arxiv.org/abs/2605.16352"
+    },
+    {
+     "cite": "Underlying paper indexed in OpenAlex: 'SWE Atlas: Benchmarking Coding Agents Beyond Issue Resolution' (arXiv:2605.08366, 2026-05-08), W7160904950.",
+     "url": "https://api.openalex.org/works?filter=title.search:SWE%20Atlas"
+    },
+    {
+     "cite": "NEW: further full-text matches on 'SWE Atlas' via OpenAlex \u2014 'AgentRadio' (arXiv:2607.28430, 2026-07-30), 'SWE-INTERACT' (arXiv:2606.30573, 2026-06-29), 'Macaron-V1' (arXiv:2608.09819, 2026-08-10). Indexed matches, not individually opened.",
+     "url": "https://api.openalex.org/works?search=%22SWE%20Atlas%22&per-page=12"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "NEW: Hacker News \u2014 'Big Pickle on SWE Atlas \u2013 Codebase QnA' (2026-08-16), an independent project benchmarking against the Codebase QnA task set.",
+     "url": "https://github.com/PhillipChaffee/big-pickle-swe-atlas"
+    },
+    {
+     "where": "NEW: Hacker News \u2014 'AA coding index has been updated to use DeepSWE, Terminal-Bench v2, and SWE-Atlas' (2026-07-21), showing third-party adoption of the benchmark suite (not of the refusal finding).",
+     "url": "https://news.ycombinator.com/item?id=48998159"
+    }
+   ],
+   "note": "No independent press coverage of the refusal-rate observation. Scale AI's own leaderboard page is excluded as the evaluator's own publication; Anthropic/OpenAI posts would be excluded as the evaluated companies'. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2026-05-CYB2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords) \u2014 terms 'Mythos' (27 contributions), 'AI Security Institute' (58), 'AISI' (9), 'doubling' (73), 'cyber' (305), 'frontier' (73), 'autonomous' (78), 'benchmark' (31), 'evaluation' (75); window 2026-05-13 to 2026-08-28. 633 unique contributions pulled with full ContributionTextFull and regex-searched.",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Mythos&queryParameters.startDate=2026-05-13&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. HIT. Lord Clement-Jones (LD), Lords, 14 July 2026, Cyber Security and Resilience (Network and Information Systems) Bill, second reading: 'The UK's own AI Security Institute, as we have heard, found Mythos substantially more capable at cyber offence than any model previously assessed, and warned that frontier AI capability is doubling every four months.' Supporting, in the same debate: Baroness Berger (Lab): 'the maximum length of tasks that AI models can successfully complete is now doubling roughly every four months' (the report's cyber time-horizon result, stated without attribution). Also read and rejected as inadmissible: the Minister's reply (Baroness Lloyd of Effra, DSIT) refers only to AISI's pre-release access to Mythos, not to this report's results. 'Cooling Tower' = 0 contributions; 'cyber ranges' = 1, unrelated."
+      },
+      {
+       "name": "gov.uk official search API \u2014 exact-phrase queries \"Mythos Preview\", \"GPT-5.5\", \"AI Security Institute\" cyber, \"cyber range\", \"How fast is autonomous AI cyber capability advancing\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22GPT-5.5%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. \"GPT-5.5\" = 3 results, \"Mythos Preview\" = 1, exact report title = 0. All candidates fetched and read individually (below)."
+      },
+      {
+       "name": "gov.uk \u2014 DSIT and NCSC case study, 'When AI Leaves the Lab: Testing Frontier Models in Government Cyber Defence', published 12 June 2026 (first_published_at 2026-06-12, confirmed via the gov.uk content API)",
+       "url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. HIT. 'Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)'s evaluations show these models getting better at cyber tasks very quickly.' Describes a Government Cyber Coordination Centre hackathon programme run with AISI and NCSC and commits to a second phase. No enforceable obligation is created."
+      },
+      {
+       "name": "gov.uk \u2014 'AI, open code and vulnerability risk in the public sector' (guidance, 14 May 2026)",
+       "url": "https://www.gov.uk/guidance/ai-open-code-and-vulnerability-risk-in-the-public-sector",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. Cites AISI but the citations are to the December 2025 Frontier AI Trends report and to the 13 April 2026 Mythos Preview pre-deployment blog \u2014 NOT to this 13 May report. Recorded as read-and-rejected."
+      },
+      {
+       "name": "gov.uk \u2014 'Government steps up action to strengthen cyber defences as UK cyber industry continues to grow' (DSIT news)",
+       "url": "https://www.gov.uk/government/news/government-steps-up-action-to-strengthen-cyber-defences-as-uk-cyber-industry-continues-to-grow",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. References 'recent research by the AI Security Institute, looking at frontier models like Mythos and GPT 5.5', but first_published_at / public_updated_at are both 2026-05-12 (gov.uk content API) \u2014 one day BEFORE this report. Outside the search window and therefore excluded, though it shows the same Mythos/GPT-5.5 pairing was already in ministerial messaging."
+      },
+      {
+       "name": "gov.uk \u2014 DSIT cyber security newsletter May 2026; 'Thematic review and gap analysis on AI security' (10 July 2026); 'AI Insights' (3 Aug 2026)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. Landing pages read; none contains any reference to this report, to cyber ranges, to the doubling rate or to the two models' results."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search: 'Mythos', 'GPT-5.5', 'cyber range', 'AI Security Institute'",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. totalResults = 0 for 'Mythos' and 'GPT-5.5'; the single 'cyber range' hit is November 2025 ministerial correspondence on the CSR Bill's introduction, pre-window. No select-committee report references the report. Caveat: this API matches publication titles/descriptions, not full report text."
+      },
+      {
+       "name": "FCA site search \u2014 'AI Security Institute'",
+       "url": "https://www.fca.org.uk/search-results?search_term=AI%20Security%20Institute",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. No FCA publication references the report."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record, full text of all 58 daily issues 2026-05-13 to 2026-08-28 \u2014 grepped for 'ai security institute', 'aisi', 'mythos', 'gpt-5.5', 'cyber range', 'cooling tower', 'autonomous cyber', 'doubling'",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. 'ai security institute' = 0; 'cyber range' = 0; 'cooling tower' = 0. 'mythos' appears once (2026-07-21, floor remarks introducing a 'Secure AI Development Act': 'many of my friends inside the administration are recognizing this after the release of Mythos') \u2014 references the model release, not AISI, not this report, not its results; inadmissible. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "House Homeland Security Committee, Subcommittee on Cybersecurity and Infrastructure Protection \u2014 hearing 'The AI Security Landscape: How Frontier Models, Agentic AI, and AI Coding Tools Are Reshaping Cybersecurity and Critical Infrastructure Resilience', 4 June 2026; combined witness testimony read in full (35pp)",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF) and read in full. NEAR-MISS, deliberately not counted. Chris Meserole (Frontier Model Forum) testifies: 'a version of GPT 5.5 recently solved a complex cyber range developed by the UK AI Security Institute and had the highest success rate per token across a range of autonomous tasks.' His footnote 4 cites UK AISI, 'Our evaluation of OpenAI's GPT-5.5 cyber capabilities' (30 April 2026) \u2014 a different AISI report. That 30 April post was fetched and read (200) and does contain the cyber-range results including 'The Last Ones', so the testimony is attributable to it rather than to the 13 May report. Recorded as searched-and-rejected."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase 'AI Security Institute', 'Claude Mythos', 'GPT-5.5', 'autonomous cyber capability', publication_date >= 2026-05-13",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI%20Security%20Institute%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-13&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. count = 0 for every term. No rule, proposed rule or notice references the report."
+      },
+      {
+       "name": "NIST / CAISI site search \u2014 '\"AI Security Institute\"', '\"Claude Mythos\"', '\"GPT-5.5\"'",
+       "url": "https://www.nist.gov/search?s=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. 5 hits for 'AI Security Institute', the most recent being the September 2025 CAISI/OpenAI/Anthropic joint work; 'Claude Mythos' = no results; 'GPT-5.5' returns only the 1 May 2026 CAISI DeepSeek evaluation table. No CAISI publication references this report."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API \u2014 'Claude Mythos', 'GPT-5.5', 'AI Security Institute', 'cyber range'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Claude%20Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. 'Claude Mythos' totalNumber = 0. The 'AI Security Institute' and 'cyber range' queries are OR-tokenised and return only unrelated items (Daily News, Ocean Pact conference, AI Act enforcement notice of 31 July 2026 \u2014 the latter fetched and checked: it concerns GPAI transparency obligations and does not reference AISI's cyber evaluations). No EU institution references this report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Claude%20Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable rather than as a negative."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+   "verbatim": "Lord Clement-Jones (LD), Lords, 14 July 2026, Cyber Security and Resilience (Network and Information Systems) Bill: \"The UK's own AI Security Institute, as we have heard, found Mythos substantially more capable at cyber offence than any model previously assessed, and warned that frontier AI capability is doubling every four months.\" [Read via the official Hansard search API, hansard-api.parliament.uk, 200; the hansard.parliament.uk HTML rendering 403s.] And, DSIT/NCSC, gov.uk case study, 12 June 2026: \"Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)'s evaluations show these models getting better at cyber tasks very quickly.\"",
+   "policy_response": "Official engagement, no enforceable obligation. AISI's cyber-capability results were cited on the floor of the House of Lords during second reading of the Cyber Security and Resilience (NIS) Bill on 14 July 2026 and used by DSIT and NCSC on 12 June 2026 to justify a Government Cyber Coordination Centre programme applying frontier models to vulnerability discovery across government code, with a second phase announced. No mandatory requirement was imposed on any developer; the Bill itself contains no AI provision.",
+   "reasoning": "This is the one report in the packet where the previous 'No policy uptake identified' does not survive. Two in-window official UK sources reference the evaluator together with this report's specific results. (1) Hansard, Lords, 14 July 2026: Lord Clement-Jones attributes to the AI Security Institute the warning that 'frontier AI capability is doubling every four months' \u2014 the doubling-rate result is this report's headline (it published the February 2026 estimate of a 4.7-month cyber time-horizon doubling and the claim that Mythos Preview and GPT-5.5 exceeded it); Baroness Berger states the same time-horizon doubling in the same debate. (2) gov.uk, 12 June 2026: a DSIT/NCSC case study states that 'the UK AI Security Institute (AISI)'s evaluations show these models [Claude Mythos and GPT-5.5] getting better at cyber tasks very quickly' \u2014 the two models this report evaluates, and its central claim. Neither creates an enforceable obligation: the case study describes a voluntary hackathon programme, and the Cyber Security and Resilience Bill under debate contains no AI provision at all (several peers complained about precisely that). Level = Non-binding policy-related uptake, not Binding. Two candidate sources were read and deliberately rejected: the 12 May 2026 DSIT news release (one day before publication, outside the window) and the 4 June 2026 House Homeland Security hearing testimony (references AISI cyber ranges but footnotes AISI's separate 30 April 2026 GPT-5.5 evaluation, which was fetched and confirmed to contain those cyber-range results). Finding-specific caveat: this finding is the Cooling Tower first-solve by Claude Mythos Preview. No official source anywhere references 'Cooling Tower', the cyber ranges by name, or the 6-of-10 / 3-of-10 figures ('Cooling Tower' returns 0 in Hansard, 0 in the Congressional Record, 0 on gov.uk in an AI sense). The uptake recorded here is report-level \u2014 official engagement with this report's evaluator and its headline results \u2014 not with this particular range result. Hence medium confidence.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "The Decoder \u2014 'New Claude Mythos becomes the first AI model to clear all cyberattack simulations from Britain's AI safety agency' (verified live, 200)",
+     "url": "https://the-decoder.com/new-claude-mythos-becomes-the-first-ai-model-to-clear-all-cyberattack-simulations-from-britains-ai-safety-agency/",
+     "date": "2026-05"
+    },
+    {
+     "outlet": "CyberScoop \u2014 'AI agents are breaking cyber benchmarks\u2026' (verified live, 200)",
+     "url": "https://cyberscoop.com/ai-autonomous-cyber-capability-benchmarks-broken-gpt5-claude-mythos/",
+     "date": "2026-05"
+    },
+    {
+     "outlet": "CSO Online \u2014 'AI cyberattackers are getting better, faster' (verified live, 200)",
+     "url": "https://www.csoonline.com/article/4172519/ai-cyberattackers-are-getting-better-faster.html",
+     "date": "2026-05"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW: 'Mythos AI is a cybersecurity threat, but it doesn't rewrite the rules of the game' (Mohammad Ahmad, 2026-05-04, doi 10.64628/aai.476td45um) \u2014 the one work OpenAlex records as citing AISI's companion paper 'Measuring AI Agents' Progress on Multi-Step Cyber Attack Scenarios' (arXiv:2603.11214). Note it predates this blog post and cites the companion paper.",
+     "url": "https://doi.org/10.64628/aai.476td45um"
+    },
+    {
+     "cite": "Companion paper indexed: 'Measuring AI Agents' Progress on Multi-Step Cyber Attack Scenarios' (arXiv:2603.11214), OpenAlex W7135220455, cited_by_count 1.",
+     "url": "https://api.openalex.org/works?filter=cites:W7135220455"
+    },
+    {
+     "cite": "EXCLUDED as non-independent: 'How Inference Compute Shapes Frontier LLM Evaluation' (arXiv:2606.17930, 2026-06-16) matches the report title in OpenAlex full-text search but is authored by AISI staff (McFadyen, Jorgensen, Coppock, Wei, Ududec) \u2014 the evaluator's own publication.",
+     "url": "https://arxiv.org/abs/2606.17930"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Inline Policy commentary (carried forward from the existing record).",
+     "url": "https://www.inlinepolicy.com/"
+    }
+   ],
+   "note": "Hacker News (Algolia, post-2026-05-13) returns 0 hits for 'AISI cyber capability doubling' and only pre-window items for 'Claude Mythos cyber range'. Descriptive only; Channel C does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "UKAISI-2026-05-CYB3",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords) \u2014 terms 'Mythos' (27 contributions), 'AI Security Institute' (58), 'AISI' (9), 'doubling' (73), 'cyber' (305), 'frontier' (73), 'autonomous' (78), 'benchmark' (31), 'evaluation' (75); window 2026-05-13 to 2026-08-28. 633 unique contributions pulled with full ContributionTextFull and regex-searched.",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Mythos&queryParameters.startDate=2026-05-13&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. HIT. Lord Clement-Jones (LD), Lords, 14 July 2026, Cyber Security and Resilience (Network and Information Systems) Bill, second reading: 'The UK's own AI Security Institute, as we have heard, found Mythos substantially more capable at cyber offence than any model previously assessed, and warned that frontier AI capability is doubling every four months.' Supporting, in the same debate: Baroness Berger (Lab): 'the maximum length of tasks that AI models can successfully complete is now doubling roughly every four months' (the report's cyber time-horizon result, stated without attribution). Also read and rejected as inadmissible: the Minister's reply (Baroness Lloyd of Effra, DSIT) refers only to AISI's pre-release access to Mythos, not to this report's results. 'Cooling Tower' = 0 contributions; 'cyber ranges' = 1, unrelated."
+      },
+      {
+       "name": "gov.uk official search API \u2014 exact-phrase queries \"Mythos Preview\", \"GPT-5.5\", \"AI Security Institute\" cyber, \"cyber range\", \"How fast is autonomous AI cyber capability advancing\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22GPT-5.5%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. \"GPT-5.5\" = 3 results, \"Mythos Preview\" = 1, exact report title = 0. All candidates fetched and read individually (below)."
+      },
+      {
+       "name": "gov.uk \u2014 DSIT and NCSC case study, 'When AI Leaves the Lab: Testing Frontier Models in Government Cyber Defence', published 12 June 2026 (first_published_at 2026-06-12, confirmed via the gov.uk content API)",
+       "url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. HIT. 'Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)'s evaluations show these models getting better at cyber tasks very quickly.' Describes a Government Cyber Coordination Centre hackathon programme run with AISI and NCSC and commits to a second phase. No enforceable obligation is created."
+      },
+      {
+       "name": "gov.uk \u2014 'AI, open code and vulnerability risk in the public sector' (guidance, 14 May 2026)",
+       "url": "https://www.gov.uk/guidance/ai-open-code-and-vulnerability-risk-in-the-public-sector",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. Cites AISI but the citations are to the December 2025 Frontier AI Trends report and to the 13 April 2026 Mythos Preview pre-deployment blog \u2014 NOT to this 13 May report. Recorded as read-and-rejected."
+      },
+      {
+       "name": "gov.uk \u2014 'Government steps up action to strengthen cyber defences as UK cyber industry continues to grow' (DSIT news)",
+       "url": "https://www.gov.uk/government/news/government-steps-up-action-to-strengthen-cyber-defences-as-uk-cyber-industry-continues-to-grow",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. References 'recent research by the AI Security Institute, looking at frontier models like Mythos and GPT 5.5', but first_published_at / public_updated_at are both 2026-05-12 (gov.uk content API) \u2014 one day BEFORE this report. Outside the search window and therefore excluded, though it shows the same Mythos/GPT-5.5 pairing was already in ministerial messaging."
+      },
+      {
+       "name": "gov.uk \u2014 DSIT cyber security newsletter May 2026; 'Thematic review and gap analysis on AI security' (10 July 2026); 'AI Insights' (3 Aug 2026)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. Landing pages read; none contains any reference to this report, to cyber ranges, to the doubling rate or to the two models' results."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search: 'Mythos', 'GPT-5.5', 'cyber range', 'AI Security Institute'",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. totalResults = 0 for 'Mythos' and 'GPT-5.5'; the single 'cyber range' hit is November 2025 ministerial correspondence on the CSR Bill's introduction, pre-window. No select-committee report references the report. Caveat: this API matches publication titles/descriptions, not full report text."
+      },
+      {
+       "name": "FCA site search \u2014 'AI Security Institute'",
+       "url": "https://www.fca.org.uk/search-results?search_term=AI%20Security%20Institute",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. No FCA publication references the report."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record, full text of all 58 daily issues 2026-05-13 to 2026-08-28 \u2014 grepped for 'ai security institute', 'aisi', 'mythos', 'gpt-5.5', 'cyber range', 'cooling tower', 'autonomous cyber', 'doubling'",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. 'ai security institute' = 0; 'cyber range' = 0; 'cooling tower' = 0. 'mythos' appears once (2026-07-21, floor remarks introducing a 'Secure AI Development Act': 'many of my friends inside the administration are recognizing this after the release of Mythos') \u2014 references the model release, not AISI, not this report, not its results; inadmissible. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "House Homeland Security Committee, Subcommittee on Cybersecurity and Infrastructure Protection \u2014 hearing 'The AI Security Landscape: How Frontier Models, Agentic AI, and AI Coding Tools Are Reshaping Cybersecurity and Critical Infrastructure Resilience', 4 June 2026; combined witness testimony read in full (35pp)",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF) and read in full. NEAR-MISS, deliberately not counted. Chris Meserole (Frontier Model Forum) testifies: 'a version of GPT 5.5 recently solved a complex cyber range developed by the UK AI Security Institute and had the highest success rate per token across a range of autonomous tasks.' His footnote 4 cites UK AISI, 'Our evaluation of OpenAI's GPT-5.5 cyber capabilities' (30 April 2026) \u2014 a different AISI report. That 30 April post was fetched and read (200) and does contain the cyber-range results including 'The Last Ones', so the testimony is attributable to it rather than to the 13 May report. Recorded as searched-and-rejected."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase 'AI Security Institute', 'Claude Mythos', 'GPT-5.5', 'autonomous cyber capability', publication_date >= 2026-05-13",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI%20Security%20Institute%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-13&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. count = 0 for every term. No rule, proposed rule or notice references the report."
+      },
+      {
+       "name": "NIST / CAISI site search \u2014 '\"AI Security Institute\"', '\"Claude Mythos\"', '\"GPT-5.5\"'",
+       "url": "https://www.nist.gov/search?s=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. 5 hits for 'AI Security Institute', the most recent being the September 2025 CAISI/OpenAI/Anthropic joint work; 'Claude Mythos' = no results; 'GPT-5.5' returns only the 1 May 2026 CAISI DeepSeek evaluation table. No CAISI publication references this report."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API \u2014 'Claude Mythos', 'GPT-5.5', 'AI Security Institute', 'cyber range'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Claude%20Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. 'Claude Mythos' totalNumber = 0. The 'AI Security Institute' and 'cyber range' queries are OR-tokenised and return only unrelated items (Daily News, Ocean Pact conference, AI Act enforcement notice of 31 July 2026 \u2014 the latter fetched and checked: it concerns GPAI transparency obligations and does not reference AISI's cyber evaluations). No EU institution references this report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Claude%20Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable rather than as a negative."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://hansard.parliament.uk/Lords/2026-07-14/debates/29073BC1-AD49-48CF-A269-8E83A76AFE90/CyberSecurityAndResilience(NetworkAndInformationSystems)Bill",
+   "verbatim": "Lord Clement-Jones (LD), Lords, 14 July 2026, Cyber Security and Resilience (Network and Information Systems) Bill: \"The UK's own AI Security Institute, as we have heard, found Mythos substantially more capable at cyber offence than any model previously assessed, and warned that frontier AI capability is doubling every four months.\" [Read via the official Hansard search API, hansard-api.parliament.uk, 200; the hansard.parliament.uk HTML rendering 403s.] And, DSIT/NCSC, gov.uk case study, 12 June 2026: \"Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)'s evaluations show these models getting better at cyber tasks very quickly.\"",
+   "policy_response": "Official engagement, no enforceable obligation. AISI's cyber-capability results were cited on the floor of the House of Lords during second reading of the Cyber Security and Resilience (NIS) Bill on 14 July 2026 and used by DSIT and NCSC on 12 June 2026 to justify a Government Cyber Coordination Centre programme applying frontier models to vulnerability discovery across government code, with a second phase announced. No mandatory requirement was imposed on any developer; the Bill itself contains no AI provision.",
+   "reasoning": "This is the one report in the packet where the previous 'No policy uptake identified' does not survive. Two in-window official UK sources reference the evaluator together with this report's specific results. (1) Hansard, Lords, 14 July 2026: Lord Clement-Jones attributes to the AI Security Institute the warning that 'frontier AI capability is doubling every four months' \u2014 the doubling-rate result is this report's headline (it published the February 2026 estimate of a 4.7-month cyber time-horizon doubling and the claim that Mythos Preview and GPT-5.5 exceeded it); Baroness Berger states the same time-horizon doubling in the same debate. (2) gov.uk, 12 June 2026: a DSIT/NCSC case study states that 'the UK AI Security Institute (AISI)'s evaluations show these models [Claude Mythos and GPT-5.5] getting better at cyber tasks very quickly' \u2014 the two models this report evaluates, and its central claim. Neither creates an enforceable obligation: the case study describes a voluntary hackathon programme, and the Cyber Security and Resilience Bill under debate contains no AI provision at all (several peers complained about precisely that). Level = Non-binding policy-related uptake, not Binding. Two candidate sources were read and deliberately rejected: the 12 May 2026 DSIT news release (one day before publication, outside the window) and the 4 June 2026 House Homeland Security hearing testimony (references AISI cyber ranges but footnotes AISI's separate 30 April 2026 GPT-5.5 evaluation, which was fetched and confirmed to contain those cyber-range results). Finding-specific note: this finding is the doubling-trend result (GPT-5.5 exceeding the previous doubling rate, 100% on five of six 8h+ tasks). It is the closest match to the Hansard citation, which reproduces the doubling claim and attributes it to AISI, and to the gov.uk case study, which names GPT-5.5 explicitly. Strongest of the three.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "CyberScoop \u2014 'AI agents are breaking cyber benchmarks\u2026' (verified live, 200)",
+     "url": "https://cyberscoop.com/ai-autonomous-cyber-capability-benchmarks-broken-gpt5-claude-mythos/",
+     "date": "2026-05"
+    },
+    {
+     "outlet": "CSO Online \u2014 'AI cyberattackers are getting better, faster' (verified live, 200)",
+     "url": "https://www.csoonline.com/article/4172519/ai-cyberattackers-are-getting-better-faster.html",
+     "date": "2026-05"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW: 'Mythos AI is a cybersecurity threat, but it doesn't rewrite the rules of the game' (Mohammad Ahmad, 2026-05-04, doi 10.64628/aai.476td45um) \u2014 the one work OpenAlex records as citing AISI's companion paper 'Measuring AI Agents' Progress on Multi-Step Cyber Attack Scenarios' (arXiv:2603.11214). Note it predates this blog post and cites the companion paper.",
+     "url": "https://doi.org/10.64628/aai.476td45um"
+    },
+    {
+     "cite": "Companion paper indexed: 'Measuring AI Agents' Progress on Multi-Step Cyber Attack Scenarios' (arXiv:2603.11214), OpenAlex W7135220455, cited_by_count 1.",
+     "url": "https://api.openalex.org/works?filter=cites:W7135220455"
+    },
+    {
+     "cite": "EXCLUDED as non-independent: 'How Inference Compute Shapes Frontier LLM Evaluation' (arXiv:2606.17930, 2026-06-16) matches the report title in OpenAlex full-text search but is authored by AISI staff (McFadyen, Jorgensen, Coppock, Wei, Ududec) \u2014 the evaluator's own publication.",
+     "url": "https://arxiv.org/abs/2606.17930"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Inline Policy commentary (carried forward from the existing record).",
+     "url": "https://www.inlinepolicy.com/"
+    }
+   ],
+   "note": "Hacker News (Algolia, post-2026-05-13) returns 0 hits for 'AISI cyber capability doubling' and only pre-window items for 'Claude Mythos cyber range'. Descriptive only; Channel C does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "UKAISI-2026-05-CYB4",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "Non-binding policy-related uptake",
+  "changed": true,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords) \u2014 terms 'Mythos' (27 contributions), 'AI Security Institute' (58), 'AISI' (9), 'doubling' (73), 'cyber' (305), 'frontier' (73), 'autonomous' (78), 'benchmark' (31), 'evaluation' (75); window 2026-05-13 to 2026-08-28. 633 unique contributions pulled with full ContributionTextFull and regex-searched.",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=Mythos&queryParameters.startDate=2026-05-13&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. HIT. Lord Clement-Jones (LD), Lords, 14 July 2026, Cyber Security and Resilience (Network and Information Systems) Bill, second reading: 'The UK's own AI Security Institute, as we have heard, found Mythos substantially more capable at cyber offence than any model previously assessed, and warned that frontier AI capability is doubling every four months.' Supporting, in the same debate: Baroness Berger (Lab): 'the maximum length of tasks that AI models can successfully complete is now doubling roughly every four months' (the report's cyber time-horizon result, stated without attribution). Also read and rejected as inadmissible: the Minister's reply (Baroness Lloyd of Effra, DSIT) refers only to AISI's pre-release access to Mythos, not to this report's results. 'Cooling Tower' = 0 contributions; 'cyber ranges' = 1, unrelated."
+      },
+      {
+       "name": "gov.uk official search API \u2014 exact-phrase queries \"Mythos Preview\", \"GPT-5.5\", \"AI Security Institute\" cyber, \"cyber range\", \"How fast is autonomous AI cyber capability advancing\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22GPT-5.5%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. \"GPT-5.5\" = 3 results, \"Mythos Preview\" = 1, exact report title = 0. All candidates fetched and read individually (below)."
+      },
+      {
+       "name": "gov.uk \u2014 DSIT and NCSC case study, 'When AI Leaves the Lab: Testing Frontier Models in Government Cyber Defence', published 12 June 2026 (first_published_at 2026-06-12, confirmed via the gov.uk content API)",
+       "url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. HIT. 'Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)'s evaluations show these models getting better at cyber tasks very quickly.' Describes a Government Cyber Coordination Centre hackathon programme run with AISI and NCSC and commits to a second phase. No enforceable obligation is created."
+      },
+      {
+       "name": "gov.uk \u2014 'AI, open code and vulnerability risk in the public sector' (guidance, 14 May 2026)",
+       "url": "https://www.gov.uk/guidance/ai-open-code-and-vulnerability-risk-in-the-public-sector",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read in full. Cites AISI but the citations are to the December 2025 Frontier AI Trends report and to the 13 April 2026 Mythos Preview pre-deployment blog \u2014 NOT to this 13 May report. Recorded as read-and-rejected."
+      },
+      {
+       "name": "gov.uk \u2014 'Government steps up action to strengthen cyber defences as UK cyber industry continues to grow' (DSIT news)",
+       "url": "https://www.gov.uk/government/news/government-steps-up-action-to-strengthen-cyber-defences-as-uk-cyber-industry-continues-to-grow",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. References 'recent research by the AI Security Institute, looking at frontier models like Mythos and GPT 5.5', but first_published_at / public_updated_at are both 2026-05-12 (gov.uk content API) \u2014 one day BEFORE this report. Outside the search window and therefore excluded, though it shows the same Mythos/GPT-5.5 pairing was already in ministerial messaging."
+      },
+      {
+       "name": "gov.uk \u2014 DSIT cyber security newsletter May 2026; 'Thematic review and gap analysis on AI security' (10 July 2026); 'AI Insights' (3 Aug 2026)",
+       "url": "https://www.gov.uk/government/publications/thematic-review-and-gap-analysis-on-ai-security",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. Landing pages read; none contains any reference to this report, to cyber ranges, to the doubling rate or to the two models' results."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search: 'Mythos', 'GPT-5.5', 'cyber range', 'AI Security Institute'",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. totalResults = 0 for 'Mythos' and 'GPT-5.5'; the single 'cyber range' hit is November 2025 ministerial correspondence on the CSR Bill's introduction, pre-window. No select-committee report references the report. Caveat: this API matches publication titles/descriptions, not full report text."
+      },
+      {
+       "name": "FCA site search \u2014 'AI Security Institute'",
+       "url": "https://www.fca.org.uk/search-results?search_term=AI%20Security%20Institute",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. No FCA publication references the report."
+      }
+     ],
+     "found": true
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record, full text of all 58 daily issues 2026-05-13 to 2026-08-28 \u2014 grepped for 'ai security institute', 'aisi', 'mythos', 'gpt-5.5', 'cyber range', 'cooling tower', 'autonomous cyber', 'doubling'",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. 'ai security institute' = 0; 'cyber range' = 0; 'cooling tower' = 0. 'mythos' appears once (2026-07-21, floor remarks introducing a 'Secure AI Development Act': 'many of my friends inside the administration are recognizing this after the release of Mythos') \u2014 references the model release, not AISI, not this report, not its results; inadmissible. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "House Homeland Security Committee, Subcommittee on Cybersecurity and Infrastructure Protection \u2014 hearing 'The AI Security Landscape: How Frontier Models, Agentic AI, and AI Coding Tools Are Reshaping Cybersecurity and Critical Infrastructure Resilience', 4 June 2026; combined witness testimony read in full (35pp)",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF) and read in full. NEAR-MISS, deliberately not counted. Chris Meserole (Frontier Model Forum) testifies: 'a version of GPT 5.5 recently solved a complex cyber range developed by the UK AI Security Institute and had the highest success rate per token across a range of autonomous tasks.' His footnote 4 cites UK AISI, 'Our evaluation of OpenAI's GPT-5.5 cyber capabilities' (30 April 2026) \u2014 a different AISI report. That 30 April post was fetched and read (200) and does contain the cyber-range results including 'The Last Ones', so the testimony is attributable to it rather than to the 13 May report. Recorded as searched-and-rejected."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase 'AI Security Institute', 'Claude Mythos', 'GPT-5.5', 'autonomous cyber capability', publication_date >= 2026-05-13",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22AI%20Security%20Institute%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-13&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. count = 0 for every term. No rule, proposed rule or notice references the report."
+      },
+      {
+       "name": "NIST / CAISI site search \u2014 '\"AI Security Institute\"', '\"Claude Mythos\"', '\"GPT-5.5\"'",
+       "url": "https://www.nist.gov/search?s=%22AI%20Security%20Institute%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. 5 hits for 'AI Security Institute', the most recent being the September 2025 CAISI/OpenAI/Anthropic joint work; 'Claude Mythos' = no results; 'GPT-5.5' returns only the 1 May 2026 CAISI DeepSeek evaluation table. No CAISI publication references this report."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API \u2014 'Claude Mythos', 'GPT-5.5', 'AI Security Institute', 'cyber range'",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=Claude%20Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched. 'Claude Mythos' totalNumber = 0. The 'AI Security Institute' and 'cyber range' queries are OR-tokenised and return only unrelated items (Daily News, Ocean Pact conference, AI Act enforcement notice of 31 July 2026 \u2014 the latter fetched and checked: it concerns GPAI transparency obligations and does not reference AISI's cyber evaluations). No EU institution references this report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=Claude%20Mythos",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable rather than as a negative."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+   "verbatim": "Lord Clement-Jones (LD), Lords, 14 July 2026, Cyber Security and Resilience (Network and Information Systems) Bill: \"The UK's own AI Security Institute, as we have heard, found Mythos substantially more capable at cyber offence than any model previously assessed, and warned that frontier AI capability is doubling every four months.\" [Read via the official Hansard search API, hansard-api.parliament.uk, 200; the hansard.parliament.uk HTML rendering 403s.] And, DSIT/NCSC, gov.uk case study, 12 June 2026: \"Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)'s evaluations show these models getting better at cyber tasks very quickly.\"",
+   "policy_response": "Official engagement, no enforceable obligation. AISI's cyber-capability results were cited on the floor of the House of Lords during second reading of the Cyber Security and Resilience (NIS) Bill on 14 July 2026 and used by DSIT and NCSC on 12 June 2026 to justify a Government Cyber Coordination Centre programme applying frontier models to vulnerability discovery across government code, with a second phase announced. No mandatory requirement was imposed on any developer; the Bill itself contains no AI provision.",
+   "reasoning": "This is the one report in the packet where the previous 'No policy uptake identified' does not survive. Two in-window official UK sources reference the evaluator together with this report's specific results. (1) Hansard, Lords, 14 July 2026: Lord Clement-Jones attributes to the AI Security Institute the warning that 'frontier AI capability is doubling every four months' \u2014 the doubling-rate result is this report's headline (it published the February 2026 estimate of a 4.7-month cyber time-horizon doubling and the claim that Mythos Preview and GPT-5.5 exceeded it); Baroness Berger states the same time-horizon doubling in the same debate. (2) gov.uk, 12 June 2026: a DSIT/NCSC case study states that 'the UK AI Security Institute (AISI)'s evaluations show these models [Claude Mythos and GPT-5.5] getting better at cyber tasks very quickly' \u2014 the two models this report evaluates, and its central claim. Neither creates an enforceable obligation: the case study describes a voluntary hackathon programme, and the Cyber Security and Resilience Bill under debate contains no AI provision at all (several peers complained about precisely that). Level = Non-binding policy-related uptake, not Binding. Two candidate sources were read and deliberately rejected: the 12 May 2026 DSIT news release (one day before publication, outside the window) and the 4 June 2026 House Homeland Security hearing testimony (references AISI cyber ranges but footnotes AISI's separate 30 April 2026 GPT-5.5 evaluation, which was fetched and confirmed to contain those cyber-range results). Finding-specific caveat: this finding is Mythos Preview's 100% success on all six 8h+ long tasks under the 2.5M-token cap. No official source references the long-task results or the token cap; the uptake is report-level. Hence medium confidence.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "The Decoder \u2014 'New Claude Mythos becomes the first AI model to clear all cyberattack simulations from Britain's AI safety agency' (verified live, 200)",
+     "url": "https://the-decoder.com/new-claude-mythos-becomes-the-first-ai-model-to-clear-all-cyberattack-simulations-from-britains-ai-safety-agency/",
+     "date": "2026-05"
+    },
+    {
+     "outlet": "CyberScoop \u2014 'AI agents are breaking cyber benchmarks\u2026' (verified live, 200)",
+     "url": "https://cyberscoop.com/ai-autonomous-cyber-capability-benchmarks-broken-gpt5-claude-mythos/",
+     "date": "2026-05"
+    },
+    {
+     "outlet": "CSO Online \u2014 'AI cyberattackers are getting better, faster' (verified live, 200)",
+     "url": "https://www.csoonline.com/article/4172519/ai-cyberattackers-are-getting-better-faster.html",
+     "date": "2026-05"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW: 'Mythos AI is a cybersecurity threat, but it doesn't rewrite the rules of the game' (Mohammad Ahmad, 2026-05-04, doi 10.64628/aai.476td45um) \u2014 the one work OpenAlex records as citing AISI's companion paper 'Measuring AI Agents' Progress on Multi-Step Cyber Attack Scenarios' (arXiv:2603.11214). Note it predates this blog post and cites the companion paper.",
+     "url": "https://doi.org/10.64628/aai.476td45um"
+    },
+    {
+     "cite": "Companion paper indexed: 'Measuring AI Agents' Progress on Multi-Step Cyber Attack Scenarios' (arXiv:2603.11214), OpenAlex W7135220455, cited_by_count 1.",
+     "url": "https://api.openalex.org/works?filter=cites:W7135220455"
+    },
+    {
+     "cite": "EXCLUDED as non-independent: 'How Inference Compute Shapes Frontier LLM Evaluation' (arXiv:2606.17930, 2026-06-16) matches the report title in OpenAlex full-text search but is authored by AISI staff (McFadyen, Jorgensen, Coppock, Wei, Ududec) \u2014 the evaluator's own publication.",
+     "url": "https://arxiv.org/abs/2606.17930"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Inline Policy commentary (carried forward from the existing record).",
+     "url": "https://www.inlinepolicy.com/"
+    }
+   ],
+   "note": "Hacker News (Algolia, post-2026-05-13) returns 0 hits for 'AISI cyber capability doubling' and only pre-window items for 'Claude Mythos cyber range'. Descriptive only; Channel C does not affect any level."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "medium"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ad-JAI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash; window 2026-05-17 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=prompt%20injection&queryParameters.startDate=2026-05-17&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'prompt injection' = 0 contributions, 0 written statements, 0 written answers; 'clarification-seeking' = 0. The 633-contribution AI/cyber Hansard corpus was regex-searched for 'prompt injection', 'aspi' and 'clarification' \u2014 the only 'clarification' hits are procedural ('a point of clarification'). Note 'ASPI' as a query is ambiguous (Australian Strategic Policy Institute) and returned nothing relevant either."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"prompt injection\"; \"clarification-seeking\"; \"Scale AI\"; \"ASPI\"; \"o3\"; \"Gemini-3-Flash\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22prompt%20injection%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"prompt injection\" = 13 results, all fetched-listing-level and none in-window relevant: the AI Playbook for UK Government (Feb 2025), AI Cyber Security Code of Practice (Jan 2025), G7 Cyber Expert Group statement (Oct 2025), 'Thematic review and gap analysis on AI security' (10 July 2026) and 'AI Insights' (3 Aug 2026) \u2014 the last two were fetched and read and contain no reference to Scale AI, to ASPI or to the clarification-seeking amplification result. Generic prompt-injection guidance is not uptake of this finding."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'prompt injection' and for 'SWE Atlas'/'ASPI'-style distinctive terms."
+      },
+      {
+       "name": "FCA site search \u2014 term: prompt injection",
+       "url": "https://www.fca.org.uk/search-results?search_term=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for prompt injection\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-17 to 2026-08-28 \u2014 grepped for: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'prompt injection' = 0 occurrences; 'clarification-seeking' = 0; 'scale ai' = 0. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-17, terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22prompt%20injection%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-17&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"prompt injection\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://www.nist.gov/search?s=%22prompt%20injection%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). NIST 'prompt injection' returns 9 hits, all pre-window taxonomy/presentation material (e.g. the 2024 CSRC AI Risk and Threat Taxonomy deck) with no reference to ASPI, Scale AI or the clarification-seeking result. CAISI's agent-hijacking blog (January 2025) is likewise pre-window."
+      },
+      {
+       "name": "House Homeland Security Subcommittee hearing, 4 June 2026 \u2014 combined witness testimony (35pp)",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF) and read in full. The only in-window congressional hearing on frontier-model/agentic AI security. No mention of prompt injection amplification, clarification-seeking, ASPI or Scale AI."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'ASPI prompt injection' totalNumber = 0; the OR-tokenised 'prompt injection' query returns only pre-2016 unrelated items. No Commission or AI Office material references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative. Generic UK prompt-injection guidance exists in the window (DSIT 'Thematic review and gap analysis on AI security', 10 July 2026; 'AI Insights', 3 Aug 2026) and was fetched and read specifically to test it \u2014 neither references Scale AI, ASPI or the clarification-seeking amplification result, and general AI-security guidance is explicitly not uptake of a particular finding. Nothing in the US or EU. The o3 1.8% -> 34.0% figure specifically is absent from every source read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "AgentPatterns.ai \u2014 'Clarification-mode injection amplification' (verified live, 200)",
+     "url": "https://www.agentpatterns.ai/security/clarification-mode-injection-amplification/",
+     "date": "2026-06-12"
+    },
+    {
+     "outlet": "322 Signals Threatcast (verified live, 200)",
+     "url": "https://halilozturkci.com/threatcast?date=2026-05-27",
+     "date": "2026-05-27"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'AutoDojo: Adaptive Black-Box Attacks Reveal the Limits of IPI Defenses and Task-Specification Effects in LLM Agents' (arXiv:2606.15057, 2026-06-13) cites ASPI as reference [51]: 'ASPI [51] shows that pushing an agent into an ambiguity-clarification state sharply raises its susceptibility to injection.'",
+     "url": "https://arxiv.org/abs/2606.15057"
+    },
+    {
+     "cite": "NEW: 'AgentAntibody: An Adaptive Immune System for Defending LLM Agents against Prompt Injection' (arXiv:2608.04053, 2026-08-04) \u2014 OpenAlex full-text match on the ASPI title; not individually opened.",
+     "url": "https://arxiv.org/abs/2608.04053"
+    },
+    {
+     "cite": "Paper indexed: 'ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents' (arXiv:2605.17324, 2026-05-17), OpenAlex W7161681165.",
+     "url": "https://api.openalex.org/works?filter=title.search:ASPI%20Seeking%20Ambiguity%20Clarification"
+    }
+   ],
+   "discussion": [],
+   "note": "Scale AI's own paper page is excluded as the evaluator's own publication. Hacker News returns no on-point discussion. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ad-JAI2",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash; window 2026-05-17 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=prompt%20injection&queryParameters.startDate=2026-05-17&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'prompt injection' = 0 contributions, 0 written statements, 0 written answers; 'clarification-seeking' = 0. The 633-contribution AI/cyber Hansard corpus was regex-searched for 'prompt injection', 'aspi' and 'clarification' \u2014 the only 'clarification' hits are procedural ('a point of clarification'). Note 'ASPI' as a query is ambiguous (Australian Strategic Policy Institute) and returned nothing relevant either."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"prompt injection\"; \"clarification-seeking\"; \"Scale AI\"; \"ASPI\"; \"o3\"; \"Gemini-3-Flash\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22prompt%20injection%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"prompt injection\" = 13 results, all fetched-listing-level and none in-window relevant: the AI Playbook for UK Government (Feb 2025), AI Cyber Security Code of Practice (Jan 2025), G7 Cyber Expert Group statement (Oct 2025), 'Thematic review and gap analysis on AI security' (10 July 2026) and 'AI Insights' (3 Aug 2026) \u2014 the last two were fetched and read and contain no reference to Scale AI, to ASPI or to the clarification-seeking amplification result. Generic prompt-injection guidance is not uptake of this finding."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'prompt injection' and for 'SWE Atlas'/'ASPI'-style distinctive terms."
+      },
+      {
+       "name": "FCA site search \u2014 term: prompt injection",
+       "url": "https://www.fca.org.uk/search-results?search_term=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for prompt injection\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-17 to 2026-08-28 \u2014 grepped for: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'prompt injection' = 0 occurrences; 'clarification-seeking' = 0; 'scale ai' = 0. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-17, terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22prompt%20injection%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-17&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"prompt injection\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://www.nist.gov/search?s=%22prompt%20injection%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). NIST 'prompt injection' returns 9 hits, all pre-window taxonomy/presentation material (e.g. the 2024 CSRC AI Risk and Threat Taxonomy deck) with no reference to ASPI, Scale AI or the clarification-seeking result. CAISI's agent-hijacking blog (January 2025) is likewise pre-window."
+      },
+      {
+       "name": "House Homeland Security Subcommittee hearing, 4 June 2026 \u2014 combined witness testimony (35pp)",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF) and read in full. The only in-window congressional hearing on frontier-model/agentic AI security. No mention of prompt injection amplification, clarification-seeking, ASPI or Scale AI."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: prompt injection; clarification-seeking; Scale AI; ASPI; o3; Gemini-3-Flash",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'ASPI prompt injection' totalNumber = 0; the OR-tokenised 'prompt injection' query returns only pre-2016 unrelated items. No Commission or AI Office material references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=prompt%20injection",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative. Generic UK prompt-injection guidance exists in the window (DSIT 'Thematic review and gap analysis on AI security', 10 July 2026; 'AI Insights', 3 Aug 2026) and was fetched and read specifically to test it \u2014 neither references Scale AI, ASPI or the clarification-seeking amplification result, and general AI-security guidance is explicitly not uptake of a particular finding. Nothing in the US or EU. The Gemini-3-Flash 2.2% -> 35.7% figure specifically is absent from every source read.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "AgentPatterns.ai \u2014 'Clarification-mode injection amplification' (verified live, 200)",
+     "url": "https://www.agentpatterns.ai/security/clarification-mode-injection-amplification/",
+     "date": "2026-06-12"
+    },
+    {
+     "outlet": "322 Signals Threatcast (verified live, 200)",
+     "url": "https://halilozturkci.com/threatcast?date=2026-05-27",
+     "date": "2026-05-27"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "NEW, verified verbatim: 'AutoDojo: Adaptive Black-Box Attacks Reveal the Limits of IPI Defenses and Task-Specification Effects in LLM Agents' (arXiv:2606.15057, 2026-06-13) cites ASPI as reference [51]: 'ASPI [51] shows that pushing an agent into an ambiguity-clarification state sharply raises its susceptibility to injection.'",
+     "url": "https://arxiv.org/abs/2606.15057"
+    },
+    {
+     "cite": "NEW: 'AgentAntibody: An Adaptive Immune System for Defending LLM Agents against Prompt Injection' (arXiv:2608.04053, 2026-08-04) \u2014 OpenAlex full-text match on the ASPI title; not individually opened.",
+     "url": "https://arxiv.org/abs/2608.04053"
+    },
+    {
+     "cite": "Paper indexed: 'ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents' (arXiv:2605.17324, 2026-05-17), OpenAlex W7161681165.",
+     "url": "https://api.openalex.org/works?filter=title.search:ASPI%20Seeking%20Ambiguity%20Clarification"
+    }
+   ],
+   "discussion": [],
+   "note": "Scale AI's own paper page is excluded as the evaluator's own publication. Hacker News returns no on-point discussion. Descriptive only."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ },
+ {
+  "finding_id": "ANTHROPIC-2026-05-SELF-ALI1",
+  "current_policy_level": "No policy uptake identified",
+  "proposed_policy_level": "No policy uptake identified",
+  "changed": false,
+  "channel_b": {
+   "jurisdictions": [
+    {
+     "jurisdiction": "UK",
+     "sources_searched": [
+      {
+       "name": "UK Parliament Hansard official search API (Commons + Lords; contributions, written statements, written answers, committee items) \u2014 terms: SLEIGHT-Bench; Redwood Research; AI monitor; Claude Opus 4.6; blind spots; window 2026-05-19 to 2026-08-28",
+       "url": "https://hansard-api.parliament.uk/search.json?queryParameters.searchTerm=SLEIGHT-Bench&queryParameters.startDate=2026-05-19&queryParameters.endDate=2026-08-28",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'SLEIGHT' = 3 contributions, all read in full and all the idiom 'sleight of hand' in debates on winter fuel, the renewables obligation and a solar plant \u2014 no relation. 'Redwood Research' OR-tokenises to 65 contributions, all references to Lord Redwood or to woodland; zero mention of the organisation. 'jailbreak' = 1, unrelated. No UK parliamentary source references the report."
+      },
+      {
+       "name": "gov.uk official search API (all departments, ministerial statements, speeches, guidance, regulator content hosted on gov.uk) \u2014 exact-phrase queries: \"SLEIGHT-Bench\"; \"Redwood Research\"; \"AI monitor\"; \"Claude Opus 4.6\"; \"blind spots\"",
+       "url": "https://www.gov.uk/api/search.json?q=%22SLEIGHT-Bench%22&count=30",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). \"SLEIGHT\" = 54 results, all surnames and tribunal decisions; \"Redwood Research\" = 6 results, all pre-window (Frontier AI Taskforce progress reports 2023, AISI approach to evaluations 2024, the July 2025 AISI international coalition announcement) and none referencing SLEIGHT-Bench or the monitor blind-spot result."
+      },
+      {
+       "name": "UK Parliament Committees API \u2014 publication search (select-committee reports, correspondence, special reports) \u2014 terms: SLEIGHT-Bench; Redwood Research; AI monitor; Claude Opus 4.6; blind spots",
+       "url": "https://committees-api.parliament.uk/api/Publications?SearchTerm=SLEIGHT-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). totalResults = 0 for 'SLEIGHT'; 'Redwood Research' returns 4 unrelated items, the most recent 2025-07-31 correspondence."
+      },
+      {
+       "name": "FCA site search \u2014 term: SLEIGHT-Bench",
+       "url": "https://www.fca.org.uk/search-results?search_term=SLEIGHT-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read. Page states \"No search results for SLEIGHT-Bench\"."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "US",
+     "sources_searched": [
+      {
+       "name": "Congressional Record (govinfo document PDFs), full text of all 58 daily issues from 2026-05-19 to 2026-08-28 \u2014 grepped for: SLEIGHT-Bench; Redwood Research; AI monitor; Claude Opus 4.6; blind spots",
+       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10.pdf (pattern; 58 issues fetched)",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched and read (58 issues). 'sleight-bench' = 0; 'redwood research' = 0; 'monitor blind spot' = 0. Congressional Record full text: every daily issue published between 2026-05-05 and 2026-08-28 was downloaded from govinfo document URLs (https://www.govinfo.gov/content/pkg/CREC-YYYY-MM-DD/pdf/CREC-YYYY-MM-DD.pdf) and text-extracted \u2014 58 issues fetched direct/200 (every sitting day; the 26 weekday dates with no issue return govinfo's 200 HTML not-found page, i.e. no sitting), then grepped."
+      },
+      {
+       "name": "Federal Register API \u2014 exact-phrase document search, publication_date >= 2026-05-19, terms: SLEIGHT-Bench; Redwood Research; AI monitor; Claude Opus 4.6; blind spots",
+       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22SLEIGHT-Bench%22&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-19&per_page=20",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). count = 0 for \"SLEIGHT-Bench\" and for \"Redwood Research\"."
+      },
+      {
+       "name": "NIST / CAISI site search (Commerce agency publications, CAISI evaluations and blogs) \u2014 exact-phrase terms: SLEIGHT-Bench; Redwood Research; AI monitor; Claude Opus 4.6; blind spots",
+       "url": "https://www.nist.gov/search?s=%22SLEIGHT-Bench%22",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'No results for: \"SLEIGHT-Bench\"'. '\"Redwood Research\"' returns 1 hit \u2014 the NIST AI Consortium members list, an organisational membership roster that says nothing about this report or finding, and is therefore inadmissible (general reference to the evaluator as an organisation)."
+      },
+      {
+       "name": "House Homeland Security Subcommittee hearing, 4 June 2026 \u2014 combined witness testimony (35pp)",
+       "url": "https://homeland.house.gov/wp-content/uploads/2026/06/2026-06-04-CIP-AI-Hearing.pdf",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (PDF) and read in full. No mention of SLEIGHT-Bench, Redwood Research or monitor evasion."
+      }
+     ],
+     "found": false
+    },
+    {
+     "jurisdiction": "EU / other",
+     "sources_searched": [
+      {
+       "name": "European Commission Press Corner search API (all Commission statements, speeches, daily news, Q&As, press releases) \u2014 terms: SLEIGHT-Bench; Redwood Research; AI monitor; Claude Opus 4.6; blind spots",
+       "url": "https://ec.europa.eu/commission/presscorner/api/search?text=SLEIGHT-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched (200). 'SLEIGHT-Bench' totalNumber = 0; 'Redwood Research' returns 2 items (a 2024 Daily News, a 1995 Council meeting) \u2014 OR-tokenised noise. No EU source references the report."
+      },
+      {
+       "name": "European Commission 'Shaping Europe's digital future' (DG CNECT / AI Office) site search",
+       "url": "https://digital-strategy.ec.europa.eu/en/search?text=SLEIGHT-Bench",
+       "via": "direct",
+       "status": 200,
+       "result": "Fetched, but the endpoint ignores the text parameter and returns an unfiltered listing \u2014 treated as unusable, not as a negative. The Press Corner API above is the admissible EU search."
+      }
+     ],
+     "found": false
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "policy_response": "",
+   "reasoning": "Searched negative across all three jurisdictions. The one US hit worth recording is the NIST AI Consortium membership list, which names Redwood Research Group as a member \u2014 a general reference to the evaluator as an organisation, which the admissibility rule explicitly excludes. Nothing else in Hansard, gov.uk, UK committee publications, 58 Congressional Record issues, the Federal Register, CAISI or the Commission Press Corner references SLEIGHT-Bench, the monitor blind-spot taxonomy or the Opus 4.6 detection rates.",
+   "searched_date": "2026-08-28"
+  },
+  "channel_c": {
+   "media": [
+    {
+     "outlet": "Devlery \u2014 'SLEIGHT-Bench agent monitor' (verified live, 200)",
+     "url": "https://devlery.com/en/blog/sleight-bench-agent-monitor",
+     "date": "2026-05-24"
+    }
+   ],
+   "academic": [
+    {
+     "cite": "CORRECTION to the existing record, which says the report is 'not indexed'. It is indexed \u2014 under the paper title rather than the blog title: 'SLEIGHT-Bench: A Benchmark of Evasion Attacks Against Agent Monitors' (arXiv:2605.16626, 2026-05-15), OpenAlex W7161721440. OpenAlex records 0 citing works as of this pass.",
+     "url": "https://api.openalex.org/works?filter=title.search:SLEIGHT-Bench"
+    }
+   ],
+   "discussion": [
+    {
+     "where": "Hacker News, 2026-08-27 \u2014 'Show HN: Beating GPT5.5-xhigh for Coding agent security with SLMs and IRM' surfaces in an Algolia search for SLEIGHT-Bench; the linked page (harden.run) is client-side rendered and its text could not be read, so the reference is unverified and is logged as a lead only.",
+     "url": "https://news.ycombinator.com/item?id=49443000"
+    }
+   ],
+   "note": "The Anthropic Alignment Science post hosting the report is excluded on both grounds (published by the evaluated company's alignment blog, and it is the report itself). Descriptive only; Channel C never affects Action Level, Policy Level or Proportionality \u2014 noted here because this finding's Action Level is 'Partial'."
+  },
+  "still_blocked": [
+   {
+    "url": "https://www.congress.gov/search?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "congress.gov's own full-text search over bills, hearings and the Congressional Record. Direct GET 403s today and Wayback holds no snapshot of a query result; congress.gov document pages also 403 direct this session (only stale Wayback copies resolve). Mitigated: the Congressional Record was searched in full from govinfo document PDFs, and the one in-window House hearing on frontier-model cyber capability was read from the committee's own site."
+   },
+   {
+    "url": "https://www.ncsc.gov.uk/search?q=...",
+    "status": 200,
+    "what_it_would_have_shown": "NCSC publication search. The page returns 200 but the result list is client-side rendered, so no results are present in the fetched HTML \u2014 a negative here is not admissible. Mitigated only partially: NCSC-authored material published through gov.uk was searched via the gov.uk search API."
+   },
+   {
+    "url": "https://committees.parliament.uk/search/?q=...",
+    "status": 403,
+    "what_it_would_have_shown": "Full-text search of select-committee reports and oral/written evidence. Mitigated: the official committees API (committees-api.parliament.uk/api/Publications) was searched instead, but it matches publication titles/descriptions rather than full report text."
+   },
+   {
+    "url": "https://hansard.parliament.uk/",
+    "status": 403,
+    "what_it_would_have_shown": "The rendered Hansard record. Mitigated: the official Hansard search API (hansard-api.parliament.uk) returned 200 and full contribution text was read from it, so Hansard itself was genuinely searched."
+   }
+  ],
+  "confidence": "high"
+ }
+]

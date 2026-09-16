@@ -1,0 +1,524 @@
+[
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel Lens, accelerating your path from PoC to production, is now available in beta",
+  "url": "https://citadel-ai.com/news/2022/03/01/citadel-lens-mar1-2022",
+  "resolved_date": "2022-03-01",
+  "date_source": "page byline (\"1 Mar 2022\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — product announcement, no measured result, observed behaviour or documented process fact",
+  "reason": "Beta launch announcement for the Citadel Lens testing product; describes intended capabilities ('automatically detects AI problems', 'reveal model weak spots') but reports no evaluation of any AI model and no measurement.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5787
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "本番環境での機械学習モデルの監視について (3/3) (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/03/14/monitoring-machine-learning-models-in-a-production-environment-3-3",
+  "resolved_date": "2022-03-14",
+  "date_source": "page byline (\"2022/03/14\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 — non-English-only (hard drop, applied before §2)",
+  "reason": "Japanese-only engineering blog on dataset-level monitoring statistics; §1 hard-drops non-English-only items. It is also a tutorial on monitoring technique with no evaluation of any model, so it would fail §2 regardless.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6382
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Announcing Citadel AI's Business Alliance with the Suntory Group",
+  "url": "https://citadel-ai.com/news/2022/04/04/citadel-ai-suntory",
+  "resolved_date": "2022-04-04",
+  "date_source": "page byline (\"4 Apr 2022\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — capital/business alliance announcement, no evidence-backed claim",
+  "reason": "Announces a capital and business alliance with Suntory Holdings following a joint product verification; the 'verification' content is a list of vendor product benefits with no measured result, no model named and no evaluation of an AI system reported.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6864
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI publishes a Japanese translation of NIST's guidelines on AI Bias",
+  "url": "https://citadel-ai.com/news/2022/04/14/citadel-ai-nist-sp1270",
+  "resolved_date": "2022-04-14",
+  "date_source": "page byline (\"14 Apr 2022\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — primary, earliest, fullest source wins; also §2 test 1 (summary of others' work)",
+  "reason": "Announcement that Citadel AI translated excerpts of NIST SP 1270 into Japanese; the only substantive claim ('a socio-technical perspective is important') is NIST's, not Citadel's, and NIST SP 1270 is the primary source.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4214
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "AIのバイアス特定・管理のための標準化に向けて（1/3）NIST Special Publication 1270 (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/04/15/toward-standardization-for-bias-identification-and-management-in-ai-1-3-nist-special-publication-1270",
+  "resolved_date": "2022-04-15",
+  "date_source": "page byline (\"2022/04/15\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 — non-English-only (hard drop, applied before §2)",
+  "reason": "Japanese-only Citadel AI blog: part 1 of 3 of an excerpted Japanese translation of NIST SP 1270. §1 hard-drops non-English-only items; it would also fail §2 test 1 (verbatim translation of NIST's work, not a Citadel-asserted finding) and §3 dedup against NIST SP 1270.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 14463
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "AIのバイアス特定・管理のための標準化に向けて（2/3）NIST Special Publication 1270 (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/04/22/toward-standardization-for-bias-identification-and-management-in-ai-2-3-nist-special-publication-1270",
+  "resolved_date": "2022-04-22",
+  "date_source": "page byline (\"2022/04/22\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 — non-English-only (hard drop, applied before §2)",
+  "reason": "Japanese-only Citadel AI blog: part 2 of 3 of an excerpted Japanese translation of NIST SP 1270. §1 hard-drops non-English-only items; it would also fail §2 test 1 (verbatim translation of NIST's work, not a Citadel-asserted finding) and §3 dedup against NIST SP 1270.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 14430
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "AIのバイアス特定・管理のための標準化に向けて（3/3）NIST Special Publication 1270 (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/04/29/toward-standardization-for-bias-identification-and-management-in-ai-3-3-nist-special-publication-1270",
+  "resolved_date": "2022-04-29",
+  "date_source": "page byline (\"2022/04/29\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 — non-English-only (hard drop, applied before §2)",
+  "reason": "Japanese-only Citadel AI blog: part 3 of 3 of an excerpted Japanese translation of NIST SP 1270. §1 hard-drops non-English-only items; it would also fail §2 test 1 (verbatim translation of NIST's work, not a Citadel-asserted finding) and §3 dedup against NIST SP 1270.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 26889
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Publishing NTT DATA's successful verification of Citadel Radar",
+  "url": "https://citadel-ai.com/news/2022/07/07/nttdata-radar-verification",
+  "resolved_date": "2022-07-07",
+  "date_source": "page byline (\"7 Jul 2022\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — no evidence-backed claim in this report; the substance sits on an external page",
+  "reason": "Two-paragraph pointer stating NTT Data 'confirmed' that Citadel Radar detects problems in AI models; no measurement, no model named, no method described, and the report explicitly redirects to NTT Data's Japanese-only page for detail. Closest call among the Citadel items because an external verifier (NTT Data) IS named, but nothing evidence-backed is asserted here.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2735
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Case Study: How Suntory improved their AI performance with Citadel AI",
+  "url": "https://citadel-ai.com/news/2022/09/01/suntory-case-study",
+  "resolved_date": "2022-09-01",
+  "date_source": "page byline (\"1 Sep 2022\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — vendor case-study summary with no measured result",
+  "reason": "Says Suntory 'was able to improve their model accuracy' on pallet-usage logistics models using Citadel products, with no figure, baseline, or method; the actual case study is a Japanese-only PDF on Suntory System Technology's site.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3268
+  },
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel A「(一社)金融データ活用推進協会」に特別会員として加盟 (Japanese only)",
+  "url": "https://citadel-ai.com/ja/news/2022/10/01/citadel-ai-fdua",
+  "resolved_date": "2022-10-01",
+  "date_source": "page byline (\"2022/10/01\"), confirmed by URL slug",
+  "in_window": true,
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 — non-English-only (hard drop, applied before §2)",
+  "reason": "Japanese-only announcement of Citadel AI joining the Financial Data Utilization Promotion Association as a special member; §1 hard drop, and it is a membership notice with no evaluation content.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2752
+  },
+  "findings": []
+ },
+ {
+  "venue": "FAR.AI",
+  "title": "RL with KL penalties is better viewed as Bayesian inference",
+  "url": "https://www.far.ai/research/rl-with-kl-penalties-is-better-viewed-as-bayesian-inference",
+  "resolved_date": "2022-08-07",
+  "date_source": "page byline (\"August 7, 2022\"); the cited arXiv DOI 10.48550/arXiv.2205.11275 is dated 2022-05",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — analytical/theoretical result, not a measured result, observed behaviour or documented process fact",
+  "reason": "Korbak, Perez & Buckley argue that KL-regularised RL is equivalent to variational inference and that the unregularised RL objective leads to distribution collapse. Both are proved analytically with no experiment reported on the page; §2 test 2 enumerates the admissible evidence types and a derivation is none of them. This was the closest exclusion call in the batch and is recorded as such rather than manufactured into a row.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2644
+  },
+  "findings": []
+ },
+ {
+  "venue": "FAR.AI",
+  "title": "Few-shot Adaptation Works with UnpredicTable Data",
+  "url": "https://www.far.ai/research/few-shot-adaptation-works-with-unpredictable-data",
+  "resolved_date": "2022-08-07",
+  "date_source": "page byline (\"August 7, 2022\"); cited arXiv eprint 2208.01009, year 2022",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — FAR.AI-asserted, evidence-backed measured result, independently codeable",
+  "reason": "KEYWORD-FILTER FALSE NEGATIVE: a title with no evaluation vocabulary ('UnpredicTable Data') hides a quantified few-shot-learning measurement over 52 downstream tasks. Full abstract with numbers is on the landing page, so the finding is evidence-backed in this report.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1863
+  },
+  "findings": [
+   {
+    "finding": "Finetuning language models on a single narrow subset of 413,299 automatically-extracted internet-table tasks (software documentation tables) raised mean few-shot-learning performance by +7.5% across 52 downstream NLP tasks, beating finetuning on 40 human-curated NLP datasets (+6.7%); FSL gains did not scale proportionally with dataset size and narrow subsets sometimes beat more diverse ones.",
+    "finding_quote": "raises FSL performance by a mean of +7.5% on 52 downstream tasks; which beats training on 40 human-curated NLP datasets (+6.7%)",
+    "models_systems": "Language models finetuned on the UnpredicTable dataset (no specific model named on the landing page)",
+    "institution": "FAR.AI",
+    "domain": "few-shot learning / training-data composition",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured empirical result on finetuned language models. Gate 2 fails (b) and (c): no specific company or model is named on this page, and the result is a positive capability/data-composition finding with no dangerous threshold crossed, so no company response is reasonable.",
+    "finding_type": "empirical benchmark result",
+    "scope": "model-level",
+    "source_url": "https://www.far.ai/research/few-shot-adaptation-works-with-unpredictable-data",
+    "access_type": "public web page"
+   }
+  ]
+ },
+ {
+  "venue": "FAR.AI",
+  "title": "imitation: Clean Imitation Learning Implementations",
+  "url": "https://www.far.ai/research/imitation-clean-imitation-learning-implementations",
+  "resolved_date": "2022-09-21",
+  "date_source": "page byline (\"September 21, 2022\"); cited arXiv eprint 2211.11972, year 2022",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — tooling finding, evidence-backed (benchmarking against prior results, measured test coverage)",
+  "reason": "KEYWORD-FILTER FALSE NEGATIVE: reads as a software release note, but §2 explicitly admits tooling findings and the page asserts two evidence-backed process facts (benchmarked against previous results; 98% automated test coverage) about safety-relevant reward-learning infrastructure.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1576
+  },
+  "findings": [
+   {
+    "finding": "FAR.AI's open-source 'imitation' library provides PyTorch implementations of three inverse-RL algorithms, three imitation-learning algorithms and a preference-comparison algorithm, which have been benchmarked against previously published results and are covered by automated tests over 98% of the code.",
+    "finding_quote": "The implementations have been benchmarked against previous results, and automated tests cover 98% of the code.",
+    "models_systems": "imitation (open-source PyTorch library for imitation and reward learning)",
+    "institution": "FAR.AI (with Center for Human-Compatible AI, UC Berkeley)",
+    "domain": "reward learning / evaluation tooling",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 no — this is a tooling and reproducibility finding about a software library, not an empirical finding about a model's behaviour, so Action Trackable stays blank.",
+    "finding_type": "tooling / methodology",
+    "scope": "tool-level",
+    "source_url": "https://www.far.ai/research/imitation-clean-imitation-learning-implementations",
+    "access_type": "public web page"
+   }
+  ]
+ },
+ {
+  "venue": "FAR.AI",
+  "title": "Training Language Models with Language Feedback",
+  "url": "https://www.far.ai/research/training-language-models-with-language-feedback",
+  "resolved_date": "2022-11-16",
+  "date_source": "page byline (\"November 16, 2022\"); citation year 2022",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — FAR.AI-asserted, two evidence-backed measured results, independently codeable",
+  "reason": "KEYWORD-FILTER FALSE NEGATIVE: a training-method title conceals two measured results, one of which is an explicit capability threshold ('only large language models (175B parameters) do so') and one a named-model result on GPT-3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2000
+  },
+  "findings": [
+   {
+    "finding": "In synthetic experiments, only language models at the 175B-parameter scale accurately incorporated natural-language feedback to produce refinements of their own outputs; smaller models did not.",
+    "finding_quote": "finding that only large language models (175B parameters) do so",
+    "models_systems": "Language models of varying scale up to 175B parameters (GPT-3 family)",
+    "institution": "FAR.AI (Scheurer et al., with NYU)",
+    "domain": "alignment training methodology / emergent capability threshold",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured empirical result about model behaviour at different scales. Gate 2 fails (c): a scale threshold for a beneficial capability is not a concerning result for which a company response is reasonable; §4 also excludes capability trends.",
+    "finding_type": "empirical scaling result",
+    "scope": "model-level",
+    "source_url": "https://www.far.ai/research/training-language-models-with-language-feedback",
+    "access_type": "public web page"
+   },
+   {
+    "finding": "A three-step learning algorithm using only 100 samples of human-written natural-language feedback finetuned a GPT-3 model to roughly human-level summarization ability, indicating language feedback is far more sample-efficient per human evaluation than pairwise comparison feedback.",
+    "finding_quote": "Using only 100 samples of human-written feedback, our learning algorithm finetunes a GPT-3 model to roughly human-level summarization ability.",
+    "models_systems": "GPT-3 (OpenAI)",
+    "institution": "FAR.AI (Scheurer et al., with NYU)",
+    "domain": "alignment training methodology / human feedback sample efficiency",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 yes — a measured empirical result on a named model. Gate 2 names a company/model (b satisfied) but fails (c): the result is a positive alignment-method result on GPT-3 with no dangerous threshold crossed, and GPT-3 is used as the instrument of a methodology study.",
+    "finding_type": "empirical methodology result",
+    "scope": "model-level",
+    "source_url": "https://www.far.ai/research/training-language-models-with-language-feedback",
+    "access_type": "public web page"
+   }
+  ]
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Real-world challenges for AGI",
+  "url": "https://deepmind.google/blog/real-world-challenges-for-agi",
+  "resolved_date": "2021-11-02",
+  "date_source": "page byline (\"November 2, 2021\"); input chunk carried month precision only (2021-11)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — talk summary and forward-looking commentary, not an evaluation; §1 would also drop it as a developer writing about its own systems",
+  "reason": "Summary of Koray Kavukcuoglu's CERN Sparks! talk on AGI and climate; the only concrete numbers (90-minute rainfall nowcasting with the Met Office, a plasma controller at 10,000 interactions per second) are DeepMind describing its own systems with no external evaluator and no safety evaluation.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5049
+  },
+  "findings": []
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Language modelling at scale: Gopher, ethical considerations, and retrieval",
+  "url": "https://deepmind.google/blog/language-modelling-at-scale-gopher-ethical-considerations-and-retrieval",
+  "resolved_date": "2021-12-08",
+  "date_source": "page byline (\"December 8, 2021\"); input chunk carried month precision only (2021-12)",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 — company self-report (developer evaluating its own model with no external evaluator named)",
+  "reason": "DeepMind reporting DeepMind's own evaluation of its own 280B model Gopher (MMLU gains, and persistent failure modes: repetition, stereotypical bias, confident propagation of incorrect information), plus its own LLM risk taxonomy and RETRO. Genuinely finding-rich, but no external evaluator is named anywhere, so §1 hard-drops it before §2 — this is the one item where a real evaluation existed and scope, not the keyword filter, is what removes it.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7834
+  },
+  "findings": []
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Building a culture of pioneering responsibly",
+  "url": "https://deepmind.google/blog/building-a-culture-of-pioneering-responsibly",
+  "resolved_date": "2022-05-24",
+  "date_source": "page byline (\"May 24, 2022\"); input chunk carried month precision only (2022-05)",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — personal reflection and opinion, never evidence-backed",
+  "reason": "First-person essay by DeepMind COO Lila Ibrahim on 'pioneering responsibly', kaizen and her career; mentions a multidisciplinary leadership group and Responsible AI Community sessions but asserts no measured, observed or independently codeable process fact.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8776
+  },
+  "findings": []
+ },
+ {
+  "venue": "Google DeepMind",
+  "title": "Best practices for data enrichment",
+  "url": "https://deepmind.google/blog/best-practices-for-data-enrichment",
+  "resolved_date": "2022-11-16",
+  "date_source": "page byline (\"November 16, 2022\"); input chunk carried month precision only (2022-11)",
+  "in_window": true,
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 — company self-report; the company-venue carve-out fails because no section is authored by the external party",
+  "reason": "DeepMind's own account of its HuBREC ethics committee and of five data-enrichment sourcing practices co-developed with Partnership on AI. PAI is named but as a co-developer, not an evaluator, and the post is authored by DeepMind staff; PAI's own case study 'Implementing Responsible Data Enrichment Practices at an AI Developer: The Example of DeepMind' is the primary external documentation and should be screened in its place.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5325
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "A Baseline for Detecting Misclassified and Out-of-Distribution Examples in Neural Networks",
+  "url": "https://www.grayswan.ai/research/a-baseline-for-detecting-misclassified-and-out-of-distribution-examples-in-neural-networks",
+  "resolved_date": "2018-10",
+  "date_source": "page byline, MONTH PRECISION ONLY (\"October 2018\") — no day is published on the page, so the date is YYYY-MM not YYYY-MM-DD; not undatable",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — stub landing page carries no evidence-backed content; also §3 dedup, the source publication is primary",
+  "reason": "Read in full: the page is a Gray Swan bibliography stub for A Baseline for Detecting Misclassified and Out-of-Distribution Examples in Neural Networks. Title, category, date and authors (Dan Hendrycks, Kevin Gimpel) only; the Abstract section is empty and the page states 'This research is currently only available at its source.' The 'View research source' href is client-side rendered and absent from the served HTML. Nothing is asserted here, and the underlying publication (pre-dating Gray Swan AI) is the primary source under §3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 628
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Deep Anomaly Detection with Outlier Exposure",
+  "url": "https://www.grayswan.ai/research/deep-anomaly-detection-with-outlier-exposure",
+  "resolved_date": "2019-01",
+  "date_source": "page byline, MONTH PRECISION ONLY (\"January 2019\") — no day is published on the page, so the date is YYYY-MM not YYYY-MM-DD; not undatable",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — stub landing page carries no evidence-backed content; also §3 dedup, the source publication is primary",
+  "reason": "Read in full: the page is a Gray Swan bibliography stub for Deep Anomaly Detection with Outlier Exposure. Title, category, date and authors (Dan Hendrycks, Mantas Mazeika, Thomas Dietterich) only; the Abstract section is empty and the page states 'This research is currently only available at its source.' The 'View research source' href is client-side rendered and absent from the served HTML. Nothing is asserted here, and the underlying publication (pre-dating Gray Swan AI) is the primary source under §3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 557
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Aligning AI With Shared Human Values",
+  "url": "https://www.grayswan.ai/research/aligning-ai-with-shared-human-values",
+  "resolved_date": "2020-08",
+  "date_source": "page byline, MONTH PRECISION ONLY (\"August 2020\") — no day is published on the page, so the date is YYYY-MM not YYYY-MM-DD; not undatable",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — stub landing page carries no evidence-backed content; also §3 dedup, the source publication is primary",
+  "reason": "Read in full: the page is a Gray Swan bibliography stub for Aligning AI With Shared Human Values. Title, category, date and authors (Dan Hendrycks, Collin Burns, Steven Basart, Andrew Critch, Jerry Li, Dawn Song, Jacob Steinhardt) only; the Abstract section is empty and the page states 'This research is currently only available at its source.' The 'View research source' href is client-side rendered and absent from the served HTML. Nothing is asserted here, and the underlying publication (pre-dating Gray Swan AI) is the primary source under §3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 590
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Scaling Out-of-Distribution Detection for Real-World Settings",
+  "url": "https://www.grayswan.ai/research/scaling-out-of-distribution-detection-for-real-world-settings",
+  "resolved_date": "2022-05",
+  "date_source": "page byline, MONTH PRECISION ONLY (\"May 2022\") — no day is published on the page, so the date is YYYY-MM not YYYY-MM-DD; not undatable",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — stub landing page carries no evidence-backed content; also §3 dedup, the source publication is primary",
+  "reason": "Read in full: the page is a Gray Swan bibliography stub for Scaling Out-of-Distribution Detection for Real-World Settings. Title, category, date and authors (Dan Hendrycks, Steven Basart, Mantas Mazeika, Mohammadreza Mostajabi, Jacob Steinhardt, Dawn Song) only; the Abstract section is empty and the page states 'This research is currently only available at its source.' The 'View research source' href is client-side rendered and absent from the served HTML. Nothing is asserted here, and the underlying publication (pre-dating Gray Swan AI) is the primary source under §3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 640
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Forecasting Future World Events with Neural Networks",
+  "url": "https://www.grayswan.ai/research/forecasting-future-world-events-with-neural-networks",
+  "resolved_date": "2022-06",
+  "date_source": "page byline, MONTH PRECISION ONLY (\"June 2022\") — no day is published on the page, so the date is YYYY-MM not YYYY-MM-DD; not undatable",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — stub landing page carries no evidence-backed content; also §3 dedup, the source publication is primary",
+  "reason": "Read in full: the page is a Gray Swan bibliography stub for Forecasting Future World Events with Neural Networks. Title, category, date and authors (Andy Zou, Tristan Xiao, Ryan Jia, Joe Kwon, Mantas Mazeika, Richard Li, Dawn Song, Jacob Steinhardt, Owain Evans, Dan Hendrycks) only; the Abstract section is empty and the page states 'This research is currently only available at its source.' The 'View research source' href is client-side rendered and absent from the served HTML. Nothing is asserted here, and the underlying publication (pre-dating Gray Swan AI) is the primary source under §3.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 653
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "AI Assurance Processes",
+  "url": "https://www.holisticai.com/papers/ai-assurance-processes",
+  "resolved_date": "2020-09-02",
+  "date_source": "page byline (\"Published on September 2, 2020\"); PDF header confirms \"September 2020\"",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — anticipation and belief, never an opinion, recommendation or plan",
+  "reason": "Landing page (direct 200, 507 chars) exposes the PDF, which was fetched and read in full (direct 200, 28,747 chars). Kazim & Koshiyama (UCL) forecast six themes in AI assurance ('we anticipate', 'we believe', 'we read'); the paper contains no measurement, no evaluated system and no documented process fact of its own.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 28747
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Philosophical Foundations for Digital Ethics and AI Ethics: a Dignitarian Approach",
+  "url": "https://www.holisticai.com/papers/philosophical-foundations-ai-ethics",
+  "resolved_date": "2021-02-26",
+  "date_source": "page byline (\"Published on February 26, 2021\"); PDF confirms \"Published online: 26 February 2021\", AI and Ethics (2021) 1:405-423",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — normative philosophical argument, not evidence-backed",
+  "reason": "Landing page (direct 200, 702 chars) exposes the PDF, fetched and read in full (direct 200, 110,850 chars). Hanna & Kazim derive digital-ethics principles from a broadly Kantian theory of human dignity across ten argumentative steps; no AI system is evaluated and the authors' own framing is 'our strongly-held belief'.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 110850
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "EU Proposed AI Legal Framework",
+  "url": "https://www.holisticai.com/papers/eu-proposed-ai-legal-framework",
+  "resolved_date": "2021-05-15",
+  "date_source": "page byline (\"Published on May 15, 2021\"); SSRN abstract 3846898",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — recommendations and 'initial thoughts', not evidence-backed",
+  "reason": "Landing page (direct 200, 538 chars) exposes the PDF, fetched and read in full (direct 200, 25,339 chars). Kazim, Kerrigan & Koshiyama (Holistic AI, CMS, UCL) summarise the draft EU AI Act risk tiers and offer four policy takeaways on sandboxes, reporting, green-flagging and manipulation; every takeaway is a recommendation or a worry, none is a measured or documented result.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 25339
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Artificial Intelligence in Education (AIEd): A High-Level Academic and Industry Note 2021",
+  "url": "https://www.holisticai.com/papers/artificial-intelligence-in-education",
+  "resolved_date": "2021-07-07",
+  "date_source": "page byline (\"Published on July 7, 2021\"); PDF confirms \"Published online: 7 July 2021\", AI and Ethics (2022) 2:157-165",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 — a summary of others' work, not a claim asserted by the evaluator",
+  "reason": "Landing page (direct 200, 732 chars) exposes the PDF, fetched and read in full (direct 200, 50,772 chars). Chaudhry & Kazim give an introductory literature overview of AI in education for policy makers; it reviews other groups' systems and results and asserts no evaluation of its own.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 50772
+  },
+  "findings": []
+ }
+]

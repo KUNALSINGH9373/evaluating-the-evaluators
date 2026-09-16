@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "url": "https://ai.meta.com/blog/practical-ai-agent-security",
+      "title": "Agents Rule of Two: A Practical Approach to AI Agent Security",
+      "decision": "EXCLUDED",
+      "external_evaluator": "none named",
+      "exclusion_reason": "EXCLUDED - company self-report. Meta blog post published by Meta about its own agent-security framework. Full text recovered and read end to end: no external evaluator is named as contributing findings. The only outside parties referenced are the Chromium project's similarly named policy and Simon Willison's \"lethal trifecta\", both cited as conceptual inspiration for Meta's own framework, not as evaluators asserting findings. Independently, the post is an approach/framework essay (a design rule plus hypothetical Email-Bot / travel-agent / browsing-agent / internal-coder illustrations) and contains no measured result, observed behaviour or documented process fact, so it would also fail §2; but the operative gate is §1.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out not triggered - no named external evaluator); §2 secondary",
+      "resolved_date": "2025-10-31",
+      "fetch_note": "RESOLVED. fetch.get on ai.meta.com returns HTTP 400 direct (with and without trailing slash), and the ladder's Wayback fallback only triggers on 403/429/5xx, so a 400 silently ended the ladder in August - that is the fetch failure that parked this row. Fetched explicitly via http://web.archive.org/web/2026id_/https://ai.meta.com/blog/practical-ai-agent-security/ -> 200, 11,559 chars of clean text, full article including Limitations, Existing Solutions and What's Next sections. Publication date 'October 31, 2025' read from the article dateline, matching the ledger date.",
+      "findings": []
+    },
+    {
+      "url": "https://ai.meta.com/static-resource/muse-spark-contemplating-safety-and-preparedness-report",
+      "title": "Muse Spark Contemplating Safety & Preparedness Report",
+      "decision": "EXCLUDED",
+      "external_evaluator": "none named as contributing findings. Named but non-qualifying: Deloitte, Faculty, Frontier Design and SecureBio (biodefence/biosecurity consultants who supported Meta's threat modelling, experimental design and validation of Meta's results); Charlemagne Labs, SecureBio and the Center for AI Safety (benchmark authors of the multi-turn social-engineering eval, BioTIER, MBCT/VCT/HPCT and MASK). No section of the report is authored by, or has findings attributed to, any of them.",
+      "exclusion_reason": "EXCLUDED - company self-report. A Meta preparedness report on Meta's own model (Muse Spark Contemplating) under Meta's Advanced AI Scaling Framework. The full 29-page PDF was recovered and read. Authorship is wholly Meta: 'MSL Preparedness & Red Teaming & Alignment Team, AI Security Team', with a Core Contributors / Contributors / Mitigation Teams / Policy Team / Senior Contributors credit list containing no external organisation. Every result is asserted by Meta in the first person ('we conduct', 'our findings suggest', 'we observe'). The §1 carve-out was tested explicitly and does not fire: the outside parties named are (a) consultants who supported Meta's own evaluation design and validated Meta's results - 'Those engaged in this process included Deloitte, Faculty, Frontier Design, and SecureBio' - and (b) authors of benchmarks Meta ran itself (BioTIER v1, MBCT/VCT/HPCT, WMDP, MASK, Charlemagne Labs' social-engineering eval). Neither is an evaluator named as contributing findings: no finding in the report could be filed under any of their Institutions, which is the carve-out's operative test. The company's surrounding self-assessment (high-risk-before-mitigation CB determination, cyber ASR tables, sandbagging assessment, MASK honesty score) is the hard drop.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out examined and not triggered - consultants and benchmark authors are not evaluators contributing findings)",
+      "resolved_date": "2026-06-03",
+      "fetch_note": "RESOLVED. fetch.get returns HTTP 400 direct. Via http://web.archive.org/web/2026id_/<url> the archive returns 200 but the payload is a zstd-compressed PDF (magic bytes 28 b5 2f fd), which the ladder's PDF stage rejects with 'invalid pdf header' and yields 0 chars - the exact failure mode that parked this row. Fetched the raw 519,200-byte body with requests, decompressed with python zstandard to a 677,252-byte PDF (%PDF-1.7), extracted 63,823 chars across 29 pages with pypdf. Full text read including Governance, Evaluation Setup, all of §2.1-2.3, Authors, References and Appendices A-C. Publication date read from the report front matter: 'Date:June 3, 2026', matching the ledger date.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/language-model-safety-and-misuse",
+      "title": "Lessons learned on language model safety and misuse",
+      "decision": "EXCLUDED",
+      "external_evaluator": "none named as contributing findings. External individuals appear only in the Acknowledgments as reviewers 'for providing feedback on this post and related work' (including Percy Liang, Helen Toner, Rishi Bommasani); no organisation is credited with evaluating anything.",
+      "exclusion_reason": "EXCLUDED - company self-report. An OpenAI post by OpenAI about deployment of OpenAI's own models (GPT-3, Codex, InstructGPT). Full text recovered and read. Authors are all OpenAI staff: Miles Brundage, Katie Mayer, Tyna Eloundou, Sandhini Agarwal, Steven Adler, Gretchen Krueger, Jan Leike, Pamela Mishkin. The §1 carve-out does not fire - the Acknowledgments name people who reviewed the post, not an external evaluator contributing findings, and no result in the piece is attributed to an outside party. The substantive content (misuse patterns observed on the API, limitations of academic safety benchmarks, safety/utility synergy) is entirely OpenAI's own self-assessment, which §1 keeps as a hard drop.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out not triggered - acknowledged reviewers are not evaluators contributing findings)",
+      "resolved_date": "2022-03-03",
+      "fetch_note": "RESOLVED. openai.com/index/language-model-safety-and-misuse 403s direct and, without the trailing slash, the ladder returned 403/0 chars. With the trailing slash the ladder's Wayback stage succeeded: via='wayback', 200, 18,379 chars - complete article including all nine footnotes, the Authors block and the Acknowledgments. Publication date 'March 3, 2022' read from the article dateline, matching the ledger date.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/our-approach-to-alignment-research",
+      "title": "Our approach to alignment research",
+      "decision": "EXCLUDED",
+      "external_evaluator": "none named",
+      "exclusion_reason": "EXCLUDED - company self-report. An OpenAI post by OpenAI setting out OpenAI's own alignment research agenda. Full text recovered and read; authors are Jan Leike, John Schulman and Jeffrey Wu, all OpenAI, with no acknowledgments section and no external party named anywhere. The §1 carve-out does not fire. Independently the piece is a pure approach/roadmap essay - three pillars (human feedback, AI-assisted evaluation, automating alignment research) plus a Limitations list of things OpenAI expects or worries about - containing no measured result or observed behaviour, so it would also fail §2; but the operative gate is §1.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out not triggered - no external evaluator named); §2 secondary",
+      "resolved_date": "2022-08-24",
+      "fetch_note": "RESOLVED. openai.com 403s direct; fetched via the ladder's Wayback stage using the trailing-slash URL https://openai.com/index/our-approach-to-alignment-research/ -> via='wayback', 200, 11,665 chars, complete article through the Limitations section and the Authors line. Publication date 'August 24, 2022' read from the article dateline, matching the ledger date.",
+      "findings": []
+    }
+  ]
+}

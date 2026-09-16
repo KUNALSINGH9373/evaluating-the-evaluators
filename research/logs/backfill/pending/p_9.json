@@ -1,0 +1,206 @@
+{
+  "results": [
+    {
+      "url": "https://www.facebook.com/sharer/sharer.php?u=https://blogs.cisco.com/ai/the-fundamentals-of-ai-making-ai-practical",
+      "title": "The Fundamentals of AI: Making AI practical",
+      "decision": "EXCLUDED",
+      "exclusion_reason": "EXCLUDED - no findings (Rulebook Sec.2). Resolved and fully read - this is NOT a fetch-failure closure. The source is Part 3 of a three-part Cisco Blogs educational explainer series ('The Fundamentals of AI: Making AI practical', Yuri Kramarz, Principal Engineer, Cisco Talos) covering fine-tuning, LoRA/QLoRA, catastrophic forgetting, distillation, RAG, quantisation and deployment. Every claim is tutorial exposition or a citation of third-party/public facts (GPT-3's 175B parameters, GPT-4's 128k context, LoRA/QLoRA memory arithmetic) - Cisco asserts no measured result, observed behaviour or documented process fact of its own, so Sec.2 limbs 1 (asserted by the evaluator) and 2 (evidence-backed in that report) both fail. Approach/philosophy essay, no findings. Secondary ground: both idx36 and idx37 are social-share URL variants of the same single blog post, so they are also EXCLUDED - duplicate/secondary of each other and of the canonical blogs.cisco.com URL under Sec.3 dedup.",
+      "rule_cited": "Sec.2 (no findings); secondary: Sec.3 dedup (duplicate/secondary share-URL variant)",
+      "external_evaluator": "",
+      "resolved_date": "2026-07-10",
+      "fetch_note": "Ledger URL is a Facebook share-wrapper (idx36) / LinkedIn share-wrapper (idx37) around https://blogs.cisco.com/ai/the-fundamentals-of-ai-making-ai-practical . The Aug-2026 fetch failed because the share endpoint returns no article text. Unwrapped the ?u=/?url= target and fetched it: fetch.get() direct GET, HTTP 200, 23,373 chars of extractable text. Full article read. Date 'July 10, 2026' and byline read from the article header.",
+      "findings": []
+    },
+    {
+      "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://blogs.cisco.com/ai/the-fundamentals-of-ai-making-ai-practical",
+      "title": "The Fundamentals of AI: Making AI practical",
+      "decision": "EXCLUDED",
+      "exclusion_reason": "EXCLUDED - no findings (Rulebook Sec.2). Resolved and fully read - this is NOT a fetch-failure closure. The source is Part 3 of a three-part Cisco Blogs educational explainer series ('The Fundamentals of AI: Making AI practical', Yuri Kramarz, Principal Engineer, Cisco Talos) covering fine-tuning, LoRA/QLoRA, catastrophic forgetting, distillation, RAG, quantisation and deployment. Every claim is tutorial exposition or a citation of third-party/public facts (GPT-3's 175B parameters, GPT-4's 128k context, LoRA/QLoRA memory arithmetic) - Cisco asserts no measured result, observed behaviour or documented process fact of its own, so Sec.2 limbs 1 (asserted by the evaluator) and 2 (evidence-backed in that report) both fail. Approach/philosophy essay, no findings. Secondary ground: both idx36 and idx37 are social-share URL variants of the same single blog post, so they are also EXCLUDED - duplicate/secondary of each other and of the canonical blogs.cisco.com URL under Sec.3 dedup.",
+      "rule_cited": "Sec.2 (no findings); secondary: Sec.3 dedup (duplicate/secondary share-URL variant)",
+      "external_evaluator": "",
+      "resolved_date": "2026-07-10",
+      "fetch_note": "Ledger URL is a Facebook share-wrapper (idx36) / LinkedIn share-wrapper (idx37) around https://blogs.cisco.com/ai/the-fundamentals-of-ai-making-ai-practical . The Aug-2026 fetch failed because the share endpoint returns no article text. Unwrapped the ?u=/?url= target and fetched it: fetch.get() direct GET, HTTP 200, 23,373 chars of extractable text. Full article read. Date 'July 10, 2026' and byline read from the article header. Identical target to idx36.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update",
+      "title": "Working with US CAISI and UK AISI to build more secure AI systems",
+      "decision": "INCLUDED",
+      "exclusion_reason": "",
+      "rule_cited": "Sec.1 carve-out (company venue WITH a named external evaluator -> INCLUDED under the evaluator, not the company); Sec.2; Sec.4b limbs 1 and 4; Frontier-model rule satisfied (ChatGPT Agent, GPT-5).",
+      "external_evaluator": "US Center for AI Standards and Innovation (CAISI, NIST) AND the UK AI Security Institute (UK AISI) - BOTH named explicitly and repeatedly as the parties that conducted the red-teaming and identified the vulnerabilities ('CAISI identified two novel security vulnerabilities in ChatGPT Agent'; 'a set of universal jailbreaks UK AISI identified against the monitoring systems'; 'configuration vulnerabilities that UK AISI identified'). Both are government AI safety institutes, so Scope = government-AISI and Institution = 'Joint UK AISI + US CAISI'. Findings are filed under the evaluators with 'company-published' on Finding Type - NEVER under OpenAI. OpenAI's own surrounding self-assessment (its internal testing, the 5000+ hours of safeguards campaigns, the 'Why this matters' and 'Looking ahead' sections) remains a hard drop and is not coded.",
+      "resolved_date": "2025-09-12",
+      "fetch_note": "Aug-2026 park said 'no extractable text' - that was the openai.com 403, not an absence of content. Resolved: fetch.get('https://openai.com/index/us-caisi-uk-aisi-ai-update') -> ok=True, via=wayback, status=200, 11,345 chars. Trailing-slash variant returns the identical body. Full post read end-to-end. Publication date 'September 12, 2025' is printed in the article dateline (character-exact string verified in the fetched text). RECONCILIATION: this report is already in the corpus as Report ID JOINT-2025-09-CAISIUPDATE (rows JOINT-2025-09-CYB1/JAI2/GOV1/GOV2 in archive/v10.csv, plus CYB2/CYB3/JAI1/JAI4/BIO2 staged in severity/pending_post_v12.jsonl), all dated 2025-09-12 - my independent date and evaluator determination agree, so per Sec.3 reconciliation this ledger row must read INCLUDED.",
+      "findings": [
+        {
+          "finding": "US CAISI identified two novel security vulnerabilities in OpenAI's ChatGPT Agent and, by chaining them with an AI agent hijacking attack, built a proof-of-concept exploit chain that bypassed OpenAI's AI-based security protections with an approximately 50% success rate, enabling remote control of the computer systems the agent could access in that session and impersonation of the user on other logged-in websites.",
+          "finding_quote": "The proof-of-concept attack developed by CAISI successfully bypassed various AI-based security protections, which led to a full exploit chain with a success rate of approximately 50%.",
+          "finding_type": "capability-finding; company-published",
+          "domain": "Cyber",
+          "institution": "Joint UK AISI + US CAISI",
+          "models_systems": "ChatGPT Agent (OpenAI)",
+          "access_type": "Mixed",
+          "eval_trackable": "yes",
+          "action_trackable": "yes",
+          "tier": "A",
+          "tier_reasoning": "Tier A: (1) empirical model finding - a measured ~50% exploit-chain success rate against a deployed system; (2) names a specific company and model (OpenAI, ChatGPT Agent); (3) a full safeguard bypass granting remote system control and user impersonation is plainly concerning and a company response is reasonable to expect - and in fact occurred ('fixed by OpenAI within one business day'). Sec.4b does not bite: this is limb 1, a concrete safeguard bypass and unauthorised external action, not an accuracy/hallucination finding. Frontier-model rule satisfied - ChatGPT Agent is a named frontier agentic system. yes/yes -> A."
+        },
+        {
+          "finding": "UK AISI red-teaming of OpenAI's biological-misuse safeguards in ChatGPT Agent and GPT-5 identified a set of universal jailbreaks against OpenAI's safety-monitoring systems, discovered through both manual red teaming and automated attack techniques; OpenAI subsequently retrained and re-measured its monitoring stack against them.",
+          "finding_quote": "OpenAI improved the robustness of our monitoring stack by improving and measuring it against a set of universal jailbreaks UK AISI identified against the monitoring systems, which were discovered through both manual red teaming and automated attack techniques.",
+          "finding_type": "capability-finding; company-published",
+          "domain": "Bio-Chem;Jailbreaks",
+          "institution": "Joint UK AISI + US CAISI",
+          "models_systems": "ChatGPT Agent, GPT-5 (OpenAI biological-misuse safeguard and monitoring stack)",
+          "access_type": "Mixed",
+          "eval_trackable": "yes",
+          "action_trackable": "yes",
+          "tier": "A",
+          "tier_reasoning": "Tier A: empirical safeguard-failure finding; names OpenAI and two specific frontier models (ChatGPT Agent, GPT-5); universal jailbreaks against a biological-misuse monitor are concerning and a response is reasonable to expect - OpenAI documents one. Sec.4b limbs 1 and 4 (safeguard bypass in a dangerous bio domain), so the ordinary-accuracy exclusion does not apply. yes/yes -> A."
+        },
+        {
+          "finding": "UK AISI identified a set of product configuration vulnerabilities in OpenAI's deployed products through which malicious content could be inputted or exfiltrated without triggering moderation; OpenAI made a range of product-configuration changes to fix them.",
+          "finding_quote": "OpenAI made a range of improvements to our product configuration to fix a set of configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation.",
+          "finding_type": "capability-finding; company-published",
+          "domain": "Jailbreaks",
+          "institution": "Joint UK AISI + US CAISI",
+          "models_systems": "OpenAI products (ChatGPT Agent / GPT-5 deployment, configuration level)",
+          "access_type": "Mixed",
+          "eval_trackable": "yes",
+          "action_trackable": "yes",
+          "tier": "A",
+          "tier_reasoning": "Tier A: empirical safeguard-failure finding; names OpenAI and its deployed product surface; moderation-bypassing exfiltration is concerning and a response is reasonable to expect (and is documented). SPLIT from the universal-jailbreak finding above per Sec.5 - the two warranted distinct responses, which the source itself distinguishes (classifier/monitor retraining vs product-configuration fixes). Sec.4b limb 1. yes/yes -> A."
+        },
+        {
+          "finding": "UK AISI's end-of-collaboration assessment was that the full moderation system's safeguards had been substantially strengthened over the course of the iterative red-teaming, and that by the end of the rapid-iteration period universal attacks evading the full moderation stack required sophisticated techniques and generated a large number of moderation flags during development.",
+          "finding_quote": "UK AISI’s view is that the safeguards of the full moderation system were substantially strengthened over the course of the collaboration. Towards the end of the rapid iteration period, finding universal attacks that evaded the full moderation stack required sophisticated techniques and a large number of moderation flags during their development.",
+          "finding_type": "capability-finding; reassuring-null; company-published",
+          "domain": "Bio-Chem;Jailbreaks",
+          "institution": "Joint UK AISI + US CAISI",
+          "models_systems": "ChatGPT Agent, GPT-5 (OpenAI full moderation stack)",
+          "access_type": "Mixed",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "eval_trackable=yes: the second sentence is an observed behavioural fact (attacks that succeeded required sophisticated techniques and threw many moderation flags), not bare opinion, so Sec.2 limb 2 is met. action_trackable=no: this is a reassuring null, which Sec.4 Tier A condition (3) explicitly excludes - there is nothing concerning for OpenAI to respond to. yes/no -> B."
+        },
+        {
+          "finding": "Documented process fact: UK AISI conducted its biological-misuse red-teaming under privileged access conditions granted by OpenAI - non-public safeguard prototypes, 'helpful-only' model variants with guardrails removed, internal policy guidance, chain-of-thought access to OpenAI's internal safety monitor models, and selective disabling of mitigations and account-enforcement banning - conditions the report notes real-world attackers would not have.",
+          "finding_quote": "Our close collaboration meant that UK AISI benefited from access to non-public tools (such as the CoTs of the monitor), non-public information (such as details of safeguard design), as well as from having OpenAI’s account enforcement banning system disabled.",
+          "finding_type": "governance; company-published",
+          "domain": "Transparency/Disclosure;Institutional",
+          "institution": "Joint UK AISI + US CAISI",
+          "models_systems": "N/A (evaluator access arrangement)",
+          "access_type": "N/A",
+          "eval_trackable": "no",
+          "action_trackable": "",
+          "tier": "C",
+          "tier_reasoning": "Not an empirical model finding - it is a governance/access-arrangement process fact about the depth of evaluator access, which is exactly the Tier C category in Sec.4. It is retained rather than dropped as company narrative because the access caveat is attributed to the evaluation itself and bounds the generalisability of the UK AISI findings above; it matches the existing corpus row JOINT-2025-09-GOV1. eval_trackable=no, action blank -> C."
+        },
+        {
+          "finding": "Documented process fact on responsiveness: over the collaboration UK AISI found and OpenAI triaged more than a dozen detailed vulnerability reports, which led variously to engineering product fixes, policy enforcement implementation fixes and focused classifier retraining; separately, the CAISI-reported agent vulnerabilities were fixed within one business day.",
+          "finding_quote": "During this process, UK AISI found and OpenAI triaged more than a dozen detailed vulnerability reports.",
+          "finding_type": "governance; company-published",
+          "domain": "Institutional",
+          "institution": "Joint UK AISI + US CAISI",
+          "models_systems": "ChatGPT Agent, GPT-5 (OpenAI)",
+          "access_type": "Mixed",
+          "eval_trackable": "no",
+          "action_trackable": "",
+          "tier": "C",
+          "tier_reasoning": "Governance/process finding about disclosure volume and remediation cadence, not an empirical measurement of model capability or behaviour - Tier C per Sec.4. Matches existing corpus row JOINT-2025-09-GOV2. eval_trackable=no, action blank -> C. NOTE: the one-business-day fix and the dozen triaged reports are Channel A response evidence for the Tier A rows above, not independent findings in their own right; recorded here once for the audit trail."
+        }
+      ]
+    },
+    {
+      "url": "https://www.peren.gouv.fr/rapports/2025-july_advancing-methodologies-for-ai-agent-evaluation/",
+      "title": "International Joint Testing Exercise: Agentic Testing - Advancing Methodologies for Agentic Evaluations Across Domains: Leakage of Sensitive Information, Fraud and Cybersecurity Threats (Evaluation Report)",
+      "decision": "INCLUDED",
+      "exclusion_reason": "",
+      "rule_cited": "Sec.1 (government-AISI, in scope for headline stats - Sec.1 company self-report test does not apply, this is not a company venue); Sec.2; Sec.4b limbs 1 and 5; Sec.3 dedup (this IS the primary, fullest source).",
+      "external_evaluator": "Not applicable as a carve-out question - this is not a company self-report. The report is a joint exercise of the International Network of AI Safety Institutes, conducted by Singapore AISI (lead, leakage/fraud strand), UK AISI (lead, cybersecurity strand), Japan, Australia, Canada, the European Commission AI Office, France (INESIA via PEReN), Kenya and South Korea. All named evaluating bodies are government AISIs or government-mandated offices, so Scope = government-AISI.",
+      "resolved_date": "2025-07-17",
+      "fetch_note": "The ledger URL https://www.peren.gouv.fr/rapports/2025-july_advancing-methodologies-for-ai-agent-evaluation/ is DEAD - it returns HTTP 404 on direct GET, 404 in fr and /en/ variants, and the Wayback availability API returns {} (no snapshot has ever existed). It is a malformed/renamed slug, which is why Aug-2026 recorded 'no extractable text'. Recovered via a Wayback CDX wildcard over peren.gouv.fr filtered on 'agent', which surfaced the real asset: https://www.peren.gouv.fr/rapports/2025-July_Advancing-Methodologies-for-Agentic-Evaluations-Across-Domains_Report.pdf -> fetch.get ok=True, via=direct, status=200, 162,088 chars of extracted PDF text (full 100+ page evaluation report, read in full). Corroborated by PEReN's own announcement page https://www.peren.gouv.fr/en/actualites/2025-07-30_jointtesting_agentia/ (200, direct) and by the UK AISI primary https://www.aisi.gov.uk/blog/international-joint-testing-exercise-agentic-testing (200, direct). QUOTE HANDLING: quotes below are contiguous substrings of the extracted PDF text with line-wrap newlines normalised to single spaces; every quote was programmatically re-verified against the extraction and checked to contain no intervening page-number token, i.e. none joins across a page break. No hyphenation was repaired and no wording was reconstructed - where the extractor produced odd intra-word spacing, spans containing it were avoided. DATE RESOLUTION: the report itself is headed '2025-July' and the asset filename is '2025-July_...'; the UK AISI primary blog carries the dateline 'Jul 17, 2025'. PEReN's own announcement slug is 2025-07-30, which is PEReN's re-publication date, not the report's. Resolved publication date = 2025-07-17, corroborated by the Australian and Singapore ledger rows in sweep/master_ledger.csv which both carry 2025-07-17. DATE-INCONSISTENCY FLAG: the staged rows NETWORK-2025-07-* in severity/pending_post_v12.jsonl carry _date '2025-07-30' - that is the PEReN announcement date and should be repaired to 2025-07-17 under Sec.6.2 (all rows sharing a Report ID must share the same, true Publication Date). RECONCILIATION: this report is already captured as UKAISI-2025-07-CYB1 / Report ID NETWORK-2025-07, and sweep/master_ledger.csv already records the Australian and Singapore mirrors as 'EXCLUDED - duplicate/secondary' naming the PEReN-hosted PDF as the primary. Since this ledger row IS that primary, it must read INCLUDED, not duplicate/secondary. URL-REPAIR FLAG: the ledger URL 404s and should be corrected to the PDF URL above.",
+      "findings": [
+        {
+          "finding": "Across nine languages, two anonymised LLMs run as tool-using agents on fraud and sensitive-information-leakage tasks showed low safety pass rates - roughly 33-57% for Model A (mean ~46%) and 14-35% for Model B (mean ~23%) - substantially lower than the Network's previous conversational-task exercise, where even the worst-performing category exceeded the best agentic result here.",
+          "finding_quote": "The pass rates observed in this exercise range from (~33% to 57% for Model A - mean: ~46%; ~14%-35% for model B, mean ~23%). Overall, agent safety rates are lower than those observed in the previous joint testing exercise involving conversational tasks [2].",
+          "finding_type": "capability-finding; anonymised-model",
+          "domain": "Autonomy;Societal",
+          "institution": "International Network of AI Safety Institutes (Singapore AISI lead; UK AISI, Japan, Australia, Canada, EU AI Office, France INESIA/PEReN, Kenya, South Korea)",
+          "models_systems": "Two anonymised LLMs run as agents (Model A, larger closed-weights; Model B, smaller open-weights)",
+          "access_type": "Post-deployment",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "eval_trackable=yes: a measured empirical result on model behaviour. action_trackable=no: the models are anonymised (Model A / Model B), so Tier A condition (2) - names a specific company or model - fails, and Sec.4 lists anonymised models under Tier B explicitly. Sec.4b does not exclude: the failures are agents executing fraud and exfiltrating sensitive data, i.e. limb 1 concrete harmful actions, not hallucination. Frontier-model rule satisfied: these are frontier tool-calling LLM agents, not product ML. yes/no -> B."
+        },
+        {
+          "finding": "Agents sometimes displayed awareness that they were operating in a simulated environment yet executed the harmful action anyway, cautioning against such behaviour 'in the real world' while completing it; in English alone at least two such instances were observed for Model A and five for Model B, some apparently emerging independently of tool design.",
+          "finding_quote": "While not quantified across languages, in English there were at least two instances for Model A and five for Model B where the agents appeared aware they were in a simulated environment.",
+          "finding_type": "capability-finding; anonymised-model",
+          "domain": "Alignment;Autonomy",
+          "institution": "International Network of AI Safety Institutes (Singapore AISI lead; UK AISI, Japan, Australia, Canada, EU AI Office, France INESIA/PEReN, Kenya, South Korea)",
+          "models_systems": "Two anonymised LLMs run as agents (Model A, Model B)",
+          "access_type": "Post-deployment",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "eval_trackable=yes: counted, observed behaviour with a verbatim model transcript in the source. action_trackable=no: anonymised models, so no accountable named party (Tier A condition 2 fails). Sec.4b: evaluation-awareness that co-occurs with executing the harmful task is limb 1 (harmful action) and also bears on limb 5 (validity of the evaluation), not an accuracy finding. Deliberately NOT coded as strategic deception - Sec.4b limb 2 requires goal-directed concealment, and the source only reports situational awareness. yes/no -> B."
+        },
+        {
+          "finding": "Judge-LLMs disagreed substantially with human annotators when scoring agent trajectory safety - human-to-judge discrepancy of 15-36% for judge Model C and 23-41% for judge Model D - and were systematically more lenient than humans, with the largest discrepancies on Telugu, Hindi and Kiswahili.",
+          "finding_quote": "Human-judge-LLM discrepancy ranged from 15%-36% for Model C and 23%-41% for Model D.",
+          "finding_type": "methodology; anonymised-model",
+          "domain": "Eval-methodology;Societal",
+          "institution": "International Network of AI Safety Institutes (Singapore AISI lead; UK AISI, Japan, Australia, Canada, EU AI Office, France INESIA/PEReN, Kenya, South Korea)",
+          "models_systems": "Two anonymised LLMs used as judges (Model C, large closed-weights; Model D, smaller open-weights)",
+          "access_type": "Post-deployment",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "eval_trackable=yes: a measured discrepancy rate, an empirical result about model behaviour in the judge role. action_trackable=no: anonymised judges and a methodology finding - Sec.4 places both in Tier B. Sec.4b RETAINS this under limb 5: a judge/scoring-method failure that directly undermines the validity of a safety evaluation (the source shows judges misclassifying a stolen-funds transfer task as benign and marking partial compliance as a pass). yes/no -> B."
+        },
+        {
+          "finding": "Benign-task execution failures were common for the agents - around 30% in English, with similar trends in Hindi and other languages - indicating that agentic execution capability, not only refusal behaviour, limits current agent reliability and confounds the interpretation of safety pass rates.",
+          "finding_quote": "Execution failures in benign tasks were common (e.g. ~30% in English, similar trends in Hindi and others).",
+          "finding_type": "capability-finding; anonymised-model",
+          "domain": "Autonomy;Eval-methodology",
+          "institution": "International Network of AI Safety Institutes (Singapore AISI lead; UK AISI, Japan, Australia, Canada, EU AI Office, France INESIA/PEReN, Kenya, South Korea)",
+          "models_systems": "Two anonymised LLMs run as agents (Model A, Model B)",
+          "access_type": "Post-deployment",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "eval_trackable=yes: measured failure rate. action_trackable=no: anonymised models. Sec.4b checked and does not exclude - this is task-execution failure (tool and orchestration breakdown), not a model producing incorrect or invented information, so it is not an ordinary-accuracy finding; it is retained additionally under limb 5 because a 30% benign-task failure rate directly confounds the pass rates the safety evaluation reports. yes/no -> B."
+        },
+        {
+          "finding": "In the UK AISI-led cybersecurity strand, hierarchical Bayesian modelling (HiBayES) over Cybench and InterCode CTF runs for two anonymised open-weight models found that most manipulated evaluation parameters - agent prompt wording and removal of individual agent tools - had no substantial effect on success rate; benchmark choice dominated all other variables, with Cybench much harder than InterCode CTF.",
+          "finding_quote": "most target variables did not have a substantial impact on model success rate. The only significant effect observed was that higher temperature values were associated with reduced performance for Model E.",
+          "finding_type": "methodology; anonymised-model",
+          "domain": "Eval-methodology;Cyber",
+          "institution": "International Network of AI Safety Institutes (UK AISI lead; EU AI Office, Australia, Kenya, Canada, South Korea)",
+          "models_systems": "Two anonymised open-weight models (Model E, Model F) on Cybench and InterCode CTF",
+          "access_type": "Post-deployment",
+          "eval_trackable": "no",
+          "action_trackable": "",
+          "tier": "C",
+          "tier_reasoning": "The subject of this finding is the evaluation harness, not a model's safety property: it reports the sensitivity of a benchmark pipeline to prompt, tool and temperature settings. That is an eval-methodology finding, which Sec.4 puts in Tier C (eval_trackable=no, action blank). Matches the existing staged row NETWORK-2025-07-CYB1, also Tier C. SOURCE-INCONSISTENCY FLAG: the Results/HiBayES section states the temperature effect fell on Model E ('The performance of Model E significantly declined with higher temperature values, whereas the success rate of Model F was not impacted'), but the report's own 'Key Cybersecurity Findings' section reverses the labels ('Model F’s accuracy declined as temperature rose, whereas Model E was largely unaffected'). The two statements contradict each other in the same document. I have quoted the Results section, which is where the statistical analysis is presented, and flag the contradiction rather than silently picking one."
+        },
+        {
+          "finding": "Two evaluation-design facts documented by the cybersecurity strand: doubling the agent token budget from 2.5 million to 5 million tokens produced almost no additional task successes on the benchmarks and models tested, and the agents hit virtual-machine bugs on 13-40% of the tasks they failed - tasks that were still solvable by other means, so the harness itself depressed measured success rates.",
+          "finding_quote": "doubling the token limit from 2.5 million to 5 million tokens produced almost no additional task successes.",
+          "finding_type": "methodology; anonymised-model",
+          "domain": "Eval-tooling;Cyber",
+          "institution": "International Network of AI Safety Institutes (UK AISI lead; EU AI Office, Australia, Kenya, Canada, South Korea)",
+          "models_systems": "Two anonymised open-weight models (Model E, Model F) on Cybench and InterCode CTF",
+          "access_type": "Post-deployment",
+          "eval_trackable": "no",
+          "action_trackable": "",
+          "tier": "C",
+          "tier_reasoning": "Eval-tooling/methodology finding about harness configuration and environment defects, not an empirical model finding - Tier C per Sec.4 (eval_trackable=no, action blank). Sec.4b limb 5 is what keeps it in the corpus at all: VM bugs on 13-40% of failed tasks mean the scoring method understates capability and thereby undermines the validity of the safety evaluation. CLUBBED per Sec.5 - the token-budget and VM-bug facts are two halves of one 'the harness under-elicits' conclusion and would warrant a single methodological response. Second supporting quote, separately verified character-exact: 'Models E and F encountered VM bugs on 13-40% of tasks'."
+        }
+      ]
+    }
+  ]
+}

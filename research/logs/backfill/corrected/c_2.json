@@ -1,0 +1,55 @@
+{
+  "url": "https://metr.org/notes/2026-08-14-llm-contribution-to-discoveries",
+  "title": "Have We Seen an Acceleration in Discoveries?",
+  "institution": "METR",
+  "scope": "third-party-evaluator",
+  "decision": "INCLUDED",
+  "report_id": "METR-2026-08",
+  "rule_cited": "§1 in scope as third-party-evaluator (METR is a §6.1 registry evaluator publishing in its own voice); §2 satisfied (measured public time series, asserted by METR, evidence-backed); §4b not engaged; frontier rule not a drop (subject is frontier LLM contribution to discovery, not general ML/DL). §4: Gate 1 passes as an empirical capability-trend finding (corpus precedent), Gate 2(c) fails (capability trend, no named company/model subject) → eval yes / action no. §5: the single clubbed row is split into three rows across distinct domains (cyber, mathematics, algorithmic optimization), following METR-2026-07-AUT1..3 and METR-2026-04-AUT2/AUT3.",
+  "resolved_date": "2026-08-14",
+  "date_source": "DATE field on the METR research note: \"August 14, 2026\"; BibTeX on the same page gives year={2026}, month={08}; URL slug 2026-08-14 agrees (verified live 2026-08-31). Input entry had date=null.",
+  "findings": [
+    {
+      "institution": "METR",
+      "access_type": "N/A",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "tier_reasoning": "Gate 1 PASSES: this is an empirical capability-trend finding on public discovery time series, coded as such in the corpus (precedents METR-2026-04-AUT2, METR-2026-05-SOC1, METR-2026-02-SOC3, all eval yes / action no). Gate 2 condition (3) FAILS: capability trends and forecasts are expressly excluded, and no named company or model is the subject, so Action Trackable is no.",
+      "notes": "METR caveat recorded per the verdict: \"The data collection and analysis was all performed by agents. We have done our best to audit the results but mistakes likely remain.\" and the note frames its conclusions as \"very loose observations\". [SPLIT METR-2026-08: one clubbed cross-domain row split into three rows by domain per §5.]",
+      "finding": "METR assembled the public time series of discoveries it could find and looked for slope changes around a January 2026 breakpoint, finding that the rate of publicly reported cyber vulnerabilities accelerated sharply in 2026 versus 2025 across specific projects (cURL 9 in 2025 to 36 through 2026-06-24, OpenSSL 6 to 39 through 2026-08-05, Firefox 210 to 342 through 2026-08-04, Microsoft 1,243 to 1,927 through 2026-08-11) and across aggregate databases (the US NVD and OSV), with higher-severity categories generally showing lower acceleration. Databases of exploited vulnerabilities (CISA and Vulncheck KEVs) show significantly lower year-over-year growth than the databases of known vulnerabilities.",
+      "finding_quote": "The rate of vulnerabilities reported across many projects has dramatically accelerated in 2026 compared with 2025, both for specific projects (cURL, OpenSSL, Firefox, and Microsoft) and for aggregate vulnerability databases (the US NVD, and OSV).",
+      "models_systems": "aggregate public discovery record with AI-marked contributions: cURL, OpenSSL, Firefox, Microsoft, US NVD, OSV, CISA/Vulncheck KEV",
+      "domain": "Cyber",
+      "finding_type": "capability-trend",
+      "split_suffix": ""
+    },
+    {
+      "institution": "METR",
+      "access_type": "N/A",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "tier_reasoning": "Gate 1 PASSES: this is an empirical capability-trend finding on public discovery time series, coded as such in the corpus (precedents METR-2026-04-AUT2, METR-2026-05-SOC1, METR-2026-02-SOC3, all eval yes / action no). Gate 2 condition (3) FAILS: capability trends and forecasts are expressly excluded, and no named company or model is the subject, so Action Trackable is no.",
+      "notes": "METR caveat recorded per the verdict: \"The data collection and analysis was all performed by agents. We have done our best to audit the results but mistakes likely remain.\" and the note frames its conclusions as \"very loose observations\". [SPLIT METR-2026-08: one clubbed cross-domain row split into three rows by domain per §5.]",
+      "finding": "On the same January 2026 breakpoint analysis, METR reports a likely but weakly evidenced acceleration in mathematical discovery: three problems from pre-existing open-problem lists were solved with AI in 2026 (the Jacobian conjecture from Smale's list, Problem 44 from Ben Green's list, and the sofic half of Green's Problem 100), and the Erdos list shows an apparent clear rise in solutions with an explosion in AI-attributed resolutions, though solution dates are imputed against the maintainer's own warning and no reliable historical baseline could be constructed.",
+      "finding_quote": "Three problems from these lists were solved with AI in 2026: the Jacobian conjecture from Smale’s list, Problem 44 from Green’s list (the halving sieve), and the sofic half of Green’s Problem 100. This is some evidence of acceleration, but it is weak.",
+      "models_systems": "aggregate public discovery record with AI-marked contributions: Erdos/Smale/Green problem lists",
+      "domain": "Governance",
+      "finding_type": "capability-trend",
+      "split_suffix": "-s2"
+    },
+    {
+      "institution": "METR",
+      "access_type": "N/A",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "tier_reasoning": "Gate 1 PASSES: this is an empirical capability-trend finding on public discovery time series, coded as such in the corpus (precedents METR-2026-04-AUT2, METR-2026-05-SOC1, METR-2026-02-SOC3, all eval yes / action no). Gate 2 condition (3) FAILS: capability trends and forecasts are expressly excluded, and no named company or model is the subject, so Action Trackable is no.",
+      "notes": "METR caveat recorded per the verdict: \"The data collection and analysis was all performed by agents. We have done our best to audit the results but mistakes likely remain.\" and the note frames its conclusions as \"very loose observations\". [SPLIT METR-2026-08: one clubbed cross-domain row split into three rows by domain per §5.]",
+      "finding": "Across seven densely tracked algorithmic-efficiency series (CIFAR-10, Hutter compression, Gurobi mixed-integer programming, MIPLIB, nanoGPT, Stockfish and the matrix-multiplication exponent), METR finds no clear acceleration: only nanoGPT and CIFAR-10 carry LLM-driven contributions to the plotted records, and none of the seven shows a slope change comparable to those in vulnerability or mathematical discovery, so the public record of algorithmic optimization does not yet show an appreciable acceleration.",
+      "finding_quote": "Two of these series — nanoGPT and CIFAR-10 — include LLM-driven contributions to the plotted records, but none show a clear change in slope comparable to the changes in vulnerability or mathematical discovery.",
+      "models_systems": "aggregate public discovery record with AI-marked contributions: nanoGPT, CIFAR-10, Hutter, Gurobi, MIPLIB, Stockfish, matrix-mult exponent",
+      "domain": "Autonomy",
+      "finding_type": "capability-trend;reassuring-null",
+      "split_suffix": "-s3"
+    }
+  ]
+}

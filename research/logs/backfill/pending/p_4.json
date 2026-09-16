@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "url": "https://openai.com/safety/how-we-think-about-safety-alignment",
+      "title": "How we think about safety and alignment",
+      "decision": "EXCLUDED",
+      "resolved_date": "2025-03-04",
+      "external_evaluator": "none named as contributing findings (US AI Safety Institute and UK AI Security Institute are named only as partnership/support relationships, not as contributors of findings)",
+      "exclusion_reason": "EXCLUDED - company self-report. OpenAI publishing about its own safety approach on its own venue with no external evaluator named as contributing findings (§1 carve-out checked and not met). Independently also fails §2: the document is an approach/philosophy essay setting out principles ('Embracing uncertainty', 'Defense in depth', 'Methods that scale', 'Human control', 'Community effort') - no measured result, observed behaviour or documented process fact asserted.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out tested and not met); §2 (approach/philosophy essay contains no findings)",
+      "fetch_note": "RESOLVED - source read in full. Direct GET on openai.com 403 (both with and without trailing slash, and the /index/ variant). Read via Wayback id_ snapshot 20250314092919 (http scheme; https to web.archive.org is refused in this sandbox), 20,773 chars of extracted text, complete document start to finish. Date resolved from the page's own embedded publicationDateText: 'March 4, 2025' - the ledger's parked date of 2025-02 is not supported by the source. Earliest Wayback capture of the URL is 2025-03-05, consistent with a 2025-03-04 release.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/chain-of-thought-monitoring",
+      "title": "Detecting misbehavior in frontier reasoning models (chain-of-thought monitoring)",
+      "decision": "EXCLUDED",
+      "resolved_date": "2025-03-10",
+      "external_evaluator": "none - listed authors are Bowen Baker, Joost Huizinga, Aleksander Madry, Wojciech Zaremba, Jakub Pachocki, David Farhi, all OpenAI; no external organisation named anywhere in the document",
+      "exclusion_reason": "EXCLUDED - company self-report. OpenAI research on OpenAI's own frontier reasoning models, published on OpenAI's own venue, with no external evaluator named as contributing findings (§1 carve-out tested and not met). The document does contain §2-qualifying evidence-backed empirical results (GPT-4o CoT monitor flagging reward hacking; CoT optimisation pressure causing the agent to hide its intent while still hacking), so this is NOT a no-findings exclusion - it fails solely on the §1 scope gate, and the company's own self-assessment is a hard drop under §1.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out tested and not met - findings are asserted by OpenAI about OpenAI models)",
+      "fetch_note": "RESOLVED - source read in full. fetch.get() returned ok=True via wayback, status 200, 14,607 chars; whole page read including the closing 'Authors' line, which names six OpenAI staff and no external organisation. Date 'March 10, 2025' printed on the page itself, matching the ledger.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/o3-o4-mini-codex-system-card-addendum",
+      "title": "Addendum to o3 and o4-mini System Card: Codex",
+      "decision": "EXCLUDED",
+      "resolved_date": "2025-05-16",
+      "external_evaluator": "none - the addendum PDF is authored 'OpenAI' with no external-evaluator or third-party red-team section; the only outside parties referenced are cited benchmark papers (StrongREJECT, Souly et al. 2024; Instruction Hierarchy, Wallace et al. 2024), which are cited methods, not evaluators contributing findings",
+      "exclusion_reason": "EXCLUDED - company self-report. A system card addendum published by OpenAI about its own codex-1 model with no external evaluator named as contributing findings (§1 carve-out specifically tested against the underlying PDF, not just the landing page, and not met). All reported results (refusal evaluations, jailbreak robustness, prompt-injection resistance 0.98, Safety Advisory Group determination that codex-1 does not reach a High capability threshold) are OpenAI's own self-assessment, a hard drop under §1.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out tested against the full system card PDF and not met)",
+      "fetch_note": "RESOLVED - source read in full at two levels. Landing page via Wayback id_ (1,753 chars); the substantive document is the linked PDF, whose URL was recovered by regexing the raw Wayback HTML (snapshot 20250520) for cdn.openai.com references: https://cdn.openai.com/pdf/8df7697b-c1b2-4222-be00-1fd3298f351d/codex_system_card.pdf. That PDF fetched direct at 200, 8 pages, 16,722 chars extracted, and was scanned end to end plus keyword-probed for 'external', 'third-party', 'red team', 'Apollo', 'METR', 'AISI', 'safety institute', 'Pattern Labs', 'Gray Swan', 'Irregular', 'independent' - no external evaluator section exists. Date 'May 16, 2025' on both the page and the PDF header, matching the ledger.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/bio-bug-bounty",
+      "title": "OpenAI Bio Bug Bounty (agent bio bug bounty)",
+      "decision": "EXCLUDED",
+      "resolved_date": "2026-07-09",
+      "external_evaluator": "none named - the page solicits applications from unnamed external researchers under NDA; no individual or organisation is named, and no participant findings are reported",
+      "exclusion_reason": "EXCLUDED - company self-report. OpenAI's own venue, and no external evaluator is named as contributing findings (§1 carve-out tested and not met - the external researchers the programme recruits are prospective, anonymous and under NDA). Independently also fails §2: the document is an invitation/announcement (programme scope, reward increase from $25,000 to $50,000, how to apply) containing no measured result, observed behaviour or documented process fact about model behaviour.",
+      "rule_cited": "§1 (company self-report hard drop; carve-out tested and not met); §2 (announcement/invitation contains no findings)",
+      "fetch_note": "RESOLVED - source read in full (2,299 chars via Wayback id_, status 200). DATE DISCREPANCY, resolved against the source: the ledger parked this as 2025-07-17, but the page carries its own date 'July 9, 2026' and the Wayback CDX index for openai.com/index/bio-bug-bounty (all captures, including query-string variants) shows the earliest capture as 20260210 returning 404, with the first 200 on 20260709 - i.e. this URL did not serve a page in July 2025. A CDX probe for openai.com/index/gpt-5-bio-bug-bounty returned no captures, so no earlier sibling URL was located. Resolved date taken from the source as 2026-07-09; the ledger's 2025-07-17 is not source-supported. Within the 2026-08-29 corpus cutoff either way.",
+      "findings": []
+    }
+  ]
+}

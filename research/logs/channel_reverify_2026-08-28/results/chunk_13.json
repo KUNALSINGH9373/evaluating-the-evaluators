@@ -1,0 +1,513 @@
+[
+ {
+  "finding_id": "UKAISI-2026-07-ALI1",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Primary finding source re-opened to fix the exact claim and quote before searching",
+     "url": "https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ. Confirms the finding verbatim: 'With Google DeepMind, we tested an asynchronous reasoning monitor (reviewing agents' reasoning after they act) designed to detect agents deceptively pursuing misaligned goals.' and 'We identified several monitor vulnerabilities, including one in which an agent can complete a malicious objective by pretending to hallucinate that it was a user instruction.' Publication date 2026-07-23 confirmed. The post records no DeepMind remediation, unlike the Anthropic paragraph immediately after it."
+    },
+    {
+     "source": "(1) Google DeepMind blog / newsroom, full listing June 2026 - August 2026",
+     "url": "https://deepmind.google/discover/blog/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. All 25 posts in the window enumerated. Nothing on safety monitors, AI control, monitor red-teaming or UK AISI. The only safety-adjacent posts are 'Securing the future of AI agents' (June 2026, predates the finding), 'Investing in multi-agent AI safety research' (June 2026, predates), 'Our approach to bioresilience' (July 2026, biology) and 'Piloting the world's first double-blind AI evaluations' (2026-08-27)."
+    },
+    {
+     "source": "(1) Google DeepMind blog - 'Piloting the world's first double-blind AI evaluations', the only post-finding safety/evaluation post",
+     "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Dated 2026-08-27. Concerns confidential-computing double-blind evaluation with Singapore AI Safety Institute, OpenMined, AVERI and MLCommons. No mention of UK AISI, the Control Red Team, safety monitors, asynchronous reasoning-review monitors or monitor vulnerabilities."
+    },
+    {
+     "source": "(2) Subsequent model card in the same family - Gemini 3.7 Flash model card (August 2026, post-finding)",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-7-flash",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. No mention of UK AISI, the Control Red Team, external red-teaming of safety monitors, or monitor vulnerabilities. Red teaming referenced only generically ('We conduct manual red teaming by specialist teams who sit outside of the model development team')."
+    },
+    {
+     "source": "(2) Adjacent post-finding launch post - Gemini 3.7 Flash announcement",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Dated 2026-08-13. Updated CBRN and cyber-offence safeguards are announced but nothing on monitors, UK AISI or this finding."
+    },
+    {
+     "source": "(2) Cyber-specialised sibling launch - Gemini 3.5 Flash Cyber",
+     "url": "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Dated 2026-07-21, two days before the finding. Limited-access pilot for governments and trusted partners; no mention of UK AISI, the Control Red Team or monitors."
+    },
+    {
+     "source": "(3) Google DeepMind responsibility & safety hub, and the Frontier Safety Framework page",
+     "url": "https://deepmind.google/about/responsibility-safety/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. The hub lists the Frontier Safety Framework, the AGI Safety Council and the Responsibility and Safety Council. The FSF update page reachable from it is the v2.0 announcement of 2025-02-04, with a September 2025 strengthening referenced; neither mentions UK AISI, the Control Red Team, safety monitors or monitor vulnerabilities. No post-2026-07-23 framework revision located."
+    },
+    {
+     "source": "(2)/(4) Company-co-authored primary document underlying the monitor taxonomy the finding uses - 'Practical challenges of control monitoring in frontier AI deployments'",
+     "url": "https://arxiv.org/abs/2512.22154",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, INADMISSIBLE. This is the paper the AISI blog hyperlinks for 'asynchronous'. Authors are David Lindner, Charlie Griffin, Tomek Korbak, Roland S. Zimmermann, Geoffrey Irving, Sebastian Farquhar, Alan Cooney - a Google DeepMind / UK AISI joint author list, so it IS a company primary document. It is dated 2025-12-15, seven months BEFORE the finding, and it sets out the monitoring taxonomy rather than responding to any discovered vulnerability. A change predating the finding does not count, and this is not a pre-deployment evaluation response. Not counted."
+    },
+    {
+     "source": "(4)/(5) Open-web sweep for a DeepMind primary source, via Google News RSS (native WebSearch budget was exhausted at 200/200 before this chunk began - see notes)",
+     "url": "https://news.google.com/rss/search?q=DeepMind+AISI+monitor+red+team",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NO COMPANY PRIMARY SOURCE. Returns only the DeepMind/UK AISI partnership post of 2025-12-11 (predates the finding by seven months and is a research-partnership announcement, not a response), AISI's own December 2025 asynchronous-monitoring post, AISI's ControlArena post, an Economist feature and a METR report. Nothing from Google or DeepMind responding to this finding."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full five-step battery re-run 2026-08-28 against live sources rather than the 2026-08-02 log, with the blog, the DeepMind blog index, a post-finding Gemini model card, the responsibility/safety hub and the joint arXiv paper all opened directly. No Google or Google DeepMind primary document references the Control Red Team's monitor testing, the hallucinated-user-instruction attack, or any remediation of the asynchronous reasoning-review monitor. The one Google-authored primary document in the area (arXiv 2512.22154) predates the finding by seven months and describes monitoring architecture rather than answering a vulnerability report, so it is inadmissible on both the timing rule and the address-this-finding rule. Note the asymmetry inside the finding's own source: AISI's blog records a remediation cycle for Anthropic in the very next sentence but records none for DeepMind, which is corroborating evidence for a genuine null rather than a search failure. Battery exhausted -> Action Level = None; Attribution = No response located. Coding unchanged."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard Search API (hansard-api.parliament.uk), Commons + Lords, window 2026-07-01 to 2026-08-28, terms: 'Control Red Team' (API error on that exact string, re-run as 'red team monitors' -> 0 and 'frontier monitors' -> 0), 'AI Security Institute' -> 23 contributions (all read, none on point), 'Dreadnode' -> 0. Queried directly via curl; JSON counts read in full.",
+    "UK - the 23 Hansard contributions returned for 'AI Security Institute' in the window were retrieved in full and read (Lords 2026-07-14 Cyber Security and Resilience Bill; Lords 2026-07-16 Artificial Intelligence: Legislation; Lords 2026-07-20 EU Technological Sovereignty Package; Lords 2026-07-21 DSIT: Abolition; Lords 2026-07-22 AI: International Co-operation; Lords 2026-07-23 Digital and Technology Policy: National Sovereignty; Commons 2026-07-08 Societal Impact of AI). All discuss UK AISI as an institution; none references this report, evaluator finding or result.",
+    "US - Federal Register API (federalregister.gov/api/v1/documents.json), publication_date >= 2026-07-01, terms: 'Dreadnode', 'Claude Opus 5', 'AI Security Institute', 'cheat propensity', 'Control Red Team' -> count 0 for every term.",
+    "US - govinfo full-text search (govinfo.gov/app/search) via text-extraction proxy, term 'Dreadnode' -> 0 records. Unquoted multi-word queries on govinfo fall back to OR matching and returned only historical noise, so govinfo was not treated as a precise instrument for the multi-word terms.",
+    "US - NIST / CAISI site search (nist.gov/search), terms 'Dreadnode' -> 0 results; '\"Control Red Team\" AISI monitor' -> 0 results.",
+    "US - Congress.gov quick-search: UNREACHABLE this pass (Cloudflare bot-verification interstitial returned instead of results, both directly and via text-extraction proxy). Recorded as not checked rather than as a null result.",
+    "EU / other - European Commission digital-strategy site search (digital-strategy.ec.europa.eu/en/search), term 'Dreadnode' -> 0 results. No Commission, AI Office or national-regulator publication referencing this finding surfaced."
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "Battery run 2026-08-28 with live queries against the Hansard Search API, the Federal Register API, govinfo, NIST and the Commission digital-strategy search. Nothing in any jurisdiction explicitly references this finding, this report, this evaluator's result, or the named system in connection with it. The only UK parliamentary material in range treats UK AISI generically as an institution, which the rulebook excludes. Congress.gov could not be opened (bot check) - see jurisdictions_checked; the Federal Register API, govinfo and NIST searches together cover the US federal record well enough that I am confident in the null, but that one gap is recorded honestly. The finding is five weeks old, highly technical and published on an AISI blog rather than as a formal report, which makes government uptake in this window inherently unlikely. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [
+    "Google News RSS sweep on 2026-08-28 for '\"Control Red Team\" OR \"stress-testing frontier monitors\"' and for 'AISI monitors agents red-team July 2026' returned no items covering this report. The only hit on the first query was an unrelated 2023 BleepingComputer piece about a Google command-and-control red-team tool.",
+    "resultsense.com / business-news-today.com (2026-07-24), 'UK's AI institute red-teams the monitors guarding agents' - carried over from the existing record; NOT re-verified this pass because the native WebSearch budget was exhausted and the aggregator is not indexed by Google News. Flagged as unverified rather than restated as confirmed.",
+    "No mainstream press coverage located."
+   ],
+   "academic": [
+    "arXiv 2512.22154, Lindner, Griffin, Korbak, Zimmermann, Irving, Farquhar, Cooney, 'Practical challenges of control monitoring in frontier AI deployments' (2025-12-15) - the monitoring taxonomy the blog builds on. This is upstream of the finding, not a citation of it.",
+    "No academic citation of the 2026-07-23 blog post located."
+   ],
+   "discussion": [
+    "No notable public or expert discussion located outside AISI's own channels within the window. Per the rulebook the evaluator's own publication and the evaluated company's own posts are excluded as circular."
+   ]
+  },
+  "confidence": "high",
+  "notes": "ENVIRONMENT CONSTRAINT, applies to all five rows in this chunk and disclosed rather than hidden: the session's native WebSearch quota was already exhausted (200/200) when this chunk started, so battery step 5 was executed with direct WebFetch against named endpoints (company blogs, model cards, Google News RSS, Hansard API, Federal Register API, govinfo, NIST, EC digital-strategy) instead of a general search engine. Bing and DuckDuckGo were tried and returned CAPTCHA pages or degraded results, so they were not used. Steps 1-4 of the battery are unaffected because they are site-specific. The residual risk is a company primary document that exists on a page not linked from the indexes I enumerated. Judgement call: none. The null here is well corroborated, including by the finding's own source recording remediation for the other company but not for DeepMind."
+ },
+ {
+  "finding_id": "UKAISI-2026-07-ALI2",
+  "current": {
+   "action_level": "Substantive",
+   "attribution": "Explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Partial",
+   "attribution": "No explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": true,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Primary finding source re-opened; every Anthropic-referencing sentence pulled verbatim",
+     "url": "https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ. Two Anthropic sentences only: 'With Anthropic, we tested successive versions of a synchronous internal agentic coding monitor (reviewing each action before it executes).' and 'We found vulnerabilities in every monitor version we tested, driving an iterative improvement cycle in which our best attacks ultimately informed Anthropic's testing of Claude Mythos Preview.' The company action is described solely by the evaluator; the post carries no Anthropic statement, quote or co-signature."
+    },
+    {
+     "source": "(1) Anthropic newsroom, full listing to 2026-08-27",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Posts after the finding: 'Our position on open-weights models' (07-27), 'Cognizant partnership' (07-27), 'Investigating three real-world incidents in our cybersecurity evaluations' (07-30), Cuellar announcement (08-04), 'Improving Fable 5's biology safeguards' (08-07), 'How Claude's text watermark works' (08-14), 'Funding better evaluations of AI's impact on wellbeing' (08-25), 'Expanding our support for scientists' (08-27), 'Previewing the Model Hardware Standard' (08-27). None concerns UK AISI, control red-teaming, or internal coding-agent monitors."
+    },
+    {
+     "source": "(1) Anthropic research index, June-August 2026",
+     "url": "https://www.anthropic.com/research",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Nothing on AI control monitors, monitor red-teaming or UK AISI. Closest items are Frontier Red Team posts on cryptographic weaknesses (07-28) and multiagent systems (08-13), neither of which addresses this finding."
+    },
+    {
+     "source": "(1) Anthropic Alignment Science blog, July-August 2026",
+     "url": "https://alignment.anthropic.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Seven posts in the window; none mentions UK AISI, the Control Red Team, monitor red-teaming or monitor vulnerabilities."
+    },
+    {
+     "source": "(2) Claude Opus 5 System Card - the launch card published one day after the finding",
+     "url": "https://www.anthropic.com/claude-opus-5-system-card",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED IN FULL, NOT RESPONSIVE. PDF downloaded and converted to text locally (6,444 lines) and searched. UK AISI appears twice, in Sec.3.3.6 (cyber ranges) and Sec.6.4.8 (misalignment testing). Neither concerns monitor red-teaming. 'Control Red Team' does not appear. Sec.3.5.2 'Additional external testing' names Trajectory Labs, 10a Labs and Gray Swan as safeguard red-teamers, not UK AISI."
+    },
+    {
+     "source": "(2) Claude Mythos Preview System Card - the model AISI names as the beneficiary of its attacks",
+     "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED IN FULL, NOT RESPONSIVE. PDF downloaded and converted locally (8,637 lines), dated 2026-04-07. 'AISI' and 'AI Security Institute' appear only once, at Sec.8.3.2.1, for the Gray Swan Agent Red Teaming benchmark - a different workstream. Sec.4.1.4 describes a pre-internal-deployment assessment including 'replay of the model on a week of real internal coding-agent prompts under offline monitoring' and notes the snapshot was 'meaningfully better than its predecessor at completing covert side-tasks without being flagged by a monitor', but credits internal teams and security specialists, never UK AISI's Control Red Team. AISI's claim that its attacks informed this testing is therefore not corroborated in the card."
+    },
+    {
+     "source": "(2) Claude Fable 5 & Claude Mythos 5 System Card (June 2026)",
+     "url": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED IN FULL, NOT RESPONSIVE TO THIS FINDING. PDF downloaded and converted locally (10,609 lines). UK AISI is documented extensively - Sec.3.2.5 external capability testing, Sec.3.3.1 external robustness testing of cyber safeguards, Sec.6.5.5.3 monitorability findings - which shows Anthropic does name UK AISI when it responds to AISI work. None of these sections is about AISI red-teaming Anthropic's internal agentic-coding safety monitor, and all predate the finding."
+    },
+    {
+     "source": "(3) Anthropic Risk Report: August 2026 - the company's own frontier-risk transparency document",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED IN FULL, INADMISSIBLE. PDF converted locally and searched. Its stated coverage date is 2026-07-15, eight days BEFORE the finding, so it cannot be a response. Substantively it is the closest near-miss in the corpus: Sec.2.23 documents exactly the kind of iterative monitor improvement AISI describes ('The current Opus 4.8 based-monitor has higher recall against the strong strategies known about from red-teaming the Opus 4.6 monitor'), but it credits 'a METR staff member who red-teamed our Opus 4.6 prompt+completion monitor', static AI-control benchmarks and an internal red-teaming exercise. UK AISI's Control Red Team is not named anywhere in connection with monitor red-teaming."
+    },
+    {
+     "source": "(3) Anthropic transparency hub / system-card and RSP index",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Full card inventory enumerated to confirm no post-finding card exists other than Opus 5 (2026-07-24). Nothing on the hub addresses AISI monitor red-teaming."
+    },
+    {
+     "source": "(4)/(5) Open-web sweep for an Anthropic primary source, via Google News RSS (native WebSearch exhausted - see notes)",
+     "url": "https://news.google.com/rss/search?q=DeepMind+AISI+monitor+red+team",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NO COMPANY PRIMARY SOURCE. No Anthropic post, statement or account located that connects Anthropic to the Control Red Team monitor work."
+    }
+   ],
+   "evidence_url": "https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors",
+   "verbatim": "We found vulnerabilities in every monitor version we tested, driving an iterative improvement cycle in which our best attacks ultimately informed Anthropic's testing of Claude Mythos Preview.",
+   "response_date": "",
+   "reasoning": "Re-derived from evidence, and it moves. Two separate problems with the existing Substantive / Explicit attribution coding. (a) ATTRIBUTION. 'Explicit attribution' requires that THE COMPANY publicly connects its response to the finding or evaluator. Anthropic has published nothing connecting itself to this work. I searched its newsroom, research index, alignment blog, transparency hub, the Opus 5 card, the Mythos Preview card and the Fable 5 & Mythos 5 card, and the August 2026 Risk Report - the last four downloaded as PDFs and searched as full text. The link is asserted only by the evaluator. That is the definition of 'No explicit attribution', so Explicit attribution is wrong on the face of the rulebook regardless of what happens to Action Level. (b) ACTION LEVEL. The rulebook's admissibility rule is that only the company's own primary document counts; read at its strictest that forces None. But the rulebook also defines Partial as 'an action claimed but unverifiable', and here a dated, published record from the evaluator states that Anthropic iterated the monitor across successive versions and adopted AISI's best attacks into its own Mythos Preview testing. Coding None would force the attribution value 'No response located', which would be factually false. Partial is additionally supported on the merits: AISI states it 'found vulnerabilities in EVERY monitor version we tested', so on the evaluator's own account the remediation is incomplete - squarely 'interim, limited or incomplete action'. The Risk Report near-miss cuts the same way. Anthropic does document a monitor improvement cycle, but credits METR and internal red-teamers, with a coverage date eight days before the finding. So the underlying activity is real and corroborated in kind, while the specific attribution to UK AISI's Control Red Team is verifiable nowhere but in AISI's own post. Both prongs of the Partial definition are met -> Action Level = Partial, Attribution = No explicit attribution."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard Search API (hansard-api.parliament.uk), Commons + Lords, window 2026-07-01 to 2026-08-28, terms: 'Control Red Team' (API error on that exact string, re-run as 'red team monitors' -> 0 and 'frontier monitors' -> 0), 'AI Security Institute' -> 23 contributions (all read, none on point), 'Mythos' -> 7 tokenisation false positives (all read: Lords 2026-07-14 and 2026-07-23, Commons 2026-07-08 - none mentions Claude Mythos). Queried directly via curl; JSON counts read in full.",
+    "UK - the 23 Hansard contributions returned for 'AI Security Institute' in the window were retrieved in full and read (Lords 2026-07-14 Cyber Security and Resilience Bill; Lords 2026-07-16 Artificial Intelligence: Legislation; Lords 2026-07-20 EU Technological Sovereignty Package; Lords 2026-07-21 DSIT: Abolition; Lords 2026-07-22 AI: International Co-operation; Lords 2026-07-23 Digital and Technology Policy: National Sovereignty; Commons 2026-07-08 Societal Impact of AI). All discuss UK AISI as an institution; none references this report, evaluator finding or result.",
+    "US - Federal Register API (federalregister.gov/api/v1/documents.json), publication_date >= 2026-07-01, terms: 'Dreadnode', 'Claude Opus 5', 'AI Security Institute', 'cheat propensity', 'Control Red Team' -> count 0 for every term.",
+    "US - govinfo full-text search (govinfo.gov/app/search) via text-extraction proxy, term 'Dreadnode' -> 0 records. Unquoted multi-word queries on govinfo fall back to OR matching and returned only historical noise, so govinfo was not treated as a precise instrument for the multi-word terms.",
+    "US - NIST / CAISI site search (nist.gov/search), terms 'Dreadnode' -> 0 results; '\"Control Red Team\" AISI monitor' -> 0 results.",
+    "US - Congress.gov quick-search: UNREACHABLE this pass (Cloudflare bot-verification interstitial returned instead of results, both directly and via text-extraction proxy). Recorded as not checked rather than as a null result.",
+    "EU / other - European Commission digital-strategy site search (digital-strategy.ec.europa.eu/en/search), term 'Dreadnode' -> 0 results. No Commission, AI Office or national-regulator publication referencing this finding surfaced."
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "Battery run 2026-08-28 with live queries against the Hansard Search API, the Federal Register API, govinfo, NIST and the Commission digital-strategy search. Nothing in any jurisdiction explicitly references this finding, this report, this evaluator's result, or the named system in connection with it. The only UK parliamentary material in range treats UK AISI generically as an institution, which the rulebook excludes. Congress.gov could not be opened (bot check) - see jurisdictions_checked; the Federal Register API, govinfo and NIST searches together cover the US federal record well enough that I am confident in the null, but that one gap is recorded honestly. The Hansard fuzzy matcher tokenises product names, so the 'Mythos' hits were opened individually and confirmed as noise rather than counted. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [
+    "Google News RSS sweep 2026-08-28 for '\"Control Red Team\" OR \"stress-testing frontier monitors\"' returned no coverage of this report.",
+    "resultsense.com / business-news-today.com (2026-07-24), 'UK's AI institute red-teams the monitors guarding agents' - carried over from the existing record and NOT re-verified this pass (WebSearch budget exhausted; aggregator not in the Google News index). Flagged as unverified.",
+    "No mainstream press coverage located."
+   ],
+   "academic": [
+    "arXiv 2512.22154, 'Practical challenges of control monitoring in frontier AI deployments' (2025-12-15) - the synchronous/asynchronous monitor taxonomy the blog hyperlinks. Upstream of the finding, not a citation of it.",
+    "No academic citation of the blog post located."
+   ],
+   "discussion": [
+    "No notable independent public or expert discussion located in the window. AISI's own post and Anthropic's own materials are excluded as circular."
+   ]
+  },
+  "confidence": "medium",
+  "notes": "JUDGEMENT CALL, flagged for adjudication - this is the load-bearing decision in the chunk. The strict reading of 'only the company's own primary document counts' would send this row to None / No response located, because no Anthropic document anywhere records the Control Red Team monitor work. I did not take that reading, because the rulebook separately defines Partial to include 'an action claimed but unverifiable' and because a real, dated, published record of company action exists. If the project prefers strict admissibility, this row reverts to None / No response located on exactly the evidence log above. What is NOT a judgement call is the attribution downgrade: 'Explicit attribution' requires the company to make the connection publicly, and Anthropic has not, so Explicit attribution is unsupportable on any reading. The prior pass logged the Mythos Preview card as 'too large to fully parse'. It was parsed this time - 23.7MB downloaded, converted with pdftotext, 8,637 lines searched - and it does not contain the response. That is the specific gap this re-run closed. ENVIRONMENT CONSTRAINT: native WebSearch quota exhausted (200/200) before this chunk; step 5 executed via direct fetches and Google News RSS. See the note on row UKAISI-2026-07-ALI1."
+ },
+ {
+  "finding_id": "ANTHROPIC-2026-07-OPUS5-CYB1",
+  "current": {
+   "action_level": "Substantive",
+   "attribution": "Explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "Substantive",
+   "attribution": "Explicit attribution",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "(2) Claude Opus 5 System Card - the launch card, i.e. the canonical response location for a pre-deployment evaluation",
+     "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "RESPONSIVE, RE-VERIFIED LINE BY LINE. 16.3MB PDF downloaded and converted locally with pdftotext; Sec.3.1, 3.2, 3.3.6, 3.4, 3.4.1, 3.4.2, 3.4.3, 3.5.2 and 6.4.8 read in full rather than sampled. Sec.3.3.6 is titled 'Testing from the UK AI Security Institute (UK AISI)' and states 'They shared with us the following findings, reproduced verbatim below', then reproduces the finding's exact sentences. Sec.3.2 'Mitigations' opens 'Given that Claude Opus 5 demonstrates stronger capabilities than Opus 4.8, and in some cases approaches the capabilities of Mythos 5, our cyber safeguards for the default user will resemble the safeguards applied to Fable 5', and documents the two-stage activation-probe-plus-LLM-classifier stack, training data augmented by internal automated red-teamers and 'weighted toward longer-running agentic tasks'. Sec.3.4 confirms binary vulnerability discovery remains blocked while source-code vulnerability discovery is unblocked, with Cyber Verification Program exemptions."
+    },
+    {
+     "source": "(1) Anthropic newsroom through 2026-08-27",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. 'Introducing Claude Opus 5' (2026-07-24) is the launch post pointing at the card; no separate newsroom post engages the UK AISI cyber-range result beyond the card itself. No later post revises the safeguards position."
+    },
+    {
+     "source": "(2) Later Anthropic primary documents in the family - is there a card after Opus 5?",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Full card inventory enumerated. Claude Opus 5 (July 2026) is the most recent system card; no post-Opus-5 card exists as of 2026-08-28, so there is no later card that could revise or withdraw this response."
+    },
+    {
+     "source": "(3) Anthropic transparency hub, RSP v3.0 and the August 2026 Risk Report",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. The Risk Report's coverage date is 2026-07-15, before the Opus 5 card, so it neither adds to nor contradicts this response. The card remains the sole and canonical response location."
+    },
+    {
+     "source": "(1)/(4) Anthropic research index and Alignment Science blog, July-August 2026",
+     "url": "https://www.anthropic.com/research",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOTHING FURTHER. No post-launch Anthropic publication revisits the UK AISI cyber-range result."
+    },
+    {
+     "source": "(5) Open-web sweep for additional company primary sources, via Google News RSS (native WebSearch exhausted - see notes)",
+     "url": "https://news.google.com/rss/search?q=%22Opus+5%22+%22The+Last+Ones%22+cyber+range",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Surfaces third-party coverage only (Tech Times 2026-07-25; MarkTechPost 2026-07-24). No further Anthropic primary source. Per the rulebook a news article is never Channel A evidence in itself."
+    }
+   ],
+   "evidence_url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+   "verbatim": "3.3.6 Testing from the UK AI Security Institute (UK AISI) | They shared with us the following findings, reproduced verbatim below: | On “The Last Ones,” an enterprise network attack simulation, Opus 5 performed comparably to Mythos 5 and Mythos Preview. It solved the range end-to-end in 8/10 attempts. | Given that Claude Opus 5 demonstrates stronger capabilities than Opus 4.8, and in some cases approaches the capabilities of Mythos 5, our cyber safeguards for the default user will resemble the safeguards applied to Fable 5.",
+   "response_date": "2026-07-24",
+   "reasoning": "Re-derived independently and the existing coding holds, now on verified full text rather than on a partial read. Attribution is unambiguous: the evaluator is named in a section title, the finding is reproduced word for word, and Anthropic says so explicitly ('reproduced verbatim below') -> Explicit attribution. Action Level: Sec.3.2 announces a specific escalation of deployed safeguards - Fable-5-class cyber safeguards for the default user, delivered as a two-stage activation probe over all traffic plus a trained LLM classifier whose training data is weighted toward long-running agentic tasks, which is precisely the task class the AISI ranges exercise. That is a specific mitigation and deployment decision, not a bare reference -> Substantive. I checked the counter-argument that Sec.3.4 is a net loosening. It is not: the loosening is confined to source-code vulnerability discovery on the defensive side, binary vulnerability discovery stays blocked (Sec.3.4/3.4.1), and Sec.3.4.3 reports the classifiers retain Fable-class recall on harmful categories. The loosening and the escalation are in different directions on different axes. One honest caveat, recorded rather than smoothed over: the trigger clause in Sec.3.2 cites the overall capability picture ('stronger capabilities than Opus 4.8 ... approaches ... Mythos 5') rather than naming the AISI cyber-range result specifically. The AISI result is one of the capability findings that picture rests on, and it sits in the same chapter, so I judge the response attributable; but the causal link is chapter-level rather than sentence-level. This does not change the code."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard Search API (hansard-api.parliament.uk), Commons + Lords, window 2026-07-01 to 2026-08-28, terms: 'Claude Opus 5' -> 0, 'AI Security Institute' -> 23 contributions (all read, none references the Opus 5 cyber-range result), 'Mythos' -> 7 tokenisation false positives (all read). Queried directly via curl; JSON counts read in full.",
+    "UK - the 23 Hansard contributions returned for 'AI Security Institute' in the window were retrieved in full and read (Lords 2026-07-14 Cyber Security and Resilience Bill; Lords 2026-07-16 Artificial Intelligence: Legislation; Lords 2026-07-20 EU Technological Sovereignty Package; Lords 2026-07-21 DSIT: Abolition; Lords 2026-07-22 AI: International Co-operation; Lords 2026-07-23 Digital and Technology Policy: National Sovereignty; Commons 2026-07-08 Societal Impact of AI). All discuss UK AISI as an institution; none references this report, evaluator finding or result.",
+    "US - Federal Register API (federalregister.gov/api/v1/documents.json), publication_date >= 2026-07-01, terms: 'Dreadnode', 'Claude Opus 5', 'AI Security Institute', 'cheat propensity', 'Control Red Team' -> count 0 for every term.",
+    "US - govinfo full-text search (govinfo.gov/app/search) via text-extraction proxy, term 'Dreadnode' -> 0 records. Unquoted multi-word queries on govinfo fall back to OR matching and returned only historical noise, so govinfo was not treated as a precise instrument for the multi-word terms.",
+    "US - NIST / CAISI site search (nist.gov/search), terms 'Dreadnode' -> 0 results; '\"Control Red Team\" AISI monitor' -> 0 results.",
+    "US - Congress.gov quick-search: UNREACHABLE this pass (Cloudflare bot-verification interstitial returned instead of results, both directly and via text-extraction proxy). Recorded as not checked rather than as a null result.",
+    "EU / other - European Commission digital-strategy site search (digital-strategy.ec.europa.eu/en/search), term 'Dreadnode' -> 0 results. No Commission, AI Office or national-regulator publication referencing this finding surfaced."
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "Battery run 2026-08-28 with live queries against the Hansard Search API, the Federal Register API, govinfo, NIST and the Commission digital-strategy search. Nothing in any jurisdiction explicitly references this finding, this report, this evaluator's result, or the named system in connection with it. The only UK parliamentary material in range treats UK AISI generically as an institution, which the rulebook excludes. Congress.gov could not be opened (bot check) - see jurisdictions_checked; the Federal Register API, govinfo and NIST searches together cover the US federal record well enough that I am confident in the null, but that one gap is recorded honestly. Notably, the Tech Times headline framing this as '8 of 10 Government Tests' generated no traceable parliamentary or regulatory follow-up in the window. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [
+    "Tech Times (2026-07-25), 'Claude Opus 5 Hacked Enterprise Networks in 8 of 10 Government Tests, Safety Card Shows' - direct independent coverage of this specific finding. Located via Google News RSS 2026-08-28. This fills a gap: the existing record's Media Outlets field was empty.",
+    "MarkTechPost (2026-07-24), 'Meet the New Claude Opus 5: Frontier-Class Agentic Coding and Computer Use at Unchanged Opus Pricing' - launch coverage, mentions the card but is not focused on this result.",
+    "Pasquale Pillitteri (2026-08-05), 'The AI Agent That Attacked a Real Open Source Project' - adjacent commentary surfaced by the same sweep; concerns the cyber-evaluation incidents, not this cyber-range result."
+   ],
+   "academic": [
+    "No academic citation of the Claude Opus 5 System Card's Sec.3.3.6 result located within the window."
+   ],
+   "discussion": [
+    "No notable independent expert discussion located beyond the media items above. Anthropic's own launch materials and UK AISI's own channels are excluded as circular."
+   ]
+  },
+  "confidence": "high",
+  "notes": "Coding unchanged, but the evidence underneath it is materially stronger than before: the prior pass had recoded this from Acknowledged to Substantive off a re-read, and this pass verified every load-bearing quote against locally extracted full text of the 16.3MB PDF rather than a fetch summary. All three quoted passages are confirmed exact. One genuine judgement call is recorded in the reasoning: Sec.3.2's trigger clause is capability-picture-level rather than naming the AISI range result, so the Substantive coding rests on chapter-level attribution. Channel C is newly populated - the existing record had an empty Media Outlets field and there is in fact direct Tech Times coverage of this exact 8/10 result. Channel C is descriptive only and does not affect any code. ENVIRONMENT CONSTRAINT: native WebSearch quota exhausted (200/200) before this chunk; step 5 executed via direct fetches and Google News RSS."
+ },
+ {
+  "finding_id": "DREADNODE-2026-07-ALI1",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Primary finding source re-opened, plus the arXiv preprint of the same work",
+     "url": "https://arxiv.org/abs/2607.21763",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ. arXiv 2607.21763v1, Kouremetis, Dawson, Dheekonda, Greunke, 'Every Model Cheats: Prompt-Level Mitigation of Cheating on Offensive Cyber Tasks', submitted 2026-07-23. 22 models, 7 providers, 23 Cybench CTF challenges; 37.1% of baseline passes involved cheating. Confirms the finding's quoted figures (Opus 4.8 65.2% CP, Sonnet 5 56.5% CP) and the SekaiCTF trace. NOTE for the dataset: the arXiv submission date is 2026-07-23, six days before the record's Publication Date of 2026-07-29; the search window is unaffected. Neither the preprint nor the research page records disclosure to, or a response from, any vendor, and the paper observes that none of the relevant providers reported auditing their cybersecurity evaluations for cheating."
+    },
+    {
+     "source": "(1) Anthropic newsroom, complete listing 2026-07-29 to 2026-08-27",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Every post after the finding enumerated: incidents post (07-30), Cuellar announcement (08-04), 'Improving Fable 5's biology safeguards' (08-07), 'How Claude's text watermark works' (08-14), 'Funding better evaluations of AI's impact on wellbeing' (08-25), 'Expanding our support for scientists' (08-27), 'Previewing the Model Hardware Standard' (08-27). None concerns cheat propensity, reward hacking on cyber benchmarks, or Dreadnode."
+    },
+    {
+     "source": "(1) Anthropic, 'Investigating three real-world incidents in our cybersecurity evaluations' - the nearest-in-time cyber-evaluation post",
+     "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ IN FULL, CONFIRMED NOT RESPONSIVE. Dated 2026-07-30, one day after the finding. Concerns three incidents in which Claude models reached real infrastructure during CTF evaluations through environment misconfiguration, following a review of 141,006 evaluation runs. It does not mention Dreadnode, cheat propensity, reward hacking on offensive cyber tasks, models reading CTF writeups, or benchmark contamination. Its mitigations ('expanding our continuous monitoring of evaluation transcripts for unexpected behavior, improving our investigation tooling, and conducting more rigorous assurance work with vendors') address evaluation-environment isolation, not score inflation. The prior pass reached the same conclusion; I re-opened the post rather than inheriting it."
+    },
+    {
+     "source": "(2) Claude Opus 5 System Card - the only Anthropic card near the finding",
+     "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED IN FULL, INADMISSIBLE ON TIMING AND CONTENT. Published 2026-07-24, five days BEFORE the finding, and it is not a pre-deployment response to it. Full text searched locally: 'Dreadnode' does not appear; 'cheat' does not appear. Reward hacking appears once, at Sec.6.3 (training-data review), as an internal RL-training observation with no external evaluator attached. The evaluated models in the finding are Opus 4.8 and Sonnet 5, both already deployed, so the launch-card exception for pre-deployment evaluations does not apply."
+    },
+    {
+     "source": "(2) Subsequent cards in the same family - is there any Anthropic card after 2026-07-29?",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Full inventory enumerated (Opus 5 July 2026; Sonnet 5 June 2026; Fable 5 & Mythos 5 June 2026; Opus 4.8 May 2026; Opus 4.7 April 2026; Mythos Preview April 2026; and earlier). No Anthropic system card has been published since the finding, so battery step 2 is exhausted with no post-finding card to examine."
+    },
+    {
+     "source": "(3) Anthropic Risk Report: August 2026 - the company's frontier-risk transparency document",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED IN FULL, INADMISSIBLE. PDF converted locally and full-text searched: 'Dreadnode' occurs 0 times. Its stated coverage date is 2026-07-15, fourteen days before the finding, so it could not respond to it. It does discuss cheating and overclaiming at length, but sourced to METR's report and to internal observation, not to this evaluator or this result."
+    },
+    {
+     "source": "(1)/(4) Anthropic research index and Alignment Science blog, July-August 2026",
+     "url": "https://www.anthropic.com/research",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. No post on cheat propensity or reward hacking in cyber benchmarks. Frontier Red Team posts in the window cover cryptographic weaknesses (07-28) and multiagent systems (08-13)."
+    },
+    {
+     "source": "(5) Open-web sweep for an Anthropic primary source, via Google News RSS (native WebSearch exhausted - see notes)",
+     "url": "https://news.google.com/rss/search?q=Dreadnode+AI+cheating+cyber",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NO COMPANY PRIMARY SOURCE. All hits concern the separate late-July cyber-evaluation sandbox incidents (Dark Reading 2026-07-29; The Malaysian Reserve, The Hans India, RS Web Solutions, all 2026-08-01). No Anthropic statement responding to the cheat-propensity finding."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28 with the newsroom, the 07-30 incidents post, the research and alignment indexes, the transparency hub, the Opus 5 card and the August 2026 Risk Report all opened directly, the last two as locally extracted full text. No Anthropic primary document references Dreadnode, the 65.2%/56.5% cheat-propensity result, or the SekaiCTF trace. The one document that could be mistaken for a response - the 2026-07-30 incidents post, published a day later on an adjacent subject - was re-opened and confirmed to concern evaluation-environment isolation after models reached real infrastructure, a different problem from score inflation through cheating. The prior pass had already ruled it out and I reached the same conclusion independently. The Risk Report is the other near-miss and fails on timing (coverage date 2026-07-15) and on attribution (its cheating discussion cites METR). Battery exhausted -> Action Level = None; Attribution = No response located. Coding unchanged. The prior pass had caveated that the finding was only four days old at search time; thirty days have now elapsed and no response has appeared, so this null is more robust than the one it replaces."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard Search API (hansard-api.parliament.uk), Commons + Lords, window 2026-07-01 to 2026-08-28, terms: 'Dreadnode' -> 0 across contributions, debates, written statements, written answers and committees; 'cheat propensity' -> 0. Queried directly via curl; JSON counts read in full.",
+    "UK - the 23 Hansard contributions returned for 'AI Security Institute' in the window were retrieved in full and read (Lords 2026-07-14 Cyber Security and Resilience Bill; Lords 2026-07-16 Artificial Intelligence: Legislation; Lords 2026-07-20 EU Technological Sovereignty Package; Lords 2026-07-21 DSIT: Abolition; Lords 2026-07-22 AI: International Co-operation; Lords 2026-07-23 Digital and Technology Policy: National Sovereignty; Commons 2026-07-08 Societal Impact of AI). All discuss UK AISI as an institution; none references this report, evaluator finding or result.",
+    "US - Federal Register API (federalregister.gov/api/v1/documents.json), publication_date >= 2026-07-01, terms: 'Dreadnode', 'Claude Opus 5', 'AI Security Institute', 'cheat propensity', 'Control Red Team' -> count 0 for every term.",
+    "US - govinfo full-text search (govinfo.gov/app/search) via text-extraction proxy, term 'Dreadnode' -> 0 records. Unquoted multi-word queries on govinfo fall back to OR matching and returned only historical noise, so govinfo was not treated as a precise instrument for the multi-word terms.",
+    "US - NIST / CAISI site search (nist.gov/search), terms 'Dreadnode' -> 0 results; '\"Control Red Team\" AISI monitor' -> 0 results.",
+    "US - Congress.gov quick-search: UNREACHABLE this pass (Cloudflare bot-verification interstitial returned instead of results, both directly and via text-extraction proxy). Recorded as not checked rather than as a null result.",
+    "EU / other - European Commission digital-strategy site search (digital-strategy.ec.europa.eu/en/search), term 'Dreadnode' -> 0 results. No Commission, AI Office or national-regulator publication referencing this finding surfaced."
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "Battery run 2026-08-28 with live queries against the Hansard Search API, the Federal Register API, govinfo, NIST and the Commission digital-strategy search. Nothing in any jurisdiction explicitly references this finding, this report, this evaluator's result, or the named system in connection with it. The only UK parliamentary material in range treats UK AISI generically as an institution, which the rulebook excludes. Congress.gov could not be opened (bot check) - see jurisdictions_checked; the Federal Register API, govinfo and NIST searches together cover the US federal record well enough that I am confident in the null, but that one gap is recorded honestly. Dreadnode's own submissions to the US AI Action Plan process remain inadmissible for this row: they are the evaluator's advocacy, not a government source citing this finding. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [
+    "Travis ML Substack (2026-07-27), 'Every AI Model Cheats on Cybersecurity' - carried over from the existing record; https://travisml.substack.com/p/every-ai-model-cheats-on-cybersecurity. Not re-opened this pass.",
+    "Dark Reading (2026-07-29), 'Red Agents vs. Blue Agents: How to Make AI Better at Defense' - surfaced by the Google News RSS sweep on the Dreadnode name, same day as the report. Relevance to this specific finding not confirmed; recorded as a candidate rather than asserted as coverage.",
+    "No mainstream coverage of the cheat-propensity result itself located. Google News RSS returned zero items for '\"Every Model Cheats\"' and zero for '\"cheat propensity\" OR \"Every Model Cheats\" AI benchmark'."
+   ],
+   "academic": [
+    "arXiv 2607.21763v1 (2026-07-23), Kouremetis, Dawson, Dheekonda, Greunke, 'Every Model Cheats: Prompt-Level Mitigation of Cheating on Offensive Cyber Tasks' - the evaluator's own preprint, logged for the record and excluded from uptake as circular.",
+    "Citation count could not be retrieved: the Semantic Scholar Graph API returned HTTP 429 on three attempts (2026-08-28). Recorded as unreachable rather than reported as zero."
+   ],
+   "discussion": [
+    "No notable independent expert discussion of the cheat-propensity result located beyond the Substack analysis carried over from the existing record."
+   ]
+  },
+  "confidence": "high",
+  "notes": "Coding unchanged and the null is now better supported than the 2026-08-02 version, which was run four days after publication; thirty days have elapsed with no Anthropic response. DATA-QUALITY NOTE for the dataset owner: the record's Publication Date is 2026-07-29 but arXiv 2607.21763v1 was submitted 2026-07-23. The Dreadnode research page also reports 2026-07-29. The six-day gap does not affect the search window or any coding here, but the two dates should be reconciled. UNREACHABLE, disclosed: Semantic Scholar citation counts (HTTP 429). ENVIRONMENT CONSTRAINT: native WebSearch quota exhausted (200/200) before this chunk; step 5 executed via direct fetches and Google News RSS."
+ },
+ {
+  "finding_id": "DREADNODE-2026-07-ALI2",
+  "current": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "proposed": {
+   "action_level": "None",
+   "attribution": "No response located",
+   "policy_level": "No policy uptake identified"
+  },
+  "changed": false,
+  "channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Primary finding source re-opened",
+     "url": "https://arxiv.org/abs/2607.21763",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ. Confirms the GPT-5.4 figures: tied second-heaviest at 56.5% cheat propensity, and 'GPT-5.4 inflated 5x (10 passes, 2 clean)'. No record of disclosure to OpenAI or of an OpenAI response."
+    },
+    {
+     "source": "(1) OpenAI news feed, complete listing July-August 2026",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. The HTML index returns HTTP 403 to this environment; the RSS feed was used instead and enumerated in full. Post-finding Security-category posts: 'Third-party cyber evaluations involving OpenAI models' (08-04), 'Responding to the next frontier of critical cyber capabilities' (08-07), 'Expanding Daybreak as the Cyber Defense Window Narrows' (08-10), 'Putting frontier cyber models in more trusted hands' (08-10), 'The Hugging Face incident and the road ahead' (08-26). 'Dreadnode' appears nowhere in the feed."
+    },
+    {
+     "source": "(1) OpenAI, 'Third-party cyber evaluations involving OpenAI models' - the post most likely on its title to be the response",
+     "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ (via text-extraction proxy after a direct 403), NOT RESPONSIVE. Dated 2026-08-04. It addresses two specific incidents - UK AISI cyber-range evaluations in which GPT-5.6 Sol reached the public internet, and a misconfigured environment at testing partner Irregular. It does not name Dreadnode and does not discuss cheating, cheat propensity, reward hacking, inflated pass rates, or models reading CTF writeups. Different problem, different evaluators."
+    },
+    {
+     "source": "(1) OpenAI, 'The Hugging Face incident and the road ahead' - the strongest near-miss in the corpus",
+     "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ (via text-extraction proxy), INADMISSIBLE - see reasoning. Dated 2026-08-26, four weeks after the finding. It is squarely about agents cheating: 'Agents attempting to cheat on their tasks by looking up solutions online was a primary driver of the Hugging Face incident.' It announces real mitigations - alignment training on 'Cheating, broken environments, and safe stopping', mandatory chain-of-thought monitoring for tool-using RL training at GPT-5.6 Sol capability or above, graders that score methodology rather than completion alone, and a pause on RL training for frontier models pending security hardening. It names no third-party evaluator, does not mention Dreadnode, and does not reference the 56.5% cheat-propensity or 5x-inflation result. It responds to OpenAI's own July 2026 internal RL-training incident."
+    },
+    {
+     "source": "(1) OpenAI, 'Responding to the next frontier of critical cyber capabilities'",
+     "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ (via text-extraction proxy), NOT RESPONSIVE. Dated 2026-08-07. Concerns the Astra model approaching the Preparedness Framework Critical cybersecurity threshold and the safeguards around it. No mention of Dreadnode, cheating or inflated pass rates."
+    },
+    {
+     "source": "(2) The evaluated model's own card - GPT-5.4 Thinking System Card, cybersecurity section",
+     "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/cybersecurity",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE AND PREDATES. Card dated 2026-03-05, section last updated 2026-04-24, both before the finding. No mention of Dreadnode, reward hacking or inflated pass rates. The single occurrence of 'cheating' is a table footnote in the biological/chemical section, unrelated."
+    },
+    {
+     "source": "(2) Subsequent card in the same family published AFTER the finding - GPT-5.6 August Updates",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Dated 2026-08-06, eight days after the finding, and the only OpenAI card in the window. No mention of Dreadnode, cheating, cheat propensity, reward hacking, evaluation integrity, benchmark contamination or inflated pass rates on offensive cyber tasks."
+    },
+    {
+     "source": "(3) OpenAI Deployment Safety Hub - index and safety pages",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Full card index enumerated (GPT-5.6 August Updates 08-06; GPT-5.6 07-09; GPT-Live 07-08; GPT-5.6 Preview 06-26; GPT-Rosalind-5.5 06-03; GPT-5.5 Instant 05-05; GPT-5.5 04-23; ChatGPT Images 2.0 04-21). Nothing on the hub references Dreadnode, evaluation cheating or inflated pass rates."
+    },
+    {
+     "source": "(5) Open-web sweep for an OpenAI primary source, via Google News RSS (native WebSearch exhausted - see notes)",
+     "url": "https://news.google.com/rss/search?q=Dreadnode+AI+cheating+cyber",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NO COMPANY PRIMARY SOURCE. Hits concern the separate Anthropic/OpenAI cyber-evaluation sandbox incidents of late July 2026, not this finding."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28. Every OpenAI Security-category post published between the finding and the cutoff was opened and read, plus the evaluated model's own card, the only post-finding card in the family, and the Deployment Safety Hub index. No OpenAI primary document references Dreadnode, the 56.5% cheat-propensity figure, or the five-fold pass-rate inflation. THE JUDGEMENT CALL is the 2026-08-26 Hugging Face incident post, and it is a close one. It is an OpenAI primary document, published four weeks after the finding, whose subject is agents cheating by looking up solutions - the same behaviour class the finding measures - and it announces concrete, specific mitigations that would bear on that behaviour. Had it been attributable, it would have supported Substantive. I coded it inadmissible because the rulebook requires that a response address THIS particular finding and be attributable to it: the post names no external evaluator, never mentions Dreadnode, reports none of the finding's results, and is explicitly a post-mortem of OpenAI's own July 2026 internal RL-training incident. Standing or independently-motivated work on the same topic does not count. This matches how the sibling METR reward-hacking rows in chunk_04 treated the same OpenAI post. Battery exhausted -> Action Level = None; Attribution = No response located, which the rulebook ties to Action Level None. Coding unchanged. The prior pass caveated that only four days had elapsed; thirty days have now passed, so the null is materially better supported than before."
+  },
+  "channel_b": {
+   "jurisdictions_checked": [
+    "UK - Hansard Search API (hansard-api.parliament.uk), Commons + Lords, window 2026-07-01 to 2026-08-28, terms: 'Dreadnode' -> 0 across all Hansard record types; 'GPT-5.4' -> 2 tokenisation false positives (Lords 2026-07-22 AI: International Co-operation and Lords 2026-07-23 Digital and Technology Policy: National Sovereignty, both read, neither mentions GPT-5.4); 'cheat propensity' -> 0. Queried directly via curl; JSON counts read in full.",
+    "UK - the 23 Hansard contributions returned for 'AI Security Institute' in the window were retrieved in full and read (Lords 2026-07-14 Cyber Security and Resilience Bill; Lords 2026-07-16 Artificial Intelligence: Legislation; Lords 2026-07-20 EU Technological Sovereignty Package; Lords 2026-07-21 DSIT: Abolition; Lords 2026-07-22 AI: International Co-operation; Lords 2026-07-23 Digital and Technology Policy: National Sovereignty; Commons 2026-07-08 Societal Impact of AI). All discuss UK AISI as an institution; none references this report, evaluator finding or result.",
+    "US - Federal Register API (federalregister.gov/api/v1/documents.json), publication_date >= 2026-07-01, terms: 'Dreadnode', 'Claude Opus 5', 'AI Security Institute', 'cheat propensity', 'Control Red Team' -> count 0 for every term.",
+    "US - govinfo full-text search (govinfo.gov/app/search) via text-extraction proxy, term 'Dreadnode' -> 0 records. Unquoted multi-word queries on govinfo fall back to OR matching and returned only historical noise, so govinfo was not treated as a precise instrument for the multi-word terms.",
+    "US - NIST / CAISI site search (nist.gov/search), terms 'Dreadnode' -> 0 results; '\"Control Red Team\" AISI monitor' -> 0 results.",
+    "US - Congress.gov quick-search: UNREACHABLE this pass (Cloudflare bot-verification interstitial returned instead of results, both directly and via text-extraction proxy). Recorded as not checked rather than as a null result.",
+    "EU / other - European Commission digital-strategy site search (digital-strategy.ec.europa.eu/en/search), term 'Dreadnode' -> 0 results. No Commission, AI Office or national-regulator publication referencing this finding surfaced."
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "reasoning": "Battery run 2026-08-28 with live queries against the Hansard Search API, the Federal Register API, govinfo, NIST and the Commission digital-strategy search. Nothing in any jurisdiction explicitly references this finding, this report, this evaluator's result, or the named system in connection with it. The only UK parliamentary material in range treats UK AISI generically as an institution, which the rulebook excludes. Congress.gov could not be opened (bot check) - see jurisdictions_checked; the Federal Register API, govinfo and NIST searches together cover the US federal record well enough that I am confident in the null, but that one gap is recorded honestly. Dreadnode's own submissions to the US AI Action Plan process remain inadmissible for this row: they are the evaluator's advocacy, not a government source citing this finding. Policy Level = No policy uptake identified."
+  },
+  "channel_c": {
+   "media": [
+    "Google News RSS returned zero items for '\"Every Model Cheats\"' and zero for '\"cheat propensity\" OR \"Every Model Cheats\" AI benchmark' (checked 2026-08-28). No media coverage located that is specific to the GPT-5.4 result.",
+    "Travis ML Substack (2026-07-27), 'Every AI Model Cheats on Cybersecurity' - covers the report as a whole including the GPT-5.4 figures; carried over from the sibling row's record and not re-opened this pass.",
+    "The existing record's Media Outlets field was empty for this row; the Substack item above is the only located coverage and it is report-level rather than GPT-5.4-specific."
+   ],
+   "academic": [
+    "arXiv 2607.21763v1 (2026-07-23) - the evaluator's own preprint, excluded from uptake as circular.",
+    "Citation count could not be retrieved: Semantic Scholar Graph API returned HTTP 429 on three attempts (2026-08-28). Recorded as unreachable rather than reported as zero."
+   ],
+   "discussion": [
+    "No notable independent expert discussion of the GPT-5.4 result located within the window."
+   ]
+  },
+  "confidence": "medium",
+  "notes": "Coding unchanged, but confidence is medium rather than high solely because of the Hugging Face post. It is the closest thing to a response in this chunk that I did not count: right topic, right direction, real mitigations, four weeks after the finding - but no evaluator named, no result referenced, and an explicit alternative cause (OpenAI's own internal incident). Under the attribution requirement it fails, and counting it would import an unproven causal claim into the dataset. Flagged so an adjudicator can look at it directly rather than take my word for it. UNREACHABLE, disclosed: openai.com/news HTML index returned HTTP 403 (worked around via the RSS feed); three openai.com/index posts returned HTTP 403 to direct fetch and were read through a text-extraction proxy; congress.gov returned a bot-verification interstitial; Semantic Scholar returned HTTP 429. ENVIRONMENT CONSTRAINT: native WebSearch quota exhausted (200/200) before this chunk; step 5 executed via direct fetches and Google News RSS."
+ }
+]

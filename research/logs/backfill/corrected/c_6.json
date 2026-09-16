@@ -1,0 +1,27 @@
+{
+  "url": "https://cisco-foundation-ai.github.io/blogs/antares-beyond-vlocbench",
+  "title": "Antares in the Wild: Testing on Two New Cybersecurity Benchmarks",
+  "institution": "Cisco (Robust Intelligence / Foundation AI)",
+  "scope": "third-party-evaluator",
+  "resolved_date": "2026-07-28",
+  "date_source": "Dateline printed on the post itself: 'July 28, 2026' (cisco-foundation-ai.github.io blog page, re-verified HTTP 200 on 2026-08-31).",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 (Cisco/Robust Intelligence is a registered third-party evaluator and measured the named frontier-developer models itself in its own harness; the surviving row's subjects are not Cisco's own models), §2 (measured results, same harness, each model run 3x), §4 (Tier B: Gate 1 yes, Gate 2 limb (c) fails - comparative ranking / cost-efficiency study, no dangerous threshold crossed), §5 (comparators/baselines are never rows -> Notes [Report tested: ...]), FRONTIER-MODEL RULE.",
+  "screening_ledger": "Former finding [1] (Antares-350M / 1B / 3B self-reported recall and the Devin-rebuild comparison) removed from the dataset and logged as 'EXCLUDED - company self-report' under §1 (Cisco reporting on its own Antares models with no external evaluator named; CyberGym and Matt Rickard are benchmark authors, not contributing evaluators). Secondary grounds: FRONTIER-MODEL RULE (350M-3B task-specific vulnerability-localization models are non-frontier) and §2/§2.1 (Antares Devin-rebuild figures self-labelled 'Estimated - extrapolated from Matt Rickard's public 34/50 rebuild'; Devin/Claude/Codex baselines lifted from Cognition's July 2026 post).",
+  "findings": [
+    {
+      "finding": "Cisco Foundation AI ran 15 models through its own CyberGym-localization harness (each model run 3x, mean reported) on ~1,500 real OSS-Fuzz vulnerabilities and found GPT-5.5 localised the vulnerable file in 89.1% of tasks at $333 per run, ahead of GPT-5-mini (85.9%, $46), GPT-OSS-120B (69.5%, $58), GPT-4o (57.9%, $32) and GPT-5-nano (54.5%, $9).",
+      "finding_quote": "Recall = share of tasks where the model found at least one of the patched files. Same harness for every model.",
+      "finding_type": "capability-finding",
+      "models_systems": "GPT-5.5; GPT-5-mini; GPT-5-nano; GPT-4o; GPT-OSS-120B",
+      "notes": "[Report tested: Kimi-K3, GLM-5.2, Gemma-4-31B, Qwen3.5-27B, Qwen3.5-9B, Qwen3.5-4B, Qwen3.5-2B, Antares-3B, Antares-1B, Antares-350M]",
+      "institution": "Cisco (Robust Intelligence / Foundation AI)",
+      "domain": "Cyber",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": "",
+      "tier_reasoning": "Gate 1 yes - Cisco's own measured recall figures for named released frontier-developer models on a public cyber benchmark. Gate 2 limb (c) fails: an explicit comparative ranking plus cost-efficiency ('Intelligence Density') study with no dangerous threshold crossed, in which the hosted models are instruments for positioning Cisco's own Antares family, so no company response is reasonably expected. eval=yes / action=no. §4b does not exclude: vulnerability-localization recall is a cyber-capability measurement, not a generic factuality/correctness benchmark. Quote is the chart caption (character-exact) because the numbers appear only as chart/table labels and no prose sentence states them."
+    }
+  ]
+}

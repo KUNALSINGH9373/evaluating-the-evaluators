@@ -1,0 +1,706 @@
+[
+ {
+  "venue": "RAND Corporation",
+  "title": "United States–Japan Research Exchange on Artificial Intelligence: Proceedings from a Pair of Conferences on the Impact of Artificial Intelligence on Work, Health, and Data Privacy and on Disaster Prediction, Resilience, and Recovery",
+  "url": "https://www.rand.org/pubs/conf_proceedings/CFA521-1.html",
+  "resolved_date": "2020-12-07",
+  "date_source": "page byline (\"Published Dec 7, 2020\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — conference proceedings recounting participants' views, not claims asserted by the evaluator",
+  "reason": "Read in full. Proceedings of two US–Japan conferences; RAND explicitly disclaims the content (\"The views articulated and expressed ... are those of the participants\"). No AI system is tested and no evidence-backed claim is asserted by RAND itself.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5185
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Exploring the Application of Machine Learning for Downscaling Climate Projections",
+  "url": "https://www.rand.org/pubs/external_publications/EP68398.html",
+  "resolved_date": "2020-12-22",
+  "date_source": "page byline (\"Posted on rand.org Dec 22, 2020\"); underlying chapter in Research in Mathematics and Public Policy, AWM Series vol. 23, 2020",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§4b — the only measurable claim is ordinary predictive accuracy of a bespoke model; out of scope",
+  "reason": "Read in full. A proof-of-concept comparing neural networks and random forests for statistically downscaling temperature projections; ML is the instrument of a climate-science method and the abstract reports no result at all, only what was trained and validated. Nothing about AI behaviour, evaluation methodology or governance.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3050
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "An Experiment in Tactical Wargaming with Platforms Enabled by Artificial Intelligence",
+  "url": "https://www.rand.org/pubs/research_reports/RRA423-1.html",
+  "resolved_date": "2020-12-29",
+  "date_source": "page byline (\"Published Dec 29, 2020\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — the observed outcomes are artefacts of rules the researchers wrote, not measurements of an AI system",
+  "reason": "Read in full, including the Key Takeaways. Two tabletop wargames in which notional autonomous and remotely operated combat vehicles were represented by modified commercial game rules and engagement statistics. No AI/ML system exists to be evaluated; the takeaways (e.g. RCVs used as bait) describe play under postulated rules.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5824
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Can Artificial Intelligence Help Improve Air Force Talent Management? An Exploratory Application",
+  "url": "https://www.rand.org/pubs/research_reports/RRA812-1.html",
+  "resolved_date": "2021-01-19",
+  "date_source": "page byline (\"Published Jan 19, 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§4b — the measured claim is ordinary predictive accuracy of a prototype RAND built itself",
+  "reason": "Read in full. A worked example in which RAND builds an NLP performance-scoring prototype on officer evaluation narratives; the one empirical takeaway is that standard ML algorithms \"accurately predicted an officer's performance quality\". The privacy/fairness/explainability material is an implementation concern, not an evidence-backed result.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6206
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Identifying Systemic Bias in the Acquisition of Machine Learning Decision Aids for Law Enforcement Applications",
+  "url": "https://www.rand.org/pubs/perspectives/PEA862-1.html",
+  "resolved_date": "2021-01-21",
+  "date_source": "page byline (\"Published Jan 21, 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — a notional framework plus courses of action; no measured result, observed behaviour or documented process fact",
+  "reason": "Read in full. HSOAC researchers propose a five-step notional acquisition framework identifying where ML bias can enter, then list actions DHS could take (bias standards, impact assessments, continuous red-teaming). Every substantive statement is a construct or a recommendation; nothing is evidence-backed in the report.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4002
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "How AI can support the European Border and Coast Guard",
+  "url": "https://www.rand.org/randeurope/research/projects/2021/european-border-coast-guard-artificial-intelligence.html",
+  "resolved_date": "2021-03-30",
+  "date_source": "project page (\"Read the full study … 30 Mar 2021\"); the chunk index recorded 2021-03-29",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — the \"what did we find\" content is elicited expert perception and a technology landscape map, not evidence",
+  "reason": "Read in full. RAND Europe for Frontex: a STREAM expert workshop scored nine AI technology areas on perceived impact and feasibility (\"all AI technology areas were considered to bring at least a moderate improvement\", \"None were perceived to face overwhelming barriers\"), plus adoption roadmaps and recommendations. Perceptions and roadmaps, no measured or documented result.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 6771
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Detecting Conspiracy Theories on Social Media: Improving Machine Learning to Detect and Understand Online Conspiracy Theories",
+  "url": "https://www.rand.org/pubs/research_reports/RRA676-1.html",
+  "resolved_date": "2021-04-29",
+  "date_source": "page byline (\"Published Apr 29, 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§4b — the measured claims are classifier accuracy/precision/recall/MCC on a detection task; ordinary accuracy is out of scope",
+  "reason": "Closest call in the chunk: I read the 108-page report PDF, not just the page. RAND, sponsored by Google's Jigsaw, BUILDS a hybrid stance+BERT model and measures it (e.g. \"boosting classification of alien visitation conspiracy talk from 52 percent to 87 percent\"). It is a model-building study whose results are detection accuracy, not an evaluation of a deployed AI system; the remaining takeaways are about conspiracy rhetoric, not AI. The Jigsaw sponsorship makes this the item most worth re-checking if §4b is ever narrowed.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5299
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Improving Working Conditions Using Artificial Intelligence",
+  "url": "https://www.rand.org/pubs/external_publications/EP68657.html",
+  "resolved_date": "2021-06-08",
+  "date_source": "page byline (\"Posted on rand.org Jun 8, 2021\"); published on the European Parliament Think Tank website, June 2021",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — targeted literature review synthesising others' forecasts, plus policy options",
+  "reason": "Read in full. RAND Europe for the European Parliament on AI's expected labour-market impact; the outputs are a mixed picture drawn from other people's forecasts and four EU-level policy options. No AI system is tested and no original evidence-backed claim is asserted.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1739
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Improving working conditions using artificial intelligence",
+  "url": "https://www.rand.org/randeurope/research/projects/2021/improving-working-conditions-using-artificial-intelligence.html",
+  "resolved_date": "2021-06-08",
+  "date_source": "project page (\"Read the full study … 8 Jun 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — project page for the same European Parliament study recorded at EP-68657",
+  "reason": "Read in full. Same study as the preceding item; the project page restates the literature-review findings and recommendations. Even taken on its own it would fail §2 test 1 as a synthesis of others' forecasts.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4347
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Exploring the Feasibility and Utility of Machine Learning-Assisted Command and Control: Volume 1, Findings and Recommendations",
+  "url": "https://www.rand.org/pubs/research_reports/RRA263-1.html",
+  "resolved_date": "2021-07-15",
+  "date_source": "page byline (\"Published Jul 15, 2021\"); confirmed on the report PDF cover",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — methodology findings, evidence-backed by the authors' own taxonomic scoring and expert panel",
+  "reason": "FILTER FALSE NEGATIVE. The title reads as a military C2 feasibility study, but the report is an AI evaluation-methodology study: RAND built two taxonomies, scored ten games, ten C2 processes and ten AI systems through a structured SME interview protocol and an online expert panel (documented in Volume 2), and concluded that the benchmarks used to develop and demonstrate AI systems are unrepresentative of the tasks they are being procured for. A keyword filter on the title would lose a benchmark-validity finding.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8219
+  },
+  "findings": [
+   {
+    "finding": "The games and environments used to develop and demonstrate AI systems are qualitatively unrepresentative of real command-and-control processes, established by scoring ten games and ten C2 processes against a common ten-item taxonomy of problem characteristics.",
+    "finding_quote": "C2 processes are very different from many of the games and environments used to develop and demonstrate AI systems",
+    "models_systems": "Ten AI systems and ten game/benchmark environments scored against a common taxonomy; no named commercial model",
+    "institution": "RAND Corporation (Project AIR FORCE), for the U.S. Air Force",
+    "domain": "Evaluation methodology / benchmark representativeness",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: this is not an empirical model finding but a methodology finding about the representativeness of the test beds used to evaluate AI systems. Tier C, so Action Trackable is left blank.",
+    "finding_type": "methodology finding",
+    "scope": "AI/ML systems proposed for U.S. Air Force command and control, and the game environments used to demonstrate them",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA200/RRA263-1/RAND_RRA263-1.pdf",
+    "access_type": "public report / open access"
+   },
+   {
+    "finding": "Superhuman game-playing performance depends on exploitable regularity in the environment, an assumption that adversary action and real-world conditions break in military tasks, so demonstrated game performance does not transfer.",
+    "finding_quote": "Game-playing algorithms exploit regularity to achieve superhuman performance, but nature and the adversary intervene to break this simplifying assumption in military tasks.",
+    "models_systems": "Game-playing AI systems generally; no named commercial model",
+    "institution": "RAND Corporation (Project AIR FORCE), for the U.S. Air Force",
+    "domain": "Generalisation / transfer of demonstrated capability",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: an analytic conclusion about why demonstrated capability fails to transfer, drawn from the authors' taxonomy work and literature review rather than from their own measurement of a model. Tier C, so Action Trackable is left blank.",
+    "finding_type": "methodology finding",
+    "scope": "AI systems whose capability claims rest on game-environment demonstrations",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA200/RRA263-1/RAND_RRA263-1.pdf",
+    "access_type": "public report / open access"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Exploring the Feasibility and Utility of Machine Learning-Assisted Command and Control: Volume 2, Supporting Technical Analysis",
+  "url": "https://www.rand.org/pubs/research_reports/RRA263-2.html",
+  "resolved_date": "2021-07-15",
+  "date_source": "page byline (\"Published Jul 15, 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — supporting technical annex to Volume 1, which carries the findings",
+  "reason": "Read in full. Volume 2 documents the taxonomies, the structured interview protocol, the expert panel and three case studies that back Volume 1's conclusions. Same study, same date; Volume 1 is the fuller primary source and holds the rows.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4688
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "A Pilot Study Investigating STEM Learners' Ability to Decipher AI-generated Video",
+  "url": "https://www.rand.org/pubs/external_publications/EP68701.html",
+  "resolved_date": "2021-08-12",
+  "date_source": "RAND page byline (\"Posted on rand.org Aug 12, 2021\"); underlying paper ASEE 2021 (peer.asee.org/36601)",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — measured human-detection results for deepfake video, asserted by named evaluators in a public conference paper",
+  "reason": "FILTER FALSE NEGATIVE, and the clearest one. The RAND landing page states no result whatsoever (only \"Knowledge gained from this study will help ...\"), so title triage and abstract triage both had nothing to catch. The RAND page 403-free but the ASEE record 403s; peer.asee.org/36601.pdf returns 200 and contains a randomised deepfake-detection experiment: First Order Motion Model reenactment videos of celebrities making false climate-change statements, shown to 37 middle-school and 13 undergraduate participants.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2604
+  },
+  "findings": [
+   {
+    "finding": "Middle-school STEM learners identified First Order Motion Model deepfake videos correctly only 46.8 percent of the time — at or below chance and below their 52.2 percent rate on authentic videos.",
+    "finding_quote": "Challenger Center respondents were able to correctly identify the authentic video 52.2 % of the time, while respondents were able to correctly identify the manipulated videos 46.8 % of the time.",
+    "models_systems": "First Order Motion Model (open-source reenactment generative neural network) used to synthesise face-swapped celebrity video",
+    "institution": "RAND Corporation with Carnegie Mellon University and the Challenger Center; published by the American Society for Engineering Education",
+    "domain": "Synthetic media / deepfakes and disinformation",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 passes: a measured result about the deceptive capability of a generative model's output. Gate 2 fails on (b) — the model is an open-source academic reenactment model, not a specific company's model — and on (c), since the authors state the differences are statistically insignificant, making this an inconclusive pilot result. Tier B, so action_trackable is encoded \"no\".",
+    "finding_type": "empirical model finding",
+    "scope": "AI-generated video presented to K-12 and undergraduate STEM learners",
+    "source_url": "https://peer.asee.org/36601.pdf",
+    "access_type": "public conference paper / open access"
+   },
+   {
+    "finding": "Detection ability varied sharply by population: undergraduate engineering students correctly identified manipulated videos 84.0 percent of the time versus 46.8 percent for middle-school students, with no undergraduate ever misidentifying a manipulated video as authentic.",
+    "finding_quote": "Compared with the Challenger Center’s result, Carnegie Mellon University’s result shows a higher success rate in identifying both the authentic videos (63.0 % vs 52.2 %) and the manipulated videos (84.0 % vs 46.8 %).",
+    "models_systems": "First Order Motion Model (open-source reenactment generative neural network)",
+    "institution": "RAND Corporation with Carnegie Mellon University and the Challenger Center; published by the American Society for Engineering Education",
+    "domain": "Synthetic media / deepfakes and disinformation",
+    "eval_trackable": "yes",
+    "action_trackable": "no",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 passes: a measured comparison of human detection of a model's output. Gate 2 fails on (b) no company model is named and on (c) this is a comparative ranking across participant populations, explicitly excluded from Tier A. Tier B, so action_trackable is encoded \"no\".",
+    "finding_type": "empirical model finding",
+    "scope": "AI-generated video presented to K-12 versus undergraduate STEM learners",
+    "source_url": "https://peer.asee.org/36601.pdf",
+    "access_type": "public conference paper / open access"
+   },
+   {
+    "finding": "The pilot was underpowered: none of the differences in correct identification, incorrect identification or \"I can't tell\" responses reached statistical significance across 50 participants judging four videos each.",
+    "finding_quote": "No differences in the probability of correctly or incorrectly identifying a video’s authenticity or in responding “I can’t tell” are statistically significant.",
+    "models_systems": "First Order Motion Model deepfake stimuli; 37 middle-school and 13 undergraduate participants",
+    "institution": "RAND Corporation with Carnegie Mellon University and the Challenger Center; published by the American Society for Engineering Education",
+    "domain": "Evaluation methodology / statistical power in human-subject deepfake studies",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: this is a documented process fact about the study design and its power, not an empirical model finding. Tier C, so Action Trackable is left blank.",
+    "finding_type": "methodology finding",
+    "scope": "Human-subject deepfake detection experiments",
+    "source_url": "https://peer.asee.org/36601.pdf",
+    "access_type": "public conference paper / open access"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Narrative Review and Evidence Mapping: Artificial Intelligence in Clinical Care",
+  "url": "https://www.rand.org/pubs/external_publications/EP68705.html",
+  "resolved_date": "2021-08-26",
+  "date_source": "RAND page byline (\"Posted on rand.org Aug 26, 2021\"); PCORI Emerging Technologies and Therapeutics Report, 2021",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — governance/process findings: the evaluators' own systematic characterisation of the evidence base for deployed clinical AI",
+  "reason": "FILTER FALSE NEGATIVE. \"Narrative Review and Evidence Mapping\" reads as secondary literature and was dropped twice on that basis, but the 171-page PCORI report contains RAND's own systematic census of clinical AI deployment and of the evaluation evidence supporting it — how many applications are in use, how many are FDA-cleared, and what fraction have any peer-reviewed or randomised evidence. Those are original governance findings about the third-party evaluation ecosystem, not restatements of other people's results.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2912
+  },
+  "findings": [
+   {
+    "finding": "A systematic census found 109 non-imaging AI applications already in clinical use or ready for near-future adoption, most addressing cardiovascular disease, diabetes or general patient care.",
+    "finding_quote": "We found 109 non-imaging-based AI applications in current or potential near-future use.",
+    "models_systems": "109 named commercial and institutional clinical AI products/tools (non-imaging)",
+    "institution": "RAND Corporation (Girosi, Mann, Kareddy), commissioned by the Patient-Centered Outcomes Research Institute",
+    "domain": "Clinical AI deployment / evidence base",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a documented process fact about how many AI products are deployed, not a measurement of any model's behaviour. Tier C, so Action Trackable is left blank.",
+    "finding_type": "governance/process finding",
+    "scope": "Non-imaging AI applications in clinical care",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/external_publications/EP60000/EP68705/RAND_EP68705.pdf",
+    "access_type": "public report / open access"
+   },
+   {
+    "finding": "Only a fifth of the clinical AI applications identified had been cleared by the FDA; the rest were either in use without clearance or still in development.",
+    "finding_quote": "Out of all the applications, only 20% were cleared for use by the FDA; the remaining applications either were in use without FDA clearance or were still in development for potential near-future use.",
+    "models_systems": "109 clinical AI applications (non-imaging)",
+    "institution": "RAND Corporation (Girosi, Mann, Kareddy), commissioned by the Patient-Centered Outcomes Research Institute",
+    "domain": "Regulatory oversight of clinical AI",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a documented regulatory-status fact about a population of products, not an empirical model finding. Tier C, so Action Trackable is left blank.",
+    "finding_type": "governance/process finding",
+    "scope": "Non-imaging AI applications in clinical care, U.S. FDA clearance status",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/external_publications/EP60000/EP68705/RAND_EP68705.pdf",
+    "access_type": "public report / open access"
+   },
+   {
+    "finding": "Of 173 evaluation studies collected, only about a quarter were randomised controlled trials reporting a health outcome, and roughly half reported no health outcome at all, measuring only the accuracy or usability of the AI method.",
+    "finding_quote": "only a quarter of the evaluations were rigorous randomized control trials in which the effect of an AI application on a health-related outcome was reported.",
+    "models_systems": "173 evaluation studies covering 94 of 109 clinical AI applications",
+    "institution": "RAND Corporation (Girosi, Mann, Kareddy), commissioned by the Patient-Centered Outcomes Research Institute",
+    "domain": "Evaluation methodology / strength of evidence",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a measured characterisation of the evaluation literature, not of a model. Tier C, so Action Trackable is left blank.",
+    "finding_type": "methodology finding",
+    "scope": "Evaluation studies of non-imaging clinical AI applications",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/external_publications/EP60000/EP68705/RAND_EP68705.pdf",
+    "access_type": "public report / open access"
+   },
+   {
+    "finding": "Half of the evaluation evidence supporting clinical AI applications was not peer reviewed, consisting instead of grey literature, regulatory or trial documents and vendors' own web pages.",
+    "finding_quote": "only half of the evaluation studies were published in peer-reviewed journals; the rest was a combination of non-peer-reviewed papers, FDA or clinical trial documents, and web pages of commercial products.",
+    "models_systems": "173 evaluation studies covering 94 of 109 clinical AI applications",
+    "institution": "RAND Corporation (Girosi, Mann, Kareddy), commissioned by the Patient-Centered Outcomes Research Institute",
+    "domain": "Evaluation quality / evidence provenance",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a documented fact about the provenance and quality of the evidence base rather than a model measurement. Tier C, so Action Trackable is left blank.",
+    "finding_type": "methodology finding",
+    "scope": "Evaluation studies of non-imaging clinical AI applications",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/external_publications/EP60000/EP68705/RAND_EP68705.pdf",
+    "access_type": "public report / open access"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "AI Tools for Military Readiness",
+  "url": "https://www.rand.org/pubs/research_reports/RRA449-1.html",
+  "resolved_date": "2021-09-20",
+  "date_source": "page byline (\"Published Sep 20, 2021\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§4b — every measured takeaway is ordinary predictive accuracy of models RAND built",
+  "reason": "Read in full. RAND trains deep neural networks on unit readiness narratives; the results are accuracy figures (\"correctly calculate which of four readiness levels a unit would report 75 percent of the time\"), an embeddings comparison and a layer-count ablation. Model-building with performance benchmarking, no safety-relevant threshold and no third-party AI system under evaluation.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5460
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Artificial Intelligence for Wargaming and Modeling",
+  "url": "https://www.rand.org/pubs/external_publications/EP68860.html",
+  "resolved_date": "2022-02-15",
+  "date_source": "RAND page byline (\"Posted on rand.org Feb 15, 2022\"); Journal of Defense Modeling and Simulation, 2022",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — a discussion paper of design proposals and implications, not evidence",
+  "reason": "Read in full. Davis and Bracken discuss how AI could be used in political-military modelling and wargaming of WMD conflict and what AI content should recognise about escalation risk. Every claim is a design proposal or normative statement; nothing is measured or observed.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2258
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "U.S. Air Force Enlisted Classification and Reclassification: Potential Improvements Using Machine Learning and Optimization Models",
+  "url": "https://www.rand.org/pubs/research_reports/RRA284-1.html",
+  "resolved_date": "2022-03-14",
+  "date_source": "page byline (\"Published Mar 14, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§4b — measured claims are prediction-error and model-family comparisons; ordinary accuracy is out of scope",
+  "reason": "Read in full. A personnel-policy study using ML models RAND built to predict initial-skills-training success; the empirical takeaways are that model families differed by under 1 percent and that adding predictors cut prediction error by about 5 percent. No AI system is under evaluation and no safety-relevant property is measured.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7768
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Airline Security Through Artificial Intelligence: How the Transportation Security Administration Can Use Machine Learning to Improve the Electronic Baggage Screening Program",
+  "url": "https://www.rand.org/pubs/perspectives/PEA731-1.html",
+  "resolved_date": "2022-03-22",
+  "date_source": "page byline (\"Published Mar 22, 2022\"); confirmed on the PDF cover (\"March 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 tests 1 and 2 — expert assessment plus citations to others' work; nothing evidence-backed in this report",
+  "reason": "Read the full 24-page PDF because the adversarial-examples and VVT&E sections looked promising. They are: the adversarial-robustness material cites Gilmer et al., Lu et al. and Hartnett et al. (others' work, §2 test 1), and the claim that \"there are no widely accepted and systematic methods for doing validation, verification, testing, and evaluation (VVT&E) on the type of black-box applications produced by statistical ML algorithms\" is asserted without evidence in this report. The Perspective also states much of it is drawn from non-publicly available documentation.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3715
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Developing a Concept of Operations for Joint All-Domain Command and Control with an Embedded Role for Artificial Intelligence Applications",
+  "url": "https://www.rand.org/pubs/external_publications/EP68900.html",
+  "resolved_date": "2022-03-29",
+  "date_source": "RAND page byline (\"Posted on rand.org Mar 29, 2022\"); underlying paper delivered at the Dubai International Air Chiefs' Conference, 2021",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — a cautionary conops paper of needs and paths forward, not evidence",
+  "reason": "Read in full. Argues that an \"information foundation\" must precede AI/ML for JADC2 and cautions that gaming successes will not transfer given incomplete information, poor data quality and adversary action. The transfer caution is the same claim Volume 1 of RR-A263 backs with taxonomy work, but here it is asserted as commentary with no supporting analysis.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3140
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Labelling initiatives, codes of conduct and other self-regulatory mechanisms for artificial intelligence applications: From principles to practice and considerations for the future",
+  "url": "https://www.rand.org/pubs/research_reports/RRA1773-1.html",
+  "resolved_date": "2022-04-25",
+  "date_source": "page byline (\"Published Apr 25, 2022\")",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — governance/process findings from the evaluators' own systematic mapping of AI assurance mechanisms",
+  "reason": "FILTER FALSE NEGATIVE. The title names no model, no company and no evaluation, so it carried no signal, but this is a census of the AI assurance and third-party audit ecosystem: RAND Europe identified and characterised 40 voluntary self-regulatory mechanisms (including certification schemes, kitemarks, seals and two named audit processes) through literature review, crowdsourcing and interviews. Read the 338k-character full report to confirm the counts behind the landing-page takeaways.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7818
+  },
+  "findings": [
+   {
+    "finding": "A systematic mapping identified 40 voluntary self-regulatory mechanisms for AI — 24 labelling/certification-type instruments (including 11 certification schemes and two audit processes) and 16 codes of conduct.",
+    "finding_quote": "in total, we identified 40 initiatives in the study across the different categories",
+    "models_systems": "40 AI labelling, certification, kitemark, seal, audit and code-of-conduct initiatives; no model under test",
+    "institution": "RAND Europe (d'Angelo, Flanagan, Motsi-Omoijiade, Virdee, Gunashekar)",
+    "domain": "AI assurance / self-regulation and certification",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a documented process fact about the population of governance instruments, not an empirical model finding. Tier C, so Action Trackable is left blank.",
+    "finding_type": "governance/process finding",
+    "scope": "Voluntary, self-regulatory assurance mechanisms for AI applications, across sectors and jurisdictions",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA1700/RRA1773-1/RAND_RRA1773-1.pdf",
+    "access_type": "public report / open access"
+   },
+   {
+    "finding": "The identified assurance mechanisms range from conceptual proposals to operational schemes, but most have not achieved widespread acceptance or use.",
+    "finding_quote": "The initiatives span different stages of development, from early stage (and still conceptual) proposed mechanisms to operational examples, but many have yet to gain widespread acceptance and use.",
+    "models_systems": "40 AI labelling, certification and code-of-conduct initiatives; no model under test",
+    "institution": "RAND Europe (d'Angelo, Flanagan, Motsi-Omoijiade, Virdee, Gunashekar)",
+    "domain": "AI assurance / adoption of self-regulation",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: an observed state-of-adoption fact about governance instruments, not a model measurement. Tier C, so Action Trackable is left blank.",
+    "finding_type": "governance/process finding",
+    "scope": "Voluntary, self-regulatory assurance mechanisms for AI applications",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA1700/RRA1773-1/RAND_RRA1773-1.pdf",
+    "access_type": "public report / open access"
+   },
+   {
+    "finding": "Most of these schemes assess AI applications against ethical and legal criteria emphasising safety, human rights and societal values, derived from pre-existing high-level ethical frameworks rather than from measurable technical criteria.",
+    "finding_quote": "Many of the initiatives assess AI applications against ethical and legal criteria that emphasise safety, human rights and societal values, and are often based on principles that are informed by existing high-level ethical frameworks.",
+    "models_systems": "40 AI labelling, certification and code-of-conduct initiatives; no model under test",
+    "institution": "RAND Europe (d'Angelo, Flanagan, Motsi-Omoijiade, Virdee, Gunashekar)",
+    "domain": "AI assurance / assessment criteria",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a documented characterisation of what these instruments assess against, not an empirical model finding. Tier C, so Action Trackable is left blank.",
+    "finding_type": "governance/process finding",
+    "scope": "Assessment criteria used by voluntary AI assurance schemes",
+    "source_url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA1700/RRA1773-1/RAND_RRA1773-1.pdf",
+    "access_type": "public report / open access"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Exploring ways to regulate and build trust in AI",
+  "url": "https://www.rand.org/randeurope/research/projects/2022/exploring-ways-to-regulate-and-build-trust-in-artificial-intelli.html",
+  "resolved_date": "2022-04-25",
+  "date_source": "date of the report the project page presents (RR-A1773-1, \"Apr 25, 2022\"); the project page itself carries no byline",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — project page for RR-A1773-1, which is the primary and fuller source",
+  "reason": "Read in full. Restates the same mapping, opportunities and challenges as RR-A1773-1 in web form. Same evaluator, same study, same date; the report holds the rows.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 9695
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Exploring the Civil-Military Divide over Artificial Intelligence",
+  "url": "https://www.rand.org/pubs/research_reports/RRA1498-1.html",
+  "resolved_date": "2022-05-11",
+  "date_source": "page byline (\"Published May 11, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — measured, but the object of measurement is human attitudes, not an AI system, its evaluation or its governance process",
+  "reason": "Read in full. A rigorous survey of software engineers at Silicon Valley firms and defence contractors about comfort with military AI use cases (about a third uncomfortable with lethal use, ~90 percent supporting defensive force). Real evidence, but it is workforce-attitude research: no AI system is examined and no AI oversight process is documented.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7940
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Virtual roundtable on labelling initiatives, codes of conduct and other voluntary mechanisms to build trustworthy artificial intelligence (AI) systems: Summary report",
+  "url": "https://www.rand.org/pubs/conf_proceedings/CFA1773-1.html",
+  "resolved_date": "2022-06-09",
+  "date_source": "page byline (\"Published Jun 9, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — roundtable write-up of RR-A1773-1's findings; the report is the earlier, fuller primary source",
+  "reason": "Read in full. Summarises a 27 April 2022 roundtable convened to discuss RR-A1773-1, capturing participants' forward-looking views on the draft EU AI Act. Would also fail §2 test 1 on its own as a record of participants' opinions. Prepared for Microsoft, which does not change the analysis since RAND Europe is the named evaluator.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4423
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Artificial Intelligence, Deepfakes, and Disinformation: A Primer",
+  "url": "https://www.rand.org/pubs/perspectives/PEA1043-1.html",
+  "resolved_date": "2022-07-06",
+  "date_source": "page byline (\"Published Jul 6, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 1 — explicitly a review of published literature plus recommendations",
+  "reason": "Read in full. An overview for policymakers of deepfake technology, threats, mitigations and detection efforts, stated on its face to be \"based on a review of published literature on deepfake- and AI-disinformation technologies\" with expert input. Same domain as the includable ASEE pilot study, but a summary of others' work, so it fails §2 test 1.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3030
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Artificial Intelligence Applications Used in the Clinical Response to COVID-19: A Scoping Review",
+  "url": "https://www.rand.org/pubs/external_publications/EP69042.html",
+  "resolved_date": "2022-10-17",
+  "date_source": "primary source byline (PLOS Digital Health, \"Published: October 17, 2022\"); the RAND record posts it 2022-10-19",
+  "in_window": true,
+  "decision": "INCLUDED",
+  "rule_cited": "§2 — governance/process and methodology findings from the evaluators' own systematic search and extraction",
+  "reason": "FILTER FALSE NEGATIVE, and the most consequential in the chunk. \"A Scoping Review\" reads as secondary literature, but the meta-level results are RAND's own: 66 deployed clinical AI applications found, 24 with no publicly available evidence at all, developer-affiliated evaluations supporting use 59 times out of 60 against 14 of 30 independent ones, and zero randomised trials of health impact. That is a direct, measured finding about the independence and adequacy of third-party AI evaluation — exactly the subject this dataset tracks.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2990
+  },
+  "findings": [
+   {
+    "finding": "Of 66 AI applications deployed in the clinical response to COVID-19, 24 had no publicly available evaluation evidence of any kind.",
+    "finding_quote": "39 applications received support from one or more evaluations. We found no publicly available evidence on the other 24 applications.",
+    "models_systems": "66 named clinical AI applications performing diagnostic, prognostic and triage functions during COVID-19",
+    "institution": "RAND Corporation (Mann, Berdahl, Baker, Girosi) with Cedars-Sinai; published in PLOS Digital Health",
+    "domain": "Clinical AI deployment / evidence coverage",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a documented process fact about the presence or absence of evaluation evidence, not a measurement of model behaviour. Tier C, so Action Trackable is left blank.",
+    "finding_type": "governance/process finding",
+    "scope": "AI applications used in clinical care during the COVID-19 pandemic response",
+    "source_url": "https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000132",
+    "access_type": "peer-reviewed journal article / open access"
+   },
+   {
+    "finding": "Evaluations written by authors affiliated with the application developer supported the application in 59 of 60 cases, whereas independent evaluations supported use in only 14 of 30, were neutral in 7 and opposed use in 9.",
+    "finding_quote": "60 studies were written by authors affiliated with application developers; all but one supported application use. We found 30 independent evaluation studies, of which 27 were peer-reviewed. 14 of the independent evaluations supported application use, 7 were neutral, and 9 opposed.",
+    "models_systems": "90 evaluation studies of 66 clinical AI applications",
+    "institution": "RAND Corporation (Mann, Berdahl, Baker, Girosi) with Cedars-Sinai; published in PLOS Digital Health",
+    "domain": "Evaluator independence / conflict of interest in AI evaluation",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: this is a measured property of the evaluation literature and of evaluator independence, not an empirical finding about a model. Tier C, so Action Trackable is left blank.",
+    "finding_type": "methodology finding",
+    "scope": "Evaluation studies of clinical AI applications, by author affiliation",
+    "source_url": "https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000132",
+    "access_type": "peer-reviewed journal article / open access"
+   },
+   {
+    "finding": "Only one of 90 evaluation studies measured the effect of an AI application's use on patient health outcomes, and no randomised controlled trial of any of the 66 applications was found.",
+    "finding_quote": "Only a single study, which used a pre-post study design and measured mortality rates, measured the impact of an application’s use on patient health outcomes. We found no randomized controlled trials that measured the impact of any application’s use on health outcomes.",
+    "models_systems": "90 evaluation studies of 66 clinical AI applications",
+    "institution": "RAND Corporation (Mann, Berdahl, Baker, Girosi) with Cedars-Sinai; published in PLOS Digital Health",
+    "domain": "Evaluation methodology / outcome measurement",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a documented fact about what the evaluation literature measured, not a model measurement. Tier C, so Action Trackable is left blank.",
+    "finding_type": "methodology finding",
+    "scope": "Evaluation studies of clinical AI applications used during COVID-19",
+    "source_url": "https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000132",
+    "access_type": "peer-reviewed journal article / open access"
+   },
+   {
+    "finding": "Evaluation coverage was worst for the highest-stakes categories: over a third of applications had no evaluations at all, concentrated among symptom checkers and patient-deterioration tools used to inform care-escalation decisions for critically ill patients.",
+    "finding_quote": "We found no evaluations for over a third of applications, including most applications within the symptom checker and patient deterioration categories. The absence of evaluations on the latter is particularly concerning, given that such applications are often used to inform care escalation decisions for patients in critical condition.",
+    "models_systems": "Symptom checker and patient deterioration prediction applications among the 66 identified",
+    "institution": "RAND Corporation (Mann, Berdahl, Baker, Girosi) with Cedars-Sinai; published in PLOS Digital Health",
+    "domain": "Clinical AI oversight / high-stakes deployment without evaluation",
+    "eval_trackable": "no",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: an evidence-coverage fact about a class of deployed products, not an empirical model finding, so Gate 2 is not reached even though the authors call the gap concerning. Tier C, so Action Trackable is left blank.",
+    "finding_type": "governance/process finding",
+    "scope": "Symptom checkers and patient deterioration applications deployed in clinical care",
+    "source_url": "https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000132",
+    "access_type": "peer-reviewed journal article / open access"
+   }
+  ]
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Machine Learning in Public Policy: The Perils and the Promise of Interpretability",
+  "url": "https://www.rand.org/pubs/perspectives/PEA828-1.html",
+  "resolved_date": "2022-11-15",
+  "date_source": "page byline (\"Published Nov 15, 2022\")",
+  "in_window": true,
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — an overview and three recommendations; no measured result or documented process fact",
+  "reason": "Read in full. A 12-page Perspective giving an overview of ML and arguing for interpretability, closing with three recommendations (invest in data, expect interpretability, leverage interpretable ML). The interpretability topic is in scope but nothing here is evidence-backed.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3236
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Scale Engineering Team",
+  "url": "https://scale.com/blog/scale-engineering-team",
+  "resolved_date": "2018-06-09",
+  "date_source": "page byline (\"By Alexandr Wang · June 9, 2018\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — no claim about any AI system; §1 company self-report on a company venue with no external evaluator named",
+  "reason": "Read in full. A recruiting post introducing eleven Scale engineers and their prior employers. Contains nothing about AI systems, evaluation or governance.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 4104
+  },
+  "findings": []
+ },
+ {
+  "venue": "Scale AI",
+  "title": "Series B",
+  "url": "https://scale.com/blog/series-b",
+  "resolved_date": "2018-08-08",
+  "date_source": "page byline (\"By Alexandr Wang · August 8, 2018\")",
+  "in_window": true,
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — a funding announcement; §1 company self-report with no external evaluator named",
+  "reason": "Read in full. Announces an $18M Series B and describes Scale's data-labelling business and customers (GM Cruise, Lyft, Zoox, nuTonomy). Marketing claims about labelled data volume, no evaluation of any AI system.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3480
+  },
+  "findings": []
+ }
+]

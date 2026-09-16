@@ -1,0 +1,1199 @@
+[
+  {
+    "finding_id": "SECUREBIO-2026-04-BIO3",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom/blog — enumerated via openai.com/sitemap.xml (publication, release, research, safety, security, global-affairs, milestone, product, engineering, disrupting-malicious-uses = 746 URLs); 331 safety/security/global-affairs pages downloaded and grepped",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "No standalone newsroom post responding to SecureBio's GPT-5.5 assessment; launch-safety content routes to the system card / Deployment Safety Hub."
+        },
+        {
+          "source": "(2) GPT-5.5 System Card (launch card = canonical response location for a pre-deployment evaluation), section 9.1.1.8 'External Evaluation for Bio Capabilities - SecureBio'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluation-for-bio-capabilities---securebio",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Card published 2026-04-23 (updated 2026-04-24). Names SecureBio, records the 2-9 April assessment of two pre-release checkpoints with content filtering disabled, and reproduces SecureBio's qualitative conclusions."
+        },
+        {
+          "source": "(2b) Subsequent cards in the same family — GPT-5.5-Instant, GPT-5.6-Preview, GPT-5.6, GPT-5.6 August Update, GPT-Rosalind-5.5, GPT-Live, Sora 2 (all 351 hub pages downloaded and grepped)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/external-evaluation-for-bio-capabilities---securebio",
+          "checked_date": "2026-08-28",
+          "result": "SecureBio continues to appear as a named bio evaluator in later cards; no retraction or revision of the GPT-5.5 bio determination."
+        },
+        {
+          "source": "(3) OpenAI Deployment Safety Hub — biological-and-chemical and bio-safeguards-testing pages",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the High-capability determination and the activated Preparedness safeguards."
+        },
+        {
+          "source": "(4) Official OpenAI announcements — Deployment Safety Hub index and openai.com global-affairs/safety indexes",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "No further primary statement beyond the card and hub pages."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'SecureBio GPT-5.5'",
+          "url": "https://news.google.com/rss/search?q=SecureBio+GPT-5.5",
+          "checked_date": "2026-08-28",
+          "result": "1 item (Tech Times, 2026-06-14, on GPT-Rosalind trusted access); no additional OpenAI primary source surfaced. See notes on degraded search."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluation-for-bio-capabilities---securebio",
+      "verbatim": "In qualitative manual assessment through open-ended conversations, SecureBio found that the evaluated checkpoints demonstrated a relatively robust threshold along the conceptual-practical axis. The models consistently recognized high-risk prompts and refused to provide in-depth, practical assistance in favor of succinct, high-level direction.",
+      "response_date": "2026-04-23",
+      "reasoning": "Re-verified against the live GPT-5.5 System Card / Deployment Safety Hub on 2026-08-28. OpenAI names SecureBio (section 9.1.1.8) and relays its qualitative sequence-design observation, adding 'Overall, we found that the checkpoint models regularly redirected dual-use queries towards safer and less hazardous responses.' Read strictly, the card references this particular behaviour and specifies no action targeted at it: the bio/chem chapter ties the High-capability determination and the activated Preparedness safeguards to the capability-threshold evaluations (which are separately coded as BIO5 and BIO7), not to this qualitative observation. That matches the rubric's 'the problem is referenced, no action specified' -> Acknowledged. Explicit attribution: OpenAI names the evaluator. Lag 0 (coordinated disclosure, pre-deployment)."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'SecureBio', 'GPT-5.5', 'virus chimera', 'nucleotide sequence design', 'Virology Capabilities Test'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'Mythos') every returned contribution was general AI-policy debate that does not reference this finding, report or result, and so is excluded under the 'general discussion does not count' rule. gov.uk search API returned 0. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'SecureBio' -> European Biotech Act staff working documents; 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage located that reports this specific sequence-design sub-finding. Google News RSS 'SecureBio GPT-5.5' (checked 2026-08-28) returned one item, Tech Times 2026-06-14, 'OpenAI's Rosalind Biodefense Opens GPT-Rosalind to Vetted Partners: Dual-Use Fears Mount', which concerns a different model."
+      ],
+      "academic": [
+        "OpenAlex: 'Virology Capabilities Test (VCT): A Multimodal Virology Q&A Benchmark' (2025-04-21, 2 citations) — the underlying SecureBio benchmark, not a citation of this assessment. No academic citation of the 2026-04-23 pre-release assessment located (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Judgement call recorded for the reviewer: a Substantive reading is available if one credits the domain-wide High-capability determination plus activated Preparedness safeguards (and the safeguard stack that 'blocked the identified and verified high-severity biological misuse jailbreaks') as addressing this behaviour too — SecureBio tested with API-level and system-level bio content filters disabled, so the deployed safeguards are the operative mitigation. I did not make that change, because the card attaches those actions to the capability evaluations rather than to this qualitative observation, and the dataset already codes the threshold findings (BIO5/BIO7) Substantive on exactly that evidence. Flagging so the split between BIO3 and BIO5/BIO7 is a deliberate, documented distinction rather than an inconsistency. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-04-BIO5",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom/blog — enumerated via openai.com/sitemap.xml (publication, release, research, safety, security, global-affairs, milestone, product, engineering, disrupting-malicious-uses = 746 URLs); 331 safety/security/global-affairs pages downloaded and grepped",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "No standalone newsroom post responding to SecureBio's GPT-5.5 assessment; launch-safety content routes to the system card / Deployment Safety Hub."
+        },
+        {
+          "source": "(2) GPT-5.5 System Card (launch card = canonical response location for a pre-deployment evaluation), section 9.1.1.8 'External Evaluation for Bio Capabilities - SecureBio'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluation-for-bio-capabilities---securebio",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Card published 2026-04-23 (updated 2026-04-24). Names SecureBio, records the 2-9 April assessment of two pre-release checkpoints with content filtering disabled, and reproduces SecureBio's qualitative conclusions."
+        },
+        {
+          "source": "(2b) Subsequent cards in the same family — GPT-5.5-Instant, GPT-5.6-Preview, GPT-5.6, GPT-5.6 August Update, GPT-Rosalind-5.5, GPT-Live, Sora 2 (all 351 hub pages downloaded and grepped)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/external-evaluation-for-bio-capabilities---securebio",
+          "checked_date": "2026-08-28",
+          "result": "SecureBio continues to appear as a named bio evaluator in later cards; no retraction or revision of the GPT-5.5 bio determination."
+        },
+        {
+          "source": "(3) OpenAI Deployment Safety Hub — biological-and-chemical and bio-safeguards-testing pages",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the High-capability determination and the activated Preparedness safeguards."
+        },
+        {
+          "source": "(4) Official OpenAI announcements — Deployment Safety Hub index and openai.com global-affairs/safety indexes",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "No further primary statement beyond the card and hub pages."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'SecureBio GPT-5.5'",
+          "url": "https://news.google.com/rss/search?q=SecureBio+GPT-5.5",
+          "checked_date": "2026-08-28",
+          "result": "1 item (Tech Times, 2026-06-14, on GPT-Rosalind trusted access); no additional OpenAI primary source surfaced. See notes on degraded search."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+      "verbatim": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards.",
+      "response_date": "2026-04-23",
+      "reasoning": "Re-verified 2026-08-28 against the live card. Section 9.1.1 opens with the quoted determination; section 9.3.1 repeats it as 'We are treating GPT-5.5 as High capability in the biological and chemical domain, and activating the associated safeguards'; section 9.3.1.1 records that 'In the final launch configuration, the safeguard stack blocked the identified and verified high-severity biological misuse jailbreaks from these campaigns.' SecureBio's assessment is reported in the same chapter at 9.1.1.8. A capability classification plus activation of a named safeguard regime is a specific deployment decision addressing the threshold-crossing scores in this finding -> Substantive. OpenAI names the evaluator -> Explicit attribution. Lag 0 (coordinated pre-deployment disclosure)."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'SecureBio', 'GPT-5.5', 'VCT', 'MBCT', 'HPCT', 'WCB', 'screening evasion'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'Mythos') every returned contribution was general AI-policy debate that does not reference this finding, report or result, and so is excluded under the 'general discussion does not count' rule. gov.uk search API returned 0. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'SecureBio' -> European Biotech Act staff working documents; 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No independent coverage of SecureBio's GPT-5.5 benchmark scores located via Google News RSS (checked 2026-08-28)."
+      ],
+      "academic": [
+        "No academic citation of the 2026-04-23 SecureBio pre-release assessment located in OpenAlex or Semantic Scholar (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "The specific percentages in the finding (VCT 52.0, MBCT 56.2, HPCT 64.7, WCB 53.2, 23% refusal) come from SecureBio's own report; OpenAI's card does not reproduce them, so they were not re-verified here — only the company response was. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-04-BIO7",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom/blog — enumerated via openai.com/sitemap.xml (publication, release, research, safety, security, global-affairs, milestone, product, engineering, disrupting-malicious-uses = 746 URLs); 331 safety/security/global-affairs pages downloaded and grepped",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "No standalone newsroom post responding to SecureBio's GPT-5.5 assessment; launch-safety content routes to the system card / Deployment Safety Hub."
+        },
+        {
+          "source": "(2) GPT-5.5 System Card (launch card = canonical response location for a pre-deployment evaluation), section 9.1.1.8 'External Evaluation for Bio Capabilities - SecureBio'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluation-for-bio-capabilities---securebio",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Card published 2026-04-23 (updated 2026-04-24). Names SecureBio, records the 2-9 April assessment of two pre-release checkpoints with content filtering disabled, and reproduces SecureBio's qualitative conclusions."
+        },
+        {
+          "source": "(2b) Subsequent cards in the same family — GPT-5.5-Instant, GPT-5.6-Preview, GPT-5.6, GPT-5.6 August Update, GPT-Rosalind-5.5, GPT-Live, Sora 2 (all 351 hub pages downloaded and grepped)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/external-evaluation-for-bio-capabilities---securebio",
+          "checked_date": "2026-08-28",
+          "result": "SecureBio continues to appear as a named bio evaluator in later cards; no retraction or revision of the GPT-5.5 bio determination."
+        },
+        {
+          "source": "(3) OpenAI Deployment Safety Hub — biological-and-chemical and bio-safeguards-testing pages",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Records the High-capability determination and the activated Preparedness safeguards."
+        },
+        {
+          "source": "(4) Official OpenAI announcements — Deployment Safety Hub index and openai.com global-affairs/safety indexes",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "No further primary statement beyond the card and hub pages."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'SecureBio GPT-5.5'",
+          "url": "https://news.google.com/rss/search?q=SecureBio+GPT-5.5",
+          "checked_date": "2026-08-28",
+          "result": "1 item (Tech Times, 2026-06-14, on GPT-Rosalind trusted access); no additional OpenAI primary source surfaced. See notes on degraded search."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluation-for-bio-capabilities---securebio",
+      "verbatim": "SecureBio did not systematically assess how robust the mitigations are to jailbreaking, so it remained uncertain whether safeguards are robust to circumvention by a highly motivated user.",
+      "response_date": "2026-04-23",
+      "reasoning": "Re-verified 2026-08-28. Section 9.1.1.8 names SecureBio, reports the ABC-Bench task-based results ('the model showed strong performance on ABC-Bench but did not surpass released frontier models'), and records the robustness caveat quoted above; the same chapter carries the High-capability determination and activated Preparedness safeguards, and 9.3.1.1 records the launch-configuration safeguard stack blocking verified high-severity bio misuse jailbreaks. Specific deployment decision plus safeguard activation -> Substantive; evaluator named -> Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'SecureBio', 'ABC-Bench', 'GPT-5.5 screening evasion', 'liquid handling'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'Mythos') every returned contribution was general AI-policy debate that does not reference this finding, report or result, and so is excluded under the 'general discussion does not count' rule. gov.uk search API returned 0. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'SecureBio' -> European Biotech Act staff working documents; 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No independent coverage located (Google News RSS, checked 2026-08-28)."
+      ],
+      "academic": [
+        "No academic citation located (OpenAlex / Semantic Scholar, checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-04-BIO8",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Google DeepMind newsroom/blog — full 2026 index enumerated (responsibility-and-safety filter), Apr-Aug 2026 posts listed and the four safety-relevant ones opened",
+          "url": "https://deepmind.google/discover/blog/?category=responsibility-safety",
+          "checked_date": "2026-08-28",
+          "result": "No post referencing SecureBio, the Virology Capabilities Test, or Gemini 3.1 Pro's virology performance. 'Our approach to bioresilience' (2026-07-16) and 'Piloting the world's first double-blind AI evaluations' (2026-08-27) opened and grepped: 0 hits."
+        },
+        {
+          "source": "(2) Gemini 3.1 Pro model card (2026-02-19) and every subsequent Gemini card — 3.5 Flash (2026-05-19), 3.1 Flash-Lite Image (2026-06-30), 3.5 Flash-Lite (2026-07-21), 3.6 Flash (2026-07-21), 3.7 Flash (2026-08-13), 3.5 Audio (2026-08-26), Omni Flash (2026-08-27) — downloaded and grepped for SecureBio / VCT / Virology / propensity",
+          "url": "https://deepmind.google/models/model-cards/",
+          "checked_date": "2026-08-28",
+          "result": "0 hits in every card. Gemini 3.1 Pro card records 'CCL not reached' for CBRN and predates the finding; Gemini 3.7 Flash (2026-08-13) states 'we have assessed that Gemini 3.7 Flash falls below the CCL threshold' with no reference to SecureBio or VCT."
+        },
+        {
+          "source": "(2b) Frontier Safety Framework report for Gemini 3 Pro (PDF, v2 November 2025)",
+          "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded (1.5MB). Predates the finding; no SecureBio or VCT reference located. Note: PDF text extraction was partial (compressed streams) — recorded as partially readable."
+        },
+        {
+          "source": "(3) Google DeepMind Responsibility & Safety hub and Frontier Safety page",
+          "url": "https://deepmind.google/frontier-safety/",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and grepped: 0 hits for SecureBio / VCT / Virology / propensity / Palisade."
+        },
+        {
+          "source": "(4) Official Google/DeepMind announcements — deepmind.google sitemap.xml (727 URLs) enumerated; all 2026 safety and Gemini-launch posts identified and the safety ones opened",
+          "url": "https://deepmind.google/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "No announcement referencing the finding."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS '\"Gemini 3.1 Pro\" virology SecureBio'",
+          "url": "https://news.google.com/rss/search?q=%22Gemini+3.1+Pro%22+virology+SecureBio",
+          "checked_date": "2026-08-28",
+          "result": "0 items. No Google primary source surfaced. See notes on degraded search."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run 2026-08-28, including the seven Gemini model cards published after the 2026-04-23 finding — the exact gap the previous 'None' could not have covered, since only the 2026-02-19 Gemini 3.1 Pro card existed when it was coded. No Google primary document anywhere references SecureBio, the Virology Capabilities Test, or Gemini 3.1 Pro reaching the 100th percentile of expert virologists. The prior pass's reason for rejecting the claimed response (the Gemini 3.1 Pro FSF below-CCL conclusion of 2026-02-19 predates the finding) is confirmed correct, and no admissible later response exists. Battery exhausted -> Action Level = None, Attribution = No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'SecureBio', 'Virology Capabilities Test', 'VCT', 'Gemini 3.1 Pro', 'expert virologists'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'Mythos') every returned contribution was general AI-policy debate that does not reference this finding, report or result, and so is excluded under the 'general discussion does not count' rule. gov.uk search API returned 0. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'SecureBio' -> European Biotech Act staff working documents; 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No independent coverage of the Gemini 3.1 Pro VCT result located (Google News RSS, checked 2026-08-28)."
+      ],
+      "academic": [
+        "OpenAlex: the VCT benchmark paper (2025-04-21) exists with 2 citations; no work citing this Gemini 3.1 Pro result located (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Google publishes no per-model FSF report for Gemini 3.1 Pro; the card links back to the Gemini 3 Pro FSF report (November 2025). Its PDF text extraction was only partially readable — recorded honestly rather than treated as fully checked, though it predates the finding and cannot qualify. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "UKAISI-2026-04-ALI6",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog — sitemap.xml enumerated (522 URLs, 258 under /news/); all 205 news/research/engineering/RSP/policy pages with lastmod >= 2026-04-23 downloaded and grepped",
+          "url": "https://www.anthropic.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "No standalone post on the sabotage-of-safety-research evaluation. 'Automated researchers can reliably mitigate alignment failures' (2026-08-28) opened: no reference to UK AISI, prefilled sabotage continuation, or reasoning-action discrepancy."
+        },
+        {
+          "source": "(2) HIT — Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), section 6.2.4 'External testing from the UK AI Security Institute' and section 6.1.2 'Key findings on safety and alignment'; PDF downloaded and text-extracted",
+          "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Section 6.2.4 reproduces UK AISI's conclusions verbatim from the same evaluation design (unprompted evaluation, continuation evaluation with prefilled compromise trajectories, discrepancy between reasoning and outputs), reporting Mythos Preview at 2% active continuation and 68% reasoning-output discrepancy alongside Mythos 5, Opus 4.7 and Opus 4.8. Section 6.1.2 states Anthropic's position on it."
+        },
+        {
+          "source": "(2b) Claude Opus 5 System Card (2026-07-24), section 6.4.8 'External testing from the UK AI Security Institute'; PDF downloaded and text-extracted",
+          "url": "https://www.anthropic.com/claude-opus-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Same UK AISI evaluation re-run: 'Opus 5 actively continues compromising safety research 0.1% of the time (2 out of 1482 samples), compared with 13.6% for Mythos 5, 1.7% of the time for Mythos Preview and 0.8% of the time for both Opus 4.7 and Opus 4.8', and 'Opus 5 has a lower rate of discrepancy between its reasoning and outputs at 1.6%'. Reported as a result; not framed as a remediation of the finding."
+        },
+        {
+          "source": "(2c) Claude Sonnet 5 System Card (2026-08-10); PDF downloaded and grepped",
+          "url": "https://www.anthropic.com/claude-sonnet-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "No sabotage / research-compromise / UK AISI misalignment section; only a standing mention of UK AISI as a partner on a prompt-injection benchmark."
+        },
+        {
+          "source": "(3) Anthropic Responsible Scaling Policy, RSP updates log, transparency hub and safeguards pages",
+          "url": "https://www.anthropic.com/responsible-scaling-policy/updates",
+          "checked_date": "2026-08-28",
+          "result": "Three entries from May 2026 onward (2026-05-05 x2, 2026-07-08); none references research sabotage, prefill continuation, or the UK AI Security Institute."
+        },
+        {
+          "source": "(4) Official Anthropic announcements — full news index and sitemap; X/Twitter not fetchable",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "No announcement on this evaluation. Official social accounts could not be opened and are recorded as unchecked."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'UK AISI sabotage AI safety research evaluation'",
+          "url": "https://news.google.com/rss/search?q=UK+AISI+sabotage+AI+safety+research+evaluation",
+          "checked_date": "2026-08-28",
+          "result": "10 items, led by AISI's own 2026-04-27 report; no Anthropic primary source beyond the system cards already located."
+        }
+      ],
+      "evidence_url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "verbatim": "The model will also more readily continue prefilled content that represents misaligned actions supposedly taken at the model's own initiative. We see this both in our own testing and in third-party testing by the UK AI Security Institute, though we do not find it fully novel or actively dangerous.",
+      "response_date": "2026-06-09",
+      "reasoning": "The existing 'None' is stale and factually wrong. The prior log asserts that the Mythos 5 / Fable 5, Sonnet 5 and Opus 5 cards 'carry no reference to the prompted-continuation sabotage result'; in fact the Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09) devotes section 6.2.4 to the UK AI Security Institute's testing of exactly this evaluation — 'whether the model would attempt to compromise AI safety research when used as an AI research agent in an internal-deployment setting (including when continuing a prefilled trajectory where it compromises research)' — and reports the reasoning-output discrepancy metric with Mythos Preview at 68%. I confirmed this is the same evaluation by reading the AISI paper's abstract (arXiv:2604.24618, 2026-04-27), which describes the identical unprompted/continuation design, the reasoning-output discrepancy metric and the same four Claude models. The Opus 5 card (2026-07-24) section 6.4.8 re-runs it. Action Level: the company references the problem and states a position on it ('we do not find it fully novel or actively dangerous') but specifies no mitigation, safeguard, model change, access restriction or deployment decision addressing it -> Acknowledged, not Substantive. Attribution: Anthropic names the UK AI Security Institute and connects its own statement to that third-party testing -> Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'sabotage AI safety research', 'AI Security Institute', 'Claude Mythos', 'reasoning-action discrepancy'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'Mythos') every returned contribution was general AI-policy debate that does not reference this finding, report or result, and so is excluded under the 'general discussion does not count' rule. gov.uk search API returned 0. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'SecureBio' -> European Biotech Act staff working documents; 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "Google News RSS (checked 2026-08-28) surfaced no independent outlet covering the sabotage-continuation report itself; adjacent AISI items returned include 'Incident Report: unsanctioned agent behaviour during cyber testing' (AISI, 2026-08-04) and 'Claude Mythos 5 Tried to Backdoor a Real Open-Source Project in Testing, Then Vouched for Itself' (The Hacker News, 2026-08-05), neither of which is this finding."
+      ],
+      "academic": [
+        "Semantic Scholar lookup on arXiv:2604.24618 returned HTTP 429 (rate-limited) and could NOT be completed — recorded as unchecked. OpenAlex full-text search was too fuzzy to isolate citations of this report."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Confidence is high that 'None' is wrong. A reviewer might argue for Substantive on the grounds that Opus 5 (2026-07-24) reduced active sabotage continuation to 0.1% and reasoning-output discrepancy to 1.6% on UK AISI's own metric — a real model-level change addressing the problem. I did not code it Substantive because Anthropic nowhere presents that improvement as a remediation of this finding, and the immediately preceding model (Mythos 5) got worse on the same metric (13.6-14%), so there is no documented remediation narrative. Semantic Scholar was unreachable for the academic sweep. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "UKAISI-2026-04-CYB11",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom/blog — sitemap enumerated; 331 safety/security/global-affairs pages downloaded and grepped",
+          "url": "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/",
+          "checked_date": "2026-08-28",
+          "result": "Launch/trusted-access content located; no post contradicting or superseding the card."
+        },
+        {
+          "source": "(2) GPT-5.5 System Card sections 9.1.2 (Cybersecurity), 9.1.2.7 (External Evaluations for Cyber Capabilities - UK AISI), 9.3.2 (Cyber Safeguards)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluations-for-cyber-capabilities---uk-aisi",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Published 2026-04-23 (updated 2026-04-24). Names UK AISI, reproduces the expert-task and cyber-range results, and records the safeguard stack."
+        },
+        {
+          "source": "(2b) Subsequent cards — GPT-5.5-Instant, GPT-5.6-Preview, GPT-5.6 (2026-07-09), GPT-5.6 August Update, GPT-Rosalind-5.5, GPT-Live",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/external-evaluations-for-cyber-capabilities---uk-aisi",
+          "checked_date": "2026-08-28",
+          "result": "UK AISI cyber testing carried forward into GPT-5.6; safeguard stack and Trusted Access for Cyber retained and expanded."
+        },
+        {
+          "source": "(3) OpenAI Deployment Safety Hub cybersecurity page",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/cybersecurity",
+          "checked_date": "2026-08-28",
+          "result": "HIT. 'We collaborated with the UK AI Security Institute (UK AISI) on pre-deployment testing for cyber capabilities'; documents Trusted Access for Cyber, monitors and refusals."
+        },
+        {
+          "source": "(4) Official OpenAI announcements — openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands and related",
+          "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/",
+          "checked_date": "2026-08-28",
+          "result": "Trusted-access programme confirmed as a company primary source."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'UK AI Security Institute GPT-5.5 cyber capabilities'",
+          "url": "https://news.google.com/rss/search?q=UK+AI+Security+Institute+GPT-5.5+cyber+capabilities",
+          "checked_date": "2026-08-28",
+          "result": "58 items; used only to confirm no further OpenAI primary source. Media are logged under Channel C."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluations-for-cyber-capabilities---uk-aisi",
+      "verbatim": "We collaborated with the UK AI Security Institute (UK AISI) on pre-deployment testing for cyber capabilities (and safeguards, see Section 9.3.2.7.1) for the launch of GPT-5.5. UK AISI was provided access to a representative launch checkpoint and a checkpoint with reduced refusals for cyber capabilities.",
+      "response_date": "2026-04-23",
+      "reasoning": "Re-verified 2026-08-28. Section 9.1.2.7 names UK AISI and reproduces the findings, including 'The model solved one of UK AISI's cyber ranges end-to-end in 1/10 attempts' (AISI's own footnote 1 later revises this to 2/10 after identifying a grading issue in AISI's setup). Section 9.1.2 records the deployment decision — 'we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical' and 'we have deployed an expanded set of safeguards to restrict the ability of malicious actors to benefit from increased capabilities in cybersecurity performance' — with Trusted Access for Cyber as the gated pathway. Specific safeguards plus an access-restriction pathway -> Substantive; evaluator named -> Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'GPT-5.5 cyber', 'AI Security Institute', 'capture the flag', 'cyber range'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'Mythos') every returned contribution was general AI-policy debate that does not reference this finding, report or result, and so is excluded under the 'general discussion does not count' rule. gov.uk search API returned 0. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'SecureBio' -> European Biotech Act staff working documents; 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "the-decoder.com, 'GPT-5.5 matches Claude Mythos in cyber attack tests, UK AI Security Institute finds' (2026-05-01)",
+        "Ars Technica, 'Amid Mythos' hyped cybersecurity prowess, researchers find GPT-5.5 is just as good' (2026-05-01)",
+        "The Information, 'UK Group Says OpenAI's GPT-5.5 is Comparable to Anthropic Mythos in Cybersecurity Capabilities' (2026-04-30)",
+        "Decrypt, 'OpenAI's GPT-5.5 Matches Claude Mythos in Cyberattack Capabilities: AI Security Institute' (2026-05-01)",
+        "Axios, 'OpenAI isn't far behind Mythos' hacking powers' (2026-05-05)",
+        "CyberScoop, 'Researchers say AI just broke every benchmark for autonomous cyber capability' (2026-05-13)",
+        "Politico, 'What to know about the AI models that are jolting Washington' (2026-05-26)"
+      ],
+      "academic": [
+        "No academic citation of the AISI GPT-5.5 cyber blog located (checked 2026-08-28)."
+      ],
+      "discussion": [
+        "Transformer (Substack), 'GPT-5.5 and the broken state of government evals' (2026-04-24)",
+        "Transformer News, 'OpenAI shouldn't be deciding if its GPT-5.5...' (already logged in the record)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Minor factual note for the dataset, not a coding change: the finding text says the 2/10 TLO figure was 'adjudicated in the model's favour per AISI footnote 1'. The footnote actually reads 'Note that this figure differs from the 1 in 10 originally stated in OpenAI's GPT-5.5 system card. We subsequently identified a grading issue in our setup' — i.e. AISI corrected its own grading upward from OpenAI's 1/10 to 2/10. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "UKAISI-2026-04-CYB3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog — sitemap enumerated; 205 pages with lastmod >= 2026-04-23 downloaded and grepped for 'The Last Ones', TLO, cyber range, AISI",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30) opened: no UK AISI, Mythos Preview or cyber-range reference. 'Anthropic's approach to Fable/Mythos access' (2026-06-12) names UK AISI but only for pre-launch safeguards red-teaming, not the cyber-range result."
+        },
+        {
+          "source": "(2) HIT — Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), section 3.2.5 'External capability testing from the UK AISI' and sections 3.1.1-3.1.2 'Capabilities' / 'Mitigations and deployment'",
+          "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Section 3.2.5 reproduces UK AISI's cyber-range conclusions verbatim, naming 'our enterprise network attack simulation \"The Last Ones\"' and comparing Mythos 5 against Mythos Preview on it; section 3.1.1 states the access restriction placed on Mythos Preview because of its cyber step-change; section 3.1.2 documents the deployed cyber safeguard stack."
+        },
+        {
+          "source": "(2b) Claude Opus 5 System Card (2026-07-24), section 3.3.6 'Testing from the UK AI Security Institute (UK AISI)'",
+          "url": "https://www.anthropic.com/claude-opus-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Reproduces UK AISI's cyber-range results again, including 'No model apart from Mythos Preview, which succeeded on 3/10 attempts, has completed this range' (Cooling Tower) and Opus 5 solving The Last Ones 8/10."
+        },
+        {
+          "source": "(2c) Claude Sonnet 5 System Card (2026-08-10)",
+          "url": "https://www.anthropic.com/claude-sonnet-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "No cyber-range or UK AISI cyber section."
+        },
+        {
+          "source": "(3) Anthropic RSP, RSP updates log, transparency hub, /claude/mythos product page",
+          "url": "https://www.anthropic.com/responsible-scaling-policy/updates",
+          "checked_date": "2026-08-28",
+          "result": "No entry referencing the cyber-range result."
+        },
+        {
+          "source": "(4) Official Anthropic announcements — 'Introducing Claude Fable 5 and Claude Mythos 5' (2026-06-09)",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "Names UK AISI on cyber-classifier jailbreak testing and describes the classifier fallback to Claude Opus 4.8."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'Claude Mythos cyber range AI Security Institute'",
+          "url": "https://news.google.com/rss/search?q=Claude+Mythos+cyber+range+AI+Security+Institute",
+          "checked_date": "2026-08-28",
+          "result": "55 items; used only to locate primary sources. No further Anthropic primary document surfaced."
+        }
+      ],
+      "evidence_url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "verbatim": "Claude Mythos 5 demonstrates the strongest overall cyber capabilities of any model we have ever evaluated. Across our internal evaluation suite, it meets or exceeds the performance of Claude Mythos Preview, whose step-change in autonomous vulnerability discovery and exploitation led us to restrict access to a limited set of partners for defensive cybersecurity purposes.",
+      "response_date": "2026-06-09",
+      "reasoning": "The existing 'None' rests on a single reason — that the Mythos Preview access restriction (2026-04-07) predates the finding (2026-04-30). Two things overturn it. First, this finding's Access Type is Pre-deployment, and the rulebook admits negative lag for a documented pre-deployment response; Anthropic's own system card states the causal link explicitly in the quoted sentence, tying the limited-partner restriction to Mythos Preview's step-change in exactly the autonomous vulnerability-discovery-and-exploitation capability this finding reports. Second, and independent of that, the prior battery missed the company primary document altogether: section 3.2.5 of the Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09) is titled 'External capability testing from the UK AISI' and reproduces AISI's conclusions naming 'The Last Ones' and comparing Mythos Preview's end-to-end solve rate; the Opus 5 card (2026-07-24) section 3.3.6 does so again. The same chapter records a post-finding deployment decision: Mythos 5 is released to the public only as safeguarded Fable 5, behind an activation probe plus LLM cyber classifier that falls back to Claude Opus 4.8, with unsafeguarded cyber capability reserved for the Cyber Verification Program. An access restriction plus a deployed safeguard stack addressing autonomous network-attack capability -> Substantive. Anthropic names UK AISI and reproduces its cyber-range findings -> Explicit attribution. I also verified the finding itself against the AISI blog, which states 'Mythos Preview, the first model to solve TLO, did so in 3 of 10 attempts.'"
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Claude Mythos', 'The Last Ones', 'cyber range', 'AI Security Institute', 'capture the flag'. UK: Hansard returned four contributions matching 'Claude Mythos' in the window, the closest being a Lords oral question of 2026-06-16 ('Artificial Intelligence: National Security Implications') asking what assessment the Government has made of the US decision to restrict foreign-national access to Anthropic's Mythos 5 and Fable 5 — that concerns a US access decision, not this finding or the AISI cyber-range result, and so does not count. All other 'cyber range' / 'AI Security Institute' hits are general AI-policy debate. gov.uk search API: nothing on point. US: Federal Register count=0 for 'AI Security Institute'; Congress.gov (403) and govinfo (429) could NOT be opened and are recorded as unchecked. EU: EUR-Lex and Commission digital-strategy searches returned nothing referencing the finding. -> No policy uptake identified, with the US leg incomplete."
+    },
+    "channel_c": {
+      "media": [
+        "The New Stack, on the Claude Mythos Preview simulation (already in the record)",
+        "Silicon Republic and The Next Web, on Mythos and UK/US/Canada banks (already in the record)",
+        "Raconteur, on UK regulators and banks convening over Claude Mythos risks (already in the record)",
+        "Ars Technica, 'UK gov's Mythos AI tests help separate cybersecurity threat from hype' (2026-04-14)",
+        "ZDNET, 'Anthropic's Mythos is evolving faster than expected, reports AI safety agency' (2026-05-14)",
+        "CyberScoop, 'Researchers say AI just broke every benchmark for autonomous cyber capability' (2026-05-13)",
+        "Yellow.com, 'Claude Mythos Becomes First AI To Complete Simulated Corporate Network Attack' (2026-08-14)"
+      ],
+      "academic": [
+        "No academic citation of the AISI cyber blog located (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "This is the largest judgement call in the chunk. A more conservative reviewer could code Acknowledged instead: section 3.2.5 unambiguously references the evaluator and the specific result, but the cyber classifier stack is attributed in the card to 'our evaluations' generally and is applied to a successor model, while the one mitigation Anthropic explicitly ties to Mythos Preview (the limited-partner access restriction) is dated 2026-04-07 and only survives via the pre-deployment negative-lag exception. Either way, 'None / No response located' is not defensible — an Anthropic primary document reproducing UK AISI's 'The Last Ones' findings exists and the prior battery did not find it. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "UKAISI-2026-04-JAI1",
+    "current": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom/blog — sitemap enumerated; 331 safety/security/global-affairs pages downloaded and grepped",
+          "url": "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/",
+          "checked_date": "2026-08-28",
+          "result": "Launch/trusted-access content located; no post contradicting or superseding the card."
+        },
+        {
+          "source": "(2) GPT-5.5 System Card section 9.3.2.7.1 'UK AISI Cyber Safeguard Testing' and 9.3.2.7.2 'External Red-teaming Campaigns'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/sec:uk-aisi-cyber-safeguards-testing",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Published 2026-04-23. Reproduces the universal-jailbreak finding, the six-hour development time, OpenAI's safeguard-stack updates, and the configuration issue that prevented UK AISI verifying the final configuration."
+        },
+        {
+          "source": "(2b) HIT — GPT-5.6 System Card (2026-07-09) section 9.4.6 'External Testing of Safeguards - UK AISI'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6/external-testing-of-safeguards-uk-aisi",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Documents several rounds of iterative testing with OpenAI mitigating each reported jailbreak, while recording that UK AISI identified universal cyber jailbreaks in all rounds thus far."
+        },
+        {
+          "source": "(2c) GPT-5.6 August Update, GPT-5.5-Instant, GPT-Rosalind-5.5, GPT-Live cards",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/cybersecurity-safety-training-and-evaluation",
+          "checked_date": "2026-08-28",
+          "result": "Safeguard programme carried forward; no statement that the universal jailbreak class is closed."
+        },
+        {
+          "source": "(3) OpenAI Deployment Safety Hub cybersecurity and safeguards pages; bio/cyber bug bounty",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5/cyber-safeguards",
+          "checked_date": "2026-08-28",
+          "result": "Safeguard stack described (safety reasoning classifier, conversation monitor, actor-level enforcement, trust-based access)."
+        },
+        {
+          "source": "(4) Official OpenAI announcements — us-caisi-uk-aisi update page and trusted-access posts",
+          "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+          "checked_date": "2026-08-28",
+          "result": "Institute collaboration confirmed; no separate statement resolving the unverified patch."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'UK AI Security Institute GPT-5.5 cyber capabilities'",
+          "url": "https://news.google.com/rss/search?q=UK+AI+Security+Institute+GPT-5.5+cyber+capabilities",
+          "checked_date": "2026-08-28",
+          "result": "58 items; no further OpenAI primary source located."
+        }
+      ],
+      "evidence_url": "https://deploymentsafety.openai.com/gpt-5-5/sec:uk-aisi-cyber-safeguards-testing",
+      "verbatim": "UK AISI tested GPT-5.5's cyber safeguards and identified a universal jailbreak that elicited violative content across all malicious cyber queries OpenAI provided, including in multi-turn agentic settings. This attack took six hours of expert red-teaming to develop. OpenAI subsequently made several updates to the safeguard stack, though a configuration issue in the version provided meant UK AISI was unable to verify the effectiveness of the final configuration. OpenAI remains committed to working with UK AISI on safeguards.",
+      "response_date": "2026-04-23",
+      "reasoning": "Partial confirmed and the evidence base strengthened. The GPT-5.5 card itself records OpenAI making 'several updates to the safeguard stack' that UK AISI could not verify — an action claimed but unverifiable, which is squarely Partial. The GPT-5.6 System Card of 2026-07-09 (a subsequent card, checked here for the first time) adds section 9.4.6: 'UK AISI and OpenAI performed several rounds of iterative testing, with UK AISI reporting jailbreaks and OpenAI improving the system in response to their findings... In all rounds thus far, UK AISI identified universal jailbreaks in the cyber domain, including jailbreaks that allowed for long-form agentic task completion... As of launch, OpenAI has worked to reproduce and mitigate the specific jailbreaks reported by UK AISI. However, UK AISI expects further red teaming to surface similar jailbreaks.' That is a real, iterative, but explicitly incomplete mitigation — it keeps the coding at Partial rather than raising it to Substantive. Evaluator named throughout -> Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'universal jailbreak', 'GPT-5.5', 'AI Security Institute', 'safeguards'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'Mythos') every returned contribution was general AI-policy debate that does not reference this finding, report or result, and so is excluded under the 'general discussion does not count' rule. gov.uk search API returned 0. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'SecureBio' -> European Biotech Act staff working documents; 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point. Hansard returned zero contributions for 'universal jailbreak'. No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "Transformer News, 'OpenAI shouldn't be deciding if its GPT-5.5...' (already in the record)",
+        "the-decoder.com and Ars Technica coverage of the AISI cyber evaluation (2026-05-01) mentions the safeguards testing"
+      ],
+      "academic": [
+        "No academic citation located (checked 2026-08-28)."
+      ],
+      "discussion": [
+        "Don't Worry About the Vase (Zvi Mowshowitz), 'GPT-5.5: The System Card' (2026-04-27) — already in the record"
+      ]
+    },
+    "confidence": "high",
+    "notes": "The GPT-5.6 card section 9.4.6 is new evidence not in the prior log and materially strengthens the Partial coding; the level is unchanged, so changed=false. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "SCALEAI-2026-05e-ALI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Google DeepMind newsroom/blog — full 2026 index enumerated; all Apr-Aug 2026 posts listed and the safety-relevant ones downloaded and grepped",
+          "url": "https://deepmind.google/discover/blog/?category=responsibility-safety",
+          "checked_date": "2026-08-28",
+          "result": "0 hits for 'PropensityBench', 'Scale AI' or 'propensity' in 'Securing the future of AI agents' (2026-06), 'Investing in multi-agent AI safety research' (2026-06), 'Our approach to bioresilience' (2026-07-16), 'Advancing Gemini's security safeguards', 'Introducing Gemini 3.5 Flash Cyber' (2026-07) or 'Piloting the world's first double-blind AI evaluations' (2026-08-27)."
+        },
+        {
+          "source": "(2) Gemini 2.5 Pro's successor cards — Gemini 3 Pro, 3.1 Pro, 3.1 Flash-Lite, 3.5 Flash, 3.5 Flash-Lite, 3.6 Flash, 3.7 Flash, 3.5 Audio, Omni Flash — model-card index enumerated and the six frontier cards downloaded and grepped",
+          "url": "https://deepmind.google/models/model-cards/",
+          "checked_date": "2026-08-28",
+          "result": "0 hits for 'PropensityBench', 'Scale AI' or 'propensity' in any card."
+        },
+        {
+          "source": "(3) Google DeepMind Frontier Safety page and Responsibility & Safety hub",
+          "url": "https://deepmind.google/frontier-safety/",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and grepped: 0 hits."
+        },
+        {
+          "source": "(4) Official Google/DeepMind announcements — deepmind.google sitemap.xml (727 URLs) enumerated",
+          "url": "https://deepmind.google/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "No announcement referencing PropensityBench or Scale AI's leaderboard."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'PropensityBench Scale AI latent safety risks'",
+          "url": "https://news.google.com/rss/search?q=PropensityBench+Scale+AI+latent+safety+risks",
+          "checked_date": "2026-08-28",
+          "result": "0 items. No Google primary source surfaced."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run 2026-08-28 against live primary sources rather than the cached-document sweep the prior pass relied on. Every Gemini model card published after 2026-05-05, the Frontier Safety page, the Responsibility & Safety hub and every 2026 DeepMind blog post were downloaded and grepped: no Google primary document references PropensityBench, Scale AI, or Gemini 2.5 Pro's 79.00 Propensity Score. Battery exhausted -> Action Level = None, Attribution = No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'PropensityBench', 'Scale AI', 'Gemini 2.5 Pro propensity'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'FAR.AI') every returned contribution was general debate that does not reference this finding, report or result, and is excluded under the 'general discussion does not count' rule. gov.uk search API returned nothing on point. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25; the 17 'self-replication' hits all predate 2026-05-01). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No media coverage located; Google News RSS 'PropensityBench Scale AI latent safety risks' returned 0 items (checked 2026-08-28)."
+      ],
+      "academic": [
+        "Semantic Scholar: PropensityBench (arXiv:2511.20703) has 13 citations, all 2026, including 'Gram: Assessing sabotage propensities via automated alignment auditing', 'Evaluating and Understanding Scheming Propensity in LLM Agents', 'Instrumental Choices: Measuring the Propensity of LLM Agents to Pursue Instrumental Behaviors', 'Risky-Bench: Probing Agentic Safety Risks under Real-World Deployment', 'Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents', 'LURE: Live-Usage Replay Evaluations for Reducing Evaluation Awareness' (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Descriptive only: the benchmark has real academic uptake (13 citations) but no company response and no policy uptake. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "SCALEAI-2026-05e-ALI3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom/blog — openai.com/sitemap.xml fully enumerated across publication, release, research, safety, security, global-affairs, milestone, product, engineering and disrupting-malicious-uses (746 URLs); 331 safety/security/global-affairs pages downloaded (496MB) and grepped",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Zero occurrences of 'Palisade', 'PropensityBench', 'Scale AI' or 'self-replicat' across all 331 pages. The only 'o4-mini' hits are the original o3/o4-mini system cards and addenda, which predate these findings."
+        },
+        {
+          "source": "(2) All OpenAI system cards on the Deployment Safety Hub — sitemap enumerated (894 URLs across 24 model families); all 351 pages for gpt-5-5, gpt-5-5-instant, gpt-5-6-preview, gpt-5-6, gpt-5-6-august-update, gpt-rosalind-5-5, gpt-live and sora-2 downloaded (225MB) and grepped",
+          "url": "https://deploymentsafety.openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Zero occurrences of 'Palisade', 'PropensityBench', 'Scale AI', 'self-replicat' or 'o4-mini' in any card, including every card published after the finding."
+        },
+        {
+          "source": "(3) OpenAI safety / preparedness / deployment-safety hub pages",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Hub index and per-model safeguards, preparedness and trust-based-access pages checked; no reference."
+        },
+        {
+          "source": "(4) Official OpenAI announcements — global-affairs and index posts on frontier risk, preparedness and malicious-use disruption",
+          "url": "https://openai.com/global-affairs/our-approach-to-frontier-risk/",
+          "checked_date": "2026-08-28",
+          "result": "No announcement referencing the finding."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'PropensityBench Scale AI latent safety risks'",
+          "url": "https://news.google.com/rss/search?q=PropensityBench+Scale+AI+latent+safety+risks",
+          "checked_date": "2026-08-28",
+          "result": "0 items. No OpenAI primary source surfaced."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Re-run 2026-08-28 with exhaustive coverage rather than a cached subset: 331 OpenAI safety/security/global-affairs pages plus all 351 Deployment Safety Hub pages for GPT-5.5 and every later model family were downloaded and grepped. Zero occurrences of 'PropensityBench', 'Scale AI' or 'self-replicat'; the only 'o4-mini' matches are the original o3/o4-mini system cards, which predate the 2026-05-05 finding and are excluded as pre-existing. The prior pass's exclusion of 'Continuously hardening ChatGPT Atlas against prompt injection' as non-attributable is confirmed. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'PropensityBench', 'Scale AI', 'o4-mini', 'shallow alignment'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'FAR.AI') every returned contribution was general debate that does not reference this finding, report or result, and is excluded under the 'general discussion does not count' rule. gov.uk search API returned nothing on point. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25; the 17 'self-replication' hits all predate 2026-05-01). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No media coverage located (Google News RSS returned 0 items, checked 2026-08-28)."
+      ],
+      "academic": [
+        "Semantic Scholar: PropensityBench (arXiv:2511.20703), 13 citations, all 2026 — see the citing titles logged under SCALEAI-2026-05e-ALI2 (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "PALISADE-2026-05-AUT1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Alibaba/Qwen blog — qwen.ai/blog and qwen.ai/research are client-rendered and returned no post content to either WebFetch or curl (recorded as NOT readable); the legacy blog qwenlm.github.io/blog was readable",
+          "url": "https://qwenlm.github.io/blog/",
+          "checked_date": "2026-08-28",
+          "result": "Legacy blog's most recent post is 2025-09-23 (Qwen3Guard). No post on self-replication, autonomous hacking or Palisade Research."
+        },
+        {
+          "source": "(2) Subsequent Qwen model releases — QwenLM GitHub org listing (repos sorted by update); READMEs for Qwen3.8, Qwen3.8-Flash-Next and Qwen3 fetched and grepped",
+          "url": "https://api.github.com/orgs/QwenLM/repos",
+          "checked_date": "2026-08-28",
+          "result": "0 hits for 'Palisade', 'self-replicat', 'safety', 'safeguard' or 'frontier risk' in any README."
+        },
+        {
+          "source": "(2b) Hugging Face model cards for the two evaluated models",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
+          "checked_date": "2026-08-28",
+          "result": "Both Qwen3.5-122B-A10B and Qwen3.6-27B cards fetched (92KB and 62KB): 0 hits for 'Palisade', 'self-replicat', 'safety' or 'jailbreak'."
+        },
+        {
+          "source": "(3) Qwen safety pages",
+          "url": "https://qwen.ai/",
+          "checked_date": "2026-08-28",
+          "result": "Client-rendered shell only; no substantive safety-response content retrievable. Recorded as NOT readable."
+        },
+        {
+          "source": "(4) Official Alibaba/Qwen announcements — GitHub org and Hugging Face org are the operative English-language venues",
+          "url": "https://github.com/QwenLM",
+          "checked_date": "2026-08-28",
+          "result": "No announcement referencing the finding. There is a Qwen3Guard guardrail series (2025-09), which predates the finding and does not reference it."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'Palisade Research AI self-replicate Qwen hack'",
+          "url": "https://news.google.com/rss/search?q=Palisade+Research+AI+self-replicate+Qwen+hack",
+          "checked_date": "2026-08-28",
+          "result": "3 items, all independent media coverage of Palisade's report; no Alibaba/Qwen primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run 2026-08-28, extending the prior pass to the subsequent Qwen generation (Qwen3.8 / Qwen3.8-Flash-Next) and to the Hugging Face cards for the two models actually evaluated. No Alibaba or Qwen primary document references Palisade Research, self-replication, or autonomous exploitation of vulnerable hosts. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Palisade Research', 'self-replication', 'Qwen'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'FAR.AI') every returned contribution was general debate that does not reference this finding, report or result, and is excluded under the 'general discussion does not count' rule. gov.uk search API returned nothing on point. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25; the 17 'self-replication' hits all predate 2026-05-01). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point. Hansard returned zero for 'Palisade Research', 'self-replicate', 'self-replication' and 'Qwen'. No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "The Guardian, ''No one has done this in the wild': study observes AI replicate itself' (2026-05-07)",
+        "Futurism, 'Researchers Alarmed by AI That Can Self-Replicate Into Another Machine' (2026-05-10)",
+        "Euronews, 'AI models can break into computers and copy themselves, research finds' (2026-05-09)",
+        "the-decoder.com, 'AI agents can now hack computers and copy themselves, and they're getting better fast' (2026-05-10)",
+        "Live Science, 'AI self-replication hacks \"no longer purely theoretical,\" study finds — but experts say it's too soon to panic' (2026-05-13)"
+      ],
+      "academic": [
+        "No academic citation of the Palisade self-replication report located; OpenAlex full-text search was too fuzzy to isolate it and Semantic Scholar has no DOI/arXiv identifier for the blog post (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "qwen.ai (both /blog and /research) is a client-rendered SPA that returned no post content to any tool available here — recorded as unreadable rather than checked-and-clear. This is the one residual gap for this finding; the legacy blog, the GitHub org and both Hugging Face model cards were readable and clear. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "PALISADE-2026-05-AUT2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog — sitemap.xml enumerated (522 URLs); all 205 news/research/engineering/RSP/policy pages with lastmod >= 2026-04-23 downloaded and grepped for 'Palisade' and 'self-replicat'",
+          "url": "https://www.anthropic.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Two 'Palisade' hits, both non-responsive: /research/cyber-competitions thanks 'Artem Petrov and Dmitrii Volkov from Palisade Research for providing data from the HackTheBox AI vs Human CTF Challenge' (different work), and /research/agentic-misalignment footnote 8 cites Palisade's 2025 o3 shutdown-resistance result (predates, different finding). One 'self-replicat' hit, /research/multiagent-systems, describes Claude agents deploying 'increasingly aggressive, self-replicating malware' in Anthropic's own turf-war experiment — Anthropic's own research, no reference to Palisade or the Opus 4.6 weight-replication result."
+        },
+        {
+          "source": "(2) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), Claude Opus 5 System Card (2026-07-24) and Claude Sonnet 5 System Card (2026-08-10) — all three PDFs downloaded and text-extracted (10,621 / 6,444 / 4,816 lines) and grepped",
+          "url": "https://www.anthropic.com/claude-opus-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "Zero 'Palisade' hits in any card. The Opus 5 card's adversarial cyber harmful-task suite lists 'self-replication' as one task category and reports 'Claude Opus 5's safeguards were similarly effective to those of Fable 5, resulting in a very low attack success rate' — but names no evaluator and makes no reference to Palisade or this finding."
+        },
+        {
+          "source": "(3) Anthropic Responsible Scaling Policy, RSP updates log, transparency hub, safeguards pages",
+          "url": "https://www.anthropic.com/responsible-scaling-policy/updates",
+          "checked_date": "2026-08-28",
+          "result": "Three entries from May 2026 onward; none references self-replication, autonomous replication or Palisade Research."
+        },
+        {
+          "source": "(4) Official Anthropic announcements — full news index; X/Twitter not fetchable and recorded as unchecked",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "No announcement referencing the finding."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'Palisade Research AI self-replicate Qwen hack' and '\"Palisade Research\" self-replication'",
+          "url": "https://news.google.com/rss/search?q=%22Palisade+Research%22+self-replication",
+          "checked_date": "2026-08-28",
+          "result": "Only independent coverage of Palisade's report; no Anthropic primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run 2026-08-28 with the three post-finding Anthropic system cards fully text-extracted and grepped rather than summarised, plus a bulk grep of every Anthropic page updated since the finding. The two 'Palisade' mentions on anthropic.com are to unrelated Palisade work (a CTF dataset acknowledgment and a 2025 shutdown-resistance footnote) and neither addresses this finding. The Opus 5 card's inclusion of a 'self-replication' category in its adversarial cyber task suite is the closest candidate, but it names no evaluator, is embedded in Anthropic's standing cyber-safeguards programme, and is not attributable to Palisade's Opus 4.6 result — excluded as standing policy. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Palisade Research', 'self-replication', 'Claude Opus 4.6'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'FAR.AI') every returned contribution was general debate that does not reference this finding, report or result, and is excluded under the 'general discussion does not count' rule. gov.uk search API returned nothing on point. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25; the 17 'self-replication' hits all predate 2026-05-01). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "Euronews, 'AI models can hack computers and self-replicate onto new machines, new research finds' (2026-05-09)",
+        "The Guardian (2026-05-07), Futurism (2026-05-10), the-decoder.com (2026-05-10), Live Science (2026-05-13)",
+        "MSN syndications (2026-05) — already in the record"
+      ],
+      "academic": [
+        "No academic citation located (checked 2026-08-28)."
+      ],
+      "discussion": [
+        "Medium, ''No One Has Done This in the Wild': AI Just Replicated Itself Without Human Help, Should You Worry?' (2026-05-07)"
+      ]
+    },
+    "confidence": "high",
+    "notes": "Recorded as a judgement call for the reviewer: if the Opus 5 card's new 'self-replication' adversarial-task category (absent from the immediately preceding Fable 5 card) were credited as an unattributed response, this would become Partial / No explicit attribution. I did not credit it, because nothing links it to Palisade and self-replication is a long-standing ARA evaluation category. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "PALISADE-2026-05-AUT2-s2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom/blog — openai.com/sitemap.xml fully enumerated across publication, release, research, safety, security, global-affairs, milestone, product, engineering and disrupting-malicious-uses (746 URLs); 331 safety/security/global-affairs pages downloaded (496MB) and grepped",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Zero occurrences of 'Palisade', 'PropensityBench', 'Scale AI' or 'self-replicat' across all 331 pages. The only 'o4-mini' hits are the original o3/o4-mini system cards and addenda, which predate these findings."
+        },
+        {
+          "source": "(2) All OpenAI system cards on the Deployment Safety Hub — sitemap enumerated (894 URLs across 24 model families); all 351 pages for gpt-5-5, gpt-5-5-instant, gpt-5-6-preview, gpt-5-6, gpt-5-6-august-update, gpt-rosalind-5-5, gpt-live and sora-2 downloaded (225MB) and grepped",
+          "url": "https://deploymentsafety.openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Zero occurrences of 'Palisade', 'PropensityBench', 'Scale AI', 'self-replicat' or 'o4-mini' in any card, including every card published after the finding."
+        },
+        {
+          "source": "(3) OpenAI safety / preparedness / deployment-safety hub pages",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Hub index and per-model safeguards, preparedness and trust-based-access pages checked; no reference."
+        },
+        {
+          "source": "(4) Official OpenAI announcements — global-affairs and index posts on frontier risk, preparedness and malicious-use disruption",
+          "url": "https://openai.com/global-affairs/our-approach-to-frontier-risk/",
+          "checked_date": "2026-08-28",
+          "result": "No announcement referencing the finding."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS '\"Palisade Research\" self-replication OpenAI response'",
+          "url": "https://news.google.com/rss/search?q=%22Palisade+Research%22+self-replication",
+          "checked_date": "2026-08-28",
+          "result": "Independent coverage only (Guardian, Euronews, Futurism, the-decoder, Live Science); no OpenAI primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "This is the finding whose prior battery was explicitly compromised by blocked sources (403 on deploymentsafety.openai.com and openai.com/safety/preparedness, an unlocatable GPT-5.4 card, and an exhausted search budget). All of those gaps are now closed. The Deployment Safety Hub is reachable and its sitemap enumerates 894 URLs across 24 model families; I downloaded all 351 pages for GPT-5.5 and every later family and grepped them, plus 331 OpenAI safety/security/global-affairs pages. Zero occurrences of 'Palisade' or 'self-replicat' anywhere. No OpenAI primary document references Palisade's self-replication result for GPT-5.4. Battery exhausted on readable sources -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Palisade Research', 'self-replication', 'GPT-5.4'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'FAR.AI') every returned contribution was general debate that does not reference this finding, report or result, and is excluded under the 'general discussion does not count' rule. gov.uk search API returned nothing on point. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25; the 17 'self-replication' hits all predate 2026-05-01). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "the-decoder.com (2026-05-09/10), Euronews (2026-05-09), Futurism (2026-05-08/09), The Guardian (2026-05-07), Live Science (2026-05-13)"
+      ],
+      "academic": [
+        "No academic citation located (checked 2026-08-28)."
+      ],
+      "discussion": [
+        "LessWrong linkpost (2026-05) — already in the record"
+      ]
+    },
+    "confidence": "high",
+    "notes": "The GPT-5.4 Thinking card is present on the hub (gpt-5-4-thinking) and was included in the enumeration; the prior log's 'GPT-5.4 system card (not locatable)' is now resolved. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "SCALEAI-2026-05s-AUT2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog — sitemap enumerated; 205 pages with lastmod >= 2026-04-23 downloaded and grepped for 'Scale AI', 'SWE Atlas' and 'SWE-Atlas'",
+          "url": "https://www.anthropic.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Zero 'SWE Atlas' hits. Three 'Scale AI' hits, all non-responsive: /research/economic-policy-responses and /news/finance-agents match the phrase 'scale AI' in ordinary prose, and /news/claude-opus-4-7 carries a benchmark footnote, 'The Opus 4.6 score has been updated to reflect revised grading methodology from Scale AI', which concerns SWE-bench scoring, not the refusal-rate finding."
+        },
+        {
+          "source": "(2) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09) — full PDF text-extracted; sections 4.1.2 'Single-turn benign request evaluation results' and 6.1.2 checked; plus Opus 5 (2026-07-24) and Sonnet 5 (2026-08-10) cards",
+          "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "No mention of Scale AI or SWE Atlas in any card. Card records over-refusal in general terms ('Mythos 5 also exhibits the least overrefusal and evasiveness of any recent model') without reference to this finding."
+        },
+        {
+          "source": "(3) Anthropic safeguards / classifier posts — 'Redeploying Fable 5' (2026-06-30) and 'Improving Fable 5's biology safeguards' (2026-08-07), both opened in full",
+          "url": "https://www.anthropic.com/news/redeploying-fable-5",
+          "checked_date": "2026-08-28",
+          "result": "HIT on topic, MISS on attribution. Redeploying Fable 5 states 'The new classifier also comes at the cost of flagging benign requests more often during routine coding and debugging tasks.' The 2026-08-07 post describes tuning to reduce false positives ('It takes time and iteration to tune the classifiers, avoiding both false positives... and false negatives'). Neither names Scale AI, SWE Atlas, or this result; both describe Anthropic's own iterative classifier programme."
+        },
+        {
+          "source": "(4) Official Anthropic announcements — 'Introducing Claude Fable 5 and Claude Mythos 5' (2026-06-09), 'Fable safeguards jailbreak framework', RSP updates",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "Describes classifier fallback to Opus 4.8 for cyber/bio/distillation topics; no reference to the finding."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'Scale AI SWE Atlas leaderboard Claude Code refusal'",
+          "url": "https://news.google.com/rss/search?q=Scale+AI+SWE+Atlas+leaderboard+Claude+Code+refusal",
+          "checked_date": "2026-08-28",
+          "result": "3 items, two of them Scale AI's own posts ('SWE Atlas is Complete', 2026-05-07; 'SWE Atlas: Evaluating AI Coding Agents in Real Codebases', 2026-03-04) which are excluded as the evaluator's own publication. No Anthropic primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run 2026-08-28 against live sources. Anthropic does publicly acknowledge that its new safeguard classifier over-fires on benign coding work — 'The new classifier also comes at the cost of flagging benign requests more often during routine coding and debugging tasks' (Redeploying Fable 5, 2026-06-30) — and describes iterative false-positive tuning (2026-08-07). But neither document names Scale AI or SWE Atlas, neither references this result, and both describe Anthropic's own classifier programme, which is excluded as standing policy under the admissibility rule. No company primary document is attributable to this finding -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'Scale AI', 'SWE Atlas', 'Claude Code refusal rate'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'FAR.AI') every returned contribution was general debate that does not reference this finding, report or result, and is excluded under the 'general discussion does not count' rule. gov.uk search API returned nothing on point. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25; the 17 'self-replication' hits all predate 2026-05-01). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point.  No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No independent media coverage of the Fable-5 refusal-rate result located; the two Scale AI items returned by Google News RSS are the evaluator's own posts and are excluded as circular (checked 2026-08-28)."
+      ],
+      "academic": [
+        "No academic citation located (checked 2026-08-28)."
+      ],
+      "discussion": [
+        "Medium, 'Modern AI Benchmarks: What Practitioners Actually Need to Know' (2026-05-29) — general benchmark commentary, not this result"
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Chronology flag for the dataset, not a coding change: this finding is dated 2026-05-07 (matching Scale AI's 'SWE Atlas is Complete' post), but Claude Fable 5 did not launch until 2026-06-09 and its cyber/bio classifiers — the plausible cause of the security-filter over-triggering — did not exist before then. The Fable-5 row on the live leaderboard must therefore post-date the recorded publication date, which shifts the window in which a company response could exist. Worth confirming the true observation date before this record is treated as settled. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  },
+  {
+    "finding_id": "FARAI-2026-05-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) DeepSeek newsroom/blog — deepseek.com and the API news/changelog, which is DeepSeek's only dated English-language announcement venue",
+          "url": "https://api-docs.deepseek.com/updates",
+          "checked_date": "2026-08-28",
+          "result": "Full changelog read. Entries in the window: 2026-04-24 (V4-Pro and V4-Flash API launch), 2026-07-31 (V4-Flash GA), 2026-08-13 (V4-Pro GA), 2026-08-21 (V4-Flash-Vision-Exp). Zero occurrences of 'FAR.AI', 'jailbreak', 'safeguard', 'prefill' or 'safety'. The 2026-08-13 V4-Pro GA entry is entirely about agent capability, not safeguards."
+        },
+        {
+          "source": "(2) DeepSeek-V4-Pro model card and any successor card",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+          "checked_date": "2026-08-28",
+          "result": "Card fetched (13KB): 0 hits for 'FAR.AI', 'jailbreak', 'safety' or 'self-replicat'. Card references the V4 technical report (arXiv:2606.19348)."
+        },
+        {
+          "source": "(3) DeepSeek safety / transparency pages",
+          "url": "https://www.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched; DeepSeek publishes no safety, deployment-safety or transparency page. Recorded as checked-and-absent."
+        },
+        {
+          "source": "(4) Official DeepSeek announcements — github.com/deepseek-ai org listing (all repos, sorted by update)",
+          "url": "https://api.github.com/orgs/deepseek-ai/repos",
+          "checked_date": "2026-08-28",
+          "result": "No safety-response repository, model card or statement; the most recent additions are infrastructure and OCR/math projects."
+        },
+        {
+          "source": "(5) Broad search to locate primary sources — Google News RSS 'FAR.AI DeepSeek jailbreak safeguards stress test' and 'DeepSeek V4 Pro safeguards brittle security'",
+          "url": "https://news.google.com/rss/search?q=FAR.AI+DeepSeek+jailbreak+safeguards+stress+test",
+          "checked_date": "2026-08-28",
+          "result": "3 and 2 items respectively, none about this report and none a DeepSeek primary source."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run 2026-08-28 against live DeepSeek sources rather than a cached sweep, and extended through the 2026-08-13 V4-Pro general-availability release — the natural place a safeguard fix would be recorded. The changelog documents that release purely in capability terms and contains no safety, safeguard or jailbreak entry at any date; the Hugging Face model card is likewise silent. DeepSeek maintains no safety or transparency page. No company primary document references FAR.AI's stress test or the prefill / authority-manipulation / public-jailbreak attacks. Battery exhausted -> None / No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK — Hansard API (Commons + Lords, full-text search, window from publication date to 2026-08-28); gov.uk search API (ministerial statements, regulator publications incl. NCSC/ICO/FCA/BoE); checked 2026-08-28",
+        "US — Federal Register API (full-text, quoted-phrase); Congress.gov (HTTP 403 to both WebFetch and curl — NOT reachable, recorded as unchecked); govinfo API (HTTP 429 rate-limited — NOT reachable); checked 2026-08-28",
+        "EU/other — EUR-Lex quick search and European Commission digital-strategy search; checked 2026-08-28"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Search terms: 'FAR.AI', 'DeepSeek', 'DeepSeek-V4-Pro', 'prefill attack'. UK: Hansard returned zero contributions for the distinctive terms; where a token-based match returned hits (e.g. 'AI Security Institute', 'Scale AI', 'FAR.AI') every returned contribution was general debate that does not reference this finding, report or result, and is excluded under the 'general discussion does not count' rule. gov.uk search API returned nothing on point. US: Federal Register count=0 for the distinctive terms (the only post-2026-05-01 'Scale AI' document is an unrelated Senior Executive Service rule, 2026-06-25; the 17 'self-replication' hits all predate 2026-05-01). Congress.gov and govinfo could NOT be opened (403 / 429) — recorded as unchecked rather than clear. EU: EUR-Lex returns only fuzzy stem matches (e.g. 'Palisade Research' -> vegetable-variety catalogues), none referencing the finding; Commission digital-strategy search returned nothing on point. Hansard's single 'DeepSeek' hit (2026-05-19 King's Speech) is general AI-policy debate and does not reference this report. No official source explicitly references the finding, report, evaluator or specific result -> No policy uptake identified. Caveat: the US battery is incomplete because Congress.gov and govinfo were unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "No media coverage of the DeepSeek-V4-Pro stress test located (Google News RSS, checked 2026-08-28). The returned items are unrelated: the-decoder.com on poem-based jailbreaks (2025-11-27) and bgr.com on DeepSeek R1 (2025-01-31)."
+      ],
+      "academic": [
+        "No academic citation located (checked 2026-08-28)."
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "DeepSeek publishes no English-language safety-response venue, so items (1) and (3) of the battery resolve to 'venue does not exist' rather than 'checked and empty' — recorded explicitly. A Chinese-language sweep was not possible with the tools available here and is a residual gap. Battery item (5) (broad web search to LOCATE company primary sources) ran degraded: the session's WebSearch quota was exhausted (200/200) before this chunk started, and DuckDuckGo/Startpage/Brave/Mojeek/Ecosia returned CAPTCHA, 403 or 429 to direct fetch while Bing returned bot-degraded results that ignored quoted phrases. Item (5) was therefore substituted with (a) Google News RSS (which returned real, correctly dated 2026 results) and (b) exhaustive enumeration of the companies' own sitemaps, followed by bulk download and keyword grep of every relevant page. Items (1)-(4) — the only sources that can yield admissible Channel A evidence — were executed in full against primary sources."
+  }
+]

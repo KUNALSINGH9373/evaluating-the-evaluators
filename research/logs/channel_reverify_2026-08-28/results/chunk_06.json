@@ -1,0 +1,1356 @@
+[
+  {
+    "finding_id": "TRANSLUCE-2025-09-JAI1-s2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Google DeepMind blog index",
+          "url": "https://deepmind.google/discover/blog/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched via text proxy. No Transluce mention."
+        },
+        {
+          "source": "Google 'The Keyword' safety & security hub",
+          "url": "https://blog.google/technology/safety-security/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No Transluce mention."
+        },
+        {
+          "source": "Google DeepMind responsibility & safety page",
+          "url": "https://deepmind.google/about/responsibility-safety/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No Transluce mention."
+        },
+        {
+          "source": "Gemini 3 Pro Model Card (subsequent card in the Gemini family after Gemini 2.5 Pro)",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded (PDF, 834KB) and full text extracted. No 'Transluce'. Contains only a generic standing statement that jailbreak vulnerability is 'improved compared to Gemini 2.5 Pro but still an open research problem' - a pre-existing/standing acknowledgement of the risk class, not attributable to this finding."
+        },
+        {
+          "source": "Gemini 3.1 Pro Model Card",
+          "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. No 'Transluce'; no named external evaluator tied to this finding."
+        },
+        {
+          "source": "Gemini 2.5 Pro model card page (the evaluated model's own card)",
+          "url": "https://deepmind.google/models/model-cards/gemini-2-5-pro/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 404 - page no longer served at that path; superseded cards checked instead."
+        },
+        {
+          "source": "Open web search (Brave) combining Google/DeepMind + Transluce + the finding's CBRN-jailbreak claim",
+          "url": "https://search.brave.com/search?q=Transluce+investigator+agents+Gemini+2.5+Pro+Google+DeepMind+response",
+          "checked_date": "2026-08-28",
+          "result": "Only Transluce's own report, its X post and its GitHub repo, plus unrelated third-party blogs. No Google primary source."
+        },
+        {
+          "source": "Google News RSS, query 'Transluce'",
+          "url": "https://news.google.com/rss/search?q=%22Transluce%22",
+          "checked_date": "2026-08-28",
+          "result": "6 items, none about this report; no Google statement."
+        },
+        {
+          "source": "Transluce's own report page (checked for any disclosed Google engagement)",
+          "url": "https://transluce.org/jailbreaking-frontier-models",
+          "checked_date": "2026-08-28",
+          "result": "Read in full. Confirms the Gemini 2.5 Pro 90% pass@1 figure. The 'Safety disclosure' section describes only Transluce's own publication choices; it records no contact with or response from Google."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full five-step battery run against Google/Google DeepMind primary sources. Newsroom/blog (1), subsequent Gemini family model cards incl. Gemini 3 Pro and 3.1 Pro (2), DeepMind and Google safety hubs (3), official Google channels (4) and broad web search used only to locate primary sources (5) all returned nothing referencing Transluce, the investigator-agent report, or the 90% Gemini 2.5 Pro result. The only same-topic material is a standing, generic acknowledgement in the Gemini 3 Pro card that jailbreak robustness remains an open problem, which is pre-existing policy language and inadmissible under the attribution rule. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'Transluce', 'Automatically Jailbreaking Frontier Language Models with Investigator Agents', and the 90% Gemini 2.5 Pro CBRN pass@1 claim; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'Transluce', 'Automatically Jailbreaking Frontier Language Models with Investigator Agents', and the 90% Gemini 2.5 Pro CBRN pass@1 claim; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official UK, US or EU source explicitly references the finding, the report, the evaluator or the specific result. Federal Register phrase search for 'Transluce' returns 0 documents; Hansard returns 0 across all record types; congress.gov, gov.uk, parliament.uk and europa.eu site-restricted searches all return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Channel A is a well-earned None: unlike the earlier passes, no source in this run was blocked - the Gemini 3 Pro card was downloaded as a PDF and full-text searched rather than inferred. Channel C is genuinely empty for this finding: the only coverage located is Transluce's own report/X/GitHub, which the rules exclude as circular. Note for the record that the August 2026 AI Frontiers essay 'AI Jailbreak Disclosure Is Broken' covers this exact problem space but was read in full and does not mention Transluce or this report, so it is not logged as Channel C."
+  },
+  {
+    "finding_id": "TRANSLUCE-2025-09-JAI1-s3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "xAI/SpaceXAI newsroom - complete post index, November 2023 through 26 August 2026, retrieved via text proxy (direct curl is Cloudflare-blocked)",
+          "url": "https://x.ai/news",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. Every post title and date enumerated. No post about Transluce, the investigator-agent report, or any external jailbreak red-teaming response."
+        },
+        {
+          "source": "Grok 4 Fast Model Card, 19 September 2025 (first card published after the 3 September 2025 finding)",
+          "url": "https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and full text extracted. No 'Transluce', no 'investigator agent', no named third-party evaluator."
+        },
+        {
+          "source": "Grok 4.1 Model Card, 17 November 2025",
+          "url": "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and full text extracted. No 'Transluce'; no named third-party evaluator."
+        },
+        {
+          "source": "Grok 4.20 Model Card, 7 April 2026",
+          "url": "https://data.x.ai/2026-04-07-grok-4-20-model-card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and full text extracted. Describes providing 'third-party evaluators' with early checkpoints for refusal-boundary red-teaming, but names no organisation and does not reference Transluce or this finding."
+        },
+        {
+          "source": "Grok 4.6 Model Card, 12 August 2026 (rev. 17 August 2026)",
+          "url": "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and full text extracted. Mentions unnamed 'third-party evaluators' and Vals AI; no Transluce reference."
+        },
+        {
+          "source": "x.ai safety page",
+          "url": "https://x.ai/safety",
+          "checked_date": "2026-08-28",
+          "result": "Fetched via text proxy: returned site navigation only, body content is client-rendered and could not be retrieved. Recorded as NOT fully readable rather than as a clean negative."
+        },
+        {
+          "source": "Open web search (Brave) for xAI response + Transluce + Grok 4 98% CBRN jailbreak",
+          "url": "https://search.brave.com/search?q=Transluce+Grok+4+98%25+jailbreak+xAI+response",
+          "checked_date": "2026-08-28",
+          "result": "Transluce's own report plus jailbreak-community pages and xAI's own model cards. No xAI primary source responding to the finding."
+        },
+        {
+          "source": "Transluce's own report page",
+          "url": "https://transluce.org/jailbreaking-frontier-models",
+          "checked_date": "2026-08-28",
+          "result": "Read in full. Confirms Grok 4 at 98% pass@1, the highest of any model tested. Records no xAI contact or response."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery run against xAI/SpaceXAI primary sources. The newsroom index was enumerated end-to-end and contains no responsive post; four successive model cards spanning September 2025 to August 2026 were downloaded and full-text searched with no Transluce reference; the safety page could not be rendered and is recorded as unreadable rather than negative; open web search located no xAI primary document. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'Transluce', the report title, and the 98% Grok 4 CBRN pass@1 claim; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'Transluce', the report title, and the 98% Grok 4 CBRN pass@1 claim; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official UK, US or EU source explicitly references the finding, report, evaluator or result. Federal Register phrase search 'Transluce' = 0; Hansard = 0; congress.gov / gov.uk / parliament.uk / europa.eu site-restricted searches return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "One source remains genuinely unreadable: x.ai/safety renders its body client-side and the text proxy returned navigation only. This does not disturb the coding, because the canonical xAI safety documents are the model cards, and all four post-finding cards were obtained as PDFs and searched. Also note xAI was acquired by SpaceX on 2 February 2026 and now publishes as 'SpaceXAI'; the newsroom and model-card URLs are unchanged."
+  },
+  {
+    "finding_id": "TRANSLUCE-2025-09-JAI1-s4",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI Deployment Safety Hub - full system-card corpus (893 subpages across 24 cards: o3/o4-mini, gpt-5, gpt-5-codex, chatgpt-agent, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update, gpt-5-sensitive-conversations, gpt-live, gpt-rosalind-5-5, gpt-oss, deep-research, sora-2, chatgpt-images-2-0, 4o-native-image-generation); downloaded in full and text-searched",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully (HTTP 200, ~492MB of page text). Zero occurrences of 'Transluce', 'Palisade', 'Holistic Agent', 'Princeton'. No mention of any of these evaluators or findings."
+        },
+        {
+          "source": "openai.com sitemap enumeration (1,429 URLs across page/safety/security/research/publication/release/global-affairs/company/milestone/engineering/disrupting-malicious-uses/product sections)",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post slug referencing Transluce, Palisade Research, HAL or the Holistic Agent Leaderboard. Only adjacent items: /index/third-party-cyber-evaluations-involving-openai-models/, /index/trustworthy-third-party-evaluations-foundations/, /index/red-teaming-network/."
+        },
+        {
+          "source": "OpenAI blog: 'Third-party cyber evaluations involving OpenAI models'",
+          "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+          "checked_date": "2026-08-28",
+          "result": "Read in full via text proxy. Concerns 2026 incidents with UK AISI cyber-range testing (GPT-5.6 Sol) and Irregular; does not mention Palisade Research, o3, Transluce or HAL."
+        },
+        {
+          "source": "openai.com newsroom / /news/ and /index/ pages by direct fetch",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to both curl and WebFetch (Cloudflare). Worked around by (a) sitemap enumeration of all post URLs and (b) reading individual posts through a text-extraction proxy; recorded here explicitly as a blocked direct-fetch route."
+        },
+        {
+          "source": "Open web search (Brave) for OpenAI response + Transluce + the GPT-5-main/GPT-5-thinking result",
+          "url": "https://search.brave.com/search?q=Transluce+jailbreaking+frontier+models+OpenAI+response",
+          "checked_date": "2026-08-28",
+          "result": "Transluce's own report, X post and GitHub repo, plus third-party commentary. No OpenAI primary source."
+        },
+        {
+          "source": "Transluce's own report page",
+          "url": "https://transluce.org/jailbreaking-frontier-models",
+          "checked_date": "2026-08-28",
+          "result": "Read in full. Confirms GPT-5-main 78% and GPT-5-thinking 28% pass@1. Records no OpenAI contact or response."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "This is the strongest available negative for an OpenAI row: rather than relying on search, the entire OpenAI Deployment Safety Hub was downloaded (all 893 subpages of all 24 system cards, including every GPT-5.x card published between the finding and the cutoff) and text-searched, returning zero occurrences of 'Transluce'. The openai.com post corpus was enumerated from the sitemap (1,429 URLs) with no responsive post, and the one adjacent post ('Third-party cyber evaluations involving OpenAI models') was read in full and concerns unrelated 2026 incidents. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'Transluce', the report title, and the GPT-5-main 78% / GPT-5-thinking 28% result; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'Transluce', the report title, and the GPT-5-main 78% / GPT-5-thinking 28% result; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official UK, US or EU source explicitly references the finding, report, evaluator or result. Federal Register 'Transluce' = 0; Hansard = 0; congress.gov / gov.uk / europa.eu site-restricted searches return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Direct fetches of openai.com HTML return HTTP 403 to both curl and WebFetch; that route is recorded as blocked, but it was fully substituted by the deployment-safety hub corpus (which is not blocked) plus sitemap enumeration plus proxy reads of individual posts, so the negative is earned rather than assumed."
+  },
+  {
+    "finding_id": "JOINT-2025-09-BIO1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic newsroom post 'Strengthening our safeguards through collaboration with US CAISI and UK AISI' (the cited response document)",
+          "url": "https://www.anthropic.com/news/strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi",
+          "checked_date": "2026-08-28",
+          "result": "Read in full and re-verified line by line. The recorded verbatim is accurate and appears in the 'Stress-testing safeguard architectures' bullet; the false-annotation bypass, cipher/character-substitution attacks and string-fragmentation attacks are each described, each with a stated remediation."
+        },
+        {
+          "source": "Anthropic system-card corpus, all cards published after the finding (Claude Sonnet 4.5, Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Opus 4.7, Opus 4.8, Mythos Preview, Fable 5 & Mythos 5, Opus 5, Sonnet 5) - PDFs downloaded and full text extracted with pdftotext",
+          "url": "https://www.anthropic.com/system-cards",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. Zero occurrences of 'Transluce', 'Holistic Agent', 'CTRL-ALT-DECEIT', 'arXiv:2511.09904'. 'Princeton' appears once (Fable 5/Mythos 5, unrelated citation). 'Redwood' appears in Opus 4.7/4.8/5, Sonnet 5, Mythos Preview and Fable 5 cards only as the source of the LinuxBench/LinuxArena AI-control arena - unrelated to any finding in this chunk."
+        },
+        {
+          "source": "anthropic.com newsroom and transparency hub (sitemap-enumerated)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Transluce, HAL/Princeton, Redwood's eval-gaming analysis, or CTRL-ALT-DECEIT."
+        },
+        {
+          "source": "Anthropic safeguards / RSP / transparency pages",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Fetched. Consistent with the newsroom post; no contradicting or superseding statement."
+        },
+        {
+          "source": "NIST/CAISI news release (used only to locate company primary sources, per battery step 5)",
+          "url": "https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation",
+          "checked_date": "2026-08-28",
+          "result": "Fetched and read (published 2025-09-25). Confirms and hyperlinks the Anthropic post as the company's response."
+        }
+      ],
+      "evidence_url": "https://www.anthropic.com/news/strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi",
+      "verbatim": "They developed a sophisticated universal jailbreak that encoded harmful interactions in ways that evaded our standard detection methods. Rather than simply patching this individual exploit, the discovery prompted us to fundamentally restructure our safeguard architecture to address the underlying vulnerability class.",
+      "response_date": "2025-09-12",
+      "reasoning": "Re-verified against the primary document. Anthropic names the government red-teamers, describes each specific bypass class found (false human-review annotations, encoded/universal jailbreak, cipher and character-substitution obfuscation, string fragmentation) and states a concrete remediation for each - 'We have patched these vulnerabilities' for the prompt-injection annotations, an architectural restructure for the universal jailbreak, and 'targeted improvements to our filtering mechanisms' for the obfuscation attacks. That is a specific set of safeguard changes attributable to this finding: Substantive, Explicit attribution. Coding unchanged."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'CAISI', 'UK AISI', 'Constitutional Classifiers', and the universal-jailbreak/false-annotation bypass; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'CAISI', 'UK AISI', 'Constitutional Classifiers', and the universal-jailbreak/false-annotation bypass; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "The one official document that explicitly references this report is the NIST news release of 2025-09-25, which states that 'OpenAI and Anthropic recently published blog posts describing concrete security improvements made as a result of CAISI's research and evaluations' and hyperlinks the Anthropic post directly. I considered coding this as non-binding policy-related uptake, because it is an official US government (Commerce/NIST) publication that explicitly references the report. I have left the coding unchanged because NIST is CAISI's own parent agency: an evaluator's own institution publicising its own evaluation is the finding's publication vehicle, not a government's uptake of someone else's finding, and it imposes no obligation and announces no policy instrument. No other UK, US or EU source explicitly references the finding."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "JUDGEMENT CALL flagged for review: the NIST release is a real, dated, official government document that explicitly hyperlinks this report, so a reader applying the Channel B rule literally ('explicitly reference the finding, report, evaluator or specific result') could code this as non-binding policy-related uptake. I kept 'No policy uptake identified' on the self-publication ground described above, which is also the convention the existing record used. Separately: the existing 'Company Response' field calls the successor system 'Classifiers++'; that term does not appear anywhere in the cited Anthropic post and I could not verify it from this source. It does not affect the Action Level but should be corrected or sourced."
+  },
+  {
+    "finding_id": "JOINT-2025-09-CYB1",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI blog 'Working with US CAISI and UK AISI to build more secure AI systems' (the cited response document)",
+          "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+          "checked_date": "2026-08-28",
+          "result": "Read in full via text proxy (direct fetch is HTTP 403). Confirms the two novel ChatGPT Agent vulnerabilities, the exploit chain combining traditional software vulnerabilities with an AI agent-hijacking attack, the ~50% success rate, and the one-business-day fix."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub - full system-card corpus (893 subpages across 24 cards: o3/o4-mini, gpt-5, gpt-5-codex, chatgpt-agent, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update, gpt-5-sensitive-conversations, gpt-live, gpt-rosalind-5-5, gpt-oss, deep-research, sora-2, chatgpt-images-2-0, 4o-native-image-generation); downloaded in full and text-searched",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully (HTTP 200, ~492MB of page text). Zero occurrences of 'Transluce', 'Palisade', 'Holistic Agent', 'Princeton'. No mention of any of these evaluators or findings."
+        },
+        {
+          "source": "openai.com sitemap enumeration (1,429 URLs across page/safety/security/research/publication/release/global-affairs/company/milestone/engineering/disrupting-malicious-uses/product sections)",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post slug referencing Transluce, Palisade Research, HAL or the Holistic Agent Leaderboard. Only adjacent items: /index/third-party-cyber-evaluations-involving-openai-models/, /index/trustworthy-third-party-evaluations-foundations/, /index/red-teaming-network/."
+        },
+        {
+          "source": "openai.com newsroom / /news/ and /index/ pages by direct fetch",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to both curl and WebFetch (Cloudflare). Worked around by (a) sitemap enumeration of all post URLs and (b) reading individual posts through a text-extraction proxy; recorded here explicitly as a blocked direct-fetch route."
+        },
+        {
+          "source": "NIST/CAISI news release (battery step 5, used to locate company primary sources)",
+          "url": "https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation",
+          "checked_date": "2026-08-28",
+          "result": "Fetched and read. Confirms and hyperlinks the OpenAI post as the company response."
+        }
+      ],
+      "evidence_url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+      "verbatim": "The proof-of-concept attack developed by CAISI successfully bypassed various AI-based security protections, which led to a full exploit chain with a success rate of approximately 50%. The CAISI team's multidisciplinary approach enabled them to develop a sophisticated exploit chain combining traditional software vulnerabilities with AI vulnerabilities. And, in an example of how AI systems can be a valuable tool for security testing, CAISI made use of ChatGPT Agent itself to aid in the process of discovering these vulnerabilities. These attacks were immediately reported to OpenAI, and fixed by OpenAI within one business day.",
+      "response_date": "2025-09-12",
+      "reasoning": "Verified directly against the primary document. OpenAI names CAISI, describes the two novel ChatGPT Agent vulnerabilities and the ~50%-success exploit chain, and states the vulnerabilities were fixed within one business day. That is a specific remediation attributable to this finding: Substantive, Explicit attribution. Coding unchanged."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'CAISI', 'UK AISI', 'ChatGPT Agent', and the ~50% exploit-chain result; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'CAISI', 'UK AISI', 'ChatGPT Agent', and the ~50% exploit-chain result; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "As with JOINT-2025-09-BIO1, the only official document explicitly referencing this report is the NIST release of 2025-09-25, which hyperlinks this exact OpenAI post and states that concrete security improvements resulted from CAISI's evaluations. Left as No policy uptake identified on the same ground: NIST is CAISI's own agency, the release announces no instrument and imposes no obligation. Federal Register, Hansard, congress.gov, gov.uk and europa.eu searches return nothing else."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "VERBATIM CORRECTION. The existing record's quoted verbatim - CAISI red-teamed ChatGPT Agent before and after release, 'discovering two new vulnerabilities that OpenAI patched within one business day' - does not appear in the cited OpenAI page. The page's actual wording is supplied above. The substance of the coding is unaffected, but the stored quotation should be replaced. Same NIST judgement call as BIO1 applies to Channel B."
+  },
+  {
+    "finding_id": "JOINT-2025-09-JAI2",
+    "current": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI blog 'Working with US CAISI and UK AISI to build more secure AI systems' (the cited response document)",
+          "url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+          "checked_date": "2026-08-28",
+          "result": "Read in full via text proxy. Both the 'more than a dozen detailed vulnerability reports' passage and the product-configuration passage confirmed word for word."
+        },
+        {
+          "source": "OpenAI Deployment Safety Hub - full system-card corpus (893 subpages across 24 cards: o3/o4-mini, gpt-5, gpt-5-codex, chatgpt-agent, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update, gpt-5-sensitive-conversations, gpt-live, gpt-rosalind-5-5, gpt-oss, deep-research, sora-2, chatgpt-images-2-0, 4o-native-image-generation); downloaded in full and text-searched",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully (HTTP 200, ~492MB of page text). Zero occurrences of 'Transluce', 'Palisade', 'Holistic Agent', 'Princeton'. No mention of any of these evaluators or findings."
+        },
+        {
+          "source": "openai.com sitemap enumeration (1,429 URLs across page/safety/security/research/publication/release/global-affairs/company/milestone/engineering/disrupting-malicious-uses/product sections)",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post slug referencing Transluce, Palisade Research, HAL or the Holistic Agent Leaderboard. Only adjacent items: /index/third-party-cyber-evaluations-involving-openai-models/, /index/trustworthy-third-party-evaluations-foundations/, /index/red-teaming-network/."
+        },
+        {
+          "source": "openai.com newsroom / /news/ and /index/ pages by direct fetch",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to both curl and WebFetch (Cloudflare). Worked around by (a) sitemap enumeration of all post URLs and (b) reading individual posts through a text-extraction proxy; recorded here explicitly as a blocked direct-fetch route."
+        },
+        {
+          "source": "NIST/CAISI news release (battery step 5)",
+          "url": "https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation",
+          "checked_date": "2026-08-28",
+          "result": "Fetched and read; hyperlinks the OpenAI post as the company response."
+        }
+      ],
+      "evidence_url": "https://openai.com/index/us-caisi-uk-aisi-ai-update/",
+      "verbatim": "During this process, UK AISI found and OpenAI triaged more than a dozen detailed vulnerability reports. Some of these led to engineering based product fixes, some led to policy enforcement implementation fixes, and some led OpenAI to carry out focused training for improving certain aspects of our classifiers. For instance: OpenAI improved the robustness of our monitoring stack by improving and measuring it against a set of universal jailbreaks UK AISI identified against the monitoring systems, which were discovered through both manual red teaming and automated attack techniques. Additionally, the end-to-end testing component proved to be especially beneficial. OpenAI made a range of improvements to our product configuration to fix a set of configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation.",
+      "response_date": "2025-09-12",
+      "reasoning": "Verified directly against the primary document. OpenAI names UK AISI, describes the specific configuration vulnerabilities (malicious content inputted or exfiltrated without triggering moderation) and states the specific fixes made - engineering product fixes, policy-enforcement fixes and focused classifier training. Substantive, Explicit attribution. Coding unchanged."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'UK AISI', 'CAISI', and the product-configuration moderation-bypass result; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'UK AISI', 'CAISI', and the product-configuration moderation-bypass result; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Same position as the two sibling rows: the NIST release of 2025-09-25 explicitly hyperlinks this report but is CAISI's own agency self-publicising, announces no instrument and imposes no obligation. Nothing else in Federal Register, Hansard, congress.gov, gov.uk or europa.eu explicitly references the finding."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "The stored verbatim for this row was accurate as far as it went (it was truncated mid-sentence); the full passage including the product-configuration sentence is supplied above. Same NIST judgement call as the two sibling rows."
+  },
+  {
+    "finding_id": "PALISADE-2025-09-CYB1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI Deployment Safety Hub - full system-card corpus (893 subpages across 24 cards: o3/o4-mini, gpt-5, gpt-5-codex, chatgpt-agent, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update, gpt-5-sensitive-conversations, gpt-live, gpt-rosalind-5-5, gpt-oss, deep-research, sora-2, chatgpt-images-2-0, 4o-native-image-generation); downloaded in full and text-searched",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully (HTTP 200, ~492MB of page text). Zero occurrences of 'Transluce', 'Palisade', 'Holistic Agent', 'Princeton'. No mention of any of these evaluators or findings."
+        },
+        {
+          "source": "OpenAI o3/o4-mini system card and o3 deployment-safety pages specifically (the evaluated model's own card)",
+          "url": "https://deploymentsafety.openai.com/o3/",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded in full. No 'Palisade'; no reference to an autonomous simulated-corporate-network breach by o3."
+        },
+        {
+          "source": "openai.com sitemap enumeration (1,429 URLs across page/safety/security/research/publication/release/global-affairs/company/milestone/engineering/disrupting-malicious-uses/product sections)",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post slug referencing Transluce, Palisade Research, HAL or the Holistic Agent Leaderboard. Only adjacent items: /index/third-party-cyber-evaluations-involving-openai-models/, /index/trustworthy-third-party-evaluations-foundations/, /index/red-teaming-network/."
+        },
+        {
+          "source": "OpenAI blog: 'Third-party cyber evaluations involving OpenAI models'",
+          "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+          "checked_date": "2026-08-28",
+          "result": "Read in full via text proxy. Concerns 2026 incidents with UK AISI cyber-range testing (GPT-5.6 Sol) and Irregular; does not mention Palisade Research, o3, Transluce or HAL."
+        },
+        {
+          "source": "openai.com newsroom / /news/ and /index/ pages by direct fetch",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to both curl and WebFetch (Cloudflare). Worked around by (a) sitemap enumeration of all post URLs and (b) reading individual posts through a text-extraction proxy; recorded here explicitly as a blocked direct-fetch route."
+        },
+        {
+          "source": "Palisade Research's own report page (checked for any disclosed OpenAI engagement)",
+          "url": "https://palisaderesearch.org/research/end-to-end-hacking",
+          "checked_date": "2026-08-28",
+          "result": "Fetched (redirected from /blog/end-to-end-hacking). Publication date confirmed as 2025-09-12 and the finding text confirmed verbatim. No OpenAI contact or response recorded."
+        },
+        {
+          "source": "Open web search (Brave) for OpenAI response + Palisade Research + end-to-end hacking / o3",
+          "url": "https://search.brave.com/search?q=Palisade+Research+end-to-end+hacking+o3+OpenAI+response",
+          "checked_date": "2026-08-28",
+          "result": "Palisade's own pages, Reddit and general press about Palisade's separate shutdown-resistance work. No OpenAI primary source."
+        },
+        {
+          "source": "Google News RSS, query 'Palisade Research hacking agents'",
+          "url": "https://news.google.com/rss/search?q=%22Palisade+Research%22+hacking+agents",
+          "checked_date": "2026-08-28",
+          "result": "13 items, all concerning later and separate 2026 events (Hugging Face incident, self-replication study, Anthropic testing). None concerns this September 2025 report or any OpenAI reply to it."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery against OpenAI primary sources. The entire deployment-safety corpus - including the o3 card itself and every subsequent GPT-5.x card through the August 2026 GPT-5.6 update - was downloaded and searched with zero occurrences of 'Palisade'. The openai.com post corpus was enumerated with no responsive post. The one adjacent post, 'Third-party cyber evaluations involving OpenAI models', was read in full: it concerns 2026 cyber-range incidents involving UK AISI and Irregular, not Palisade's September 2025 o3 result, and so is inadmissible for this finding. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'Palisade Research', 'End-to-End Hacking with AI Agents', and the o3 simulated-network-breach claim; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'Palisade Research', 'End-to-End Hacking with AI Agents', and the o3 simulated-network-breach claim; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register phrase search 'Palisade Research' = 0 relevant documents. Hansard = 0. congress.gov and parliament.uk site-restricted searches return explicit no-results. One govinfo hit exists for 'Palisade Research' - a House hearing, 'The Federal Government in the Age of Artificial Intelligence', dated 2025-06-05 - but it predates this 2025-09-12 finding by three months and therefore cannot reference it. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "The pre-finding govinfo hit is logged above so a later reviewer does not mistake it for uptake. Channel C for this specific report is empty: press interest in Palisade during the window attaches to its shutdown-resistance and self-replication work, not to the end-to-end hacking report."
+  },
+  {
+    "finding_id": "ANTHROPIC-2025-09-SELF-ALI1",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Substantive",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Claude Sonnet 4.5 System Card (the finding's own source document)",
+          "url": "https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and full text extracted. UK AISI's figures verified exactly: the model 'verbalises - without prompting - evaluation awareness in its outputs 16.6% of the time, compared to 3.5% and 1.6% of the time for Sonnet 4 and Opus 4.1 respectively'. Section 7.3.1 attributes this to UK AISI. The card acknowledges the issue but specifies no safeguard change - consistent with the original 'Acknowledged' coding at the time."
+        },
+        {
+          "source": "Claude Opus 4.5 System Card, November 2025 - the next card in the same model family, i.e. battery step 2",
+          "url": "https://www.anthropic.com/claude-opus-4-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and full text extracted. Section 6.7 and 6.7.1 document a specific training-process change made to mitigate the evaluation-awareness problem observed on Sonnet 4.5, and cite the UK AISI's independent report on the resulting reduction. THIS IS THE NEW EVIDENCE."
+        },
+        {
+          "source": "Claude Opus 4.6, Sonnet 4.6, Opus 4.7, Opus 4.8, Mythos Preview, Fable 5 & Mythos 5, Opus 5 and Sonnet 5 System Cards",
+          "url": "https://www.anthropic.com/system-cards",
+          "checked_date": "2026-08-28",
+          "result": "All downloaded and full-text searched. Evaluation awareness remains a standing section in every card (37-75 occurrences each), confirming the mitigation programme continued; none adds a further distinct action attributable specifically to this finding."
+        },
+        {
+          "source": "anthropic.com newsroom and transparency hub (sitemap-enumerated)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Transluce, HAL/Princeton, Redwood's eval-gaming analysis, or CTRL-ALT-DECEIT."
+        },
+        {
+          "source": "Anthropic Alignment Science Blog - complete article index, July 2025 through August 2026",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Redwood's 'Sonnet 4.5's eval gaming' analysis, to HAL, or to CTRL-ALT-DECEIT. The closest item, 'Petri 2.0' (Jan 2026), adds eval-awareness realism mitigations and cites a *different* UK AISI report (Souly et al., UK AISI Alignment Evaluation Case-Study on Opus 4.5 Preview), not the findings in this chunk."
+        },
+        {
+          "source": "Anthropic Alignment Science Blog, 'Petri 2.0: New Scenarios, New Model Comparisons, and Improved Eval-Awareness Mitigations' (January 2026)",
+          "url": "https://alignment.anthropic.com/2026/petri-v2/",
+          "checked_date": "2026-08-28",
+          "result": "Read in full. Adds realism mitigations to counter eval-awareness and cites UK AISI - but cites Souly et al., the UK AISI Alignment Evaluation Case-Study on Claude Opus 4.5 Preview, which I retrieved and confirmed is a different, later UK AISI report. Not admissible for THIS finding; logged so it is not double-counted."
+        },
+        {
+          "source": "UK AISI Alignment Evaluation Case-Study (Souly, Kirk, Merizian, D'Cruz, Davies)",
+          "url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6927663ba1576c0a2acb3cba_UK_AISI_Alignment_Testing_Case_Study%20(1)%20(1).pdf",
+          "checked_date": "2026-08-28",
+          "result": "Downloaded and full text extracted to check whether it is the report behind this finding. It is not: it covers Opus 4.1, Sonnet 4.5 and an Opus 4.5 pre-release snapshot and does not contain the 16.6%/3.5%/1.6% figures."
+        }
+      ],
+      "evidence_url": "https://www.anthropic.com/claude-opus-4-5-system-card",
+      "verbatim": "On Claude Sonnet 4.5, we observed substantial rates of verbalized evaluation awareness on some of our evaluations, which increased over the course of training. We also observed internal representations of evaluation awareness that were highly (and increasingly over training) active on some of our evaluations, and found evidence that inhibiting these representations could lead to a moderate increase in misaligned behavior. On Claude Opus 4.5, we attempted to mitigate these issues by removing components of our training process we suspected were exacerbating evaluation awareness. This involved only the removal of categories of training environments or data, not in adding new data or otherwise attempting to directly disincentivize any form of evaluation awareness. We believe these mitigations were partially, though not entirely, effective at reducing the influence of evaluation awareness on the model's alignment-relevant behavior.",
+      "response_date": "2025-11 (Claude Opus 4.5 System Card, dated 'November 2025' on its cover; the document does not state a day)",
+      "reasoning": "This is the change this re-verification pass exists to catch. At the time of the original coding, the only company response on record was the Sonnet 4.5 system card, which reproduced UK AISI's measurement and conceded it complicated the alignment assessment but specified no action - correctly coded Acknowledged. The next card in the same model family, published roughly two months later, goes further: Anthropic states it removed categories of training environments and data believed to be exacerbating evaluation awareness, and reports in section 6.7.1 that 'In contrast to Claude Sonnet 4.5, Claude Opus 4.5 was never trained on any prompts that resemble \"honeypot\" environments', with the resulting decrease in unprompted verbalized evaluation awareness 'noted in the UK AISI's independent report'. A documented removal of training-data categories in order to suppress the measured behaviour is a specific model change addressing the problem, which meets the Substantive definition. Attribution stays Explicit: UK AISI is named as the source of the measurement in the Sonnet 4.5 card and is named again in the Opus 4.5 mitigation section."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'UK AISI', 'Claude Sonnet 4.5 System Card', and the 16.6% verbalized evaluation-awareness result; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'UK AISI', 'Claude Sonnet 4.5 System Card', and the 16.6% verbalized evaluation-awareness result; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "No official UK, US or EU source explicitly references this finding, the Sonnet 4.5 system card or the 16.6% figure. Hansard = 0 for the relevant terms; Federal Register = 0; congress.gov, gov.uk and europa.eu site-restricted searches return explicit no-results. UK parliamentary debate on AI safety in the window does not mention this result. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "VentureBeat",
+          "date": "2025-12-03",
+          "title": "Anthropic vs. OpenAI red teaming methods reveal different security priorities for enterprise AI",
+          "url": "https://venturebeat.com/",
+          "note": "Located via Google News RSS; covers the comparative red-teaming/evaluation-awareness discussion. Logged as adjacent coverage, not verified line by line for a reference to the 16.6% figure."
+        }
+      ],
+      "academic": [],
+      "discussion": [
+        {
+          "venue": "Redwood Research blog",
+          "date": "2025-10-30",
+          "title": "Sonnet 4.5's eval gaming seriously undermines alignment evals",
+          "url": "https://blog.redwoodresearch.org/p/sonnet-45s-eval-gaming-seriously",
+          "note": "Independent expert re-analysis of the same Sonnet 4.5 evaluation-awareness result. Descriptive only; separately coded in this chunk as REDWOOD-2025-10-ALI1."
+        }
+      ]
+    },
+    "confidence": "medium",
+    "notes": "PROPOSED UPGRADE, Acknowledged -> Substantive, and the one coding change in this chunk. The judgement call is causal attribution rather than evidence: Anthropic frames the Opus 4.5 training change as a response to what 'we observed' on Sonnet 4.5 - its own measurements, which UK AISI's third-party assessment corroborated and quantified - rather than as a response to UK AISI in so many words. A stricter reader could hold that the training decision was internally motivated and merely confirmed by UK AISI, and keep Acknowledged. I judge Substantive better supported because the finding as recorded IS the Sonnet 4.5 evaluation-awareness result, the mitigation postdates it, appears in the next card of the same family (an explicit battery-step-2 location), and cites UK AISI's report for its effect. Confidence set to medium accordingly. Note also that the Opus 4.5 card reports the mitigation only partially worked: verbalized awareness 'increased over the course of training and ended up at similar levels to Claude Sonnet 4.5'. That limits the effectiveness, not the fact of the action, so it does not by itself push the coding down to Partial."
+  },
+  {
+    "finding_id": "USCAISI-2025-09-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek news/changelog - complete sitemap-enumerated post list, including every post published after the 2025-09-30 finding (news251201, news260424, news260813, news260821)",
+          "url": "https://api-docs.deepseek.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Sitemap fetched and all post-finding entries read in full. All are capability/pricing/release announcements. Zero mentions of CAISI, NIST, safety, jailbreak or agent hijacking."
+        },
+        {
+          "source": "DeepSeek corporate site",
+          "url": "https://www.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched via text proxy. No newsroom item or statement responding to the CAISI evaluation."
+        },
+        {
+          "source": "DeepSeek model cards for every model released after the finding - DeepSeek-V3.2, DeepSeek-V4-Pro, DeepSeek-V4-Pro-0813 - README/model-card source retrieved directly",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/raw/main/README.md",
+          "checked_date": "2026-08-28",
+          "result": "All three retrieved (HTTP 200) and searched. Zero occurrences of 'CAISI', 'NIST', 'jailbreak', 'agent hijack' or 'safety'. DeepSeek publishes no safety/system card of the kind the battery contemplates."
+        },
+        {
+          "source": "Hugging Face deepseek-ai organisation model index (25 most recent releases, 2025-10 through 2026-08)",
+          "url": "https://huggingface.co/api/models?author=deepseek-ai&sort=createdAt",
+          "checked_date": "2026-08-28",
+          "result": "Enumerated to confirm the full set of post-finding releases was covered by the card check above."
+        },
+        {
+          "source": "Official DeepSeek accounts / any public statement, via open web and Google News RSS",
+          "url": "https://news.google.com/rss/search?q=DeepSeek+response+CAISI+NIST+evaluation",
+          "checked_date": "2026-08-28",
+          "result": "8 items, all third-party or NIST's own. No DeepSeek primary statement responding to the CAISI evaluation."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full five-step battery against DeepSeek primary sources, run against a company that publishes no safety hub and no system cards. Newsroom/changelog enumerated end to end for the eleven months since the finding; every post-finding model card retrieved and searched; corporate site and official channels checked; open web search located no DeepSeek primary statement. Nothing addresses the agent-hijacking result. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'CAISI', 'Center for AI Standards and Innovation', 'Evaluation of DeepSeek AI Models', and the specific result; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'CAISI', 'Center for AI Standards and Innovation', 'Evaluation of DeepSeek AI Models', and the specific result; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register full-text phrase search returns zero documents containing 'DeepSeek' at all, and exactly one containing 'Center for AI Standards and Innovation' - the 2026-01-08 Commerce/NIST 'Request for Information Regarding Security Considerations for Artificial Intelligence Agents' (doc 2026-00206). I retrieved that RFI's full text and checked it: it discusses agent hijacking generally and cites CAISI's January 2025 technical blog on agent-hijacking evaluations, but contains no reference to DeepSeek, to this evaluation or to any of its results, so under the explicit-reference rule it does not qualify. Hansard returns zero. congress.gov site-restricted searches for 'CAISI' + 'DeepSeek' and for 'CAISI evaluation of DeepSeek' return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "South China Morning Post",
+          "date": "2025-10-02",
+          "title": "Chinese AI models deemed a security risk by new US government report",
+          "url": "https://www.scmp.com/",
+          "note": "Located via Google News RSS."
+        },
+        {
+          "outlet": "Decrypt",
+          "date": "2026-05-04",
+          "title": "US Government Says China's Best AI Models Lag Behind. Experts Aren't So Sure",
+          "url": "https://decrypt.co/",
+          "note": "Located via Google News RSS; covers the CAISI DeepSeek evaluation line of work."
+        },
+        {
+          "outlet": "Mirage News",
+          "date": "2025-09-30",
+          "title": "CAISI Evaluation of DeepSeek AI Models Finds Shortcomings and Risks",
+          "url": "https://www.miragenews.com/caisi-evaluation-of-deepseek-ai-models-finds-1544122/",
+          "note": "Carried over from the existing record and re-confirmed as an independent outlet."
+        }
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "A follow-on CAISI report, 'CAISI Evaluation of DeepSeek V4 Pro' (NIST, 2026-05-01), exists and was noted. It is a further publication by the same evaluator, not a company response, so it is inadmissible for Channel A and is not policy uptake for Channel B; logged here so a later reviewer does not mistake it for either."
+  },
+  {
+    "finding_id": "USCAISI-2025-09-HUM1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek news/changelog - complete sitemap-enumerated post list, including every post published after the 2025-09-30 finding (news251201, news260424, news260813, news260821)",
+          "url": "https://api-docs.deepseek.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Sitemap fetched and all post-finding entries read in full. All are capability/pricing/release announcements. Zero mentions of CAISI, NIST, safety, jailbreak or agent hijacking."
+        },
+        {
+          "source": "DeepSeek corporate site",
+          "url": "https://www.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched via text proxy. No newsroom item or statement responding to the CAISI evaluation."
+        },
+        {
+          "source": "DeepSeek model cards for every model released after the finding - DeepSeek-V3.2, DeepSeek-V4-Pro, DeepSeek-V4-Pro-0813 - README/model-card source retrieved directly",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/raw/main/README.md",
+          "checked_date": "2026-08-28",
+          "result": "All three retrieved (HTTP 200) and searched. Zero occurrences of 'CAISI', 'NIST', 'jailbreak', 'agent hijack' or 'safety'. DeepSeek publishes no safety/system card of the kind the battery contemplates."
+        },
+        {
+          "source": "Hugging Face deepseek-ai organisation model index (25 most recent releases, 2025-10 through 2026-08)",
+          "url": "https://huggingface.co/api/models?author=deepseek-ai&sort=createdAt",
+          "checked_date": "2026-08-28",
+          "result": "Enumerated to confirm the full set of post-finding releases was covered by the card check above."
+        },
+        {
+          "source": "Official DeepSeek accounts / any public statement, via open web and Google News RSS",
+          "url": "https://news.google.com/rss/search?q=DeepSeek+response+CAISI+NIST+evaluation",
+          "checked_date": "2026-08-28",
+          "result": "8 items, all third-party or NIST's own. No DeepSeek primary statement responding to the CAISI evaluation."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Same battery as the sibling DeepSeek rows, run independently for the CCP-narrative result. No DeepSeek primary document addresses the narrative-echoing finding. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'CAISI', 'Center for AI Standards and Innovation', 'Evaluation of DeepSeek AI Models', and the specific result; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'CAISI', 'Center for AI Standards and Innovation', 'Evaluation of DeepSeek AI Models', and the specific result; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register full-text phrase search returns zero documents containing 'DeepSeek' at all, and exactly one containing 'Center for AI Standards and Innovation' - the 2026-01-08 Commerce/NIST 'Request for Information Regarding Security Considerations for Artificial Intelligence Agents' (doc 2026-00206). I retrieved that RFI's full text and checked it: it discusses agent hijacking generally and cites CAISI's January 2025 technical blog on agent-hijacking evaluations, but contains no reference to DeepSeek, to this evaluation or to any of its results, so under the explicit-reference rule it does not qualify. Hansard returns zero. congress.gov site-restricted searches for 'CAISI' + 'DeepSeek' and for 'CAISI evaluation of DeepSeek' return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "South China Morning Post",
+          "date": "2025-10-02",
+          "title": "Chinese AI models deemed a security risk by new US government report",
+          "url": "https://www.scmp.com/",
+          "note": "Located via Google News RSS."
+        },
+        {
+          "outlet": "Decrypt",
+          "date": "2026-05-04",
+          "title": "US Government Says China's Best AI Models Lag Behind. Experts Aren't So Sure",
+          "url": "https://decrypt.co/",
+          "note": "Located via Google News RSS; covers the CAISI DeepSeek evaluation line of work."
+        },
+        {
+          "outlet": "Mirage News",
+          "date": "2025-09-30",
+          "title": "CAISI Evaluation of DeepSeek AI Models Finds Shortcomings and Risks",
+          "url": "https://www.miragenews.com/caisi-evaluation-of-deepseek-ai-models-finds-1544122/",
+          "note": "Carried over from the existing record."
+        },
+        {
+          "outlet": "TechRepublic",
+          "date": "2025-10",
+          "title": "DeepSeek security gaps - CAISI study",
+          "url": "https://www.techrepublic.com/article/news-deepseek-security-gaps-caisi-study/",
+          "note": "Carried over from the existing record."
+        },
+        {
+          "outlet": "Cybernews",
+          "date": "2025-10",
+          "title": "NIST warns of flawed DeepSeek security, CCP narratives",
+          "url": "https://cybernews.com/security/nist-warns-of-flawed-deepseek-security-ccp-narratives/",
+          "note": "Carried over from the existing record."
+        },
+        {
+          "outlet": "HPCwire",
+          "date": "2025-10",
+          "title": "CAISI Evaluation of DeepSeek AI Models Finds Shortcomings and Risks",
+          "url": "https://www.hpcwire.com/off-the-wire/caisi-evaluation-of-deepseek-ai-models-finds-shortcomings-and-risks/",
+          "note": "Carried over from the existing record."
+        },
+        {
+          "outlet": "Homeland Security Newswire",
+          "date": "2025-10-06",
+          "title": "Evaluating DeepSeek AI models finds shortcomings and risks",
+          "url": "https://www.homelandsecuritynewswire.com/dr20251006-evaluating-deepseek-ai-models-finds-shortcomings-and-risks",
+          "note": "Carried over from the existing record."
+        }
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "This row has by far the widest media footprint of the DeepSeek trio, which is consistent with the CCP-narrative result being the most politically salient. That coverage is descriptive only and does not affect any coding."
+  },
+  {
+    "finding_id": "USCAISI-2025-09-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "DeepSeek news/changelog - complete sitemap-enumerated post list, including every post published after the 2025-09-30 finding (news251201, news260424, news260813, news260821)",
+          "url": "https://api-docs.deepseek.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Sitemap fetched and all post-finding entries read in full. All are capability/pricing/release announcements. Zero mentions of CAISI, NIST, safety, jailbreak or agent hijacking."
+        },
+        {
+          "source": "DeepSeek corporate site",
+          "url": "https://www.deepseek.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched via text proxy. No newsroom item or statement responding to the CAISI evaluation."
+        },
+        {
+          "source": "DeepSeek model cards for every model released after the finding - DeepSeek-V3.2, DeepSeek-V4-Pro, DeepSeek-V4-Pro-0813 - README/model-card source retrieved directly",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/raw/main/README.md",
+          "checked_date": "2026-08-28",
+          "result": "All three retrieved (HTTP 200) and searched. Zero occurrences of 'CAISI', 'NIST', 'jailbreak', 'agent hijack' or 'safety'. DeepSeek publishes no safety/system card of the kind the battery contemplates."
+        },
+        {
+          "source": "Hugging Face deepseek-ai organisation model index (25 most recent releases, 2025-10 through 2026-08)",
+          "url": "https://huggingface.co/api/models?author=deepseek-ai&sort=createdAt",
+          "checked_date": "2026-08-28",
+          "result": "Enumerated to confirm the full set of post-finding releases was covered by the card check above."
+        },
+        {
+          "source": "Official DeepSeek accounts / any public statement, via open web and Google News RSS",
+          "url": "https://news.google.com/rss/search?q=DeepSeek+response+CAISI+NIST+evaluation",
+          "checked_date": "2026-08-28",
+          "result": "8 items, all third-party or NIST's own. No DeepSeek primary statement responding to the CAISI evaluation."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Same battery as the sibling DeepSeek rows, run independently for the jailbreak result (94% response rate to overtly malicious requests under a common jailbreak, vs 8% for US reference models). No DeepSeek primary document addresses it. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'CAISI', 'Center for AI Standards and Innovation', 'Evaluation of DeepSeek AI Models', and the specific result; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'CAISI', 'Center for AI Standards and Innovation', 'Evaluation of DeepSeek AI Models', and the specific result; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register full-text phrase search returns zero documents containing 'DeepSeek' at all, and exactly one containing 'Center for AI Standards and Innovation' - the 2026-01-08 Commerce/NIST 'Request for Information Regarding Security Considerations for Artificial Intelligence Agents' (doc 2026-00206). I retrieved that RFI's full text and checked it: it discusses agent hijacking generally and cites CAISI's January 2025 technical blog on agent-hijacking evaluations, but contains no reference to DeepSeek, to this evaluation or to any of its results, so under the explicit-reference rule it does not qualify. Hansard returns zero. congress.gov site-restricted searches for 'CAISI' + 'DeepSeek' and for 'CAISI evaluation of DeepSeek' return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        {
+          "outlet": "South China Morning Post",
+          "date": "2025-10-02",
+          "title": "Chinese AI models deemed a security risk by new US government report",
+          "url": "https://www.scmp.com/",
+          "note": "Located via Google News RSS."
+        },
+        {
+          "outlet": "Decrypt",
+          "date": "2026-05-04",
+          "title": "US Government Says China's Best AI Models Lag Behind. Experts Aren't So Sure",
+          "url": "https://decrypt.co/",
+          "note": "Located via Google News RSS; covers the CAISI DeepSeek evaluation line of work."
+        },
+        {
+          "outlet": "Enterprise Technology Association (joineta.org)",
+          "date": "2025-10",
+          "title": "NIST's DeepSeek evaluation raises the stakes in the global AI race",
+          "url": "https://www.joineta.org/blog/nists-deepseek-evaluation-raises-the-stakes-in-the-global-ai-race",
+          "note": "Carried over from the existing record."
+        }
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "No change. DeepSeek has never published a safety or system card for any model, before or after this finding, so battery steps 2 and 3 have no company artefact to inspect; that absence is recorded above rather than treated as an unchecked source."
+  },
+  {
+    "finding_id": "HAL-2025-10-AUT2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic system-card corpus, all cards published after the finding (Claude Sonnet 4.5, Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Opus 4.7, Opus 4.8, Mythos Preview, Fable 5 & Mythos 5, Opus 5, Sonnet 5) - PDFs downloaded and full text extracted with pdftotext",
+          "url": "https://www.anthropic.com/system-cards",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. Zero occurrences of 'Transluce', 'Holistic Agent', 'CTRL-ALT-DECEIT', 'arXiv:2511.09904'. 'Princeton' appears once (Fable 5/Mythos 5, unrelated citation). 'Redwood' appears in Opus 4.7/4.8/5, Sonnet 5, Mythos Preview and Fable 5 cards only as the source of the LinuxBench/LinuxArena AI-control arena - unrelated to any finding in this chunk."
+        },
+        {
+          "source": "Claude Opus 4.5 System Card, tau2-bench Airline sections specifically",
+          "url": "https://www.anthropic.com/claude-opus-4-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "Full text extracted and read. Anthropic documents its OWN discovery of tau2-bench Airline problems - policy-loophole exploitation via cancel/rebook and cabin-upgrade sequences - and states 'Those fixes have been submitted to the authors of the evaluation'. It names no external evaluator, does not mention HAL, Princeton, the $2010 figure or a budget overrun, and the evaluation authors referred to are the tau2-bench authors, not HAL."
+        },
+        {
+          "source": "Claude Opus 4.6 and Sonnet 4.6 System Cards, Airline sections",
+          "url": "https://www.anthropic.com/claude-opus-4-6-system-card",
+          "checked_date": "2026-08-28",
+          "result": "Full text extracted. Airline references persist but carry no HAL/Princeton attribution."
+        },
+        {
+          "source": "anthropic.com newsroom and transparency hub (sitemap-enumerated)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Transluce, HAL/Princeton, Redwood's eval-gaming analysis, or CTRL-ALT-DECEIT."
+        },
+        {
+          "source": "Anthropic Alignment Science Blog - complete article index, July 2025 through August 2026",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Redwood's 'Sonnet 4.5's eval gaming' analysis, to HAL, or to CTRL-ALT-DECEIT. The closest item, 'Petri 2.0' (Jan 2026), adds eval-awareness realism mitigations and cites a *different* UK AISI report (Souly et al., UK AISI Alignment Evaluation Case-Study on Opus 4.5 Preview), not the findings in this chunk."
+        },
+        {
+          "source": "Open web search (Brave) for Anthropic/OpenAI response + Holistic Agent Leaderboard + tau-bench",
+          "url": "https://search.brave.com/search?q=Holistic+Agent+Leaderboard+Princeton+OpenAI+Anthropic+response+tau-bench",
+          "checked_date": "2026-08-28",
+          "result": "HAL's own site and the arXiv paper plus third-party benchmark round-ups. No company primary source."
+        },
+        {
+          "source": "Google News RSS, query 'Holistic Agent Leaderboard'",
+          "url": "https://news.google.com/rss/search?q=%22Holistic+Agent+Leaderboard%22",
+          "checked_date": "2026-08-28",
+          "result": "Zero items."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery against Anthropic primary sources. Every Anthropic system card published after 2025-10-13 was downloaded and full-text searched: zero occurrences of 'Holistic Agent Leaderboard', and the single 'Princeton' hit is an unrelated citation in the Fable 5/Mythos 5 card. The genuinely adjacent material - Anthropic's own tau2-bench Airline bug reports and upstream fixes - is Anthropic's independent discovery of a different defect, submitted to the benchmark's authors rather than to HAL, and names neither the evaluator nor this finding. Under the attribution rule it does not qualify. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'Holistic Agent Leaderboard', 'HAL', Princeton, arXiv:2510.11977, and the $2010 budget-overrun claim; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'Holistic Agent Leaderboard', 'HAL', Princeton, arXiv:2510.11977, and the $2010 budget-overrun claim; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register phrase search 'Holistic Agent Leaderboard' returns one document, a 2023 SEC predictive-data-analytics rule that predates the finding by two years and is a false positive on the word 'holistic'. Hansard = 0. congress.gov and europa.eu site-restricted searches return explicit no-results. The NIST/CAISI agentic-AI security RFI (2026-01-08) covers the same general subject but contains no reference to HAL or this finding. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "source": "Semantic Scholar citation graph for arXiv:2510.11977",
+          "count": 56,
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2510.11977",
+          "note": "56 citations as of 2026-08-28. Citing work includes 'Automated Transcript Analysis for Detecting Flaws in Agentic Benchmarks', 'Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI Research and Development', 'AI Evaluation Should Measure Verification Cost, Not Correctness Alone', 'Life After Benchmark Saturation: A Case Study of CORE-Bench' and 'AgentBeats: Agentifying Agent Assessment'. Substantial academic uptake."
+        }
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Channel C is the notable feature of this row: no media at all, but heavy academic uptake (56 citations). That is descriptive and, per the rules, has no bearing on Action Level, Policy Level or proportionality. The Anthropic tau2-bench Airline material is logged in detail above precisely because it is the kind of near-miss that could be mistaken for a response on a faster pass."
+  },
+  {
+    "finding_id": "HAL-2025-10-AUT4",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "OpenAI Deployment Safety Hub - full system-card corpus (893 subpages across 24 cards: o3/o4-mini, gpt-5, gpt-5-codex, chatgpt-agent, gpt-5-1, gpt-5-1-codex-max, gpt-5-2, gpt-5-2-codex, gpt-5-3-codex, gpt-5-3-instant, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update, gpt-5-sensitive-conversations, gpt-live, gpt-rosalind-5-5, gpt-oss, deep-research, sora-2, chatgpt-images-2-0, 4o-native-image-generation); downloaded in full and text-searched",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully (HTTP 200, ~492MB of page text). Zero occurrences of 'Transluce', 'Palisade', 'Holistic Agent', 'Princeton'. No mention of any of these evaluators or findings."
+        },
+        {
+          "source": "OpenAI GPT-5 family system cards specifically (gpt-5, gpt-5-1, gpt-5-2, gpt-5-3, gpt-5-4-thinking, gpt-5-5, gpt-5-5-instant, gpt-5-6, gpt-5-6-preview, gpt-5-6-august-update and the Codex variants)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "All downloaded and searched. Zero occurrences of 'Holistic Agent Leaderboard', 'HAL' as the evaluator, or 'Princeton'. The only 'tau-bench' hits in the entire corpus are in the gpt-oss card, which was published in August 2025 and therefore predates this finding."
+        },
+        {
+          "source": "openai.com sitemap enumeration (1,429 URLs across page/safety/security/research/publication/release/global-affairs/company/milestone/engineering/disrupting-malicious-uses/product sections)",
+          "url": "https://openai.com/sitemap.xml",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post slug referencing Transluce, Palisade Research, HAL or the Holistic Agent Leaderboard. Only adjacent items: /index/third-party-cyber-evaluations-involving-openai-models/, /index/trustworthy-third-party-evaluations-foundations/, /index/red-teaming-network/."
+        },
+        {
+          "source": "openai.com newsroom / /news/ and /index/ pages by direct fetch",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "HTTP 403 to both curl and WebFetch (Cloudflare). Worked around by (a) sitemap enumeration of all post URLs and (b) reading individual posts through a text-extraction proxy; recorded here explicitly as a blocked direct-fetch route."
+        },
+        {
+          "source": "Open web search (Brave) for OpenAI response + HAL + tau-bench payment error",
+          "url": "https://search.brave.com/search?q=Holistic+Agent+Leaderboard+Princeton+OpenAI+Anthropic+response+tau-bench",
+          "checked_date": "2026-08-28",
+          "result": "No OpenAI primary source."
+        },
+        {
+          "source": "Google News RSS, query 'Holistic Agent Leaderboard'",
+          "url": "https://news.google.com/rss/search?q=%22Holistic+Agent+Leaderboard%22",
+          "checked_date": "2026-08-28",
+          "result": "Zero items."
+        },
+        {
+          "source": "HAL's own site (Insights and Press pages), checked for a disclosed OpenAI engagement",
+          "url": "https://hal.cs.princeton.edu/",
+          "checked_date": "2026-08-28",
+          "result": "Reachable; no writeup of any OpenAI reply to this finding."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery against OpenAI primary sources, using the complete downloaded deployment-safety corpus rather than search. No OpenAI system card, blog post or safety-hub page published between 2025-10-13 and the cutoff references HAL, Princeton, the Holistic Agent Leaderboard, or a GPT-5 tau-bench Airline payment-method error. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'Holistic Agent Leaderboard', 'HAL', Princeton, arXiv:2510.11977, and the GPT-5 incorrect-payment-method claim; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'Holistic Agent Leaderboard', 'HAL', Princeton, arXiv:2510.11977, and the GPT-5 incorrect-payment-method claim; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Same result as the sibling HAL row: Federal Register returns only a 2023 false positive, Hansard returns zero, and congress.gov and europa.eu site-restricted searches return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "source": "Semantic Scholar citation graph for arXiv:2510.11977",
+          "count": 56,
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2510.11977",
+          "note": "Same paper as the sibling row; 56 citations as of 2026-08-28."
+        }
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "The earlier record noted that the GPT-5.5 card names SecureBio, US CAISI, UK AISI, Irregular and Apollo but not HAL. I confirmed that independently against the downloaded corpus: HAL appears nowhere in any OpenAI card."
+  },
+  {
+    "finding_id": "REDWOOD-2025-10-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic system-card corpus, all cards published after the finding (Claude Sonnet 4.5, Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Opus 4.7, Opus 4.8, Mythos Preview, Fable 5 & Mythos 5, Opus 5, Sonnet 5) - PDFs downloaded and full text extracted with pdftotext",
+          "url": "https://www.anthropic.com/system-cards",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. Zero occurrences of 'Transluce', 'Holistic Agent', 'CTRL-ALT-DECEIT', 'arXiv:2511.09904'. 'Princeton' appears once (Fable 5/Mythos 5, unrelated citation). 'Redwood' appears in Opus 4.7/4.8/5, Sonnet 5, Mythos Preview and Fable 5 cards only as the source of the LinuxBench/LinuxArena AI-control arena - unrelated to any finding in this chunk."
+        },
+        {
+          "source": "Claude Opus 4.5 System Card sections 6.7 and 6.7.1 (evaluation awareness), read in full",
+          "url": "https://www.anthropic.com/claude-opus-4-5-system-card",
+          "checked_date": "2026-08-28",
+          "result": "Anthropic documents removing categories of training environments and data to reduce evaluation awareness, and repeats the representation-inhibition analysis. Redwood is not named anywhere in this material; Anthropic attributes the work to its own Sonnet 4.5 observations, first published in the Sonnet 4.5 system card on 2025-09-29 - one month BEFORE Redwood's post. The 'Redwood' hits elsewhere in the Anthropic corpus are all references to the LinuxBench/LinuxArena control arena, an unrelated Redwood artefact."
+        },
+        {
+          "source": "anthropic.com newsroom and transparency hub (sitemap-enumerated)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Transluce, HAL/Princeton, Redwood's eval-gaming analysis, or CTRL-ALT-DECEIT."
+        },
+        {
+          "source": "Anthropic Alignment Science Blog - complete article index, July 2025 through August 2026",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Redwood's 'Sonnet 4.5's eval gaming' analysis, to HAL, or to CTRL-ALT-DECEIT. The closest item, 'Petri 2.0' (Jan 2026), adds eval-awareness realism mitigations and cites a *different* UK AISI report (Souly et al., UK AISI Alignment Evaluation Case-Study on Opus 4.5 Preview), not the findings in this chunk."
+        },
+        {
+          "source": "Anthropic Alignment Science Blog, 'Petri 2.0' (Jan 2026) and 'Teaching Claude Why' (May 2026)",
+          "url": "https://alignment.anthropic.com/2026/petri-v2/",
+          "checked_date": "2026-08-28",
+          "result": "Read. Both concern evaluation realism and safety-training generalisation. Neither cites Redwood's eval-gaming analysis nor engages with its 25%/90% estimate."
+        },
+        {
+          "source": "Redwood's own post, re-read to verify the finding as recorded",
+          "url": "https://blog.redwoodresearch.org/p/sonnet-45s-eval-gaming-seriously",
+          "checked_date": "2026-08-28",
+          "result": "Published 2025-10-30. The recorded figures verify exactly: 'at least 25% of its misaligned behaviour reduction is plausibly caused by increased evaluation gaming' in the average case, 'as much as 90%' in the worst case, and Sonnet 4.5 misbehaving 'up to 9% of the time' when eval-awareness representations are inhibited versus 'somewhat over 10%' for Sonnet 4. The post records no Anthropic reply."
+        },
+        {
+          "source": "Google News RSS for a Redwood/Anthropic exchange",
+          "url": "https://news.google.com/rss/search?q=%22Redwood+Research%22+Sonnet+evaluation+gaming",
+          "checked_date": "2026-08-28",
+          "result": "No relevant items."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "None stands, on a clear timing ground rather than a bare absence. The obvious candidate response - Anthropic's removal of honeypot-style training environments, documented in the Claude Opus 4.5 System Card - is not admissible for this finding on two independent grounds. First, Anthropic nowhere names Redwood or engages with its specific claim that 25-90% of Sonnet 4.5's apparent improvement is eval gaming. Second, and decisively, the change predates the finding: Anthropic frames it as a response to what it observed on Sonnet 4.5 and published in that model's system card on 2025-09-29, a month before Redwood's 2025-10-30 post, and the training-data decisions it describes were necessarily taken during Opus 4.5's training rather than in the three weeks between Redwood's post and the model's release. Under the rule that a change predating the finding does not count, it is inadmissible. No other Anthropic primary document responds. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'Redwood Research', the post title, and the eval-gaming estimate; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'Redwood Research', the post title, and the eval-gaming estimate; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register phrase search 'Redwood Research' = 0. Hansard = 0. congress.gov and gov.uk site-restricted searches return explicit no-results. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        {
+          "venue": "Anthropic Claude Sonnet 4.5 / Claude Opus 4.5 System Cards",
+          "date": "2025-09-29 / 2025-11",
+          "title": "Evaluation-awareness measurement and mitigation",
+          "url": "https://www.anthropic.com/claude-opus-4-5-system-card",
+          "note": "EXCLUDED from Channel C as the evaluated company's own material, and logged here only to record that it was assessed and rejected as Channel A evidence."
+        }
+      ]
+    },
+    "confidence": "high",
+    "notes": "The interesting feature of this row is that a strong-looking candidate response exists and was rejected on principle. I want that reasoning visible rather than buried, because a later pass will encounter the same Opus 4.5 passage: it is real, it is responsive to the underlying problem, and it is still inadmissible here on timing and attribution. Note the contrast with ANTHROPIC-2025-09-SELF-ALI1, where the same passage IS admissible because that finding was published on 2025-09-29 and the mitigation postdates it."
+  },
+  {
+    "finding_id": "UKAISI-2025-11-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "Anthropic system-card corpus, all cards published after the finding (Claude Sonnet 4.5, Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Opus 4.7, Opus 4.8, Mythos Preview, Fable 5 & Mythos 5, Opus 5, Sonnet 5) - PDFs downloaded and full text extracted with pdftotext",
+          "url": "https://www.anthropic.com/system-cards",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. Zero occurrences of 'Transluce', 'Holistic Agent', 'CTRL-ALT-DECEIT', 'arXiv:2511.09904'. 'Princeton' appears once (Fable 5/Mythos 5, unrelated citation). 'Redwood' appears in Opus 4.7/4.8/5, Sonnet 5, Mythos Preview and Fable 5 cards only as the source of the LinuxBench/LinuxArena AI-control arena - unrelated to any finding in this chunk."
+        },
+        {
+          "source": "Anthropic system cards searched specifically for 'CTRL-ALT-DECEIT' and 'arXiv:2511.09904'",
+          "url": "https://www.anthropic.com/system-cards",
+          "checked_date": "2026-08-28",
+          "result": "Zero occurrences of either string across all eleven post-finding cards. 'Sandbagging' appears as a standing section in every card (6-14 occurrences each), but as Anthropic's own long-running evaluation category, with no reference to this paper - standing policy/practice, inadmissible under the attribution rule."
+        },
+        {
+          "source": "anthropic.com newsroom and transparency hub (sitemap-enumerated)",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Transluce, HAL/Princeton, Redwood's eval-gaming analysis, or CTRL-ALT-DECEIT."
+        },
+        {
+          "source": "Anthropic Alignment Science Blog - complete article index, July 2025 through August 2026",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "Fetched successfully. No post responding to Redwood's 'Sonnet 4.5's eval gaming' analysis, to HAL, or to CTRL-ALT-DECEIT. The closest item, 'Petri 2.0' (Jan 2026), adds eval-awareness realism mitigations and cites a *different* UK AISI report (Souly et al., UK AISI Alignment Evaluation Case-Study on Opus 4.5 Preview), not the findings in this chunk."
+        },
+        {
+          "source": "Anthropic Alignment Science Blog full index, including 'Anthropic's Pilot Sabotage Risk Report' (Oct 2025), 'Strengthening Red Teams' (Nov 2025) and 'Diffuse AI Control on Fuzzy Tasks' (Jun 2026)",
+          "url": "https://alignment.anthropic.com/",
+          "checked_date": "2026-08-28",
+          "result": "All sabotage/control posts identified; none cites CTRL-ALT-DECEIT or this finding. The Pilot Sabotage Risk Report predates the finding."
+        },
+        {
+          "source": "Open web and Google News for any Anthropic response to CTRL-ALT-DECEIT",
+          "url": "https://news.google.com/rss/search?q=%22CTRL-ALT-DECEIT%22",
+          "checked_date": "2026-08-28",
+          "result": "No company primary source located."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery against Anthropic primary sources. The paper, its arXiv identifier and its title appear nowhere in any Anthropic system card, newsroom post or Alignment Science Blog article published between 2025-11-13 and the cutoff. Anthropic runs its own sabotage and sandbagging evaluations continuously and has done so since before this finding; that is standing practice and expressly does not count. Action Level = None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard (Commons + Lords) via the official Hansard search API, covering contributions, written statements, written answers, committee and petition records; searched 'CTRL-ALT-DECEIT', 'UK AISI', arXiv:2511.09904, and the backdoor/sandbagging sabotage capabilities claim; zero hits (checked 2026-08-28)",
+        "UK - gov.uk search API (ministerial statements, departmental publications, regulator content incl. NCSC/ICO/FCA); no document referencing the finding, report or evaluator (checked 2026-08-28)",
+        "UK - site-restricted search of gov.uk and parliament.uk for the evaluator and report title; search engine returned an explicit no-results banner (checked 2026-08-28)",
+        "US - Federal Register full-text phrase search via the official federalregister.gov API; searched 'CTRL-ALT-DECEIT', 'UK AISI', arXiv:2511.09904, and the backdoor/sandbagging sabotage capabilities claim; zero matching documents (checked 2026-08-28)",
+        "US - congress.gov (bills, committee records, Congressional Record) via site-restricted search; explicit no-results banner for every term. Direct congress.gov fetch is Cloudflare-blocked (HTTP 403) and the govinfo API (DEMO_KEY) returned OVER_RATE_LIMIT on every attempt across ~40 minutes, so the Congressional Record was covered by index search rather than by the govinfo full-text API - recorded honestly as a partial route (checked 2026-08-28)",
+        "US - NIST/CAISI newsroom and publications; no document referencing this finding (checked 2026-08-28)",
+        "EU/other - site-restricted search of europa.eu (Commission, AI Office); explicit no-results banner (checked 2026-08-28)"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Federal Register phrase search 'CTRL-ALT-DECEIT' = 0. Hansard = 0 across contributions, written answers, statements and committee records. congress.gov and gov.uk site-restricted searches return explicit no-results. UK parliamentary AI-safety debate in the window does not reference the paper. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [
+        {
+          "source": "Semantic Scholar citation graph for arXiv:2511.09904",
+          "count": 10,
+          "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2511.09904",
+          "note": "10 citations as of 2026-08-28, with 1 influential. Citing work is closely on-topic and includes 'ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&D', 'The Best-Laid SCHEMEs: Coordinated Sabotage and Monitoring in Multi-Agent Systems', 'Coding with \"Enemy\": Can Human Developers Detect AI Agent Sabotage?', 'Async Control: Stress-testing Asynchronous Control Measures for LLM Agents' and 'Measuring AI R&D Automation'. A small but well-targeted research literature has formed around it."
+        }
+      ],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Worth recording that the finding names Claude 3.7 Sonnet as the model but the paper evaluates several frontier agents; I searched the Anthropic corpus on the paper title and identifier rather than only on the model name, so the negative is not an artefact of a narrow query. The previous pass reached the same conclusion by re-adjudicating a previously cited document; I reached it independently by exhaustive text search of the full post-finding card corpus."
+  }
+]

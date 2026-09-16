@@ -1,0 +1,3271 @@
+[
+ {
+  "finding_id": "DREADNODE-2026-07-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "22",
+   "56.5%",
+   "65.2%",
+   "Claude Opus 4.8",
+   "Claude Sonnet 5 (Anthropic)",
+   "Dreadnode"
+  ],
+  "signals_found": [
+   "22"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "DREADNODE-2026-07-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "56.5%",
+   "Dreadnode",
+   "GPT-5.4 (OpenAI)"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "ANTHROPIC-2026-07-OPUS5-CYB1",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "Claude Opus 5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10",
+   "Claude Opus 5"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-07-CYB3",
+  "company": "other",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Joint UK AISI",
+   "Kimi K3",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "54%",
+   "60%",
+   "68%",
+   "GPT-5.6 Sol (OpenAI)",
+   "SecureBio",
+   "representative launch candidate"
+  ],
+  "signals_found": [
+   "54%",
+   "60%",
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO2",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C2",
+  "signals_tested": [
+   "82%",
+   "GPT-5.6 Sol (OpenAI)",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "82%",
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO3",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.6 Sol 'railfree' variant (OpenAI)",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO4",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "66%",
+   "90%",
+   "99%",
+   "GPT-5.6 Sol (OpenAI)",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07b-BIO5",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.6 Sol railfree variant (OpenAI)",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-07-ALI1",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-07-ALI2",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C2",
+  "signals_tested": [
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "APOLLO-2026-07-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C2",
+  "signals_tested": [
+   "87%",
+   "9%",
+   "Apollo Research",
+   "OpenAI o3 (RL checkpoints)"
+  ],
+  "signals_found": [
+   "9%",
+   "Apollo Research"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "APOLLO-2026-07-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C2",
+  "signals_tested": [
+   "33%",
+   "86%",
+   "Apollo Research",
+   "gpt-oss-120b"
+  ],
+  "signals_found": [
+   "Apollo Research"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2026-07-SOC1",
+  "company": "other",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "31%",
+   "Nemotron 3 Ultra (NVIDIA)",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "TRANSLUCE-2026-07-SOC2",
+  "company": "Alibaba",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Qwen3.6-35B-A3B (Alibaba)",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2026-07-SOC3",
+  "company": "other",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Inkling (Thinking Machines)",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "UKAISI-2026-07-GOV4",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "50%",
+   "GPT-5.5",
+   "GPT-5.6 Sol",
+   "OpenAI GPT-5.4",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "50%",
+   "GPT-5.5",
+   "GPT-5.6 Sol",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-07-GOV5",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Anthropic Claude Mythos Preview",
+   "Opus 4.7",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "USCAISI-2026-07-BIO1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "0%",
+   "14%",
+   "27%",
+   "GLM-5.2 (Z.ai)",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "0%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "USCAISI-2026-07-CYB2",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "300",
+   "GLM-5.2 (Z.ai)",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "10"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07-BIO4-s2",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "GPT-5.5 Pro",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-07-BIO4-s3",
+  "company": "xAI",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "20",
+   "Grok 4.20",
+   "SecureBio"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "JOINT-2026-07-AM-ALI1",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Anthropic",
+   "Gemini 3.1 Pro",
+   "MATS",
+   "Theorem",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-07-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "11.6%",
+   "32",
+   "85.0%",
+   "9.8%",
+   "95.0%",
+   "GPT-5.6 Sol",
+   "Joint UK AISI",
+   "OpenAI"
+  ],
+  "signals_found": [
+   "10",
+   "11.6%",
+   "32",
+   "GPT-5.6 Sol",
+   "OpenAI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-07-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.6 Sol",
+   "Joint UK AISI",
+   "OpenAI"
+  ],
+  "signals_found": [
+   "GPT-5.6 Sol",
+   "OpenAI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "META-2026-07-MUSESPARK-JAI1",
+  "company": "Meta",
+  "current_action_level": "Partial",
+  "severity": "C2",
+  "signals_tested": [
+   "Gray Swan AI",
+   "Muse Spark"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "USCAISI-2026-06-CYB2",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "06",
+   "12",
+   "18",
+   "2026",
+   "99%",
+   "Claude Fable 5",
+   "Claude Mythos 5",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "06",
+   "12",
+   "18",
+   "2026"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2026-06-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "11.3",
+   "50%",
+   "GPT-5.6 Sol",
+   "METR"
+  ],
+  "signals_found": [
+   "50%",
+   "GPT-5.6 Sol",
+   "METR"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2026-06-SELF-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "0%",
+   "11%",
+   "12%",
+   "19",
+   "197",
+   "5%",
+   "GPT-5.6 Sol (OpenAI)",
+   "Irregular"
+  ],
+  "signals_found": [
+   "0%",
+   "19",
+   "5%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "RAND-2026-06-CYB1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "20",
+   "2025",
+   "RAND Europe"
+  ],
+  "signals_found": [
+   "20",
+   "2025"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "DREADNODE-2026-06-JAI1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100%",
+   "70%",
+   "Dreadnode",
+   "Meta)"
+  ],
+  "signals_found": [
+   "100%",
+   "70%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-06b-BIO2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude Opus 4.6 (Anthropic)",
+   "Claude Sonnet 4.6",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-06b-BIO3",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Gemini 3.1 Pro Preview (Google)",
+   "SecureBio"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-06b-BIO5",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-o4-mini-high (OpenAI)",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-06-ALI3",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "0%",
+   "35%",
+   "Claude Opus 4.5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "0%",
+   "Claude Opus 4.5"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-06-ALI6",
+  "company": "Anthropic",
+  "current_action_level": "Acknowledged",
+  "severity": "C2",
+  "signals_tested": [
+   "1%",
+   "14%",
+   "2%",
+   "Claude Mythos 5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "1%",
+   "14%",
+   "2%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-06-GOV1",
+  "company": "Anthropic",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "60%",
+   "Claude Mythos 5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "60%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-06-JAI2",
+  "company": "Anthropic",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude Fable 5",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-06-BIO3",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "66",
+   "Claude Code (Claude Opus 4.7)",
+   "Scale AI"
+  ],
+  "signals_found": [
+   "66"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-06-HUM3",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "13%",
+   "86%",
+   "GPT-4o",
+   "GPT-5.1",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "GPT-4o",
+   "GPT-5.1",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "ANTHROPIC-2026-05-SELF-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "1%",
+   "10",
+   "11",
+   "40",
+   "50%",
+   "Claude Opus 4.6 as monitor (Anthropic)",
+   "Redwood Research"
+  ],
+  "signals_found": [
+   "1%",
+   "10",
+   "11",
+   "40",
+   "50%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ad-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "1.8%",
+   "34.0%",
+   "728",
+   "Scale AI"
+  ],
+  "signals_found": [
+   "1.8%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ad-JAI2",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "2.2%",
+   "35.7%",
+   "Gemini-3-Flash",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-05-CYB2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude Mythos Preview",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-05-CYB3",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "100%",
+   "GPT-5.5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10",
+   "100%",
+   "GPT-5.5",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-05-CYB4",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100%",
+   "Claude Mythos Preview",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "100%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ac-AUT2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Fable-5 (Claude Code) xHigh",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-05ac-AUT3",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "GPT-5.6-Sol (Codex) xHigh",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2026-05-JAI1",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100%",
+   "15",
+   "150",
+   "98",
+   "DeepSeek-V4-Pro",
+   "FAR.AI"
+  ],
+  "signals_found": [
+   "DeepSeek-V4-Pro"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2026-05-JAI2",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100%",
+   "DeepSeek-V4-Pro",
+   "FAR.AI"
+  ],
+  "signals_found": [
+   "DeepSeek-V4-Pro"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2026-05-AUT1",
+  "company": "Alibaba",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "33%",
+   "Palisade Research",
+   "Qwen3.5-122B-A10B",
+   "Qwen3.6-27B"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2026-05-AUT2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "81%",
+   "Claude Opus 4.6",
+   "Palisade Research"
+  ],
+  "signals_found": [
+   "Claude Opus 4.6"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2026-05-AUT2-s2",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "33%",
+   "GPT-5.4",
+   "Palisade Research"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-05s-AUT2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Claude Fable-5 (Claude Code)",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-05e-ALI2",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "60",
+   "79.0%",
+   "79.00",
+   "Gemini 2.5 Pro",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2026-05e-ALI3",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "15.8%",
+   "59.3%",
+   "OpenAI o4-mini",
+   "Scale AI"
+  ],
+  "signals_found": [
+   "OpenAI o4-mini"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-04-CYB11",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "68.6%",
+   "71.4%",
+   "GPT-5.5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10",
+   "GPT-5.5",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-04-CYB3",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "68.6%",
+   "Claude Mythos Preview (Anthropic)",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-04-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "GPT-5.5",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-04-ALI6",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "0%",
+   "3%",
+   "4%",
+   "65%",
+   "7%",
+   "8%",
+   "Claude Mythos Preview",
+   "Opus 4.6",
+   "Opus 4.7",
+   "Sonnet 4.6",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "0%",
+   "3%",
+   "4%",
+   "7%",
+   "8%",
+   "Opus 4.6"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "APOLLO-2026-04-ALI5",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "22.1%",
+   "29%",
+   "7%",
+   "Apollo Research",
+   "GPT-5.5"
+  ],
+  "signals_found": [
+   "22.1%",
+   "29%",
+   "7%",
+   "Apollo Research",
+   "GPT-5.5"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2026-04-SELF-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "11",
+   "26%",
+   "54%",
+   "9%",
+   "92%",
+   "98%",
+   "GPT-5.5 (OpenAI)",
+   "Irregular"
+  ],
+  "signals_found": [
+   "11",
+   "26%",
+   "54%",
+   "9%",
+   "98%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2026-04-SELF-CYB2",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.5 (OpenAI)",
+   "Irregular"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2026-04-SELF-CYB4",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "20",
+   "32",
+   "GPT-5.5 (OpenAI)",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10",
+   "20",
+   "32",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.5 (two pre-release checkpoints)",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO2",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "52.0%",
+   "GPT-5.5 (two pre-release checkpoints)",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO3",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.5",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "GPT-5.5",
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO5",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "23%",
+   "52.0%",
+   "53.2%",
+   "56.2%",
+   "64.7%",
+   "GPT-5.5",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "53.2%",
+   "GPT-5.5",
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO7",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C2",
+  "signals_tested": [
+   "23%",
+   "GPT-5.5",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "GPT-5.5",
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2026-04-BIO8",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Gemini 3.1 Pro",
+   "SecureBio"
+  ],
+  "signals_found": [
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-04-CYB1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "73%",
+   "Claude Mythos Preview",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "73%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-04-CYB2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "16",
+   "22",
+   "32",
+   "Claude Mythos Preview",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10",
+   "16",
+   "22",
+   "32"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2026-04-AUT1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "000",
+   "16",
+   "17",
+   "Claude Opus 4.6",
+   "Epoch AI",
+   "METR"
+  ],
+  "signals_found": [
+   "000",
+   "16",
+   "17",
+   "Claude Opus 4.6",
+   "METR"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "APOLLO-2026-03-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "1.7%",
+   "10.8%",
+   "23.5%",
+   "54.5%",
+   "58.3%",
+   "62.1%",
+   "Apollo Research",
+   "OpenAI o3 (deployed)"
+  ],
+  "signals_found": [
+   "1.7%",
+   "Apollo Research"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-03-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "32",
+   "476%",
+   "Claude Opus 4.6",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "32",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-03-CYB9",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "GPT-5.3-Codex",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "GPT-5.3-Codex",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2026-03-SELF-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "56",
+   "74",
+   "88",
+   "Apollo Research",
+   "GPT-5.4-reasoning (OpenAI)",
+   "near-final checkpoint"
+  ],
+  "signals_found": [
+   "10",
+   "56",
+   "74",
+   "88",
+   "Apollo Research"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2026-03-SELF-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "11%",
+   "14",
+   "17",
+   "48%",
+   "73%",
+   "88%",
+   "Irregular"
+  ],
+  "signals_found": [
+   "14",
+   "17",
+   "48%",
+   "73%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-03-CYB12",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10%",
+   "100%",
+   "18",
+   "56%",
+   "82%",
+   "Claude Mythos Preview",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10%",
+   "100%",
+   "18"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-02-JAI1",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "0%",
+   "25.5%",
+   "330",
+   "39.9%",
+   "50",
+   "700",
+   "Anthropic Constitutional Classifiers",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "0%",
+   "50",
+   "700"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2026-02-JAI1-s2",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "210",
+   "50",
+   "75.6%",
+   "94.3%",
+   "OpenAI GPT-5 input classifier",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "50",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2026-02-HUM1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "FAR.AI",
+   "Gemini 3 Pro"
+  ],
+  "signals_found": [
+   "FAR.AI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-02-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "66",
+   "75",
+   "88",
+   "GPT-5.3-Codex",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "10",
+   "66",
+   "75",
+   "88",
+   "GPT-5.3-Codex"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-02-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.3-Codex",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "GPT-5.3-Codex"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-02-CYB6",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5.3-Codex",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "GPT-5.3-Codex"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-02-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "200",
+   "778",
+   "GPT-5.3-Codex",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "10",
+   "200",
+   "778",
+   "GPT-5.3-Codex"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2026-02-JAI3",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "132",
+   "14",
+   "151",
+   "375",
+   "GPT-5.3-Codex",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "132",
+   "14",
+   "375",
+   "GPT-5.3-Codex"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2025-12b-SELF-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "000",
+   "32.80",
+   "49%",
+   "79%",
+   "80%",
+   "90",
+   "GPT-5.2-Codex (OpenAI)",
+   "Irregular"
+  ],
+  "signals_found": [
+   "000",
+   "49%",
+   "80%",
+   "90"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "USCAISI-2025-12-SOC1",
+  "company": "other",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Kimi K2 Thinking (Moonshot AI -- PRC)",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "DREADNODE-2025-12-JAI1",
+  "company": "Meta",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "137",
+   "186",
+   "240",
+   "645",
+   "78%",
+   "80",
+   "Dreadnode",
+   "Llama Maverick-17B-128E-Instruct (Meta)",
+   "deployed in production environments"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "DREADNODE-2025-12-JAI2",
+  "company": "Meta",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100%",
+   "19",
+   "57%",
+   "78%",
+   "97.5%",
+   "Dreadnode",
+   "Llama Maverick-17B-128E-Instruct (Meta)"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "GRAYSWAN-2025-12-CYB1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "90%",
+   "ARTEMIS framework (Claude Sonnet 4 core",
+   "Anthropic)",
+   "Gray Swan AI"
+  ],
+  "signals_found": [
+   "10",
+   "90%",
+   "Anthropic)"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2025-12-SELF-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "10.8",
+   "100%",
+   "1000",
+   "12.9",
+   "73%",
+   "83%",
+   "Irregular",
+   "gpt-5.2-thinking (OpenAI)"
+  ],
+  "signals_found": [
+   "100%",
+   "12.9",
+   "73%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2025-11-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "93%",
+   "GPT-5",
+   "Palisade Research"
+  ],
+  "signals_found": [
+   "GPT-5"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2025-11-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude 3.7 Sonnet",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "REDWOOD-2025-10-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10%",
+   "25%",
+   "9%",
+   "90%",
+   "Claude Sonnet 4.5",
+   "Redwood Research"
+  ],
+  "signals_found": [
+   "10%",
+   "25%",
+   "9%",
+   "90%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "HAL-2025-10-AUT2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "1000",
+   "2010",
+   "Princeton Holistic Agent Leaderboard",
+   "claude-opus-4.1"
+  ],
+  "signals_found": [
+   "1000"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "HAL-2025-10-AUT4",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Princeton Holistic Agent Leaderboard",
+   "gpt-5"
+  ],
+  "signals_found": [
+   "gpt-5"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "USCAISI-2025-09-ALI1",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "0528",
+   "12",
+   "DeepSeek R1-0528",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "USCAISI-2025-09-HUM1",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "DeepSeek R1",
+   "DeepSeek R1-0528",
+   "DeepSeek V3.1",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "USCAISI-2025-09-JAI1",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "0528",
+   "8%",
+   "94%",
+   "DeepSeek R1-0528",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "ANTHROPIC-2025-09-SELF-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "1.6%",
+   "16.6%",
+   "3.5%",
+   "Claude Sonnet 4.5",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2025-09-BIO1",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "Anthropic",
+   "Claude Opus 4",
+   "Claude Opus 4.1",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "Anthropic",
+   "Claude Opus 4"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2025-09-CYB1",
+  "company": "other",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "50%",
+   "ChatGPT Agent",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "JOINT-2025-09-JAI2",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "Joint UK AISI",
+   "OpenAI products (ChatGPT/API",
+   "US CAISI",
+   "configuration-level)"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2025-09-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "OpenAI o3",
+   "Palisade Research"
+  ],
+  "signals_found": [
+   "OpenAI o3"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-09-JAI1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "48",
+   "92%",
+   "Claude Sonnet 4",
+   "Transluce"
+  ],
+  "signals_found": [
+   "48",
+   "92%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-09-JAI1-s2",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "48",
+   "90%",
+   "Gemini 2.5 Pro",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-09-JAI1-s3",
+  "company": "xAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "48",
+   "98%",
+   "Grok 4",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-09-JAI1-s4",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "28%",
+   "48",
+   "78%",
+   "GPT-5-main",
+   "GPT-5-thinking",
+   "Transluce"
+  ],
+  "signals_found": [
+   "28%",
+   "48",
+   "78%",
+   "GPT-5-main",
+   "GPT-5-thinking",
+   "Transluce"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2025-08-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-4.1",
+   "Palisade Research"
+  ],
+  "signals_found": [
+   "GPT-4.1"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "CIP-2025-08-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "06",
+   "15",
+   "31",
+   "Collective Intelligence Project",
+   "GPT-5"
+  ],
+  "signals_found": [
+   "06",
+   "15",
+   "31",
+   "GPT-5"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "CIP-2025-08-SOC1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Claude Opus 4.1",
+   "Collective Intelligence Project"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "APOLLO-2025-08-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C2",
+  "signals_tested": [
+   "26",
+   "4600",
+   "Apollo Research",
+   "GPT-5 (gpt-5-thinking",
+   "gpt-5-thinking-helpful-only)"
+  ],
+  "signals_found": [
+   "26",
+   "4600",
+   "Apollo Research"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2025-08-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "13",
+   "GPT-5 (gpt-5-thinking",
+   "Joint UK AISI",
+   "US CAISI",
+   "gpt-5-main)"
+  ],
+  "signals_found": [
+   "13"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "100%",
+   "71%",
+   "Claude 3.5 Sonnet",
+   "Claude 4 Sonnet (Anthropic)",
+   "Dreadnode"
+  ],
+  "signals_found": [
+   "10",
+   "100%",
+   "Claude 3.5 Sonnet"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB2",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "100%",
+   "55%",
+   "Dreadnode",
+   "Gemini 2.5 Pro (Google)"
+  ],
+  "signals_found": [
+   "10"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB3",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "100%",
+   "20%",
+   "Dreadnode",
+   "o3 (OpenAI)"
+  ],
+  "signals_found": [
+   "10",
+   "100%",
+   "20%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "DREADNODE-2025-08-CYB4",
+  "company": "other",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "10%",
+   "100%",
+   "Dreadnode",
+   "Kimi K2 Instruct (Moonshot AI)"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "FARAI-2025-07b-BIO2",
+  "company": "Meta",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "51",
+   "FAR.AI",
+   "Llama-3.1-405B-Instruct",
+   "Llama-3.1-70B-Instruct",
+   "Llama-3.1-8B-Instruct",
+   "Llama-3.2-1B-Instruct",
+   "Llama-3.2-3B-Instruct"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "UKAISI-2025-07-JAI3",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude Opus 4",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "Claude Opus 4"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2025-07-JAI4",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-5",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "GPT-5",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2025-07-SELF-BIO2",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "ChatGPT agent",
+   "SecureBio",
+   "helpful-only (OpenAI)"
+  ],
+  "signals_found": [
+   "ChatGPT agent",
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2025-07-SELF-BIO3",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C2",
+  "signals_tested": [
+   "10",
+   "ChatGPT agent",
+   "SecureBio",
+   "helpful-only (OpenAI)"
+  ],
+  "signals_found": [
+   "10",
+   "ChatGPT agent",
+   "SecureBio"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "OPENAI-2025-07-SELF-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "ChatGPT agent (OpenAI)",
+   "UK AISI",
+   "earlier rounds on OpenAI o3"
+  ],
+  "signals_found": [
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2025-07-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100",
+   "47%",
+   "79",
+   "Palisade Research",
+   "codex-mini"
+  ],
+  "signals_found": [
+   "100",
+   "79",
+   "codex-mini"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SHANGHAIAILAB-2025-07-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "48",
+   "62.56",
+   "62.80",
+   "78",
+   "85.00%",
+   "86.13%",
+   "GPT-4o and GPT-4o-mini (OpenAI)",
+   "Shanghai AI Laboratory"
+  ],
+  "signals_found": [
+   "48",
+   "78"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SHANGHAIAILAB-2025-07-JAI2",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "60.00",
+   "91.07%",
+   "Gemini-2.0-Flash (Google)",
+   "Shanghai AI Laboratory"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2025-06-BIO1",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "DeepSeek R1",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2025-06-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "0.7%",
+   "100%",
+   "128",
+   "21",
+   "30.4%",
+   "39",
+   "METR",
+   "o3 (OpenAI)"
+  ],
+  "signals_found": [
+   "0.7%",
+   "100%",
+   "21",
+   "39",
+   "METR"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2025-06-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "20",
+   "70%",
+   "80%",
+   "95%",
+   "METR",
+   "o3 (OpenAI)"
+  ],
+  "signals_found": [
+   "20",
+   "70%",
+   "80%",
+   "95%",
+   "METR"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2025-06-ALI3",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "14",
+   "20",
+   "METR",
+   "o3 (OpenAI)"
+  ],
+  "signals_found": [
+   "10",
+   "14",
+   "20",
+   "METR"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-06-SOC1",
+  "company": "Alibaba",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "Qwen 2.5 14B",
+   "Qwen 2.5 72B",
+   "Qwen 2.5 7B",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-06-SOC2",
+  "company": "Meta",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "Llama 3.1 8B",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "TRANSLUCE-2025-06-SOC3",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "DeepSeek-V3-0324",
+   "Transluce"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2025-05-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "Anthropic",
+   "Apollo Research"
+  ],
+  "signals_found": [
+   "Anthropic"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2025-04-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "10",
+   "15",
+   "20",
+   "50%",
+   "Claude 3.7 Sonnet",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "10",
+   "15",
+   "20",
+   "50%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2025-04-ALI7",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "00",
+   "10",
+   "27",
+   "35",
+   "86",
+   "98",
+   "Claude 3.7 Sonnet",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "00",
+   "10",
+   "27",
+   "35",
+   "86",
+   "98",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SECUREBIO-2025-04-BIO1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "322",
+   "Claude 3.5/3.7 Sonnet",
+   "DeepSeek-R1",
+   "GPT-4.1",
+   "GPT-4.5",
+   "GPT-4o",
+   "Gemini 2.0/2.5 Pro",
+   "OpenAI o3",
+   "SecureBio",
+   "o4-mini"
+  ],
+  "signals_found": [
+   "GPT-4.1",
+   "GPT-4.5",
+   "GPT-4o",
+   "OpenAI o3",
+   "SecureBio",
+   "o4-mini"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2025-04-ALI2",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C2",
+  "signals_tested": [
+   "2%",
+   "50%",
+   "METR",
+   "OpenAI o3",
+   "o4-mini"
+  ],
+  "signals_found": [
+   "2%",
+   "50%",
+   "METR",
+   "OpenAI o3",
+   "o4-mini"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2025-04-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C2",
+  "signals_tested": [
+   "50%",
+   "55",
+   "Claude 3.7 Sonnet",
+   "METR"
+  ],
+  "signals_found": [
+   "50%",
+   "55",
+   "METR"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "APOLLO-2025-03-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "33%",
+   "Apollo Research",
+   "Claude Sonnet 3.7 (thinking)"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "HOLISTIC-2025-02-JAI2",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100%",
+   "2.7%",
+   "32%",
+   "37",
+   "Grok-3",
+   "Holistic AI"
+  ],
+  "signals_found": [
+   "100%",
+   "2.7%",
+   "37"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2025-02-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "UK AISI"
+  ],
+  "signals_found": [
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2025-02b-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "93.0%",
+   "Claude 3.5 Sonnet (Sonnet-3.5)",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2025-02b-JAI2",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "91.0%",
+   "Gemini 1.5 Pro (Gemini-1.5-pro)",
+   "Scale AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2025-02b-JAI3",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "91.0%",
+   "93.0%",
+   "GPT-4o",
+   "Scale AI"
+  ],
+  "signals_found": [
+   "GPT-4o"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "HOLISTIC-2025-02-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "12",
+   "32%",
+   "37",
+   "89%",
+   "98%",
+   "DeepSeek R1",
+   "Holistic AI",
+   "OpenAI o1"
+  ],
+  "signals_found": [
+   "12",
+   "37",
+   "98%",
+   "OpenAI o1"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "LATTICEFLOW-2025-02-CYB1",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "DeepSeek R1 14B (distilled)",
+   "DeepSeek R1 8B",
+   "LatticeFlow AI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2025-02a-JAI1",
+  "company": "Meta",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "1.7%",
+   "500",
+   "80%",
+   "93%",
+   "DeepSeek R1-Distill-Llama-70B",
+   "FAR.AI"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "FARAI-2025-02a-JAI2",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "100",
+   "100%",
+   "80%",
+   "900",
+   "FAR.AI",
+   "GPT-4o"
+  ],
+  "signals_found": [
+   "100",
+   "100%",
+   "80%",
+   "FAR.AI",
+   "GPT-4o"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2025-02a-JAI3",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100",
+   "80%",
+   "Claude 3 Haiku",
+   "FAR.AI"
+  ],
+  "signals_found": [
+   "100",
+   "80%",
+   "Claude 3 Haiku"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2025-02a-JAI4",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "000",
+   "6%",
+   "80%",
+   "FAR.AI",
+   "Gemini 1.5 Pro"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "ROBUSTINT-2025-01-JAI1",
+  "company": "DeepSeek",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "100%",
+   "Cisco",
+   "DeepSeek R1"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2025-01-JAI1",
+  "company": "Anthropic",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "11%",
+   "57%",
+   "80%",
+   "81%",
+   "Claude 3.5 Sonnet",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "80%",
+   "Claude 3.5 Sonnet"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2024-12-CYB1",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C2",
+  "signals_tested": [
+   "13",
+   "35%",
+   "36%",
+   "40",
+   "45%",
+   "47",
+   "Joint UK AISI",
+   "OpenAI o1",
+   "US CAISI"
+  ],
+  "signals_found": [
+   "13",
+   "35%",
+   "36%",
+   "40",
+   "47",
+   "OpenAI o1"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI1",
+  "company": "Anthropic",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "12%",
+   "97%",
+   "Claude 3 Opus",
+   "Redwood Research"
+  ],
+  "signals_found": [
+   "97%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI2",
+  "company": "Anthropic",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "78%",
+   "Claude 3 Opus",
+   "Redwood Research"
+  ],
+  "signals_found": [
+   "78%"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "REDWOOD-2024-12b-ALI3",
+  "company": "Anthropic",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude 3 Opus",
+   "Redwood Research"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2024-12-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-4o",
+   "Palisade Research"
+  ],
+  "signals_found": [
+   "GPT-4o"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2024-12-BIO2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "30%",
+   "61%",
+   "Claude 3.5 Sonnet",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "30%",
+   "Claude 3.5 Sonnet"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2024-11-BIO2",
+  "company": "Anthropic",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude 3.5 Sonnet (Oct 2024)",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "JOINT-2024-11-JAI1",
+  "company": "Anthropic",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "Claude 3.5 Sonnet (Oct 2024)",
+   "Joint UK AISI",
+   "US CAISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2024-10-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "2%",
+   "FAR.AI",
+   "GPT-3.5 Turbo",
+   "GPT-4",
+   "GPT-4o mini"
+  ],
+  "signals_found": [
+   "2%",
+   "FAR.AI",
+   "GPT-3.5 Turbo",
+   "GPT-4"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2024-10-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "3.6%",
+   "40",
+   "FAR.AI",
+   "GPT-4o"
+  ],
+  "signals_found": [
+   "40",
+   "FAR.AI",
+   "GPT-4o"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "TRANSLUCE-2024-10-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "22.6%",
+   "65.8%",
+   "95.5%",
+   "Claude 3.5 Sonnet",
+   "GPT-4o",
+   "GPT-4o-mini",
+   "Llama-3.1 405B",
+   "Llama-3.1 8B",
+   "Transluce"
+  ],
+  "signals_found": [
+   "22.6%",
+   "GPT-4o",
+   "GPT-4o-mini",
+   "Transluce"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "SCALEAI-2024-10-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "100",
+   "63",
+   "98",
+   "GPT-4o",
+   "Scale AI",
+   "o1-preview"
+  ],
+  "signals_found": [
+   "100",
+   "63",
+   "98",
+   "GPT-4o",
+   "o1-preview"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI1",
+  "company": "Mistral",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "1.1%",
+   "82.2%",
+   "Mistral Large 2",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI2",
+  "company": "Anthropic",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "13.5%",
+   "16.7%",
+   "68.7%",
+   "81.9%",
+   "82%",
+   "85.2%",
+   "Claude 3.5 Sonnet",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "Claude 3.5 Sonnet"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI3",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "48.4%",
+   "72.7%",
+   "GPT-4o",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "GPT-4o",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI5",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "15.7%",
+   "3.5%",
+   "56.1%",
+   "78.4%",
+   "Gemini 1.5 Pro",
+   "UK AISI"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI6",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "22%",
+   "62.5%",
+   "GPT-4o mini",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "UKAISI-2024-10-JAI7",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "0.0%",
+   "0.8%",
+   "62.2%",
+   "GPT-3.5 Turbo",
+   "UK AISI"
+  ],
+  "signals_found": [
+   "0.0%",
+   "0.8%",
+   "GPT-3.5 Turbo",
+   "UK AISI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "CISCO-2024-08-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "12.44%",
+   "30.2%",
+   "52.89%",
+   "59.6%",
+   "Cisco"
+  ],
+  "signals_found": [
+   "Cisco"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "FARAI-2024-08-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "FAR.AI"
+  ],
+  "signals_found": [
+   "FAR.AI"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "CISCO-2024-07-JAI1",
+  "company": "Meta",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "0.2%",
+   "0003",
+   "449",
+   "450",
+   "99.8%",
+   "Cisco",
+   "Prompt-Guard-86M (Meta",
+   "part of the Llama 3.1 safety suite)"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "PALISADE-2024-07-JAI1",
+  "company": "Meta",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "30",
+   "Llama 3 70B",
+   "Llama 3 8B",
+   "Palisade Research"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "SHANGHAIAILAB-2024-02-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "19.98%",
+   "73.38%",
+   "80.28%",
+   "88.02%",
+   "88.32%",
+   "Claude2",
+   "GPT-3.5",
+   "GPT-4",
+   "Gemini",
+   "Shanghai AI Laboratory"
+  ],
+  "signals_found": [
+   "GPT-3.5",
+   "GPT-4"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "APOLLO-2023-11-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "Substantive",
+  "severity": "C1",
+  "signals_tested": [
+   "Apollo Research",
+   "GPT-4"
+  ],
+  "signals_found": [
+   "Apollo Research",
+   "GPT-4"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "PALISADE-2023-10-JAI1",
+  "company": "Meta",
+  "current_action_level": "None",
+  "severity": "C2",
+  "signals_tested": [
+   "200",
+   "Llama 2-Chat 13B",
+   "Palisade Research"
+  ],
+  "signals_found": [],
+  "needs_agent": true,
+  "corpus_available": false
+ },
+ {
+  "finding_id": "CAIS-2023-07-JAI1",
+  "company": "OpenAI",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "53.6%",
+   "87.9%",
+   "Center for AI Safety",
+   "GPT-3.5 (gpt-3.5-turbo)",
+   "GPT-4 (gpt-4-0314)"
+  ],
+  "signals_found": [
+   "Center for AI Safety"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "CAIS-2023-07-JAI2",
+  "company": "Google",
+  "current_action_level": "None",
+  "severity": "C1",
+  "signals_tested": [
+   "66%",
+   "Bard",
+   "Center for AI Safety",
+   "PaLM-2"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "CAIS-2023-07-JAI3",
+  "company": "Anthropic",
+  "current_action_level": "Partial",
+  "severity": "C1",
+  "signals_tested": [
+   "2.1%",
+   "388",
+   "47.9%",
+   "Center for AI Safety",
+   "Claude-1 (claude-instant-1)",
+   "Claude-2"
+  ],
+  "signals_found": [],
+  "needs_agent": false,
+  "corpus_available": true
+ },
+ {
+  "finding_id": "METR-2023-03-ALI1",
+  "company": "OpenAI",
+  "current_action_level": "Acknowledged",
+  "severity": "C1",
+  "signals_tested": [
+   "GPT-4 (pre-release version",
+   "METR",
+   "OpenAI)"
+  ],
+  "signals_found": [
+   "METR"
+  ],
+  "needs_agent": true,
+  "corpus_available": true
+ }
+]

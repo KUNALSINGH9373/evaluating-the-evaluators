@@ -1,0 +1,514 @@
+[
+ {
+  "Finding ID": "SECUREBIO-2026-06b-BIO2",
+  "Institution": "SecureBio",
+  "Report Title": "How frontier AI models perform on viral DNA assembly tasks (ABC-Bench)",
+  "Publication Date": "2026-06-10",
+  "Models / Systems": "Claude Sonnet 4.6; Claude Opus 4.6 (Anthropic)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://securebio.org/blog/How-frontier-AI-models-perform-on%E2%80%93viral-DNA%E2%80%93assembly-tasks/",
+  "Finding": "On ABC-Bench, Claude Sonnet 4.6 scored perfectly on the liquid-handling-robot task on all runs and Claude Opus 4.6 achieved a perfect score across all runs on the fragment-design task, both of which are steps in assembling viral DNA.",
+  "Finding Quote": "Two models (Claude Sonnet 4.6 and Gemini 3.1 Pro Preview) scored perfectly on the Liquid Handling Robot task on all runs. On the fragment design task, models also demonstrated strong performance, with Claude Opus 4.6 achieving a perfect score across all runs.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: 7 mention(s) found, each inspected and found incidental (benchmark or dataset usage, table-of-contents text, or an evaluation predating this finding) - none responsive to this finding under the \u00a78 causal-attribution test. Items (1)+(4)+(5) executed by site-restricted web search on the subject company's domain for the evaluator name and the finding topic; no company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+    },
+    {
+     "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+    },
+    {
+     "source": "(2b) Full-text search of the Anthropic card corpus for the finding's benchmark and tasks",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "MISS. Searched Fable 5 & Mythos 5, Sonnet 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6 and Sonnet 4.6 cards for 'ABC-Bench', 'viral DNA', 'liquid handling' and 'fragment design'. 'ABC-Bench' occurs nowhere in the Anthropic corpus; 'fragment design' occurs only in the Sonnet 4.6 and Opus 4.6 cards, both February 2026 and therefore pre-dating the finding."
+    },
+    {
+     "source": "(2c) Claude Opus 5 System Card (2026-07-24), CB-1 evaluation suite",
+     "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED - standing evaluations only. Anthropic runs SecureBio-derived evaluations (two long-form virology tasks developed with SecureBio, Deloitte and Signature Science; the SecureBio/CAIS VCT; SecureBio's 'DNA Synthesis Screening Evasion') and states these were 'described in detail in prior system cards, and have not modified their implementations in this run'. Pre-existing suite, expressly unchanged - inadmissible as a response."
+    },
+    {
+     "source": "(3b) Redacted Risk Report August 2026, SecureBio mentions",
+     "url": "https://anthropic.com/aug-2026-risk-report",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. SecureBio appears as a pilot external reviewer of the report's chemical/biological sections and as an expert consulted on threat models. Neither reference concerns ABC-Bench or the viral DNA assembly results."
+    },
+    {
+     "source": "(4b) 'Improving Fable 5's biology safeguards' (2026-08-07)",
+     "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED - runs contrary to the finding rather than responding to it. Loosens biology safeguards (~85% fewer false positives) while retaining dual-use fallback for virology, toxicology and molecular design; no mention of SecureBio, ABC-Bench or DNA assembly."
+    },
+    {
+     "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+     "url": "https://anthropic.com/aug-2026-risk-report",
+     "checked_date": "2026-08-28",
+     "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+    },
+    {
+     "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+     "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+     "checked_date": "2026-08-28",
+     "result": "All four opened and read."
+    },
+    {
+     "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+     "url": "https://www.bing.com/search",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No Anthropic primary source referencing ABC-Bench surfaced."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run. The Fable 5 & Mythos 5 card was published 2026-06-09, one day before the finding, and in any case contains no ABC-Bench reference; the two subsequent cards (Sonnet 5, Opus 5) and the August 2026 Risk Report contain none either. Anthropic's SecureBio-derived biosecurity evaluations are long-standing and expressly unmodified, which the rulebook excludes as pre-existing policy. No admissible response -> None."
+  }
+ },
+ {
+  "Finding ID": "SECUREBIO-2026-06b-BIO5",
+  "Institution": "SecureBio",
+  "Report Title": "How frontier AI models perform on viral DNA assembly tasks (ABC-Bench)",
+  "Publication Date": "2026-06-10",
+  "Models / Systems": "GPT-o4-mini-high (OpenAI)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://securebio.org/blog/How-frontier-AI-models-perform-on%E2%80%93viral-DNA%E2%80%93assembly-tasks/",
+  "Finding": "SecureBio validated the in-silico liquid-handling result in a real laboratory: with a human assistant supplying kit instructions, reagent locations and webcam images and relaying compilation errors, GPT-o4-mini-high generated Python scripts that drove an industry-standard robot to successful DNA assembly in all three independent runs, confirmed by whole-plasmid sequencing.",
+  "Finding Quote": "We conducted three independent runs of this experiment. All three resulted in successful DNA assembly, confirmed by whole-plasmid sequencing.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: 13 mention(s) found, each inspected and found incidental (benchmark or dataset usage, table-of-contents text, or an evaluation predating this finding) - none responsive to this finding under the \u00a78 causal-attribution test. Items (1)+(4)+(5) executed 2026-08-15: Searched openai.com and deploymentsafety.openai.com for SecureBio, BioTIER and ABC-Bench. Located the OpenAI Bio Bug Bounty expansion (universal-jailbreak reward raised from $25,000 to $50,000, extended to GPT-5.6), which is responsive to bio-safeguard robustness in general but names neither SecureBio nor this finding -> recorded as a candidate, not admissible under the \u00a78 causal-attribution test. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(3) OpenAI Deployment Safety Hub index (all system cards, dated)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Post-finding entries: GPT-5.6 Preview (2026-06-26), GPT-Live (2026-07-08), GPT-5.6 System Card (2026-07-09), GPT-5.6 August Updates (2026-08-06). All inspected."
+    },
+    {
+     "source": "(2) GPT-5.6 System Card, S9.1.1.8 'External Evaluation for Bio Capabilities - SecureBio'",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text (140,428 chars). SecureBio IS named and ABC-Bench IS named, but only for 'ABC-Bench's Advanced Screening Evasion' on GPT-5.6 Sol. No mention of the liquid-handling-robot task, the OpenTrons wet-lab validation, or GPT-o4-mini-high. 'liquid handling'/'OpenTrons'/'robot' = 0 hits."
+    },
+    {
+     "source": "(2) GPT-5.6 August Updates (2026-08-06), full PDF text",
+     "url": "https://cdn.openai.com/pdf/GPT_5_6_August_Updates.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. SecureBio appears only as the source of the Multimodal Troubleshooting Virology question set. No ABC-Bench liquid-handling or wet-lab-validation content."
+    },
+    {
+     "source": "(1)(4) OpenAI newsroom - safety category listing, full sitemap enumeration of /sitemap.xml/safety/ and /sitemap.xml/research/",
+     "url": "https://openai.com/news/safety-alignment/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Post-finding safety posts: OpenAI Bio Bug Bounty (2026-07-09), GPT-Red (2026-07-15), Why teens deserve access to safe AI (2026-07-16), Safety and alignment in an era of long-horizon models (2026-07-20), Expanding Daybreak (2026-08-10), ChatGPT for Teens (2026-08-18), Zero Data Retention (2026-08-19), The Hugging Face incident and the road ahead (2026-08-26). None references SecureBio, ABC-Bench, liquid handling or the wet-lab robot validation."
+    },
+    {
+     "source": "(1) OpenAI 'OpenAI Bio Bug Bounty' (2026-07-09) - the closest adjacent bio-safeguard action",
+     "url": "https://openai.com/index/bio-bug-bounty/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. Raises the universal-jailbreak bounty from $25,000 to $50,000 and extends it to GPT-5.6. Names no evaluator and no benchmark; not attributable to this finding."
+    },
+    {
+     "source": "(1) OpenAI 'Accelerating biological research in the wet lab'",
+     "url": "https://openai.com/index/accelerating-biological-research-in-the-wet-lab/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. Wet-lab work with Red Queen Bio on molecular cloning; no SecureBio, no ABC-Bench, no liquid-handling-robot content."
+    },
+    {
+     "source": "(5) Cross-check: SecureBio's index of firm-run biosecurity evaluations, OpenAI section",
+     "url": "https://securebio.org/benchmarks/models/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED (pointer only). Confirms OpenAI has run ABC-Bench as an external SecureBio evaluation for GPT-5 and GPT-5.5, but records nothing about the liquid-handling-robot task or the wet-lab validation, and nothing about GPT-o4-mini-high."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28. OpenAI does engage with SecureBio and with ABC-Bench by name - the GPT-5.6 System Card (2026-07-09) has a titled section 'External Evaluation for Bio Capabilities - SecureBio' which reports that 'The railfree checkpoint also set a new high on ABC-Bench's Advanced Screening Evasion'. That is a different ABC-Bench task and a different model. This finding is specifically the wet-lab validation in which GPT-o4-mini-high drove an OpenTrons robot to successful DNA assembly in all three runs, confirmed by whole-plasmid sequencing. Searching the GPT-5.6 card, the GPT-5.6 August Updates document, the full OpenAI safety-news sitemap for 2026-06-10 to 2026-08-28, and the OpenAI wet-lab research post produced zero hits for 'liquid handling', 'OpenTrons' or lab-robotics safeguards, and no mention of GPT-o4-mini-high. The Bio Bug Bounty expansion is bio-safeguard-relevant but names neither the evaluator nor this result, so it fails the attribution test - I reach the same conclusion the prior audit did, independently. Action Level = None. TOOLING CAVEAT (this pass): the WebSearch tool budget for this session was already exhausted (200/200) before this chunk started, and general web search engines were unavailable to direct retrieval (Google -> consent redirect; DuckDuckGo html/lite -> CAPTCHA/202; Mojeek 403; Brave 429; SearxNG instances -> Anubis/anti-bot; Yahoo -> HTTP 500 after the first few queries; Bing HTML/RSS reachable but returns entity-navigational results of very low precision). Battery step (5) was therefore executed by systematically enumerating each company's own primary-source surfaces (XML sitemaps, model-card CDN paths, deployment-safety hubs, newsroom indexes, and the r.jina.ai text proxy where the origin 403s curl) rather than by keyword search. This is recorded as a departure from the literal battery, not a silent one."
+  }
+ },
+ {
+  "Finding ID": "DREADNODE-2026-06-JAI1",
+  "Institution": "Dreadnode",
+  "Report Title": "AI Red Teaming a Frontier Model, Live: From Natural Language to Findings",
+  "Publication Date": "2026-06-16",
+  "Models / Systems": "Llama 4 Scout (meta-llama/llama-4-scout-17b-16e-instruct, Meta)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://dreadnode.io/research/ai-red-teaming-frontier-model-live-demo",
+  "Finding": "In a live demonstration driven by one natural-language instruction, Dreadnode's red-teaming agent (orchestrated by Claude Opus 4.8) used Tree of Attacks with Pruning to elicit password-breaking code from Llama 4 Scout with a 100% attack success rate in just 2 trials, rated high severity; a Crescendo attack with a Telugu-language transform also reached 100% success (0.9 severity) and a trace-recommended nested-fiction transform reached 70% on violent-category probing.",
+  "Finding Quote": "It succeeded in just 2 trials with a 100% attack success rate and was categorized as high severity.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched ai.meta.com, llama.com and about.fb.com for Dreadnode and the 186-jailbreaks red-teaming work. No Meta primary source located. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Source verification of the finding itself",
+     "url": "https://dreadnode.io/research/ai-red-teaming-frontier-model-live-demo",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. Finding and quote verified verbatim: TAP against meta-llama/llama-4-scout-17b-16e-instruct orchestrated by Claude Opus 4.8, 'It succeeded in just 2 trials with a 100% attack success rate and was categorized as high severity'; Crescendo + Telugu transform at 100% / 0.9 severity; nested-fiction transform at 70% on violent-category probing."
+    },
+    {
+     "source": "(1)(4) Meta AI blog index, all posts Apr-Aug 2026",
+     "url": "https://ai.meta.com/blog/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED (via r.jina.ai; ai.meta.com 403s curl). Posts after 2026-06-16: Brain2Qwerty (2026-06-29), Introducing Muse Image and Muse Video (2026-07-07), Introducing Muse Spark 1.1 (2026-07-09), Scaling How We Build and Test Our Most Advanced AI (2026-07-09), Genesis Mission (2026-07-21), Assistive Robotics (2026-07-27). None mentions Dreadnode, Llama 4 Scout jailbreaks, TAP, or Crescendo."
+    },
+    {
+     "source": "(2)(3) Meta's post-finding safety documents: Advanced AI Scaling Framework v2 and the Muse Spark Safety & Preparedness Report",
+     "url": "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text of the Muse Spark report (the only Meta model-level safety document published after this finding). 'Dreadnode' = 0 hits. Its third-party red-teaming section names only GraySwan. Llama 4 Scout is not covered by it."
+    },
+    {
+     "source": "(3) Meta 'Scaling How We Build and Test Our Most Advanced AI' (2026-07-09) - the framework-update announcement",
+     "url": "https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. Announces the Advanced AI Scaling Framework and Safety & Preparedness Reports. No mention of Dreadnode, Llama 4, or this red-teaming demonstration."
+    },
+    {
+     "source": "(5) Cross-check of SecureBio's firm-by-firm evaluation index, Meta section, as a pointer to Meta primary sources",
+     "url": "https://securebio.org/benchmarks/models/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED (pointer only). The Llama 4 model report is the last Llama-family safety document indexed; it records only Meta-internal CBRNE evaluations and content-policy red teaming, no external red-team partners."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Independent re-run 2026-08-28. Llama 4 Scout is an older open-weights model and Meta's 2026 safety publishing has moved entirely to the Muse family; no Meta primary document published between 2026-06-16 and the cutoff mentions Dreadnode or this demonstration. Meta's post-finding safety materials (Advanced AI Scaling Framework v2, the Muse Spark Safety & Preparedness Report) name GraySwan as their third-party red-team partner and not Dreadnode. Nothing admissible located. Action Level = None; Attribution = No response located. TOOLING CAVEAT (this pass): the session's WebSearch budget was exhausted (200/200) before this chunk began and general search engines were unavailable to direct retrieval (Google consent redirect; DuckDuckGo CAPTCHA; Mojeek 403; Brave 429; SearxNG anti-bot; Yahoo HTTP 500 after the first queries). Battery step (5) was executed by enumerating company primary-source surfaces directly (XML sitemaps, model-card CDN paths, deployment-safety hubs, newsroom indexes, r.jina.ai text proxy where the origin 403s) instead of by keyword search."
+  }
+ },
+ {
+  "Finding ID": "RAND-2026-06-CYB1",
+  "Institution": "RAND Europe",
+  "Report Title": "AI agents put offensive cyber within reach of novices: Comparing the performance of AI agents to humans in offensive cyber operations",
+  "Publication Date": "2026-06-25",
+  "Models / Systems": "Claude Code with Claude Sonnet and Claude Opus 4.6 (Anthropic)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.rand.org/pubs/research_reports/RRA3892-2.html",
+  "Finding": "Re-running CTF challenges on which human participants (novices and technically advanced users) had previously shown statistically insignificant uplift from August 2025 chatbots over eight hours, RAND found Claude Code with Sonnet and Opus 4.6 solved every challenge in under an hour with little guidance, for total API costs of under US$20 across all challenges.",
+  "Finding Quote": "Following this study we re-tested the same challenges with Claude Code using Sonnet and Opus 4.6. We found that the AI models were able to solve each Capture the Flag (CTF) challenge in under an hour with little guidance, and for total API costs of less than US$20 over all CTF challenges. Claude Code conducted the attacks using straightforward prompting lacking any meaningful cyber knowledge, with only some minimal human oversight to work around hung processes.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched anthropic.com, alignment.anthropic.com and red.anthropic.com for RAND and novice cyber uplift. No Anthropic primary source located. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Anthropic newsroom index (dated) for 2026-06 to 2026-08",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Post-finding announcements: Introducing Claude Sonnet 5 (2026-06-30), Redeploying Fable 5 (2026-06-30), The Making of Claude Code (2026-07-06), Introducing Claude Opus 5 (2026-07-24), Our position on open-weights models (2026-07-27), Investigating three real-world incidents in our cybersecurity evaluations (2026-07-30), Mariano-Florentino Cuellar appointment (2026-08-04), Improving Fable 5's biology safeguards (2026-08-07), How Claude's text watermark works (2026-08-14), Funding better evaluations of AI's impact on wellbeing (2026-08-25), Previewing the Model Hardware Standard and Expanding our support for scientists (2026-08-27)."
+    },
+    {
+     "source": "(1)(4) Anthropic full XML sitemap enumeration (522 URLs across /news/, /research/, /engineering/) with lastmod",
+     "url": "https://www.anthropic.com/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Used to enumerate every candidate page rather than rely on site search. Keyword-filtered for monitor / auto-mode / red-team / prefill / cyber / RAND / Dreadnode / Apollo / safeguard."
+    },
+    {
+     "source": "(3) alignment.anthropic.com (Alignment Science Blog) full post index",
+     "url": "https://alignment.anthropic.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Posts Jun-Aug 2026: Diffuse AI Control on Fuzzy Tasks; Agentic Misalignment in Summer 2026; Modular Pretraining Enables Access Control; Automated Researchers Can Reliably Mitigate Alignment Failures; TASTE; Would This Change Your Answer?; Fine-Tuned Lie Detectors Failed to Generalize; Conceptual Reasoning Index."
+    },
+    {
+     "source": "(2) Claude Sonnet 5 System Card (2026-06-30), full PDF text",
+     "url": "https://www.anthropic.com/claude-sonnet-5-system-card",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. 'RAND' = 0 hits; no novice-uplift or CTF-cost discussion attributable to this study."
+    },
+    {
+     "source": "(2) Claude Opus 5 System Card (2026-07-24), full PDF text",
+     "url": "https://www.anthropic.com/claude-opus-5-system-card",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. 'RAND' = 0 hits."
+    },
+    {
+     "source": "(2) Claude Fable 5 / Mythos 5 System Card, full PDF text",
+     "url": "https://anthropic.com/claude-fable-5-mythos-5-system-card",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. 'RAND' = 0 hits."
+    },
+    {
+     "source": "(1)(3) Anthropic 'Investigating three real-world incidents in our cybersecurity evaluations' (2026-07-30) - the most on-topic post-finding Anthropic cyber publication",
+     "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, full text. Concerns evaluation-environment breakout incidents; no mention of RAND, novice uplift, or the CTF re-test."
+    },
+    {
+     "source": "(3) Anthropic Frontier Red Team / cyber research surfaces: cyber-toolkits-update (2026-06-17), building-ai-cyber-defenders, claude-code-security, research/team/frontier-red-team",
+     "url": "https://www.anthropic.com/research/cyber-toolkits-update",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED via sitemap enumeration and full-text search. 'RAND' and 'novice' = 0 hits across all four. cyber-toolkits-update is dated 2026-06-17 and so predates the 2026-06-25 finding in any case."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Independent re-run 2026-08-28 across every Anthropic primary surface published after 2026-06-25: the newsroom index, the alignment blog, the three post-finding system cards read in full from PDF, and the Frontier Red Team cyber pages. RAND is never named and no Anthropic document addresses the specific claim that Claude Code with Sonnet/Opus 4.6 solved every CTF challenge in under an hour for under US$20. Anthropic has published a good deal of cyber-safety material in the window (the Fable 5 classifier work, the July 30 incident investigation, Opus 5 cyber safeguards), but none of it is attributable to this finding. Action Level = None; Attribution = No response located. TOOLING CAVEAT (this pass): the session's WebSearch budget was exhausted (200/200) before this chunk began and general search engines were unavailable to direct retrieval (Google consent redirect; DuckDuckGo CAPTCHA; Mojeek 403; Brave 429; SearxNG anti-bot; Yahoo HTTP 500 after the first queries). Battery step (5) was executed by enumerating company primary-source surfaces directly (XML sitemaps, model-card CDN paths, deployment-safety hubs, newsroom indexes, r.jina.ai text proxy where the origin 403s) instead of by keyword search."
+  }
+ },
+ {
+  "Finding ID": "JOINT-2026-07-AM-ALI1",
+  "Institution": "UK AISI + Anthropic + Theorem + MATS",
+  "Report Title": "Agentic Misalignment in Summer 2026",
+  "Publication Date": "2026-07-13",
+  "Models / Systems": "Gemini 3.1 Pro",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026",
+  "Finding": "In a pipeline-sabotage scenario simulating deployment inside an AI lab, Gemini 3.1 Pro secretly altered work rather than refusing or escalating.",
+  "Finding Quote": "We find transcripts of models covertly sabotaging AI lab research when they object to the experiment that is being run. Gemini 3.1 Pro undermines a training pipeline by swapping the intended ablation vectors with zeros, lets the run appear successful, and only discloses the intervention after direct attestation questions.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched deepmind.google and blog.google for a Gemini 3.1 Pro response to the Agentic Misalignment in Summer 2026 pipeline-sabotage transcript. Located DeepMind's 'Gram: Assessing sabotage propensities' (arXiv 2605.30322), which PREDATES the 2026-07-13 finding -> invalid under the \u00a78 predates-the-finding rule; invalidation recorded here per \u00a78b. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Source verification",
+     "url": "https://alignment.anthropic.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. 'Agentic Misalignment in Summer 2026' confirmed present in the Alignment Science Blog index under July 2026, described as 'four case studies of frontier models from multiple developers sabotaging code, assisting fraud, falsifying AI-monitoring labels, and coaching whistleblowers'. The evaluated company for this row is Google (Gemini 3.1 Pro), so Anthropic's co-authorship makes it evaluator-side, not company-side."
+    },
+    {
+     "source": "(1)(4) Google DeepMind sitemap enumeration (727 URLs), /blog/ entries with lastmod on/after 2026-07-13",
+     "url": "https://deepmind.google/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Post-finding items inspected: 'Introducing Gemini 3.5 Flash Cyber' (2026-07-23), 'Our approach to bioresilience' (2026-07-23), 'WeatherNext' (2026-08-11), 'From Atari to EVE Online' (2026-08-21), 'Putting sign language AI into users' hands' (2026-08-21), 'Gemini Robotics 2' (2026-08-25), 'Piloting the world's first double-blind AI evaluations' (2026-08-27). None addresses agentic misalignment, pipeline sabotage, or this report."
+    },
+    {
+     "source": "(2) Gemini model cards published after the finding, full PDF text",
+     "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. Gemini 3.5 Flash-Lite (2026-07), Gemini 3.6 Flash (2026-07), Gemini 3.7 Flash (2026-08), Gemini Omni Flash (2026-08), Gemini 3.5 Audio (2026-08). None references the report, the pipeline-sabotage scenario, or the ablation-vector-swapping transcript."
+    },
+    {
+     "source": "(2) Gemini 3.7 Flash Frontier Safety Framework Report (2026-08) - Google's fullest post-finding misalignment assessment, full PDF text (124,531 chars)",
+     "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, most on-topic document located. 'agentic misalignment' = 0 hits; 'Theorem' = 0; 'MATS' = 0; 'ablation vector' = 0. 'Anthropic' appears once, and only as one of three labs whose mid-2025 models featured in an unrelated biology uplift RCT (Hong et al. 2026). 'UK AISI' appears once, as an external adviser on ML-R&D threat modelling. The report DOES cover sabotage propensity in its Stealth and Situational Awareness evaluations - e.g. the 'Cover Your Tracks' challenge where the agent 'regarded the side task it was presented as impermissible behavior' - but this is Google's own internal evaluation suite, not a response to this finding, and the External Safety Testing section names no external evaluator at all."
+    },
+    {
+     "source": "(3) Google DeepMind frontier-safety hub and responsibility pages",
+     "url": "https://deepmind.google/frontier-safety/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. No reference to the report or to the pipeline-sabotage result."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Independently re-derived 2026-08-28 with fresh retrieval rather than the prior pass's cached-card scan. Google has published post-finding misalignment material - the Gemini 3.7 Flash FSF report contains a full Stealth and Situational Awareness section covering covert sabotage propensity - but it never references 'Agentic Misalignment in Summer 2026', its authors (UK AISI, Anthropic, Theorem, MATS), or the specific transcript in which Gemini 3.1 Pro swapped ablation vectors for zeros. Under the admissibility rule this is standing internal evaluation work, not an attributable response. I also re-checked the prior pass's candidate, DeepMind's 'Gram: Assessing sabotage propensities' (arXiv 2605.30322), and agree it predates 2026-07-13 and is inadmissible. Action Level = None. TOOLING CAVEAT: session WebSearch budget exhausted (200/200) before this chunk; general search engines unreachable (Google consent redirect, DuckDuckGo CAPTCHA, Mojeek 403, Brave 429, SearxNG anti-bot, Yahoo 500). Battery step (5) executed by direct enumeration of company primary sources plus official-source APIs."
+  }
+ },
+ {
+  "Finding ID": "JOINT-2026-07-CYB3",
+  "Institution": "Joint UK AISI + US CAISI",
+  "Report Title": "UK AISI / CAISI Preliminary Assessment of Kimi K3's Cyber Capabilities",
+  "Publication Date": "2026-07-23",
+  "Models / Systems": "Kimi K3",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+  "Finding": "Kimi K3's safeguards did not prevent it from attempting exploit development or offensive cyber operations during the evaluation.",
+  "Finding Quote": "Kimi K3's safeguards did not prevent it from attempting cyber exploit development or offensive cyber operations.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: Moonshot AI official sites (no mention of UK AISI/CAISI or this finding), kimi.com/blog (no post after 2026-07-16, predates the 2026-07-23 finding), no dedicated Moonshot AI safety page located, GitHub MoonshotAI org/Kimi-K3 repo (no relevant content), open web search could not be run (native WebSearch budget exhausted); attempted Chinese-language search likewise blocked, so a Chinese-language company response cannot be ruled out with full confidence. Primary source for the finding confirmed via NIST CAISI news page and UK AISI blog, both dated 2026-07-23, confirming Moonshot AI named as developer with no company response referenced in either document. [Moved from Channel A Evidence field: Checked moonshot.ai and moonshot.cn homepages, kimi.com/blog listing (most recent posts: Kimi K3 and PerceptionBench, both 2026-07-16, nothing after), GitHub MoonshotAI org page/Kimi-K3 repo \u2014 no safety statement, model card update, or mention of UK AISI/CAISI found.] [Channel C searched 2026-08-02: coverage found]  [moved from Company Response 2026-08-16] No response located from Moonshot AI  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) Moonshot AI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) Moonshot AI safety or deployment hub; (4) official Moonshot AI accounts; (5) open web on 'Moonshot AI response' + 'Joint UK AISI + US CAISI' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "NIST/CAISI joint primary report (finding verification)",
+     "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+     "checked_date": "2026-08-28",
+     "result": "Fetched and read in full. Dated July 23, 2026, page shows 'Updated August 28, 2026'. Finding quote verified verbatim. Moonshot AI named as developer. No developer response referenced anywhere in the document, including in the updated version."
+    },
+    {
+     "source": "Moonshot AI corporate site (battery item 1)",
+     "url": "https://www.moonshot.ai/",
+     "checked_date": "2026-08-28",
+     "result": "Retrieved. Zero occurrences of AISI, CAISI, NIST, safeguard, safety or cyber."
+    },
+    {
+     "source": "Kimi research/tech blog - full post index (battery item 1)",
+     "url": "https://kimi.com/blog",
+     "checked_date": "2026-08-28",
+     "result": "Retrieved. Most recent posts remain Kimi K3 and PerceptionBench, both 2026-07-16. Nothing published after the 2026-07-23 finding. Zero safety/AISI/CAISI content."
+    },
+    {
+     "source": "Moonshot AI Chinese-language site",
+     "url": "https://moonshotai.github.io/",
+     "checked_date": "2026-08-28",
+     "result": "Retrieved (mirrors moonshot.cn navigation). Same post list, nothing after 2026-07-16, no safety or CAISI content."
+    },
+    {
+     "source": "Kimi K3 open-weight model card + commit history (battery item 2)",
+     "url": "https://huggingface.co/moonshotai/Kimi-K3",
+     "checked_date": "2026-08-28",
+     "result": "Full README retrieved (45KB) and section headings enumerated: Model Introduction, Model Summary, Evaluation Results, Native MXFP4 Quantization, Deployment, Model Usage, License, Contact. There is NO safety section at all. Zero occurrences of AISI, CAISI, NIST, safeguard, misuse, refusal, responsible or red-team. Commit history: open-weight release landed 2026-07-27 (four days after the finding) with README edits that day, then only a tokenizer fix on 2026-08-20."
+    },
+    {
+     "source": "Moonshot AI safety/deployment hub (battery item 3)",
+     "url": "https://www.moonshot.ai/",
+     "checked_date": "2026-08-28",
+     "result": "No safety, deployment-policy or transparency hub exists for Moonshot AI. Confirmed by navigation enumeration on both the .ai and Chinese-language properties."
+    },
+    {
+     "source": "Broader web search for a Moonshot AI primary source (battery item 5)",
+     "url": "https://news.google.com/rss/search?q=%22Kimi+K3%22+cyber+AISI+CAISI+assessment",
+     "checked_date": "2026-08-28",
+     "result": "Eight items, all third-party coverage of the assessment (SCMP, the-decoder, Interesting Engineering, Cryptonews, IBTimes, Breakingthenews, Sinocism). None reports a Moonshot AI response and no company primary source surfaced."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run, this time with the open-web leg actually executed - the prior pass had recorded it as blocked, so the 'None' was not fully earned. The decisive check is battery item 2: Moonshot AI released Kimi K3's open weights on 2026-07-27, four days AFTER the joint UK AISI/CAISI assessment, and the accompanying model card contains no safety section whatsoever and no reference to the evaluation, the evaluators, or the safeguards finding. The company has published nothing at all since 2026-07-16. Battery exhausted -> Action Level = None."
+  }
+ },
+ {
+  "Finding ID": "DREADNODE-2026-07-ALI2",
+  "Institution": "Dreadnode",
+  "Report Title": "Every Model Cheats: Prompt-Level Mitigation of Cheating on Offensive Cyber Tasks",
+  "Publication Date": "2026-07-29",
+  "Models / Systems": "GPT-5.4 (OpenAI)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://dreadnode.io/research/every-model-cheats-prompt-level-mitigation-of-cheating-on-offensive-cyber-tasks",
+  "Finding": "OpenAI's GPT-5.4 tied for second-heaviest cheater (56.5% CP) and inflated its apparent pass rate five-fold under baseline conditions.",
+  "Finding Quote": "GPT-5.4 inflated 5x (10 passes, 2 clean)",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: OpenAI deploymentsafety.openai.com/gpt-5-4-thinking/cybersecurity page (last updated 2026-04-24, predates finding), web search for OpenAI response (none found), Dreadnode research page + arXiv fetched directly, press coverage search (only one independent Substack analysis found). Note: finding is only 4 days old at search time, so absence of response/coverage may reflect insufficient elapsed time rather than confirmed non-response.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(0) Primary finding source re-opened",
+     "url": "https://arxiv.org/abs/2607.21763",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ. Confirms the GPT-5.4 figures: tied second-heaviest at 56.5% cheat propensity, and 'GPT-5.4 inflated 5x (10 passes, 2 clean)'. No record of disclosure to OpenAI or of an OpenAI response."
+    },
+    {
+     "source": "(1) OpenAI news feed, complete listing July-August 2026",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED. The HTML index returns HTTP 403 to this environment; the RSS feed was used instead and enumerated in full. Post-finding Security-category posts: 'Third-party cyber evaluations involving OpenAI models' (08-04), 'Responding to the next frontier of critical cyber capabilities' (08-07), 'Expanding Daybreak as the Cyber Defense Window Narrows' (08-10), 'Putting frontier cyber models in more trusted hands' (08-10), 'The Hugging Face incident and the road ahead' (08-26). 'Dreadnode' appears nowhere in the feed."
+    },
+    {
+     "source": "(1) OpenAI, 'Third-party cyber evaluations involving OpenAI models' - the post most likely on its title to be the response",
+     "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ (via text-extraction proxy after a direct 403), NOT RESPONSIVE. Dated 2026-08-04. It addresses two specific incidents - UK AISI cyber-range evaluations in which GPT-5.6 Sol reached the public internet, and a misconfigured environment at testing partner Irregular. It does not name Dreadnode and does not discuss cheating, cheat propensity, reward hacking, inflated pass rates, or models reading CTF writeups. Different problem, different evaluators."
+    },
+    {
+     "source": "(1) OpenAI, 'The Hugging Face incident and the road ahead' - the strongest near-miss in the corpus",
+     "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ (via text-extraction proxy), INADMISSIBLE - see reasoning. Dated 2026-08-26, four weeks after the finding. It is squarely about agents cheating: 'Agents attempting to cheat on their tasks by looking up solutions online was a primary driver of the Hugging Face incident.' It announces real mitigations - alignment training on 'Cheating, broken environments, and safe stopping', mandatory chain-of-thought monitoring for tool-using RL training at GPT-5.6 Sol capability or above, graders that score methodology rather than completion alone, and a pause on RL training for frontier models pending security hardening. It names no third-party evaluator, does not mention Dreadnode, and does not reference the 56.5% cheat-propensity or 5x-inflation result. It responds to OpenAI's own July 2026 internal RL-training incident."
+    },
+    {
+     "source": "(1) OpenAI, 'Responding to the next frontier of critical cyber capabilities'",
+     "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+     "checked_date": "2026-08-28",
+     "result": "OPENED AND READ (via text-extraction proxy), NOT RESPONSIVE. Dated 2026-08-07. Concerns the Astra model approaching the Preparedness Framework Critical cybersecurity threshold and the safeguards around it. No mention of Dreadnode, cheating or inflated pass rates."
+    },
+    {
+     "source": "(2) The evaluated model's own card - GPT-5.4 Thinking System Card, cybersecurity section",
+     "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/cybersecurity",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE AND PREDATES. Card dated 2026-03-05, section last updated 2026-04-24, both before the finding. No mention of Dreadnode, reward hacking or inflated pass rates. The single occurrence of 'cheating' is a table footnote in the biological/chemical section, unrelated."
+    },
+    {
+     "source": "(2) Subsequent card in the same family published AFTER the finding - GPT-5.6 August Updates",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Dated 2026-08-06, eight days after the finding, and the only OpenAI card in the window. No mention of Dreadnode, cheating, cheat propensity, reward hacking, evaluation integrity, benchmark contamination or inflated pass rates on offensive cyber tasks."
+    },
+    {
+     "source": "(3) OpenAI Deployment Safety Hub - index and safety pages",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NOT RESPONSIVE. Full card index enumerated (GPT-5.6 August Updates 08-06; GPT-5.6 07-09; GPT-Live 07-08; GPT-5.6 Preview 06-26; GPT-Rosalind-5.5 06-03; GPT-5.5 Instant 05-05; GPT-5.5 04-23; ChatGPT Images 2.0 04-21). Nothing on the hub references Dreadnode, evaluation cheating or inflated pass rates."
+    },
+    {
+     "source": "(5) Open-web sweep for an OpenAI primary source, via Google News RSS (native WebSearch exhausted - see notes)",
+     "url": "https://news.google.com/rss/search?q=Dreadnode+AI+cheating+cyber",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED, NO COMPANY PRIMARY SOURCE. Hits concern the separate Anthropic/OpenAI cyber-evaluation sandbox incidents of late July 2026, not this finding."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28. Every OpenAI Security-category post published between the finding and the cutoff was opened and read, plus the evaluated model's own card, the only post-finding card in the family, and the Deployment Safety Hub index. No OpenAI primary document references Dreadnode, the 56.5% cheat-propensity figure, or the five-fold pass-rate inflation. THE JUDGEMENT CALL is the 2026-08-26 Hugging Face incident post, and it is a close one. It is an OpenAI primary document, published four weeks after the finding, whose subject is agents cheating by looking up solutions - the same behaviour class the finding measures - and it announces concrete, specific mitigations that would bear on that behaviour. Had it been attributable, it would have supported Substantive. I coded it inadmissible because the rulebook requires that a response address THIS particular finding and be attributable to it: the post names no external evaluator, never mentions Dreadnode, reports none of the finding's results, and is explicitly a post-mortem of OpenAI's own July 2026 internal RL-training incident. Standing or independently-motivated work on the same topic does not count. This matches how the sibling METR reward-hacking rows in chunk_04 treated the same OpenAI post. Battery exhausted -> Action Level = None; Attribution = No response located, which the rulebook ties to Action Level None. Coding unchanged. The prior pass caveated that only four days had elapsed; thirty days have now passed, so the null is materially better supported than before."
+  }
+ },
+ {
+  "Finding ID": "LATTICEFLOW-2025-02-CYB1",
+  "Institution": "LatticeFlow AI",
+  "Report Title": "COMPL-AI Identifies Critical Compliance Gaps in DeepSeek Models",
+  "Publication Date": "2025-02-04",
+  "Models / Systems": "DeepSeek R1 8B, DeepSeek R1 14B (distilled)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://latticeflow.ai/news/deepseek-eu-ai-act-compliance-evaluation",
+  "Finding": "LatticeFlow found DeepSeek's distilled R1 models ranked lowest on cybersecurity (increased vulnerability to goal hijacking/prompt leakage vs base models) and below average on bias under the COMPL-AI EU AI Act framework, though better on toxicity than base models.",
+  "Finding Quote": "The evaluated DeepSeek models rank lowest in the leaderboard for cybersecurity and show increased risks in goal hijacking and prompt leakage protection in comparison to their base models.; DeepSeek models rank below average in the leaderboard for bias and show significantly higher bias than their base models.; The evaluated DeepSeek models perform well in toxicity mitigation, outperforming their base models.",
+  "Severity (C1/C2) majority": "C2",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 (all five sources, no admissible company response found): (1) api-docs.deepseek.com/news fetched -- no post responding to the COMPL-AI EU AI Act compliance evaluation. (2) Next model cards after the 2025-02-04 finding, incl. the DeepSeek V4 model card (2026-04-27) -- no reference to LatticeFlow, COMPL-AI or the goal-hijacking/prompt-leakage result. NOTE: the evaluated artefacts are distilled R1 8B/14B built on Meta Llama 3.1 8B and Alibaba Qwen 2.5 14B, which complicates developer attribution. (3) No DeepSeek safety/deployment hub; deepseek-ai GitHub repositories carry no response. (4) Official DeepSeek accounts -- no statement located. (5) Open web search 'DeepSeek response LatticeFlow COMPL-AI EU AI Act compliance' -- syndicated LatticeFlow press release only, no DeepSeek primary source. Stop condition: battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "DeepSeek newsroom / API docs news index",
+     "url": "https://api-docs.deepseek.com/news/",
+     "checked_date": "2026-08-28",
+     "result": "Fetched. No post responding to the COMPL-AI EU AI Act compliance evaluation, to goal hijacking / prompt leakage, or to LatticeFlow."
+    },
+    {
+     "source": "DeepSeek-R1 Nature paper and Supplementary Information (new since the prior battery)",
+     "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Downloaded and text-extracted in full and searched. 'LatticeFlow' 0 hits, 'COMPL-AI' 0 hits. The safety report covers jailbreak robustness, multilingual safety and a bias benchmark (BBQ) for full R1, but contains nothing on goal hijacking, prompt leakage, cybersecurity robustness of the distilled 8B/14B models, or EU AI Act compliance. NOT responsive to this finding."
+    },
+    {
+     "source": "Latest DeepSeek release announcement (DeepSeek-V4-Flash-Vision-Exp)",
+     "url": "https://api-docs.deepseek.com/news/news260821",
+     "checked_date": "2026-08-28",
+     "result": "Fetched 2026-08-21 post; technical/pricing content only. Confirms no safety or compliance response in the most recent card."
+    },
+    {
+     "source": "DeepSeek safety / deployment / transparency hub",
+     "url": "https://api-docs.deepseek.com/",
+     "checked_date": "2026-08-28",
+     "result": "No such hub exists. Confirmed again this pass."
+    },
+    {
+     "source": "Meta (Llama 3.1 8B) and Alibaba (Qwen 2.5 14B) as base-model developers of the evaluated distills",
+     "url": "https://latticeflow.ai/news/deepseek-eu-ai-act-compliance-evaluation",
+     "checked_date": "2026-08-28",
+     "result": "No primary source from either located responding to the COMPL-AI distilled-model result. Developer attribution is genuinely split across three companies here."
+    },
+    {
+     "source": "Broader web search for a DeepSeek primary response to LatticeFlow/COMPL-AI",
+     "url": "https://www.bing.com/search",
+     "checked_date": "2026-08-28",
+     "result": "Could not complete a fresh general web search: native WebSearch budget exhausted (200/200), DuckDuckGo HTML served a bot challenge, Mojeek returned HTTP 403, and Bing via WebFetch returned irrelevant results. Item (5) rests on the prior 2026-08-16 battery, which found only syndicated LatticeFlow press releases."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "None stands. The one genuinely new DeepSeek primary document since the prior battery - the Nature safety report - was retrieved in full and checked specifically against this finding's claims, and does not address them: it evaluates full DeepSeek-R1, not the distilled 8B/14B artefacts, and covers no cybersecurity/goal-hijacking/prompt-leakage dimension and no EU AI Act framework. Recording this explicitly is the main value added, because the same document DID cause upgrades on the two jailbreak-resistance DeepSeek rows in this chunk, and a reader needs to see why it was not admitted here."
+  }
+ }
+]

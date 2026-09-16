@@ -1,0 +1,426 @@
+[
+ {
+  "venue": "Dreadnode",
+  "surfaces_checked": [
+   {
+    "url": "https://dreadnode.io/research",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 41,
+    "note": "Single-page index, no pagination (All/Blog/Papers/Talks/Code filters are client-side over the same 41 dated entries; ?filter=papers returns byte-identical HTML). 3 entries fall in the 2026-07-31 -> 2026-08-29 window."
+   },
+   {
+    "url": "https://dreadnode.io/sitemap-0.xml",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 44,
+    "note": "Full-site sitemap with lastmod dates, used to confirm the research index is complete and to enumerate the company/newsroom surface. Newest lastmod site-wide is 2026-08-25."
+   },
+   {
+    "url": "https://dreadnode.io/company/newsroom/",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 5,
+    "note": "https://dreadnode.io/company returns 404; the real company surface is /company/newsroom/. Newest item is 2026-07-09 (Black Hat / DEF CON 2026), i.e. pre-window. Documented zero for this surface, checked 2026-08-29."
+   },
+   {
+    "url": "https://arxiv.org/abs/2607.07774",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "arXiv reached ONLY via Dreadnode's own Papers list (no keyword search used). ScopeJudge preprint: v1 submitted 8 Jul 2026, v2 30 Jul 2026 - both pre-window, although Dreadnode's index dates the paper Aug 03, 2026."
+   },
+   {
+    "url": "https://arxiv.org/abs/2607.21763",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "Also from Dreadnode's own Papers list. 'Every Model Cheats', submitted 23 Jul 2026 - pre-window, checked to rule it out."
+   }
+  ],
+  "items": [
+   {
+    "title": "From Compute to Congress: Our Open Source Blind Spot",
+    "url": "https://dreadnode.io/research/from-compute-to-congress-our-open-source-blind-spot",
+    "date": "2026-08-25",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 stratified — Dreadnode is a named third-party evaluator; §2 one discrete claim meets all three tests (evaluator-asserted DreadIndex result, measured, independently codeable); §4 Gate 1 pass / Gate 2 pass / Tier A condition (3) fails",
+    "reason": "Predominantly a policy commentary (model gating, open-weight strategy) which on its own would be '§3 EXCLUDED - not an evaluation', BUT it also first-discloses a new measured result from Dreadnode's own DreadIndex benchmark: three named American-origin open models were added and all three placed last. That one claim is evaluator-asserted, evidence-backed and independently codeable, so the item is included for that single row; the surrounding policy argument, the gating pros/cons and the recommendations are opinion and yield no findings (§2 test 2).",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 7976,
+     "pages": null
+    },
+    "findings": [
+     {
+      "finding": "Dreadnode added three American-origin open-weight models — Poolside's Laguna S 2.1, Thinking Machines' Inkling and Arcee's Trinity Large Thinking — to its DreadIndex offensive-cybersecurity benchmark, and all three placed lowest on the leaderboard; on the same task set Chinese open-weight models substantially outperformed the US equivalents.",
+      "finding_quote": "Three American-origin open models were recently added to the benchmark: Poolside’s Laguna S 2.1, Thinking Machines’ Inkling, and Arcee’s Trinity Large Thinking.\n\nAll three scored lowest on the leaderboard. On the same task set, Chinese open weight models significantly outperform their US equivalents, and they’re catching up to frontier models with rapid succession.",
+      "models_systems": "Poolside Laguna S 2.1; Thinking Machines Inkling; Arcee Trinity Large Thinking (compared against the existing DreadIndex cohort, which includes Chinese open-weight models)",
+      "institution": "Dreadnode (author Daria Bahrami)",
+      "domain": "Offensive cybersecurity capability benchmarking (DreadIndex: 76 public and private tasks across 10 categories, with cost and refusal behaviour)",
+      "eval_trackable": "Yes",
+      "action_trackable": "Yes",
+      "tier": "B",
+      "tier_reasoning": "Gate 1 PASSES — an empirical model result (leaderboard placement on a measured benchmark), not a framework or governance write-up. Gate 2 PASSES — three specific companies and models are named. Tier A conditions (1) and (2) hold, but condition (3) FAILS on two load-bearing exclusions: this is a benchmark-score / comparative-ranking result with no dangerous capability threshold crossed, and the finding is that the named models are LESS capable, which is not a concerning result inviting a safety response from those vendors. Hence Tier B.",
+      "notes": "No per-model scores are published in the post; the leaderboard itself is on the Dreadnode platform. Numbers beyond 'lowest on the leaderboard' are deliberately left blank per §10 rather than inferred. [Report tested: the wider DreadIndex cohort, including Chinese open-weight models, appears only as a comparator and is not a row.]"
+     }
+    ]
+   },
+   {
+    "title": "ScopeJudge: Can a Runtime Judge Keep Offensive Agents In Scope?",
+    "url": "https://dreadnode.io/research/scope-judge-can-a-runtime-judge-keep-offensive-agents-in-scope",
+    "date": "2026-08-03",
+    "decision": "EXCLUDED - duplicate/secondary",
+    "rule_cited": "§3 dedup — the primary, earliest, fullest source wins",
+    "reason": "This blog is Dreadnode's own write-up of arXiv:2607.07774 'ScopeJudge: Cost-Aware Pre-Execution Gating for Offensive Security Agents' (v1 submitted 8 Jul 2026, v2 30 Jul 2026), which it links as 'Full paper on arXiv'. The 22-page preprint is the earlier and fuller primary source and it predates the 2026-07-31 window start, so the in-window blog is secondary. PARENT-RECONCILIATION FLAG: Dreadnode's own research index dates BOTH the blog and the paper 'Aug 03, 2026'. If the back-catalogue pass used the index date it may have treated the paper as post-cutoff and dropped it, in which case this content is not in the ledger at all. The blog's distinctive numbers, not present in the arXiv abstract, are: cost-sensitive pick GLM-5.2 + intent-plus-calls = 87.2% recall / 0.637 F1 / $3.22 per 1,000 decisions, flagging 13.3% of calls; recall-first pick Opus 4.8 + intent-only = 94.2% recall / 0.547 F1 / $4.20, flagging 18.5% of calls; highest observed F1 GLM-5.2 + full transcript = 86.2% recall / 0.656 F1 / $6.01; GLM-5.2's 0.66 F1 edges the least-aligned individual human expert (0.63) but sits below the 0.78 mean expert reference; inter-human disagreement was close to one call in eight; under the Static Policy strategy nearly all judges had recall near zero.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 18018,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "ScopeJudge: Cost-Aware Pre-Execution Gating for Offensive Security Agents (paper entry on Dreadnode's Papers list)",
+    "url": "https://arxiv.org/abs/2607.07774",
+    "date": "2026-07-08",
+    "decision": "POST-CUTOFF",
+    "rule_cited": "§3 — outside the enumeration window (used here for 'out of window'; the item is PRE-window, not post-)",
+    "reason": "Listed on Dreadnode's research index as 'Aug 03, 2026', which is why it is recorded here, but the verified arXiv publication record is v1 8 Jul 2026 / v2 30 Jul 2026 — before the 2026-07-31 window start. Recorded so the parent can see it was enumerated and checked rather than missed; it belongs to the back-catalogue, not to this forward window.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 4962,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "The Scaffolding is the Red Team: AIRTBench, One Year Later",
+    "url": "https://dreadnode.io/research/the-scaffolding-is-the-red-team-airt-bench-one-year-later",
+    "date": "2026-07-31",
+    "decision": "INCLUDED",
+    "rule_cited": "§1 stratified — named third-party evaluator; §2 all three tests met (measured re-run results asserted by Dreadnode); §5 split into one aggregate capability row, one named-model demonstration row and one methodology row; §4 tiering below",
+    "reason": "A genuine evaluator-run measurement: 13 Crucible AI/ML red-team tasks from AIRTBench v1 re-run as Dreadnode environments against six named models under a documented protocol (AIRT@1, ai-red-teaming@1.10.0 capability, 60-minute per-task budget), with a full task-by-task result matrix. PARENT-RECONCILIATION FLAG: 2026-07-31 is exactly this venue's recorded latest_seen, so this item is very likely already the newest Dreadnode row in the ledger; it is enumerated here because the instruction makes 2026-07-31 inclusive, and should be de-duplicated against the ledger rather than added twice.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 14919,
+     "pages": null
+    },
+    "findings": [
+     {
+      "finding": "On a 13-task subset of AIRTBench deliberately built from the Crucible challenges that were unsolved-by-all (8 tasks) or solved-by-exactly-one-model (5 tasks) in the original benchmark, two open-weight/openly-routed models matched the frontier baseline: GLM-5.2, Kimi-K3 and Claude Sonnet 5 each solved 10/13 (AIRT@1 = 77%), while Qwen3.7-Plus and Nemotron-3-Ultra solved 6/13 (46%) and Trinity-Large-Thinking solved 1/13 (8%).",
+      "finding_quote": "Three models now solved 10 of 13 from V1’s challenge sample, and two of them are open-weight or openly routed. GLM-5.2 and Kimi-K3 match Claude Sonnet 5’s aggregate solve rate on a benchmark built specifically from the tasks that separated frontier from everything else a year ago.",
+      "models_systems": "openrouter/z-ai/glm-5.2; openrouter/moonshotai/kimi-k3; anthropic/claude-sonnet-5; openrouter/qwen/qwen3.7-plus; openrouter/nvidia/nemotron-3-ultra-550b-a55b; openrouter/arcee-ai/trinity-large-thinking (:exacto routing variant). Historical reference points from AIRTBench v1: claude-3-7-sonnet-20250219, DeepSeek-R1, gemini-2.5-pro-preview-05-06.",
+      "institution": "Dreadnode (Ads Dawson, with Shane Caldwell and Raja Sekhar Rao Dheekonda)",
+      "domain": "Autonomous AI red teaming — offensive AI/ML security capability (prompt injection, system-prompt extraction, SQL-backed workflows, model inversion, audio evasion, agentic system exploitation)",
+      "eval_trackable": "Yes",
+      "action_trackable": "Yes",
+      "tier": "B",
+      "tier_reasoning": "Gate 1 PASSES — measured solve rates from a re-run benchmark with a published per-task matrix. Gate 2 PASSES — six specific models and their developers are named. Tier A condition (3) FAILS on the load-bearing exclusions for capability trends and for benchmark-score / relative-uplift results with no dangerous threshold crossed: the tasks are CTF-style Crucible challenges in a sandbox, the framing is a year-on-year capability trend and a comparative ranking, and the authors explicitly caution that AIRT@1 is 'a snapshot, not a pass@k reliability estimate'. Tier B.",
+      "notes": "'Timed out' cells (60-minute budget exhausted) are reported by Dreadnode as model/runtime outcomes, not infrastructure errors. Task-level totals verified against the published matrix."
+     },
+     {
+      "finding": "Individual named-model exploit demonstrations on tasks that were frontier-only or unsolved a year earlier: GLM-5.2 recovered a 12-character passphrase from a black-box model-inversion API by proving the target regressors were perfectly linear and then extracting each one's active feature by one-shot probing; Claude Sonnet 5 was the only model of the six to solve the crucible-brig1 agentic sandbox-escape task, coercing a language detector's internal validation tool into echoing its full process environment inside a JSON debug field; and Trinity-Large-Thinking, the weakest model in the cohort, broke a SQL-backed prompt-injection task in under three minutes by reframing the forbidden query as a hypothetical.",
+      "finding_quote": "GLM-5.2 recovers a 12-character passphrase from a black-box model-inversion API by proving the target regressors are perfectly linear, then extracting each one’s active feature via one-shot probing — a task only Claude 3.7 Sonnet solved a year ago.",
+      "models_systems": "GLM-5.2 (Z.ai); Claude Sonnet 5 (Anthropic); Trinity-Large-Thinking (Arcee AI) — attacking Crucible targets including sklearn joblib classifiers, an LLM-driven service with a language-detector validation tool, and a LangChain movie-database text-to-SQL workflow",
+      "institution": "Dreadnode (Ads Dawson, with Shane Caldwell and Raja Sekhar Rao Dheekonda)",
+      "domain": "Autonomous AI red teaming — model inversion, agentic sandbox escape, SQL-backed prompt injection",
+      "eval_trackable": "Yes",
+      "action_trackable": "Yes",
+      "tier": "B",
+      "tier_reasoning": "Gate 1 PASSES — observed behaviour on specific tasks with described attack mechanisms. Gate 2 PASSES — the models and their developers are named. Tier A condition (3) FAILS: these are successful solves of purpose-built CTF challenges inside Dreadnode's own sandboxed environments, i.e. benchmark capability demonstrations with no dangerous real-world threshold crossed, and the named models are here the instrument of a study whose subject is the scaffolding/capability layer rather than any one vendor's safety posture. Tier B.",
+      "notes": "Kept as one row rather than three because §5's decisive test is whether they would be responded to as one thing: they are presented by Dreadnode as one illustrative set showing that formerly frontier-only task classes are now reachable, not as three separate vendor-specific defects. They are capability solves in a sandbox, not safeguard failures, so §5's 'different companies never share a row' split does not bite — no company-specific response is invited by any of them."
+     },
+     {
+      "finding": "Methodology/process finding: Dreadnode re-ran the 13-task subset as a deliberately system-level follow-on rather than a controlled model-only rerun — one pass per model (AIRT@1) under the Dreadnode ai-red-teaming@1.10.0 capability with a 60-minute per-task budget — and reports that the capability layer, not model choice, accounts for much of the change: crucible-popcorn, unsolved by every model in AIRTBench v1, was solved by all six models including the weakest, and crucible-probe and crucible-extractor, each solved by a single model in v1, were solved by five of six. The authors flag the confound explicitly (newer models, a more operational capability, and a longer budget all changed at once) and note crucible-librarian was more robust under the earlier 30-minute budget.",
+      "finding_quote": "This is a system level follow-on, not a controlled model-only rerun: newer models, a more operational red team capability, and a longer task budget all matter. AIRT@1 should be read as a snapshot, not a pass@k reliability estimate.",
+      "models_systems": "Dreadnode security task runtime; ai-red-teaming@1.10.0 capability; 13 Crucible challenges ported to Dreadnode environments",
+      "institution": "Dreadnode (Ads Dawson, with Shane Caldwell and Raja Sekhar Rao Dheekonda)",
+      "domain": "Evaluation methodology — agent scaffolding as a confound in year-on-year capability comparisons; task budget sensitivity",
+      "eval_trackable": "No",
+      "action_trackable": "",
+      "tier": "C",
+      "tier_reasoning": "Gate 1 FAILS — the unit of analysis is the evaluation harness and the attribution of gains to the capability layer versus the model, i.e. a methodology finding, not an empirical finding about a particular model. Per §4 Gate 1 this is Tier C and Action Trackable is left blank.",
+      "notes": "The 30-minute versus 60-minute budget sensitivity on crucible-librarian is recorded here because it is a property of the protocol, not of any model."
+     }
+    ]
+   }
+  ],
+  "zero_yield": false,
+  "unreadable": []
+ },
+ {
+  "venue": "France INESIA (via PEReN / ANSSI / Inria / LNE)",
+  "surfaces_checked": [
+   {
+    "url": "https://www.peren.gouv.fr/en/actualites/",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 11,
+    "note": "PEReN's full English news index, single page, no pagination. Newest item 2026-07-28 ('PEReN's 2025 Activity Report'), which is exactly the recorded latest_seen. Nothing dated on or after 2026-07-31. Documented zero, checked 2026-08-29."
+   },
+   {
+    "url": "https://www.peren.gouv.fr/en/",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 3,
+    "note": "Homepage news teaser, cross-checks the index: newest three are 2026-07-28, 2026-07-20, 2026-07-15."
+   },
+   {
+    "url": "https://www.peren.gouv.fr/en/publications/",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 16,
+    "note": "'Shedding light on...' series (N°1-N°10, newest N°10 December 2025), road map 2026, activity reports 2021-2025, videos and infographics. No publication dated in the window."
+   },
+   {
+    "url": "https://www.peren.gouv.fr/en/perenlab/",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 5,
+    "note": "PEReN Lab technical-article surface. Newest 2026-07-15 (cloud-service migration trials). Nothing in window."
+   },
+   {
+    "url": "https://www.peren.gouv.fr/en/travaux/",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 1,
+    "note": "'Our work' project catalogue, keyed to the 2025 activity report; no dated publications, checked for any in-window project write-up and found none."
+   },
+   {
+    "url": "https://www.sgdsn.gouv.fr/publications",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 30,
+    "note": "SGDSN publications index (157 publications over 16 pages, newest-first; INESIA publishes here). Pages 1-3 enumerated. Newest item site-wide is 13 juillet 2026; the two most recent INESIA items are 'What should evaluators prioritise when resources are limited?' (08 juillet 2026) and 'International consensus and open questions in AI evaluations' (12 février 2026). Nothing dated on or after 2026-07-31. Documented zero, checked 2026-08-29."
+   }
+  ],
+  "items": [],
+  "zero_yield": true,
+  "unreadable": [
+   {
+    "url": "https://www.peren.gouv.fr/static/",
+    "status": 403,
+    "note": "Static asset host, 403 with no directory index and no Wayback snapshot of a listing. It is not an enumerable surface — it only serves PDFs already linked from /en/publications/ and /en/actualites/, both of which loaded 200 and were enumerated in full, so this does not leave a gap. Recorded for completeness rather than as a lost surface."
+   }
+  ]
+ },
+ {
+  "venue": "LatticeFlow AI",
+  "surfaces_checked": [
+   {
+    "url": "https://latticeflow.ai/news",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 11,
+    "note": "News landing page (highlight + latest activity + 'Complete Newsroom'). Newest item 2026-07-15 ('LatticeFlow AI Launches a Single Platform to Control AI Risk in the Agentic World'), which is exactly the recorded latest_seen. Nothing on or after 2026-07-31. Documented zero, checked 2026-08-29."
+   },
+   {
+    "url": "https://latticeflow.ai/sitemap-0.xml",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 122,
+    "note": "Complete site sitemap, used to guarantee the news enumeration is exhaustive rather than trusting the paginated landing page. It lists 46 /news/ URLs; cross-checking the newest of them against the landing page confirms 2026-07-15 is the most recent. No /research, /publications or /papers surface exists on the site."
+   },
+   {
+    "url": "https://latticeflow.ai/lp",
+    "via": "direct",
+    "status": 404,
+    "items_seen": 0,
+    "note": "/lp itself 404s; the sitemap shows 11 /lp/* landing pages, all marketing collateral (Gartner reprints, case studies, webinars) with no publication dates and none newly added in the window."
+   }
+  ],
+  "items": [],
+  "zero_yield": true,
+  "unreadable": [],
+  "notes": "The packet lists 'https://arxiv.org/abs' as a surface for this venue. The rule is that arXiv may be used only via the org's own publication list; LatticeFlow AI publishes no such list (the sitemap has no research/publications route), so there is no reproducible way to enumerate its arXiv output and none was attempted. Its academic output (e.g. the COMPL-AI work) is co-authored with ETH Zurich / INSAIT and surfaces on latticeflow.ai only as /news items, which were enumerated in full."
+ },
+ {
+  "venue": "US Center for AI Standards and Innovation (CAISI, NIST)",
+  "surfaces_checked": [
+   {
+    "url": "https://www.nist.gov/news-events/news-updates/tag/2810121",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 35,
+    "note": "The CAISI news-and-events tag — the venue's own primary index, 35 items, newest-first, fully enumerated. Newest item is 'UK AISI / CAISI Preliminary Assessment of Kimi K3's Cyber Capabilities', July 23, 2026, which is exactly the recorded latest_seen. NOTHING published by CAISI on or after 2026-07-31. Documented zero, checked 2026-08-29."
+   },
+   {
+    "url": "https://www.nist.gov/blogs/caisi-research-blog",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 4,
+    "note": "CAISI Research Blog, complete listing. Newest post is March 23, 2026 ('Insights into AI Agent Security from a Large-Scale Red-Teaming Competition'). Nothing in window."
+   },
+   {
+    "url": "https://www.nist.gov/caisi",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 4,
+    "note": "CAISI landing page; used to discover the tag and blog routes and to confirm no separate CAISI publications surface exists (/caisi/publications 404s)."
+   },
+   {
+    "url": "https://www.nist.gov/news-events/news-updates/topic/2753736",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 159,
+    "note": "NIST-wide Artificial Intelligence news topic, newest-first, page 1 of 159 items enumerated (covers everything back to 2026-01, far beyond the window). Two in-window items, both non-CAISI."
+   },
+   {
+    "url": "https://www.nist.gov/publications/search/topic/2753736",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 284,
+    "note": "NIST's own AI-topic publications index (not a keyword search), newest-first, page 1 enumerated — covers back to 2026-05, well beyond the window. Two in-window publications, both NIST IRs from the Cyber AI Profile programme, neither from CAISI. The nearest CAISI-authored publication is 'Summary Analysis of Responses to the RFI Regarding Security Considerations for AI Agents', May 18 2026, pre-window."
+   },
+   {
+    "url": "https://www.nist.gov/blogs/taking-measure/categories/2753736",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 18,
+    "note": "NIST 'Taking Measure' blog, AI category, complete listing of 18 posts. Newest is December 4, 2025. Nothing in window."
+   },
+   {
+    "url": "https://www.nist.gov/news-events/news",
+    "via": "direct",
+    "status": 200,
+    "items_seen": 6,
+    "note": "NIST general news landing page, checked so the in-window NIST-wide items are on the record even though they sit outside CAISI's remit."
+   }
+  ],
+  "items": [
+   {
+    "title": "Seeking Public Comment! Using Artificial Intelligence for Cybersecurity Framework 2.0 Analysis and Reporting (NIST SP 1353 ipd)",
+    "url": "https://www.nist.gov/news-events/news/2026/08/seeking-public-comment-using-artificial-intelligence-cybersecurity",
+    "date": "2026-08-19",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation; §2 tests 2 and 3 fail",
+    "reason": "A call for public comment on a draft quick-start guide showing how practitioners could prompt a generative AI model to help produce CSF 2.0 artefacts. Guidance and notional use cases with a fictitious company, explicitly 'not prescriptive assessment or assurance methodologies'; no AI system is evaluated and no measured result is asserted. Also a NIST Cybersecurity Framework programme output, not CAISI.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 4163,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "NIST Joins National Genesis Mission to Accelerate AI Innovation",
+    "url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation",
+    "date": "2026-08-04",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation; §2 preamble (announcements and plans contain no findings)",
+    "reason": "Announcement of an MOU between NIST and the DOE Office of Science under the Genesis Mission, plus forward-looking statements about work to be executed through the Centers for AI in Manufacturing and Critical Infrastructure. Partnership news and plans, no measured result, no CAISI involvement.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 4767,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "Workshop Summary Report for \"Cyber AI Profile\" Hybrid Workshop (NIST IR 8607)",
+    "url": "https://www.nist.gov/publications/workshop-summary-report-cyber-ai-profile-hybrid-workshop",
+    "date": "2026-08-03",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation; §2 test 1 fails (rapporteur summary of other people's views)",
+    "reason": "Rapporteur write-up of the January 2026 Cyber AI Profile workshop: it reports themes raised by government, industry and academia participants (governance challenges, profile stability, AI attack surfaces, taxonomy, AI-enabled cyber defence) rather than claims asserted by the authors on their own evidence. No AI system is tested. Authored by NIST's Cybersecurity Framework / Cybersecurity for IoT staff (Megas, Cuthill, Sames, Snyder), not CAISI. DOI 10.6028/NIST.IR.8607.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 2823,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "Workshop Summary Report for \"Cyber AI Profile\" Hybrid Workshop #1 (NIST IR 8578)",
+    "url": "https://www.nist.gov/publications/workshop-summary-report-cyber-ai-profile-hybrid-workshop-1",
+    "date": "2026-08-03",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation; §2 test 1 fails (rapporteur summary of other people's views)",
+    "reason": "Companion rapporteur report, published the same day, summarising the April 2025 Cyber AI Profile workshop discussion of the Cybersecurity and AI Workshop Concept Paper. Same reasoning as NIST IR 8607: stakeholder-feedback summary, no evaluation, not CAISI. DOI 10.6028/NIST.IR.8578.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": 2282,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "NIST Researchers Supersize Quantum Technology to Help Detect Faint Photons",
+    "url": "",
+    "date": "2026-08-24",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation (no AI subject matter at all)",
+    "reason": "Enumerated from the NIST general news landing page for completeness. Single-photon detector physics; nothing to do with AI systems or CAISI. URL left blank per §10 rather than reconstructed.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": null,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "NIST National Construction Safety Team Advisory Committee Meeting Scheduled for Sept. 23 and 24, 2026",
+    "url": "",
+    "date": "2026-08-13",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation (no AI subject matter at all)",
+    "reason": "Enumerated from the NIST general news landing page for completeness. Meeting notice, construction safety. URL left blank per §10.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": null,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "NIST Researchers Correct Common Error Confounding Nanotech Measurements",
+    "url": "",
+    "date": "2026-08-06",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation (no AI subject matter at all)",
+    "reason": "Enumerated from the NIST general news landing page for completeness. Nanotechnology metrology. URL left blank per §10.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": null,
+     "pages": null
+    },
+    "findings": []
+   },
+   {
+    "title": "‘Spooky’ Particles Transit DC Suburbs, a Step Toward a Quantum Network",
+    "url": "",
+    "date": "2026-08-05",
+    "decision": "EXCLUDED - not an evaluation",
+    "rule_cited": "§3 — not an evaluation (no AI subject matter at all)",
+    "reason": "Enumerated from the NIST general news landing page for completeness. Quantum networking. URL left blank per §10.",
+    "fetch": {
+     "via": "direct",
+     "status": 200,
+     "chars": null,
+     "pages": null
+    },
+    "findings": []
+   }
+  ],
+  "zero_yield": true,
+  "unreadable": [
+   {
+    "url": "https://nvlpubs.nist.gov/nistpubs/",
+    "status": 403,
+    "note": "403 direct and no Wayback snapshot of a directory listing; nvlpubs serves PDFs but exposes no browsable index (https://nvlpubs.nist.gov/nistpubs/ai/ also 403). Coverage was NOT lost: every NIST publication that would land there is indexed on https://www.nist.gov/publications/search/topic/2753736, which returned 200 and was enumerated newest-first through the whole window."
+   }
+  ]
+ }
+]

@@ -1,0 +1,202 @@
+[
+ {
+  "venue": "OpenAI",
+  "title": "Lessons learned on language model safety and misuse",
+  "url": "https://openai.com/index/language-model-safety-and-misuse/",
+  "date": "2022-03-03",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 company-venue carve-out — no external evaluator named; §1 hard drop (company self-report)",
+  "reason": "Read in full: OpenAI reflecting on its own GPT-3/Codex/InstructGPT deployment; all eight authors are OpenAI staff and no external evaluator contributes any section, so the carve-out test fails and the surrounding self-assessment is a hard drop.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 18379, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Tacit Knowledge Elicitation Process for Industry 4.0",
+  "url": "https://www.holisticai.com/papers/tacit-knowledge-elicitation-process-industry-4",
+  "date": "2022-03-10",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — no evaluation of an AI system; a solution proposal, not an evidence-backed evaluative claim",
+  "reason": "Landing page plus the underlying 15-page Springer paper (Discover AI 2:6) read: it proposes an ontology/knowledge-graph process for capturing aging workers' tacit knowledge in manufacturing — no AI model or system is evaluated.",
+  "fetch": {"via": "direct", "status": 200, "chars": 624, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "What Is the Best Tool to Save Data Drift?",
+  "url": "https://www.robustintelligence.com/blog-posts/what-is-the-best-tool-to-save-data-drift",
+  "date": "2022-03-22",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 2 — generic guidance and recommendations, not a measured result or observed behaviour",
+  "reason": "Read in full: an explainer on what causes data drift and how to detect it, closing on a RIME product pitch; no model tested and no measurement reported.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 15225, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Riffat Jaffer: Fostering Growth and Performance",
+  "url": "https://www.robustintelligence.com/blog-posts/riffat-jaffer",
+  "date": "2022-03-24",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — no evaluator claim about any AI system; employee profile",
+  "reason": "Read in full: a 'fireside chat' interview with Robust Intelligence's VP of People about hiring and company culture; contains nothing about any AI system.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 16916, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Supporting the Royal Australian Navy's Campaign Plan for Robotics and Autonomous Systems: Emerging Missions and Technology Trends",
+  "url": "https://www.rand.org/pubs/research_reports/RRA1377-1.html",
+  "date": "2022-04-04",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — a technology-landscape and trends outlook (to 2040), not measured results or observed behaviour of any system",
+  "reason": "Read in full: RAND Australia surveys uncrewed aerial/surface/underwater platform missions and enabling technologies for the RAN out to 2040; the key takeaways are trend projections and capability-development principles, with no AI system evaluated.",
+  "fetch": {"via": "direct", "status": 200, "chars": 6892, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "3 Trends for AI in FinTech in 2022",
+  "url": "https://www.robustintelligence.com/blog-posts/3-trends-for-ai-in-fintech-in-2022",
+  "date": "2022-04-05",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 and test 2 — forecasts plus recycled press accounts of others' incidents (Apple Card, Lemonade, Zillow), not evaluator-asserted evidence",
+  "reason": "Read in full: a marketing 'perspectives' piece predicting three FinTech AI trends; every concrete example is a second-hand news account, and §2 excludes opinion pieces and plans.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 21511, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
+  "url": "https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback",
+  "date": "2022-04-12",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 company-venue carve-out — no external evaluator named; §1 hard drop (company self-report)",
+  "reason": "Read in full: Anthropic reporting RLHF results on its own models; the entire 32-name author list is Anthropic, so no externally contributed section exists and the carve-out does not apply.",
+  "fetch": {"via": "direct", "status": 200, "chars": 2656, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Why Model Validation Can End the AI \"Explainability Crisis\"",
+  "url": "https://www.robustintelligence.com/blog-posts/why-model-validation-can-end-the-ai-explainability-crisis",
+  "date": "2022-04-28",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 — a summary of a Fortune article and of Harvard/MIT/CMU/Drexel researchers' conclusions, not claims asserted by the evaluator",
+  "reason": "Read in full: an opinion piece arguing validation should replace explainability, restating other people's work and ending in a RIME demo pitch; §2 excludes opinion pieces.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 12831, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Redwood Research",
+  "title": "Adversarial Training for High-Stakes Reliability (paper)",
+  "url": "https://arxiv.org/abs/2205.01663",
+  "date": "2022-05",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 IN (stratified: third-party evaluator) + §2 kind 2 — methodology/tooling findings, evidence-backed and independently codeable",
+  "reason": "Read the abstract page and the full 30-page NeurIPS 2022 paper: Redwood Research reports its own measured adversarial-training and tool-assisted-attack results on an injuriousness classifier, which qualify as methodology/tooling findings under §2.",
+  "fetch": {"via": "direct", "status": 200, "chars": 5195, "pages": null},
+  "findings": [
+   {
+    "finding": "Three rounds of adversarial training on the injuriousness classifier roughly doubled the wall-clock time contractors needed to produce a fresh adversarial example (13 to 26 minutes with the rewrite tool; 20 to 44 minutes without, a 2.2x increase, 95% CI [1.5x, 3.5x]), with no measurable cost to in-distribution performance — but it did not eliminate failures.",
+    "finding_quote": "We found that adversarial training increased robustness to the adversarial attacks that we trained on -- doubling the time for our contractors to find adversarial examples both with our tool (from 13 to 26 minutes) and without (from 20 to 44 minutes) -- without affecting in-distribution performance.",
+    "models_systems": "Redwood Research injuriousness classifier (deberta-v3-large fine-tune) filtering a GPT-Neo-2.7B story generator fine-tuned on fanfiction.net text",
+    "institution": "Redwood Research",
+    "domain": "Adversarial robustness / high-stakes reliability of safety filters",
+    "eval_trackable": "No",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: this is a methodology finding about an adversarial-training procedure, not an empirical finding about a deployed model, so Tier C and Action Trackable is left blank. Tier A condition (1) fails for the same reason; condition (2) fails in substance because deberta-v3-large and GPT-Neo-2.7B are the INSTRUMENT of the methodology study, not its subject; condition (3) fails — the result is a reassuring positive about the technique, with no dangerous threshold crossed and no company response expected.",
+    "finding_type": "third-party research paper (NeurIPS 2022)",
+    "scope": "stratified — third-party evaluator",
+    "source_url": "https://arxiv.org/abs/2205.01663",
+    "access_type": "full internal access (evaluator trained and attacked its own research models)"
+   },
+   {
+    "finding": "The tool-assisted human rewrite interface (saliency highlighting plus automated token substitution/insertion suggestions) made adversarial examples materially faster for contractors to find than unassisted manual attack: 13 minutes vs 20 minutes against the baseline classifier, and 26 minutes vs 44 minutes against the final adversarially trained classifier.",
+    "finding_quote": "Tool-assisted rewrites were faster to generate than manual adversarial examples.",
+    "models_systems": "Redwood Research tool-assisted human rewrite tool; injuriousness classifier (deberta-v3-large fine-tune)",
+    "institution": "Redwood Research",
+    "domain": "Red-teaming methodology and tooling",
+    "eval_trackable": "No",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a tooling finding about a human-adversary augmentation tool, not an empirical model finding, so Tier C with Action Trackable blank. Tier A condition (1) fails; condition (2) fails as no frontier company or model is the subject; condition (3) fails — nothing concerning about any named developer's model is demonstrated.",
+    "finding_type": "third-party research paper (NeurIPS 2022)",
+    "scope": "stratified — third-party evaluator",
+    "source_url": "https://arxiv.org/abs/2205.01663",
+    "access_type": "full internal access (evaluator built and evaluated its own tooling)"
+   },
+   {
+    "finding": "On this task very conservative classifier filtering thresholds (0.0017-0.0021, rejecting ~25% of random snippets and 50-60% of rejection-sampling candidates) could be set without significantly degrading the quality of the filtered generator output, which stayed at ~49% preference against the unfiltered generator (50% = no degradation).",
+    "finding_quote": "In our task, we determined that we can set very conservative classifier thresholds without significantly impacting the quality of the filtered outputs.",
+    "models_systems": "Redwood Research injuriousness classifier (deberta-v3-large fine-tune) filtering a GPT-Neo-2.7B story generator",
+    "institution": "Redwood Research",
+    "domain": "Safety-filter threshold setting / safety-capability tradeoff measurement",
+    "eval_trackable": "No",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 fails: a methodology finding about threshold selection for a rejection-sampling filter, established on the authors' own testbed, so Tier C with Action Trackable blank. Tier A condition (1) fails; condition (2) fails (no frontier company or model is the subject); condition (3) fails — it is a reassuring result, explicitly excluded from Tier A.",
+    "finding_type": "third-party research paper (NeurIPS 2022)",
+    "scope": "stratified — third-party evaluator",
+    "source_url": "https://arxiv.org/abs/2205.01663",
+    "access_type": "full internal access (evaluator trained and evaluated its own research models)"
+   }
+  ]
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "機械学習システムとテスト (1/4) (Japanese only)",
+  "url": "https://citadel-ai.com/ja/blog/2022/05/07/machine-learning-systems-and-testing-1-4",
+  "date": "2022-05-07",
+  "decision": "EXCLUDED - non-English",
+  "rule_cited": "§1 hard drop — non-English-only output",
+  "reason": "Fetched and read: the post body is entirely Japanese (part 1 of a 4-part series on why ML systems are hard to test) and the site's EN toggle carries no English counterpart for it.",
+  "fetch": {"via": "direct", "status": 200, "chars": 5263, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Citadel AI",
+  "title": "Citadel AI and Groovenauts Team Up on AI Quality Testing",
+  "url": "https://citadel-ai.com/news/2022/05/19/citadel-ai-groovenauts-alliance",
+  "date": "2022-05-19",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — partnership news and product description; §2 states announcements and partnership news contain no findings",
+  "reason": "Read in full: a press release announcing a Citadel Lens / MAGELLAN BLOCKS platform integration, with product capability descriptions and a cited IDC adoption statistic but no model tested and no result reported.",
+  "fetch": {"via": "direct", "status": 200, "chars": 5959, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "ML Security Evasion Competition 2022",
+  "url": "https://www.robustintelligence.com/blog-posts/ml-security-evasion-competition-2022",
+  "date": "2022-06-14",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 — an announcement and forward-looking plan (call for contestants), which §2 says contains no findings",
+  "reason": "Read in full: a June 2022 call for entrants to MLSEC 2022 (anti-phishing and face-recognition evasion tracks) describing what will happen in August-October; no results exist yet, and the one strong claim (Adversa AI 'has never seen a non-vulnerable ML model') is an unevidenced quote about anonymised systems.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 19074, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Fionnuala Howell: Breaking into Machine Learning",
+  "url": "https://www.robustintelligence.com/blog-posts/finn-howell",
+  "date": "2022-06-23",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — no evaluator claim about any AI system; employee profile",
+  "reason": "Read in full: an employee fireside-chat interview with a Robust Intelligence ML engineer about her career path; no AI system is examined.",
+  "fetch": {"via": "wayback", "status": 200, "chars": 15516, "pages": null},
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Supporting the Royal Australian Navy's Campaign Plan for Robotics and Autonomous Systems: Human-Machine Teaming and the Future Workforce",
+  "url": "https://www.rand.org/pubs/research_reports/RRA1377-2.html",
+  "date": "2022-07-18",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 tests 1 and 2 — an open-source literature review yielding workforce recommendations, not evaluator-measured results",
+  "reason": "Read in full: RAND Australia reviews academic and grey literature on human-machine teaming to advise the RAN on future workforce structures; the key takeaways are policy propositions about ways of working, with no AI system evaluated.",
+  "fetch": {"via": "direct", "status": 200, "chars": 6729, "pages": null},
+  "findings": []
+ }
+]

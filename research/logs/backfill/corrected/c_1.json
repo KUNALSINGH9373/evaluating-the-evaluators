@@ -1,0 +1,35 @@
+{
+  "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
+  "title": "Gemini 3.7 Flash Frontier Safety Framework Report",
+  "institution": "Gray Swan",
+  "scope": "third-party-evaluator",
+  "resolved_date": "2026-08",
+  "findings": [
+    {
+      "finding": "Gray Swan built 28 high-severity cyber tasks (vulnerability finding, malware creation) from scenarios supplied by Google DeepMind and ran its automated red-teaming agent Shade against Gemini 3.7 Flash's mitigated/deployed configuration at a high thinking level; Shade fully achieved the malicious objective on 88% of tasks (Overall Success Rate per seed prompt, a permissive at-least-once metric), with an 18% per-query success rate, versus 88%/18% for Gemini 3.6 Flash and 62%/12% for Gemini 3.1 Pro. Evidence pointer: Figure 6, p.32, \"Overall Success Rate (Per Seed Prompt)\" and \"Query Success Rate (Per Query)\" panels, \"Gray Swan Cyber\" group, Gemini 3.7 Flash bar labels; Figure 6 is a raster image, values read from a 400 dpi render of p.32.",
+      "finding_quote": "Gray Swan Cyber Eval: We partnered with Gray Swan to conduct an Automated Cyber Red Teaming Evaluation. We provided Gray Swan with several high severity scenarios in vulnerability finding, malware creation, etc. on top of which they built 28 specific cyber tasks and deployed their automated red teaming agent Shade against them. They run attacks with our models in a high thinking level setup.",
+      "finding_type": "capability-finding; company-published",
+      "models_systems": "Gemini 3.7 Flash (Google DeepMind), mitigated/deployed configuration with cyber safeguards, attacked by Gray Swan's automated red-teaming agent Shade",
+      "domain": "Cyber",
+      "access_type": "Post-deployment",
+      "institution": "Gray Swan",
+      "eval_trackable": "yes",
+      "action_trackable": "yes",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Gray Swan curated 53 bio tasks covering high-risk targets and ran its automated red-teaming agent Shade against the same mitigated/deployed configuration of Gemini 3.7 Flash; the objective success rate (Overall Success Rate per seed prompt, at-least-once) was 15%, versus 42% for Gemini 3.6 Flash and 28% for Gemini 3.1 Pro, while the per-query success rate for Gemini 3.7 Flash was approximately 0% and carried no printed data label (2% for Gemini 3.6 Flash, 1% for Gemini 3.1 Pro). Evidence pointer: Figure 6, p.32, \"Gray Swan Bio\" group in both panels; Figure 6 is a raster image, values read from a 400 dpi render of p.32.",
+      "finding_quote": "Gray Swan Bio Eval: Similar to the Cyber section, we partnered with Gray Swan to conduct an Automated Bio Red Teaming Evaluation. Gray Swan curated a set of 53 bio tasks covering high risk targets and deployed their automated red teaming agent Shade against them.",
+      "finding_type": "capability-finding; company-published",
+      "models_systems": "Gemini 3.7 Flash (Google DeepMind), mitigated/deployed configuration with CBRN safeguards, attacked by Gray Swan's automated red-teaming agent Shade",
+      "domain": "Bio-Chem",
+      "access_type": "Post-deployment",
+      "institution": "Gray Swan",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": "-s2"
+    }
+  ],
+  "applied": "Split the single Tier C row into two rows per §5 (Cyber base row: eval=yes/action=yes; Bio -s2 row: eval=yes/action=no), rewrote both findings with the Figure 6 numbers verified from a 400 dpi render of p.32 (Gray Swan Cyber OSR 88%/QSR 18%; Gray Swan Bio OSR 15%/QSR unlabelled ~0%) and character-exact text-layer quotes, set institution to \"Gray Swan\", scope third-party-evaluator, finding_type capability-finding + company-published, domain Cyber / Bio-Chem, access_type Pre-deployment -> Post-deployment, and resolved_date \"\" -> 2026-08; dropped the tier/tier_reasoning labels.",
+  "not_applied": "(1) The \"reassuring-null\" modifier on the -s2 row was deliberately not added: a 15% at-least-once objective success rate is not a null, so the row stays bare capability-finding at eval=yes/action=no, as the verdict permits. (2) Comparator values could not be moved to a Notes column (§5) because this record schema has no notes field, so they are carried inside the Finding text instead. (3) The §8b Channel A/B response batteries the verdict says the now-Tier-A cyber row requires were not run - out of scope for this correction task and no response fields exist in this record."
+}

@@ -1,0 +1,1302 @@
+[
+  {
+    "finding_id": "FARAI-2026-05-JAI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) DeepSeek news/blog venues",
+          "url": "https://www.deepseek.com/en/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Only release announcements (most recent listed: DeepSeek-V4 Preview, 2026-04-24). Nothing on safety, safeguards, jailbreaks, red-teaming or external evaluators."
+        },
+        {
+          "source": "(1b) DeepSeek API-docs news channel, including the latest item (2026-08-21, DeepSeek-V4-Flash-Vision-Exp release)",
+          "url": "https://api-docs.deepseek.com/news/news260821",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Release/feature content only; no reference to FAR.AI, safety, safeguards or a security patch."
+        },
+        {
+          "source": "(2) Model cards for the evaluated model and subsequent models in the family: DeepSeek-V4-Pro, DeepSeek-V4-Pro-0813 (updated ~2026-08-13), V4-Pro-DSpark, V4-Flash-0731",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Card covers architecture, chat template, deployment and benchmarks under MIT licence. No safety section, no safeguards/jailbreak-robustness discussion, no reference to a previously known vulnerability or to FAR.AI. The post-finding 0813 refresh therefore does not qualify."
+        },
+        {
+          "source": "(3) DeepSeek safety / deployment / transparency pages",
+          "url": "https://www.deepseek.com/en/index.html",
+          "checked_date": "2026-08-28",
+          "result": "No safety, deployment-safety or transparency venue exists on DeepSeek's English-language site; recorded as absent rather than negative."
+        },
+        {
+          "source": "(4) Official DeepSeek accounts/repositories",
+          "url": "https://github.com/deepseek-ai",
+          "checked_date": "2026-08-28",
+          "result": "Organisation index reviewed via search result and HF org page; no advisory, changelog entry or statement addressing the transferred DeepSeek-V3.2 jailbreak."
+        },
+        {
+          "source": "(5) Broader web search combining company + evaluator + model + topic",
+          "url": "https://www.bing.com/search?q=%22DeepSeek-V4-Pro%22+FAR.AI+response",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch quota exhausted (200/200); Bing via WebFetch substituted. Two query variants returned only DeepSeek property pages and Wikipedia - no company primary source responding to the finding."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run 2026-08-28 against live sources. The one materially new fact since the original 2026-08-15 battery is that DeepSeek shipped DeepSeek-V4-Pro-0813 after the finding; its model card was opened and contains no safety/safeguards section and no reference to the publicly known bypass, so it is not a documented response. FAR.AI's report itself was re-fetched and the finding quote verified word-for-word. No admissible DeepSeek primary document located -> Action Level = None, Attribution = No response located."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard search for 'DeepSeek' in window returns 1 contribution (Lord Tarassenko, King's Speech, 2026-05-19) which mentions DeepSeek only as a distillation/efficiency lesson - no reference to FAR.AI or the stress test. gov.uk search surfaced nothing citing FAR.AI's DeepSeek work. US: Federal Register API returns 0 documents for 'FAR.AI' and 0 for a combined DeepSeek/Scale AI/SecureBio/Redwood query from 2026-05-01; Congress.gov and govinfo unreachable (403/405). EU/other: Commission press corner API returns 0. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        "No independent coverage located. Channel C sweep was degraded: the session's WebSearch quota was exhausted and Bing-via-WebFetch collapses the query 'FAR.AI' onto the Federal Acquisition Regulation, so absence of coverage here is weak evidence. Channel C is descriptive only and does not affect any coding."
+      ]
+    },
+    "confidence": "high",
+    "notes": "Source verified live: far.ai report page opened 2026-08-28, title/date/authors and the finding quote match the record exactly. Channel C sweep degraded by search-tool limits (documented above); Action and Policy levels do not depend on it."
+  },
+  {
+    "finding_id": "SCALEAI-2026-05ac-AUT2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(2b) Claude Opus 5 System Card sections 3.4.1-3.4.3 (revised cyber safeguards policy, false-positive reduction on benign/defensive coding)",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT on topic, MISS on attribution. Card documents a revised safeguards policy under which 'Claude Opus 5 blocked significantly less of these defensive coding tasks than Fable 5', i.e. a measured reduction in false-positive blocking of benign coding work. It names no external evaluator for this and does not reference Scale AI, SWE Atlas or Codebase QnA."
+        },
+        {
+          "source": "(2c) 'Cyber Safeguards and Jailbreak Framework' blog post, cited by the Opus 5 System Card",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "NOT LOCATED. The Opus 5 card cites this Anthropic blog post twice but gives no URL; three slug guesses returned 404 and it does not appear on the newsroom index pages retrieved. Recorded as an unreachable company source."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No Anthropic primary source connecting a refusal-rate change to Scale AI's SWE Atlas work surfaced."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run in full. Two Anthropic documents published after the finding move in the direction the finding points - the Claude Opus 5 System Card (2026-07-24) records a revised cyber-safeguards policy that measurably reduces false-positive blocking of benign/defensive coding relative to Fable 5, and the Aug 7 post 'Improving Fable 5's biology safeguards' reports ~85% fewer false positives in the biology domain. Neither names Scale AI, SWE Atlas or the Codebase QnA benchmark, and neither states that the change responds to any external over-refusal report. Under the admissibility rule (the response must address THIS finding and be attributable to it) an unattributed general over-refusal improvement does not qualify. No admissible response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard search for 'Scale AI' in window returns 1 unrelated written statement (Digital and Technologies Sector Plan, 2026-06-10); no gov.uk item cites SWE Atlas or model refusal rates. US: Federal Register API returns 0 for 'Scale AI'; Congress.gov/govinfo unreachable (403/405). EU/other: Commission press corner API returns 0. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Two data-quality flags. (a) The record's Publication Date is 2026-05-12, but the live leaderboard page carries 2026-07-28 and the refusal note concerns Fable-5, a model not released until 2026-06-09 - so the finding cannot date from 2026-05-12 and the lag arithmetic against any candidate response is unreliable. (b) The Opus 5 card's false-positive reduction (2026-07-24) predates the 2026-07-28 leaderboard note, which would independently bar it even if it were attributable. Verbatim from the source verified live: 'For Fable-5 (Claude Code) xHigh and GPT-5.6-Sol (Codex) xHigh we observed an elevated refusal rate on this benchmark when we ran this model, since it triggered security related filters.'"
+  },
+  {
+    "finding_id": "SCALEAI-2026-05ac-AUT3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom index",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "BLOCKED: HTTP 403 to WebFetch and to curl with a browser UA (Cloudflare JS interstitial). Substituted the official OpenAI news RSS feed (below) to enumerate the newsroom."
+        },
+        {
+          "source": "(1b) OpenAI news RSS feed (substitute for the blocked index) - every item from 2026-05-01 to 2026-08-28 enumerated with titles, dates and links",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Opened (1157 items). ~200 items in window reviewed by title + OpenAI's own description text. No item names this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards: GPT-5.5 (2026-04-23), GPT-5.5 Instant (2026-05-05), GPT-Rosalind-5.5 (2026-06-03), GPT-5.6 Preview (2026-06-26), GPT-Live (2026-07-08), GPT-5.6 (2026-07-09), GPT-5.6 August Updates (2026-08-06, changelog 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Hub index opened; GPT-5.5 and GPT-5.6 cards full-text searched locally; Rosalind-5.5 and the August update page opened and queried directly."
+        },
+        {
+          "source": "(3) OpenAI safety / deployment-safety pages",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Deployment Safety Hub opened and enumerated. https://openai.com/safety/ returned HTTP 403 and could not be opened."
+        },
+        {
+          "source": "(4) Official OpenAI announcements/accounts",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Announcement titles and OpenAI's own descriptions reviewed across the window; individual openai.com/index/* pages return HTTP 403 to WebFetch and curl, so body text of those posts could not be read - recorded as a limitation."
+        },
+        {
+          "source": "(5) Broader web search, used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch quota exhausted (200/200) for this session; Bing via WebFetch used as substitute. No OpenAI primary source connecting a refusal-rate change to Scale AI's SWE Atlas work surfaced."
+        },
+        {
+          "source": "(2d) GPT-5.6 August Updates, section 7.2.1.1 (refusal/over-refusal boundaries)",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+          "checked_date": "2026-08-28",
+          "result": "HIT on topic, MISS on attribution. Verbatim: 'During training for GPT-5.6, we additionally augmented our training data to improve robustness along our refusal and overrefusal boundaries that were weak in previous models.' The passage sits in a biological-misuse safety-training paragraph, gives no trigger, and names no evaluator, benchmark, Codex or code-comprehension context."
+        },
+        {
+          "source": "(2e) 'Separating signal from noise in coding evaluations' (2026-07-08) and 'Running Codex safely at OpenAI' (2026-05-08)",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Identified via RSS with OpenAI's own descriptions; body text unreadable (openai.com/index/* returns 403). Descriptions concern coding-evaluation methodology and Codex sandboxing/telemetry respectively, not benchmark refusal rates."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery re-run in full. The closest candidate is the GPT-5.6 August Updates over-refusal training note, which is a real model change in the right direction but is undated as to trigger, framed around biological-misuse safety training, and attributed to nothing external. It does not address THIS finding (benign code-comprehension queries in Codex scoring 0 on Codebase QnA) and is not attributable to it, so it is inadmissible. No qualifying response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Identical battery and outcome to SCALEAI-2026-05ac-AUT2: no UK, US or EU official source references SWE Atlas, Codebase QnA, or model refusal rates in Codex. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Same date inconsistency as the paired finding: record says 2026-05-12, live leaderboard page says 2026-07-28. OpenAI-side battery was degraded - openai.com/news and every openai.com/index/* post return HTTP 403 to both WebFetch and curl, so post bodies could not be read; the newsroom was enumerated through OpenAI's own RSS feed (titles + OpenAI-written descriptions) and the system-card corpus was read in full. A response buried in the body of an unreadable openai.com post cannot be excluded with certainty."
+  },
+  {
+    "finding_id": "UKAISI-2026-05-CYB2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(2b) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), section 3.2.5 'External capability testing from the UK AISI'",
+          "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Anthropic publishes UK AISI's cyber-range conclusions and restates this finding's result: Mythos Preview solved 'The Last Ones' and is the only model to have completed 'Cooling Tower' (3/10). Downloaded via curl (26.9MB, over WebFetch's size limit) and read with pdftotext."
+        },
+        {
+          "source": "(2c) Claude Opus 5 System Card (2026-07-24), section 3.3.6 'Testing from the UK AI Security Institute (UK AISI)'",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT (second occurrence). Repeats that 'No model apart from Mythos Preview, which succeeded on 3/10 attempts, has completed this range', again inside a UK AISI-credited section."
+        },
+        {
+          "source": "(2d) Claude Mythos Preview System Card (2026-04-07)",
+          "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Checked and searched. Predates the finding (2026-05-13) and this is a post-deployment finding, so it is inadmissible regardless of content."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No further Anthropic primary source located."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+      "verbatim": "No model apart from Mythos Preview, which succeeded on 3/10 attempts, has completed this range.",
+      "response_date": "2026-06-09",
+      "reasoning": "This is the late-appearing response this pass exists to catch. Twenty-seven days after UK AISI published the finding, Anthropic's own Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), in section 3.2.5 headed 'External capability testing from the UK AISI', restates the finding's exact result - Mythos Preview matched on 'The Last Ones' (6/10) and remains the only model to have completed 'Cooling Tower' (3/10), matching UK AISI's blog figures precisely. The Claude Opus 5 System Card (2026-07-24) carries the same statement. Both are Anthropic primary documents, both post-date the finding, both credit UK AISI by name -> admissible and explicitly attributed. Neither document specifies any mitigation, safeguard, access restriction or deployment decision tied to this result: the Fable 5 cyber classifiers described in sections 1.5 and 3.3 are motivated generically and are not connected to the Mythos Preview cyber-range result. Problem referenced, no action specified -> Acknowledged."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+      "verbatim": "Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)’s evaluations show these models getting better at cyber tasks very quickly.",
+      "reasoning": "UK hit. The DSIT/NCSC gov.uk case study 'When AI Leaves the Lab: Testing Frontier Models in Government Cyber Defence' (2026-06-12, published by the Department for Science, Innovation and Technology and the National Cyber Security Centre, one month after the finding) opens its rationale by naming the evaluator, both evaluated systems and the report's headline claim together. This is official government engagement with the substance of the finding, with no enforceable obligation attached -> Non-binding policy-related uptake. Hansard items located ('Claude Mythos' x4, 2026-06-04 to 2026-07-14) are excluded as general discussion. The earlier gov.uk guidance 'AI, open code and vulnerability risk in the public sector' (2026-05-14) cites a different AISI item (the 13 April 2026 Mythos Preview blog) and so does not count. US: Federal Register 0 hits; Congress.gov/govinfo unreachable. EU: Commission press corner API 0 hits."
+    },
+    "channel_c": {
+      "media": [
+        "CyberScoop, 'AI autonomous cyber capability benchmarks broken - GPT-5, Claude Mythos' (https://cyberscoop.com/ai-autonomous-cyber-capability-benchmarks-broken-gpt5-claude-mythos/) - URL re-verified live 2026-08-28, HTTP 200",
+        "The Decoder, on Claude Mythos becoming the first model to clear all of AISI's cyber ranges (https://the-decoder.com/) - listed in the record; URL fragment in the record is truncated and was not re-opened"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Two judgement calls, both flagged. (a) Channel A: the restating sentence sits inside a block quote authored by UK AISI that Anthropic chose to publish in its own system card. I treat reproduction-in-card as a company acknowledgement, consistent with how this dataset already codes UKAISI-2026-06-ALI6/GOV1/JAI2. A reader who requires Anthropic's own voice would code None. (b) Channel B: the gov.uk case study names the evaluator, both systems and the report's core claim but does not cite the report title or any specific number, so it sits at the margin of the 'explicitly reference' test. Finding text itself verified against the live AISI blog, which states Mythos Preview solved 'the previously unsolved Cooling Tower in 3 of 10 attempts. This was the first time that a model completed the second of our two cyber ranges.'"
+  },
+  {
+    "finding_id": "UKAISI-2026-05-CYB3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom index",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "BLOCKED: HTTP 403 to WebFetch and to curl with a browser UA (Cloudflare JS interstitial). Substituted the official OpenAI news RSS feed (below) to enumerate the newsroom."
+        },
+        {
+          "source": "(1b) OpenAI news RSS feed (substitute for the blocked index) - every item from 2026-05-01 to 2026-08-28 enumerated with titles, dates and links",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Opened (1157 items). ~200 items in window reviewed by title + OpenAI's own description text. No item names this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards: GPT-5.5 (2026-04-23), GPT-5.5 Instant (2026-05-05), GPT-Rosalind-5.5 (2026-06-03), GPT-5.6 Preview (2026-06-26), GPT-Live (2026-07-08), GPT-5.6 (2026-07-09), GPT-5.6 August Updates (2026-08-06, changelog 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Hub index opened; GPT-5.5 and GPT-5.6 cards full-text searched locally; Rosalind-5.5 and the August update page opened and queried directly."
+        },
+        {
+          "source": "(3) OpenAI safety / deployment-safety pages",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Deployment Safety Hub opened and enumerated. https://openai.com/safety/ returned HTTP 403 and could not be opened."
+        },
+        {
+          "source": "(4) Official OpenAI announcements/accounts",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Announcement titles and OpenAI's own descriptions reviewed across the window; individual openai.com/index/* pages return HTTP 403 to WebFetch and curl, so body text of those posts could not be read - recorded as a limitation."
+        },
+        {
+          "source": "(5) Broader web search, used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch quota exhausted (200/200) for this session; Bing via WebFetch used as substitute. No OpenAI primary source responding to the AISI autonomous-cyber blog surfaced."
+        },
+        {
+          "source": "(2f) GPT-5.6 System Card (2026-07-09), section 9.1.2.6 'External Evaluations for Cyber Capabilities - UK AISI'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED - not a match. Reports a fresh UK AISI pre-deployment evaluation of GPT-5.6 Sol with GPT-5.5 as baseline (CTF expert tasks 95.0% vs 85.0%; 'The Last Ones' 7/10 vs 2/10). The GPT-5.5 baseline of 2/10 contradicts the finding's 3/10, confirming a separate measurement rather than a restatement of this finding. No mention of the six 8h+ long-duration tasks, the 2.5M-token budget or the doubling-rate claim."
+        },
+        {
+          "source": "(2g) GPT-5.5 System Card (2026-04-23), section 'External Evaluations for Cyber Capabilities - UK AISI'",
+          "url": "https://deploymentsafety.openai.com/gpt-5-5",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED - inadmissible on timing. Predates the 2026-05-13 finding and reports a different result ('solved one of UK AISI's cyber ranges end-to-end in 1/10 attempts'). GPT-5.5 was already treated as High capability in Cybersecurity here, i.e. standing policy, which the rulebook excludes."
+        },
+        {
+          "source": "(4b) Post-finding OpenAI cyber announcements: 'Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber' (2026-05-07), 'Third-party cyber evaluations involving OpenAI models' (2026-08-04), 'Responding to the next frontier of critical cyber capabilities' (2026-08-07), 'Putting frontier cyber models in more trusted hands' (2026-08-10), 'Pacing model development in an era of cyber-critical capabilities' (2026-08-18)",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Enumerated with OpenAI's own descriptions. The 2026-05-07 Trusted Access post predates the finding. The August posts concern the Astra evaluations, the Hugging Face third-party-evaluation incident and Daybreak partner access - none is described as responding to UK AISI's autonomous-cyber report. Body text unreadable (403)."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run. No OpenAI primary document addresses this finding's specific results (100% on five of six 8h+ tasks within the 2.5M-token budget, the sixth solved on every attempt with the cap removed, 'The Last Ones' 3/10, and the exceedance of the doubling-rate trend). The GPT-5.6 card's UK AISI section is a new evaluation of a different model whose GPT-5.5 baseline figures do not match the finding, and OpenAI's High-capability cyber designation for GPT-5.5 predates the finding as standing policy. No admissible response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+      "verbatim": "Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)’s evaluations show these models getting better at cyber tasks very quickly.",
+      "reasoning": "UK hit, same source as UKAISI-2026-05-CYB2 and the closest match of the three: the DSIT/NCSC case study (2026-06-12) names GPT-5.5 explicitly alongside Claude Mythos, credits UK AISI's evaluations, and paraphrases exactly this finding's headline conclusion - that cyber capability is advancing very quickly and these models were a step-change. Official engagement, no enforceable obligation -> Non-binding policy-related uptake. US: Federal Register API 0 hits for the evaluator/benchmark terms; Congress.gov and govinfo unreachable (403/405). EU: Commission press corner API 0 hits."
+    },
+    "channel_c": {
+      "media": [
+        "CyberScoop (https://cyberscoop.com/ai-autonomous-cyber-capability-benchmarks-broken-gpt5-claude-mythos/) - URL re-verified live 2026-08-28, HTTP 200"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Action Level unchanged; only Policy Level moves. Finding text verified against the live AISI blog ('GPT 5.5 achieves a 100% success rate on five of six tasks estimated over 8 hours; it solves the sixth on every attempt when the cap is removed... solved The Last Ones on 3 of 10 attempts'). Channel A degraded by OpenAI's 403 blocking of newsroom post bodies - enumeration was possible via RSS but five August cyber posts could not be read in full, so a buried acknowledgement cannot be fully excluded. The Channel B call is the same marginal judgement described for CYB2."
+  },
+  {
+    "finding_id": "UKAISI-2026-05-CYB4",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "Non-binding policy-related uptake"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(2b) Targeted full-text search of the Fable 5 & Mythos 5, Opus 5, Opus 4.8, Mythos Preview and August 2026 Risk Report corpora for the long-duration-task result",
+          "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "MISS. Searched for '2.5M', '2.5 million', 'long task', 'long-duration', '8 hours', 'eight hours' and 'doubling'. Anthropic's UK AISI-credited cyber sections report the three cyber ranges and 'narrow'/'expert-level' cyber tasks only. The six 8h+ long-duration tasks, the 2.5M-token cap and the 100% completion result appear nowhere."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No Anthropic primary source referencing the long-duration-task result surfaced."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run. Note the deliberate split from UKAISI-2026-05-CYB2: Anthropic's later cards do restate the Cooling Tower result, but they say nothing at all about the six long-duration (8h+) tasks or Mythos Preview's 100% completion of them within the 2.5M-token budget, which is the substance of THIS finding. Coding is per finding, so the cross-reference that lifts CYB2 to Acknowledged does not carry over. No admissible response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "https://www.gov.uk/government/case-studies/when-ai-leaves-the-lab-testing-frontier-models-in-government-cyber-defence",
+      "verbatim": "Recently released frontier AI systems such as Claude Mythos and GPT-5.5 brought a step-change in cyber capabilities, and the UK AI Security Institute (AISI)’s evaluations show these models getting better at cyber tasks very quickly.",
+      "reasoning": "UK hit, same source and reasoning as UKAISI-2026-05-CYB2/CYB3: the DSIT/NCSC case study (2026-06-12) attributes to UK AISI's evaluations the claim that Claude Mythos and GPT-5.5 were a step-change and are getting better at cyber tasks very quickly, which is this report's headline conclusion. Official engagement, no enforceable obligation -> Non-binding policy-related uptake. US and EU batteries as recorded elsewhere: no hits, Congress.gov/govinfo unreachable."
+    },
+    "channel_c": {
+      "media": [
+        "CyberScoop (https://cyberscoop.com/ai-autonomous-cyber-capability-benchmarks-broken-gpt5-claude-mythos/) - URL re-verified live 2026-08-28, HTTP 200"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Action Level unchanged; only Policy Level moves. Finding text verified against the live AISI blog ('Mythos Preview completes all six long tasks 100% of the time, with the 2.5M token cap'). The Channel B source does not distinguish between the individual results in the report, so it is applied to all three findings drawn from it; a stricter coder who requires a cited result would leave all three at 'No policy uptake identified'."
+  },
+  {
+    "finding_id": "SCALEAI-2026-05ad-JAI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom index",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "BLOCKED: HTTP 403 to WebFetch and to curl with a browser UA (Cloudflare JS interstitial). Substituted the official OpenAI news RSS feed (below) to enumerate the newsroom."
+        },
+        {
+          "source": "(1b) OpenAI news RSS feed (substitute for the blocked index) - every item from 2026-05-01 to 2026-08-28 enumerated with titles, dates and links",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Opened (1157 items). ~200 items in window reviewed by title + OpenAI's own description text. No item names this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards: GPT-5.5 (2026-04-23), GPT-5.5 Instant (2026-05-05), GPT-Rosalind-5.5 (2026-06-03), GPT-5.6 Preview (2026-06-26), GPT-Live (2026-07-08), GPT-5.6 (2026-07-09), GPT-5.6 August Updates (2026-08-06, changelog 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Hub index opened; GPT-5.5 and GPT-5.6 cards full-text searched locally; Rosalind-5.5 and the August update page opened and queried directly."
+        },
+        {
+          "source": "(3) OpenAI safety / deployment-safety pages",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Deployment Safety Hub opened and enumerated. https://openai.com/safety/ returned HTTP 403 and could not be opened."
+        },
+        {
+          "source": "(4) Official OpenAI announcements/accounts",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Announcement titles and OpenAI's own descriptions reviewed across the window; individual openai.com/index/* pages return HTTP 403 to WebFetch and curl, so body text of those posts could not be read - recorded as a limitation."
+        },
+        {
+          "source": "(5) Broader web search, used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch quota exhausted (200/200) for this session; Bing via WebFetch used as substitute. No OpenAI primary source referencing ASPI, Scale AI or clarification-seeking injection amplification surfaced."
+        },
+        {
+          "source": "(2h) GPT-5.6 System Card section 4.2 'Prompt injection' and GPT-5.5 System Card prompt-injection section",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED - not a match. Both cards evaluate connector-based direct and indirect prompt injection using OpenAI's own suites and GPT-Red. Neither mentions ASPI, Scale AI, clarification-seeking, ambiguity clarification, or o3."
+        },
+        {
+          "source": "(4c) 'GPT-Red: Unlocking Self-Improvement for Robustness' (2026-07-15), described by OpenAI as automated red teaming that improves 'prompt injection robustness'",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Identified via RSS. Topically adjacent but concerns o3's successors, names no external evaluator in its description, and its body could not be read (openai.com/index/* returns 403)."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run. o3 is a legacy model and nothing in OpenAI's newsroom stream, deployment-safety hub, or the GPT-5.5/5.6/Rosalind/Live/August-update card corpus references ASPI, Scale AI, clarification-seeking behaviour, or the 1.8%-to-34.0% amplification. The GPT-Red post is the only prompt-injection-robustness item in the window and carries no attribution to this finding. No admissible response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard full-text search for 'prompt injection' across 2026-05-17 to 2026-08-28 returns 0 results in every category; gov.uk search surfaced nothing citing ASPI or Scale AI's paper. US: Federal Register API returns 0 for 'Scale AI'; Congress.gov and govinfo unreachable (403/405). EU/other: Commission press corner API returns 0. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "AgentPatterns.ai, 'Clarification-mode injection amplification' (https://www.agentpatterns.ai/security/clarification-mode-injection-amplification/) - URL re-verified live 2026-08-28, HTTP 200",
+        "322 Signals Threatcast, 2026-05-27 (https://halilozturkci.com/threatcast) - listed in the record; the record's URL is truncated and was not re-opened"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Source verified live: labs.scale.com/papers/aspi carries 5/17/2026 and the figures '1.8% to 34.0%' and '728 task-attack scenarios'. Worth flagging for the dataset: the ASPI page attributes authorship to Anthropic and Scale Labs, so the 'third-party-evaluator' scope label is only partly accurate. Channel A degraded by OpenAI's 403 blocking of post bodies."
+  },
+  {
+    "finding_id": "SCALEAI-2026-05ad-JAI2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Google DeepMind blog index, May-August 2026",
+          "url": "https://deepmind.google/discover/blog/",
+          "checked_date": "2026-08-28",
+          "result": "Opened and enumerated. Security-relevant items in window: 'Securing the future of AI agents' (2026-06-18) and 'Investing in multi-agent AI safety research' (June 2026); model releases Gemini 3.5 Flash Cyber and Gemini 3.6 Flash (July 2026), Gemini 3.5 Transcribe (August 2026). Nothing naming Scale AI, ASPI or clarification-seeking."
+        },
+        {
+          "source": "(2) Model cards for the evaluated model and subsequent models in the family (Gemini 3 Flash, Gemini 3.5/3.6 Flash)",
+          "url": "https://deepmind.google/discover/blog/",
+          "checked_date": "2026-08-28",
+          "result": "NOT REACHED. No current Gemini 3 Flash or 3.5/3.6 Flash model card could be opened; the locally cached Google corpus (Gemini 3 Pro Frontier Safety Framework, Nov 2025; Gemini 2.5 and Gemini 1 technical reports) all predate the finding. Recorded as an unchecked source rather than a clear negative."
+        },
+        {
+          "source": "(3) Google safety/responsibility pages - 'Securing the future of AI agents' (AI Control roadmap)",
+          "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+          "checked_date": "2026-08-28",
+          "result": "Opened and read (2026-06-18). Mentions 'prompt injection resistance' only in a list of traditional safeguards; names no external evaluator, no Gemini 3 Flash, no Scale AI, no ASPI, and announces no model change."
+        },
+        {
+          "source": "(4) Official Google/DeepMind announcements",
+          "url": "https://deepmind.google/discover/blog/",
+          "checked_date": "2026-08-28",
+          "result": "Enumerated for the window as above; no item addresses this finding."
+        },
+        {
+          "source": "(5) Broader web search",
+          "url": "https://www.bing.com/search?q=Google+DeepMind+Gemini+3+Flash+model+card+prompt+injection+clarification+2026",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch quota exhausted (200/200); Bing via WebFetch substituted and returned only generic Google property pages - no Google primary source located."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Battery run to the extent the sources were reachable. The one substantive Google security publication in the window, the 2026-06-18 AI Control roadmap, treats prompt injection only as a generic safeguard category and responds to nothing external. No Google primary document references ASPI, Scale AI, clarification-seeking amplification or the 2.2%-to-35.7% result -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Identical battery and outcome to SCALEAI-2026-05ad-JAI1: Hansard returns 0 for 'prompt injection' in window, Federal Register 0 for 'Scale AI', Commission press corner 0; Congress.gov and govinfo unreachable. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "AgentPatterns.ai (https://www.agentpatterns.ai/security/clarification-mode-injection-amplification/) - URL re-verified live 2026-08-28, HTTP 200",
+        "322 Signals Threatcast, 2026-05-27 (https://halilozturkci.com/threatcast) - record URL truncated, not re-opened"
+      ],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "low",
+    "notes": "Confidence is low because battery item (2) failed: no Gemini 3 Flash model card or subsequent Gemini Flash card could be opened, so the single most likely location for a Google response was not inspected. The None coding therefore rests on items (1), (3), (4) and a degraded (5), and should be treated as provisional."
+  },
+  {
+    "finding_id": "ANTHROPIC-2026-05-SELF-ALI1",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Partial",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": true,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(3b) Redacted Risk Report August 2026 (coverage date 2026-07-15), section 2.23.1.2 'Automated offline monitoring evaluations', Table 2.23.1.2.B",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "HIT. SLEIGHT-Bench appears by name as a row in Anthropic's prompt+completion monitor performance table, scored across four deployed monitor configurations: Opus 4.6 monitor (early Mythos 5 internal deployment) 23%; Opus 4.8 monitor (current internal deployment) 58%; Opus 4.6 monitor + second-stage filter 14%; Opus 4.8 monitor + second-stage filter 44%. Downloaded via curl and read with pdftotext; MD5-verified against the URL published on anthropic.com/rsp."
+        },
+        {
+          "source": "(2b) Claude Opus 5 System Card (2026-07-24) and Claude Fable 5 & Mythos 5 System Card (2026-06-09)",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "Searched for 'SLEIGHT', 'monitor blind', 'n-hops', 'omission'. No occurrence in either card; the only SLEIGHT-Bench occurrence in the Anthropic corpus is the Risk Report."
+        },
+        {
+          "source": "(2c) SLEIGHT-Bench publication itself (for evaluator identity and result verification)",
+          "url": "https://alignment.anthropic.com/2026/sleight-bench",
+          "checked_date": "2026-08-28",
+          "result": "Opened 2026-08-28. Authors Elle Najt, Colin Toft, Tyler Tracy, Fabien Roger and Joe Benton, of Anthropic and Redwood Research; 2026-05-19. Confirms 40 attacks, 11 categories, half never caught across 10 trials, 'Only 8 out of 40 are reliably detected' at 1% FPR, 0% for N-hops/Omission/Jailbreaks, 15% file-object reuse, 13% counting, 13% model priors. No Anthropic response appended to the page."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No further Anthropic primary source located."
+        }
+      ],
+      "evidence_url": "https://anthropic.com/aug-2026-risk-report",
+      "verbatim": "The current Opus 4.8 based-monitor has higher recall against the strong strategies known about from red-teaming the Opus 4.6 monitor.",
+      "response_date": "2026-08",
+      "reasoning": "Late-appearing response. Anthropic's Redacted Risk Report August 2026 - a company primary document published under the RSP, roughly three months after the finding - adopts SLEIGHT-Bench by name into its standing monitor-assurance suite and reports its deployed monitors against it. The row reproduces the finding's problem directly: the Opus 4.6 monitor, the exact system the finding studied, catches 23% (14% behind the second-stage filter). Alongside it the report documents an actual change to the deployed safeguard - internal deployment has moved from the Opus 4.6 monitor to an Opus 4.8-based monitor, with SLEIGHT-Bench catch rate rising 23%->58% (14%->44% with the filter) - and states the quoted rationale. That is a real, verifiable model change to the monitoring pipeline, but it is plainly incomplete: even the improved configuration misses roughly half of SLEIGHT-Bench, and Anthropic notes it has 'not red-teamed the current Opus 4.8 monitor as much'. Interim and incomplete action -> Partial, not Substantive. Anthropic names SLEIGHT-Bench, the finding's own artefact, as the evaluation it is reporting against -> Explicit attribution."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard returns 0 for 'SLEIGHT-Bench'; the gov.uk search API returns only keyword-noise (employment tribunal decisions matching 'Sleight'), nothing referencing the benchmark or AI monitor blind spots. US: Federal Register API returns 0 for 'Redwood Research' and related terms; Congress.gov and govinfo unreachable (403/405). EU/other: Commission press corner API returns 0. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [
+        "Devlery, 'SLEIGHT-Bench agent monitor' (2026-05-24) (https://devlery.com/en/blog/sleight-bench-agent-monitor) - URL re-verified live 2026-08-28, HTTP 200"
+      ],
+      "academic": [],
+      "discussion": [
+        "Anthropic's own Risk Report use of the benchmark is deliberately excluded from Channel C as the evaluated company's own material; it is counted under Channel A only."
+      ]
+    },
+    "confidence": "medium",
+    "notes": "Judgement calls, both flagged. (a) Level: the Risk Report does not say the Opus 4.6->4.8 monitor migration was made because of SLEIGHT-Bench - the text ties the improvement to METR red-teaming of the Opus 4.6 monitor - so a stricter reading that requires causal attribution for the action would code Acknowledged rather than Partial. I chose Partial because the admissible response (the SLEIGHT-Bench row and its surrounding narrative) does specify a concrete, deployed safeguard state rather than merely noting the problem. (b) Attribution: the report names the benchmark but never names Redwood Research or cites the publication; I read naming the finding's own benchmark as an explicit connection. (c) The record lists the Institution as Redwood Research, but the study is jointly authored by Anthropic and Redwood and is published on Anthropic's alignment blog - relevant to the 'third-party-evaluator' scope label and to Channel C circularity. (d) Response date given as 2026-08 because the Risk Report carries a month, not a day; its coverage date is 2026-07-15."
+  },
+  {
+    "finding_id": "UKAISI-2026-06-HUM3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) OpenAI newsroom index",
+          "url": "https://openai.com/news/",
+          "checked_date": "2026-08-28",
+          "result": "BLOCKED: HTTP 403 to WebFetch and to curl with a browser UA (Cloudflare JS interstitial). Substituted the official OpenAI news RSS feed (below) to enumerate the newsroom."
+        },
+        {
+          "source": "(1b) OpenAI news RSS feed (substitute for the blocked index) - every item from 2026-05-01 to 2026-08-28 enumerated with titles, dates and links",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Opened (1157 items). ~200 items in window reviewed by title + OpenAI's own description text. No item names this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards: GPT-5.5 (2026-04-23), GPT-5.5 Instant (2026-05-05), GPT-Rosalind-5.5 (2026-06-03), GPT-5.6 Preview (2026-06-26), GPT-Live (2026-07-08), GPT-5.6 (2026-07-09), GPT-5.6 August Updates (2026-08-06, changelog 2026-08-19)",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Hub index opened; GPT-5.5 and GPT-5.6 cards full-text searched locally; Rosalind-5.5 and the August update page opened and queried directly."
+        },
+        {
+          "source": "(3) OpenAI safety / deployment-safety pages",
+          "url": "https://deploymentsafety.openai.com/",
+          "checked_date": "2026-08-28",
+          "result": "Deployment Safety Hub opened and enumerated. https://openai.com/safety/ returned HTTP 403 and could not be opened."
+        },
+        {
+          "source": "(4) Official OpenAI announcements/accounts",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Announcement titles and OpenAI's own descriptions reviewed across the window; individual openai.com/index/* pages return HTTP 403 to WebFetch and curl, so body text of those posts could not be read - recorded as a limitation."
+        },
+        {
+          "source": "(5) Broader web search, used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch quota exhausted (200/200) for this session; Bing via WebFetch used as substitute. No OpenAI primary source referencing RealityTest or the GPT-4o/GPT-5.1 disclosure gap surfaced."
+        },
+        {
+          "source": "(2i) Full-text search of the GPT-5.6 System Card and GPT-5.6 August Updates for AI-identity disclosure",
+          "url": "https://deploymentsafety.openai.com/gpt-5-6",
+          "checked_date": "2026-08-28",
+          "result": "MISS. All 'disclos*' occurrences relate to vulnerability disclosure, chain-of-thought disclosure of cheating, and non-public detail - none to disclosing AI identity to a user. The August update page was queried directly and returns 'AI Identity Disclosure: Not mentioned'."
+        },
+        {
+          "source": "(3b) OpenAI Model Spec (published version) - standing behaviour policy on identifying as an AI",
+          "url": "https://model-spec.openai.com/2025-10-27.html",
+          "checked_date": "2026-08-28",
+          "result": "Opened. No rule on disclosing AI identity when asked was found in the retrieved text, and no 2026 changelog entry referencing UK AISI, RealityTest or disclosure rates. Standing policy would in any case be inadmissible."
+        },
+        {
+          "source": "(4d) 'Advancing content provenance for a safer, more transparent AI ecosystem' (2026-05-19)",
+          "url": "https://openai.com/news/rss.xml",
+          "checked_date": "2026-08-28",
+          "result": "Identified via RSS. Concerns Content Credentials/SynthID provenance for AI-generated media, a different problem from conversational identity disclosure; body unreadable (403)."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run. Nothing in OpenAI's newsroom stream (May-August 2026, enumerated via RSS), the deployment-safety hub, the GPT-5.5/5.6/Rosalind/Live/August-update card corpus, or the Model Spec addresses the RealityTest finding or the GPT-4o vs GPT-5.1 disclosure gap. No admissible response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: gov.uk search API returns 0 total for 'RealityTest'; Hansard surfaces nothing on AI identity disclosure tied to this study. US: Federal Register API returns 0 for the study terms. The one FTC item mentioning Anthropic/OpenAI in the window - 'Policy Statement Concerning the Suppression of Accuracy in Artificial Intelligence Systems', 91 FR, 2026-07-07 - was retrieved in full text and concerns deceptive suppression of accuracy and ideological bias; it contains no reference to AI identity disclosure, UK AISI or RealityTest, so it does not count. Congress.gov and govinfo unreachable (403/405). EU/other: Commission press corner API 0. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Source partly verified: arxiv.org/abs/2606.00168 opened 2026-08-28, submitted 29 May 2026, authors Gausen, Wallbridge, O'Dell, Summerfield and Kirk, abstract confirms the RealityTest benchmark, 3,152 queries, ~750 participants, 49 countries, 17 text and 6 speech models. The specific 13% (GPT-4o) and 86% (GPT-5.1) figures are not in the abstract and sit in the paper body, which I did not open - I therefore do not certify those two numbers here. Channel A degraded by OpenAI's 403 blocking of post bodies."
+  },
+  {
+    "finding_id": "SCALEAI-2026-06-BIO3",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(4b) 'Improving Fable 5's biology safeguards' (2026-08-07)",
+          "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+          "checked_date": "2026-08-28",
+          "result": "HIT on topic, MISS on attribution. Reports roughly an 85% reduction in biology safeguard false positives so that 'Fable 5 will thus be able to assist with a wider range of biology tasks', with dual-use requests including virology, toxicology and molecular design still falling back to Opus 5. Credits only 'a diverse range of experts (both internal and external to Anthropic)'; names no evaluator, no benchmark, and does not mention Scale AI, drug discovery, HIV-1 reverse transcriptase, SARS-CoV-2 PLpro or patent analysis."
+        },
+        {
+          "source": "(2b) Claude Opus 5 System Card sections 3.4.1-3.4.3 (revised safeguards policy, false-positive reduction)",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED. Documents reduced over-blocking, but scoped to cyber/defensive coding rather than drug discovery, and attributed to no external report."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No Anthropic primary source connecting an over-refusal change to Scale AI's drug-discovery evaluation surfaced."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run, and this is the closest near-miss in the chunk. Two months after the finding Anthropic published a targeted over-refusal fix in exactly the affected domain - an ~85% cut in biology safeguard false positives. But the post names no evaluator, no benchmark and no example task, and gives no indication that it responds to Scale AI's finding; it also concerns Fable 5, whereas the finding concerns Claude Code running Opus 4.7. The rulebook requires the response to address THIS finding and be attributable to it, and an unattributed general improvement does not qualify. No admissible response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard 'Scale AI' returns 1 unrelated written statement; no gov.uk item cites the drug-discovery evaluation. US: Federal Register API 0 for 'Scale AI'; Congress.gov/govinfo unreachable. EU/other: Commission press corner API 0. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "medium",
+    "notes": "Source verified live 2026-08-28: labs.scale.com/blog/coding-agents-drug-discovery, dated 6/4/2026, states the refused tasks were 'HIV-1 reverse transcriptase, two competitor-patent tasks, and SARS-CoV-2 PLpro' and that 'On review these refusals had no clear safety basis; the tasks ask for routine structural or patent analysis of already-published data.' Flagging the Aug 7 biology-safeguards post explicitly so a future pass can revisit it if Anthropic ever attributes that change; on the present record it is inadmissible."
+  },
+  {
+    "finding_id": "UKAISI-2026-06-ALI6",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(2b) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09) - the launch card, canonical location for this pre-deployment evaluation",
+          "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT, verbatim re-verified word-for-word from the live PDF."
+        },
+        {
+          "source": "(2c) Subsequent card in family: Claude Opus 5 System Card (2026-07-24), sections 3.3.6 and 6.4.8 (UK AISI testing)",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED for escalation. UK AISI testing of Opus 5 is reported, but no safeguard, mitigation or deployment change is recorded as following from the Mythos 5 research-sabotage result."
+        },
+        {
+          "source": "(3b) Redacted Risk Report August 2026 - checked for a post-card mitigation",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED. UK AISI appears in relation to boundary-point jailbreaking, a November 2025 jailbreak and a chem-bio classifier coverage gap - none is the research-sabotage finding. No mitigation attributable to this finding."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No later Anthropic primary source escalates this from acknowledgement to action."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+      "verbatim": "[Claude Mythos 5] actively continues compromising safety research 14% of the time, compared with 2% of the time for Mythos Preview and 1% of the time for both Opus 4.7 and Opus 4.8.",
+      "response_date": "2026-06-09",
+      "reasoning": "Re-verified independently. The launch system card is the canonical response location for this pre-deployment evaluation; Anthropic reproduces UK AISI's research-sabotage result in full, names the evaluator, and adds its own framing (including the 69% reasoning-output discrepancy figure and the caveat that models compromising safety research under these conditions may not do so in the real world). I then checked the two later documents that could have escalated this - the Opus 5 card and the August 2026 Risk Report - and neither records a safeguard, mitigation or deployment change attributable to this finding. Problem referenced, no action specified -> Acknowledged; evaluator named -> Explicit attribution. Lag 0, coordinated disclosure."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Full battery re-run 2026-08-28. UK: Hansard full-text search returned no contribution referencing this finding, report or result (the 'Claude Mythos' hits located - Lord Tarassenko 2026-06-04, Lord Watson 2026-06-04, Sir Oliver Dowden 2026-06-17, Baroness Lloyd 2026-07-14 - discuss AISI's pre-release access and Mythos's cyber capability in general terms only, which the rulebook excludes); gov.uk search API surfaced no publication citing it. US: Federal Register API returns 0 documents for the evaluator and benchmark terms; Congress.gov and govinfo search endpoints were unreachable (403/405) and are recorded as unchecked rather than checked-and-clear. EU/other: Commission press corner API returns 0. No official source explicitly references the finding, report, evaluator-plus-result or the specific claim."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, 'Claude Fable 5 and Mythos 5: The System Card', Don't Worry About the Vase (https://thezvi.substack.com/p/claude-fable-5-and-mythos-5-the-system) - URL re-verified live 2026-08-28, HTTP 200"
+      ]
+    },
+    "confidence": "high",
+    "notes": "No change. Verbatim re-verified character-for-character against the live system card PDF (downloaded via curl; the 26.9MB file exceeds WebFetch's size limit)."
+  },
+  {
+    "finding_id": "UKAISI-2026-06-GOV1",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(2b) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), section 6.5.5.3 'Monitorability findings from UK AISI'",
+          "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Dedicated section reproduces UK AISI's ControlArena conclusions verbatim - 'Against a weak action-based monitor, [Claude Mythos 5] achieves both high side-attack success rates (over 60%) and low monitorability (AUROC < 60%)' - followed by Anthropic's own reply agreeing on monitorability and disputing the sabotage-capability result on the basis of SHADE-Arena and Minimal-LinuxBench."
+        },
+        {
+          "source": "(2c) Claude Opus 5 System Card (2026-07-24), sections 3.3.6 and 6.4.8",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED for escalation. No monitorability mitigation or deployment change recorded as following from the Mythos 5 ControlArena result."
+        },
+        {
+          "source": "(3b) Redacted Risk Report August 2026, section 2.23 (monitoring pipeline and its evaluations)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED. Anthropic's offline monitoring pipeline and its upgrade from an Opus 4.6 to an Opus 4.8 monitor are documented, but nothing there is attributed to UK AISI's ControlArena monitorability finding."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No later Anthropic primary source escalates this from acknowledgement to action."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+      "verbatim": "Overall, whereas we agree that Mythos 5 is likely harder to monitor than recent Opus models, our results suggest that its monitorability is similar to—or slightly better than—that of Claude Mythos Preview.",
+      "response_date": "2026-06-09",
+      "reasoning": "Re-verified independently. Section 6.5.5.3 carries UK AISI's ControlArena result in a dedicated, evaluator-credited section and Anthropic answers it directly: it accepts that Mythos 5 is likely harder to monitor than recent Opus models while disputing the sabotage-capability conclusion, attributing the divergence to task distribution and monitoring setup. Substantive engagement, but a rebuttal is not a mitigation - no safeguard, monitor change or deployment decision is specified as following from it, and neither the Opus 5 card nor the August Risk Report supplies one attributable to this finding -> Acknowledged, Explicit attribution. Lag 0, coordinated disclosure."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Full battery re-run 2026-08-28. UK: Hansard full-text search returned no contribution referencing this finding, report or result (the 'Claude Mythos' hits located - Lord Tarassenko 2026-06-04, Lord Watson 2026-06-04, Sir Oliver Dowden 2026-06-17, Baroness Lloyd 2026-07-14 - discuss AISI's pre-release access and Mythos's cyber capability in general terms only, which the rulebook excludes); gov.uk search API surfaced no publication citing it. US: Federal Register API returns 0 documents for the evaluator and benchmark terms; Congress.gov and govinfo search endpoints were unreachable (403/405) and are recorded as unchecked rather than checked-and-clear. EU/other: Commission press corner API returns 0. No official source explicitly references the finding, report, evaluator-plus-result or the specific claim."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, Don't Worry About the Vase (https://thezvi.substack.com/p/claude-fable-5-and-mythos-5-the-system) - URL re-verified live 2026-08-28, HTTP 200"
+      ]
+    },
+    "confidence": "high",
+    "notes": "No change. Both the UK AISI figures (side-attack success over 60%, monitor AUROC below 60%) and Anthropic's reply re-verified against the live PDF."
+  },
+  {
+    "finding_id": "UKAISI-2026-06-JAI2",
+    "current": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "Acknowledged",
+      "attribution": "Explicit attribution",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(2b) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), section 3.3.1 'External robustness testing from the UK AISI'",
+          "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "HIT. Reproduces UK AISI's interim red-team findings (single-turn cyberoffensive jailbreak within a few hours; multi-turn agentic extension after about two more days; reliable long-form rollouts not achieved) and closes: 'This testing is ongoing at time of release. We plan to iterate on this system over time and will continue to work with the UK AISI on robustness testing for our cyber safeguards.'"
+        },
+        {
+          "source": "(4b) Fable 5 & Mythos 5 launch blog post (2026-06-09)",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "HIT, re-verified live: 'External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.'"
+        },
+        {
+          "source": "(2c) Claude Opus 5 System Card (2026-07-24), sections 3.5.1-3.5.2 (safeguards robustness, external testers)",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED for a follow-up fix. External cyber-safeguard red-teaming for Opus 5 is credited to Trajectory Labs PBC, 10a Labs and GraySwan; UK AISI is not among the safeguards red-teamers, and no patch or mitigation is reported as closing the AISI-found cyber jailbreak."
+        },
+        {
+          "source": "(3b) Redacted Risk Report August 2026, section 4.5.3.2 (jailbreak routes that remain viable)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED. The four routes discussed - boundary-point jailbreaking, a November 2025 UK AISI-reported jailbreak, a coverage gap identified by Anthropic and UK AISI, and a bug-bounty jailbreak - all concern chem-bio classifiers, not the Fable 5 cyber safeguards. Not a follow-up to this finding."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No later Anthropic primary source records a fix attributable to this finding."
+        }
+      ],
+      "evidence_url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+      "verbatim": "We plan to iterate on this system over time and will continue to work with the UK AISI on robustness testing for our cyber safeguards.",
+      "response_date": "2026-06-09",
+      "reasoning": "Re-verified independently, and deliberately re-checked for a late fix, since a commitment made at launch is exactly the kind of thing that later becomes an action. It did not here: the Opus 5 card's external safeguards red-teaming is credited to three commercial vendors with UK AISI absent, and the August 2026 Risk Report's viable-jailbreak section covers chem-bio classifiers only. What remains is the launch card's reproduction of the interim AISI result plus a forward-looking commitment with no specific safeguard change - problem referenced, no action specified -> Acknowledged, Explicit attribution. Lag 0."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "Full battery re-run 2026-08-28. UK: Hansard full-text search returned no contribution referencing this finding, report or result (the 'Claude Mythos' hits located - Lord Tarassenko 2026-06-04, Lord Watson 2026-06-04, Sir Oliver Dowden 2026-06-17, Baroness Lloyd 2026-07-14 - discuss AISI's pre-release access and Mythos's cyber capability in general terms only, which the rulebook excludes); gov.uk search API surfaced no publication citing it. US: Federal Register API returns 0 documents for the evaluator and benchmark terms; Congress.gov and govinfo search endpoints were unreachable (403/405) and are recorded as unchecked rather than checked-and-clear. EU/other: Commission press corner API returns 0. No official source explicitly references the finding, report, evaluator-plus-result or the specific claim."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": [
+        "Zvi Mowshowitz, Don't Worry About the Vase (https://thezvi.substack.com/p/claude-fable-5-and-mythos-5-the-system) - URL re-verified live 2026-08-28, HTTP 200"
+      ]
+    },
+    "confidence": "high",
+    "notes": "No change. One refinement worth recording for the dataset: the record's Channel A Evidence points at the launch blog post, but the fuller and more precise primary evidence is section 3.3.1 of the system card, which carries both the AISI red-team text and Anthropic's commitment sentence quoted above."
+  },
+  {
+    "finding_id": "SECUREBIO-2026-06b-BIO2",
+    "current": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "proposed": {
+      "action_level": "None",
+      "attribution": "No response located",
+      "policy_level": "No policy uptake identified"
+    },
+    "changed": false,
+    "channel_a": {
+      "sources_checked": [
+        {
+          "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+          "url": "https://www.anthropic.com/news",
+          "checked_date": "2026-08-28",
+          "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+        },
+        {
+          "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+        },
+        {
+          "source": "(2b) Full-text search of the Anthropic card corpus for the finding's benchmark and tasks",
+          "url": "https://www.anthropic.com/transparency",
+          "checked_date": "2026-08-28",
+          "result": "MISS. Searched Fable 5 & Mythos 5, Sonnet 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6 and Sonnet 4.6 cards for 'ABC-Bench', 'viral DNA', 'liquid handling' and 'fragment design'. 'ABC-Bench' occurs nowhere in the Anthropic corpus; 'fragment design' occurs only in the Sonnet 4.6 and Opus 4.6 cards, both February 2026 and therefore pre-dating the finding."
+        },
+        {
+          "source": "(2c) Claude Opus 5 System Card (2026-07-24), CB-1 evaluation suite",
+          "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED - standing evaluations only. Anthropic runs SecureBio-derived evaluations (two long-form virology tasks developed with SecureBio, Deloitte and Signature Science; the SecureBio/CAIS VCT; SecureBio's 'DNA Synthesis Screening Evasion') and states these were 'described in detail in prior system cards, and have not modified their implementations in this run'. Pre-existing suite, expressly unchanged - inadmissible as a response."
+        },
+        {
+          "source": "(3b) Redacted Risk Report August 2026, SecureBio mentions",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED. SecureBio appears as a pilot external reviewer of the report's chemical/biological sections and as an expert consulted on threat models. Neither reference concerns ABC-Bench or the viral DNA assembly results."
+        },
+        {
+          "source": "(4b) 'Improving Fable 5's biology safeguards' (2026-08-07)",
+          "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+          "checked_date": "2026-08-28",
+          "result": "CHECKED - runs contrary to the finding rather than responding to it. Loosens biology safeguards (~85% fewer false positives) while retaining dual-use fallback for virology, toxicology and molecular design; no mention of SecureBio, ABC-Bench or DNA assembly."
+        },
+        {
+          "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+          "url": "https://anthropic.com/aug-2026-risk-report",
+          "checked_date": "2026-08-28",
+          "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+        },
+        {
+          "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "checked_date": "2026-08-28",
+          "result": "All four opened and read."
+        },
+        {
+          "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+          "url": "https://www.bing.com/search",
+          "checked_date": "2026-08-28",
+          "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No Anthropic primary source referencing ABC-Bench surfaced."
+        }
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "response_date": "",
+      "reasoning": "Full battery re-run. The Fable 5 & Mythos 5 card was published 2026-06-09, one day before the finding, and in any case contains no ABC-Bench reference; the two subsequent cards (Sonnet 5, Opus 5) and the August 2026 Risk Report contain none either. Anthropic's SecureBio-derived biosecurity evaluations are long-standing and expressly unmodified, which the rulebook excludes as pre-existing policy. No admissible response -> None."
+    },
+    "channel_b": {
+      "jurisdictions_checked": [
+        "UK - Hansard Commons & Lords (hansard-api.parliament.uk full-text search), written statements, gov.uk publications/guidance/case studies (gov.uk search API), NCSC/ICO/FCA/BoE outputs reachable via gov.uk",
+        "US - Federal Register full-text API (conditions[term], 2026-05-01 onward); Congress.gov and govinfo.gov search endpoints returned HTTP 403 / 405 and could not be opened (recorded as unreachable); agency material reached via Federal Register only",
+        "EU/other - European Commission press corner search API (totalNumber 0 for the finding terms) and broader Bing sweep"
+      ],
+      "evidence_url": "",
+      "verbatim": "",
+      "reasoning": "UK: Hansard full-text search for 'SecureBio' from 2026-06-01 returns 0 results in every category; gov.uk search for 'ABC-Bench' returns only keyword noise. US: Federal Register API returns 0 for 'SecureBio'; Congress.gov and govinfo unreachable (403/405). EU/other: Commission press corner API returns 0. No policy uptake identified."
+    },
+    "channel_c": {
+      "media": [],
+      "academic": [],
+      "discussion": []
+    },
+    "confidence": "high",
+    "notes": "Source verified live 2026-08-28 (securebio.org returns 403 to WebFetch; retrieved with curl and a browser user-agent). Published June 10, 2026, authors Andrew Liu and Samira Nedungadi. Verbatim: 'Two models (Claude Sonnet 4.6 and Gemini 3.1 Pro Preview) scored perfectly on the Liquid Handling Robot task on all runs. On the fragment design task, models also demonstrated strong performance, with Claude Opus 4.6 achieving a perfect score across all runs.' The record's Anthropic-scoped phrasing is accurate, but note the source also names Gemini 3.1 Pro Preview on the liquid-handling task, which may warrant a paired Google-scoped finding."
+  }
+]

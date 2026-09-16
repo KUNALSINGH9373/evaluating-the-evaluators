@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment",
+      "title": "How we monitor internal coding agents for misalignment",
+      "decision": "EXCLUDED",
+      "exclusion_reason": "EXCLUDED - company self-report",
+      "rule_cited": "§1 (company self-reports hard drop; carve-out not triggered)",
+      "external_evaluator": "none - no external evaluator named anywhere in the post",
+      "resolved_date": "2026-03-19",
+      "fetch_note": "SOURCE READ. openai.com 403s direct; retrieved 200 via Wayback id_ snapshot through scripts/fetch.py (27,888 chars, full body incl. author line, category table and footnotes). Searched the full text for Apollo, METR, AISI, Safety Institute, CAISI, NIST, Gray Swan, Irregular, Pattern Labs, Redwood, 'third-party', 'external', 'independent', 'red team', 'partner' - the only hits are 'external translation APIs', 'external email address' and 'independently reported' (about OpenAI employees). Byline reads 'Author / Marcus Williams, Hao Sun, Swetha Sekhar, Micah Carroll, David G. Robinson, Ian Kivlichan' - all OpenAI. The one citation, 'Guan et al., 2025', is OpenAI's own prior work, and §2 bars summaries of others' work in any case. Page carries an explicit publication date 'March 19, 2026'. The post does contain codeable empirical material (tens of millions of monitored trajectories, zero highest-severity triggers, ~1,000 moderate-severity alerts, base64 sandbox-evasion case), but under §1 the screening test on a company venue is 'is an external evaluator named as contributing findings?' - no, so the whole document including that material is a hard drop. This is a substantive negative established by reading the source, NOT the August fetch failure.",
+      "findings": []
+    },
+    {
+      "url": "https://openai.com/index/safety-alignment-long-horizon-models",
+      "title": "Safety and alignment in an era of long-horizon models",
+      "decision": "EXCLUDED",
+      "exclusion_reason": "EXCLUDED - company self-report",
+      "rule_cited": "§1 (company self-reports hard drop; carve-out not triggered)",
+      "external_evaluator": "none - authored by 'OpenAI'; Prime Intellect appears only in footnote 1 as having evaluated Anthropic's Opus 4.7 on the NanoGPT speedrun, not as a contributor of findings to this report",
+      "resolved_date": "2026-07-20",
+      "fetch_note": "SOURCE READ. The ledger URL (no trailing slash) still 403s direct and returns 'no snapshot' from Wayback via scripts/fetch.py - that is the exact failure that parked it. Adding the canonical trailing slash fixes it: https://openai.com/index/safety-alignment-long-horizon-models/ returns 200 via Wayback (10,609 chars); the CDX index confirms snapshots from 20260720193545 onwards. cdn.openai.com PDF equivalent is 404. Full body read, including the author line ('Author / OpenAI') and both footnotes. No external evaluator is named as contributing findings; the only outside org mentioned is Prime Intellect, in a footnote about a third party's separate evaluation of a competitor model. Page carries 'July 20, 2026'. Substantive material is present (sandbox escape to open GitHub PR #287, token-splitting to defeat a credential scanner, replay of misaligned trajectories under new safeguards) but it is entirely OpenAI's own self-assessment, so §1 drops it. Not a fetch-failure exclusion.",
+      "findings": []
+    },
+    {
+      "url": "https://ai45.shlab.org.cn/research/posts/%E6%BD%9C%E4%BC%8F%E5%9C%A8%E4%BD%A0%E6%89%8B%E6%9C%BA%E9%87%8C%E7%9A%84%E6%99%BA%E8%83%BD%E7%89%B9%E5%B7%A5%E7%AB%AF%E4%BE%A7agent%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E7%9A%84%E5%AE%89%E5%85%A8%E5%B9%B4%E6%A3%80",
+      "title": "The intelligent agent lurking in your phone",
+      "decision": "INCLUDED",
+      "exclusion_reason": "",
+      "rule_cited": "§2 (methodology/tooling finding); §1 not engaged - Shanghai AI Laboratory is an evaluator venue, not a model developer reporting on its own model; English-language page so the non-English hard drop does not apply",
+      "external_evaluator": "n/a - not a company venue. Publisher/evaluator is Shanghai AI Laboratory, AI45 Lab (page byline: 'Center for Safe&Trustworthy AI')",
+      "resolved_date": "2025-07-18",
+      "fetch_note": "SOURCE READ. The ledger URL 410s (Gone) with or without the fetch ladder, and there is no Wayback capture of ai45.shlab.org.cn at all (CDX returns zero rows for the URL and for the whole domain), which is why the August pass got nothing. Recovered by enumerating https://ai45.shlab.org.cn/research (200) and taking the site's own href for this post: the identical URL WITH a trailing slash returns 200 (35,289 bytes). The trailing slash is load-bearing on this Hugo site. Full English article text extracted. Real publication date taken from the page's own metadata: <meta property=\"article:published_time\" content=\"2025-07-18T10:00:00+08:00\"> and JSON-LD \"datePublished\":\"2025-07-18T10:00:00+08:00\" - matches the ledger's 2025-07-18.",
+      "findings": [
+        {
+          "institution": "Shanghai AI Laboratory (AI45 Lab, Center for Safe & Trustworthy AI)",
+          "domain": "Governance (Eval-methodology); Governance (Eval-tooling)",
+          "models_systems": "anonymised",
+          "access_type": "N/A",
+          "finding_type": "methodology",
+          "finding": "Shanghai AI Lab's AI45 team reports building a security evaluation framework for on-device mobile GUI agents: a high-fidelity environment running virtual machines and real phone images in which agents interact by screenshot and simulated touch, a risk matrix of 400+ risk tasks spanning user-originated and environment-originated risk across web, social and gallery domains, dynamic scenario-based risk injection at app-switch boundaries, and a two-layer LLM-as-a-Judge pipeline that scores intent (from the chain of thought) separately from outcome (rule-based state monitors).",
+          "finding_quote": "Addressing the “one-sidedness” of evaluation scenarios, the team designed a multi-dimensional risk matrix, building an evaluation benchmark covering 400+ risk tasks. This matrix comprehensively covers risks from two dimensions: “source of risk” and “domain of risk.”",
+          "eval_trackable": "no",
+          "action_trackable": "",
+          "tier": "C",
+          "tier_reasoning": "Not an empirical model finding: the post reports no measured result against any system, names no model, and gives no failure rates - it documents an evaluation framework the team has built. Under §4 that is eval_trackable=no, Action Trackable blank, so Tier C is derived. BORDERLINE ON §2 and flagged as such: the page is part project write-up, part promotion, and its 'Benefits of the Tools' section is forward-looking, which §2 says is not a finding. It is coded as one tooling finding because the Safety Design section is written in the past tense about artefacts already constructed ('the team has built', 'designed', 'developed', 'deployed') and carries a concrete, codeable specification (400+ risk tasks; VM plus real phone images; intent/outcome dual verification), which is a documented process fact rather than a plan. Frontier-model rule is satisfied at the subject level - on-device LLM agents are frontier AI systems, not product ML - but no specific model is named, which is a second independent reason it cannot reach Tier A."
+        }
+      ]
+    },
+    {
+      "url": "https://app.dyff.io/assessments/12acd1e1265a437f97614d8e7d404454",
+      "title": "Health Question Answering Assessment (Dyff assessment)",
+      "decision": "EXCLUDED",
+      "exclusion_reason": "EXCLUDED - ordinary accuracy/reliability. The assessment's own description is 'An assessment of accuracy'; its primary and all secondary scores are incorrect-answer rates on health-product QA, i.e. a generic factuality/correctness measure. None of the five §4b retention limbs is met: (1) no concrete unsafe recommendation, harmful action or safeguard bypass is demonstrated - only aggregate failure rates, and §4b states expressly that a high-stakes topic label alone is insufficient; (2) no strategic deception with goal-directed reasoning; (3) no defined societal or persuasion setting - this is single-turn benchmark QA, not a misinformation or manipulation scenario; (4) nothing in bio/chem/cyber/CBRN/self-harm; (5) no evaluator, judge, monitor or scoring-method failure. Precedent is directly on point: UL-2024-08-SOC1, a UL row of the same species, is one of the 11 rows already removed under this rule on 2026-08-17. Independently, most subject systems (Dolly v2, Falcon, OLMo 7B) are non-frontier. This is a substantive scope rejection reached after reading the source, NOT the August fetch failure.",
+      "rule_cited": "§4b (ordinary accuracy and reliability exclusion; none of the five retention limbs met)",
+      "external_evaluator": "n/a - not a company venue. Publisher/evaluator is UL Research Institutes, Digital Safety Research Institute (DSRI), on its own Dyff platform",
+      "resolved_date": "2025-04-24",
+      "fetch_note": "SOURCE READ. app.dyff.io is a Next.js single-page app: the HTML shell returns 200 but contains no assessment content (the RSC flight payload has zero references to the health assessment, the models or the scores), which is why the August pass recorded 'no extractable text'. Recovered the underlying data by reading the page bundle: chunk app/(explore)/assessments/[id]/page-*.js issues an axios GET to route \"/views/methods/\".concat(id). https://api.dyff.io/views/methods/12acd1e1265a437f97614d8e7d404454 returns 200 with 407,678 bytes of JSON - method spec, 29 safety cases, 76 scores, 18 models and their documentation. Assessment title 'Health product question-answering'; safety case 'health-product-qa'. Subject systems are open-weight LLMs served on the platform (OLMo 7B / OLMo-Instruct 7B / OLMo 2 7B and 13B, Dolly v2 3B/7B/12B, Falcon 7B/7B-Instruct/40B-Instruct, Mistral 7B v0.1 and v0.2-Instruct, Llama 3.3 70B Instruct, DeepSeek-R1 671B). Publication date resolved from the source records: the Method and all 29 SafetyCases carry creationTime/lastTransitionTime of 2025-04-24 (method 2025-04-24T15:46:31.756998Z); the rendered page states no separate publication date, so this platform timestamp is the only source-verified date and is recorded as date-only per §9 col 5. WHAT THE SOURCE SAYS (recorded here rather than as a finding row, since the item is excluded upstream): the primary score 'Overall failure rate in health product QA' is defined as 'How often the system gave incorrect answers to questions about ingredients in health products'; for OLMo 7B the reported values are 38.00% overall failure, 48.24% in the worst category (products not appropriate for the specified use), 21.41% in the best (products unsafe/untested for the specified use) and 14.02% invalid answers. Verbatim safety-case description: \"An assessment of accuracy regarding safe, inappropriate, and untested ingredients in health products\".",
+      "findings": []
+    }
+  ]
+}

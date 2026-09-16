@@ -1,0 +1,285 @@
+{
+  "agent": 1,
+  "assigned_indices": [0, 3, 6, 9, 12],
+  "also_resolved": [1, 2],
+  "root_cause_note": "ai.meta.com / llama.com HTTP 400 was NOT Meta blocking. It is a defect in scripts/fetch.py's header set: Meta rejects a Chrome User-Agent that arrives WITHOUT Sec-Fetch-* headers. Adding Sec-Fetch-Mode/Site/Dest (or using a non-Chrome UA) returns 200 on every Meta surface. Separately, fetch.py's Wayback step dies with requests.exceptions.ContentDecodingError on some snapshots (openai.com), which the ladder reports as 'no snapshot'; reading the body with stream=True + raw.read(decode_content=False) recovers it. Both defects caused surfaces to be recorded as unreadable when they are readable. fetch.py also never escalates to Wayback on 400 (RETRY_STATUS lacks 400).",
+
+  "items": [
+    {
+      "venue": "Meta",
+      "title": "Resources & tools (ai.meta.com/tools -> ai.meta.com/resources/)",
+      "url": "https://ai.meta.com/tools",
+      "resolved_date": "",
+      "date_source": "genuinely undatable - evergreen catalogue hub; no byline, no dateline, no date in server-rendered HTML or JSON payload",
+      "in_window": false,
+      "decision": "EXCLUDED - not an evaluation",
+      "rule_cited": "§2 test 2 - a product/tool catalogue, not a measured result, observed behaviour or documented process fact",
+      "reason": "URL 301s to /resources/, an undated evergreen hub linking /resources/models-and-libraries/, /resources/frameworks-and-tools/, /resources/demos/ and /tools/system-cards/; all four read 200 and carry zero dated items, so the surface publishes nothing datable into the window.",
+      "fetch": {"via": "direct (browser headers)", "status": 200, "chars": 1558},
+      "findings": []
+    },
+    {
+      "venue": "Meta",
+      "title": "WaiT for the Signal: Simple Frequency-Aware Flow-Matching",
+      "url": "https://ai.meta.com/research/publications/wait-for-the-signal-simple-frequency-aware-flow-matching/",
+      "resolved_date": "2026-08-04",
+      "date_source": "page byline on the publication card and detail page (August 04, 2026)",
+      "in_window": true,
+      "decision": "EXCLUDED - not an evaluation",
+      "rule_cited": "§3 - not an evaluation; a generative-modelling methods paper, and §1 no external evaluator named on a company venue",
+      "reason": "The only item Meta published anywhere on ai.meta.com in 2026-07-31..2026-08-29: an arXiv flow-matching methods paper by Meta authors (Jakob Verbeek et al.), computer vision, with no evaluation of a model against a safety or capability criterion and no named external evaluator.",
+      "fetch": {"via": "direct (browser headers)", "status": 200, "chars": 2200},
+      "findings": []
+    },
+    {
+      "venue": "Princeton Holistic Agent Leaderboard (HAL) / CRUX",
+      "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+      "url": "https://arxiv.org/abs/2607.27191",
+      "resolved_date": "2026-07-29",
+      "date_source": "arXiv submission history (v1 Wed, 29 Jul 2026 17:57:19 UTC; v2 Fri, 7 Aug 2026)",
+      "in_window": true,
+      "decision": "INCLUDED",
+      "rule_cited": "§2 - evaluator-asserted, evidence-backed, independently codeable; §5 - split by evaluated company",
+      "reason": "IN THE CORPUS WINDOW (2018-01-01..2026-08-29) but v1 predates the 31 Jul - 29 Aug gap sub-window by two days, so the main sweep may already hold it - DEDUP AGAINST THE MAIN SWEEP BEFORE MERGING. Recovered only because the blocked X timeline pointed at it. Split into two rows because Opus 4.8 (Anthropic) and GPT-5.6 Sol/Codex (OpenAI) can never share a row.",
+      "fetch": {"via": "direct (browser headers)", "status": 200, "chars": 118655},
+      "findings": [
+        {
+          "finding": "Under a shadow evaluation on two unpublished NeurIPS 2026 submissions, an agent built on Opus 4.8 (run via the OpenClaw scaffold, six days and thousands of dollars of compute) completed the engineering unaided but produced papers the original authors unambiguously rejected, exhibiting five recurring failure modes.",
+          "finding_quote": "both papers were unambiguously rejected by the authors",
+          "models_systems": "Opus 4.8 (Anthropic), run under the OpenClaw scaffold",
+          "institution": "Princeton University (CRUX Core Team), with UK AI Security Institute, Cornflower Labs, University of Toronto, UC Berkeley, Georgetown CSET, Johns Hopkins, Stanford and others",
+          "domain": "Agentic AI R&D capability / recursive self-improvement",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "Gate 1 yes - an empirical model finding measuring agent behaviour. Gate 2 (a) yes and (b) yes (Opus 4.8 named), but (c) fails: this is a capability-shortfall result that the authors themselves read as evidence against explosive progress, i.e. a reassuring null with no dangerous threshold crossed, so no company response is reasonably called for. Tier B, action_trackable no.",
+          "finding_type": "empirical model finding",
+          "scope": "in scope - named external evaluator (Princeton CRUX team), independent of the developer",
+          "source_url": "https://arxiv.org/abs/2607.27191",
+          "access_type": "external evaluator, API access with own scaffold (OpenClaw)"
+        },
+        {
+          "finding": "A robustness re-run of one of the two case studies using GPT-5.6 Sol with Codex, its native scaffold, under matched time and API budgets reproduced nearly all of the same failure modes, indicating the failures are not an artefact of the OpenClaw scaffold.",
+          "finding_quote": "this run reproduced nearly every single one of our identified failure modes",
+          "models_systems": "GPT-5.6 Sol with Codex (OpenAI), native scaffold",
+          "institution": "Princeton University (CRUX Core Team), with UK AI Security Institute and co-authors listed above",
+          "domain": "Agentic AI R&D capability / evaluation methodology (scaffold sensitivity)",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "Gate 1 yes - an empirical model finding. Gate 2 (a) yes, (b) yes (GPT-5.6 Sol/Codex named), (c) fails: a capability-shortfall replication serving as a methodology robustness check, no dangerous threshold crossed and no concerning behaviour warranting a company response. Tier B, action_trackable no.",
+          "finding_type": "empirical model finding; methodology/tooling finding",
+          "scope": "in scope - named external evaluator",
+          "source_url": "https://arxiv.org/abs/2607.27191",
+          "access_type": "external evaluator, API access via the developer's own native scaffold (Codex)"
+        }
+      ]
+    },
+    {
+      "venue": "Princeton Holistic Agent Leaderboard (HAL) / AI as Normal Technology",
+      "title": "AI agents can't yet do open-ended AI research",
+      "url": "https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended",
+      "resolved_date": "2026-08-05",
+      "date_source": "RSS pubDate on www.normaltech.ai/feed and the page byline (Aug 05, 2026)",
+      "in_window": true,
+      "decision": "EXCLUDED - duplicate/secondary",
+      "rule_cited": "§3 dedup - primary, earliest, fullest source wins",
+      "reason": "Kapoor and Narayanan's newsletter write-up of arXiv 2607.27191; strictly a summary of the paper, names no models (the paper does), and postdates v1 by seven days. The paper is the primary, earliest and fullest source and carries the rows.",
+      "fetch": {"via": "direct (browser headers)", "status": 200, "chars": 11386},
+      "findings": []
+    },
+    {
+      "venue": "UK AI Security Institute (AISI) - surface mis-assigned to K-AISI in the packet",
+      "title": "When Do LLM Preferences Predict Downstream Behavior?",
+      "url": "https://arxiv.org/abs/2602.18971",
+      "resolved_date": "2026-02-21",
+      "date_source": "arXiv submission history (v1 Sat, 21 Feb 2026 22:24:51 UTC) and the in-PDF stamp arXiv:2602.18971v1 [cs.AI] 21 Feb 2026",
+      "in_window": true,
+      "decision": "EXCLUDED - duplicate/secondary",
+      "rule_cited": "§3 dedup - the same paper already carries two rows in the corpus from the OpenReview record; §10 real-or-empty on the open question",
+      "reason": "OpenReview stayed challenge-gated on /pdf, /forum, api.openreview.net and api2.openreview.net under every header set, but the full 31-page paper was recovered from arXiv. THE OPEN QUESTION IS NOW CLOSED NEGATIVELY: the model roster does not exist in the paper. The authors deliberately withhold it, so the existing two rows must NOT be re-tiered - models_systems stays empty and Tier B is correct permanently, not provisionally.",
+      "fetch": {"via": "direct (browser headers)", "status": 200, "chars": 77152},
+      "findings": [
+        {
+          "finding": "ROSTER RESOLUTION, not a new row. The paper tests five frontier LLMs but withholds their identities by design, labelling them Models A and B from Provider 1 and Models C, D and E from Provider 2; footnote 1 states the omission is deliberate. Under §4 condition (b) an anonymised roster fails, so both existing rows remain Tier B and models_systems must stay empty per §10.",
+          "finding_quote": "The purpose of this paper is to make a methodological contribution to preference-behavior links in LLMs, so we opt to not reveal specific model provider details.",
+          "models_systems": "",
+          "institution": "UK AI Security Institute (Slama, Souly, Bansal, Davidson, Summerfield, Luettgau)",
+          "domain": "Alignment / preference-driven behaviour and sandbagging preconditions",
+          "eval_trackable": "yes",
+          "action_trackable": "no",
+          "tier": "B",
+          "tier_reasoning": "Gate 1 yes. Gate 2 (b) fails definitively - the evaluator withholds provider and model identity as a stated editorial choice, and §4 says 'anonymised' fails condition (b). Tier B is therefore permanent for both existing rows; no re-tiering is possible unless the authors publish the roster elsewhere.",
+          "finding_type": "roster-resolution note for existing rows; empirical model finding",
+          "scope": "in scope - named evaluating agency (UK AISI)",
+          "source_url": "https://arxiv.org/abs/2602.18971",
+          "access_type": "external evaluator, API access; providers unnamed"
+        }
+      ]
+    },
+    {
+      "venue": "OpenAI",
+      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "resolved_date": "2026-08-27",
+      "date_source": "page byline in the recovered Wayback snapshot 20260828010717 (August 27, 2026)",
+      "in_window": true,
+      "decision": "INCLUDED",
+      "rule_cited": "§1 company-venue carve-out - an external evaluator (Bocconi University) is named, so it enters under the evaluator with 'company-published' on Finding Type",
+      "reason": "Randomised experiment with 1,000+ Bocconi first-year undergraduates run by Bocconi researchers with OpenAI Economic Research. The §1 test on a company venue is 'is an external evaluator named?' - it is, so the piece is in scope rather than a company self-report.",
+      "fetch": {"via": "wayback 20260828010717 id_ (manual raw read; the ladder aborts here with ContentDecodingError)", "status": 200, "chars": 6517},
+      "findings": [
+        {
+          "finding": "In a randomised experiment with more than 1,000 first-year undergraduates assigned to ChatGPT access (GPT-4o), causal-reasoning training, both, or neither, students given ChatGPT access scored almost a full point higher on a five-point human-graded rubric and produced work more similar to expert-written recommendations.",
+          "finding_quote": "The students who had access to ChatGPT scored almost a full point higher on the five-point scale.",
+          "models_systems": "GPT-4o (via ChatGPT)",
+          "institution": "Bocconi University, in collaboration with OpenAI Economic Research",
+          "domain": "Education / human-AI complementarity (economic research)",
+          "eval_trackable": "no",
+          "action_trackable": "",
+          "tier": "C",
+          "tier_reasoning": "Gate 1 fails: what is measured is human student output under an access treatment, not model behaviour. GPT-4o is the instrument/treatment of a human-subjects study, so this is not an empirical model finding. Tier C, Action Trackable blank.",
+          "finding_type": "company-published; empirical human-subjects finding",
+          "scope": "in scope via §1 company-venue carve-out - Bocconi University named as external evaluator",
+          "source_url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+          "access_type": "product access (ChatGPT), external academic evaluator on a company venue"
+        },
+        {
+          "finding": "Causal-reasoning training raised the originality and variety of student ideas but produced no gain on the grading rubric, which measured only how well recommendations addressed two marketing goals - a documented measurement-instrument blind spot showing that conventional rubrics can miss originality once AI makes polished output cheap.",
+          "finding_quote": "Students who completed the exercise explained more clearly why their ideas might work and when they might fail, but did not score higher on the grading rubric",
+          "models_systems": "GPT-4o (via ChatGPT)",
+          "institution": "Bocconi University, in collaboration with OpenAI Economic Research",
+          "domain": "Evaluation methodology / assessment design in education",
+          "eval_trackable": "no",
+          "action_trackable": "",
+          "tier": "C",
+          "tier_reasoning": "Gate 1 fails - a methodology finding about the sensitivity of a human grading rubric, not an empirical model finding. Tier C, Action Trackable blank. Retained as a distinct row from the access effect because it is a separate, independently codeable claim about the measuring instrument rather than about the treatment.",
+          "finding_type": "company-published; methodology finding",
+          "scope": "in scope via §1 company-venue carve-out",
+          "source_url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+          "access_type": "product access (ChatGPT), external academic evaluator on a company venue"
+        }
+      ]
+    }
+  ],
+
+  "surfaces": [
+    {
+      "url": "https://ai.meta.com/tools",
+      "index": 0,
+      "attempts": [
+        {"method": "fetch.get (ladder)", "url": "https://ai.meta.com/tools", "status": 400},
+        {"method": "fetch.get (ladder)", "url": "https://ai.meta.com/tools/", "status": 400},
+        {"method": "fetch.get (ladder)", "url": "https://ai.meta.com/resources/", "status": 400},
+        {"method": "fetch.get (ladder)", "url": "https://ai.meta.com/sitemap.xml", "status": 400},
+        {"method": "wayback-available", "url": "https://ai.meta.com/tools", "status": "no snapshot"},
+        {"method": "header probe (isolating the 400)", "url": "https://ai.meta.com/blog/", "status": "200 bare / 400 chrome-UA-without-Sec-Fetch / 200 curl-UA / 200 chrome-UA-with-Sec-Fetch"},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/tools", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/tools/system-cards/", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/resources/models-and-libraries/", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/resources/frameworks-and-tools/", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/resources/demos/", "status": 200}
+      ],
+      "recovered": true,
+      "items_found": 0,
+      "note": "Read in full. 301s to /resources/. An undated evergreen catalogue hub - zero dated items on it or any of its four child pages, so it is a certified zero for the window rather than an unread surface. The five /tools/system-cards/ entries are product/ranking transparency cards, undated and with no named external evaluator."
+    },
+    {
+      "url": "https://www.llama.com/docs/",
+      "index": 1,
+      "attempts": [
+        {"method": "fetch.get (ladder)", "url": "https://www.llama.com/docs/", "status": 400},
+        {"method": "direct browser-headers", "url": "https://www.llama.com/docs/", "status": "200 (301 -> developer.meta.com/ai/docs/overview/)"},
+        {"method": "direct browser-headers", "url": "https://www.llama.com/", "status": "200 (301 -> developer.meta.com/ai/)"},
+        {"method": "direct browser-headers", "url": "https://www.llama.com/docs/overview/", "status": 200},
+        {"method": "direct browser-headers", "url": "https://www.llama.com/sitemap.xml", "status": 404}
+      ],
+      "recovered": true,
+      "items_found": 0,
+      "note": "Helped on agent 2's entry. Now fully readable: llama.com has been folded into developer.meta.com/ai. Undated developer documentation with no dated publications, so no window coverage is lost. LEAD (not screened, no dated source found): the model nav lists 'Muse Spark 1.2', newer than the 1.1 released 2026-07-09, and it links out to openrouter.ai/meta/muse-spark-1.2/ while developer.meta.com has no page for it yet (404/500). If 1.2 shipped in August it left no dated Meta surface; a Meta model card would in any case be a §1 company self-report unless an external evaluator is named."
+    },
+    {
+      "url": "https://ai.meta.com/blog/ - window tail 2026-08-26 to 2026-08-29",
+      "index": 2,
+      "attempts": [
+        {"method": "fetch.get (ladder)", "url": "https://ai.meta.com/blog/", "status": 400},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/blog/", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/blog/?page=1", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/blog/?page=2", "status": "200 (identical payload; page param not honoured server-side)"},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/blog/rss/ , /feed/ , /rss.xml , /feed.xml", "status": 404},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/robots.txt", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/results/?content_types[0]=blog&sort_by=most_recent", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai.meta.com/results/?sort_by=most_recent", "status": 200},
+        {"method": "wayback-cdx", "url": "ai.meta.com/blog/* (all time, collapse=urlkey, statuscode:200, 7542 distinct URLs)", "status": 200}
+      ],
+      "recovered": true,
+      "items_found": 0,
+      "note": "Helped on agent 3's entry - the packet's most important gap, now CLOSED including the 2026-08-26..29 tail. Two corrections to the prior record. (1) The blog index is readable live, so no Wayback tail gap exists. (2) The index is a CURATED card set, not a chronological list - its ten server-rendered cards run Apr 08, Jul 27, Jul 21, Jun 29, Jul 09, Jul 07, Apr 08, Mar 26, Mar 10, Apr 06 - so any earlier 'read the index, it is empty' conclusion rested on a partial, out-of-order render and was not sound evidence. Certified zero by two independent methods instead: (a) ai.meta.com/results/?sort_by=most_recent, which IS newest-first, tops out at a single August item (the Aug 04 publication) with the newest blog card at Jul 27; (b) an all-time CDX sweep of 7,542 distinct archived ai.meta.com/blog URLs found only 4 with a first capture on or after 2026-07-31, every one a pre-window post re-crawled under a tracking parameter (muse-image Jul 07, assistive-robotics Jul 27, brain2qwerty Jun 29) and no new slug. Meta published no blog post in 2026-07-31..2026-08-29."
+    },
+    {
+      "url": "https://twitter.com/sayashk",
+      "index": 3,
+      "attempts": [
+        {"method": "direct browser-headers", "url": "https://x.com/sayashk", "status": "200 but timeline not enumerable - login wall"},
+        {"method": "direct browser-headers", "url": "https://hal.cs.princeton.edu/", "status": 200},
+        {"method": "direct browser-headers", "url": "https://hal.cs.princeton.edu/blog", "status": 404},
+        {"method": "direct browser-headers", "url": "https://www.aisnakeoil.com/ (301 -> normaltech.ai)", "status": 200},
+        {"method": "direct browser-headers", "url": "https://www.normaltech.ai/feed", "status": 200},
+        {"method": "direct browser-headers", "url": "https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended", "status": 200},
+        {"method": "direct browser-headers", "url": "https://arxiv.org/abs/2607.27191 and /pdf/2607.27191", "status": 200}
+      ],
+      "recovered": false,
+      "items_found": 2,
+      "note": "THE X TIMELINE ITSELF REMAINS UNREAD - X serves a login wall and exposes only top-of-profile posts, all dated Jul 27 and Jul 30 2026 (pre-window). Recorded as unread, not as empty. However the venue's substantive output IS now recovered through enumerable substitutes: the AI-as-Normal-Technology RSS feed (20 items, newest-first, lastBuildDate Sat 29 Aug 2026) yields exactly one item in 2026-07-31..2026-08-29, the Aug 05 CRUX write-up, which led to arXiv 2607.27191. Two finding rows extracted. Residual risk is low but non-zero: a HAL announcement made only on X and nowhere else would still be missed."
+    },
+    {
+      "url": "https://openreview.net/pdf?id=RmWSM3sFOr",
+      "index": 6,
+      "attempts": [
+        {"method": "direct browser-headers", "url": "https://openreview.net/pdf?id=RmWSM3sFOr", "status": "200 but challenge page, 211 chars"},
+        {"method": "direct browser-headers", "url": "https://api2.openreview.net/notes?forum=RmWSM3sFOr", "status": "403 ChallengeRequiredError"},
+        {"method": "json/curl/bare header variants", "url": "https://api2.openreview.net/notes?id=... , https://api.openreview.net/notes?forum=...", "status": "403 ChallengeRequiredError (429 on bare)"},
+        {"method": "arxiv api title search", "url": "http://export.arxiv.org/api/query", "status": 200},
+        {"method": "direct browser-headers", "url": "https://arxiv.org/abs/2602.18971", "status": 200},
+        {"method": "direct browser-headers", "url": "https://arxiv.org/pdf/2602.18971v1", "status": "200, 31pp, 77152 chars"}
+      ],
+      "recovered": true,
+      "items_found": 1,
+      "note": "OpenReview itself stays challenge-gated on every route, but the paper was recovered in full from arXiv, which answers the question the block was raising. The five model identities DO NOT EXIST in the paper: 'We tested five frontier LLMs from two major providers: Models A and B from Provider 1, and Models C, D, and E from Provider 2', with footnote 1 declaring the omission deliberate. So the two existing rows keep models_systems empty and stay Tier B permanently - the standing instruction to re-tier them if the roster is recovered should be struck, because there is no roster to recover."
+    },
+    {
+      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "index": 9,
+      "attempts": [
+        {"method": "direct browser-headers", "url": "same, with and without trailing slash", "status": 403},
+        {"method": "direct browser-headers", "url": "openai.com/de-DE/... and /ja-JP/... locale variants", "status": 403},
+        {"method": "fetch.get (ladder)", "url": "same", "status": "403 direct, then wayback ContentDecodingError x2 - the ladder reports this as unreadable"},
+        {"method": "wayback-cdx", "url": "openai.com/index/<slug>* (prefix)", "status": "200, 0 rows - this is what produced the false 'zero captures'"},
+        {"method": "wayback-cdx", "url": "openai.com/index/<slug>/ (exact)", "status": "200, 1 row: 20260828010717, statuscode 204, 48647 bytes"},
+        {"method": "wayback-available", "url": "same", "status": "200, closest snapshot 20260828010717"},
+        {"method": "wayback-snapshot raw read (stream=True, raw.read(decode_content=False))", "url": "https://web.archive.org/web/20260828010717id_/...", "status": "200, 395189 bytes recovered"}
+      ],
+      "recovered": true,
+      "items_found": 1,
+      "note": "RECOVERED IN FULL - the prior record ('403 on every user agent; Wayback CDX has zero captures') was wrong on both halves. A capture does exist; the prefix CDX query missed it because the archived original has no trailing slash, and the ladder then aborted on a requests ContentDecodingError which it surfaced as 'no snapshot'. Reading the body raw yields the whole article. Screened and INCLUDED with two Tier C rows. The snapshot also corroborates three sibling OpenAI posts for other agents: 'Expanding OpenAI's presence in Brazil' (Aug 27), 'The Hugging Face incident and the road ahead' (Security, Aug 26), 'The full stack behind abundant intelligence' (Aug 25)."
+    },
+    {
+      "url": "https://research.ai45.shlab.org.cn/",
+      "index": 12,
+      "attempts": [
+        {"method": "direct browser-headers", "url": "https://research.ai45.shlab.org.cn/ (and http://)", "status": 403},
+        {"method": "direct browser-headers", "url": "/index.html, /blog, /blog/, /en, /en/, /home, /news, /research, /about, /publications, /robots.txt, /sitemap.xml, /index.xml", "status": 404},
+        {"method": "direct browser-headers", "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.pdf", "status": "200, 186256 chars"},
+        {"method": "wayback-cdx", "url": "research.ai45.shlab.org.cn/*", "status": "200 - only Blog_pics images and one PDF, no HTML index ever archived"},
+        {"method": "direct browser-headers", "url": "https://ai45.shlab.org.cn/ (SPA shell) and /assets/index-d7d466a1.js", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai45.shlab.org.cn/research/", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai45.shlab.org.cn/research/archives/ (EN) and /research/zh/archives/ (ZH)", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai45.shlab.org.cn/research/index.xml and /research/zh/index.xml", "status": 200},
+        {"method": "direct browser-headers", "url": "https://ai45.shlab.org.cn/research/sitemap.xml", "status": 200}
+      ],
+      "recovered": true,
+      "items_found": 0,
+      "note": "Now a CERTIFIED ZERO for the window, not an unreadable surface. The blocked host is a static asset host with no index (403 on /, 404 on every HTML route, serves PDFs fine) - the PEReN /static situation exactly. The real publication surface is ai45.shlab.org.cn/research/, a Hugo/PaperMod blog readable in English and Chinese. Its complete archive is 8 posts: 2026 - SafeVerse (Feb 10) and Loop as a Bridge (Jan 16); 2025 - six SafeWork posts in July. Newest post 2026-02-10, confirmed three independent ways (the archive listing, the RSS index.xml, and sitemap.xml lastmod 2026-02-10T00:00:00+00:00). Nothing published in 2026-07-31..2026-08-29."
+    }
+  ]
+}

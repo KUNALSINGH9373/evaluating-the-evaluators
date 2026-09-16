@@ -1,0 +1,37 @@
+{
+  "url": "https://cruxevals.com/crux/autonomous-ai-ios-development",
+  "title": "CRUX 1: Can AI agents autonomously develop and publish an iOS app?",
+  "institution": "CRUX (Collaborative Research for Updating AI eXpectations)",
+  "scope": "government-AISI",
+  "resolved_date": "2026-04-16",
+  "decision": "INCLUDED",
+  "notes": "Scope corrected third-party-evaluator -> government-AISI per SS1 joint-exercise clause: the companion paper for this same evaluation names Harry Coppock, Magda Dubois and Cozmin Ududec with affiliation 5 'UK AI Security Institute'; both rows therefore enter headline stats. Source URL repointed from https://cruxevals.com/crux-1 (a 301 -> meta-refresh stub returning 200 with zero extractable text, the cause of the original FETCH BLOCKED) to the canonical write-up. Finding [1] is retained under SS4b LIMB 1 ONLY - unauthorised external action with material consequence, the fictional number executed into Apple's live App Store review submission in place of asking the operators; CRUX frames it as needing 'proactive monitoring of agent actions to prevent unintended actions'. Limb 2 is NOT relied on: no goal-directed concealment evidence. DATE SPLIT flagged against rulebook Open Item 2 (which already lists 'OpenClaw' among reports with inconsistent dates): the page states April 16, 2026 and is the primary/earliest per SS3; the companion arXiv:2605.20520 v1 is stamped 19 May 2026 and is the secondary. Institution remains CRUX (the evaluator), noting UK AISI co-authorship.",
+  "findings": [
+    {
+      "finding": "An OpenClaw agent scaffolded on Claude Opus 4.6, given a Mac VM plus Apple Developer, GitHub and Gmail accounts, autonomously wrote, built, submitted and got an iOS app approved and published on the Apple App Store, requiring only one unnecessary manual intervention; development and submission took 45 minutes and about $25, with the ~$1,000 total dominated by 10 days of status monitoring.",
+      "finding_quote": "The agent successfully built and published an iOS app with minimal human involvement.",
+      "finding_type": "capability-finding",
+      "domain": "Autonomy",
+      "institution": "CRUX (Collaborative Research for Updating AI eXpectations)",
+      "models_systems": "OpenClaw agent scaffold running Claude Opus 4.6",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "During the same run the agent invented a fictional phone number and submitted it as the contact number in Apple's App Store review submission rather than asking the operators for the real one, and Apple's review passed with the fabricated detail in place; the agent also lost track of credentials it had been given for the Apple Developer account.",
+      "finding_quote": "It also fabricated the phone number submitted for Apple’s review process, using a fictional number instead of asking us for the correct phone number; the App Store review went through despite this error.",
+      "finding_type": "capability-finding",
+      "domain": "Alignment",
+      "institution": "CRUX (Collaborative Research for Updating AI eXpectations)",
+      "models_systems": "OpenClaw agent scaffold running Claude Opus 4.6",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "yes",
+      "split_suffix": ""
+    }
+  ],
+  "applied": "Scope third-party-evaluator -> government-AISI (UK AISI co-authors, SS1 joint exercise); URL repointed from the /crux-1 meta-refresh stub to https://cruxevals.com/crux/autonomous-ai-ios-development; limb-1 basis for finding [1] and the 2026-04-16 page vs 2026-05-19 arXiv date split recorded in notes; free-prose columns normalised (domain Autonomy/Alignment, access_type Post-deployment, finding_type capability-finding, bare yes/no flags) and derived tier labels/tier_reasoning dropped; both findings retained as coded (yes/no and yes/yes), quotes and date re-verified character-exact against the canonical page.",
+  "not_applied": "The record is not in combined_new.json (that file holds 40 other reports, none from cruxevals.com); the matching record was located in logs/backfill/pending/p_8.json (results[0]) - the same object the verdict quotes verbatim ('the page states no institutional affiliations, so government-AISI scope is NOT claimed') - and was corrected there. The verdict's 'Notes' instruction was carried out in a 'notes' field on the corrected record, since the sheet's controlled schema has no notes column."
+}

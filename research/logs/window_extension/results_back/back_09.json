@@ -1,0 +1,192 @@
+[
+ {
+  "venue": "Redwood Research",
+  "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small (paper)",
+  "url": "https://openreview.net/forum",
+  "date": "2022-11",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 stratified — named third-party evaluator (Redwood Research); §2 tests 1-3 all met; §4 Gate 1 and Gate 2 pass but Tier A condition (3) fails",
+  "reason": "The corpus URL is malformed (openreview.net/forum with no forum id returns 'Forum or note ID is required'), so the item was verified and read at its primary source, arXiv:2211.00593 (ICLR 2023, OpenReview NpsVSN6o4ul); the paper is a Redwood Research white-box mechanistic-interpretability study of a named model (GPT-2 small) with measured causal-intervention results, so it carries genuine evaluator-asserted, evidence-backed, independently codeable findings.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 80603,
+   "pages": 25
+  },
+  "findings": [
+   {
+    "finding": "Redwood Research reverse-engineered a 26-attention-head circuit in GPT-2 small — 1.1% of all (head, token position) pairs, organised into 7 head classes — that carries out indirect object identification, and validated it with path patching and knockouts: the circuit alone recovers 87% of the full model's mean logit difference (|F(M)-F(C)| = 0.46 against F(M) = 3.56). The reverse engineering surfaced unexpected internal structure, notably 'Backup Name Mover Heads' that take over the copying role only once the primary Name Mover Heads are ablated, induction heads used for a purpose other than their mainline function, and heads that write reliably in the direction opposite the correct answer.",
+    "finding_quote": "We discover a circuit of 26 attention heads–1.1% of the total number of (head, token position) pairs–that completes the bulk of this task.",
+    "models_systems": "GPT-2 small (OpenAI; decoder-only transformer, 12 layers, 12 attention heads per layer)",
+    "institution": "Redwood Research (Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris), with Jacob Steinhardt (UC Berkeley)",
+    "domain": "Mechanistic interpretability — circuit-level reverse engineering of a natural-language behaviour in a language model",
+    "eval_trackable": "Yes - §4 Gate 1: an empirical model finding; measured causal-intervention results (logit difference, IO probability, knockout ablations) obtained on a specific named model over 100,000 dataset examples.",
+    "action_trackable": "Yes - §4 Gate 2: the model and its developer are named (GPT-2 small, OpenAI), so a response could in principle be directed at a specific artefact.",
+    "tier": "B",
+    "tier_reasoning": "Tier A condition (1) PASSES — empirical model finding. Condition (2) PASSES — GPT-2 small is named, nothing is anonymised. Condition (3) FAILS on two load-bearing exclusions: the result is a neutral/positive scientific demonstration that mechanistic understanding is feasible, with no dangerous threshold crossed, and GPT-2 small is a non-frontier model (2019, 117M parameters) for which no company response is reasonably expected. Gate 1 passes and Gate 2 passes, so the row falls to Tier B rather than C. §4b considered and held not to apply: this is model-internal mechanism, not ordinary factual accuracy, hallucination or general reliability.",
+    "finding_type": "third-party evaluator research paper (arXiv preprint Nov 2022; subsequently ICLR 2023)",
+    "scope": "IN, stratified — third-party evaluator (§1)",
+    "source_url": "https://arxiv.org/abs/2211.00593",
+    "access_type": "Open-weights white-box access: full access to GPT-2 small weights, activations and attention patterns, run locally; interventions via path patching and head knockouts; code released at github.com/redwoodresearch/Easy-Transformer"
+   },
+   {
+    "finding": "The evaluators converted their mechanistic understanding into a working adversarial distribution: knowing the circuit relies on duplicate-token detection to separate subject from indirect object, they built natural sentences in which the indirect object is also duplicated, and GPT-2 small then assigned the wrong name a higher logit than the correct one 23.4% of the time, against 0.7% on the base IOI distribution and 0.4% on a matched control in which the subject rather than the indirect object is repeated — establishing that the failure is caused by the duplication mechanism and not by the extra sentence.",
+    "finding_quote": "We find that this significantly reduces the logit difference and causes the model to predict S over IO 23% of the time (Figure 8).",
+    "models_systems": "GPT-2 small (OpenAI)",
+    "institution": "Redwood Research (Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris), with Jacob Steinhardt (UC Berkeley)",
+    "domain": "Adversarial robustness — interpretability-guided construction of failure-inducing inputs",
+    "eval_trackable": "Yes - §4 Gate 1: an empirical model finding; a measured behavioural failure rate on a named model with a matched control condition.",
+    "action_trackable": "Yes - §4 Gate 2: GPT-2 small (OpenAI) is named.",
+    "tier": "B",
+    "tier_reasoning": "Tier A condition (1) PASSES — measured behavioural result. Condition (2) PASSES — model named. Condition (3) FAILS: GPT-2 small is a non-frontier model (explicit exclusion), the induced failure is on a benign toy grammatical task with no dangerous threshold crossed, and the authors themselves record the limitation that the examples 'could have been found without our circuit with enough effort'. Split from the circuit row per §5: a demonstrated behavioural failure and a mechanism description are not one thing a developer would respond to jointly.",
+    "finding_type": "third-party evaluator research paper (arXiv preprint Nov 2022; subsequently ICLR 2023)",
+    "scope": "IN, stratified — third-party evaluator (§1)",
+    "source_url": "https://arxiv.org/abs/2211.00593",
+    "access_type": "Open-weights white-box access; adversarial dataset constructed by the evaluators and run locally against GPT-2 small"
+   },
+   {
+    "finding": "The report contributes a validation standard for mechanistic-interpretability claims: three quantitative criteria — faithfulness (the circuit performs the task as well as the whole model), completeness (the incompleteness score |F(C\\K)-F(M\\K)| stays small for every knocked-out subset K) and minimality (every node has a subset K under which it materially recovers performance) — and applies them to its own circuit and to a naive baseline. The measured outcome is a documented limitation of the field's usual evidence: a naive circuit scores comparably on faithfulness (0.1) yet is easily shown incomplete, and under greedy optimisation of the incompleteness score both the naive circuit and the paper's own circuit score badly, so faithfulness alone cannot certify a mechanistic explanation.",
+    "finding_quote": "Our circuit shows significant improvements compared to a naïve (but faithful) circuit, but fails to pass the most challenging tests.",
+    "models_systems": "Not model-specific. [Report tested: GPT-2 small is the instrument on which the criteria are demonstrated, not the subject of this row.]",
+    "institution": "Redwood Research (Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris), with Jacob Steinhardt (UC Berkeley)",
+    "domain": "Evaluation methodology — criteria for validating circuit-level explanations",
+    "eval_trackable": "No - §4 Gate 1: this is a methodology/tooling contribution (validation criteria plus a released codebase), not an empirical finding about a model, so the row is Tier C and Action Trackable is left blank.",
+    "action_trackable": "",
+    "tier": "C",
+    "tier_reasoning": "Gate 1 FAILS: §4 states that methodology and framework write-ups are Tier C, and this row is precisely a proposed validation framework and its self-application. Action Trackable is therefore left BLANK per §4 Gate 1. Split from the circuit rows per §5 because the response it invites — adopting a stricter validation standard for interpretability claims — is a different response from anything about GPT-2 small itself.",
+    "finding_type": "third-party evaluator research paper (methodology contribution)",
+    "scope": "IN, stratified — third-party evaluator (§1)",
+    "source_url": "https://arxiv.org/abs/2211.00593",
+    "access_type": "Open-weights white-box access; criteria evaluated by ablation over the evaluators' own circuit and a baseline circuit"
+   }
+  ]
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Measuring Progress on Scalable Oversight for Large Language Models",
+  "url": "https://www.anthropic.com/research/measuring-progress-on-scalable-oversight-for-large-language-models",
+  "date": "2022-11-04",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; §1 company-venue carve-out fails, no external evaluator is named as contributing a section",
+  "reason": "Company venue, so the §1 test applied was 'is an external evaluator NAMED?', not 'is there a finding': the paper (read in full at arXiv:2211.03540, 21 pp) states 'All authors conducted this work while at Anthropic except where noted', and the only non-Anthropic affiliations on the byline are Surge AI (the crowdworker platform that supplied the human participants, thanked as 'our Surge participants') and one independent researcher — a data/recruitment vendor contributing labour, not an external evaluator contributing an evaluation of the model, so the whole document is Anthropic assessing its own 52B assistant.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 76935,
+   "pages": 21
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "City & Financial Global Regulation and Risk Management of AI in Financial Services Summit a Great Success, Proudly Sponsored by Holistic AI",
+  "url": "https://www.holisticai.com/news/city-and-financial-ai-risk-management-in-financial-services-summit",
+  "date": "2022-11-09",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — event announcement; no evaluator-asserted, evidence-backed claim (fails tests 1 and 2)",
+  "reason": "Sponsorship press release about a conference Holistic AI sponsored and whose co-founders chaired panels; the only substance is five 'Key Takeaways' paraphrasing other people's panel opinions (collaboration matters, regulators worry about stifling innovation, the C-Suite should care), with no system assessed and no measured result anywhere in the 3,437-character page.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 3437,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Robust Intelligence, Now SOC 2 Certified, Lists in the AWS Marketplace",
+  "url": "https://www.robustintelligence.com/blog-posts/soc-2-cetification-and-aws-marketplace-listing",
+  "date": "2022-11-14",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — announcement (product listing plus vendor certification); announcements contain no findings",
+  "reason": "Marketing announcement by the Head of Marketing of an AWS Marketplace listing and a SOC 2 Type II certification of Robust Intelligence itself; it describes the company's own product surface (AI Stress Testing, AI Firewall, AI Continuous Testing) and its purchasing route, and assesses no AI system — the SOC 2 certification is a vendor-security attestation about the company, not an evaluation of a model.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 13800,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "The EU AI Act's Risk-Based Approach: High-Risk Systems and What They Mean for Users",
+  "url": "https://www.holisticai.com/papers/the-eu-ai-acts-risk-based-approach-high-risk-systems",
+  "date": "2022-11-22",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — regulatory explainer; no measured result, observed behaviour or documented process fact of the evaluator's own",
+  "reason": "The gated 13-page white paper (fetched in full from the Webflow CDN) is a legal commentary by Osman Gazi Güçlütürk on how the Czech Presidency compromise text classifies high-risk AI systems under Annex II/III and what obligations fall on providers versus users, closing with a page on how Holistic AI can support compliance; it evaluates no AI system and reports no evidence of its own.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 17643,
+   "pages": 13
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "OpenOOD: Benchmarking Generalized Out-Of-Distribution Detection",
+  "url": "https://www.grayswan.ai/research/openood-benchmarking-generalized-out-of-distribution-detection",
+  "date": "2022-12",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins; §2 test 1 — the venue asserts nothing of its own",
+  "reason": "The Gray Swan page is a 753-character research-listing stub that reproduces the abstract and states 'This research is currently only available at its source'; the primary source, read in full (arXiv:2210.07242, NeurIPS 2022 Datasets and Benchmarks Track, 13 pp), is authored entirely by researchers at NTU S-Lab, BUPT, Queen Mary, SenseTime, Peking University, UC Berkeley and UW-Madison with no Gray Swan author, so nothing on this page is asserted by the venue. Recorded for completeness: even screened at the primary, OpenOOD is a unified codebase and comparison of 30+ academic OOD-detection methods on CIFAR/ImageNet whose reported result is the reassuring 'the field has progressed significantly' — no named company model is a subject, so §4 Gate 1 would make it a Tier C methodology/tooling row at most.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 753,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "We Asked ChatGPT to Write an Article About Ethical AI, Here's What it Said",
+  "url": "https://www.holisticai.com/blog/ethical-ai-chat-gpt",
+  "date": "2022-12-12",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — a single unsystematic prompt with editorial commentary is not an evidence-backed measured result",
+  "reason": "Blog stunt: the authors asked ChatGPT once to write a post about ethical AI and commented that the output resembles their own definition and is 'largely indistinguishable from a human's efforts'; there is no protocol, no sample size, no metric and no criterion, and the remainder of the page is Holistic AI's own AI-ethics framing plus a demo call-to-action.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 5074,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Anthropic",
+  "title": "Constitutional AI: Harmlessness from AI Feedback",
+  "url": "https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback",
+  "date": "2022-12-15",
+  "decision": "EXCLUDED - company self-report",
+  "rule_cited": "§1 hard drop — company self-report; §1 company-venue carve-out fails, no external evaluator is named",
+  "reason": "Company venue, so the §1 test applied was 'is an external evaluator NAMED?': the paper (read in full at arXiv:2212.08073, 34 pp) carries a single affiliation, Anthropic, for all 51 authors; the only outside parties mentioned are Surge AI workers who supplied comparison labels and Paul Christiano, Maja Trebacz and Alex Tamkin thanked for discussion and draft comments — none of them contributes an evaluator-authored section, so the entire document is Anthropic training and evaluating its own models.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 118835,
+   "pages": 34
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "What is AI Auditing?",
+  "url": "https://www.holisticai.com/blog/ai-auditing",
+  "date": "2022-12-19",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — explainer describing a proposed process; no measured result or observed behaviour",
+  "reason": "Definitional marketing explainer setting out Holistic AI's four-stage audit process (Triage, Assessment, Mitigation, Assurance) and five assessment verticals, closing with 'Schedule a demo'; the only concrete assertions are unevidenced corporate credentials ('published over 50 papers', 'audited over 100 projects') with no audit result, no system named and no data.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 7048,
+   "pages": null
+  },
+  "findings": []
+ }
+]

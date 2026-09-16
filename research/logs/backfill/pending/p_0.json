@@ -1,0 +1,62 @@
+{
+ "results": [
+  {
+   "url": "https://www.tta.or.kr/eng/selectBbsNttView.do",
+   "title": "[ENG AISI News] Korea-U.S. Demonstrate Close Alignment Between Frameworks for AI Trustworthiness",
+   "decision": "INCLUDED",
+   "exclusion_reason": "",
+   "external_evaluator": "n/a - not a company venue. Publishers/analysts named: Telecommunications Technology Association (TTA) and the U.S. National Institute of Standards and Technology (NIST), with the Ministry of Science and ICT (MSIT). The article also points to the Korea AI Safety Institute (aisi.re.kr) as a distribution site.",
+   "fetch_note": "RESOLVED. Ladder: (1) live GET of the bare parked URL now returns HTTP 200 but a 'Server-Gone / This page is no longer available' stub - the TTA board was retired, and the parked URL carries no query string so it could never resolve to the article; (2) requests-based Wayback calls failed with ConnectionRefused from this environment, so the ladder was re-run through curl; (3) Wayback CDX enumeration of tta.or.kr/eng/selectBbsNttView.do* recovered 20 board items, none matching; (4) recovered the TTA News index (web.archive.org/web/20250219104415id_/https://www.tta.or.kr/eng/selectBbsNttList.do?bbsNo=109&key=159), which lists the item as post No. 389, dated 2024.12.24, and gives the real article key nttNo=13874; (5) fetched https://web.archive.org/web/20250219174121id_/https://www.tta.or.kr/eng/selectBbsNttView.do?key=159&bbsNo=109&nttNo=13874 - 200, zstd-compressed (the August failure was almost certainly the undecoded zstd body, not a block), 54,699 chars of HTML, full English article text extracted. Note: lxml silently yielded 0 chars on this page; html.parser extracted it. Source-text caveat: the page itself renders 'The analysis ed that' and 'has ed the' - a word is missing in TTA's own HTML, so no quote was taken from those two sentences.",
+   "resolved_date": "2024-12-24",
+   "rule_cited": "§2 (governance/process finding), §3 (venue = the org's own publication surface), §4 Tier C",
+   "findings": [
+    {
+     "finding": "A crosswalk analysis run jointly by TTA and NIST from February to December 2024 mapped Korea's 'Guidebook for Development of Trustworthy AI' against the U.S. NIST AI Risk Management Framework and found 63 of the Guidebook's 67 detailed verification items align with the AI RMF.",
+     "finding_quote": "the majority of them are harmonized (63 out of 67 detailed verification items in Korea’s AI Guidebook align with the U.S. AI RMF).",
+     "institution": "Telecommunications Technology Association (TTA) + U.S. National Institute of Standards and Technology (NIST)",
+     "models_systems": "N/A - no AI model or system is the subject; the subject is two AI-trustworthiness frameworks",
+     "domain": "Governance - International-coordination; Governance - Policy/Standards",
+     "access_type": "N/A",
+     "finding_type": "governance",
+     "eval_trackable": "no",
+     "action_trackable": "",
+     "tier": "C",
+     "tier_reasoning": "Not an empirical model finding - it is a documented process/governance result about the harmonisation of two national AI-trustworthiness frameworks, with a measured mapping outcome (63/67). No named model or company is its subject, so no company response is trackable. Eval? = no, Action Trackable blank -> Tier C. The FRONTIER-MODEL RULE is read as a non-frontier-*subject* filter (it drops product ML such as ranking/commerce systems); it does not bar governance/process findings, which §2 admits explicitly and which Tier C exists to hold."
+    }
+   ]
+  },
+  {
+   "url": "https://ai.meta.com/tools/system-cards/multimodal-generative-ai-systems",
+   "title": "System Card: Multimodal generative AI systems",
+   "decision": "EXCLUDED",
+   "exclusion_reason": "EXCLUDED - company self-report",
+   "external_evaluator": "NONE. No external evaluator is named anywhere in the card. A case-insensitive search of the full extracted text for 'evaluat', 'external', 'third party', 'red team', 'audit', 'AISI' and 'NIST' returns zero hits. The document is authored and published by Meta about Meta's own multimodal generative AI systems (Ray-Ban Meta smart glasses).",
+   "fetch_note": "RESOLVED (read in full). Ladder: (1) direct GET of ai.meta.com returns HTTP 400 to automated access, and because 400 is not in the retry set the shared fetch.py ladder never reached Wayback - that is the likely cause of the 2026-08-14 'no extractable text' parking; (2) forced Wayback id_ snapshot 20260721191342 returned 200 but a zstd-compressed body that requests/fetch.py did not decode, producing binary garbage - the second cause; (3) re-fetched via curl with explicit zstd stream decompression: https://web.archive.org/web/20260721191342id_/https://ai.meta.com/tools/system-cards/multimodal-generative-ai-systems/ -> 200, 8,877 chars of clean text, complete card body (How it works / Now, you try it / Usage tips / Data usage / What to be aware of).",
+   "resolved_date": "2023-12-12",
+   "rule_cited": "§1 company self-report hard drop; carve-out not triggered (no named external evaluator)",
+   "findings": []
+  },
+  {
+   "url": "https://ai.meta.com/tools/system-cards/ai-systems-that-generate-text",
+   "title": "System Card: AI systems that generate text",
+   "decision": "EXCLUDED",
+   "exclusion_reason": "EXCLUDED - company self-report",
+   "external_evaluator": "NONE. No external evaluator is named anywhere in the card. A case-insensitive search of the full extracted text for 'evaluat', 'external', 'third party', 'red team', 'audit', 'AISI' and 'NIST' returns zero hits. Meta publishes it about its own LLM-based text-generation systems.",
+   "fetch_note": "RESOLVED (read in full). Same two failure causes as the other Meta cards: ai.meta.com returns HTTP 400 to automated GETs (400 is outside fetch.py's retry set, so the Wayback rung was never tried), and the Wayback id_ body is zstd-compressed and was being handed back undecoded. Re-fetched via curl + zstd stream decompression: https://web.archive.org/web/20260726173454id_/https://ai.meta.com/tools/system-cards/ai-systems-that-generate-text/ -> 200, 7,468 chars of clean text, complete card body. Cross-checked against the earliest CDX snapshot (20231007110352), which is the same document.",
+   "resolved_date": "2023-09-27",
+   "rule_cited": "§1 company self-report hard drop; carve-out not triggered (no named external evaluator)",
+   "findings": []
+  },
+  {
+   "url": "https://ai.meta.com/tools/system-cards/ai-systems-that-generate-images",
+   "title": "System Card: AI systems that generate images",
+   "decision": "EXCLUDED",
+   "exclusion_reason": "EXCLUDED - company self-report",
+   "external_evaluator": "NONE. No external evaluator is named anywhere in the card. A case-insensitive search of the full extracted text for 'evaluat', 'external', 'third party', 'red team', 'audit', 'AISI' and 'NIST' returns zero hits. Meta publishes it about its own image-generation systems.",
+   "fetch_note": "RESOLVED (read in full). Same two failure causes: ai.meta.com HTTP 400 to automated GETs (outside fetch.py's retry set) plus an undecoded zstd Wayback body. Re-fetched via curl + zstd stream decompression: https://web.archive.org/web/20260814014156id_/https://ai.meta.com/tools/system-cards/ai-systems-that-generate-images/ -> 200, 4,517 chars of clean text, complete card body.",
+   "resolved_date": "2023-09-27",
+   "rule_cited": "§1 company self-report hard drop; carve-out not triggered (no named external evaluator)",
+   "findings": []
+  }
+ ]
+}

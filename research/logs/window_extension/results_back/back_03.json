@@ -1,0 +1,242 @@
+[
+ {
+  "venue": "Gray Swan AI",
+  "title": "AugMix: A Simple Data Processing Method to Improve Robustness and Uncertainty",
+  "url": "https://www.grayswan.ai/research/augmix-a-simple-data-processing-method-to-improve-robustness-and-uncertainty",
+  "date": "2020-02",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins (also §2 test 1: the page asserts nothing of its own)",
+  "reason": "Gray Swan research-index stub: body reads \"This research is currently only available at its source\" and the only substantive text is the source paper's abstract in the page metadata, so the primary, fullest source is the external academic paper, not this page. Underlying work is a Feb-2020 academic image-augmentation methods paper (Hendrycks, Mu, Cubuk, Zoph, Gilmer, Lakshminarayanan) on CIFAR/ImageNet classifiers, pre-dating Gray Swan and evaluating no named deployed model.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 670,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "Pretrained Transformers Improve Out-of-Distribution Robustness",
+  "url": "https://www.grayswan.ai/research/pretrained-transformers-improve-out-of-distribution-robustness",
+  "date": "2020-04",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins (also §2 test 1: the page asserts nothing of its own)",
+  "reason": "Gray Swan research-index stub: body reads \"This research is currently only available at its source\" and the only substantive text is the source paper's abstract in the page metadata, so the primary, fullest source is the external academic paper, not this page. Underlying work is an April-2020 academic NLP OOD-robustness benchmark paper (Hendrycks, Liu, Wallace, Dziedzic, Krishnan, Song) comparing model architectures, not an evaluation of a named deployed system.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 630,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "The Many Faces of Robustness: A Critical Analysis of Out-of-Distribution Generalization",
+  "url": "https://www.grayswan.ai/research/the-many-faces-of-robustness-a-critical-analysis-of-out-of-distribution-generalization",
+  "date": "2020-06",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins (also §2 test 1: the page asserts nothing of its own)",
+  "reason": "Gray Swan research-index stub: body reads \"This research is currently only available at its source\" and the only substantive text is the source paper's abstract in the page metadata, so the primary, fullest source is the external academic paper, not this page. Underlying work is a June-2020 academic paper introducing four image distribution-shift datasets and re-testing prior robustness methods — a benchmark/methodology study with no named company system as subject.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 773,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Robust Intelligence: Secure Deployment of AI",
+  "url": "https://www.robustintelligence.com/articles/robust-intelligence-secure-deployment-of-ai",
+  "date": "2020-10-21",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — announcements and plans contain no findings (fails test 2: no measured result or observed behaviour)",
+  "reason": "Company launch/funding announcement (out of stealth with $14M led by Sequoia) plus a market-narrative essay on why AI is vulnerable; no evaluation was run and no evidence-backed claim about any system is asserted.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 6982,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Four Common Misconceptions about AI Security",
+  "url": "https://www.robustintelligence.com/articles/four-common-misconceptions-about-ai-security",
+  "date": "2020-10-28",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinion/explainer, not evidence-backed; §2 test 3 — nothing independently codeable",
+  "reason": "Thought-leadership post by Kojin Oshiba correcting four conceptual misconceptions about AI security using hypothetical illustrations (panda/gibbon, device_type=iPhone_12, yen-vs-USD price inputs); no measurement, no system evaluated.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 10189,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "Unearthing Critical Security Flaws in Check Processing Systems",
+  "url": "https://www.robustintelligence.com/articles/unearthing-critical-security-flaws-in-check-processing-systems",
+  "date": "2020-11-10",
+  "decision": "INCLUDED",
+  "rule_cited": "§1 stratified (third-party evaluator) + §2 all three tests pass — evaluator-asserted, evidence-backed, independently codeable empirical model finding",
+  "reason": "Robust Intelligence reports its own black-box adversarial attack (SCAR) succeeding against deployed commercial check-processing recognition models, with a concrete demonstrated misread ($401 read as $701); vendors are anonymised, which caps it at Tier B under §4.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 9346,
+   "pages": null
+  },
+  "findings": [
+   {
+    "finding": "Robust Intelligence's SCAR black-box attack flipped a small number of pixels in binarized check images and caused deployed commercial check-processing systems to misread the amount, simultaneously fooling the paired CAR and LAR amount-recognition models into the same wrong amount (a $401 check read as $701).",
+    "finding_quote": "For example, flipping the pixels shown in red below caused an industry-standard check processing system to recognize a $701 transaction from a check made out for just $401",
+    "models_systems": "Commercial automated check-processing systems (paired CAR and LAR amount-recognition models) licensed from unnamed \"industry-leading providers\" serving major US banks",
+    "institution": "Robust Intelligence",
+    "domain": "Adversarial robustness / AI security (financial fraud)",
+    "eval_trackable": "Yes",
+    "action_trackable": "No",
+    "tier": "B",
+    "tier_reasoning": "Gate 1 passes — this is an empirical model finding: a measured attack success against real deployed models, not a framework or governance write-up. Gate 2 fails — the targets are identified only as \"software licensed from industry-leading providers\", so no company or model is named and no specific company response could reasonably be expected; per §4 that sends it to TIER B. Against the three Tier A conditions: (1) PASSES (empirical model finding); (2) FAILS — anonymised targets explicitly fail this condition; (3) would pass on concerningness (a security bypass with direct financial-fraud consequence, not a reassuring null or a benchmark score) but is moot once (2) fails.",
+    "finding_type": "third-party adversarial/red-team evaluation (vendor blog reporting the evaluator's own research)",
+    "scope": "IN — §1 stratified: third-party evaluator",
+    "source_url": "https://www.robustintelligence.com/articles/unearthing-critical-security-flaws-in-check-processing-systems",
+    "access_type": "Black-box (report states SCAR \"assumes no knowledge about the internal workings of the AI system it attacks; the only information it receives from the model is the final prediction\")"
+   }
+  ]
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "The Interrelation Between Data and AI Ethics in The Context of Impact Assessments",
+  "url": "https://www.holisticai.com/papers/interrelation-data-ai-ethics-impact-assessments",
+  "date": "2020-11-22",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — conceptual/normative argument, not a measured result, observed behaviour or documented process fact",
+  "reason": "Read the full linked PDF (AI and Ethics 1:219-225, Kazim & Koshiyama, 7pp): a philosophical mapping of three possible relationships between data-protection and AI impact assessments and of privacy-vs-fairness value trade-offs; no system is tested.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 32641,
+   "pages": 7
+  },
+  "findings": []
+ },
+ {
+  "venue": "Gray Swan AI",
+  "title": "MMLU: Measuring Massive Multitask Language Understanding",
+  "url": "https://www.grayswan.ai/research/mmlu-measuring-massive-multitask-language-understanding",
+  "date": "2021-01",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins (also §2 test 1: the page asserts nothing of its own)",
+  "reason": "Gray Swan research-index stub: body reads \"This research is currently only available at its source\" and the only substantive text is the source paper's abstract in the page metadata, so the primary, fullest source is the external academic paper, not this page. The metadata abstract's GPT-3 result would in any case be a benchmark-score finding with named models as the INSTRUMENT of a benchmark-construction study — a §4 condition-(3) exclusion — and must be coded, if at all, against the primary paper.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 634,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Regulating the Robots: NYC Mandates Bias Audits for AI-Driven Employment Decisions",
+  "url": "https://www.holisticai.com/papers/regulating-robots-nyc-mandates-bias-audits-ai-driven-employment-decisions",
+  "date": "2021-01-11",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — legislative exposition and recommendations; recommendations and forward-looking plans are NOT findings",
+  "reason": "Read the full linked PDF (14pp, Hilliard, Kazim, Koshiyama et al.): a section-by-section commentary on NYC Int 1894-2020 whose stated takeaways are the need for examples, clarification of compliance and standardisation; the bias cases it cites (Amazon, Facebook/LinkedIn) are other people's work, failing §2 test 1.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 46321,
+   "pages": 14
+  },
+  "findings": []
+ },
+ {
+  "venue": "Cisco (Robust Intelligence / Foundation AI)",
+  "title": "RI Reading Group",
+  "url": "https://www.robustintelligence.com/articles/ri-reading-group",
+  "date": "2021-02-11",
+  "decision": "EXCLUDED - no findings",
+  "rule_cited": "§2 test 1 — a summary of someone else's work is never a finding",
+  "reason": "Monthly literature-review post summarising four external arXiv adversarial-ML papers (Willmott et al.; Wu et al.; Shi et al.; Georgiev et al.); every empirical claim is attributed to those authors, and Robust Intelligence asserts no result of its own.",
+  "fetch": {
+   "via": "wayback",
+   "status": 200,
+   "chars": 14915,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "Holistic AI",
+  "title": "Towards Algorithm Auditing in Financial Services",
+  "url": "https://www.holisticai.com/papers/algorithm-auditing-financial-services",
+  "date": "2021-03-01",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opinion and forward-looking prediction, not evidence-backed",
+  "reason": "Read the full linked PDF (Butterworths JIBFL, March 2021, 2pp): a practitioner commentary predicting the rise of an algorithm-audit industry and listing risk categories; the only concrete number (Knight Capital's ~$450m) is a cited third-party incident, failing §2 test 1.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 8342,
+   "pages": 2
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Modeling Agent Behaviors for Policy Analysis Via Reinforcement Learning",
+  "url": "https://www.rand.org/pubs/external_publications/EP68548.html",
+  "date": "2021-03-09",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 — the unit of analysis is an evaluator's claim about an AI system or evaluation method; this study evaluates neither",
+  "reason": "IEEE ICMLA paper using reinforcement learning as a behavioural model for agents inside agent-based policy simulations (Minority Game, influenza transmission); its empirical claim is about simulation realism, not about any AI system's capability or safety, and no company or model is involved.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 2613,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Artificial Intelligence-based Capabilities for the European Border and Coast Guard: Final Report",
+  "url": "https://www.rand.org/pubs/external_publications/EP68583.html",
+  "date": "2021-03-30",
+  "decision": "EXCLUDED - not an evaluation",
+  "rule_cited": "§2 test 2 — opportunity mapping, requirements and recommendations are forward-looking, not evidence-backed findings",
+  "reason": "Fetched the RAND record and read the full 167-page Frontex final report (Frontex_AI_Research_Study_2020_final_report.pdf, 200 direct, 362,638 chars): it characterises the AI capability landscape for border security, maps current vs desired capability levels across nine technology areas and sets out adoption pathways — no AI system is tested and no model or developer is evaluated.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1884,
+   "pages": null
+  },
+  "findings": []
+ },
+ {
+  "venue": "RAND Corporation",
+  "title": "Artificial Intelligence-based Capabilities for the European Border and Coast Guard: Executive Summary",
+  "url": "https://www.rand.org/pubs/external_publications/EP68584.html",
+  "date": "2021-03-30",
+  "decision": "EXCLUDED - duplicate/secondary",
+  "rule_cited": "§3 dedup — the primary, earliest, fullest source wins; the 7-page summary carries nothing absent from the 167-page final report",
+  "reason": "Same authors, same date, same Frontex study as EP-68583 (7pp vs 167pp) and identical abstract; it would fail §2 test 2 on the same grounds as the final report in any case.",
+  "fetch": {
+   "via": "direct",
+   "status": 200,
+   "chars": 1887,
+   "pages": null
+  },
+  "findings": []
+ }
+]

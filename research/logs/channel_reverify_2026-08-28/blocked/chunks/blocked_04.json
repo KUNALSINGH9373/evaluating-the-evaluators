@@ -1,0 +1,508 @@
+[
+ {
+  "Finding ID": "PALISADE-2026-05-AUT2-s2",
+  "Institution": "Palisade Research",
+  "Report Title": "Language Models Can Autonomously Hack and Self-Replicate",
+  "Publication Date": "2026-05-07",
+  "Models / Systems": "GPT-5.4",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://palisaderesearch.org/blog/self-replication",
+  "Finding": "When tasked with replicating Qwen model weights, GPT-5.4 succeeded 33% of the time.",
+  "Finding Quote": "33% with GPT-5.4.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Checked 2026-08-02: OpenAI newsroom/blog site-search (no Palisade/self-replication match; only unrelated pre-existing ARA-eval pages), OpenAI Preparedness Framework page (predates finding), deploymentsafety.openai.com and openai.com/safety/preparedness (403 Forbidden), GPT-5.4 system card (not locatable), Congress.gov/Federal Register/UK AISI policy search (unrelated agentic-AI hearing found, no Palisade-specific action). WebSearch budget exhausted after few queries.  [CHANNEL A BATTERY RE-RUN AND COMPLETED 2026-08-16] The earlier attempt recorded blocked sources (HTTP 403 / exhausted quota), so the 'None' was not fully earned. Re-run via search rather than direct fetch, which is what the 403s were. Sources: (1) OpenAI newsroom/blog; (2) subsequent model/system cards for the affected family; (3) OpenAI safety or deployment hub; (4) official OpenAI accounts; (5) open web on 'OpenAI response' + 'Palisade Research' + the finding's specific claim. No admissible company primary document referencing this finding was located. Battery exhausted -> Action Level = None stands, now documented.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) OpenAI newsroom/blog \u2014 openai.com/sitemap.xml fully enumerated across publication, release, research, safety, security, global-affairs, milestone, product, engineering and disrupting-malicious-uses (746 URLs); 331 safety/security/global-affairs pages downloaded (496MB) and grepped",
+     "url": "https://openai.com/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "Zero occurrences of 'Palisade', 'PropensityBench', 'Scale AI' or 'self-replicat' across all 331 pages. The only 'o4-mini' hits are the original o3/o4-mini system cards and addenda, which predate these findings."
+    },
+    {
+     "source": "(2) All OpenAI system cards on the Deployment Safety Hub \u2014 sitemap enumerated (894 URLs across 24 model families); all 351 pages for gpt-5-5, gpt-5-5-instant, gpt-5-6-preview, gpt-5-6, gpt-5-6-august-update, gpt-rosalind-5-5, gpt-live and sora-2 downloaded (225MB) and grepped",
+     "url": "https://deploymentsafety.openai.com/sitemap.xml",
+     "checked_date": "2026-08-28",
+     "result": "Zero occurrences of 'Palisade', 'PropensityBench', 'Scale AI', 'self-replicat' or 'o4-mini' in any card, including every card published after the finding."
+    },
+    {
+     "source": "(3) OpenAI safety / preparedness / deployment-safety hub pages",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Hub index and per-model safeguards, preparedness and trust-based-access pages checked; no reference."
+    },
+    {
+     "source": "(4) Official OpenAI announcements \u2014 global-affairs and index posts on frontier risk, preparedness and malicious-use disruption",
+     "url": "https://openai.com/global-affairs/our-approach-to-frontier-risk/",
+     "checked_date": "2026-08-28",
+     "result": "No announcement referencing the finding."
+    },
+    {
+     "source": "(5) Broad search to locate primary sources \u2014 Google News RSS '\"Palisade Research\" self-replication OpenAI response'",
+     "url": "https://news.google.com/rss/search?q=%22Palisade+Research%22+self-replication",
+     "checked_date": "2026-08-28",
+     "result": "Independent coverage only (Guardian, Euronews, Futurism, the-decoder, Live Science); no OpenAI primary source."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "This is the finding whose prior battery was explicitly compromised by blocked sources (403 on deploymentsafety.openai.com and openai.com/safety/preparedness, an unlocatable GPT-5.4 card, and an exhausted search budget). All of those gaps are now closed. The Deployment Safety Hub is reachable and its sitemap enumerates 894 URLs across 24 model families; I downloaded all 351 pages for GPT-5.5 and every later family and grepped them, plus 331 OpenAI safety/security/global-affairs pages. Zero occurrences of 'Palisade' or 'self-replicat' anywhere. No OpenAI primary document references Palisade's self-replication result for GPT-5.4. Battery exhausted on readable sources -> None / No response located."
+  }
+ },
+ {
+  "Finding ID": "FARAI-2026-05-JAI2",
+  "Institution": "FAR.AI",
+  "Report Title": "Security Stress Test: Exposing the Brittleness of DeepSeek-V4-Pro's Safeguards",
+  "Publication Date": "2026-05-11",
+  "Models / Systems": "DeepSeek-V4-Pro",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.far.ai/blog/security-stress-test-deepseek-v4-pros-safeguards",
+  "Finding": "A publicly available jailbreak originally created for DeepSeek-V3.2 and shared on social media worked on DeepSeek-V4-Pro without a single modification, achieving 100% success across domains, which FAR.AI read as evidence that a publicly known vulnerability was left unpatched in the newer model.",
+  "Finding Quote": "The fact that this older bypass transferred to DeepSeek-V4-Pro without a single modification indicates that updates to the model's internal safeguards, if any, failed to address this publicly known vulnerability.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched for a DeepSeek response to FAR.AI's R1 red-teaming and the DeepSeek-V4-Pro stress test. No DeepSeek primary source located; DeepSeek publishes no English-language safety-response venue. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) DeepSeek news/blog venues",
+     "url": "https://www.deepseek.com/en/news",
+     "checked_date": "2026-08-28",
+     "result": "Opened. Only release announcements (most recent listed: DeepSeek-V4 Preview, 2026-04-24). Nothing on safety, safeguards, jailbreaks, red-teaming or external evaluators."
+    },
+    {
+     "source": "(1b) DeepSeek API-docs news channel, including the latest item (2026-08-21, DeepSeek-V4-Flash-Vision-Exp release)",
+     "url": "https://api-docs.deepseek.com/news/news260821",
+     "checked_date": "2026-08-28",
+     "result": "Opened. Release/feature content only; no reference to FAR.AI, safety, safeguards or a security patch."
+    },
+    {
+     "source": "(2) Model cards for the evaluated model and subsequent models in the family: DeepSeek-V4-Pro, DeepSeek-V4-Pro-0813 (updated ~2026-08-13), V4-Pro-DSpark, V4-Flash-0731",
+     "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+     "checked_date": "2026-08-28",
+     "result": "Opened. Card covers architecture, chat template, deployment and benchmarks under MIT licence. No safety section, no safeguards/jailbreak-robustness discussion, no reference to a previously known vulnerability or to FAR.AI. The post-finding 0813 refresh therefore does not qualify."
+    },
+    {
+     "source": "(3) DeepSeek safety / deployment / transparency pages",
+     "url": "https://www.deepseek.com/en/index.html",
+     "checked_date": "2026-08-28",
+     "result": "No safety, deployment-safety or transparency venue exists on DeepSeek's English-language site; recorded as absent rather than negative."
+    },
+    {
+     "source": "(4) Official DeepSeek accounts/repositories",
+     "url": "https://github.com/deepseek-ai",
+     "checked_date": "2026-08-28",
+     "result": "Organisation index reviewed via search result and HF org page; no advisory, changelog entry or statement addressing the transferred DeepSeek-V3.2 jailbreak."
+    },
+    {
+     "source": "(5) Broader web search combining company + evaluator + model + topic",
+     "url": "https://www.bing.com/search?q=%22DeepSeek-V4-Pro%22+FAR.AI+response",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch quota exhausted (200/200); Bing via WebFetch substituted. Two query variants returned only DeepSeek property pages and Wikipedia - no company primary source responding to the finding."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run 2026-08-28 against live sources. The one materially new fact since the original 2026-08-15 battery is that DeepSeek shipped DeepSeek-V4-Pro-0813 after the finding; its model card was opened and contains no safety/safeguards section and no reference to the publicly known bypass, so it is not a documented response. FAR.AI's report itself was re-fetched and the finding quote verified word-for-word. No admissible DeepSeek primary document located -> Action Level = None, Attribution = No response located."
+  }
+ },
+ {
+  "Finding ID": "UKAISI-2026-05-CYB2",
+  "Institution": "UK AISI",
+  "Report Title": "How Fast Is Autonomous AI Cyber Capability Advancing?",
+  "Publication Date": "2026-05-13",
+  "Models / Systems": "Claude Mythos Preview",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+  "Finding": "Claude Mythos Preview completed both the TLO and Cooling Tower benchmark challenges, making it the first model ever to solve the Cooling Tower task -- a previously unsolved evaluation milestone.",
+  "Finding Quote": "the newer Mythos Preview checkpoint completed both our cyber ranges, solving the range \"The Last Ones\" in 6 of 10 attempts and the previously unsolved \"Cooling Tower\" in 3 of 10 attempts. This was the first time that a model completed the second of our two cyber ranges.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 (confirmatory sweep behind an existing 'None'): (1) Anthropic newsroom/blog -- no post on UK AISI's autonomous cyber capability progression work. (2) Next model/system card(s) for the family after the finding -- Claude Mythos 5 / Fable 5 (2026-06-09), Sonnet 5 (2026-06-30) and Opus 5 (2026-07-24) cards checked in full text -- no reference to the TLO / Cooling Tower result. (3) Anthropic safety/deployment hub -- safeguards/RSP pages carry no reference. (4) Official Anthropic accounts -- no statement located. (5) Open web search on 'Anthropic response' + evaluator + finding topic -- no company primary source. Stop condition: battery exhausted, no admissible company primary document -> Action Level = None.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+    },
+    {
+     "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+    },
+    {
+     "source": "(2b) Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), section 3.2.5 'External capability testing from the UK AISI'",
+     "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "HIT. Anthropic publishes UK AISI's cyber-range conclusions and restates this finding's result: Mythos Preview solved 'The Last Ones' and is the only model to have completed 'Cooling Tower' (3/10). Downloaded via curl (26.9MB, over WebFetch's size limit) and read with pdftotext."
+    },
+    {
+     "source": "(2c) Claude Opus 5 System Card (2026-07-24), section 3.3.6 'Testing from the UK AI Security Institute (UK AISI)'",
+     "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "HIT (second occurrence). Repeats that 'No model apart from Mythos Preview, which succeeded on 3/10 attempts, has completed this range', again inside a UK AISI-credited section."
+    },
+    {
+     "source": "(2d) Claude Mythos Preview System Card (2026-04-07)",
+     "url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Checked and searched. Predates the finding (2026-05-13) and this is a post-deployment finding, so it is inadmissible regardless of content."
+    },
+    {
+     "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+     "url": "https://anthropic.com/aug-2026-risk-report",
+     "checked_date": "2026-08-28",
+     "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+    },
+    {
+     "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+     "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+     "checked_date": "2026-08-28",
+     "result": "All four opened and read."
+    },
+    {
+     "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+     "url": "https://www.bing.com/search",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No further Anthropic primary source located."
+    }
+   ],
+   "evidence_url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+   "verbatim": "No model apart from Mythos Preview, which succeeded on 3/10 attempts, has completed this range.",
+   "response_date": "2026-06-09",
+   "reasoning": "This is the late-appearing response this pass exists to catch. Twenty-seven days after UK AISI published the finding, Anthropic's own Claude Fable 5 & Claude Mythos 5 System Card (2026-06-09), in section 3.2.5 headed 'External capability testing from the UK AISI', restates the finding's exact result - Mythos Preview matched on 'The Last Ones' (6/10) and remains the only model to have completed 'Cooling Tower' (3/10), matching UK AISI's blog figures precisely. The Claude Opus 5 System Card (2026-07-24) carries the same statement. Both are Anthropic primary documents, both post-date the finding, both credit UK AISI by name -> admissible and explicitly attributed. Neither document specifies any mitigation, safeguard, access restriction or deployment decision tied to this result: the Fable 5 cyber classifiers described in sections 1.5 and 3.3 are motivated generically and are not connected to the Mythos Preview cyber-range result. Problem referenced, no action specified -> Acknowledged."
+  }
+ },
+ {
+  "Finding ID": "UKAISI-2026-05-CYB3",
+  "Institution": "UK AISI",
+  "Report Title": "How Fast Is Autonomous AI Cyber Capability Advancing?",
+  "Publication Date": "2026-05-13",
+  "Models / Systems": "GPT-5.5",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+  "Finding": "GPT-5.5 substantially exceeded the previous autonomous-cyber-capability doubling-rate trend: it achieved 100% success on five of six long-duration cyber tasks (8+ hours) within the 2.5M-token budget, solved the sixth long task on every attempt once the token cap was removed, and completed the 'The Last Ones' cyber range on 3 of 10 attempts.",
+  "Finding Quote": "Claude Mythos Preview and GPT-5.5 have since significantly outperformed this trend; with a 2.5M token cap, GPT 5.5 achieves a 100% success rate on five of six tasks estimated over 8 hours; it solves the sixth on every attempt when the cap is removed; GPT-5.5 solved 'The Last Ones' on 3 of 10 attempts.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery 2026-08-16 \u2014 COMPLETED. Search terms: 'OpenAI response', 'UK AISI', 'How Fast Is Autonomous AI Cyber Capability Advancing', GPT-5.5 doubling rate. (1) OpenAI newsroom/blog: no post responding to the aggregate trend finding. (2) Model/system cards: the GPT-5.5 deployment-safety cybersecurity page (2026-04-23) predates this 2026-05-13 aggregate report and was delinked under the \u00a78 pre-date rule \u2014 an aggregate trend report cannot be the subject of a coordinated pre-deployment disclosure; no later card revisits the doubling-rate finding. (3) deploymentsafety.openai.com: no further primary source after the finding date. (4) Official OpenAI accounts: none. (5) Open web: coverage only, no company primary source. Battery exhausted -> Action Level = None.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) OpenAI newsroom index",
+     "url": "https://openai.com/news/",
+     "checked_date": "2026-08-28",
+     "result": "BLOCKED: HTTP 403 to WebFetch and to curl with a browser UA (Cloudflare JS interstitial). Substituted the official OpenAI news RSS feed (below) to enumerate the newsroom."
+    },
+    {
+     "source": "(1b) OpenAI news RSS feed (substitute for the blocked index) - every item from 2026-05-01 to 2026-08-28 enumerated with titles, dates and links",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "Opened (1157 items). ~200 items in window reviewed by title + OpenAI's own description text. No item names this evaluator or finding."
+    },
+    {
+     "source": "(2) Relevant + subsequent system cards: GPT-5.5 (2026-04-23), GPT-5.5 Instant (2026-05-05), GPT-Rosalind-5.5 (2026-06-03), GPT-5.6 Preview (2026-06-26), GPT-Live (2026-07-08), GPT-5.6 (2026-07-09), GPT-5.6 August Updates (2026-08-06, changelog 2026-08-19)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Hub index opened; GPT-5.5 and GPT-5.6 cards full-text searched locally; Rosalind-5.5 and the August update page opened and queried directly."
+    },
+    {
+     "source": "(3) OpenAI safety / deployment-safety pages",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Deployment Safety Hub opened and enumerated. https://openai.com/safety/ returned HTTP 403 and could not be opened."
+    },
+    {
+     "source": "(4) Official OpenAI announcements/accounts",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "Announcement titles and OpenAI's own descriptions reviewed across the window; individual openai.com/index/* pages return HTTP 403 to WebFetch and curl, so body text of those posts could not be read - recorded as a limitation."
+    },
+    {
+     "source": "(5) Broader web search, used only to locate company primary sources",
+     "url": "https://www.bing.com/search",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch quota exhausted (200/200) for this session; Bing via WebFetch used as substitute. No OpenAI primary source responding to the AISI autonomous-cyber blog surfaced."
+    },
+    {
+     "source": "(2f) GPT-5.6 System Card (2026-07-09), section 9.1.2.6 'External Evaluations for Cyber Capabilities - UK AISI'",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED - not a match. Reports a fresh UK AISI pre-deployment evaluation of GPT-5.6 Sol with GPT-5.5 as baseline (CTF expert tasks 95.0% vs 85.0%; 'The Last Ones' 7/10 vs 2/10). The GPT-5.5 baseline of 2/10 contradicts the finding's 3/10, confirming a separate measurement rather than a restatement of this finding. No mention of the six 8h+ long-duration tasks, the 2.5M-token budget or the doubling-rate claim."
+    },
+    {
+     "source": "(2g) GPT-5.5 System Card (2026-04-23), section 'External Evaluations for Cyber Capabilities - UK AISI'",
+     "url": "https://deploymentsafety.openai.com/gpt-5-5",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED - inadmissible on timing. Predates the 2026-05-13 finding and reports a different result ('solved one of UK AISI's cyber ranges end-to-end in 1/10 attempts'). GPT-5.5 was already treated as High capability in Cybersecurity here, i.e. standing policy, which the rulebook excludes."
+    },
+    {
+     "source": "(4b) Post-finding OpenAI cyber announcements: 'Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber' (2026-05-07), 'Third-party cyber evaluations involving OpenAI models' (2026-08-04), 'Responding to the next frontier of critical cyber capabilities' (2026-08-07), 'Putting frontier cyber models in more trusted hands' (2026-08-10), 'Pacing model development in an era of cyber-critical capabilities' (2026-08-18)",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "Enumerated with OpenAI's own descriptions. The 2026-05-07 Trusted Access post predates the finding. The August posts concern the Astra evaluations, the Hugging Face third-party-evaluation incident and Daybreak partner access - none is described as responding to UK AISI's autonomous-cyber report. Body text unreadable (403)."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run. No OpenAI primary document addresses this finding's specific results (100% on five of six 8h+ tasks within the 2.5M-token budget, the sixth solved on every attempt with the cap removed, 'The Last Ones' 3/10, and the exceedance of the doubling-rate trend). The GPT-5.6 card's UK AISI section is a new evaluation of a different model whose GPT-5.5 baseline figures do not match the finding, and OpenAI's High-capability cyber designation for GPT-5.5 predates the finding as standing policy. No admissible response -> None."
+  }
+ },
+ {
+  "Finding ID": "UKAISI-2026-05-CYB4",
+  "Institution": "UK AISI",
+  "Report Title": "How Fast Is Autonomous AI Cyber Capability Advancing?",
+  "Publication Date": "2026-05-13",
+  "Models / Systems": "Claude Mythos Preview",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+  "Finding": "Claude Mythos Preview achieved 100% success rates on all six long-duration cyber tasks (8+ hours) within the 2.5M-token budget, in addition to solving the CTF ranges.",
+  "Finding Quote": "Mythos Preview completes all six long tasks 100% of the time, with the 2.5M token cap.; the newer Mythos Preview checkpoint completed both our cyber ranges, solving the range \"The Last Ones\" in 6 of 10 attempts and the previously unsolved \"Cooling Tower\" in 3 of 10 attempts.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Neg-lag sweep 2026-07-15: claimed company response invalid (Mythos restriction (2026-04-07) predates finding (2026-05-13) by ~5 weeks; temporally impossible as a response.). No company primary-source response attributable to this finding found as of 2026-07-15.",
+  "Scope": "government-AISI",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+    },
+    {
+     "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+    },
+    {
+     "source": "(2b) Targeted full-text search of the Fable 5 & Mythos 5, Opus 5, Opus 4.8, Mythos Preview and August 2026 Risk Report corpora for the long-duration-task result",
+     "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "MISS. Searched for '2.5M', '2.5 million', 'long task', 'long-duration', '8 hours', 'eight hours' and 'doubling'. Anthropic's UK AISI-credited cyber sections report the three cyber ranges and 'narrow'/'expert-level' cyber tasks only. The six 8h+ long-duration tasks, the 2.5M-token cap and the 100% completion result appear nowhere."
+    },
+    {
+     "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+     "url": "https://anthropic.com/aug-2026-risk-report",
+     "checked_date": "2026-08-28",
+     "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+    },
+    {
+     "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+     "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+     "checked_date": "2026-08-28",
+     "result": "All four opened and read."
+    },
+    {
+     "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+     "url": "https://www.bing.com/search",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No Anthropic primary source referencing the long-duration-task result surfaced."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run. Note the deliberate split from UKAISI-2026-05-CYB2: Anthropic's later cards do restate the Cooling Tower result, but they say nothing at all about the six long-duration (8h+) tasks or Mythos Preview's 100% completion of them within the 2.5M-token budget, which is the substance of THIS finding. Coding is per finding, so the cross-reference that lifts CYB2 to Acknowledged does not carry over. No admissible response -> None."
+  }
+ },
+ {
+  "Finding ID": "SCALEAI-2026-05ad-JAI1",
+  "Institution": "Scale AI",
+  "Report Title": "ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents",
+  "Publication Date": "2026-05-17",
+  "Models / Systems": "o3",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://labs.scale.com/papers/aspi",
+  "Finding": "On ASPI's 728 matched task-attack scenarios, o3's prompt-injection attack success rate rose from 1.8% when acting on a fully specified instruction to 34.0% when the agent first paused to ask the user a clarifying question.",
+  "Finding Quote": "We evaluate ten frontier LLMs and find that clarification-seeking consistently and substantially amplifies vulnerability. For instance, attack success rises from 1.8% to 34.0% for o3 and from 2.2% to 35.7% for Gemini-3-Flash.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched openai.com for Scale AI, SEAL, PropensityBench and browser-agent jailbreaks. Located 'Continuously hardening ChatGPT Atlas against prompt injection', which concerns OpenAI's own browser product and does not reference Scale AI's finding -> not causally attributable. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) OpenAI newsroom index",
+     "url": "https://openai.com/news/",
+     "checked_date": "2026-08-28",
+     "result": "BLOCKED: HTTP 403 to WebFetch and to curl with a browser UA (Cloudflare JS interstitial). Substituted the official OpenAI news RSS feed (below) to enumerate the newsroom."
+    },
+    {
+     "source": "(1b) OpenAI news RSS feed (substitute for the blocked index) - every item from 2026-05-01 to 2026-08-28 enumerated with titles, dates and links",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "Opened (1157 items). ~200 items in window reviewed by title + OpenAI's own description text. No item names this evaluator or finding."
+    },
+    {
+     "source": "(2) Relevant + subsequent system cards: GPT-5.5 (2026-04-23), GPT-5.5 Instant (2026-05-05), GPT-Rosalind-5.5 (2026-06-03), GPT-5.6 Preview (2026-06-26), GPT-Live (2026-07-08), GPT-5.6 (2026-07-09), GPT-5.6 August Updates (2026-08-06, changelog 2026-08-19)",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Hub index opened; GPT-5.5 and GPT-5.6 cards full-text searched locally; Rosalind-5.5 and the August update page opened and queried directly."
+    },
+    {
+     "source": "(3) OpenAI safety / deployment-safety pages",
+     "url": "https://deploymentsafety.openai.com/",
+     "checked_date": "2026-08-28",
+     "result": "Deployment Safety Hub opened and enumerated. https://openai.com/safety/ returned HTTP 403 and could not be opened."
+    },
+    {
+     "source": "(4) Official OpenAI announcements/accounts",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "Announcement titles and OpenAI's own descriptions reviewed across the window; individual openai.com/index/* pages return HTTP 403 to WebFetch and curl, so body text of those posts could not be read - recorded as a limitation."
+    },
+    {
+     "source": "(5) Broader web search, used only to locate company primary sources",
+     "url": "https://www.bing.com/search",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch quota exhausted (200/200) for this session; Bing via WebFetch used as substitute. No OpenAI primary source referencing ASPI, Scale AI or clarification-seeking injection amplification surfaced."
+    },
+    {
+     "source": "(2h) GPT-5.6 System Card section 4.2 'Prompt injection' and GPT-5.5 System Card prompt-injection section",
+     "url": "https://deploymentsafety.openai.com/gpt-5-6",
+     "checked_date": "2026-08-28",
+     "result": "CHECKED - not a match. Both cards evaluate connector-based direct and indirect prompt injection using OpenAI's own suites and GPT-Red. Neither mentions ASPI, Scale AI, clarification-seeking, ambiguity clarification, or o3."
+    },
+    {
+     "source": "(4c) 'GPT-Red: Unlocking Self-Improvement for Robustness' (2026-07-15), described by OpenAI as automated red teaming that improves 'prompt injection robustness'",
+     "url": "https://openai.com/news/rss.xml",
+     "checked_date": "2026-08-28",
+     "result": "Identified via RSS. Topically adjacent but concerns o3's successors, names no external evaluator in its description, and its body could not be read (openai.com/index/* returns 403)."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Full battery re-run. o3 is a legacy model and nothing in OpenAI's newsroom stream, deployment-safety hub, or the GPT-5.5/5.6/Rosalind/Live/August-update card corpus references ASPI, Scale AI, clarification-seeking behaviour, or the 1.8%-to-34.0% amplification. The GPT-Red post is the only prompt-injection-robustness item in the window and carries no attribution to this finding. No admissible response -> None."
+  }
+ },
+ {
+  "Finding ID": "SCALEAI-2026-05ad-JAI2",
+  "Institution": "Scale AI",
+  "Report Title": "ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents",
+  "Publication Date": "2026-05-17",
+  "Models / Systems": "Gemini-3-Flash",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://labs.scale.com/papers/aspi",
+  "Finding": "Gemini-3-Flash showed the same amplification: prompt-injection attack success rose from 2.2% in the execution setting to 35.7% in the clarification-seeking setting.",
+  "Finding Quote": "We evaluate ten frontier LLMs and find that clarification-seeking consistently and substantially amplifies vulnerability. For instance, attack success rises from 1.8% to 34.0% for o3 and from 2.2% to 35.7% for Gemini-3-Flash.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: no mention found. Items (1)+(4)+(5) executed 2026-08-15: Searched for a Google response to Scale AI leaderboard and ASPI findings. No Google primary source located. No admissible company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Google DeepMind blog index, May-August 2026",
+     "url": "https://deepmind.google/discover/blog/",
+     "checked_date": "2026-08-28",
+     "result": "Opened and enumerated. Security-relevant items in window: 'Securing the future of AI agents' (2026-06-18) and 'Investing in multi-agent AI safety research' (June 2026); model releases Gemini 3.5 Flash Cyber and Gemini 3.6 Flash (July 2026), Gemini 3.5 Transcribe (August 2026). Nothing naming Scale AI, ASPI or clarification-seeking."
+    },
+    {
+     "source": "(2) Model cards for the evaluated model and subsequent models in the family (Gemini 3 Flash, Gemini 3.5/3.6 Flash)",
+     "url": "https://deepmind.google/discover/blog/",
+     "checked_date": "2026-08-28",
+     "result": "NOT REACHED. No current Gemini 3 Flash or 3.5/3.6 Flash model card could be opened; the locally cached Google corpus (Gemini 3 Pro Frontier Safety Framework, Nov 2025; Gemini 2.5 and Gemini 1 technical reports) all predate the finding. Recorded as an unchecked source rather than a clear negative."
+    },
+    {
+     "source": "(3) Google safety/responsibility pages - 'Securing the future of AI agents' (AI Control roadmap)",
+     "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+     "checked_date": "2026-08-28",
+     "result": "Opened and read (2026-06-18). Mentions 'prompt injection resistance' only in a list of traditional safeguards; names no external evaluator, no Gemini 3 Flash, no Scale AI, no ASPI, and announces no model change."
+    },
+    {
+     "source": "(4) Official Google/DeepMind announcements",
+     "url": "https://deepmind.google/discover/blog/",
+     "checked_date": "2026-08-28",
+     "result": "Enumerated for the window as above; no item addresses this finding."
+    },
+    {
+     "source": "(5) Broader web search",
+     "url": "https://www.bing.com/search?q=Google+DeepMind+Gemini+3+Flash+model+card+prompt+injection+clarification+2026",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch quota exhausted (200/200); Bing via WebFetch substituted and returned only generic Google property pages - no Google primary source located."
+    }
+   ],
+   "evidence_url": "",
+   "verbatim": "",
+   "response_date": "",
+   "reasoning": "Battery run to the extent the sources were reachable. The one substantive Google security publication in the window, the 2026-06-18 AI Control roadmap, treats prompt injection only as a generic safeguard category and responds to nothing external. No Google primary document references ASPI, Scale AI, clarification-seeking amplification or the 2.2%-to-35.7% result -> None."
+  }
+ },
+ {
+  "Finding ID": "ANTHROPIC-2026-05-SELF-ALI1",
+  "Institution": "Redwood Research",
+  "Report Title": "SLEIGHT-Bench: Finding Blind Spots in AI Monitors",
+  "Publication Date": "2026-05-19",
+  "Models / Systems": "Claude Opus 4.6 as monitor (Anthropic)",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://alignment.anthropic.com/2026/sleight-bench",
+  "Finding": "On SLEIGHT-Bench's 40 synthetic attacks across 11 monitor blind-spot categories, Claude Opus 4.6 - the main monitor studied - never caught 50% of the attacks in any of 10 trials and reliably detected only 8 of 40 at a 1% false positive rate; catch rates were 0% for the n-hops, omission and jailbreak blind spots and 13-15% for counting, model-priors and file/object-reuse attacks.",
+  "Finding Quote": "Detection rates are generally low. On Opus 4.6, the main monitor we work with, 50% of attacks are never caught on any of the 10 trials. Only 8 out of 40 are reliably detected. We believe current frontier models would not independently discover and execute attacks like ours. But our dataset shows that attacks targeting monitor blind spots can reliably evade detection, and monitoring systems are not yet robust to more sophisticated adversaries.",
+  "Severity (C1/C2) majority": "C1",
+  "Sources Checked (channel A)": "Channel A battery run 2026-08-15. Items (2)+(3) executed programmatically across 23 cached company system cards and deployment-safety documents (OpenAI 15, Anthropic 7, Meta 1), searching the evaluator name: 6 mention(s) found, each inspected and found incidental (benchmark or dataset usage, table-of-contents text, or an evaluation predating this finding) - none responsive to this finding under the \u00a78 causal-attribution test. Items (1)+(4)+(5) executed by site-restricted web search on the subject company's domain for the evaluator name and the finding topic; no company primary source located. Battery exhausted -> Action Level = None.",
+  "Scope": "third-party-evaluator",
+  "previous_attempt_channel_a": {
+   "sources_checked": [
+    {
+     "source": "(1) Anthropic newsroom/blog index (pages 1-3), scanned for the evaluator name and the finding topic",
+     "url": "https://www.anthropic.com/news",
+     "checked_date": "2026-08-28",
+     "result": "Opened. Full May-Aug 2026 listing enumerated (Jun 9 Claude Fable 5 & Mythos 5; Jun 30 Claude Sonnet 5; Jul 6 The Making of Claude Code; Jul 24 Claude Opus 5; Jul 27 open-weights position; Jul 30 'Investigating three real-world incidents in our cybersecurity evaluations'; Aug 4 Cuellar; Aug 7 'Improving Fable 5's biology safeguards'; Aug 14 watermark; Aug 25 wellbeing grants; Aug 27 Model Hardware Standard, support for scientists). No post naming this evaluator or finding."
+    },
+    {
+     "source": "(2) Relevant + subsequent system cards in the same family: Claude Mythos Preview (2026-04-07), Claude Fable 5 & Claude Mythos 5 (2026-06-09), Claude Sonnet 5 (2026-06), Claude Opus 5 (2026-07-24), plus Opus 4.6/4.7/4.8 and Sonnet 4.6",
+     "url": "https://www.anthropic.com/transparency",
+     "checked_date": "2026-08-28",
+     "result": "Cards downloaded as PDFs and full-text searched locally (pdftotext) for the evaluator name, benchmark name and finding terms."
+    },
+    {
+     "source": "(3b) Redacted Risk Report August 2026 (coverage date 2026-07-15), section 2.23.1.2 'Automated offline monitoring evaluations', Table 2.23.1.2.B",
+     "url": "https://anthropic.com/aug-2026-risk-report",
+     "checked_date": "2026-08-28",
+     "result": "HIT. SLEIGHT-Bench appears by name as a row in Anthropic's prompt+completion monitor performance table, scored across four deployed monitor configurations: Opus 4.6 monitor (early Mythos 5 internal deployment) 23%; Opus 4.8 monitor (current internal deployment) 58%; Opus 4.6 monitor + second-stage filter 14%; Opus 4.8 monitor + second-stage filter 44%. Downloaded via curl and read with pdftotext; MD5-verified against the URL published on anthropic.com/rsp."
+    },
+    {
+     "source": "(2b) Claude Opus 5 System Card (2026-07-24) and Claude Fable 5 & Mythos 5 System Card (2026-06-09)",
+     "url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+     "checked_date": "2026-08-28",
+     "result": "Searched for 'SLEIGHT', 'monitor blind', 'n-hops', 'omission'. No occurrence in either card; the only SLEIGHT-Bench occurrence in the Anthropic corpus is the Risk Report."
+    },
+    {
+     "source": "(2c) SLEIGHT-Bench publication itself (for evaluator identity and result verification)",
+     "url": "https://alignment.anthropic.com/2026/sleight-bench",
+     "checked_date": "2026-08-28",
+     "result": "Opened 2026-08-28. Authors Elle Najt, Colin Toft, Tyler Tracy, Fabien Roger and Joe Benton, of Anthropic and Redwood Research; 2026-05-19. Confirms 40 attacks, 11 categories, half never caught across 10 trials, 'Only 8 out of 40 are reliably detected' at 1% FPR, 0% for N-hops/Omission/Jailbreaks, 15% file-object reuse, 13% counting, 13% model priors. No Anthropic response appended to the page."
+    },
+    {
+     "source": "(3) Anthropic safety/transparency/RSP pages, including the Redacted Risk Report August 2026 (coverage date 2026-07-15)",
+     "url": "https://anthropic.com/aug-2026-risk-report",
+     "checked_date": "2026-08-28",
+     "result": "Opened and full-text searched. (Located via https://www.anthropic.com/rsp, which links 'Redacted Risk Report August 2026'.)"
+    },
+    {
+     "source": "(4) Official Anthropic announcements: Fable 5 & Mythos 5 launch post, Claude Opus 5 launch post, Jul 30 cybersecurity-incidents post, Aug 7 biology-safeguards post",
+     "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+     "checked_date": "2026-08-28",
+     "result": "All four opened and read."
+    },
+    {
+     "source": "(5) Broader web search (company + evaluator + model + topic), used only to locate company primary sources",
+     "url": "https://www.bing.com/search",
+     "checked_date": "2026-08-28",
+     "result": "WebSearch tool quota for this session was exhausted (200/200) before this chunk began; Bing via WebFetch used as substitute. No further Anthropic primary source located."
+    }
+   ],
+   "evidence_url": "https://anthropic.com/aug-2026-risk-report",
+   "verbatim": "The current Opus 4.8 based-monitor has higher recall against the strong strategies known about from red-teaming the Opus 4.6 monitor.",
+   "response_date": "2026-08",
+   "reasoning": "Late-appearing response. Anthropic's Redacted Risk Report August 2026 - a company primary document published under the RSP, roughly three months after the finding - adopts SLEIGHT-Bench by name into its standing monitor-assurance suite and reports its deployed monitors against it. The row reproduces the finding's problem directly: the Opus 4.6 monitor, the exact system the finding studied, catches 23% (14% behind the second-stage filter). Alongside it the report documents an actual change to the deployed safeguard - internal deployment has moved from the Opus 4.6 monitor to an Opus 4.8-based monitor, with SLEIGHT-Bench catch rate rising 23%->58% (14%->44% with the filter) - and states the quoted rationale. That is a real, verifiable model change to the monitoring pipeline, but it is plainly incomplete: even the improved configuration misses roughly half of SLEIGHT-Bench, and Anthropic notes it has 'not red-teamed the current Opus 4.8 monitor as much'. Interim and incomplete action -> Partial, not Substantive. Anthropic names SLEIGHT-Bench, the finding's own artefact, as the evaluation it is reporting against -> Explicit attribution."
+  }
+ }
+]

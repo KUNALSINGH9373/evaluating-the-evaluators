@@ -1,0 +1,205 @@
+{
+ "agent": 2,
+ "assignment": "blocked_surfaces.json indices where index % 3 == 1",
+ "indices": [1, 4, 7, 10, 13],
+ "also_touched": [2, 12],
+ "gap_period_swept": "2026-07-31 to 2026-08-29",
+ "window": "2018-01-01 to 2026-08-29",
+ "run_date": "2026-08-29",
+ "headline": "All five assigned surfaces resolved. None of them is a lost venue: two (peren /static/, research.ai45) are asset/API hosts that were never publication indexes, one (robustintelligence.com) is a retired domain that 301s to Cisco, and two (llama.com/docs, openai.com/index/learning-never-stops) were readable once the client was fixed. Zero in-gap-period publications on four of the five; one dated item on the fifth.",
+
+ "items": [
+  {
+   "venue": "Meta",
+   "title": "Llama model cards and prompt formats (Llama 4, Llama Guard 4, Llama 3.3, Other models)",
+   "url": "https://developer.meta.com/ai/docs/model-cards-and-prompt-formats/",
+   "resolved_date": "",
+   "date_source": "genuinely undatable - the pages carry no byline, no published/updated date and no dated changelog; the only dates anywhere in the docs corpus are 2023-07-18, 2023-12-11/12/13, 2024-01-15 and 2025-08-29 inside code samples and licence text, none of them a page date",
+   "in_window": true,
+   "decision": "EXCLUDED - company self-report",
+   "rule_cited": "§1 hard drop - company self-report; the company-venue test 'is an external evaluator named?' fails on every one of the four model-card pages",
+   "reason": "Meta documenting Meta's own models. Read all four pages in full (llama4 18,127 chars; llama-guard-4 12,704; llama3_3 14,716; other-models 23,846, the last covering Llama 3, Llama Guard 2, Code Llama 70B, Llama Guard 1, Code Llama and Llama 2 inline). They are prompt-format and role/token references - introduction, architecture, prompt sections, zero-shot function-calling examples - with no evaluation results, no benchmark table and no named external evaluator anywhere; a grep for red team / third-party / independent / evaluated by / audited by / CyberSecEval / Purple Llama / MLCommons / NIST / AISI / METR / Apollo / Trail of Bits returns nothing on these pages.",
+   "fetch": {"via": "direct 200 with Sec-Fetch-* headers added; page bodies are client-rendered so text was taken through the r.jina.ai reader render of the same URLs", "status": 200, "chars": 69393},
+   "findings": []
+  },
+  {
+   "venue": "Meta",
+   "title": "Llama developer documentation - 29 overview, download, how-to, integration and deployment guides",
+   "url": "https://www.llama.com/docs/",
+   "resolved_date": "",
+   "date_source": "genuinely undatable - documentation pages with no publication or revision date; Wayback first-capture timestamps (e.g. deployment/regulated-industry-self-hosting first seen 2026-08-12, getting-the-models/kaggle and integration-guides/langchain 2026-08-12, how-to-guides/fine-tuning and prompting 2026-08-06) are crawl dates, not publication dates, and cannot be used to place a page in the gap period",
+   "in_window": true,
+   "decision": "EXCLUDED - not an evaluation",
+   "rule_cited": "§2 test 2 - operational how-to guidance, not an evidence-backed result; §1 would independently drop them as company self-report",
+   "reason": "The remaining 29 pages of the docs tree, all read in full: overview, the model-cards index, five download/partner pages, eight how-to guides (prompting, fine-tuning, quantization, distillation, validation, vision capabilities, responsible use, overview), three integration guides and eleven deployment guides. They are instructional - how to autoscale, how to project cost, how to migrate infrastructure - and the quantitative statements in them are engineering rules of thumb (e.g. 'target a TTFT under 500ms and a generation rate of 20-50 tokens per second per user'), not measured results reported by an evaluator. No external evaluator is named on any page.",
+   "fetch": {"via": "direct 200 with Sec-Fetch-* headers (887,166 raw bytes on the index, 3,842 chars after nav-strip); per-page bodies via r.jina.ai reader render", "status": 200, "chars": 496000},
+   "findings": []
+  },
+  {
+   "venue": "OpenAI",
+   "title": "Learning never stops: How AI makes learning continuous",
+   "url": "https://openai.com/index/learning-never-stops",
+   "resolved_date": "2026-08-26",
+   "date_source": "openai.com/news/rss.xml pubDate 'Wed, 26 Aug 2026 10:00:00 GMT', corroborated by the openai.com/news listing card 'Product Aug 26, 2026'",
+   "in_window": true,
+   "decision": "EXCLUDED - company self-report",
+   "rule_cited": "§1 hard drop - company self-report; on a company venue the test is 'is an external evaluator named?' and no evaluator is named anywhere in the 2,025-char page",
+   "reason": "OpenAI announcing its own report on ChatGPT use in education, based on OpenAI's own privacy-preserving telemetry ('A privacy-preserving analysis found that people across all age groups have as many as 70 million conversations with ChatGPT each week devoted to testing what they know'). Measured, but measured by the developer on its own product with no external evaluator named - unlike the sibling 2026-08-27 Bocconi piece, which does name one. The underlying report itself was not located: no matching PDF appears in the cdn.openai.com CDX for 2026-08-15 to 2026-08-30, so nothing further could be screened.",
+   "fetch": {"via": "r.jina.ai reader render (403 direct on every UA; Wayback availability endpoint reports no snapshot)", "status": 200, "chars": 2025},
+   "findings": []
+  },
+  {
+   "venue": "OpenAI",
+   "title": "Strengthening democratic oversight in national security",
+   "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+   "resolved_date": "2026-08-18",
+   "date_source": "openai.com/news/rss.xml pubDate 'Tue, 18 Aug 2026 19:00:00 GMT'",
+   "in_window": true,
+   "decision": "EXCLUDED - not an evaluation",
+   "rule_cited": "§2 test 2 - principles and forward commitments, not evidence-backed results",
+   "reason": "BONUS, index 12 (agent 1's slice) - recovered because the same reader route unblocked it and no items row for it exists in recovered_1.json. Read in full (5,204 chars). It sets out three oversight principles and a list of things OpenAI 'will do' over the next year, including '$5 million in training, technical support, and OpenAI credits to democratic government oversight bodies'. Every substantive statement is a commitment or a recommendation; there is no measured result, no observed behaviour and no documented process fact reported as such, and no external evaluator is named.",
+   "fetch": {"via": "r.jina.ai reader render (403 direct; no Wayback capture)", "status": 200, "chars": 5204},
+   "findings": []
+  }
+ ],
+
+ "surfaces": [
+  {
+   "index": 1,
+   "venue": "Meta",
+   "url": "https://www.llama.com/docs/",
+   "attempts": [
+    {"method": "fetch.get direct", "url": "https://www.llama.com/docs/", "status": 400},
+    {"method": "fetch.get direct", "url": "https://www.llama.com/sitemap.xml", "status": 400},
+    {"method": "fetch.get direct", "url": "https://www.llama.com/docs/overview/", "status": 400},
+    {"method": "fetch.get direct", "url": "https://llama.com/docs/", "status": 400},
+    {"method": "fetch.get direct", "url": "https://www.llama.com/", "status": 400},
+    {"method": "curl --http2 --compressed with full browser headers", "url": "https://www.llama.com/docs/", "status": 400},
+    {"method": "Wayback CDX www.llama.com/docs*", "url": "https://web.archive.org/cdx/search/cdx", "status": "200, 201 rows - every capture of /docs/ itself is a 301/302, newest 20260728094400"},
+    {"method": "Wayback id_ 20260728094400 (no-redirect)", "url": "https://web.archive.org/web/20260728094400id_/https://www.llama.com/docs/", "status": "301 -> https://developer.meta.com/ai/docs/"},
+    {"method": "Wayback CDX developer.meta.com/ai/docs*", "url": "https://web.archive.org/cdx/search/cdx", "status": "200, 48 non-asset doc URLs; in-window captures exist (2026-08-06, 08-12, 08-13, 08-14, 08-16, 08-26)"},
+    {"method": "Wayback id_ 20260814064256 + zstd decode", "url": "https://web.archive.org/web/20260814064256id_/https://developer.meta.com/ai/docs/model-cards-and-prompt-formats/", "status": "200 but content-encoding zstd and the page is client-rendered - 12 chars of text ('Llama Models') after decode; unusable"},
+    {"method": "fetch.get direct with Sec-Fetch-Mode/Site/Dest/User added", "url": "https://www.llama.com/docs/", "status": 200},
+    {"method": "r.jina.ai reader render (needed because the SPA body is client-rendered)", "url": "https://r.jina.ai/https://developer.meta.com/ai/docs/<33 pages>", "status": 200}
+   ],
+   "recovered": true,
+   "items_found": 33,
+   "note": "TWO separate blockers, both now solved. (1) The 400 is fetch.py's header set, not Meta blocking - adding Sec-Fetch-Mode/Site/Dest/User returns 200 (independently found by agent 1; confirmed here live: 887,166 bytes). (2) Even at 200, developer.meta.com/ai/docs is a client-rendered SPA whose raw HTML contains no body text at all (298,798 bytes of the 2026-08-14 Wayback snapshot yields 0 occurrences of 'Llama 4', 'model card', 'red team' and 1 occurrence of 'Model Card'), so a 200 read of the raw HTML still looks empty. Rendering through r.jina.ai returns the real content. All 33 nav pages were fetched this way; CDX additionally shows six legacy model-card sub-pages (llama3_1, llama3_2, llama-guard-3, meta-llama-3, meta-llama-guard-2, meta-code-llama-70b, prompt-guard) whose content is reproduced inline on the 'Other models' page. www.llama.com/docs/ 301s to developer.meta.com/ai/docs/ - that migration happened between the 2026-06-05 and 2026-07-24 Wayback captures. /model-cards-and-prompt-formats/llama4_omni/ (captured 2026-08-13) is a 302 to /llama4/, not a new model card. NOTHING on this surface carries a publication date, so no page can be placed inside 2026-07-31..2026-08-29, and nothing on it names an external evaluator."
+  },
+  {
+   "index": 4,
+   "venue": "France INESIA (via PEReN / ANSSI / Inria / LNE)",
+   "url": "https://www.peren.gouv.fr/static/",
+   "attempts": [
+    {"method": "fetch.get direct", "url": "https://www.peren.gouv.fr/static/", "status": 403},
+    {"method": "fetch.get Wayback ladder", "url": "https://archive.org/wayback/available?url=https://www.peren.gouv.fr/static/", "status": "no snapshot"},
+    {"method": "r.jina.ai reader render", "url": "https://r.jina.ai/https://www.peren.gouv.fr/static/", "status": "403 upstream (nginx) - the deny is server-side, not client-side"},
+    {"method": "Wayback CDX www.peren.gouv.fr/static/*", "url": "https://web.archive.org/cdx/search/cdx", "status": "200, 7 captures - all SVG/WEBP assets plus two PDFs; no directory listing has ever been archived"},
+    {"method": "fetch.get direct", "url": "https://www.peren.gouv.fr/sitemap.xml", "status": 404},
+    {"method": "fetch.get direct", "url": "https://www.peren.gouv.fr/rapports/", "status": 403},
+    {"method": "fetch.get direct", "url": "https://www.peren.gouv.fr/en/publications/", "status": 200},
+    {"method": "fetch.get direct", "url": "https://www.peren.gouv.fr/en/actualites/", "status": 200},
+    {"method": "fetch.get direct", "url": "https://www.peren.gouv.fr/publications/", "status": 200}
+   ],
+   "recovered": true,
+   "items_found": 0,
+   "note": "CONFIRMED not a lost surface, and confirmed independently rather than taken on trust. /static/ is an nginx asset path with directory listing disabled; the CDX shows only images and PDFs under it, never an index, and it 403s to the reader proxy too, so the deny is the server's. The enumerable indexes were re-read live today: /en/actualites/ (17,285 chars) is ordered newest-first and its newest item is 'PEReN's 2025 Activity Report', published Jul 28, 2026 - three days BEFORE the gap period opens - followed by Jul 20, Jul 15, May 21 and Mar 30 2026. /en/publications/ (3,211 chars) tops out at 'Shedding light on... No. 10 (December 2025)' and 'Road map 2026'. So PEReN published nothing in 2026-07-31..2026-08-29 and /static/ costs no coverage."
+  },
+  {
+   "index": 7,
+   "venue": "Cisco (Robust Intelligence / Foundation AI)",
+   "url": "https://www.robustintelligence.com/blog-posts",
+   "attempts": [
+    {"method": "fetch.get direct", "url": "https://www.robustintelligence.com/blog-posts", "status": "ConnectionError - TCP timeout"},
+    {"method": "r.jina.ai reader render", "url": "https://r.jina.ai/https://www.robustintelligence.com/blog-posts", "status": 422},
+    {"method": "Wayback CDX www.robustintelligence.com/blog-posts* (2026)", "url": "https://web.archive.org/cdx/search/cdx", "status": "200, exactly 1 row: 20260130232820, statuscode 301"},
+    {"method": "Wayback CDX robustintelligence.com* (2026)", "url": "https://web.archive.org/cdx/search/cdx", "status": "200 - every 2026 capture is a 301/302; newest root capture 20260211021159, also 301"},
+    {"method": "Wayback id_ no-redirect on the 2026 captures", "url": "https://web.archive.org/web/20260211021159id_/https://www.robustintelligence.com/", "status": "301 -> https://www.cisco.com/site/us/en/products/security/ai-defense/robust-intelligence-is-part-of-cisco/index.html"},
+    {"method": "fetch.get direct (successor surface)", "url": "https://blogs.cisco.com/tag/foundation-ai", "status": 200},
+    {"method": "fetch.get direct (successor surface)", "url": "https://blogs.cisco.com/tag/ai-defense", "status": 200},
+    {"method": "fetch.get direct (successor surface)", "url": "https://blogs.cisco.com/security", "status": 200},
+    {"method": "fetch.get direct", "url": "https://www.cisco.com/site/us/en/products/security/ai-defense/index.html", "status": 200}
+   ],
+   "recovered": true,
+   "items_found": 0,
+   "note": "ROOT CAUSE FOUND, and it is not a fetch problem. robustintelligence.com has been RETIRED. By 2026-01-07 every path on the domain 301s to cisco.com/site/us/en/products/security/ai-defense/robust-intelligence-is-part-of-cisco/, and by 2026-02-11 so does the root; the origin now refuses TCP entirely. The surface therefore published nothing during the gap period because it no longer exists, which is a stronger negative than 'unread'. Cisco publishing moved to blogs.cisco.com: /tag/foundation-ai is newest-first and tops out at 'SoftBank Corp.'s SOC Triaging Workflow Automated with Cisco Foundation AI's Open-Source Model', June 22, 2026, then Deloitte Japan June 12, 2026; /tag/ai-defense tops out at June 15, 2026. Nothing on either successor tag falls in 2026-07-31..2026-08-29. Recommend the corpus repoint this venue's URL to blogs.cisco.com/tag/foundation-ai and blogs.cisco.com/tag/ai-defense."
+  },
+  {
+   "index": 10,
+   "venue": "OpenAI",
+   "url": "https://openai.com/index/learning-never-stops",
+   "attempts": [
+    {"method": "fetch.get direct", "url": "https://openai.com/index/learning-never-stops", "status": 403},
+    {"method": "fetch.get Wayback ladder", "url": "https://archive.org/wayback/available?url=https://openai.com/index/learning-never-stops", "status": "no snapshot"},
+    {"method": "Wayback CDX openai.com/index/learning-never-stops*", "url": "https://web.archive.org/cdx/search/cdx", "status": "200, 0 rows - genuinely never captured"},
+    {"method": "r.jina.ai reader render", "url": "https://r.jina.ai/https://openai.com/index/learning-never-stops/", "status": 200},
+    {"method": "fetch.get direct (dating)", "url": "https://openai.com/news/rss.xml", "status": 200},
+    {"method": "r.jina.ai reader render (dating cross-check)", "url": "https://r.jina.ai/https://openai.com/news/", "status": 200},
+    {"method": "Wayback CDX cdn.openai.com* 2026-08-15..2026-08-30 (hunting the underlying report PDF)", "url": "https://web.archive.org/cdx/search/cdx", "status": "200, 200 rows, no education report PDF among them"}
+   ],
+   "recovered": true,
+   "items_found": 1,
+   "note": "Recovered in full (2,025 chars) and screened on the body text, not on the RSS blurb as before. Dated 2026-08-26 from the RSS pubDate. Excluded as a company self-report - no external evaluator named. Note the contrast with its sibling one day later: 'What students gain from ChatGPT and critical-thinking training' (2026-08-27) DOES name Bocconi University and is in scope; this one does not."
+  },
+  {
+   "index": 13,
+   "venue": "Shanghai AI Laboratory (AI45 Lab)",
+   "url": "https://research.ai45.shlab.org.cn/",
+   "attempts": [
+    {"method": "fetch.get direct", "url": "https://research.ai45.shlab.org.cn/", "status": 403},
+    {"method": "fetch.get Wayback ladder", "url": "https://archive.org/wayback/available", "status": "no snapshot"},
+    {"method": "r.jina.ai reader render", "url": "https://r.jina.ai/https://research.ai45.shlab.org.cn/", "status": "403 upstream (Tengine) - server-side deny"},
+    {"method": "Wayback CDX research.ai45.shlab.org.cn*", "url": "https://web.archive.org/cdx/search/cdx", "status": "200, 41 rows - all /Blog_pics/ images plus safework-f1-framework.pdf; no HTML page has ever been captured"},
+    {"method": "path probe", "url": "https://research.ai45.shlab.org.cn/{index.html,home,blog,blogs,en,zh,main,app,static/index.html}", "status": "404 on every one - the host answers, it simply has no HTML"},
+    {"method": "fetch.get direct", "url": "https://research.ai45.shlab.org.cn/Blog_pics/", "status": 200},
+    {"method": "fetch.get direct", "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.pdf", "status": "200, 186,256 chars extracted"},
+    {"method": "fetch.get direct (parent site)", "url": "https://ai45.shlab.org.cn/", "status": "200 (SPA shell, 4 chars of text)"},
+    {"method": "raw GET of the SPA bundle, route + endpoint extraction", "url": "https://ai45.shlab.org.cn/assets/index-d7d466a1.js", "status": "200, 3,469,570 chars"},
+    {"method": "fetch.get direct (the API the subdomain actually serves)", "url": "https://research.ai45.shlab.org.cn/production/{BlogList,AllNewsList,AllPublicationList,NewsList,PublicationList,OperationList}.json", "status": "200 on all six"},
+    {"method": "fetch.get direct (Hugo blog + feeds behind the API)", "url": "https://ai45.shlab.org.cn/research/index.xml and /research/zh/index.xml", "status": 200},
+    {"method": "fetch.get direct", "url": "https://ai45.shlab.org.cn/research/ and /research/posts/", "status": 200}
+   ],
+   "recovered": true,
+   "items_found": 0,
+   "note": "ROOT CAUSE FOUND. research.ai45.shlab.org.cn is NOT a publication venue - it is the asset and JSON-API host for ai45.shlab.org.cn. It 403s on '/' because directory listing is off and 404s on every HTML path; what it actually serves is /Blog_pics/*, PDFs, and a REST tree under /production/. Extracting the SPA bundle gave both the route table (/blog, /news, /projects, /rank, /safety-report, /en/* mirrors) and the endpoint names, and all six JSON endpoints return 200 to a plain GET. The real blog is a Hugo site at ai45.shlab.org.cn/research/ with working RSS in both languages. Enumerated: 8 English research posts, newest 'SafeVerse Open Source: Building a Safe and Trustworthy Embodied AI Twin Training Ground', pubDate Tue, 10 Feb 2026 (feed lastBuildDate also 2026-02-10); the Chinese feed has the same 8 items with the same newest date; AllNewsList.json newest is October 9, 2025; AllPublicationList.json holds 36 English entries whose newest venue is 2025 (CVPR/ICLR/NeurIPS 2025). NOTHING published in 2026-07-31..2026-08-29. This is now a certified zero, not an unread surface."
+  },
+  {
+   "index": 12,
+   "venue": "OpenAI",
+   "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+   "attempts": [
+    {"method": "fetch.get direct", "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security", "status": 403},
+    {"method": "r.jina.ai reader render", "url": "https://r.jina.ai/https://openai.com/index/strengthening-democratic-oversight-in-national-security/", "status": 200},
+    {"method": "fetch.get direct (dating)", "url": "https://openai.com/news/rss.xml", "status": 200}
+   ],
+   "recovered": true,
+   "items_found": 1,
+   "note": "BONUS - index 12 belongs to agent 1's slice and recovered_1.json carries no items row for it, so it is screened here to close the hole. Full text recovered (5,204 chars), dated 2026-08-18."
+  },
+  {
+   "index": 2,
+   "venue": "Meta",
+   "url": "https://ai.meta.com/blog/ - window tail 2026-08-26 to 2026-08-29",
+   "attempts": [
+    {"method": "r.jina.ai reader render", "url": "https://r.jina.ai/https://ai.meta.com/blog/", "status": "200, 22,121 chars"},
+    {"method": "r.jina.ai reader render", "url": "https://r.jina.ai/https://ai.meta.com/blog/?page=1 and ?page=2", "status": "200, identical 22,219 chars - the index is not paginated"},
+    {"method": "fetch.get direct with Sec-Fetch-* headers", "url": "https://ai.meta.com/blog/", "status": "200, 209,486 bytes"}
+   ],
+   "recovered": true,
+   "items_found": 0,
+   "note": "BONUS third confirmation of the tail. Read LIVE on 2026-08-29, so 2026-08-26..08-29 is now covered by a live read rather than by a 2026-08-25 snapshot. The full set of dates on the index is Jul 27, Jul 21, July 9, Jul 7, Jun 29, April 8 (x2) and April 6 2026 - newest item Jul 27, 2026, so the Meta AI blog published nothing at all in 2026-07-31..2026-08-29. Meta's August output is not on the blog; per agent 1 it is on ai.meta.com publications (e.g. 2026-08-04) and per agent 3 on about.fb.com/news."
+  }
+ ],
+
+ "cross_agent_notes": [
+  "CONFIRMED agent 1's root cause independently: adding Sec-Fetch-Mode/Site/Dest/User to fetch.py's HEADERS turns every Meta 400 into a 200 (verified live 2026-08-29: www.llama.com/docs/ 887,166 bytes, developer.meta.com/ai/docs/model-cards-and-prompt-formats/llama4/ 994,687 bytes, ai.meta.com/blog/ 209,486 bytes).",
+  "SECOND, SEPARATE META BLOCKER that a header fix alone does NOT solve: developer.meta.com/ai/docs is a client-rendered SPA. A 200 read of its raw HTML yields only the <title>. The 2026-08-14 Wayback snapshot of the model-cards index is 298,798 bytes and contains zero occurrences of 'Llama 4', 'Llama Guard', 'model card' or 'red team'. Any agent that fixes the headers and then greps the HTML will still conclude the docs are empty. They are not - render them.",
+  "GENERAL FALLBACK THAT WORKED ON FOUR SURFACES HERE: prefixing a URL with https://r.jina.ai/ returns a rendered markdown extraction and is accepted by hosts that 403 or 400 the fetcher (Meta, openai.com). It is NOT a universal key - peren.gouv.fr/static/ and research.ai45.shlab.org.cn/ both 403 through it as well, which is itself useful evidence that those denies are server-side and the paths are not pages.",
+  "WAYBACK CDX GOTCHAS hit repeatedly: (a) use https, not http - http intermittently throws ConnectionError that looks like 'CDX is down'; (b) transient ConnectionRefusedError on web.archive.org needs a retry loop, three tries with backoff was enough; (c) Wayback id_ snapshots of Meta are served content-encoding: zstd, which requests does not decode - fetch.py's _extract then returns binary garbage that scores as 'text'. Decode with the zstandard module before cleaning. Suggest adding zstd (and brotli) handling to fetch.py alongside the ContentDecodingError fix agent 3 flagged.",
+  "TWO SURFACES IN THIS PACKET ARE MISCLASSIFIED AS VENUES and should be relabelled rather than retried: www.peren.gouv.fr/static/ and research.ai45.shlab.org.cn/ are both asset hosts (the latter also a JSON API host). Neither has ever had an HTML index. Their content is fully reachable from ai45.shlab.org.cn/research/ (Hugo, with RSS) and peren.gouv.fr/en/actualites/ respectively.",
+  "ONE SURFACE IS DEAD, NOT BLOCKED: www.robustintelligence.com retired into Cisco. All 2026 Wayback captures are 301s to cisco.com/site/us/en/products/security/ai-defense/robust-intelligence-is-part-of-cisco/ and the origin now refuses TCP. Repoint the venue to blogs.cisco.com/tag/foundation-ai and blogs.cisco.com/tag/ai-defense; both are 200 direct and both top out in June 2026.",
+  "AI45 API ENDPOINTS, for anyone re-sweeping Shanghai AI Lab: https://research.ai45.shlab.org.cn/production/{BlogList,NewsList,AllNewsList,PublicationList,AllPublicationList,OperationList}.json all return 200 to a plain GET, and https://ai45.shlab.org.cn/research/index.xml (plus /research/zh/index.xml) is a real RSS feed with pubDates. Newest post on both feeds is 2026-02-10.",
+  "AGREEMENT with recovered_1.json on the Bocconi item: I recovered https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training/ independently through the reader (5,886 chars) and both of agent 1's finding_quote strings are character-exact against my copy, as is the 2026-08-27 date. I did not duplicate the row. One note for the merge: agent 1 tiers both findings C on the ground that GPT-4o is the instrument of a human-subjects study. That is defensible, but §4's instrument exclusion sits in Gate 2 condition (c), not Gate 1, so an alternative reading is Gate 1 yes / Gate 2 no = Tier B for the access-effect row. Either way it is not Tier A; flagging it so the choice is made once rather than twice.",
+  "MY SLICE IS CLOSED: indices 1, 4, 7, 10 and 13 are all resolved with a stated mechanism. The only surface in the whole packet I would still call genuinely unread is index 3 (twitter.com/sayashk), which is agent 1's and which agent 1 also reports as not recovered."
+ ]
+}

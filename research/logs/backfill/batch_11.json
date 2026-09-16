@@ -1,0 +1,46 @@
+[
+  {
+    "url": "https://blog.redwoodresearch.org/p/sota-alignment-assessments-dont-strongly",
+    "title": "SOTA alignment assessments don't strongly update us against misalignment",
+    "institution": "Redwood Research",
+    "resolved_date": "2026-07-31",
+    "date_source": "Byline on the post itself: \"Alexa Pan / Jul 31, 2026\" (blog.redwoodresearch.org, fetched 2026-08-31). Matches the ledger date.",
+    "decision": "EXCLUDED",
+    "rule_cited": "§2 (what qualifies as a finding) — EXCLUDED — no findings",
+    "exclusion_reason": "Opinion/critique essay, not an evaluation report. Every empirical datum in the post is a summary of somebody else's published work (Anthropic's Mythos Preview Alignment Risk Update, the Opus 4.6 Sabotage Risk Report, the Fable 5 & Mythos 5 System Card, AuditBench, OpenAI's GPT-5.5 system card, Apollo's sandbagging suite via Meta's Muse Spark card, METR's first Frontier Risk Report, and a UK AISI CoT-controllability result), which fails §2 limb 1 (\"asserted by the evaluator — not a summary of someone else's work\"). Redwood itself runs no experiment and reports no measured result here; the post's own contributions are arguments, judgements and recommendations (\"I recommend that Anthropic and other developers mitigate or more clearly acknowledge these issues\"), which fail §2 limb 2 (\"Opinions, recommendations, and forward-looking plans are not findings\"). Secondary: Redwood Research is not on the derived roster (§3) and carries no institution prefix in the §6.1 registry, so it is not a registered evaluator either.",
+    "findings": []
+  },
+  {
+    "url": "https://labs.scale.com/papers/detecting-and-preventing-hallucinations-in-large-vision-language-models",
+    "title": "Detecting and Preventing Hallucinations in Large Vision Language Models",
+    "institution": "Scale AI",
+    "resolved_date": "2023-04-11",
+    "date_source": "Date stamp on the Scale Labs paper page: \"4/11/2023\" (US format) above the title. Note the page's own BibTeX gives year=2024 for the arXiv version (arXiv:2308.06394, Aug 2023); the venue-page publication date 2023-04-11 is used, consistent with the ledger.",
+    "decision": "EXCLUDED",
+    "rule_cited": "§4b — EXCLUDED — ordinary accuracy/reliability (secondary: FRONTIER-MODEL RULE)",
+    "exclusion_reason": "The report's entire subject is hallucination measurement and mitigation: \"even the current state-of-the-art LVLMs (InstructBLIP) still contain a staggering 30 percent of the hallucinatory text in the form of non-existent objects, unfaithful descriptions, and inaccurate relationships\", and the M-HalDetect/FDPO results are hallucination-rate reductions. That is squarely §4b's \"produced incorrect, unsupported, invented or hallucinated information\". None of the five retention limbs is met: no unsafe recommendation, harmful action or safeguard bypass (limb 1); no goal-directed deception — the falsehoods are ungrounded image descriptions, and §4b limb 2 forbids inferring deception merely because an output was false; no defined societal or persuasion setting (limb 3); no bio/chem/cyber/CBRN/self-harm content (limb 4); the reward-model/human-eval work validates a hallucination detector, not a safety evaluation whose validity is undermined (limb 5). Independently, the subject systems — InstructBLIP, LLaVA, mPLUG-OWL — are academic open VLMs, not named frontier models from frontier developers, so the FRONTIER-MODEL RULE also drops it. This is the report already retired from the corpus under §4b as SCALEAI-2023-04-ALI1 / SCALEAI-2023-04-GOV1.",
+    "findings": []
+  },
+  {
+    "url": "https://scale.com/blog/healthcare-benchmarks",
+    "title": "Healthcare Benchmarks",
+    "institution": "Scale AI",
+    "resolved_date": "2025-08-04",
+    "date_source": "Byline on the post: \"By Matthew Siegel · August 4, 2025 · 8 min read\" (scale.com/blog/healthcare-benchmarks, fetched 2026-08-31). Matches the ledger date. Live title is \"New Benchmarks Envision the Future of AI in Healthcare\".",
+    "decision": "EXCLUDED",
+    "rule_cited": "§2 (what qualifies as a finding) — EXCLUDED — no findings",
+    "exclusion_reason": "A roundup blog post. Scale AI states its own frame: \"in this post we'll take a look at three new studies from including OpenAI, Google DeepMind, and Microsoft\". Every number it reports (HealthBench o3 60% vs GPT-3.5 Turbo 16%; AMIE superior on 29 of 32 axes; MAI-DxO 80% vs 20% physician average) is lifted from those three developers' own papers, so nothing is asserted by Scale AI — §2 limb 1, and §2's explicit rule that roundups contain no findings. Scale AI ran no evaluation of its own here, and the post's remaining content is commentary and forward-looking framing (§2 limb 2). Secondary: the cited results are capability/accuracy benchmark scores in a clinical setting with no unsafe output demonstrated, so even if re-attributed they would fail §4b (limbs 1–5 all unmet).",
+    "findings": []
+  },
+  {
+    "url": "https://www.nature.com/articles/s41467-022-35032-8",
+    "title": "[Publication] Analysis of the first genetic engineering attribution challenge — Crook et al. (2022), Nature Communications 13:7374",
+    "institution": "SecureBio",
+    "resolved_date": "2022-11-30",
+    "date_source": "Nature Communications article page: \"Published: 30 November 2022\", volume 13, Article number 7374. The ledger held only year precision (\"2022\"); resolved to day precision from the source.",
+    "decision": "EXCLUDED",
+    "rule_cited": "FRONTIER-MODEL RULE (standing decision, 2026-08-31) — not a named frontier AI model or system",
+    "exclusion_reason": "The subject is a public data-science competition on genetic engineering attribution: contestants' models predict the lab-of-origin of engineered plasmid sequences, and \"Most winning teams adopted CNN-based machine-learning approaches; however, one team achieved very high accuracy with an extremely fast neural-network-free approach.\" These are anonymous competition-entry CNNs and a non-neural baseline over DNA sequences — exactly the general ML/DL class the frontier-model rule drops (CNN/classifier subjects, no named LLM, multimodal model, agent, API or safety classifier from a frontier developer anywhere in the paper). No frontier AI model is named or evaluated, so no finding in the report can clear the rule regardless of its bio-relevance. Secondary: the paper is a competition analysis co-authored by SecureBio-affiliated researchers with academic co-authors, and its measured results (top-1/top-10 accuracy up 10 percentage points, ensemble gains, new exclusion metrics) are attribution-tool performance, i.e. a capability of bio-forensics tooling rather than a behaviour or safeguard of a frontier AI system.",
+    "findings": []
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "url": "https://arxiv.org/pdf/2401.11880",
+  "title": "PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety",
+  "institution": "Shanghai Artificial Intelligence Laboratory",
+  "scope": "third-party-evaluator",
+  "resolved_date": "2024-01-22",
+  "findings": [
+    {
+      "finding": "Under PsySafe's dark-personality-trait injection attack, agents backed by OpenAI models produced dangerous outputs at high rates: GPT-4 0613 reached 61.6% first-round joint danger rate and 100% process danger rate on ostensibly safe tasks (36.9% / 83.0% on dangerous tasks), and GPT-3.5 Turbo 0613 reached 50.0% / 100% on safe tasks and 38.4% / 98.4% on dangerous tasks - the lowest security of the API models tested. GPT-4 Turbo resisted, with a 0.0% joint danger rate throughout though an 83.3% process danger rate on safe tasks.",
+      "finding_quote": "In contrast, GPT-3.5 Turbo exhibits the lowest security on both the joint danger rate and process danger rate. Although GPT-4 0613 and Gemini Pro exhibit reduced risk in dangerous tasks, their danger rates for safe tasks are exceedingly high.",
+      "finding_type": "capability-finding",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "GPT-4 0613; GPT-3.5 Turbo 0613; GPT-4 Turbo",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "yes",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Across four popular multi-agent frameworks all running on GPT-3.5 Turbo 0613 (Camel, AutoGen, MetaGPT, AutoGPT), the hybrid human-input-plus-dark-traits attack raised the process danger rate on safe tasks from 0.0-5.6% without attack to 57.0-100%, and the first-round joint danger rate from 0.0% to 2.1-66.8%; AutoGPT was the least safe (66.8% JDR-R1, 94.9% PDR) and Camel and MetaGPT the safest.",
+      "finding_quote": "Table 1 shows that, for safe tasks, Camel offers the highest level of safety, as both the AI User and AI Assistant do not directly interact with the user’s attack prompts. Regarding dangerous tasks, AutoGen exhibits superior safety.",
+      "finding_type": "capability-finding; non-frontier",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "Camel, AutoGen, MetaGPT, AutoGPT (all on GPT-3.5 Turbo 0613)",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Claude2 was the most resistant API model on dangerous tasks, recording 0.0% joint danger rate at every round and 0.0% process danger rate even after the authors added a Jailbreak Chat prompt to bypass its defences; on ostensibly safe tasks, however, the same configuration still produced a 73.3% process danger rate and a 13.3% first-round joint danger rate.",
+      "finding_quote": "Table 2 shows that Claude2 and GPT-4 Turbo exhibit the highest levels of safety. Claude2, incorporating numerous safety mechanisms, achieves impressive defense against dangerous tasks.",
+      "finding_type": "capability-finding",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "Claude2 [Report tested: GPT-4 Turbo, comparably safe per §3.5]",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Under PsySafe's dark-personality-trait injection attack, Gemini Pro-backed agents produced dangerous content at high rates on ostensibly safe tasks: 41.7% first-round joint danger rate, 45.0% third-round joint danger rate and a 95.0% process danger rate (86.1% process danger rate on dangerous tasks).",
+      "finding_quote": "Although GPT-4 0613 and Gemini Pro exhibit reduced risk in dangerous tasks, their danger rates for safe tasks are exceedingly high.",
+      "finding_type": "capability-finding",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "Gemini Pro",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "yes",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Meta's Llama Guard, used as an input filter against the attack prompts, detected only 1.6% of dangerous examples in the safe-task setting and 49.2% in the dangerous-task setting, and left the joint danger rate on safe tasks unchanged at 45.0-50.0% and the process danger rate at 98.3%.",
+      "finding_quote": "This table shows that the input filter method is ineffective in filtering out our attack prompts.",
+      "finding_type": "capability-finding",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "Llama Guard",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "yes",
+      "split_suffix": ""
+    },
+    {
+      "finding": "GPT-4 0613 used as an input-filtering agent detected 95.0% of dangerous examples on dangerous tasks but only 16.7% on safe tasks, and prefixing the attack with a simple jailbreak prompt collapsed detection to 6.2% and 0.0% respectively, restoring joint danger rates of 24.6-41.6% and process danger rates of 89.2-100%.",
+      "finding_quote": "Although GPT-4 can effectively identify harmful prompts, they can be circumvented through certain jailbreak prompts",
+      "finding_type": "methodology",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "GPT-4 0613 (as input-filtering agent)",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Agents' scores on a twelve-item dark-traits psychological test correlated with how dangerous their subsequent behaviour was, and joint danger rates fell across successive interaction rounds, which the authors attribute to agents self-reflecting once dangerous content accumulates in memory.",
+      "finding_quote": "The data in Table 1 and the distribution shown in Figure 5 reveal a strong correlation between the psychological test scores of agents and the dangerous level of their behaviors.",
+      "finding_type": "capability-finding; anonymised-model",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "anonymised (agents across Camel, AutoGen, MetaGPT and AutoGPT on GPT-3.5 Turbo 0613)",
+      "domain": "Alignment",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    },
+    {
+      "finding": "Among open-source backbones, risk rose with model size: Llama2-7b-chat produced 5.0% first-round joint danger rate and 35.0% process danger rate on safe tasks, Llama2-13b-chat 6.6% and 63.3%, and Llama2-70b-chat 20.0% and 93.3%, which the authors attribute to larger models following injected dark traits more capably.",
+      "finding_quote": "For open-source models, Table 2 shows that, as the model size increases, the risk associated with multi-agent systems also escalates.",
+      "finding_type": "capability-trend",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "models_systems": "Llama2-7b-chat; Llama2-13b-chat; Llama2-70b-chat. [Report tested: Vicuna-13b, InternLM-20b]",
+      "domain": "Jailbreaks",
+      "access_type": "Post-deployment",
+      "eval_trackable": "yes",
+      "action_trackable": "no",
+      "split_suffix": ""
+    }
+  ],
+  "applied": "Rewrote finding [2] (Claude2) to scope the 0.0% figures to dangerous tasks and add the omitted safe-task 73.3% PDR / 13.3% JDR-R1, dropping the unsupported \"most attack-resistant model tested\" superlative and demoting GPT-4 Turbo to a [Report tested: …] comparator; added the missing Gemini Pro row (Tier A, yes/yes, Table 2 safe-task 45.0/41.7/95.0% verified); set institution to \"Shanghai Artificial Intelligence Laboratory\" (byline-verified, AI45 parenthetical removed) at report and finding level; stripped the \"(ACL Main)\" venue annotation from the title; normalised scope=third-party-evaluator, access_type=Post-deployment, single-value domains (finding [1] \"Jailbreaks; Autonomy\" → Jailbreaks), finding_type modifiers (non-frontier on [1], anonymised-model on [6]); kept date 2024-01-22 and all 8 tiers unchanged (yes/yes on [0],[3],[4]; yes/no on the rest); dropped the written tier labels so tier is derived from the two flags.",
+  "not_applied": "(a) The optional Tier C row for the paper's own Doctor Defense methodology (Table 5: safe-task JDR 0.0%, PDR 21.6%) was not added — the verdict marks it explicitly optional and \"not a defect\", conditional on the corpus wanting Tier C coverage, and no such instruction was given. (b) The verdict routes two items to a Notes column (col 34): the \"[Report tested: GPT-4 Turbo, comparably safe per §3.5]\" annotation and the \"ACL Main\" venue. This record schema has no notes field, so the [Report tested: …] annotation was appended to models_systems following the existing convention on the Llama2 row, and the venue annotation was simply dropped from the title with no field left to carry it."
+}
