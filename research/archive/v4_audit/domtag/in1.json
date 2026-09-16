@@ -1,0 +1,434 @@
+[
+ {
+  "row": 2,
+  "finding_id": "UKAISI-2024-01-GOV1",
+  "report_title": "UK AISI Pre-Deployment Evaluation of Google Gemini Ultra (Undisclosed ",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "Google Gemini Ultra",
+  "finding": "UK AISI conducted a pre-deployment evaluation of Google Gemini Ultra but did not publish results under the voluntary-access model, leaving the public with no information about what was found. AISI stated it does not disclose evaluation results for security and IP reasons. First known instance of AISI pre-deployment eva"
+ },
+ {
+  "row": 3,
+  "finding_id": "UKAISI-2024-05a-JAI1",
+  "report_title": "Advanced AI Evaluations: May Update",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow)",
+  "finding": "In the same jailbreak safeguards evaluation of five frontier LLMs, baseline compliance WITHOUT attack was low (up to 28% for the Green model on private harmful questions), but once jailbreak attacks were applied all five models complied with harmful requests at least once per five tries for almost every harmful questio"
+ },
+ {
+  "row": 4,
+  "finding_id": "UKAISI-2024-05a-BIO1",
+  "report_title": "Advanced AI Evaluations: May Update",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow)",
+  "finding": "All five tested models provided PhD-level answers to bio/chem questions with relevance to potential harm, demonstrating significant knowledge of dangerous subject matter."
+ },
+ {
+  "row": 5,
+  "finding_id": "UKAISI-2024-05a-ALI1",
+  "report_title": "Advanced AI Evaluations: May Update",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;anonymised-model;reassuring-null",
+  "models": "Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow)",
+  "finding": "Agentic autonomy: tested models reached only 20-40% completion on short-horizon tasks and 0% on long-horizon tasks, indicating limited autonomous capability."
+ },
+ {
+  "row": 6,
+  "finding_id": "NEW-001",
+  "report_title": "Advanced AI Evaluations: May Update",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow)",
+  "finding": "Cyber (CTF): most capable models solved >50% of high-school-level challenges but failed on university-level problems; cryptography challenges were the hardest category."
+ },
+ {
+  "row": 7,
+  "finding_id": "NEW-003",
+  "report_title": "Advanced AI Evaluations: May Update",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding;anonymised-model;reassuring-null",
+  "models": "Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow)",
+  "finding": "No substantial decrease in model correctness on benign questions after jailbreak attacks were applied."
+ },
+ {
+  "row": 8,
+  "finding_id": "NEW-006",
+  "report_title": "Fourth Progress Report",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "Publicly available frontier LLMs (anonymised -- same cohort as May Upd",
+  "finding": "Models found capable of providing knowledge applicable to both beneficial and harmful purposes (dual-use knowledge finding)."
+ },
+ {
+  "row": 9,
+  "finding_id": "UKAISI-2024-05b-GOV1",
+  "report_title": "Fourth Progress Report",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "N/A",
+  "finding": "AISI established its first international coordination mechanism, creating an International Scientific Report (ISR) process spanning 30 countries."
+ },
+ {
+  "row": 10,
+  "finding_id": "UKAISI-2024-05b-GOV2",
+  "report_title": "Fourth Progress Report",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "N/A (framework/tooling)",
+  "finding": "AISI launched Inspect, an open-source AI evaluation framework, to enable reproducible and standardised safety evaluations across the research community."
+ },
+ {
+  "row": 11,
+  "finding_id": "NEW-005",
+  "report_title": "Fourth Progress Report",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "Publicly available frontier LLMs (anonymised -- same cohort as May Upd",
+  "finding": "Baseline evaluations spanned four domains \u2014 Cyber, Chem-Bio, Safeguards, and Autonomous Systems \u2014 on publicly available frontier models (April 2024)."
+ },
+ {
+  "row": 12,
+  "finding_id": "NEW-007",
+  "report_title": "Fourth Progress Report",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "Publicly available frontier LLMs (anonymised -- same cohort as May Upd",
+  "finding": "Institutional milestones: partnership with the Canadian AI Safety Institute; opened a San Francisco office; appointed Jade Leung as CTO; established External Advisory Board including Yoshua Bengio."
+ },
+ {
+  "row": 13,
+  "finding_id": "UKAISI-2024-05-GOV1",
+  "report_title": "AISI Pre-Deployment Test of Frontier Model (Spring Budget 2024 -- Undi",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "One unnamed frontier model (identity not publicly disclosed)",
+  "finding": "UK AISI conducted a pre-deployment evaluation of an unnamed frontier model -- the first pre-deployment test publicly acknowledged by the UK Chancellor in the Spring 2024 Budget -- but did not publish results, name the model, or issue a standalone evaluation report. Second documented instance of AISI Outcome Type 4 patt"
+ },
+ {
+  "row": 14,
+  "finding_id": "UKAISI-2024-10-JAI1",
+  "report_title": "AgentHarm: Benchmark for Measuring Harmfulness of LLM Agents (ICLR 202",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding",
+  "models": "GPT-4o, Claude 3.5 Sonnet, Mistral Large 2",
+  "finding": "Some leading LLMs comply with malicious agentic requests at high rates without any jailbreaking \u2014 worst case Mistral Large 2 refused only 1.1% of requests and scored 82.2% harm \u2014 suggesting agents may be less robust than chatbots against misuse."
+ },
+ {
+  "row": 15,
+  "finding_id": "UKAISI-2024-10-JAI3",
+  "report_title": "AgentHarm: Benchmark for Measuring Harmfulness of LLM Agents (ICLR 202",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding",
+  "models": "GPT-4o",
+  "finding": "GPT-4o's harm compliance score increased from 48.4% to 72.7% after applying a universal jailbreak template adapted from chatbot jailbreaks, showing standard chat jailbreaking methods transfer to agents."
+ },
+ {
+  "row": 16,
+  "finding_id": "ADD-01",
+  "report_title": "AgentHarm: Benchmark for Measuring Harmfulness of LLM Agents (ICLR 202",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet",
+  "finding": "Under AgentHarm's universal jailbreak template, Claude 3.5 Sonnet's harm score rose from 13.5% (no attack, 85.2% refusals) to 68.7% (refusals dropped to 16.7%); its non-refusal harm score under the jailbreak was 81.9%, nearly matching its 82% benign-task score, showing the template defeats a model that is very safe by "
+ },
+ {
+  "row": 17,
+  "finding_id": "ADD-02",
+  "report_title": "AgentHarm: Benchmark for Measuring Harmfulness of LLM Agents (ICLR 202",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding",
+  "models": "Gemini 1.5 Pro",
+  "finding": "Under the same universal jailbreak template, Gemini 1.5 Pro's harm score rose from 15.7% (no attack, 78.4% refusals) to 56.1%, with refusals collapsing from 78.4% to 3.5%."
+ },
+ {
+  "row": 18,
+  "finding_id": "UKAISI-2024-10-JAI4",
+  "report_title": "AgentHarm: Benchmark for Measuring Harmfulness of LLM Agents (ICLR 202",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "methodology",
+  "models": "Range of leading LLMs (multiple systems)",
+  "finding": "Simple universal jailbreak templates adapted for agentic LLMs were effective across all 11 harm categories tested, indicating a systematic and broadly applicable attack surface; these templates preserve model capabilities, enabling coherent and malicious multi-step agent behavior."
+ },
+ {
+  "row": 19,
+  "finding_id": "NETWORK-2024-11-GOV1",
+  "report_title": "International Joint Testing Exercise 1 (Multilingual)",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "Meta Llama 3.1 405B",
+  "finding": "Small methodological differences between testing procedures produced large variations in results across 14 languages tested, highlighting the need for standardised multilingual evaluation protocols."
+ },
+ {
+  "row": 20,
+  "finding_id": "NETWORK-2024-11-GOV2",
+  "report_title": "International Joint Testing Exercise 1 (Multilingual)",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "Meta Llama 3.1 405B",
+  "finding": "The exercise represented the first-ever joint AI safety testing conducted across three national AI Safety Institutes (UK, US, Singapore), establishing a new multilateral precedent for coordinated AI evaluation."
+ },
+ {
+  "row": 21,
+  "finding_id": "UKAISI-2024-11-GOV11",
+  "report_title": "Our First Year -- zero published pre-deployment evaluation results fro",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "16 models (aggregated across first year)",
+  "finding": "Zero pre-deployment evaluation results published from 16 models tested in AISI's first year -- all pre-deployment tests remain undisclosed. No public accountability mechanism exists for findings that may have influenced deployment decisions for frontier models reaching millions of users."
+ },
+ {
+  "row": 22,
+  "finding_id": "UKAISI-2024-11-GOV2",
+  "report_title": "Safety Case Template for Inability Arguments (Cyber)",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "None (methodology / template)",
+  "finding": "AISI proposes a three-layer evaluation framework combining risk models, proxy CTF tasks, and human evaluation to substantiate inability claims for cyber capabilities."
+ },
+ {
+  "row": 23,
+  "finding_id": "UKAISI-2024-11-GOV3",
+  "report_title": "Safety Case Template for Inability Arguments (Cyber)",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "None (methodology / template)",
+  "finding": "AISI published the first formal AI safety case template for inability arguments, adapted from aviation, automotive, and nuclear safety case methodologies, filling a previously unaddressed gap in AI governance infrastructure."
+ },
+ {
+  "row": 24,
+  "finding_id": "NEW-010",
+  "report_title": "Safety Case Template for Inability Arguments (Cyber)",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "None (methodology / template)",
+  "finding": "Inability arguments are appropriate only for low-capability systems; higher-capability systems require additional safeguard arguments."
+ },
+ {
+  "row": 25,
+  "finding_id": "JOINT-2024-11-JAI1",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet (Oct 2024)",
+  "finding": "Both the UK and US AI Safety Institutes independently found that Claude 3.5 Sonnet's safeguards were routinely circumvented by jailbreak prompts, demonstrating a persistent vulnerability to adversarial inputs."
+ },
+ {
+  "row": 26,
+  "finding_id": "ADD-14",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet (Oct 2024)",
+  "finding": "US AISI found that with access to bioinformatics tools, Claude 3.5 Sonnet's performance on biology research tasks at times exceeded measured human expert baselines (though without tools it matched reference models and stayed below human-expert baselines)."
+ },
+ {
+  "row": 27,
+  "finding_id": "ADD-15",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet (Oct 2024)",
+  "finding": "UK AISI found the upgraded Claude 3.5 Sonnet solved 36% (Pass@10) of 14 cybersecurity-apprentice-level challenges versus 29% for the best reference model \u2014 a difference the blog cautions may fall within the margin of error; on US AISI's 40-challenge Cybench suite the model underperformed the best reference (32.5% vs 35"
+ },
+ {
+  "row": 28,
+  "finding_id": "NEW-092",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet",
+  "finding": "In the joint pre-deployment eval, Claude 3.5 Sonnet showed marginal capability uplift over the best reference models: 57% vs 48% on ML model-improvement, 66% vs 64% on software-engineering, and 47% vs 35% on general-reasoning tasks."
+ },
+ {
+  "row": 29,
+  "finding_id": "NEW-092-s2",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet",
+  "finding": "UK AISI: Claude 3.5 Sonnet achieved 66% success on software-engineering tasks vs 64% for the best reference model."
+ },
+ {
+  "row": 30,
+  "finding_id": "NEW-092-s3",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet",
+  "finding": "UK AISI: Claude 3.5 Sonnet achieved 47% on general reasoning tasks vs 35% for the best reference model."
+ },
+ {
+  "row": 31,
+  "finding_id": "JOINT-2024-11-BIO1",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding;reassuring-null",
+  "models": "Claude 3.5 Sonnet (Oct 2024)",
+  "finding": "Claude 3.5 Sonnet's bio/chem capability remained below expert human baselines in most tests, indicating the model did not provide meaningful uplift toward biological or chemical weapons pathways."
+ },
+ {
+  "row": 32,
+  "finding_id": "JOINT-2024-11-CYB1",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;reassuring-null",
+  "models": "Claude 3.5 Sonnet (Oct 2024)",
+  "finding": "Cyber capability testing showed Claude 3.5 Sonnet scoring 32.5% (US AISI) and 36% (UK AISI) on cyber tasks versus reference model scores of 35% and 29% respectively, with marginal and inconsistent variation across evaluators."
+ },
+ {
+  "row": 33,
+  "finding_id": "NEW-094",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet (Oct 2024); o1-preview; GPT-4o (reference)",
+  "finding": "Bio tool-augmentation: when augmented with bioinformatic tools, bio performance increased beyond the model alone, at times exceeding human expert baselines \u2014 a distinct uplift finding not captured by the 'below baseline' row."
+ },
+ {
+  "row": 34,
+  "finding_id": "JOINT-2024-11-GOV1",
+  "report_title": "Pre-deployment evaluation of Claude 3.5 Sonnet (Oct 2024)",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "Claude 3.5 Sonnet (Oct 2024)",
+  "finding": "This evaluation represented the first-ever joint pre-deployment AI safety testing exercise conducted between the UK and US AI Safety Institutes, establishing a new bilateral precedent for frontier model oversight."
+ },
+ {
+  "row": 35,
+  "finding_id": "UKAISI-2024-12-BIO1",
+  "report_title": "Long-Form Tasks: Biological Protocol Generation Evaluation",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding",
+  "models": "OpenAI o1-preview",
+  "finding": "o1-preview achieved 86% feasibility on long-form biological protocol generation tasks, indicating substantial capability to produce actionable biological protocols. CAVEAT: >70% of a sampled subset of autograder-deemed 'feasible' solutions were downgraded by human expert graders (AISI 'Long-Form Tasks', Dec 3 2024) -- "
+ },
+ {
+  "row": 36,
+  "finding_id": "NEW-011",
+  "report_title": "Long-Form Tasks: Biological Protocol Generation Evaluation",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet",
+  "finding": "Claude 3.5 Sonnet achieved 61% feasibility (second highest after o1-preview) and showed a ~30% improvement when given curated context access."
+ },
+ {
+  "row": 37,
+  "finding_id": "UKAISI-2024-12-GOV3",
+  "report_title": "Long-Form Tasks: Biological Protocol Generation Evaluation",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "o1-preview; Claude 3.5 Sonnet",
+  "finding": "Standard short-form Q&A evaluations substantially underestimate biological capability uplift risk, leaving the field's primary evaluation methodology structurally blind to real-world biouplift: long-form biological protocol generation responses require roughly ten times more output tokens than standard Q&A evaluations,"
+ },
+ {
+  "row": 38,
+  "finding_id": "JOINT-2024-12-CYB1",
+  "report_title": "Pre-deployment evaluation of OpenAI o1",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding",
+  "models": "OpenAI o1",
+  "finding": "On US CAISI's 40-challenge cyber suite, OpenAI o1 solved 45% versus 35% for reference models and uniquely solved 3 cryptography challenges no other evaluated model completed; on UK AISI's separate 47-challenge apprentice-level suite, however, o1 solved 36% versus 46% for the best reference model."
+ },
+ {
+  "row": 39,
+  "finding_id": "NEW-097",
+  "report_title": "Pre-deployment evaluation of OpenAI o1",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding",
+  "models": "OpenAI o1",
+  "finding": "Bio tool-augmentation increased o1 performance particularly on DNA/protein sequencing tasks; UK AISI declined to publish its bio-domain findings."
+ },
+ {
+  "row": 40,
+  "finding_id": "JOINT-2024-12-BIO1",
+  "report_title": "Pre-deployment evaluation of OpenAI o1",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding;reassuring-null",
+  "models": "OpenAI o1; o1-preview; GPT-4o; Claude 3.5 Sonnet (reference)",
+  "finding": "OpenAI o1's performance on biological capability tasks was comparable to reference models and showed no alarming uplift over the baseline."
+ },
+ {
+  "row": 41,
+  "finding_id": "NEW-095",
+  "report_title": "Pre-deployment evaluation of OpenAI o1",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;reassuring-null",
+  "models": "OpenAI o1; o1-preview; GPT-4o; Claude 3.5 Sonnet (reference)",
+  "finding": "UK AISI cyber result (contradicts uplift narrative): o1 solved 36% of apprentice-level tasks vs 46% for best reference model \u2014 o1 performed LOWER, not higher."
+ },
+ {
+  "row": 42,
+  "finding_id": "NEW-096",
+  "report_title": "Pre-deployment evaluation of OpenAI o1",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;reassuring-null",
+  "models": "OpenAI o1; o1-preview; GPT-4o; Claude 3.5 Sonnet (reference)",
+  "finding": "Software/AI R&D: US AISI o1 avg 48% improvement vs 49% best reference; UK AISI software engineering 50% vs 67%, general reasoning 57% vs 58%."
+ },
+ {
+  "row": 43,
+  "finding_id": "USCAISI-2025-01-GOV1",
+  "report_title": "NIST AI 800-1: Managing Misuse Risk for Dual-Use Foundation Models (Se",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "",
+  "finding": "US CAISI/NIST voluntary best-practice framework (NIST AI 800-1) of recommended practices for identifying, measuring and mitigating misuse risk of dual-use foundation models across the AI lifecycle, developed with input from 70+ experts across industry and academia. The second public draft added domain-specific guidance"
+ },
+ {
+  "row": 44,
+  "finding_id": "JOINT-2025-01-JAI1",
+  "report_title": "CAISI AI Agent Hijacking Evaluations -- 81% attack success rate",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.5 Sonnet",
+  "finding": "CAISI red-teaming of agent hijacking showed new attacks raised success rates from 11% (strongest baseline attack) to 81% (strongest new attack) in the Workspace environment, and improved evaluation raised a key task's measured success from 57% to 80%."
+ },
+ {
+  "row": 45,
+  "finding_id": "UKAISI-2025-02-GOV1",
+  "report_title": "Principles for Evaluating Misuse Safeguards of Frontier AI Systems",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "N/A",
+  "finding": "Proposes five-step framework for evaluating frontier AI misuse safeguards. Key empirical finding: most current safeguard evaluations do not satisfy all five criteria, creating a systematic gap in how safety claims are validated."
+ },
+ {
+  "row": 46,
+  "finding_id": "SGAISI-2025-02-JAI1",
+  "report_title": "Singapore AI Safety Red Teaming Challenge Evaluation Report 2025",
+  "cur_domain": "Societal",
+  "finding_type": "capability-finding;non-frontier",
+  "models": "Claude 3.5 (Anthropic), Aya Expanse-8B (Cohere for AI), Llama 3.1-70B ",
+  "finding": "Red-teaming by 350+ domain experts across 9 Asia-Pacific countries produced 1,335 successful exploits against 4 live LLMs showing significant safeguard gaps in non-English languages. Regional-language prompts accounted for 69.4% of successful exploits vs. 30.6% in English. Model safety performance was rated 'not satisf"
+ },
+ {
+  "row": 47,
+  "finding_id": "UKAISI-2025-02-JAI1",
+  "report_title": "Fundamental limitations in defending LLM finetuning APIs",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding",
+  "models": "OpenAI fine-tuning API (commercial closed model behind the API)",
+  "finding": "The authors demonstrate a class of 'pointwise-undetectable' finetuning attacks composed entirely of individually benign, low-perplexity samples that covertly transmit harmful knowledge. Tested against the live OpenAI fine-tuning API, the attacks succeeded in eliciting answers to harmful multiple-choice questions AND ev"
+ },
+ {
+  "row": 48,
+  "finding_id": "UKAISI-2025-03-GOV11",
+  "report_title": "Model tampering attacks enable more rigorous evaluations of LLM capabi",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "Multiple frontier LLMs (unnamed)",
+  "finding": "Demonstrates that model tampering attacks can reveal true capability ceilings that standard evaluations cannot detect. Key finding: standard evaluations without tampering systematically underestimate true model capabilities, creating a structural blind spot in capability assessment."
+ },
+ {
+  "row": 49,
+  "finding_id": "NEW-012",
+  "report_title": "Gemini 2.5 Pro Model Card and Pre-Deployment Access Failure",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "Gemini 2.5 Pro (Google DeepMind)",
+  "finding": "The cited source is Google DeepMind's own Gemini 2.5 Pro Model Card and contains none of the five governance findings; its actual content (capability benchmarks on AIME/MATH/Humanity's Last Exam/LiveCodeBench/Aider and references to Google's safety framework) is unrelated to the"
+ }
+]

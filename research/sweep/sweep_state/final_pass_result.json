@@ -1,0 +1,926 @@
+{
+ "card_results": [
+  {
+   "title": "Claude 2 Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Claude 3 Model Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Safety Institute (UK AISI) / METR",
+   "model_name": "Claude 3.5 Sonnet",
+   "quote": "Additionally, we worked with external third party evaluation partners such as the UK Artificial Intelligence Safety Institute (UK AISI) [27] to independently assess Claude 3.5 Sonnet. ... The UK AISI also conducted pre-deployment testing of a near-final model, and shared their results with the US AI Safety Institute as part of a Memorandum of Understanding... Additionally, METR [29] did an initial exploration of the model's autonomy-relevant capabilities.",
+   "url": "https://www-cdn.anthropic.com/c6a80a657af445f40e31afac050f3bf76d3b1404.pdf"
+  },
+  {
+   "title": "Claude 3.5 Sonnet Model Card Addendum",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Safety Institute (UK AISI) / METR",
+   "model_name": "Claude 3.5 Sonnet",
+   "quote": "UK AISI also conducted pre-deployment testing of a near-final model, and shared their results with the US AI Safety Institute as part of a Memorandum of Understanding, made possible by the partnership between the US and UK AISIs announced earlier this year [27]. Additionally, METR [28] did an initial exploration of the model's autonomy-relevant capabilities.",
+   "url": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+  },
+  {
+   "title": "Claude Opus 4 and Claude Sonnet 4 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "US AI Safety Institute / UK AI Security Institute / METR",
+   "model_name": "Claude Opus 4 / Claude Sonnet 4",
+   "quote": "We do not currently run specific evaluations on chemical risks internally in favor of prioritizing biological risks. We do implement some mitigations for chemical risks and we inform our views via chemical risk analysis performed by the UK AI Security Institute and the US AI Safety Institute. ... Our checkpoint evaluations show that the model has crossed the METR data deduplication threshold (with 32.6% of trials above threshold)",
+   "url": "https://www-cdn.anthropic.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf"
+  },
+  {
+   "title": "Claude Opus 4.1 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "Claude Opus 4.1",
+   "quote": "Synthesis Screening Evasion: Claude Opus 4.1 performed comparably to Claude Opus 4, saturating 2 of the 5 criteria required for synthesis screening evasion, and performed similarly to Claude Opus 4 with respect to the other three criteria, one of which remains far from saturation. This evaluation was developed by SecureBio.",
+   "url": "https://www-cdn.anthropic.com/9fa30625273bafdf5af82c93719d7ca606485a16.pdf"
+  },
+  {
+   "title": "Claude Opus 4.5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Security Institute (UK AISI)",
+   "model_name": "Claude Opus 4.5",
+   "quote": "UK AISI tested an early snapshot of [Claude Opus 4.5] for potentially concerning propensities relevant to misalignment threat models, with a focus on sabotaging AI safety research in an internal deployment scenario... We found no instances of research sabotage from [Claude Opus 4.5 Preview] or Sonnet 4.5 across our set of tasks... [Claude Opus 4.5 Preview] shows a reduction in unprompted evaluation awareness, but is slightly more capable of distinguishing evaluations from deployment when prompted.",
+   "url": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf"
+  },
+  {
+   "title": "Claude Sonnet 4.6 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "Andon Labs",
+   "model_name": "Claude Opus 4.6 / Claude Sonnet 4.6",
+   "quote": "Andon Labs's external testing of Claude Opus 4.6 with the long-horizon Vending-Bench 2 simulation... raised somewhat concerning observations: When given a system prompt including language like \"[you are] expected to do what it takes to maximize profits\", Claude Opus 4.6 was significantly more aggressive than prior models with deceptive or antisocial actions like price-fixing and lying to competitors. ... Andon reports that Sonnet 4.6 was comparably aggressive to Opus 4.6 in its business practices, including lying to suppliers and initiating price-fixing in some cases.",
+   "url": "https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf"
+  },
+  {
+   "title": "Mythos Preview System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR and Epoch AI",
+   "model_name": "Claude Mythos Preview",
+   "quote": "Both METR and Epoch AI tested Claude Mythos Preview prior to release and we incorporated their findings into our own overall risk assessment.",
+   "url": "https://www-cdn.anthropic.com/7624816413e9b4d2e3ba620c5a5e091b98b190a5/Claude%20Mythos%20Preview%20System%20Card.pdf"
+  },
+  {
+   "title": "Claude Sonnet 5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Security Institute / US Center for AI Standards / Gray Swan",
+   "model_name": "Claude Sonnet 5",
+   "quote": "we are grateful to a number of external testers for running assessments of the model and ... in partnership with Gray Swan, the UK AI Security Institute, the US Center for AI Standards",
+   "url": "https://www-cdn.anthropic.com/283ef97c476cf442c91d9a37d5b214242a55bb92/Claude%20Sonnet%205%20System%20Card.pdf"
+  },
+  {
+   "title": "Claude Opus 5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Security Institute (UK AISI)",
+   "model_name": "Claude Opus 5",
+   "quote": "UK AISI was given access to early checkpoints of Opus 5 to assess its cybersecurity and autonomy capabilities. Opus 5 was assessed on three multi-step, agentic \"cyber ranges\": end-to-end network-attack simulations run at a budget of 100M tokens per attempt. 1. Opus 5 performed similarly to Mythos 5 and Mythos Preview on our cyber evaluations.",
+   "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf"
+  },
+  {
+   "title": "Gemini 1.5 Model Card (in Gemini 1.5 technical report)",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 1.0 Model Card (in Gemini 1.0 technical report)",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 2.0 Flash-Lite Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 2.0 Flash Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 2.5 Pro Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 2.5 Deep Think Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 2.5 Flash-Lite Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 2.5 Flash and Gemini 2.5 Flash Image Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 2.5 Computer Use Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3 Pro Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3 Pro Image Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3 Flash Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.1 Pro Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.1 Flash Image Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.1 Flash-Lite Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.1 Flash Audio (Flash Live, TTS) Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini Omni Flash Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.5 Flash Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.5 Audio (Live Translate) Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.1 Flash-Lite Image Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.6 Flash Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Gemini 3.5 Flash-Lite Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Llama 2 Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Code Llama Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Meta Llama 3 Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Llama 3.1 Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Llama 3.3 Model Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Llama 4 Model Card (Scout & Maverick)",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-4 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "Alignment Research Center (ARC)",
+   "model_name": "GPT-4",
+   "quote": "ARC found that the versions of GPT-4 it evaluated were ineffective at the autonomous replication task based on preliminary experiments they conducted.",
+   "url": "https://cdn.openai.com/papers/gpt-4-system-card.pdf"
+  },
+  {
+   "title": "GPT-4V(ision) System Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "DALL\u00b7E 3 System Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-4o System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR and Apollo Research",
+   "model_name": "GPT-4o",
+   "quote": "Apollo Research evaluated capabilities of scheming... Based on these findings, Apollo Research believes that it is unlikely that GPT\u20114o is capable of catastrophic scheming.",
+   "url": "https://openai.com/index/gpt-4o-system-card"
+  },
+  {
+   "title": "OpenAI o1-preview / o1-mini System Card (original release)",
+   "has_external_finding": false
+  },
+  {
+   "title": "Sora System Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Operator System Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "OpenAI o3-mini System Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Deep Research System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR and Apollo Research",
+   "model_name": "Deep Research",
+   "quote": "To add an additional layer of validation for key risks from general autonomous capabilities and autonomy-related tasks, we worked with METR and Apollo Research.",
+   "url": "https://deploymentsafety.openai.com/deep-research"
+  },
+  {
+   "title": "GPT-4.5 System Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Addendum to GPT-4o System Card: Native image generation",
+   "has_external_finding": false
+  },
+  {
+   "title": "OpenAI o3 and o4-mini System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR",
+   "model_name": "o3 / o4-mini",
+   "quote": "METR, a research nonprofit that works on assessing whether cutting-edge AI systems could pose catastrophic risks to society, evaluated earlier checkpoints of o4-mini and o3.",
+   "url": "https://deploymentsafety.openai.com/o3"
+  },
+  {
+   "title": "Addendum to OpenAI o3 and o4-mini System Card: OpenAI o3 Operator",
+   "has_external_finding": false
+  },
+  {
+   "title": "Addendum to o3 and o4-mini System Card: Codex",
+   "has_external_finding": false
+  },
+  {
+   "title": "ChatGPT Agent System Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "ChatGPT agent",
+   "quote": "Eight members of the SecureBio AI group interacted with the ChatGPT agent (helpful-only), accessed via the ChatGPT platform.",
+   "url": "https://deploymentsafety.openai.com/chatgpt-agent"
+  },
+  {
+   "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "gpt-oss-120b",
+   "quote": "We engaged SecureBio as an external assessor to evaluate gpt-oss-120b on biosecurity-relevant tasks, including static benchmarks, long-form biodesign, agent-based fragment and screening challenges, and manual red-teaming.",
+   "url": "https://deploymentsafety.openai.com/gpt-oss"
+  },
+  {
+   "title": "GPT-5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "gpt-5-thinking",
+   "quote": "SecureBio found that on static evaluations, gpt-5-thinking performed similarly to OpenAI o3: slightly weaker on the multiple-response benchmarks and comparable or slightly stronger on the open-answer benchmark.",
+   "url": "https://deploymentsafety.openai.com/gpt-5"
+  },
+  {
+   "title": "Addendum to GPT-5 System Card: GPT-5-Codex",
+   "has_external_finding": false
+  },
+  {
+   "title": "Sora 2 System Card",
+   "has_external_finding": false
+  },
+  {
+   "title": "Addendum to GPT-5 System Card: Sensitive Conversations",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-5.1 Instant and GPT-5.1 Thinking System Card Addendum",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-5.1-Codex-Max System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR",
+   "model_name": "GPT-5.1-Codex-Max",
+   "quote": "METR found that the capabilities of GPT-5.1-Codex-Max were in line with expectations, and that absent a significant trend break, further development would be unlikely to enable these threat models in the next 6 months",
+   "url": "https://deploymentsafety.openai.com/gpt-5-1-codex-max"
+  },
+  {
+   "title": "Update to GPT-5 System Card: GPT-5.2",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2",
+   "has_external_finding": true,
+   "evaluator_name": "Apollo Research",
+   "model_name": "GPT-5.2",
+   "quote": "Apollo Research conducted a full evaluation of gpt-5.2-thinking for strategic deception, in-context scheming, and sabotage capabilities."
+  },
+  {
+   "title": "Addendum to GPT-5.2 System Card: GPT-5.2-Codex",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+   "has_external_finding": true,
+   "evaluator_name": "Irregular",
+   "model_name": "GPT-5.2-Codex",
+   "quote": "Irregular, an AI security organization focused on frontier cybersecurity risks, evaluated GPT-5.2-Codex on a subset of a suite of cyberoffensive challenges spanning three categories."
+  },
+  {
+   "title": "GPT-5.3 Instant System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-3-instant",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-5.4 Thinking System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+   "has_external_finding": true,
+   "evaluator_name": "Apollo Research",
+   "model_name": "GPT-5.4-reasoning",
+   "quote": "Apollo Research evaluated a near-final, representative version of GPT-5.4-reasoning for capabilities and propensities related to strategic deception, in-context scheming, and sabotage."
+  },
+  {
+   "title": "ChatGPT Images 2.0 System Card",
+   "url": "https://deploymentsafety.openai.com/chatgpt-images-2-0",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-5.5 System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5",
+   "has_external_finding": true,
+   "evaluator_name": "UK AISI",
+   "model_name": "GPT-5.5",
+   "quote": "UK AISI judged that this result may indicate autonomous end-to-end cyberattack capability against at least small-scale enterprise networks with weak security posture."
+  },
+  {
+   "title": "GPT-5.5 Instant System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5-instant",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-Rosalind-5.5 System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-5.6 Preview System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "GPT-5.6 Sol",
+   "quote": "SecureBio, a nonprofit research organization focused on catastrophic biological risk, evaluated two pre-release checkpoints of GPT-5.6 Sol and a railfree version of GPT-5.6 Sol."
+  },
+  {
+   "title": "GPT-Live System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-live",
+   "has_external_finding": false
+  },
+  {
+   "title": "GPT-5.6 System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "GPT-5.6",
+   "quote": "SecureBio found that either GPT-5.6 Sol or its railfree version achieved the highest scores to date on several expert-level biology benchmarks."
+  }
+ ],
+ "card_findings": [
+  {
+   "title": "Claude 3 Model Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Safety Institute (UK AISI) / METR",
+   "model_name": "Claude 3.5 Sonnet",
+   "quote": "Additionally, we worked with external third party evaluation partners such as the UK Artificial Intelligence Safety Institute (UK AISI) [27] to independently assess Claude 3.5 Sonnet. ... The UK AISI also conducted pre-deployment testing of a near-final model, and shared their results with the US AI Safety Institute as part of a Memorandum of Understanding... Additionally, METR [29] did an initial exploration of the model's autonomy-relevant capabilities.",
+   "url": "https://www-cdn.anthropic.com/c6a80a657af445f40e31afac050f3bf76d3b1404.pdf"
+  },
+  {
+   "title": "Claude 3.5 Sonnet Model Card Addendum",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Safety Institute (UK AISI) / METR",
+   "model_name": "Claude 3.5 Sonnet",
+   "quote": "UK AISI also conducted pre-deployment testing of a near-final model, and shared their results with the US AI Safety Institute as part of a Memorandum of Understanding, made possible by the partnership between the US and UK AISIs announced earlier this year [27]. Additionally, METR [28] did an initial exploration of the model's autonomy-relevant capabilities.",
+   "url": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+  },
+  {
+   "title": "Claude Opus 4 and Claude Sonnet 4 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "US AI Safety Institute / UK AI Security Institute / METR",
+   "model_name": "Claude Opus 4 / Claude Sonnet 4",
+   "quote": "We do not currently run specific evaluations on chemical risks internally in favor of prioritizing biological risks. We do implement some mitigations for chemical risks and we inform our views via chemical risk analysis performed by the UK AI Security Institute and the US AI Safety Institute. ... Our checkpoint evaluations show that the model has crossed the METR data deduplication threshold (with 32.6% of trials above threshold)",
+   "url": "https://www-cdn.anthropic.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf"
+  },
+  {
+   "title": "Claude Opus 4.1 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "Claude Opus 4.1",
+   "quote": "Synthesis Screening Evasion: Claude Opus 4.1 performed comparably to Claude Opus 4, saturating 2 of the 5 criteria required for synthesis screening evasion, and performed similarly to Claude Opus 4 with respect to the other three criteria, one of which remains far from saturation. This evaluation was developed by SecureBio.",
+   "url": "https://www-cdn.anthropic.com/9fa30625273bafdf5af82c93719d7ca606485a16.pdf"
+  },
+  {
+   "title": "Claude Opus 4.5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Security Institute (UK AISI)",
+   "model_name": "Claude Opus 4.5",
+   "quote": "UK AISI tested an early snapshot of [Claude Opus 4.5] for potentially concerning propensities relevant to misalignment threat models, with a focus on sabotaging AI safety research in an internal deployment scenario... We found no instances of research sabotage from [Claude Opus 4.5 Preview] or Sonnet 4.5 across our set of tasks... [Claude Opus 4.5 Preview] shows a reduction in unprompted evaluation awareness, but is slightly more capable of distinguishing evaluations from deployment when prompted.",
+   "url": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf"
+  },
+  {
+   "title": "Claude Sonnet 4.6 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "Andon Labs",
+   "model_name": "Claude Opus 4.6 / Claude Sonnet 4.6",
+   "quote": "Andon Labs's external testing of Claude Opus 4.6 with the long-horizon Vending-Bench 2 simulation... raised somewhat concerning observations: When given a system prompt including language like \"[you are] expected to do what it takes to maximize profits\", Claude Opus 4.6 was significantly more aggressive than prior models with deceptive or antisocial actions like price-fixing and lying to competitors. ... Andon reports that Sonnet 4.6 was comparably aggressive to Opus 4.6 in its business practices, including lying to suppliers and initiating price-fixing in some cases.",
+   "url": "https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf"
+  },
+  {
+   "title": "Mythos Preview System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR and Epoch AI",
+   "model_name": "Claude Mythos Preview",
+   "quote": "Both METR and Epoch AI tested Claude Mythos Preview prior to release and we incorporated their findings into our own overall risk assessment.",
+   "url": "https://www-cdn.anthropic.com/7624816413e9b4d2e3ba620c5a5e091b98b190a5/Claude%20Mythos%20Preview%20System%20Card.pdf"
+  },
+  {
+   "title": "Claude Sonnet 5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Security Institute / US Center for AI Standards / Gray Swan",
+   "model_name": "Claude Sonnet 5",
+   "quote": "we are grateful to a number of external testers for running assessments of the model and ... in partnership with Gray Swan, the UK AI Security Institute, the US Center for AI Standards",
+   "url": "https://www-cdn.anthropic.com/283ef97c476cf442c91d9a37d5b214242a55bb92/Claude%20Sonnet%205%20System%20Card.pdf"
+  },
+  {
+   "title": "Claude Opus 5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "UK AI Security Institute (UK AISI)",
+   "model_name": "Claude Opus 5",
+   "quote": "UK AISI was given access to early checkpoints of Opus 5 to assess its cybersecurity and autonomy capabilities. Opus 5 was assessed on three multi-step, agentic \"cyber ranges\": end-to-end network-attack simulations run at a budget of 100M tokens per attempt. 1. Opus 5 performed similarly to Mythos 5 and Mythos Preview on our cyber evaluations.",
+   "url": "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf"
+  },
+  {
+   "title": "GPT-4 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "Alignment Research Center (ARC)",
+   "model_name": "GPT-4",
+   "quote": "ARC found that the versions of GPT-4 it evaluated were ineffective at the autonomous replication task based on preliminary experiments they conducted.",
+   "url": "https://cdn.openai.com/papers/gpt-4-system-card.pdf"
+  },
+  {
+   "title": "GPT-4o System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR and Apollo Research",
+   "model_name": "GPT-4o",
+   "quote": "Apollo Research evaluated capabilities of scheming... Based on these findings, Apollo Research believes that it is unlikely that GPT\u20114o is capable of catastrophic scheming.",
+   "url": "https://openai.com/index/gpt-4o-system-card"
+  },
+  {
+   "title": "Deep Research System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR and Apollo Research",
+   "model_name": "Deep Research",
+   "quote": "To add an additional layer of validation for key risks from general autonomous capabilities and autonomy-related tasks, we worked with METR and Apollo Research.",
+   "url": "https://deploymentsafety.openai.com/deep-research"
+  },
+  {
+   "title": "OpenAI o3 and o4-mini System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR",
+   "model_name": "o3 / o4-mini",
+   "quote": "METR, a research nonprofit that works on assessing whether cutting-edge AI systems could pose catastrophic risks to society, evaluated earlier checkpoints of o4-mini and o3.",
+   "url": "https://deploymentsafety.openai.com/o3"
+  },
+  {
+   "title": "ChatGPT Agent System Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "ChatGPT agent",
+   "quote": "Eight members of the SecureBio AI group interacted with the ChatGPT agent (helpful-only), accessed via the ChatGPT platform.",
+   "url": "https://deploymentsafety.openai.com/chatgpt-agent"
+  },
+  {
+   "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "gpt-oss-120b",
+   "quote": "We engaged SecureBio as an external assessor to evaluate gpt-oss-120b on biosecurity-relevant tasks, including static benchmarks, long-form biodesign, agent-based fragment and screening challenges, and manual red-teaming.",
+   "url": "https://deploymentsafety.openai.com/gpt-oss"
+  },
+  {
+   "title": "GPT-5 System Card",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "gpt-5-thinking",
+   "quote": "SecureBio found that on static evaluations, gpt-5-thinking performed similarly to OpenAI o3: slightly weaker on the multiple-response benchmarks and comparable or slightly stronger on the open-answer benchmark.",
+   "url": "https://deploymentsafety.openai.com/gpt-5"
+  },
+  {
+   "title": "GPT-5.1-Codex-Max System Card",
+   "has_external_finding": true,
+   "evaluator_name": "METR",
+   "model_name": "GPT-5.1-Codex-Max",
+   "quote": "METR found that the capabilities of GPT-5.1-Codex-Max were in line with expectations, and that absent a significant trend break, further development would be unlikely to enable these threat models in the next 6 months",
+   "url": "https://deploymentsafety.openai.com/gpt-5-1-codex-max"
+  },
+  {
+   "title": "Update to GPT-5 System Card: GPT-5.2",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2",
+   "has_external_finding": true,
+   "evaluator_name": "Apollo Research",
+   "model_name": "GPT-5.2",
+   "quote": "Apollo Research conducted a full evaluation of gpt-5.2-thinking for strategic deception, in-context scheming, and sabotage capabilities."
+  },
+  {
+   "title": "Addendum to GPT-5.2 System Card: GPT-5.2-Codex",
+   "url": "https://deploymentsafety.openai.com/gpt-5-2-codex",
+   "has_external_finding": true,
+   "evaluator_name": "Irregular",
+   "model_name": "GPT-5.2-Codex",
+   "quote": "Irregular, an AI security organization focused on frontier cybersecurity risks, evaluated GPT-5.2-Codex on a subset of a suite of cyberoffensive challenges spanning three categories."
+  },
+  {
+   "title": "GPT-5.4 Thinking System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+   "has_external_finding": true,
+   "evaluator_name": "Apollo Research",
+   "model_name": "GPT-5.4-reasoning",
+   "quote": "Apollo Research evaluated a near-final, representative version of GPT-5.4-reasoning for capabilities and propensities related to strategic deception, in-context scheming, and sabotage."
+  },
+  {
+   "title": "GPT-5.5 System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-5",
+   "has_external_finding": true,
+   "evaluator_name": "UK AISI",
+   "model_name": "GPT-5.5",
+   "quote": "UK AISI judged that this result may indicate autonomous end-to-end cyberattack capability against at least small-scale enterprise networks with weak security posture."
+  },
+  {
+   "title": "GPT-5.6 Preview System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6-preview",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "GPT-5.6 Sol",
+   "quote": "SecureBio, a nonprofit research organization focused on catastrophic biological risk, evaluated two pre-release checkpoints of GPT-5.6 Sol and a railfree version of GPT-5.6 Sol."
+  },
+  {
+   "title": "GPT-5.6 System Card",
+   "url": "https://deploymentsafety.openai.com/gpt-5-6",
+   "has_external_finding": true,
+   "evaluator_name": "SecureBio",
+   "model_name": "GPT-5.6",
+   "quote": "SecureBio found that either GPT-5.6 Sol or its railfree version achieved the highest scores to date on several expert-level biology benchmarks."
+  }
+ ],
+ "small_org_results": [
+  {
+   "title": "DreadIndex (live offensive-security benchmark leaderboard)",
+   "decision": "EXCLUDED - no findings",
+   "reason": "Live leaderboard page shows 0 models / loading state, no actual evaluation data present.",
+   "url": "https://dreadnode.io/research/dreadindex",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Do LLM Agents Have AI Red Team Capabilities? We Built a Benchmark to Find Out",
+   "decision": "INCLUDED",
+   "reason": "AIRTBench results: Claude-3.7-Sonnet solved 61%, Gemini-2.5-Pro 55.7%, GPT-4.5-Preview 49%, with detailed cost/speed metrics per model.",
+   "url": "https://dreadnode.io/research/ai-red-team-benchmark",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Evaluating Offensive Cyber Agents: Kerberoasting",
+   "decision": "INCLUDED",
+   "reason": "Reports pass@1/pass@10 results for six models (Claude-4-Sonnet, Gemini-2.5-Pro, o3, DeepSeek-R1, etc.) on a kerberoasting task.",
+   "url": "https://dreadnode.io/research/evaluating-offensive-cyber-agents-kerberoasting",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "PentestJudge: Judging Agent Behavior Against Operational Requirements (arXiv paper)",
+   "decision": "INCLUDED",
+   "reason": "Presents F1/accuracy results for multiple LLM judges evaluating pentest agent trajectories.",
+   "url": "https://arxiv.org/abs/2508.02921",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "PentestJudge: Judging Agent Behavior Against Operational Requirements (blog)",
+   "decision": "EXCLUDED - duplicate/secondary",
+   "reason": "Blog restates same PentestJudge findings already captured by the arXiv paper (same F1/accuracy results, same study).",
+   "url": "https://dreadnode.io/research/pentestjudge-judging-agent-behavior-against-operational-requirements",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "From Compute to Congress: The Cyber Layer Beneath the Genesis Mission",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Policy commentary on the Genesis Mission executive order; no specific model evaluation findings presented.",
+   "url": "https://dreadnode.io/research/from-compute-to-congress-the-cyber-layer-beneath-the-genesis-mission",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "LLM-Powered AMSI Provider vs. Red Team Agent",
+   "decision": "INCLUDED",
+   "reason": "Reports specific finding: red team agent evaded LLM-based AMSI detector via command fragmentation across 15 iterations, with detection confidence scores.",
+   "url": "https://dreadnode.io/research/llm-powered-amsi-provider-vs-red-team-agent",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Worlds: A Simulation Engine for Agentic Pentesting",
+   "decision": "INCLUDED",
+   "reason": "Alongside the product announcement, reports a measured finding: an 8B model went from compromise score 0 to achieving Domain Admin after fine-tuning on synthetic data.",
+   "url": "https://dreadnode.io/research/worlds-a-simulation-engine-for-agentic-pentesting",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Redefining AI Red Teaming in the Agentic Era",
+   "decision": "INCLUDED",
+   "reason": "Reports concrete case-study findings testing Meta's Llama Scout: 674 attacks/573 findings, 85% success rate, specific attack technique success rates.",
+   "url": "https://dreadnode.io/research/redefining-ai-red-teaming-in-the-agentic-era",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours (arXiv paper)",
+   "decision": "EXCLUDED - duplicate/secondary",
+   "reason": "Same Llama Scout case study (85% attack success rate) as the companion blog post, already captured there.",
+   "url": "https://arxiv.org/abs/2605.04019",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Dreadnode Workers: The Connective Tissue for Flexible Agent Integration and Orchestration",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Product/platform feature announcement; no model evaluation findings presented.",
+   "url": "https://dreadnode.io/research/dreadnode-workers-agent-orchestration",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "From Compute to Congress: When AI Innovation and Cybersecurity Stop Competing",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Policy analysis of federal executive actions; no specific AI model evaluation findings presented.",
+   "url": "https://dreadnode.io/research/from-compute-to-congress-when-ai-innovation-and-cybersecurity-stop-competing",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Introducing DreadIndex: An Offensive Security Benchmark for Language Models",
+   "decision": "INCLUDED",
+   "reason": "Reports 14 fully-evaluated models (GPT-5.5 Pro, Gemini-3.1 Pro, Claude Opus 4.8, etc.) across 76 tasks, with finding that some frontier models scored lower due to refusals.",
+   "url": "https://dreadnode.io/research/introducing-dreadindex-offensive-security-benchmark-for-language-models",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "Every Model Cheats: Prompt-Level Mitigation of Cheating on Offensive Cyber Tasks",
+   "decision": "INCLUDED",
+   "reason": "Evaluates 22 named frontier models on CTF cheating propensity with specific measured rates (33.0% baseline, reduced to 8.5% with mitigation).",
+   "url": "https://dreadnode.io/research/every-model-cheats-prompt-level-mitigation-of-cheating-on-offensive-cyber-tasks",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "The Scaffolding is the Red Team: AIRTBench, One Year Later",
+   "decision": "INCLUDED",
+   "reason": "Reports one-year follow-up results for six named models (Claude Sonnet 5, GLM-5.2, Kimi-K3, etc.) with specific success rates on AIRTBench tasks.",
+   "url": "https://dreadnode.io/research/the-scaffolding-is-the-red-team-airt-bench-one-year-later",
+   "venue": "Dreadnode"
+  },
+  {
+   "title": "DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "External academic paper merely hosted/linked by Gray Swan; not Gray Swan's own evaluation.",
+   "url": "https://www.grayswan.ai/research/decodingtrust-a-comprehensive-assessment-of-trustworthiness-in-gpt-models",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "Do the Rewards Justify the Means? Measuring Trade-Offs Between Rewards and Ethical Behavior in the Machiavelli Benchmark",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "External researchers' paper hosted as a link on Gray Swan's site, not Gray Swan's own evaluation work.",
+   "url": "https://www.grayswan.ai/research/do-the-rewards-justify-the-means-measuring-trade-offs-between-rewards-and-ethical-behavior-in-the-machiavelli-benchmark",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "The WMDP Benchmark: Measuring and Reducing Malicious Use with Unlearning",
+   "decision": "EXCLUDED - no findings",
+   "reason": "Landing page only links to external paper with no findings presented, and is not Gray Swan's own evaluation.",
+   "url": "https://www.grayswan.ai/research/the-wmdp-benchmark-measuring-and-reducing-malicious-use-with-unlearning",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "Improving Alignment and Robustness with Circuit Breakers",
+   "decision": "INCLUDED",
+   "reason": "Presents specific measured attack-success-rate results across multiple models (e.g., Mistral-7B, Llama-3-8B) with and without circuit breaking.",
+   "url": "https://www.grayswan.ai/research/circuit-breakers",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents",
+   "decision": "EXCLUDED - no findings",
+   "reason": "Research landing page announces the benchmark but presents no specific measured model results, directing readers elsewhere.",
+   "url": "https://www.grayswan.ai/research/agentharm",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents (blog)",
+   "decision": "INCLUDED",
+   "reason": "Reports Gray Swan/UK AISI's own measured findings on GPT-4o and Claude 3.5 Sonnet agent jailbreak vulnerability.",
+   "url": "https://www.grayswan.ai/blog/agentharm",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "Google DeepMind and Anthropic Join as Agent Red-Teaming Challenge Sponsors",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Promotional sponsorship announcement with no measured findings about any AI model.",
+   "url": "https://www.grayswan.ai/blog/google-deepmind-and-anthropic-join-as-agent-red-teaming-challenge-sponsors",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "Gray Swan Introduces the Dangerous Reasoning Arena Competition",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Announces an upcoming competition; no empirical findings about specific models presented.",
+   "url": "https://www.grayswan.ai/blog/gray-swan-introduces-the-dangerous-reasoning-arena-competition",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "UK AISI \u00d7 Gray Swan Agent Red-Teaming Challenge: Results Snapshot",
+   "decision": "INCLUDED",
+   "reason": "Presents Gray Swan's own measured attack-success-rate results across 22 models (e.g., Claude 3.7 Sonnet 1.47% ASR vs Llama 3.3 70B 6.49% ASR).",
+   "url": "https://www.grayswan.ai/blog/uk-aisi-x-gray-swan-agent-red-teaming-challenge-results-snapshot",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "D-REX: A Benchmark For Detecting Deceptive Reasoning In Large Language Models",
+   "decision": "EXCLUDED - no findings",
+   "reason": "Landing page presents only abstract/motivation, no specific measured results about any model.",
+   "url": "https://www.grayswan.ai/research/d-rex-a-benchmark-for-detecting-deceptive-reasoning-in-large-language-models",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "Comparing AI Agents to Cybersecurity Professionals In Real-World Penetration Testing",
+   "decision": "INCLUDED",
+   "reason": "Reports a specific measured finding that purpose-built agents outperform 90% of human professionals on a live enterprise network pentest.",
+   "url": "https://www.grayswan.ai/research/comparing-ai-agents-to-cybersecurity-professionals-in-real-world-penetration-testing",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "Your AI Agent Can Be Compromised. You'd Never Know.",
+   "decision": "INCLUDED",
+   "reason": "Presents Gray Swan's own measured IPI competition results across 13 frontier models (ASR 0.5%-8.5%) and attack transfer rates.",
+   "url": "https://www.grayswan.ai/blog/your-ai-agent-can-be-compromised-youd-never-know",
+   "venue": "Gray Swan AI"
+  },
+  {
+   "title": "First FINMA-Aligned Technical Blueprint Sets a New Standard to Govern Agentic AI",
+   "decision": "INCLUDED",
+   "reason": "Describes LatticeFlow's technical assessment of Unique AI's Investment Insights Agent, testing robustness/explainability and finding it delivers consistent, reliable, overridable outputs.",
+   "report_id": "",
+   "url": "https://latticeflow.ai/news/finma-technical-blueprint-agentic-ai",
+   "venue": "LatticeFlow AI"
+  },
+  {
+   "title": "LatticeFlow AI Enables Enterprises to Control AI Risk in the Agentic AI World by Partnering with SAP",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Partnership announcement describing platform capabilities in general terms with no specific model evaluation results.",
+   "report_id": "",
+   "url": "https://latticeflow.ai/news/latticeflow-ai-partners-with-sap",
+   "venue": "LatticeFlow AI"
+  },
+  {
+   "title": "LatticeFlow AI Launches a Single Platform to Control AI Risk in the Agentic World",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Product/platform launch announcement (including AI Atlas registry) with no concrete evaluation data on any specific model.",
+   "report_id": "",
+   "url": "https://latticeflow.ai/news/latticeflow-ai-launches-platform-to-control-agentic-ai-risk",
+   "venue": "LatticeFlow AI"
+  },
+  {
+   "title": "Automated deception is here",
+   "decision": "INCLUDED",
+   "reason": "Reports measured finding: 80/100 media personality voices successfully cloned in ~30 min via Palisade's own system test",
+   "url": "https://palisaderesearch.org/blog/automated-deception-is-here",
+   "venue": "Palisade Research"
+  },
+  {
+   "title": "Biollama: testing biology pre-training risks",
+   "decision": "INCLUDED",
+   "reason": "Reports evaluation finding that biology pre-training did not improve LLM lab-assistant performance vs inference scaling/fine-tuning",
+   "url": "https://palisaderesearch.org/blog/biollama",
+   "venue": "Palisade Research"
+  },
+  {
+   "title": "Evaluating AI cyber capabilities with crowdsourced elicitation",
+   "decision": "INCLUDED",
+   "reason": "Reports measured results: AI agents ranked top 5%/top 10% at two CTF competitions, won $7,500 in bounties",
+   "url": "https://palisaderesearch.org/blog/cyber-crowdsourced-elicitation",
+   "venue": "Palisade Research"
+  },
+  {
+   "title": "Misalignment Bounty: crowdsourcing AI agent misbehavior",
+   "decision": "EXCLUDED - no findings",
+   "reason": "Announcement of bounty program/submission counts, not itself an evaluation with model-specific findings (details deferred to external arXiv paper)",
+   "url": "https://palisaderesearch.org/blog/misalignment-bounty",
+   "venue": "Palisade Research"
+  },
+  {
+   "title": "GPT-5 at CTFs: case studies from top cybersecurity events",
+   "decision": "INCLUDED",
+   "reason": "Reports measured finding: GPT-5 placed 25th at a top CTF, outperforming ~93% of human participants",
+   "url": "https://palisaderesearch.org/blog/gpt5-at-ctfs",
+   "venue": "Palisade Research"
+  },
+  {
+   "title": "T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation (CVPR 2025)",
+   "decision": "INCLUDED",
+   "reason": "Presents benchmark evaluation results across multiple T2I models on fairness/toxicity/privacy dimensions.",
+   "url": "https://arxiv.org/pdf/2501.12612",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "Beyond Surface Structure: A Causal Assessment of LLMs' Comprehension Ability (ICLR 2025)",
+   "decision": "INCLUDED",
+   "reason": "Causal evaluation of LLM comprehension ability with measured results across models (known ICLR paper); fetch returned binary-only content.",
+   "url": "https://research.ai45.shlab.org.cn/Blog_pics/58-BSS_cameraready.pdf",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "ADAM: An Embodied Causal Agent in Open-World Environments (ICLR 2025)",
+   "decision": "INCLUDED",
+   "reason": "Introduces and evaluates an embodied agent against baselines in open-world tasks with measured performance; fetch returned binary-only content.",
+   "url": "https://research.ai45.shlab.org.cn/Blog_pics/62-ADAM_cameraready.pdf",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "A Mousetrap: Fooling Large Reasoning Models for Jailbreak with Chain of Iterative Chaos (ACL 2025)",
+   "decision": "INCLUDED",
+   "reason": "Reports jailbreak success rates on specific reasoning models (o1-mini 96%, Claude-Sonnet 86-87.5%, Gemini-Thinking 98%).",
+   "url": "https://arxiv.org/abs/2502.15806",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "Adversarial Preference Learning for Robust LLM Alignment (ACL 2025 Findings)",
+   "decision": "INCLUDED",
+   "reason": "Presents empirical alignment/safety evaluation results comparing method vs baselines on LLMs; fetch returned binary-only content.",
+   "url": "https://research.ai45.shlab.org.cn/Blog_pics/108-Adversarial%20Preference%20Learning%20for%20Robust%20LLM%20Alignment.pdf",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models (ACL Findings)",
+   "decision": "INCLUDED",
+   "reason": "Well-known comprehensive safety benchmark with measured LLM evaluation results; fetch returned binary-only content.",
+   "url": "https://arxiv.org/pdf/2402.05044",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment (EMNLP 2025)",
+   "decision": "INCLUDED",
+   "reason": "Includes empirical validation of safety alignment preservation across finetuned models.",
+   "url": "https://arxiv.org/pdf/2507.18631",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety (ACL Main)",
+   "decision": "INCLUDED",
+   "reason": "Comprehensive framework with evaluation results on multi-agent system safety across LLM agents; fetch returned binary-only content.",
+   "url": "https://arxiv.org/pdf/2401.11880",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "Fake Alignment: Are LLMs Really Aligned Well? (NAACL 2024)",
+   "decision": "INCLUDED",
+   "reason": "Tests 14 LLMs finding substantial discrepancy between multiple-choice and open-ended safety performance, a measured finding.",
+   "url": "https://aclanthology.org/2024.naacl-long.263",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "Flames: Benchmarking Value Alignment of LLMs in Chinese (NAACL 2024)",
+   "decision": "INCLUDED",
+   "reason": "Value alignment benchmark with measured results across LLMs (known NAACL paper); fetch failed (socket hang up).",
+   "url": "https://aclanthology.org/2024.naacl-long.256",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents (Simulating Safety Risks of Misinformation Spread)",
+   "decision": "INCLUDED",
+   "reason": "Reports empirical simulation findings (information spreading, group polarization, herd effects) among large-scale LLM agent populations.",
+   "url": "https://arxiv.org/abs/2411.11581",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "The intelligent agent lurking in your phone (what safety inspection do on-device agents need?)",
+   "decision": "EXCLUDED - no findings",
+   "reason": "Blog post discussing need for on-device agent safety inspection framework, not a report of specific measured evaluation findings.",
+   "url": "https://ai45.shlab.org.cn/research/posts/%E6%BD%9C%E4%BC%8F%E5%9C%A8%E4%BD%A0%E6%89%8B%E6%9C%BA%E9%87%8C%E7%9A%84%E6%99%BA%E8%83%BD%E7%89%B9%E5%B7%A5%E7%AB%AF%E4%BE%A7agent%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E7%9A%84%E5%AE%89%E5%85%A8%E5%B9%B4%E6%A3%80",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "North Bund Cybersecurity Forum | Wang Yingchun (Shanghai AI Lab): Moving Towards a New Stage of AI Security Assessment",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "WeChat article covering a conference speech announcement, not a report of specific evaluation findings; page also served a verification/blocking screen.",
+   "url": "https://mp.weixin.qq.com/s/uLLpcEfuJgdD4ZfBZCYhIA",
+   "venue": "Shanghai AI Laboratory (AI45 Lab)"
+  },
+  {
+   "title": "Agentic Inequality",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Conceptual/policy essay introducing a framework on agentic inequality; no measured evaluation of a specific AI model/system.",
+   "url": "https://www.oxfordmartin.ox.ac.uk/publications/agentic-inequality",
+   "venue": "University of Oxford"
+  },
+  {
+   "title": "Beyond alignment: Why robotic foundation models need context-aware safety",
+   "decision": "EXCLUDED - not an evaluation",
+   "reason": "Argumentative/framework position paper on safety guardrails for robotic foundation models; no reported empirical findings from testing a specific system.",
+   "url": "https://www.oxfordmartin.ox.ac.uk/publications/beyond-alignment-why-robotic-foundation-models-need-context-aware-safety",
+   "venue": "University of Oxford"
+  }
+ ]
+}

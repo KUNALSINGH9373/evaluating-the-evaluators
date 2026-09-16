@@ -1,0 +1,140 @@
+import csv
+COLS = ['Finding ID', 'Report ID', 'Institution', 'Report Title', 'Publication Date', 'Domain', 'Tags', 'Models / Systems', 'Access Type', 'Source URL', 'Finding', 'Severity (C1/C2) majority', 'Sonnet5 vote', 'GPT-5.5 vote', 'Gemini3.1 vote', 'Unanimous / SPLIT', 'Severity Source', 'Action Level', 'Attribution', 'Company Response', 'Channel A Verbatim', 'Response Date', 'Lag (days)', 'Channel A Evidence', 'Sources Checked', 'Policy Level', 'Policy Response', 'Channel B Verbatim', 'Channel B Evidence', 'Traction Score', 'Media Outlets', 'Academic Citations', 'Social Highlights', 'Channel C Verbatim', 'Proportionality', 'Confidence', 'Notes', 'Key Quote', 'Traceability Tag', 'Eval? (trackable)', 'Action Trackable?', 'Finding Type', 'Scope']
+def tp_row():
+    r={c:'' for c in COLS}
+    r['Scope']='third-party-evaluator'; r['Eval? (trackable)']='yes'; r['Action Trackable?']='no'
+    r['Finding Type']='capability-finding'; r['Traceability Tag']='traceable'
+    return r
+ROWS=[]
+
+def add(fid,repid,inst,title,date,domain,tags,models,url,finding,quote,conf='High',note=''):
+    r=tp_row(); r.update({'Finding ID':fid,'Report ID':repid,'Institution':inst,'Report Title':title,
+     'Publication Date':date,'Domain':domain,'Tags':tags,'Models / Systems':models,'Access Type':'Post-deployment',
+     'Source URL':url,'Finding':finding,'Key Quote':quote,'Confidence':conf,
+     'Notes':f'NEW-CANDIDATE 2026-07-17 (evaluator-forum sweep).'+(' '+note if note else '')})
+    ROWS.append(r)
+
+# Holistic AI series (5)
+add('HOLISTIC-2025-02-JAI1','HOLISTIC-2025-02','Holistic AI','DeepSeek R1 Red Teaming & Jailbreaking Audit','2025-02-05','Jailbreaks',
+ 'holistic-ai;deepseek-r1;openai-o1;jailbreak-audit','DeepSeek R1, OpenAI o1',
+ 'https://www.holisticai.com/red-teaming/deepseek-r1',
+ "Holistic AI's 37-prompt jailbreak audit found DeepSeek R1 had an 89% overall safe-response rate but only 32% jailbreak resistance (12/37), continuing to answer unrestricted follow-ups once jailbroken; o1 scored 98%/100%.",
+ "R1 not only responded to the initial adversarial prompt but also continued answering any subsequent questions without restriction")
+add('HOLISTIC-2025-02-JAI2','HOLISTIC-2025-02b','Holistic AI','Grok-3 Red Teaming & Jailbreaking Audit','2025-02-25','Jailbreaks',
+ 'holistic-ai;grok-3;jailbreak-audit','Grok-3','https://www.holisticai.com/red-teaming/grok-3',
+ "Holistic AI found Grok-3 blocked only 1 of 37 jailbreak attempts (2.7% resistance), far below OpenAI o1 (100%) and DeepSeek R1 (32%).",
+ "Grok-3's resistance to jailbreak attempts is significantly lower than that of OpenAI o1 and DeepSeek R1.")
+add('HOLISTIC-2025-02-JAI3','HOLISTIC-2025-02c','Holistic AI','Jailbreaking & Red Teaming Audit of Claude 3.7 Sonnet','2025-02-28','Jailbreaks',
+ 'holistic-ai;claude-3.7-sonnet;jailbreak-audit','Claude 3.7 Sonnet','https://www.holisticai.com/red-teaming/claude-3-7-sonnet-jailbreaking-audit',
+ "Holistic AI found Claude 3.7 Sonnet blocked all 37 jailbreak attempts (100% resistance), matching OpenAI o1 and far outperforming DeepSeek R1 and Grok-3.",
+ "Claude 3.7 demonstrated exceptional resilience, successfully blocking all 37 [jailbreak attempts]")
+add('HOLISTIC-2025-03-JAI1','HOLISTIC-2025-03','Holistic AI','ChatGPT 4.5 Jailbreaking & Red Teaming Analysis','2025-03-18','Jailbreaks',
+ 'holistic-ai;gpt-4.5;jailbreak-audit','GPT-4.5','https://www.holisticai.com/red-teaming/chatgpt-4-5-jailbreaking-red-teaming',
+ "Holistic AI found GPT-4.5 blocked 97% of jailbreak attempts with >99% overall safe-response rate, higher than o1, but at higher per-token cost than DeepSeek R1 and Claude 3.7 Sonnet.",
+ "ChatGPT 4.5 exhibited strong jailbreaking resistance, blocking 97% of bypass attempts")
+add('HOLISTIC-2025-11-JAI1','HOLISTIC-2025-11','Holistic AI','What We Learned from Red Teaming Open Source Generative AI Models from China','2025-11-13','Jailbreaks',
+ 'holistic-ai;deepseek-v3.2;qwen;kimi-k2;minimax-m2;claude-4.5;jailbreak-audit',
+ 'DeepSeek v3.2 Exp, Qwen VL 32B, Qwen-qwq-32b, Kimi K2 Instruct 0905, MiniMax M2, Claude 4.5, GPT 4.5',
+ 'https://www.holisticai.com/blog/red-teaming-open-source-ai-models-china',
+ "Holistic AI found safe-response rates ranging from 81% (Kimi K2) to >99% (Claude 4.5, GPT 4.5, MiniMax M2); MiniMax M2 matched or beat top Western proprietary models.",
+ "The total picture is more nuanced -- with a model like MiniMax M2 (Thinking) performing on par or better than high end proprietary western models.")
+
+# LatticeFlow COMPL-AI (3)
+add('LATTICEFLOW-2024-10-GOV1','LATTICEFLOW-2024-10','LatticeFlow AI (ETH Zurich, INSAIT)','COMPL-AI: EU AI Act LLM Compliance Benchmarking Framework','2024-10-16','Policy/Standards',
+ 'latticeflow;compl-ai;gpt-4-turbo;claude-3-opus;llama;mixtral;mistral;qwen;eu-ai-act','GPT-4 Turbo, GPT-3.5 Turbo, Claude 3 Opus, Llama 3-70B/8B, Llama 2, Mixtral-8x7B, Mistral-7B, Yi-34B, Qwen1.5-72B',
+ 'https://arxiv.org/abs/2410.07959',
+ "LatticeFlow's COMPL-AI benchmark (first EU AI Act compliance framework) found GPT-4 Turbo (0.84) and Claude 3 Opus (0.82) ranked highest overall but both weak on Transparency; on Cyberattack Resilience, Claude 3 Opus scored 0.80 vs Mistral-7B's lowest 0.27; all models scored poorly on Fairness.",
+ "several high-performing models fall short of meeting regulatory requirements, with many scoring only around 50% across cybersecurity and fairness benchmarks.")
+add('LATTICEFLOW-2025-02-CYB1','LATTICEFLOW-2025-02','LatticeFlow AI','COMPL-AI Identifies Critical Compliance Gaps in DeepSeek Models','2025-02-04','Cyber;Policy/Standards',
+ 'latticeflow;deepseek-r1;compl-ai;eu-ai-act','DeepSeek R1 8B, DeepSeek R1 14B (distilled)',
+ 'https://latticeflow.ai/news/deepseek-eu-ai-act-compliance-evaluation',
+ "LatticeFlow found DeepSeek's distilled R1 models ranked lowest on cybersecurity (increased vulnerability to goal hijacking/prompt leakage vs base models) and below average on bias under the COMPL-AI EU AI Act framework, though better on toxicity than base models.",
+ "one cannot ignore critical gaps in key areas that directly impact business risks -- cybersecurity, bias, and censorship.")
+add('LATTICEFLOW-2025-09-JAI1','LATTICEFLOW-2025-09','LatticeFlow AI','Is Swiss LLM Ready for Enterprise Adoption? (Apertus evaluation)','2025-09-16','Jailbreaks',
+ 'latticeflow;apertus;swiss-llm;jailbreak','Apertus (compared to Mistral, Qwen, Llama, DeepSeek)',
+ 'https://latticeflow.ai/news/is-swiss-llm-ready-for-enterprise-adoption',
+ "LatticeFlow found Switzerland's open Apertus model had only modest baseline jailbreak resistance (up to 21.2% unmitigated rejection, comparable to other open models) but reached 99% attack rejection once guardrails were added.",
+ "Swiss LLM shows modest baseline security, similar to other open models. But with the right guardrails in place, it reaches enterprise-grade performance: 99% attack rejection.")
+
+# Scale AI (2)
+add('SCALEAI-2025-11-ALI1','SCALEAI-2025-11','Scale AI','SEAL Showdown: Insights from GPT-5','2025-11-20','Alignment',
+ 'scale-ai;gpt-5;claude-sonnet-4.5;claude-opus-4.1;human-preference','GPT-5, GPT-5-high/medium/low, GPT-5 Chat, o4-mini, Claude Sonnet 4.5, Claude Opus 4.1',
+ 'https://scale.com/blog/seal-showdown-insights-gpt-5',
+ "Scale AI's human-preference evaluation found GPT-5 ranked lower than expected despite strong benchmarks, with preference declining as reasoning effort increased (win rates 25-46% against most competitors); Claude Sonnet 4.5/Opus 4.1 ranked in the top tier.",
+ "GPT-5's ranking declines as the amount of reasoning effort increases... GPT-5 is dispreferred to other models, with win rates between 25-46% against most competitors.")
+add('SCALEAI-2025-06-BIO1','SCALEAI-2025-06','Scale AI','FORTRESS: Frontier Risk Evaluation for National Security and Public Safety','2025-06-01','Bio-Chem',
+ 'scale-ai;deepseek-r1;fortress;cbrne;national-security','DeepSeek R1, Claude 3.5/4 Sonnet, Claude 4 Opus, o1, o3, o4-mini, Llama 3.1 405B, GPT-4o, Gemini 2.5 Pro',
+ 'https://scale.com/leaderboard/fortress',
+ "On CBRNE/terrorism adversarial prompts, Scale AI's FORTRESS benchmark found DeepSeek R1 had the worst safety performance of all tested models (Average Risk Score 78.05) while OpenAI's o-series models were most robust (o3 ARS 3.57 on Illegal Weapons).",
+ "DeepSeek-R1 has the highest Average Risk Score (ARS) at 78.05... while the o-series models demonstrate remarkably robust defenses, particularly in high-risk domains like 'Illegal Weapons' where o3 achieves an ARS of just 3.57.")
+
+# Cisco/Robust Intelligence (2)
+add('CISCO-2023-12-JAI1','CISCO-2023-12','Robust Intelligence (Cisco)','Using AI to Automatically Jailbreak GPT-4 and Other LLMs in Under a Minute','2023-12-05','Jailbreaks',
+ 'robust-intelligence;cisco;gpt-4;llama-2;tap;automated-jailbreak','GPT-4, GPT-4 Turbo, Llama-2',
+ 'https://www.robustintelligence.com/blog-posts/using-ai-to-automatically-jailbreak-gpt-4-and-other-llms-in-under-a-minute',
+ "With Yale researchers, Robust Intelligence developed 'Tree of Attacks with Pruning' (TAP), an automated technique using an unaligned LLM to jailbreak GPT-4 and Llama-2 with minimal human oversight.",
+ "TAP...can be used to induce sophisticated models like GPT-4 and Llama-2 to produce hundreds of toxic, harmful, and otherwise unsafe responses to a user query in mere minutes.")
+add('CISCO-2025-11-JAI1','CISCO-2025-11','Cisco (Robust Intelligence / Foundation AI)','Death by a Thousand Prompts: Open Model Vulnerability Analysis','2025-11-05','Jailbreaks',
+ 'cisco;deepseek-v3.1;llama-3.3;mistral-large;qwen3;gemma-3;multi-turn-jailbreak','DeepSeek v3.1, Meta Llama 3.3-70B, Mistral Large-2, Alibaba Qwen3-32B, Google Gemma 3-1B-IT, Microsoft Phi-4, OpenAI GPT-OSS-20b, Zhipu AI GLM 4.5-Air',
+ 'https://blogs.cisco.com/ai/open-model-vulnerability-analysis',
+ "Cisco found multi-turn jailbreak attacks far more effective than single-turn across 8 open-weight models, with success rates from 25.86% (Gemma-3-1B-IT) to 92.78% (Mistral Large-2) -- distinct from the earlier DeepSeek R1 100% single-turn jailbreak finding.",
+ "Multi-turn jailbreak attacks...proved highly effective, with attack success rates reaching 92.78 percent...ranging from 25.86% (Google Gemma-3-1B-IT) to 92.78% (Mistral Large-2).")
+
+# Citadel AI (1)
+add('CITADEL-2024-12-JAI1','CITADEL-2024-12','Citadel AI','Automated Red Teaming of LLM applications with LangCheck','2024-12-18','Jailbreaks',
+ 'citadel-ai;gpt-4o;prompt-leakage;pii','GPT-4o','http://citadel-ai.com/blog/2024/12/18/automated-red-teaming/',
+ "Citadel AI's automated red-teaming of a demo GPT-4o healthcare chatbot found prompt-leakage vulnerabilities, including a case leaking patient PII despite system instructions prohibiting it.",
+ "Slight prompt leakage was found in 20 out of 100 responses, and significant prompt leakage was found in 1 response.",conf='Medium')
+
+# Transluce (3)
+add('TRANSLUCE-2025-04-ALI1','TRANSLUCE-2025-04','Transluce','Investigating Truthfulness in a Pre-Release o3 Model','2025-04-16','Alignment',
+ 'transluce;o3;o1;gpt-4.1;gpt-4o;confabulation;hallucination','o3 (o3-2025-04-03), o3-mini, o1, GPT-4.1, GPT-4o',
+ 'https://transluce.org/investigating-o3-truthfulness',
+ "Transluce found o3 frequently fabricates having run code (e.g., claiming to execute code on an external laptop, including bitcoin mining) and elaborately defends the fabrication when challenged; hallucination-elicitation rates were far higher for o3/o1 than GPT-4.1/GPT-4o.",
+ "o3 frequently fabricates actions it took to fulfill user requests, and elaborately justifies the fabrications")
+add('TRANSLUCE-2025-09-JAI1','TRANSLUCE-2025-09','Transluce','Automatically Jailbreaking Frontier Language Models with Investigator Agents','2025-09-03','Jailbreaks',
+ 'transluce;claude-sonnet-4;gpt-5;gemini-2.5-pro;deepseek-r1;grok-4;investigator-agents','Claude Sonnet 4, Claude Opus 4.1, GPT-5-main, GPT-5-thinking, GPT-4.1, GPT-oss-20b/120b, Gemini 2.5 Pro, DeepSeek-R1, Grok 4',
+ 'https://transluce.org/jailbreaking-frontier-models',
+ "Transluce's RL-trained investigator agents generated natural-language jailbreaks for 48 CBRN/drug-related high-risk tasks, achieving pass@1 success rates of 92% on Claude Sonnet 4, 90% on Gemini 2.5 Pro, 98% on Grok 4, 78% on GPT-5-main, and only 28% on GPT-5-thinking.",
+ "We train investigator agents using reinforcement learning to generate natural language jailbreaks for 48 high-risk tasks involving CBRN materials, explosives, and illegal drugs.")
+add('TRANSLUCE-2024-10-JAI1','TRANSLUCE-2024-10','Transluce','Eliciting Language Model Behaviors with Investigator Agents','2024-10-23','Jailbreaks',
+ 'transluce;llama-3.1;gpt-4o;claude-3.5-sonnet;attack-transfer','Llama-3.1 8B, Llama-3.1 405B, GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet',
+ 'https://transluce.org/automated-elicitation',
+ "Transluce found investigator agents trained on Llama-3.1 8B achieved a 95.5% attack success rate against Llama-3.1 405B, with attacks transferring to proprietary models -- 65.8% against GPT-4o and 22.6% against Claude 3.5 Sonnet.",
+ "95.5% attack success rate against Llama-3.1 405B, with attacks transferring to proprietary models (GPT-4o and Claude 3.5 Sonnet), up to 65.8% success rate against GPT-4o")
+
+# Princeton HAL (3)
+add('HAL-2025-10-AUT1','HAL-2025-10','Princeton Holistic Agent Leaderboard (HAL)','Agents game benchmarks via data leakage and fabricated results','2025-10-13','Autonomy',
+ 'princeton-hal;claude-3.7-sonnet;gpt-4.1;deepseek-v3;gemini-2.0-flash;benchmark-gaming','claude-3.7-sonnet, gpt-4.1, deepseek-v3, gemini-2.0-flash',
+ 'https://arxiv.org/abs/2510.11977',
+ "HAL found agents finding gold answers via data leakage (Claude 3.7 Sonnet, GPT-4.1) and DeepSeek-V3/Gemini 2.0 Flash fabricating hard-coded results after tool failures on SciCode.",
+ "After running into errors running the script, the agent manually edits the file and adds hard-coded values taken from thin air.")
+add('HAL-2025-10-AUT2','HAL-2025-10b','Princeton Holistic Agent Leaderboard (HAL)','Agents mishandle real-money payment actions in customer-service tasks','2025-10-13','Autonomy',
+ 'princeton-hal;claude-opus-4.1;gpt-5;deepseek-v3;payment-errors','claude-opus-4.1, gpt-5, deepseek-v3, o4-mini',
+ 'https://arxiv.org/abs/2510.11977',
+ "On TAU-bench Airline, HAL found Claude Opus 4.1 charged a user $2010 against a stated $1000 budget using an incorrect payment method, and GPT-5 (high) also completed a purchase with an incorrect payment method -- catastrophic-if-deployed behavior invisible to normal accuracy scoring.",
+ "claude-opus-4.1 high: The user has a $1000 budget, but was charged $2010 to an incorrect payment method.")
+add('HAL-2026-02-GOV1','HAL-2026-02','Princeton Holistic Agent Leaderboard (HAL)','New frontier models gain accuracy but not reliability','2026-02-18','Eval-methodology',
+ 'princeton-hal;gpt-5.5;gemini-3.1-pro;claude-opus-4.7;reliability;gaia','GPT-5.5, Gemini 3.1 Pro, Gemini 3.5 Flash, Claude Opus 4.7',
+ 'https://hal.cs.princeton.edu/reliability/',
+ "HAL's reliability dashboard found newer frontier models jump in accuracy but not reliability (GPT-5.5 and Opus 4.7 no more reliable than predecessors on GAIA), and identified scaffolding loopholes letting agents reach GAIA ground-truth answers directly, since patched.",
+ "on GAIA we observe GPT-5.5 and Opus 4.7 being no more reliable than their predecessors",conf='Medium')
+
+# RAND bio-benchmark (1, non-UK-AISI-commissioned)
+add('RAND-2025-11-BIO1','RAND-2025-11','RAND','Toward Comprehensive Benchmarking of the Biological Knowledge of Frontier LLMs','2025-11-25','Bio-Chem',
+ 'rand;o3;claude-3.7-sonnet;deepseek-r1;deepseek-v3;llama-4-maverick;bio-benchmark','39 models incl. o3/o4-mini/GPT-4.5, Claude 3.7 Sonnet (Thinking), DeepSeek V3/R1, Llama 4 Maverick, Grok2-beta, Mistral Large',
+ 'https://www.rand.org/pubs/research_reports/RRA3797-1.html',
+ "RAND found reasoning models (o3, Claude 3.7 Sonnet Thinking, DeepSeek R1) approached or exceeded human expert performance on several bio/chem benchmarks; open-weight models DeepSeek R1, Llama 4 Maverick, and DeepSeek V3 surpassed the human expert baseline on GPQA biology.",
+ "three open-weight models have surpassed the human expert baseline: DeepSeek R1, Llama 4 Maverick, and DeepSeek V3.")
+
+# AVERI (1)
+add('AVERI-2026-04-GOV1','AVERI-2026-04','AI Verification and Evaluation Research Institute (AVERI)','What Access is Needed for Effective Auditing? Near-Verbatim Extraction on Open-Weight Models','2026-04-27','Eval-methodology',
+ 'averi;olmo;llama;pythia;memorization;auditing-access','OLMo 2 (7B, 13B, 32B), Llama 1 13B, Llama 2, Pythia',
+ 'https://www.averi.org/ourwork/near-verbatim-extraction-risk',
+ "AVERI's near-verbatim extraction metric reveals substantially higher training-data memorization risk in open-weight models than standard verbatim-extraction metrics (e.g., OLMo 2: 2.57% vs 1.42%).",
+ "2.57% of sequences are near-verbatim extractable...compared to 1.42% for verbatim probabilistic extraction",conf='Medium')
+
+with open('/Users/kunalsingh/aisi-v4-audit/v5_apply/new_rows_batch2.csv','a',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=COLS)
+    for r in ROWS: w.writerow(r)
+print(f"Third-party additions: {len(ROWS)} rows")

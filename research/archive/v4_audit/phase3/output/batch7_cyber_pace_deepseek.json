@@ -1,0 +1,145 @@
+[
+ {
+  "sheet_row": 16,
+  "Finding ID": "UKAISI-2026-05-CYB2",
+  "Source URL": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+  "pub_date_verified": "2026-05-13",
+  "numbers_check": [
+    {"value": "both (two ranges: TLO and Cooling Tower)", "verdict": "exact", "source_value": "“the newer Mythos Preview checkpoint completed both our cyber ranges, solving the range ‘The Last Ones’ in 6 of 10 attempts and the previously unsolved ‘Cooling Tower’ in 3 of 10 attempts”", "location": "AISI blog, cyber ranges section"},
+    {"value": "first model ever to solve Cooling Tower", "verdict": "exact", "source_value": "“This was the first time that a model completed the second of our two cyber ranges.”", "location": "AISI blog, cyber ranges section"},
+    {"value": "Company Response: ~50 to ~200 organizations", "verdict": "exact (derived)", "source_value": "“roughly 50 initial partners” + “extending the partnership to approximately 150 new organizations” = ~200 total; '~200' is arithmetic, not stated verbatim", "location": "anthropic.com/news/expanding-project-glasswing"},
+    {"value": "Company Response: 15+ countries", "verdict": "exact", "source_value": "“based in more than 15 countries”", "location": "anthropic.com/news/expanding-project-glasswing"},
+    {"value": "Company Response: 10,000+ high/critical vulnerabilities", "verdict": "exact", "source_value": "“more than 10,000 high- or critical-severity security flaws”", "location": "anthropic.com/news/expanding-project-glasswing"},
+    {"value": "Lag (days) = 2.0", "verdict": "mismatch", "source_value": "Channel A page (expanding-project-glasswing) is dated 2026-06-02, not 2026-05-15; actual lag from 2026-05-13 publication is ~20 days", "location": "anthropic.com/news/expanding-project-glasswing (dateline)"}
+  ],
+  "key_quote_verdict": "paraphrase",
+  "key_quote_detail": "Key Quote is not from the Source URL at all; it is the Channel C minister quote from CSO Online. Against CSO Online it is truncated mid-sentence: actual text ends “...translate into real risks for organisations, especially those with weak cyber defences,” — the row cuts it at “real risks.” Also em-dash rendered as '--'.",
+  "proposed_key_quote": "This was the first time that a model completed the second of our two cyber ranges.",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_detail": "“We recently described how these partners have so far found more than 10,000 high- or critical-severity security flaws.” appears verbatim on the Channel A Evidence page. However, Response Date 2026-05-15 CONFLICTS with the page's actual date of 2026-06-02, and the 'published red-team blog' element of the Company Response is not found on this page.",
+  "channelC_verbatim_verdict": "paraphrase",
+  "channelC_detail": "Same truncation as Key Quote: CSO Online's actual sentence continues “...real risks for organisations, especially those with weak cyber defences”. Attribution to Narayan in CSO Online confirmed (“said via email”). Corrected verbatim: “Our independent testing shows that cyber capabilities in leading AI systems are advancing much faster than we expected. That matters because this isn’t theoretical — those advances are already starting to translate into real risks for organisations, especially those with weak cyber defences.”",
+  "model_names_check": "OK: Claude Mythos Preview is the correct model; blog specifies results use “a newer Mythos Preview checkpoint than that included in previous AISI reporting” (worth noting in the row). Notes field '[Report tested: GPT-5.5; Claude Sonnet 4.5]' is misleading: the blog's new results are for Mythos Preview and GPT-5.5; Claude Sonnet 4.5 appears only in an illustrative time-horizon example.",
+  "overstatement_check": "Mild overstatement by omission: Finding says Mythos 'completed' both challenges without noting success rates (6/10 on The Last Ones, 3/10 on Cooling Tower). Terminology: source calls them 'cyber ranges', never 'benchmark challenges', and the abbreviation 'TLO' never appears in the source. 'First model ever' is supported.",
+  "notes": "SERIOUS: Response Date 2026-05-15 vs actual Channel A page date 2026-06-02 (Lag 2.0 should be ~20). Recommend adding attempt counts (6/10, 3/10) to Finding. Merge candidate with ADD-08 (sheet_row 50): ADD-08's 'in addition to solving the CTF ranges' duplicates this row's finding. Key Quote should come from the AISI source; minister quote already captured in Channel C."
+ },
+ {
+  "sheet_row": 49,
+  "Finding ID": "ADD-07",
+  "Source URL": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+  "pub_date_verified": "2026-05-13",
+  "numbers_check": [
+    {"value": "100% success on five of six long tasks", "verdict": "exact", "source_value": "“With a 2.5M token cap, GPT 5.5 achieves a 100% success rate on five of six tasks estimated over 8 hours”", "location": "AISI blog, footnote 2"},
+    {"value": "8+ hours", "verdict": "exact", "source_value": "“tasks estimated over 8 hours”", "location": "AISI blog, footnote 2"},
+    {"value": "2.5M-token budget", "verdict": "exact", "source_value": "“With a 2.5M token cap” / “We deliberately constrain our setup to only 2.5M tokens per task”", "location": "AISI blog, footnote 2 and methodology"},
+    {"value": "solved the sixth on every attempt once token cap removed", "verdict": "exact", "source_value": "“it solves the sixth on every attempt when the cap is removed”", "location": "AISI blog, footnote 2"},
+    {"value": "The Last Ones on 3 of 10 attempts", "verdict": "exact", "source_value": "“GPT-5.5 solved ‘The Last Ones’ on 3 of 10 attempts.”", "location": "AISI blog, cyber ranges section"},
+    {"value": "substantially exceeded previous doubling-rate trend", "verdict": "exact", "source_value": "“Since then, AISI reported on two new models, Claude Mythos Preview and GPT-5.5, which substantially exceeded both doubling rate trends.” (prior trend: doubling every 4.7 months since late 2024)", "location": "AISI blog, intro and Cyber Time Horizons Results"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "With a 2.5M token cap, GPT 5.5 achieves a 100% success rate on five of six tasks estimated over 8 hours; it solves the sixth on every attempt when the cap is removed.",
+  "proposed_key_quote_note": "From footnote 2 of the blog; note the source writes 'GPT 5.5' (no hyphen) in this sentence but 'GPT-5.5' elsewhere.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "Channel A Verbatim is identical to the Company Response summary, not a quote. Content is verified against deploymentsafety.openai.com/gpt-5-5/cybersecurity (dated 2026-04-23, updated 2026-04-24): High-below-Critical classification, Trusted Access for Cyber program, and UK AISI access (“UK AISI was provided access to a representative launch checkpoint and a checkpoint with reduced refusals for cyber capabilities.”) all confirmed.",
+  "proposed_channelA_verbatim": "As we did for GPT-5.3-Codex and GPT-5.4-Thinking, we are treating GPT-5.5 as High capability in the Cybersecurity domain, but below Critical.",
+  "channelB_verbatim_verdict": "exact",
+  "channelB_detail": "NCSC sentence appears character-for-character in the NCSC blog (Ollie Whitehouse, CTO). CAUTION: NCSC blog is dated 2026-05-01, i.e., it PRE-DATES the 2026-05-13 AISI blog by 12 days, so 'Policy Level: Cited' as a response to this finding is chronologically impossible; it addresses the broader trend only (the row's caveat is accurate but the classification should be revisited).",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_detail": "Verbatim opening fragment of CyberScoop article confirmed: “Two of the most advanced artificial intelligence models — Anthropic’s Claude Mythos Preview and OpenAI’s GPT-5.5 — have significantly surpassed the already-accelerating pace...” Row stores only a mid-sentence fragment; consider extending to the full sentence.",
+  "model_names_check": "OK: GPT-5.5 correctly attributed throughout; the 3-of-10 'The Last Ones' result belongs to GPT-5.5 (Mythos scored 6/10 on that range and 3/10 on Cooling Tower — no cross-attribution error).",
+  "overstatement_check": "None on the AISI numbers. Timing framing: the OpenAI system card (2026-04-23) also pre-dates the AISI blog — it is pre-deployment disclosure referencing UK AISI testing, not a 'response' to this published finding; Response Date semantics should reflect that.",
+  "notes": "Both Channel A (Apr 23) and Channel B (May 1) pre-date the May 13 publication; neither can be a reaction to the blog. GPT-5.5 did NOT solve Cooling Tower — only Mythos did; Finding correctly omits it."
+ },
+ {
+  "sheet_row": 50,
+  "Finding ID": "ADD-08",
+  "Source URL": "https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing",
+  "pub_date_verified": "2026-05-13",
+  "numbers_check": [
+    {"value": "100% success on all six long-duration tasks", "verdict": "exact", "source_value": "“Mythos Preview completes all six long tasks 100% of the time, with the 2.5M token cap.”", "location": "AISI blog, footnote 2"},
+    {"value": "8+ hours", "verdict": "exact", "source_value": "“tasks estimated over 8 hours” (same six-task set as GPT-5.5 sentence)", "location": "AISI blog, footnote 2"},
+    {"value": "2.5M-token budget", "verdict": "exact", "source_value": "“with the 2.5M token cap”", "location": "AISI blog, footnote 2"},
+    {"value": "solving the CTF ranges (both)", "verdict": "exact (mislabeled)", "source_value": "“completed both our cyber ranges, solving the range ‘The Last Ones’ in 6 of 10 attempts and the previously unsolved ‘Cooling Tower’ in 3 of 10 attempts” — source calls them 'cyber ranges', not 'CTF ranges'", "location": "AISI blog, cyber ranges section"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "Mythos Preview completes all six long tasks 100% of the time, with the 2.5M token cap.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "Channel A Verbatim duplicates the Company Response summary. Verified against anthropic.com/research/mythos-preview (dated 2026-04-07, matching Response Date): limited release via Project Glasswing, “we do not plan to make Mythos Preview generally available”, Cyber Verification Program (“Security professionals whose legitimate work is affected by these safeguards will be able to apply to an upcoming Cyber Verification Program.”), and “We plan to launch new safeguards with an upcoming Claude Opus model” all confirmed.",
+  "proposed_channelA_verbatim": "By releasing this model initially to a limited group of critical industry partners and open source developers with Project Glasswing, we aim to enable defenders to begin securing the most important systems before models with similar capabilities become broadly available.",
+  "proposed_channelA_verbatim_note": "40 words; if a shorter quote is needed use: “Security professionals whose legitimate work is affected by these safeguards will be able to apply to an upcoming Cyber Verification Program.”",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_detail": "Quote confirmed verbatim in CyberScoop — but it is attributed to PALO ALTO NETWORKS, describing Palo Alto's own separate findings published the same day, not UK AISI's or Anthropic's. The row omits attribution; add '— Palo Alto Networks (quoted in CyberScoop)' and note it does not describe the AISI result.",
+  "model_names_check": "OK: Claude Mythos Preview correct; blog notes results use a newer Mythos Preview checkpoint than previous AISI reporting. Anthropic Channel A dates (Apr 7) pre-date the AISI blog — the 'response' is a pre-existing release decision, not a reaction to this finding.",
+  "overstatement_check": "Finding is accurate on the long-task numbers. 'CTF ranges' is a mislabel (source: 'cyber ranges'; these are multi-step simulated network attacks, e.g., 'a 32-step simulated corporate network attack', not CTFs). No attempt-rate caveat given for ranges (6/10, 3/10).",
+  "notes": "MERGE CANDIDATE: overlaps UKAISI-2026-05-CYB2 (sheet_row 16) — same model, same report; row 16 covers the ranges, this row covers long tasks but re-claims the ranges. Suggest splitting cleanly (row 16 = ranges/first-ever; row 50 = six long tasks) or merging."
+ },
+ {
+  "sheet_row": 30,
+  "Finding ID": "NEW-081",
+  "Source URL": "https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks",
+  "pub_date_verified": "2025-09-30",
+  "numbers_check": [
+    {"value": "94%", "verdict": "exact", "source_value": "“DeepSeek’s most secure model (R1-0528) responded to 94% of overtly malicious requests when a common jailbreaking technique was used”", "location": "NIST news page, Key Findings"},
+    {"value": "8%", "verdict": "exact", "source_value": "“compared with 8% of requests for U.S. reference models”", "location": "NIST news page, Key Findings"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "DeepSeek’s most secure model (R1-0528) responded to 94% of overtly malicious requests when a common jailbreaking technique was used, compared with 8% of requests for U.S. reference models.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_detail": "Sentence appears verbatim on joineta.org but as a labeled bullet: “Security Weakness: DeepSeek models were up to 12x more vulnerable to malicious hijacking and responded to 94% of overtly harmful prompts, compared to just 8% for U.S. models.” Note the ETA bullet conflates two distinct CAISI findings (agent hijacking 12x and jailbreak 94%/8%) and loosens 'overtly malicious requests' to 'overtly harmful prompts'.",
+  "model_names_check": "OK — critically, the 94% figure is correctly attributed to R1-0528 ('most secure model'), not R1 or V3.1. Notes field '[Report tested: DeepSeek R1, DeepSeek V3.1, GPT-5, Anthropic Opus 4]' is INCOMPLETE: source says “CAISI’s experts evaluated three DeepSeek models (R1, R1-0528 and V3.1) and four U.S. models (OpenAI’s GPT-5, GPT-5-mini and gpt-oss and Anthropic’s Opus 4) across 19 benchmarks”.",
+  "overstatement_check": "None; Finding tracks source wording closely. Framing note: 94% is for DeepSeek's MOST SECURE model — the Finding preserves this via 'R1-0528' but could state 'most secure' explicitly to keep the source's a-fortiori framing.",
+  "notes": "Full report exists at nist.gov/document/caisi-evaluation-deepseek-ai-models-report if per-model breakdowns are needed. Related to NEW-080 (sheet_row 41, hijacking) — distinct findings, keep separate, but the shared joineta Channel C bullet covers both."
+ },
+ {
+  "sheet_row": 35,
+  "Finding ID": "NEW-082",
+  "Source URL": "https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks",
+  "pub_date_verified": "2025-09-30",
+  "numbers_check": [
+    {"value": "four times", "verdict": "exact", "source_value": "“DeepSeek models echoed four times as many inaccurate and misleading CCP narratives as U.S. reference models did.”", "location": "NIST news page, Key Findings"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "DeepSeek models echoed four times as many inaccurate and misleading CCP narratives as U.S. reference models did.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_detail": "The Channel C Verbatim is character-for-character the NIST source sentence; Mirage News and HPCwire reprint the CAISI release verbatim, so it does appear in those outlets — but it is CAISI's own sentence, not independent media language.",
+  "model_names_check": "OK: 'DeepSeek models' (plural) correctly rendered as R1, R1-0528, V3.1 in Models/Systems. Notes field '[Report tested: GPT-5; Anthropic Opus 4]' is INCOMPLETE: U.S. reference set also included GPT-5-mini and gpt-oss.",
+  "overstatement_check": "None; Finding mirrors the source sentence.",
+  "notes": "Cleanest row in the batch. Consider setting Key Quote = the source sentence (currently only stored under Channel C)."
+ },
+ {
+  "sheet_row": 41,
+  "Finding ID": "NEW-080",
+  "Source URL": "https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks",
+  "pub_date_verified": "2025-09-30",
+  "numbers_check": [
+    {"value": "12 times, on average", "verdict": "exact", "source_value": "“Agents based on DeepSeek’s most secure model (R1-0528) were, on average, 12 times more likely than evaluated U.S. frontier models to follow malicious instructions designed to derail them from user tasks.”", "location": "NIST news page, Key Findings"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "Agents based on DeepSeek’s most secure model (R1-0528) were, on average, 12 times more likely than evaluated U.S. frontier models to follow malicious instructions designed to derail them from user tasks.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelC_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "OK: R1-0528 correctly identified as 'DeepSeek's most secure model'; comparison set is 'evaluated U.S. frontier models' (GPT-5, GPT-5-mini, gpt-oss, Opus 4). Finding preserves both qualifiers ('most secure', 'on average').",
+  "overstatement_check": "None. Source adds concrete consequences worth capturing: “Hijacked agents sent phishing emails, downloaded and ran malware, and exfiltrated user login credentials, all in a simulated environment.” Domain tag 'Alignment' is debatable — CAISI frames this as a security/safeguard susceptibility, not alignment; consider 'Jailbreaks/Safeguards' for consistency with NEW-081.",
+  "notes": "Companion to NEW-081 (sheet_row 30); distinct benchmarks (agent hijacking vs jailbreaking), keep both. The joineta.org media bullet used in row 30 conflates the two ('up to 12x')."
+ },
+ {
+  "sheet_row": 17,
+  "Finding ID": "USCAISI-2025-12-SOC1",
+  "Source URL": "https://www.nist.gov/news-events/news/2025/12/caisi-evaluation-kimi-k2-thinking",
+  "pub_date_verified": "2025-12-12",
+  "numbers_check": [
+    {"value": "(no numbers in Finding)", "verdict": "n/a", "source_value": "For reference, source supports the direction: Figure 2 CCP alignment scores show high Chinese-language censorship (“censorship rates similar to those of DeepSeek R1-0528, the most censored PRC model that CAISI has tested”) vs “relatively uncensored in English, Spanish, and Arabic”", "location": "NIST news page, Key Findings and Figure 2"}
+  ],
+  "key_quote_verdict": "not-found",
+  "key_quote_detail": "HALLUCINATION CANDIDATE: 'CAISI scores systematically lower than Kimi K2's self-reported benchmark numbers.' appears NOWHERE on the source page (raw-HTML grep for 'self-report', 'claimed', 'Moonshot', 'benchmark', 'lower' confirms no such comparison). The page never compares CAISI results to Moonshot's self-reported benchmarks. It is also not a grammatical quote. Possibly confused with third-party commentary or another report; must be replaced or sourced.",
+  "proposed_key_quote": "Kimi K2 Thinking is highly censored in Chinese, with censorship rates similar to those of DeepSeek R1-0528, the most censored PRC model that CAISI has tested.",
+  "proposed_key_quote_note": "Immediately followed in source by: “The model is relatively uncensored in English, Spanish, and Arabic (Figure 2).” — the two sentences together fully support the language-differential finding.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelC_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "OK: Kimi K2 Thinking by Moonshot AI (PRC), released 2025-11-06, evaluated November 2025 — all confirmed. Comparison models on page: GPT-5, Opus 4, gpt-oss, DeepSeek V3.1/R1-0528/R1.",
+  "overstatement_check": "OVERSTATEMENT: the clause 'raising concerns about differential information access and possible influence operations targeting non-Chinese audiences' is analyst inference — the source states the censorship differential but never mentions influence operations or information-access concerns (grep for 'influence' returns nothing). Direction of the inference is also odd: less censorship in English/Spanish/Arabic cuts against an influence-ops-via-censorship story for non-Chinese audiences. Rewrite Finding to stop at the observed differential, or mark the concern clause as dataset interpretation.",
+  "notes": "No standalone Kimi K2 report PDF exists; the news page IS the publication (it cites the DeepSeek report only for methodology, Sections 4 and 7, and notes the expanded CCP dataset makes Figure 2 scores not directly comparable to the DeepSeek report). Page was updated 2026-01-09. The row's 'Confidence Low' note is appropriate. Adjacent verifiable facts if useful: capabilities 'remain below that of leading U.S. models, even older models such as GPT-5 and Opus 4'; Hugging Face downloads one month post-release were only 10% of DeepSeek R1's and <5% of gpt-oss's."
+ }
+]

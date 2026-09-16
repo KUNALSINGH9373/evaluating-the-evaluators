@@ -1,0 +1,496 @@
+priority,block,sheet_row,finding_id,check,detail,proposed_fix
+P2 — mechanical fix,FINALIZED-67,11,UKAISI-2026-04-CYB1,negative-lag-verify,"Pre-deployment-style response: resp 2026-04-07 < pub 2026-04-13; stated Lag ""0.0""","Verify both dates against sources, then set Lag=-6 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,12,UKAISI-2026-04-CYB2,negative-lag-verify,"Pre-deployment-style response: resp 2026-04-07 < pub 2026-04-13; stated Lag ""0.0""","Verify both dates against sources, then set Lag=-6 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,21,UKAISI-2025-11-ALI11,negative-lag-verify,"Pre-deployment-style response: resp 2025-11-01 < pub 2025-11-18; stated Lag ""0.0""","Verify both dates against sources, then set Lag=-17 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,31,NEW-097,negative-lag-verify,"Pre-deployment-style response: resp 2024-12-05 < pub 2024-12-18; stated Lag ""(blank)""","Verify both dates against sources, then set Lag=-13 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,34,NEW-070,negative-lag-verify,"Pre-deployment-style response: resp 2025-04-29 < pub 2026-04-28; stated Lag ""(blank)""","Verify both dates against sources, then set Lag=-364 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,45,ADD-03,negative-lag-verify,"Pre-deployment-style response: resp 2026-04-07 < pub 2026-04-30; stated Lag ""(blank)""","Verify both dates against sources, then set Lag=-23 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,49,ADD-07,negative-lag-verify,"Pre-deployment-style response: resp 2026-04-23 < pub 2026-05-13; stated Lag ""(blank)""","Verify both dates against sources, then set Lag=-20 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,50,ADD-08,negative-lag-verify,"Pre-deployment-style response: resp 2026-04-07 < pub 2026-05-13; stated Lag ""(blank)""","Verify both dates against sources, then set Lag=-36 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,53,ADD-11,negative-lag-verify,"Pre-deployment-style response: resp 2026-02-01 < pub 2026-04-23; stated Lag ""(blank)""","Verify both dates against sources, then set Lag=-81 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,56,ADD-14,negative-lag-verify,"Pre-deployment-style response: resp 2024-10-22 < pub 2024-11-19; stated Lag ""(blank)""","Verify both dates against sources, then set Lag=-28 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,59,UKAISI-2026-02-JAI1-s2,negative-lag-verify,"Pre-deployment-style response: resp 2026-02-01 < pub 2026-02-17; stated Lag ""0.0""","Verify both dates against sources, then set Lag=-16 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,FINALIZED-67,65,JOINT-2025-00-BIO1,negative-lag-verify,"Pre-deployment-style response: resp 2025-08-01 < pub 2025-09-12; stated Lag ""0.0""","Verify both dates against sources, then set Lag=-42 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,REST,181,UKAISI-2025-09-GOV1,negative-lag-verify,"Pre-deployment-style response: resp 2025-09-12 < pub 2025-09-13; stated Lag ""0.0""","Verify both dates against sources, then set Lag=-1 (negative allowed; never 0 as placeholder)"
+P2 — mechanical fix,REST,202,JOINT-2025-00-JAI3,negative-lag-verify,"Pre-deployment-style response: resp 2025-05-22 < pub 2025-09-12; stated Lag ""0.0""","Verify both dates against sources, then set Lag=-113 (negative allowed; never 0 as placeholder)"
+,FINALIZED-67,2,UKAISI-2024-10-JAI1,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,2,UKAISI-2024-10-JAI1,proportionality-formula,"Proportionality ""Under-response (gap)"" != computed ""Accountability gap (no action)"" (Severity C1 × Action None)",Recompute or document override in Notes
+,FINALIZED-67,3,UKAISI-2024-10-JAI3,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,3,UKAISI-2024-10-JAI3,proportionality-formula,"Proportionality ""Under-response (gap)"" != computed ""Accountability gap (no action)"" (Severity C1 × Action None)",Recompute or document override in Notes
+,FINALIZED-67,4,UKAISI-2024-12-BIO1,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,5,UKAISI-2025-04-ALI1,chA-verbatim-missing,Action Level acknowledged but Channel A Verbatim empty,Add exact quote from company source
+,FINALIZED-67,5,UKAISI-2025-04-ALI1,chA-date-missing,Action Level acknowledged but Response Date empty,Fill
+,FINALIZED-67,5,UKAISI-2025-04-ALI1,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,6,UKAISI-2025-11-ALI5,reportid-mismatch,Finding ID prefix UKAISI-2025-11 != Report ID UKAISI-2025-11b,Align
+,FINALIZED-67,6,UKAISI-2025-11-ALI5,report-group-incoherent,"Report UKAISI-2025-11b: rows [6, 7, 27, 234] disagree on ""Report Title"": ['Investigating Models for Misalignment', 'UK AISI Alignment Evaluation Case-Study (Claude Opus and Sonnet)']",Pick canonical value for whole report
+,FINALIZED-67,6,UKAISI-2025-11-ALI5,report-group-incoherent,"Report UKAISI-2025-11b: rows [6, 7, 27, 234] disagree on ""Source URL"": ['https://www.aisi.gov.uk/blog/investigating-models-for-misalignment', 'https://www.aisi.gov.uk/research/uk-aisi-alignment-evaluation-case-stu']",Pick canonical value for whole report
+,FINALIZED-67,6,UKAISI-2025-11-ALI5,report-group-incoherent,"Report UKAISI-2025-11b: rows [6, 7, 27, 234] disagree on ""Institution"": ['UK AI Security Institute', 'UK AISI']",Pick canonical value for whole report
+,FINALIZED-67,6,UKAISI-2025-11-ALI5,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,6,UKAISI-2025-11-ALI5,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,7,UKAISI-2025-11-ALI6,reportid-mismatch,Finding ID prefix UKAISI-2025-11 != Report ID UKAISI-2025-11b,Align
+,FINALIZED-67,7,UKAISI-2025-11-ALI6,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,7,UKAISI-2025-11-ALI6,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,7,UKAISI-2025-11-ALI6,proportionality-formula,"Proportionality ""Under-response (gap)"" != computed ""Accountability gap (no action)"" (Severity C1 × Action None)",Recompute or document override in Notes
+,FINALIZED-67,8,UKAISI-2025-12-ALI13,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-16,Align
+,FINALIZED-67,8,UKAISI-2025-12-ALI13,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,9,UKAISI-2026-03-CYB1,lag-wrong,Stated lag 14.0 != computed 22,Set Lag=22
+,FINALIZED-67,11,UKAISI-2026-04-CYB1,report-group-incoherent,"Report UKAISI-2026-04: rows [11, 12, 14, 15, 34, 45, 97, 98, 99, 238, 254] disagree on ""Report Title"": [""Ask Don't Tell: Reducing Sycophancy in Large Language Models"", ""Our Evaluation of Claude Mythos Preview's Cyber Capabilities"", 'Our Evaluation of OpenAI GPT-5.5 Cyber Capabilities']",Pick canonical value for whole report
+,FINALIZED-67,11,UKAISI-2026-04-CYB1,report-group-incoherent,"Report UKAISI-2026-04: rows [11, 12, 14, 15, 34, 45, 97, 98, 99, 238, 254] disagree on ""Publication Date"": ['2026-04-13 00:00:00', '2026-04-28 00:00:00', '2026-04-30 00:00:00']",Pick canonical value for whole report
+,FINALIZED-67,11,UKAISI-2026-04-CYB1,report-group-incoherent,"Report UKAISI-2026-04: rows [11, 12, 14, 15, 34, 45, 97, 98, 99, 238, 254] disagree on ""Source URL"": ['https://www.aisi.gov.uk/blog/ask-dont-tell-reducing-sycophancy-in-larg', 'https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-', 'https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-c']",Pick canonical value for whole report
+,FINALIZED-67,13,UKAISI-2026-04-ALI6,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04b,Align
+,FINALIZED-67,13,UKAISI-2026-04-ALI6,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,13,UKAISI-2026-04-ALI6,proportionality-formula,"Proportionality ""Under-response (gap)"" != computed ""Accountability gap (no action)"" (Severity C1 × Action None)",Recompute or document override in Notes
+,FINALIZED-67,16,UKAISI-2026-05-CYB2,traceability-tag,"Trackable row but Traceability Tag = ""too-recent""",Review
+,FINALIZED-67,17,USCAISI-2025-12-SOC1,report-group-incoherent,"Report USCAISI-2025-12: rows [17, 150, 166, 198] disagree on ""Publication Date"": ['2025-12-01 00:00:00', '2025-12-12 00:00:00']",Pick canonical value for whole report
+,FINALIZED-67,18,JOINT-2024-11-JAI1,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,18,JOINT-2024-11-JAI1,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,18,JOINT-2024-11-JAI1,proportionality-formula,"Proportionality ""Under-response (gap)"" != computed ""Accountability gap (no action)"" (Severity C1 × Action None)",Recompute or document override in Notes
+,FINALIZED-67,19,JOINT-2024-12-CYB1,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,19,JOINT-2024-12-CYB1,chA-verbatim-missing,Action Level acknowledged but Channel A Verbatim empty,Add exact quote from company source
+,FINALIZED-67,19,JOINT-2024-12-CYB1,chA-date-missing,Action Level acknowledged but Response Date empty,Fill
+,FINALIZED-67,19,JOINT-2024-12-CYB1,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,21,UKAISI-2025-11-ALI11,report-group-incoherent,"Report UKAISI-2025-11: rows [21, 36, 80, 107, 152, 183, 205, 206] disagree on ""Report Title"": ['CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D (NeurIPS 20', 'Gemini 3 Pro Frontier Safety Framework Report']",Pick canonical value for whole report
+,FINALIZED-67,21,UKAISI-2025-11-ALI11,report-group-incoherent,"Report UKAISI-2025-11: rows [21, 36, 80, 107, 152, 183, 205, 206] disagree on ""Publication Date"": ['2025-11-01 00:00:00', '2025-11-13 00:00:00', '2025-11-18 00:00:00']",Pick canonical value for whole report
+,FINALIZED-67,21,UKAISI-2025-11-ALI11,report-group-incoherent,"Report UKAISI-2025-11: rows [21, 36, 80, 107, 152, 183, 205, 206] disagree on ""Source URL"": ['https://arxiv.org/abs/2511.09904', 'https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_']",Pick canonical value for whole report
+,FINALIZED-67,21,UKAISI-2025-11-ALI11,report-group-incoherent,"Report UKAISI-2025-11: rows [21, 36, 80, 107, 152, 183, 205, 206] disagree on ""Institution"": ['UK AISI', 'UK AISI + Apollo + Vaultis + Dreadnode']",Pick canonical value for whole report
+,FINALIZED-67,25,USCAISI-2026-04-BIO1,report-group-incoherent,"Report USCAISI-2026-04: rows [25, 51, 52, 53, 103, 109, 131, 199, 200, 214, 256] disagree on ""Report Title"": ['Evaluation of DeepSeek V4 Pro', 'GPT-5.5 Biosecurity Evaluation (SecureBio with CAISI oversight)']",Pick canonical value for whole report
+,FINALIZED-67,25,USCAISI-2026-04-BIO1,report-group-incoherent,"Report USCAISI-2026-04: rows [25, 51, 52, 53, 103, 109, 131, 199, 200, 214, 256] disagree on ""Publication Date"": ['2026-04-01 00:00:00', '2026-04-23 00:00:00']",Pick canonical value for whole report
+,FINALIZED-67,25,USCAISI-2026-04-BIO1,report-group-incoherent,"Report USCAISI-2026-04: rows [25, 51, 52, 53, 103, 109, 131, 199, 200, 214, 256] disagree on ""Source URL"": ['https://securebio.substack.com/p/securebios-pre-release-assessment', 'https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepsee']",Pick canonical value for whole report
+,FINALIZED-67,25,USCAISI-2026-04-BIO1,report-group-incoherent,"Report USCAISI-2026-04: rows [25, 51, 52, 53, 103, 109, 131, 199, 200, 214, 256] disagree on ""Institution"": ['SecureBio + US CAISI', 'US CAISI']",Pick canonical value for whole report
+,FINALIZED-67,25,USCAISI-2026-04-BIO1,lag-wrong,Stated lag 29.0 != computed 7,Set Lag=7
+,FINALIZED-67,26,JOINT-2025-01-JAI1,reportid-mismatch,Finding ID prefix JOINT-2025-01 != Report ID CAISI-AGENT-HIJACKING-2025,Align
+,FINALIZED-67,27,UKAISI-2025-11b-ALI1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,FINALIZED-67,27,UKAISI-2025-11b-ALI1,trackable-anonymised,"Action Trackable=yes but Models/Systems mentions anonymised/unnamed: ""Claude Opus 4.5 Preview; Claude Sonnet 4.5 (+ 2 unnamed frontier model""",Confirm subject model is named; move comparators to Notes
+,FINALIZED-67,28,UKAISI-2025-02-JAI1,reportid-missing,Report ID blank,Derive from source report (prefix suggests UKAISI-2025-02)
+,FINALIZED-67,28,UKAISI-2025-02-JAI1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,FINALIZED-67,29,UKAISI-2026-06-ALI3,reportid-mismatch,Finding ID prefix UKAISI-2026-06 != Report ID AISI-2026-PREFILL,Align
+,FINALIZED-67,29,UKAISI-2026-06-ALI3,institution-variant,"""UK AI Security Institute (AISI)""","Normalize to ""UK AISI"""
+,FINALIZED-67,29,UKAISI-2026-06-ALI3,traceability-tag,"Trackable row but Traceability Tag = ""too-recent""",Review
+,FINALIZED-67,30,NEW-081,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,30,NEW-081,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,31,NEW-097,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,31,NEW-097,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,31,NEW-097,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,32,NEW-153,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02 (shares Source URL)
+,FINALIZED-67,32,NEW-153,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2026-02)
+,FINALIZED-67,32,NEW-153,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,FINALIZED-67,32,NEW-153,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,32,NEW-153,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,32,NEW-153,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,33,NEW-161,reportid-missing,Report ID blank,Set Report ID = USCAISI-2026-04 (shares Source URL)
+,FINALIZED-67,33,NEW-161,institution-missing,Institution blank,Set Institution = SecureBio + US CAISI (from USCAISI-2026-04)
+,FINALIZED-67,33,NEW-161,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-23 (from USCAISI-2026-04; verify vs source)
+,FINALIZED-67,33,NEW-161,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,FINALIZED-67,33,NEW-161,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,33,NEW-161,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,33,NEW-161,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,34,NEW-070,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,34,NEW-070,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,35,NEW-082,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,35,NEW-082,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,36,NEW-106,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,FINALIZED-67,36,NEW-106,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,36,NEW-106,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,37,NEW-146,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-08 (shares Source URL)
+,FINALIZED-67,37,NEW-146,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2025-08)
+,FINALIZED-67,37,NEW-146,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,37,NEW-146,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,37,NEW-146,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,38,NEW-011,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,38,NEW-011,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,39,NEW-147,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-08 (shares Source URL)
+,FINALIZED-67,39,NEW-147,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2025-08)
+,FINALIZED-67,39,NEW-147,pubdate-missing,Publication Date blank,Set Publication Date = 2025-09-12 (from JOINT-2025-08; verify vs source)
+,FINALIZED-67,39,NEW-147,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,FINALIZED-67,39,NEW-147,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,39,NEW-147,metadata-missing,Models / Systems blank,Fill
+,FINALIZED-67,39,NEW-147,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,39,NEW-147,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,40,NEW-151,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02 (shares Source URL)
+,FINALIZED-67,40,NEW-151,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2026-02)
+,FINALIZED-67,40,NEW-151,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-05 (from JOINT-2026-02; verify vs source)
+,FINALIZED-67,40,NEW-151,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,FINALIZED-67,40,NEW-151,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,40,NEW-151,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,40,NEW-151,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,41,NEW-080,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,41,NEW-080,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,42,NEW-116,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-11b (shares Source URL)
+,FINALIZED-67,42,NEW-116,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2025-11b)
+,FINALIZED-67,42,NEW-116,pubdate-missing,Publication Date blank,Set Publication Date = 2025-11-26 (from UKAISI-2025-11b; verify vs source)
+,FINALIZED-67,42,NEW-116,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,FINALIZED-67,42,NEW-116,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,42,NEW-116,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,42,NEW-116,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,43,ADD-01,id-format,"Finding ID ""ADD-01"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,43,ADD-01,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,43,ADD-01,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,43,ADD-01,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,44,ADD-02,id-format,"Finding ID ""ADD-02"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,44,ADD-02,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,44,ADD-02,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,44,ADD-02,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,45,ADD-03,id-format,"Finding ID ""ADD-03"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,45,ADD-03,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,45,ADD-03,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,45,ADD-03,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,46,ADD-04,id-format,"Finding ID ""ADD-04"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,46,ADD-04,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,FINALIZED-67,46,ADD-04,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,46,ADD-04,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,46,ADD-04,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,47,ADD-05,id-format,"Finding ID ""ADD-05"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,47,ADD-05,chA-date-missing,Action Level acknowledged but Response Date empty,Fill
+,FINALIZED-67,47,ADD-05,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,47,ADD-05,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,47,ADD-05,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,48,ADD-06,id-format,"Finding ID ""ADD-06"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,48,ADD-06,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,FINALIZED-67,48,ADD-06,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,48,ADD-06,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,48,ADD-06,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,49,ADD-07,id-format,"Finding ID ""ADD-07"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,49,ADD-07,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,49,ADD-07,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,49,ADD-07,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,50,ADD-08,id-format,"Finding ID ""ADD-08"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,50,ADD-08,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,50,ADD-08,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,50,ADD-08,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,51,ADD-09,id-format,"Finding ID ""ADD-09"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,51,ADD-09,chA-date-missing,Action Level acknowledged but Response Date empty,Fill
+,FINALIZED-67,51,ADD-09,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,51,ADD-09,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,51,ADD-09,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,52,ADD-10,id-format,"Finding ID ""ADD-10"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,52,ADD-10,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,FINALIZED-67,52,ADD-10,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,52,ADD-10,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,52,ADD-10,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,53,ADD-11,id-format,"Finding ID ""ADD-11"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,53,ADD-11,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,53,ADD-11,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,53,ADD-11,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,54,ADD-12,id-format,"Finding ID ""ADD-12"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,54,ADD-12,report-group-incoherent,"Report JOINT-2025-05: rows [54, 55, 63, 64, 217] disagree on ""Publication Date"": ['2025-05-01 00:00:00', '2025-05-22 00:00:00']",Pick canonical value for whole report
+,FINALIZED-67,54,ADD-12,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,FINALIZED-67,54,ADD-12,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,54,ADD-12,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,54,ADD-12,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,55,ADD-13,id-format,"Finding ID ""ADD-13"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,55,ADD-13,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,FINALIZED-67,55,ADD-13,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,55,ADD-13,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,55,ADD-13,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,56,ADD-14,id-format,"Finding ID ""ADD-14"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,56,ADD-14,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,56,ADD-14,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,56,ADD-14,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,56,ADD-14,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,57,ADD-15,id-format,"Finding ID ""ADD-15"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,FINALIZED-67,57,ADD-15,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,57,ADD-15,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,57,ADD-15,accesstype-missing,"Access Type """"",Assign from AISI access timing vs release date
+,FINALIZED-67,57,ADD-15,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,58,UKAISI-2026-02-JAI1,lag-without-response,"Lag ""0.0"" but no Response Date",Blank the Lag
+,FINALIZED-67,58,UKAISI-2026-02-JAI1,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,59,UKAISI-2026-02-JAI1-s2,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,60,NEW-092,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,60,NEW-092,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,60,NEW-092,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,61,NEW-092-s2,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,61,NEW-092-s2,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,61,NEW-092-s2,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,62,NEW-092-s3,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,FINALIZED-67,62,NEW-092-s3,sources-checked-missing,Action Level None but Sources Checked empty (needed to show the None was earnest),Record search protocol
+,FINALIZED-67,62,NEW-092-s3,keyquote-missing,Key Quote blank (codebook requires short verbatim from source),Add during quote-verification pass
+,FINALIZED-67,63,JOINT-2025-05-ALI1,lag-wrong,Stated lag 21.0 != computed 0,Set Lag=0
+,FINALIZED-67,63,JOINT-2025-05-ALI1,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,64,JOINT-2025-05-ALI1-s2,lag-wrong,Stated lag 21.0 != computed 29,Set Lag=29
+,FINALIZED-67,64,JOINT-2025-05-ALI1-s2,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,65,JOINT-2025-00-BIO1,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,66,JOINT-2025-00-BIO1-s2,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,67,JOINT-2025-00-BIO1-s3,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,FINALIZED-67,68,JOINT-2025-00-BIO1-s4,chA-verbatim-not-verbatim,Channel A Verbatim identical to Company Response summary — not an exact quote,Replace with true verbatim from source
+,REST,76,UKAISI-2025-09-SOC1,report-group-incoherent,"Report UKAISI-2025-09: rows [76, 181] disagree on ""Report Title"": ['Do Chatbots Inform or Misinform Voters?', 'Working with Frontier AI Developers to Improve Model Security']",Pick canonical value for whole report
+,REST,76,UKAISI-2025-09-SOC1,report-group-incoherent,"Report UKAISI-2025-09: rows [76, 181] disagree on ""Publication Date"": ['2025-09-13 00:00:00', '2025-09-30 00:00:00']",Pick canonical value for whole report
+,REST,76,UKAISI-2025-09-SOC1,report-group-incoherent,"Report UKAISI-2025-09: rows [76, 181] disagree on ""Source URL"": ['https://www.aisi.gov.uk/blog/do-chatbots-inform-or-misinform-voters', 'https://www.aisi.gov.uk/blog/how-were-working-with-frontier-ai-develop']",Pick canonical value for whole report
+,REST,81,UKAISI-2025-12-SOC2,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-04,Align
+,REST,82,UKAISI-2025-12-SOC3,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-04,Align
+,REST,85,UKAISI-2025-12-ALI12,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-16,Align
+,REST,86,UKAISI-2025-12-GOV1,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-16,Align
+,REST,87,UKAISI-2025-12-CYB1,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-18,Align
+,REST,88,UKAISI-2025-12-BIO1,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-18,Align
+,REST,89,UKAISI-2025-12-JAI2,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-18,Align
+,REST,90,UKAISI-2025-12-GOV5,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-18,Align
+,REST,91,UKAISI-2026-02-CYB1,reportid-mismatch,Finding ID prefix UKAISI-2026-02 != Report ID UKAISI-2026-02b,Align
+,REST,92,UKAISI-2026-02-CYB2,reportid-mismatch,Finding ID prefix UKAISI-2026-02 != Report ID UKAISI-2026-02b,Align
+,REST,94,UKAISI-2026-04-ALI10,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04c,Align
+,REST,95,UKAISI-2026-04-ALI11,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04c,Align
+,REST,96,UKAISI-2026-04-ALI5,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04b,Align
+,REST,104,JOINT-2024-11-BIO1,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,REST,105,JOINT-2024-11-CYB1,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,REST,106,JOINT-2024-12-BIO1,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,REST,110,SGAISI-2025-02-JAI1,reportid-mismatch,Finding ID prefix SGAISI-2025-02 != Report ID SGAISI-RedTeaming-Challenge-2025,Align
+,REST,111,AISI-JP-2025-10-SOC1,id-format,"Finding ID ""AISI-JP-2025-10-SOC1"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,REST,112,UKAISI-2026-04-ALI1b,id-format,"Finding ID ""UKAISI-2026-04-ALI1b"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,REST,112,UKAISI-2026-04-ALI1b,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-ALI-2026-04-20,Align
+,REST,112,UKAISI-2026-04-ALI1b,institution-variant,"""UKAISI""","Normalize to ""UK AISI"""
+,REST,113,SGAISI-2026-06-ALI1,reportid-mismatch,Finding ID prefix SGAISI-2026-06 != Report ID SGAISI-KR-DataLeakage-Agents-2026,Align
+,REST,114,UKAISI-2025-07-ALI1,reportid-mismatch,Finding ID prefix UKAISI-2025-07 != Report ID UKAISI-2025-07-ALI1,Align
+,REST,114,UKAISI-2025-07-ALI1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,115,UKAISI-2025-07-JAI1,reportid-mismatch,Finding ID prefix UKAISI-2025-07 != Report ID UKAISI-2025-07-JAI1,Align
+,REST,115,UKAISI-2025-07-JAI1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,116,UKAISI-2025-08-JAI11,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,117,UKAISI-2025-12a-ALI1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,118,UKAISI-2025-07-CYB1,reportid-missing,Report ID blank,Derive from source report (prefix suggests UKAISI-2025-07)
+,REST,119,SGAISI-2025-07-JAI1,reportid-missing,Report ID blank,Derive from source report (prefix suggests SGAISI-2025-07)
+,REST,120,SGAISI-2026-01-AUT1,reportid-missing,Report ID blank,Derive from source report (prefix suggests SGAISI-2026-01)
+,REST,121,UKAISI-2025-07-AUT1,reportid-missing,Report ID blank,Derive from source report (prefix suggests UKAISI-2025-07)
+,REST,121,UKAISI-2025-07-AUT1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,122,UKAISI-2025-10-ALI1b,id-format,"Finding ID ""UKAISI-2025-10-ALI1b"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,REST,122,UKAISI-2025-10-ALI1b,reportid-missing,Report ID blank,Derive from source report (prefix suggests UKAISI-2025-10)
+,REST,122,UKAISI-2025-10-ALI1b,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,123,UKAISI-2025-10-AUT1,reportid-missing,Report ID blank,Derive from source report (prefix suggests UKAISI-2025-10)
+,REST,123,UKAISI-2025-10-AUT1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,124,UKAISI-2026-06-ALI1b,id-format,"Finding ID ""UKAISI-2026-06-ALI1b"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,REST,124,UKAISI-2026-06-ALI1b,reportid-missing,Report ID blank,Derive from source report (prefix suggests UKAISI-2026-06)
+,REST,124,UKAISI-2026-06-ALI1b,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,125,UKAISI-2025-09-AUT1,reportid-mismatch,Finding ID prefix UKAISI-2025-09 != Report ID AISI-2025-2HOP,Align
+,REST,125,UKAISI-2025-09-AUT1,institution-variant,"""UK AI Security Institute (AISI)""","Normalize to ""UK AISI"""
+,REST,126,UKAISI-2026-02-SOC1,reportid-mismatch,Finding ID prefix UKAISI-2026-02 != Report ID AISI-2026-FUTUREWORK,Align
+,REST,126,UKAISI-2026-02-SOC1,institution-variant,"""UK AI Security Institute (AISI)""","Normalize to ""UK AISI"""
+,REST,128,NEW-053,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-03 (shares Source URL)
+,REST,128,NEW-053,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-03)
+,REST,128,NEW-053,pubdate-missing,Publication Date blank,Set Publication Date = 2026-03-16 (from UKAISI-2026-03; verify vs source)
+,REST,129,NEW-061,reportid-missing,Report ID blank,Set Report ID = UKAISI-ALI-2026-04-20 (shares Source URL)
+,REST,129,NEW-061,institution-missing,Institution blank,Set Institution = UKAISI (from UKAISI-ALI-2026-04-20)
+,REST,129,NEW-061,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-20 (from UKAISI-ALI-2026-04-20; verify vs source)
+,REST,133,NEW-145,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-11 (shares Source URL)
+,REST,133,NEW-145,institution-missing,Institution blank,Set Institution = UK AISI + Apollo + Vaultis + Dreadnode (from UKAISI-2025-11)
+,REST,133,NEW-145,pubdate-missing,Publication Date blank,Set Publication Date = 2025-11-18 (from UKAISI-2025-11; verify vs source)
+,REST,134,NEW-165,reportid-missing,Report ID blank,Set Report ID = NETWORK-2024-11 (shares Source URL)
+,REST,134,NEW-165,institution-missing,Institution blank,Set Institution = Joint UK + US + Singapore AISIs (International Network) (from NETWORK-2024-11)
+,REST,134,NEW-165,pubdate-missing,Publication Date blank,Set Publication Date = 2024-11-01 (from NETWORK-2024-11; verify vs source)
+,REST,135,NEW-173,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-05 (shares Source URL)
+,REST,135,NEW-173,institution-missing,Institution blank,Set Institution = Apollo Research + Anthropic (AISI-adjacent -- Apollo in AISIC) (from JOINT-2025-05)
+,REST,135,NEW-173,pubdate-missing,Publication Date blank,Set Publication Date = 2025-05-22 (from JOINT-2025-05; verify vs source)
+,REST,135,NEW-173,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,136,NEW-177,reportid-missing,Report ID blank,Set Report ID = SGAISI-KR-DataLeakage-Agents-2026 (shares Source URL)
+,REST,136,NEW-177,institution-missing,Institution blank,Set Institution = Singapore AI Safety Institute (SGAISI) / Korea AI Safety Institute (KR AISI) (from SGAISI-KR-DataLeakage-Agents-2026)
+,REST,136,NEW-177,pubdate-missing,Publication Date blank,Set Publication Date = 2026-06-15 (from SGAISI-KR-DataLeakage-Agents-2026; verify vs source)
+,REST,139,NEW-026,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-12-04 (shares Source URL)
+,REST,139,NEW-026,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2025-12-04)
+,REST,139,NEW-026,pubdate-missing,Publication Date blank,Set Publication Date = 2025-12-04 (from UKAISI-2025-12-04; verify vs source)
+,REST,141,NEW-062,reportid-missing,Report ID blank,Set Report ID = UKAISI-ALI-2026-04-20 (shares Source URL)
+,REST,141,NEW-062,institution-missing,Institution blank,Set Institution = UKAISI (from UKAISI-ALI-2026-04-20)
+,REST,141,NEW-062,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-20 (from UKAISI-ALI-2026-04-20; verify vs source)
+,REST,142,NEW-078,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-06 (shares Source URL)
+,REST,142,NEW-078,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-06)
+,REST,142,NEW-078,pubdate-missing,Publication Date blank,Set Publication Date = 2026-06-08 (from UKAISI-2026-06; verify vs source)
+,REST,143,NEW-094,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,REST,144,NEW-154,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02 (shares Source URL)
+,REST,144,NEW-154,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2026-02)
+,REST,144,NEW-154,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-05 (from JOINT-2026-02; verify vs source)
+,REST,144,NEW-154,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,145,NEW-174,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-05 (shares Source URL)
+,REST,145,NEW-174,institution-missing,Institution blank,Set Institution = Apollo Research + Anthropic (AISI-adjacent -- Apollo in AISIC) (from JOINT-2025-05)
+,REST,145,NEW-174,pubdate-missing,Publication Date blank,Set Publication Date = 2025-05-22 (from JOINT-2025-05; verify vs source)
+,REST,145,NEW-174,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,147,NEW-027,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-12-04 (shares Source URL)
+,REST,147,NEW-027,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2025-12-04)
+,REST,147,NEW-027,pubdate-missing,Publication Date blank,Set Publication Date = 2025-12-04 (from UKAISI-2025-12-04; verify vs source)
+,REST,148,NEW-079,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-06 (shares Source URL)
+,REST,148,NEW-079,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-06)
+,REST,148,NEW-079,pubdate-missing,Publication Date blank,Set Publication Date = 2026-06-08 (from UKAISI-2026-06; verify vs source)
+,REST,151,NEW-095,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,REST,152,NEW-107,lag-missing,Dates present but Lag blank (computed 0),Set Lag=0
+,REST,153,NEW-111,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,154,NEW-115,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-08 (shares Source URL)
+,REST,154,NEW-115,institution-missing,Institution blank,Set Institution = UK AI Security Institute (from UKAISI-2025-08)
+,REST,154,NEW-115,pubdate-missing,Publication Date blank,Set Publication Date = 2025-08-08 (from UKAISI-2025-08; verify vs source)
+,REST,155,NEW-135,reportid-missing,Report ID blank,Derive from source report
+,REST,155,NEW-135,institution-missing,Institution blank,Fill from report
+,REST,155,NEW-135,pubdate-missing,Publication Date blank,Verify against source
+,REST,156,NEW-155,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02 (shares Source URL)
+,REST,156,NEW-155,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2026-02)
+,REST,156,NEW-155,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-05 (from JOINT-2026-02; verify vs source)
+,REST,156,NEW-155,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,157,NEW-159,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-03 (shares Source URL)
+,REST,157,NEW-159,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI + Gray Swan (from JOINT-2026-03)
+,REST,157,NEW-159,pubdate-missing,Publication Date blank,Set Publication Date = 2026-03-23 (from JOINT-2026-03; verify vs source)
+,REST,158,NEW-171,reportid-missing,Report ID blank,Set Report ID = SGAISI-RedTeaming-Challenge-2025 (shares Source URL)
+,REST,158,NEW-171,institution-missing,Institution blank,Set Institution = Singapore AI Safety Institute (SGAISI) / IMDA (from SGAISI-RedTeaming-Challenge-2025)
+,REST,158,NEW-171,pubdate-missing,Publication Date blank,Set Publication Date = 2025-02-11 (from SGAISI-RedTeaming-Challenge-2025; verify vs source)
+,REST,159,NEW-175,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-05 (shares Source URL)
+,REST,159,NEW-175,institution-missing,Institution blank,Set Institution = Apollo Research + Anthropic (AISI-adjacent -- Apollo in AISIC) (from JOINT-2025-05)
+,REST,159,NEW-175,pubdate-missing,Publication Date blank,Set Publication Date = 2025-05-22 (from JOINT-2025-05; verify vs source)
+,REST,159,NEW-175,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,162,NEW-052,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-03 (shares Source URL)
+,REST,162,NEW-052,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-03)
+,REST,162,NEW-052,pubdate-missing,Publication Date blank,Set Publication Date = 2026-03-16 (from UKAISI-2026-03; verify vs source)
+,REST,163,NEW-056,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-03b (shares Source URL)
+,REST,163,NEW-056,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-03b)
+,REST,163,NEW-056,pubdate-missing,Publication Date blank,Set Publication Date = 2026-03-23 (from UKAISI-2026-03b; verify vs source)
+,REST,164,NEW-060,reportid-missing,Report ID blank,Set Report ID = UKAISI-ALI-2026-04-20 (shares Source URL)
+,REST,164,NEW-060,institution-missing,Institution blank,Set Institution = UKAISI (from UKAISI-ALI-2026-04-20)
+,REST,164,NEW-060,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-20 (from UKAISI-ALI-2026-04-20; verify vs source)
+,REST,165,NEW-068,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-04b (shares Source URL)
+,REST,165,NEW-068,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-04b)
+,REST,165,NEW-068,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-27 (from UKAISI-2026-04b; verify vs source)
+,REST,165,NEW-068,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,167,NEW-096,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,REST,168,NEW-108,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-03-GOV1 (shares Source URL)
+,REST,168,NEW-108,institution-missing,Institution blank,Set Institution = UK AI Security Institute (from UKAISI-2025-03-GOV1)
+,REST,168,NEW-108,pubdate-missing,Publication Date blank,Set Publication Date = 2025-03-02 (from UKAISI-2025-03-GOV1; verify vs source)
+,REST,169,NEW-152,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02 (shares Source URL)
+,REST,169,NEW-152,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2026-02)
+,REST,169,NEW-152,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-05 (from JOINT-2026-02; verify vs source)
+,REST,169,NEW-152,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,170,NEW-164,reportid-missing,Report ID blank,Set Report ID = USCAISI-2026-04 (shares Source URL)
+,REST,170,NEW-164,institution-missing,Institution blank,Set Institution = SecureBio + US CAISI (from USCAISI-2026-04)
+,REST,170,NEW-164,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-23 (from USCAISI-2026-04; verify vs source)
+,REST,170,NEW-164,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,171,NEW-168,reportid-missing,Report ID blank,Set Report ID = SGAISI-RedTeaming-Challenge-2025 (shares Source URL)
+,REST,171,NEW-168,institution-missing,Institution blank,Set Institution = Singapore AI Safety Institute (SGAISI) / IMDA (from SGAISI-RedTeaming-Challenge-2025)
+,REST,171,NEW-168,pubdate-missing,Publication Date blank,Set Publication Date = 2025-02-11 (from SGAISI-RedTeaming-Challenge-2025; verify vs source)
+,REST,172,NEW-172,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-05 (shares Source URL)
+,REST,172,NEW-172,institution-missing,Institution blank,Set Institution = Apollo Research + Anthropic (AISI-adjacent -- Apollo in AISIC) (from JOINT-2025-05)
+,REST,172,NEW-172,pubdate-missing,Publication Date blank,Set Publication Date = 2025-05-22 (from JOINT-2025-05; verify vs source)
+,REST,172,NEW-172,response-without-pubdate,Response Date present but Publication Date blank,Fill pub date first
+,REST,173,NEW-176,reportid-missing,Report ID blank,Set Report ID = SGAISI-KR-DataLeakage-Agents-2026 (shares Source URL)
+,REST,173,NEW-176,institution-missing,Institution blank,Set Institution = Singapore AI Safety Institute (SGAISI) / Korea AI Safety Institute (KR AISI) (from SGAISI-KR-DataLeakage-Agents-2026)
+,REST,173,NEW-176,pubdate-missing,Publication Date blank,Set Publication Date = 2026-06-15 (from SGAISI-KR-DataLeakage-Agents-2026; verify vs source)
+,REST,180,UKAISI-2025-08-JAI2,reportid-mismatch,Finding ID prefix UKAISI-2025-08 != Report ID UKAISI-2025-08-29,Align
+,REST,184,UKAISI-2025-12-GOV2,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-04,Align
+,REST,187,UKAISI-2026-04-ALI15,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04d,Align
+,REST,188,UKAISI-2026-04-ALI16,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04d,Align
+,REST,189,UKAISI-2026-04-ALI17,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04d,Align
+,REST,190,UKAISI-2026-04-ALI9,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-2026-04c,Align
+,REST,201,JOINT-2024-11-GOV1,institution-variant,"""Joint UK AISI + US AISI""","Normalize to ""Joint UK AISI + US CAISI"""
+,REST,207,UKAISI-2025-12-SOC5,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-17,Align
+,REST,208,UKAISI-2025-12-GOV3,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-17,Align
+,REST,209,UKAISI-2025-12-GOV4,reportid-mismatch,Finding ID prefix UKAISI-2025-12 != Report ID UKAISI-2025-12-17,Align
+,REST,211,JOINT-2026-02-GOV1b,id-format,"Finding ID ""JOINT-2026-02-GOV1b"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,REST,211,JOINT-2026-02-GOV1b,reportid-mismatch,Finding ID prefix JOINT-2026-02 != Report ID JOINT-2026-02b,Align
+,REST,212,JOINT-2026-02-GOV2b,id-format,"Finding ID ""JOINT-2026-02-GOV2b"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,REST,212,JOINT-2026-02-GOV2b,reportid-mismatch,Finding ID prefix JOINT-2026-02 != Report ID JOINT-2026-02b,Align
+,REST,218,UKAISI-2026-04-ALI2b,id-format,"Finding ID ""UKAISI-2026-04-ALI2b"" not in codebook scheme (INSTITUTION-YYYY-MM-DOMn / NEW-### / -sN)",Rename to scheme or extend codebook (ADD-## is undocumented)
+,REST,218,UKAISI-2026-04-ALI2b,reportid-mismatch,Finding ID prefix UKAISI-2026-04 != Report ID UKAISI-ALI-2026-04-10,Align
+,REST,218,UKAISI-2026-04-ALI2b,institution-variant,"""UKAISI""","Normalize to ""UK AISI"""
+,REST,219,USCAISI-2026-05-GOV1,reportid-mismatch,Finding ID prefix USCAISI-2026-05 != Report ID USCAISI-GOV-2026-05-01,Align
+,REST,219,USCAISI-2026-05-GOV1,institution-variant,"""USCAISI""","Normalize to ""US CAISI"""
+,REST,220,UKAISI-2026-05-ALI1,reportid-mismatch,Finding ID prefix UKAISI-2026-05 != Report ID UKAISI-ALI-2026-05-14,Align
+,REST,220,UKAISI-2026-05-ALI1,institution-variant,"""UKAISI""","Normalize to ""UK AISI"""
+,REST,221,UKAISI-2026-05-ALI2,reportid-mismatch,Finding ID prefix UKAISI-2026-05 != Report ID UKAISI-ALI-2026-05-30,Align
+,REST,221,UKAISI-2026-05-ALI2,institution-variant,"""UKAISI""","Normalize to ""UK AISI"""
+,REST,222,UKAISI-2024-01-GOV1,institution-variant,"""UK AI Safety Institute""","Normalize to ""UK AISI"""
+,REST,223,UKAISI-2024-05-GOV1,reportid-mismatch,Finding ID prefix UKAISI-2024-05 != Report ID UKAISI-2024-05c,Align
+,REST,223,UKAISI-2024-05-GOV1,institution-variant,"""UK AI Safety Institute""","Normalize to ""UK AISI"""
+,REST,224,UKAISI-2024-11-GOV11,reportid-mismatch,Finding ID prefix UKAISI-2024-11 != Report ID UKAISI-FIRST-YEAR-2024,Align
+,REST,224,UKAISI-2024-11-GOV11,institution-variant,"""UK AI Safety Institute""","Normalize to ""UK AISI"""
+,REST,225,UKAISI-2025-02-GOV1,reportid-mismatch,Finding ID prefix UKAISI-2025-02 != Report ID UKAISI-2025-02-GOV1,Align
+,REST,225,UKAISI-2025-02-GOV1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,226,UKAISI-2025-03-GOV11,reportid-mismatch,Finding ID prefix UKAISI-2025-03 != Report ID UKAISI-2025-03-GOV1,Align
+,REST,226,UKAISI-2025-03-GOV11,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,227,UKAISI-2025-07-GOV1,reportid-mismatch,Finding ID prefix UKAISI-2025-07 != Report ID UKAISI-2025-07-GOV1,Align
+,REST,227,UKAISI-2025-07-GOV1,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,229,KAISI-2025-12-SOC1,reportid-missing,Report ID blank,Derive from source report (prefix suggests KAISI-2025-12)
+,REST,230,UKAISI-2026-03-AUT1,reportid-mismatch,Finding ID prefix UKAISI-2026-03 != Report ID AISI-2026-MCP177K,Align
+,REST,230,UKAISI-2026-03-AUT1,institution-variant,"""UK AI Security Institute (AISI)""","Normalize to ""UK AISI"""
+,REST,231,USCAISI-2025-01-GOV1,reportid-mismatch,Finding ID prefix USCAISI-2025-01 != Report ID NIST AI 800-1,Align
+,REST,231,USCAISI-2025-01-GOV1,institution-variant,"""NIST / US Center for AI Standards and Innovation (CAISI, formerly US AISI)""","Normalize to ""US CAISI"""
+,REST,233,NEW-021,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-09 (shares Source URL)
+,REST,233,NEW-021,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2025-09)
+,REST,233,NEW-021,pubdate-missing,Publication Date blank,Set Publication Date = 2025-09-30 (from UKAISI-2025-09; verify vs source)
+,REST,239,NEW-069,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-04b (shares Source URL)
+,REST,239,NEW-069,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-04b)
+,REST,239,NEW-069,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-27 (from UKAISI-2026-04b; verify vs source)
+,REST,240,NEW-101,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-00 (shares Source URL)
+,REST,240,NEW-101,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI + Anthropic (from JOINT-2025-00)
+,REST,240,NEW-101,pubdate-missing,Publication Date blank,Set Publication Date = 2025-09-12 (from JOINT-2025-00; verify vs source)
+,REST,241,NEW-117,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-11b (shares Source URL)
+,REST,241,NEW-117,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2025-11b)
+,REST,241,NEW-117,pubdate-missing,Publication Date blank,Set Publication Date = 2025-11-26 (from UKAISI-2025-11b; verify vs source)
+,REST,242,NEW-125,reportid-missing,Report ID blank,Derive from source report
+,REST,242,NEW-125,institution-missing,Institution blank,Fill from report
+,REST,242,NEW-125,pubdate-missing,Publication Date blank,Verify against source
+,REST,243,NEW-133,reportid-missing,Report ID blank,Derive from source report
+,REST,243,NEW-133,institution-missing,Institution blank,Fill from report
+,REST,243,NEW-133,pubdate-missing,Publication Date blank,Verify against source
+,REST,244,NEW-137,reportid-missing,Report ID blank,Set Report ID = AISI-2026-FUTUREWORK (shares Source URL)
+,REST,244,NEW-137,institution-missing,Institution blank,Set Institution = UK AI Security Institute (AISI) (from AISI-2026-FUTUREWORK)
+,REST,244,NEW-137,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-02 (from AISI-2026-FUTUREWORK; verify vs source)
+,REST,245,NEW-149,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-12-17 (shares Source URL)
+,REST,245,NEW-149,institution-missing,Institution blank,Set Institution = UK AISI + Thorn (from UKAISI-2025-12-17)
+,REST,245,NEW-149,pubdate-missing,Publication Date blank,Set Publication Date = 2025-12-17 (from UKAISI-2025-12-17; verify vs source)
+,REST,246,NEW-157,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02b (shares Source URL)
+,REST,246,NEW-157,institution-missing,Institution blank,Set Institution = Joint International (Bengio et al.) (from JOINT-2026-02b)
+,REST,246,NEW-157,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-24 (from JOINT-2026-02b; verify vs source)
+,REST,247,NEW-181,reportid-missing,Report ID blank,Set Report ID = CAISI-AGENT-HIJACKING-2025 (shares Source URL)
+,REST,247,NEW-181,institution-missing,Institution blank,Set Institution = US CAISI (NIST) + UK AI Security Institute (from CAISI-AGENT-HIJACKING-2025)
+,REST,247,NEW-181,pubdate-missing,Publication Date blank,Set Publication Date = 2025-01-17 (from CAISI-AGENT-HIJACKING-2025; verify vs source)
+,REST,253,NEW-046,reportid-missing,Report ID blank,Set Report ID = UKAISI-2026-02b (shares Source URL)
+,REST,253,NEW-046,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2026-02b)
+,REST,253,NEW-046,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-26 (from UKAISI-2026-02b; verify vs source)
+,REST,257,NEW-102,reportid-missing,Report ID blank,Derive from source report
+,REST,257,NEW-102,institution-missing,Institution blank,Fill from report
+,REST,257,NEW-102,pubdate-missing,Publication Date blank,Verify against source
+,REST,258,NEW-114,reportid-missing,Report ID blank,Set Report ID = UKAISI-2025-08 (shares Source URL)
+,REST,258,NEW-114,institution-missing,Institution blank,Set Institution = UK AI Security Institute (from UKAISI-2025-08)
+,REST,258,NEW-114,pubdate-missing,Publication Date blank,Set Publication Date = 2025-08-08 (from UKAISI-2025-08; verify vs source)
+,REST,259,NEW-118,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,260,NEW-122,reportid-missing,Report ID blank,Derive from source report
+,REST,260,NEW-122,institution-missing,Institution blank,Fill from report
+,REST,260,NEW-122,pubdate-missing,Publication Date blank,Verify against source
+,REST,261,NEW-142,institution-variant,"""UK AI Security Institute (AISI)""","Normalize to ""UK AISI"""
+,REST,262,NEW-158,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02b (shares Source URL)
+,REST,262,NEW-158,institution-missing,Institution blank,Set Institution = Joint International (Bengio et al.) (from JOINT-2026-02b)
+,REST,262,NEW-158,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-24 (from JOINT-2026-02b; verify vs source)
+,REST,263,NEW-166,reportid-missing,Report ID blank,Set Report ID = NETWORK-2024-11 (shares Source URL)
+,REST,263,NEW-166,institution-missing,Institution blank,Set Institution = Joint UK + US + Singapore AISIs (International Network) (from NETWORK-2024-11)
+,REST,263,NEW-166,pubdate-missing,Publication Date blank,Set Publication Date = 2024-11-01 (from NETWORK-2024-11; verify vs source)
+,REST,264,NEW-178,reportid-missing,Report ID blank,Set Report ID = SGAISI-KR-DataLeakage-Agents-2026 (shares Source URL)
+,REST,264,NEW-178,institution-missing,Institution blank,Set Institution = Singapore AI Safety Institute (SGAISI) / Korea AI Safety Institute (KR AISI) (from SGAISI-KR-DataLeakage-Agents-2026)
+,REST,264,NEW-178,pubdate-missing,Publication Date blank,Set Publication Date = 2026-06-15 (from SGAISI-KR-DataLeakage-Agents-2026; verify vs source)
+,REST,265,NEW-182,reportid-missing,Report ID blank,Set Report ID = CAISI-AGENT-HIJACKING-2025 (shares Source URL)
+,REST,265,NEW-182,institution-missing,Institution blank,Set Institution = US CAISI (NIST) + UK AI Security Institute (from CAISI-AGENT-HIJACKING-2025)
+,REST,265,NEW-182,pubdate-missing,Publication Date blank,Set Publication Date = 2025-01-17 (from CAISI-AGENT-HIJACKING-2025; verify vs source)
+,REST,271,NEW-063,reportid-missing,Report ID blank,Set Report ID = UKAISI-ALI-2026-04-20 (shares Source URL)
+,REST,271,NEW-063,institution-missing,Institution blank,Set Institution = UKAISI (from UKAISI-ALI-2026-04-20)
+,REST,271,NEW-063,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-20 (from UKAISI-ALI-2026-04-20; verify vs source)
+,REST,274,NEW-127,reportid-missing,Report ID blank,Derive from source report
+,REST,275,NEW-131,reportid-missing,Report ID blank,Derive from source report
+,REST,275,NEW-131,institution-missing,Institution blank,Fill from report
+,REST,275,NEW-131,pubdate-missing,Publication Date blank,Verify against source
+,REST,276,NEW-143,institution-variant,"""UK AI Security Institute (AISI)""","Normalize to ""UK AISI"""
+,REST,277,NEW-163,reportid-missing,Report ID blank,Set Report ID = USCAISI-2026-04 (shares Source URL)
+,REST,277,NEW-163,institution-missing,Institution blank,Set Institution = SecureBio + US CAISI (from USCAISI-2026-04)
+,REST,277,NEW-163,pubdate-missing,Publication Date blank,Set Publication Date = 2026-04-23 (from USCAISI-2026-04; verify vs source)
+,REST,278,NEW-167,reportid-missing,Report ID blank,Set Report ID = NETWORK-2024-11 (shares Source URL)
+,REST,278,NEW-167,institution-missing,Institution blank,Set Institution = Joint UK + US + Singapore AISIs (International Network) (from NETWORK-2024-11)
+,REST,278,NEW-167,pubdate-missing,Publication Date blank,Set Publication Date = 2024-11-01 (from NETWORK-2024-11; verify vs source)
+,REST,279,NEW-179,reportid-missing,Report ID blank,Set Report ID = UKAISI-2024-01 (shares Source URL)
+,REST,279,NEW-179,institution-missing,Institution blank,Set Institution = UK AI Safety Institute (from UKAISI-2024-01)
+,REST,279,NEW-179,pubdate-missing,Publication Date blank,Set Publication Date = 2024-01-01 (from UKAISI-2024-01; verify vs source)
+,REST,280,NEW-008,reportid-missing,Report ID blank,Set Report ID = UKAISI-2024-10 (shares Source URL)
+,REST,280,NEW-008,institution-missing,Institution blank,Set Institution = UK AISI (from UKAISI-2024-10)
+,REST,280,NEW-008,pubdate-missing,Publication Date blank,Set Publication Date = 2024-10-11 (from UKAISI-2024-10; verify vs source)
+,REST,287,NEW-112,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,288,NEW-120,institution-variant,"""UK AI Security Institute""","Normalize to ""UK AISI"""
+,REST,289,NEW-136,institution-variant,"""UK AI Security Institute (AISI)""","Normalize to ""UK AISI"""
+,REST,290,NEW-148,reportid-missing,Report ID blank,Set Report ID = JOINT-2025-08 (shares Source URL)
+,REST,290,NEW-148,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI (from JOINT-2025-08)
+,REST,290,NEW-148,pubdate-missing,Publication Date blank,Set Publication Date = 2025-09-12 (from JOINT-2025-08; verify vs source)
+,REST,291,NEW-156,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-02b (shares Source URL)
+,REST,291,NEW-156,institution-missing,Institution blank,Set Institution = Joint International (Bengio et al.) (from JOINT-2026-02b)
+,REST,291,NEW-156,pubdate-missing,Publication Date blank,Set Publication Date = 2026-02-24 (from JOINT-2026-02b; verify vs source)
+,REST,292,NEW-160,reportid-missing,Report ID blank,Set Report ID = JOINT-2026-03 (shares Source URL)
+,REST,292,NEW-160,institution-missing,Institution blank,Set Institution = Joint UK AISI + US CAISI + Gray Swan (from JOINT-2026-03)
+,REST,292,NEW-160,pubdate-missing,Publication Date blank,Set Publication Date = 2026-03-23 (from JOINT-2026-03; verify vs source)
+,REST,293,NEW-180,reportid-missing,Report ID blank,Set Report ID = UKAISI-2024-01 (shares Source URL)
+,REST,293,NEW-180,institution-missing,Institution blank,Set Institution = UK AI Safety Institute (from UKAISI-2024-01)
+,REST,293,NEW-180,pubdate-missing,Publication Date blank,Set Publication Date = 2024-01-01 (from UKAISI-2024-01; verify vs source)
+,REST,294,NEW-184,reportid-missing,Report ID blank,Set Report ID = UKAISI-FIRST-YEAR-2024 (shares Source URL)
+,REST,294,NEW-184,institution-missing,Institution blank,Set Institution = UK AI Safety Institute (from UKAISI-FIRST-YEAR-2024)
+,REST,294,NEW-184,pubdate-missing,Publication Date blank,Set Publication Date = 2024-11-13 (from UKAISI-FIRST-YEAR-2024; verify vs source)

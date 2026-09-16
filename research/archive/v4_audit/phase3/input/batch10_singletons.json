@@ -1,0 +1,42 @@
+[
+ {
+  "sheet_row": 8,
+  "Finding ID": "UKAISI-2025-12-ALI13",
+  "Report ID": "UKAISI-2025-12-16",
+  "Institution": "UK AISI",
+  "Report Title": "Stress-Testing Asynchronous Monitoring of AI Coding Agents",
+  "Publication Date": "2025-12-16 00:00:00",
+  "Domain": "Alignment",
+  "Models / Systems": "Claude 4.1 Opus (red team); Claude 3.7 Sonnet (monitor)",
+  "Access Type": "Mixed",
+  "Source URL": "https://www.aisi.gov.uk/blog/stress-testing-asynchronous-monitoring-of-ai-coding-agents",
+  "Finding": "The red-team agent achieved 0% explicit mentions of its malicious objectives through targeted red-team prompting; however, monitors still detected most sabotage (best monitor missed only 6% of attacks by Round 3), so removing explicit mentions did not defeat monitoring.",
+  "Action Level": "None",
+  "Attribution": "None",
+  "Company Response": "None",
+  "Sources Checked": "model card, blog, release notes, news search -- 2026-06-28",
+  "Policy Level": "None",
+  "Policy Response": "None",
+  "Notes": "High severity (deliberate deception/hiding) but Action=None; Policy=In guidance (Partial map); override: one channel Partial + other None = Mixed; outcome type 5 -- no action documented"
+ },
+ {
+  "sheet_row": 26,
+  "Finding ID": "JOINT-2025-01-JAI1",
+  "Report ID": "CAISI-AGENT-HIJACKING-2025",
+  "Institution": "US CAISI (NIST) + UK AI Security Institute",
+  "Report Title": "CAISI AI Agent Hijacking Evaluations -- 81% attack success rate",
+  "Publication Date": "2025-01-17 00:00:00",
+  "Domain": "Jailbreaks",
+  "Models / Systems": "Claude 3.5 Sonnet",
+  "Access Type": "Post-deployment",
+  "Source URL": "https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations",
+  "Finding": "Novel attack strategies against AI agents achieved 81% success rate in red-team exercises against Claude 3.5 Sonnet, compared to 11% for baseline defences. Multiple attack attempts raised average success rate from 57% to 80%. Current agentic AI defences are critically insufficient against determined adversaries.",
+  "Action Level": "None",
+  "Attribution": "None",
+  "Company Response": "None",
+  "Sources Checked": "NIST technical blog 2025-01-17",
+  "Policy Level": "None",
+  "Key Quote": "Novel attack strategies achieved 81% success rate vs. 11% for baseline defences against Claude 3.5 Sonnet.",
+  "Notes": "High+None -> Strongly Disproportionate. Joint publication between USCAISI and UK AI Security Institute -- coded JOINT. No documented company response (Anthropic) to this specific publication."
+ }
+]

@@ -1,0 +1,243 @@
+#!/usr/bin/env python3
+"""25_what_is_a_finding.png — the unit of analysis, on one card.
+
+Four panels: the definition, the venues enumerated, the window, the corpus totals. Every number
+is read from the workbook, so the card cannot drift from the dataset.
+
+Deliberately spare — composition breakdowns (finding type, domain, access) have their own figures,
+and repeating them here buried the one number this card exists to deliver.
+
+Text is laid out by a small flow engine rather than by hand-placed coordinates: line width and
+line height are measured off the renderer, so copy can be edited without lines colliding or
+running past a panel edge. Hand-placed y-offsets were tried first and overflowed on every panel.
+"""
+import os, datetime
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch
+import openpyxl
+import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from palette import *   # single source of colour truth
+
+
+OUT = CHARTS_OUT
+plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "DejaVu Sans",
+                     "figure.facecolor": "white", "axes.facecolor": "white",
+                     "savefig.facecolor": "white"})
+INK, SOFT, FAINT, RULE = "#111111", "#4A4A4A", "#6E7A85", "#D3DAE1"
+PANEL = "#F3F6F9"
+ACCENT = INSTTYPE["Government"]
+FIG_W, FIG_H = 20.0, 20.3   # sized so the measured layout lands inside the 0-100 grid
+
+
+def norm(v):
+    if v is None:
+        return ""
+    if isinstance(v, (datetime.datetime, datetime.date)):
+        return v.strftime("%Y-%m-%d")
+    return str(v).strip()
+
+
+ws = openpyxl.load_workbook(
+    os.path.expanduser("~/MATS/Research/AISI_Evals/dataset/AISIEVAL.xlsx"),
+    data_only=True)["AISIEVAL"]
+hdr = [norm(c.value) for c in ws[1]]
+R = [{h: norm(ws.cell(r, i).value) for i, h in enumerate(hdr, 1) if h}
+     for r in range(2, ws.max_row + 1)]
+R = [r for r in R if r.get("Finding ID")]
+
+N_FIND = len(R)
+N_REP = len({r["Report ID"] for r in R if r["Report ID"]})
+N_ORG = len({r["Institution"] for r in R})
+PER_REP = N_FIND / N_REP
+YEARS = sorted({r["Publication Date"][:4] for r in R if r["Publication Date"]})
+BY_YEAR = [(y,
+            len({r["Report ID"] for r in R if r["Publication Date"][:4] == y and r["Report ID"]}),
+            sum(1 for r in R if r["Publication Date"][:4] == y))
+           for y in YEARS]
+FIRST = min(r["Publication Date"] for r in R if r["Publication Date"])
+LAST = max(r["Publication Date"] for r in R if r["Publication Date"])
+MONTH = ["January", "February", "March", "April", "May", "June", "July", "August",
+         "September", "October", "November", "December"]
+span = f"{MONTH[int(FIRST[5:7]) - 1]} {FIRST[:4]} – {MONTH[int(LAST[5:7]) - 1]} {LAST[:4]}"
+cutoff = f"{int(LAST[8:10])} {MONTH[int(LAST[5:7]) - 1]} {LAST[:4]}"
+
+
+def render(fig_h):
+    """Draw the whole card at a given figure height; return (fig, content bottom in inches).
+
+    Two passes are used. Vertical spacing is specified in INCHES and converted to grid units by
+    u(), so the layout's physical height is identical whatever canvas it is drawn on — which
+    means one measuring pass gives the exact height the second pass should use. Specifying the
+    spacing in grid units instead made the layout grow as the canvas grew, and it never converged.
+    """
+    fig = plt.figure(figsize=(FIG_W, fig_h))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, 100); ax.set_ylim(100, 0); ax.axis("off")
+    fig.canvas.draw()
+    rend = fig.canvas.get_renderer()
+
+    def u(inches):
+        return inches * 100.0 / fig_h
+
+    def em(fs):
+        return u(fs / 72.0)
+
+    def tw(s, fs, weight="normal"):
+        t = ax.text(0, 0, s, fontsize=fs, fontweight=weight, alpha=0)
+        bb = t.get_window_extent(renderer=rend)
+        t.remove()
+        inv = ax.transData.inverted()
+        return abs(inv.transform((bb.width, 0))[0] - inv.transform((0, 0))[0])
+
+    def wrap(s, fs, weight, maxw):
+        out, cur = [], ""
+        for word in s.split(" "):
+            trial = f"{cur} {word}".strip()
+            if cur and tw(trial, fs, weight) > maxw:
+                out.append(cur); cur = word
+            else:
+                cur = trial
+        if cur:
+            out.append(cur)
+        return out
+
+    def para(x, y, s, fs, weight="normal", colour=INK, maxw=40, lead=1.32):
+        for line in wrap(s, fs, weight, maxw):
+            ax.text(x, y, line, fontsize=fs, fontweight=weight, color=colour,
+                    va="baseline", zorder=3)
+            y += em(fs) * lead
+        return y
+
+    X0, X1, MIDX, GUTX, PADX = 2.0, 98.0, 50.0, 1.7, 2.4
+    TOP, PADT, PADB, GUTY = u(0.62), u(0.92), u(0.34), u(0.17)
+    L = {1: X0, 2: MIDX + GUTX / 2, 3: X0, 4: MIDX + GUTX / 2}
+    Rt = {1: MIDX - GUTX / 2, 2: X1, 3: MIDX - GUTX / 2, 4: X1}
+    TITLES = {1: "Definition", 2: "Where we looked", 3: "Timeline", 4: "The corpus"}
+    W1, W2 = Rt[1] - L[1] - 2 * PADX, Rt[2] - L[2] - 2 * PADX
+
+    def panel(i, y0, y1):
+        ax.add_patch(FancyBboxPatch((L[i], y0), Rt[i] - L[i], y1 - y0,
+                                    boxstyle="round,pad=0,rounding_size=0.6",
+                                    facecolor=tint(ACCENT, 0.90) if i == 4 else PANEL,
+                                    edgecolor="none", zorder=0, clip_on=False))
+        ax.add_patch(FancyBboxPatch((L[i], y0), 0.5, y1 - y0,
+                                    boxstyle="round,pad=0,rounding_size=0.22",
+                                    facecolor=ACCENT, edgecolor="none", zorder=1, clip_on=False))
+        ax.text(L[i] + PADX, y0 + u(0.36) + em(32) * 0.72, TITLES[i], fontsize=32,
+                fontweight="bold", color=ACCENT, va="baseline", zorder=3)
+
+    ax.text(2.0, em(52) * 0.80, "What counts as a finding", fontsize=52, fontweight="bold",
+            color=INK, va="baseline", zorder=3)
+    ax.text(2.0, em(52) * 0.80 + em(24) * 1.75,
+            "The unit of analysis is the finding, not the report — a response is owed to a "
+            "claim, not to a PDF.", fontsize=24, color=SOFT, va="baseline", zorder=3)
+    TOP = em(52) * 0.80 + em(24) * 1.75 + u(0.34)
+    HEADSPACE = u(0.36) + em(32) * 0.72 + em(32) * 1.35   # title row inside a panel
+
+    # ---- 1 · definition -----------------------------------------------------------------
+    x, y = L[1] + PADX, TOP + HEADSPACE
+    y = para(x, y, "A discrete, evidence-backed claim asserted by an in-scope evaluator in a "
+             "public report, codeable independently of the report's other claims.",
+             25, "bold", INK, W1, 1.30) + u(0.20)
+    ax.text(x, y, "ALL THREE MUST HOLD", fontsize=18, fontweight="bold", color=SOFT,
+            va="baseline", zorder=3)
+    y += em(18) * 2.2
+    for num, txt in ((1, "Asserted by the evaluator — not a summary of another group's work, "
+                         "not a comparator cited in passing"),
+                     (2, "Evidence-backed in that report — not an opinion, a recommendation, "
+                         "or a forward-looking plan"),
+                     (3, "Independently codeable — it would warrant its own response")):
+        ax.text(x, y, str(num), fontsize=21, fontweight="bold", color=ACCENT,
+                va="baseline", zorder=3)
+        y = para(x + 2.4, y, txt, 21, "normal", INK, W1 - 2.4, 1.30) + u(0.11)
+    y += u(0.15)
+    y = para(x, y, "Qualifies:  empirical model findings, including reassuring nulls  ·  "
+             "methodology and tooling  ·  governance and process",
+             21, "normal", INK, W1, 1.30) + u(0.13)
+    end1 = para(x, y, "Not findings:  announcements  ·  partnership news  ·  opinion pieces  "
+                "·  plans", 21, "normal", FAINT, W1, 1.30)
+
+    # ---- 2 · venues ---------------------------------------------------------------------
+    x, y = L[2] + PADX, TOP + HEADSPACE
+    y = para(x, y, "The roster is derived, never hand-picked — International Network of AI "
+             "Safety Institutes  ·  AI Evaluators Forum  ·  four company venues. Zero-yield "
+             "organisations are swept anyway and logged as zeros.",
+             21, "normal", INK, W2, 1.30) + u(0.22)
+    ax.text(x, y, "VENUES ENUMERATED", fontsize=18, fontweight="bold", color=SOFT,
+            va="baseline", zorder=3)
+    y += em(18) * 2.2
+    for ok, txt in ((True, "The organisation's own publications index, paginated to the very end"),
+                    (True, "arXiv, via that organisation's own publication list, and "
+                           "citation-chasing from included reports"),
+                    (True, "System cards — only sections written by a named external evaluator"),
+                    (False, "Open keyword search — never. Its recall is unknowable and it is "
+                            "not reproducible")):
+        ax.text(x, y, "✓" if ok else "✗", fontsize=24, fontweight="bold",
+                color=GREEN if ok else RED, va="baseline", zorder=3)
+        y = para(x + 3.0, y, txt, 21, "normal", INK, W2 - 3.0, 1.30) + u(0.14)
+    end2 = para(x, y + u(0.10), "Enumeration is an exhaustive listing, not a search.",
+                21, "bold", INK, W2)
+
+    row1 = max(end1, end2) + PADB
+    panel(1, TOP, row1)
+    panel(2, TOP, row1)
+    split = row1 + GUTY
+
+    # ---- 3 · timeline -------------------------------------------------------------------
+    x, y = L[3] + PADX, split + HEADSPACE
+    y = para(x, y, f"Each organisation's first publication → {cutoff}, frozen. Later qualifying "
+             "items are held for the next version.", 21, "normal", INK, W1, 1.30) + u(0.36)
+    colw = (Rt[3] - PADX - (x + 13.0)) / len(BY_YEAR)
+    cx = [x + 13.0 + colw * (j + 0.5) for j in range(len(BY_YEAR))]
+    for j, (yr, _, _) in enumerate(BY_YEAR):
+        ax.text(cx[j], y, yr, fontsize=23, fontweight="bold", color=ACCENT,
+                ha="center", va="baseline", zorder=3)
+    y += em(23) * 0.55
+    ax.plot([x, Rt[3] - PADX], [y, y], color=RULE, lw=1.6, zorder=2)
+    for lab, idx in (("Reports", 1), ("Findings", 2)):
+        y += em(23) * 1.60
+        ax.text(x, y, lab, fontsize=21, color=SOFT, va="baseline", zorder=3)
+        for j, row in enumerate(BY_YEAR):
+            ax.text(cx[j], y, f"{row[idx]:,}", fontsize=23, fontweight="bold", color=INK,
+                    ha="center", va="baseline", zorder=3)
+    y += em(21) * 2.5
+    ax.text(x, y, f"{LAST[:4]} counts run to July only.", fontsize=18, color=SOFT,
+            va="baseline", zorder=3)
+    end3 = y
+
+    # ---- 4 · corpus ---------------------------------------------------------------------
+    x, y = L[4] + PADX, split + HEADSPACE + em(120) * 0.74
+    ax.text(x, y, f"{N_FIND:,}", fontsize=120, fontweight="bold", color=INK,
+            va="baseline", zorder=3)
+    ax.text(x + tw(f"{N_FIND:,}", 120, "bold") + 1.8, y, "findings", fontsize=30, color=SOFT,
+            va="baseline", zorder=3)
+    y += em(120) * 0.30
+    ax.plot([x, Rt[4] - PADX], [y, y], color=tint(ACCENT, 0.5), lw=1.8, zorder=2)
+    for big, small in ((f"{N_REP}", "reports"),
+                       (f"{N_ORG}", "evaluator organisations"),
+                       (f"{PER_REP:.2f}", "findings per report")):
+        y += em(36) * 1.55
+        ax.text(x, y, big, fontsize=36, fontweight="bold", color=ACCENT, va="baseline", zorder=3)
+        ax.text(x + 11.0, y, small, fontsize=24, color=INK, va="baseline", zorder=3)
+    y += em(26) * 2.1
+    ax.text(x, y, span, fontsize=26, fontweight="bold", color=SOFT, va="baseline", zorder=3)
+    end4 = y
+
+    row2 = max(end3, end4) + PADB
+    panel(3, split, row2)
+    panel(4, split, row2)
+    return fig, row2 * fig_h / 100.0
+
+
+TRIAL = 18.0
+probe, need = render(TRIAL)
+plt.close(probe)
+fig, _ = render(need + 0.22)
+
+p = os.path.join(OUT, "25_what_is_a_finding.png")
+fig.savefig(p, bbox_inches="tight", pad_inches=0.3)
+plt.close(fig)
+print(f"wrote {p}   {N_FIND:,} findings · {N_REP} reports · {N_ORG} orgs · {PER_REP:.2f}/report")
+print("  " + " · ".join(f"{y}: {a} reports / {b} findings" for y, a, b in BY_YEAR))

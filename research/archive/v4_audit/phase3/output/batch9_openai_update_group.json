@@ -1,0 +1,117 @@
+[
+ {
+  "sheet_row": 20,
+  "Finding ID": "JOINT-2025-08-JAI1",
+  "source_checked": "https://openai.com/index/us-caisi-uk-aisi-ai-update/ (via web.archive.org capture 2026-01-24); cross-checked https://cdn.openai.com/gpt-5-system-card.pdf and https://www.aisi.gov.uk/blog/how-were-working-with-frontier-ai-developers-to-improve-model-security",
+  "pub_date_verified": "2025-09-12",
+  "numbers_check": [
+    {"claim": "no explicit numbers in Finding text", "verdict": "n/a", "source_value": null, "location": null},
+    {"claim": "Lag (days) = 0.0 (finding and response in same document)", "verdict": "exact", "source_value": "same blog post, September 12, 2025", "location": "blog header date"}
+  ],
+  "key_quote_verdict": "not-found",
+  "key_quote_detail": "'Found universal jailbreak in GPT-5' appears nowhere in the source and is not a quote. The blog never says a universal jailbreak was found 'in GPT-5'. It says UK AISI 'sought to find universal jailbreaks against OpenAI's biosecurity safeguards' (plural) and that OpenAI measured its monitoring stack 'against a set of universal jailbreaks UK AISI identified against the monitoring systems'. Targets were the biosecurity safeguard/monitoring stack spanning ChatGPT Agent and GPT-5, not the GPT-5 model's own guardrails.",
+  "proposed_key_quote": "A multidisciplinary team at UK AISI, combining expertise in both AI red teaming techniques and the biosecurity domain, then sought to find universal jailbreaks against OpenAI's biosecurity safeguards.",
+  "proposed_key_quote_alt": "OpenAI improved the robustness of our monitoring stack by improving and measuring it against a set of universal jailbreaks UK AISI identified against the monitoring systems (verbatim clause; full source sentence is 38 words, over the 35-word cap)",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_detail": "Verbatim sentence matches the blog character-for-character.",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "PARTIAL: blog names GPT-5 and ChatGPT Agent; sub-model names 'gpt-5-thinking; gpt-5-main' in the Models/Systems field do NOT appear in this blog (they come from the GPT-5 system card). Safeguards tested covered ChatGPT Agent AND GPT-5, so scoping the row to GPT-5 alone under-describes the tested surface.",
+  "overstatement_check": "OVERSTATED / MISCHARACTERIZED on three points. (1) Singular 'a universal jailbreak in GPT-5 ... bypass of the model's safety guardrails' vs source's plural 'set of universal jailbreaks ... against the monitoring systems' -- attacks targeted the external biosecurity monitoring/safeguard stack, not the model's own guardrails. (2) 'during pre-deployment evaluation' / Access Type 'Pre-deployment' conflicts with the source: collaboration ran May through the July (ChatGPT Agent) and August (GPT-5) releases, and the blog states it was explicitly NOT tied to an individual launch ('Rather than tying this to an individual launch, this is an ongoing collaboration'). Report Title 'GPT-5 Pre-Deployment Evaluation' is therefore inaccurate. (3) 'reported but not credited in the GPT-5 system card' is contradicted by the live GPT-5 system card (dated August 13, 2025), sec. 5.3.3.5 'External government red teaming': 'The UK AISI's Safeguards team identified multiple model-level jailbreaks that overcome gpt-5-thinking's built-in refusal logic... One of the jailbreaks evades all layers of mitigations and is being patched.' The non-credit claim could at most apply to the original 2025-08-07 card version (arXiv:2601.03267 cited in Notes was not verifiable here); as an unqualified statement it is wrong against the current source.",
+  "notes": "CIRCULARITY: Source URL and Channel A Evidence are the same OpenAI blog post -- the finding and the company response both originate from a single company document. AISI-side alternative: UK AISI published 'How we're working with frontier AI developers to improve model security' (aisi.gov.uk, Sep 13, 2025), but it only references the company posts and confirms the collaboration at a high level; it does not independently state the universal-jailbreak finding, so it can serve as Channel B corroboration (as row 39 uses it) but not as a substitute primary source. The GPT-5 system card (2025-08-13) sec. 5.3.3.5 is arguably a better primary source for a UK AISI jailbreak finding against gpt-5-thinking specifically. Recommend re-scoping the finding to 'universal jailbreaks against OpenAI's biosecurity monitoring stack (ChatGPT Agent + GPT-5)' and dropping or qualifying the system-card non-credit claim."
+ },
+ {
+  "sheet_row": 37,
+  "Finding ID": "NEW-146",
+  "source_checked": "https://openai.com/index/us-caisi-uk-aisi-ai-update/ (via web.archive.org)",
+  "pub_date_verified": "2025-09-12",
+  "numbers_check": [
+    {"claim": "two novel security vulnerabilities", "verdict": "exact", "source_value": "CAISI identified two novel security vulnerabilities in ChatGPT Agent", "location": "blog, 'Collaborating to Secure the Deployment of AI Agents' section"},
+    {"claim": "approximately 50% success rate", "verdict": "exact", "source_value": "a full exploit chain with a success rate of approximately 50%", "location": "same section"},
+    {"claim": "within one business day (Company Response)", "verdict": "exact", "source_value": "fixed by OpenAI within one business day", "location": "same section"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "The proof-of-concept attack developed by CAISI successfully bypassed various AI-based security protections, which led to a full exploit chain with a success rate of approximately 50%.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "'Fixed both CAISI-identified ChatGPT Agent vulnerabilities within one business day of the report.' is a composed summary, not a sentence in the source. Also duplicated verbatim into Company Response.",
+  "proposed_channelA_verbatim": "These attacks were immediately reported to OpenAI, and fixed by OpenAI within one business day.",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "OK: ChatGPT Agent matches source. Note CAISI also used ChatGPT Agent itself as a discovery tool (blog).",
+  "overstatement_check": "Finding substantively accurate: two vulnerabilities, exploit chain combining traditional cyber vulnerabilities with an AI agent hijacking attack, ~50% success rate all match. Minor: the Finding text is TRUNCATED mid-word ('not captured by any GP') -- data corruption in the sheet; the '(cyber/agent-security finding)' gloss is editorial. Testing occurred in July 2025 per blog ('a new kind of collaboration that took place in July'), fixes therefore predate the blog.",
+  "conflicts": "Response Date '2026.0' is wrong: fixes occurred within one business day of the July 2025 report and were disclosed 2025-09-12. Should be <=2025-09-12 (CONFLICT: 2025-09-12 disclosure; fix ~2025-07).",
+  "notes": "CIRCULARITY: Source URL and Channel A Evidence are both the same OpenAI blog -- the finding (CAISI's discovery) is known only through the company's own post. No CAISI/NIST-side publication of these specific ChatGPT Agent vulnerabilities was found (web search: only the OpenAI post, NIST CAISI's Jan 2026 RFI on AI-agent security, and secondary coverage). UK AISI's Sep 13, 2025 blog references the OpenAI post generically but does not describe the CAISI finding. Report Title truncated ('...more secure AI sy'); full title: 'Working with US CAISI and UK AISI to build more secure AI systems'. Publication Date field 2025-09-12 correct."
+ },
+ {
+  "sheet_row": 39,
+  "Finding ID": "NEW-147",
+  "source_checked": "https://openai.com/index/us-caisi-uk-aisi-ai-update/ (via web.archive.org); Channel B: https://www.aisi.gov.uk/blog/how-were-working-with-frontier-ai-developers-to-improve-model-security",
+  "pub_date_verified": "2025-09-12 (Publication Date field is EMPTY in row; should be 2025-09-12)",
+  "numbers_check": [
+    {"claim": "no numbers in Finding text", "verdict": "n/a", "source_value": null, "location": null}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "OpenAI made a range of improvements to our product configuration to fix a set of configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "The Channel A Verbatim is a composed summary that fuses two separate blog passages (the configuration-fix sentence and the earlier 'engineering based product fixes / policy enforcement implementation fixes / focused training ... classifiers' sentence about the dozen-plus vulnerability reports generally). It is not a source sentence, and it slightly misattributes: the engineering/policy/classifier triad describes OpenAI's response to the >12 vulnerability reports overall, not specifically to the product-configuration set. Also duplicated verbatim into Company Response.",
+  "proposed_channelA_verbatim": "OpenAI made a range of improvements to our product configuration to fix a set of configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation.",
+  "channelB_verbatim_verdict": "exact",
+  "channelB_detail": "Exact contiguous substring of the AISI blog sentence, but it drops the sentence stem 'Their blog posts outline how...' -- in the source AISI is describing what the company blog posts outline, a slightly weaker speech act than a free-standing AISI assertion. AISI blog date: 2025-09-13.",
+  "model_names_check": "Models/Systems field is EMPTY. Source scopes this to OpenAI's deployed biosecurity moderation surface across ChatGPT Agent and GPT-5 ('the end-to-end product experience'); recommend 'ChatGPT Agent; GPT-5 product surface'.",
+  "overstatement_check": "Finding is a fair paraphrase ('product-configuration vulnerabilities' vs source 'configuration vulnerabilities' fixed via 'improvements to our product configuration'). Domain 'Jailbreaks' is arguable -- the source frames this as end-to-end moderation/safeguard-bypass within the biosecurity red-teaming workstream, not model jailbreaking; 'Safeguards' would be more precise. Attribution 'Explicit' is supported (UK AISI named).",
+  "notes": "CIRCULARITY: Source URL and Channel A Evidence are the same OpenAI blog. This row at least has a genuine second channel: UK AISI's own blog (2025-09-13) confirms the collaboration and that AISI/CAISI 'identify and remediate system vulnerabilities', but it does NOT independently describe the input/exfiltration configuration vulnerabilities -- so the OpenAI blog remains the only primary statement of the finding itself. No standalone UK AISI publication of this specific finding located."
+ },
+ {
+  "sheet_row": 32,
+  "Finding ID": "NEW-153",
+  "source_checked": "GPT-5.3-Codex System Card PDF (local codex53.pdf/codex53.txt); Channel A: https://deploymentsafety.openai.com/gpt-5-3-codex/cyber-safeguards (WebFetch)",
+  "pub_date_verified": "2026-02-05",
+  "numbers_check": [
+    {"claim": "two novel bugs? -- Finding says 'novel bugs' without a count", "verdict": "exact", "source_value": "used the model to find novel bugs in open and closed source software that will be responsibly disclosed", "location": "system card p.28, 'External Government Testing'"},
+    {"claim": "'two-tiered automated monitoring' (Channel A text)", "verdict": "exact", "source_value": "a two-tiered system that continuously monitors and detects high risk users via high-recall cyber detection", "location": "deploymentsafety.openai.com cyber-safeguards page"}
+  ],
+  "key_quote_verdict": "missing (the Finding embeds a quoted phrase which IS exact: 'continued making meaningful progress on difficult cyber tasks across many compaction windows' matches the card verbatim)",
+  "proposed_key_quote": "CAISI observed that GPT-5.3-Codex continued making meaningful progress on difficult cyber tasks across many compaction windows, finding novel results even after 50M or more unique tokens and tens of hours of analysis.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "The Channel A Verbatim is a composed summary (accurate in substance: first High-cyber classification, dual-use safety training, two-tiered monitoring, TAC program, actor-level enforcement with threat intel all verified across the system card and the deploymentsafety page), but it is not a sentence from either document. Also duplicated verbatim into Company Response.",
+  "proposed_channelA_verbatim": "This is the first launch we are treating as High capability in the Cybersecurity domain under our Preparedness Framework, activating the associated safeguards.",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "OK: GPT-5.3-Codex matches. Card also notes CAISI/UK AISI had early access building on 'recent codex models and gpt-5.2-thinking'.",
+  "overstatement_check": "Finding accurate but TRUNCATED mid-phrase ('separate from the High-') -- sheet data corruption. Note the card's own hedge on the High classification: 'We do not have definitive evidence that this model reaches our High threshold, but are taking a precautionary approach' -- the Channel A summary's flat 'classified as High capability (a first)' omits the precautionary framing but is defensible. The Finding could also cite the concrete quantitative detail: 'finding novel results even after 50M or more unique tokens and tens of hours of analysis.'",
+  "notes": "PARTIAL CIRCULARITY: finding source (system card) and Channel A evidence (deploymentsafety.openai.com) are two different documents but both are OpenAI-authored; CAISI's observation is known only via the company's system card. No CAISI/NIST-side publication of this GPT-5.3-Codex testing found. Same card also reports UK AISI's ~10-hour universal jailbreak of the Safety Reasoner (0.778 pass@200) -- a distinct finding not in this row; confirm it is captured elsewhere in the dataset. Report Title, Source URL, dates all consistent."
+ },
+ {
+  "sheet_row": 40,
+  "Finding ID": "NEW-151",
+  "source_checked": "GPT-5.3-Codex System Card PDF (local codex53.txt); Channel A: https://cdn.openai.com/gpt-5-system-card.pdf (downloaded, 60 pp., dated August 13, 2025)",
+  "pub_date_verified": "2026-02-05 (Publication Date field is EMPTY in row; should be 2026-02-05, the GPT-5.3-Codex system card date)",
+  "numbers_check": [
+    {"claim": "no numbers in Finding text", "verdict": "n/a", "source_value": null, "location": null},
+    {"claim": "Response Date 2025-08-13", "verdict": "exact", "source_value": "GPT-5 System Card, OpenAI, August 13, 2025 (title page of live cdn PDF)", "location": "gpt-5-system-card.pdf p.1"}
+  ],
+  "key_quote_verdict": "exact (embedded quote 'it is being treated as High capability on biology' matches the card verbatim)",
+  "proposed_key_quote": "Like other recent models, it is being treated as High capability on biology, and is being deployed with the corresponding suite of safeguards we use for other models in the GPT-5 family.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "Composed summary, not a sentence from the GPT-5 system card. Substance verified in the card: gpt-5-thinking treated as High capability in the Biological and Chemical domain (p.4 and sec. 5.3.2); new safety_identifier API field (sec. 5.3.2.4); recidivism prevention measures; automated + human review monitoring. Also duplicated verbatim into Company Response.",
+  "proposed_channelA_verbatim": "Similarly to ChatGPT agent, we have decided to treat gpt-5-thinking as High capability in the Biological and Chemical domain under our Preparedness Framework, activating the associated safeguards.",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "MISMATCH: Models/Systems says 'GPT-5 family' but the finding's subject model is GPT-5.3-Codex (it inherits GPT-5-family bio safeguards). Should read 'GPT-5.3-Codex (GPT-5-family bio safeguards)'. The 5.3-Codex card uses both 'High capability on biology' (p.4) and 'High risk in the Biological and Chemical domain' (sec. 5/5.1.1) -- terminology inconsistency in the source worth noting.",
+  "overstatement_check": "No overstatement in the text itself, but a SCOPE problem for the dataset: this finding is OpenAI's own Preparedness Framework self-classification with no UK AISI/CAISI evaluation content -- there is no institute finding here, and Attribution 'Explicit' has no institute to attribute to. Both the 'finding' and the 'response' are company self-descriptions (self-referential: the response IS the finding). Consider dropping or re-labeling as company-baseline context rather than an AISI evaluation finding.",
+  "notes": "CIRCULARITY (strongest in batch): finding source and Channel A evidence are two OpenAI documents describing OpenAI's own classification decision; no government-side source exists or could exist for a self-classification. Response Date 2025-08-13 matches the live GPT-5 system card date exactly (note this is the revised card; original release was 2025-08-07). Institution field empty."
+ },
+ {
+  "sheet_row": 28,
+  "Finding ID": "UKAISI-2025-02-JAI1",
+  "source_checked": "https://www.aisi.gov.uk/research/fundamental-limitations-in-defending-llm-finetuning-apis-2 (curl, full abstract retrieved)",
+  "pub_date_verified": "2025-02-20",
+  "numbers_check": [
+    {"claim": "no numbers in Finding text", "verdict": "n/a", "source_value": null, "location": null}
+  ],
+  "key_quote_verdict": "paraphrase",
+  "key_quote_detail": "Row quote: '...evade an enhanced monitoring system designed to detect other fine-tuning attacks'. Source abstract: '...finding they succeed in eliciting answers to harmful multiple-choice questions, and that they evade an enhanced monitoring system we design that successfully detects other fine-tuning attacks.' The rewrite drops 'we design' and 'successfully', changing both authorship (the monitor is the AUTHORS' construction, not a deployed OpenAI defence) and the demonstrated-efficacy claim. Presented in quotation-style it would be a misquote.",
+  "proposed_key_quote": "We test our attacks against the OpenAI fine-tuning API, finding they succeed in eliciting answers to harmful multiple-choice questions, and that they evade an enhanced monitoring system we design that successfully detects other fine-tuning attacks.",
+  "channelA_verbatim_verdict": "n/a (Company Response is 'None')",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "OK: 'OpenAI fine-tuning API (commercial closed model behind the API)' is consistent with the abstract ('We test our attacks against the OpenAI fine-tuning API'); the abstract does not name the underlying model, so the row correctly avoids naming one.",
+  "overstatement_check": "Finding is a faithful summary of the abstract (pointwise-undetectable attacks; individually benign, low-perplexity samples; covert transmission of dangerous knowledge; success on harmful MCQ elicitation; fundamental limitation of pointwise defences) with ONE attribution error mirrored from the Key Quote: 'an enhanced monitoring system built to detect finetuning attacks' implies an existing/OpenAI defence, whereas the source's enhanced monitor was designed by the AISI authors themselves. The row's own Notes compound this ('the paper referencing OpenAI's enhanced monitoring' -- wrong: it is the authors' enhanced monitor). Recommend rewording to 'evaded an enhanced monitoring system the authors designed, which successfully detects other fine-tuning attacks'. Action Level None / Attribution None / no Channel A: consistent -- no OpenAI response found in this pass either.",
+  "notes": "No circularity: this is a genuine AISI-primary source (AISI research page + paper, arXiv:2502.14828), unlike the OpenAI-blog rows in this batch. Publication date on page: Feb 20, 2025, exact match. Access Type Post-deployment correct (attacks run against the live public fine-tuning API)."
+ }
+]

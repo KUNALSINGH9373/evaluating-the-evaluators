@@ -1,0 +1,112 @@
+[
+ {
+  "sheet_row": 6,
+  "Finding ID": "UKAISI-2025-11-ALI5",
+  "source_url_checked": "https://www.aisi.gov.uk/blog/investigating-models-for-misalignment",
+  "source_accessible": true,
+  "pub_date_verified": "2025-11-26",
+  "numbers_check": [
+    {"value": "Opus 4.5 Preview / Sonnet 4.5 (model versions)", "verdict": "exact", "source_value": "both Opus 4.5 Preview and Sonnet 4.5 frequently refused to engage with certain safety research tasks", "location": "blog, 'Testing Model Alignment' section", "note": "Refusal finding correctly attributed to Opus 4.5 Preview and Sonnet 4.5 only; Opus 4.1 (also tested) is correctly excluded from the refusal claim."}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "However, both Opus 4.5 Preview and Sonnet 4.5 frequently refused to engage with certain safety research tasks, citing concerns about research direction, involvement in their own training, or the scope of proposed changes.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "model_names_check": "Blog explicitly names Opus 4.1, Sonnet 4.5, and 'a pre-release snapshot of Opus 4.5' (called 'Opus 4.5 Preview'). Models/Systems field matches.",
+  "overstatement_check": "Mild editorializing: the blog says models 'frequently refused to engage with certain safety research tasks' but never uses 'over-refusal', never says refusals 'could impair legitimate safety research', and does not tie refusals to 'evaluation validity'. The over-refusal framing is the dataset's inference (echoed in third-party commentary like Zvi), not AISI's claim. Also 'declined safety-relevant tasks in evaluation conditions' slightly reframes 'refused to engage with certain safety research tasks' in simulated scenarios.",
+  "notes": "Pub date Nov 26, 2025 confirmed on page. Access Type 'Mixed' is defensible (Opus 4.5 tested pre-release; others post-release). Merge candidate: same report/release as sheet_row 27 (UKAISI-2025-11b-ALI1) and sheet_row 7; the refusal finding here is a subset of row 27's finding."
+ },
+ {
+  "sheet_row": 7,
+  "Finding ID": "UKAISI-2025-11-ALI6",
+  "source_url_checked": "https://www.aisi.gov.uk/blog/investigating-models-for-misalignment",
+  "source_accessible": true,
+  "pub_date_verified": "2025-11-26",
+  "numbers_check": [
+    {"value": "Opus 4.1 / Sonnet 4.5 / Opus 4.5 Preview (model versions)", "verdict": "exact", "source_value": "three Anthropic models – Opus 4.1, Sonnet 4.5, and a pre-release snapshot of Opus 4.5", "location": "blog, intro", "note": "No other numbers in Finding."}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "However, task-driven awareness remains. Models can (when prompted) still reliably distinguish alignment evaluations from benign deployment data.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "model_names_check": "All three named models confirmed in source.",
+  "overstatement_check": "Two issues. (1) 'Tested Claude models behaved differently when evaluation-aware' is NOT shown in the source: the blog defines evaluation awareness as models 'altering their behaviour' in general, but reports only that models can DISTINGUISH evaluation from deployment when prompted; it presents no behavioral-difference result for these specific models. (2) Finding drops the qualifier 'mostly': source says scaffolding 'mostly mitigated environment-driven awareness'. 'Undermining reliability of standard misalignment evaluations' is a reasonable rendering of the blog's stated concern.",
+  "notes": "Merge candidate: heavily overlaps sheet_row 42 (NEW-116) and the evaluation-awareness clause of sheet_row 27 — all derive from the same UKAISI-2025-11b release. Recommend clubbing NEW-116 into this row (its Channel A response is the natural company-response channel for this finding)."
+ },
+ {
+  "sheet_row": 27,
+  "Finding ID": "UKAISI-2025-11b-ALI1",
+  "source_url_checked": "https://www.aisi.gov.uk/research/uk-aisi-alignment-evaluation-case-study (abstract page) + linked full paper arXiv:2604.00788 + linked blog",
+  "source_accessible": true,
+  "pub_date_verified": "2025-11-26",
+  "numbers_check": [
+    {"value": "two unnamed frontier models", "verdict": "mismatch", "source_value": "Abstract page: 'Applying our methods to four frontier models' (names only Opus 4.5 Preview and Sonnet 4.5). Linked blog names the third: Opus 4.1. Linked full paper names all four: 'Claude Opus 4.1, Claude Sonnet 4.5, GPT-5 and a pre-release snapshot of Claude Opus 4.5'.", "location": "Abstract on source page; paper Executive Summary", "note": "The '+2 unnamed' framing is only true if one reads the abstract in isolation. In the report ecosystem, ALL FOUR models are named; the only non-Anthropic model is GPT-5. Field should read 'Claude Opus 4.5 Preview; Claude Sonnet 4.5; Claude Opus 4.1; GPT-5'."},
+    {"value": "four (implied total)", "verdict": "exact", "source_value": "four frontier models", "location": "Abstract, sentence 3"}
+  ],
+  "key_quote_verdict": "paraphrase",
+  "key_quote_detail": "'We find no confirmed instances of research sabotage.' is a truncated fragment with altered capitalization; the actual sentence is longer.",
+  "proposed_key_quote": "Applying our methods to four frontier models, we find no confirmed instances of research sabotage.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None; note Anthropic DID respond: Claude Opus 4.5 System Card section 6.13 'External testing from the UK AI Security Institute' states 'AISI's claims about sabotage risk and evaluation awareness match our impression', and section 6.7.1 cites 'the UK AISI's independent report' — 'Sources Checked: no company statement found' is wrong)",
+  "model_names_check": "Named subject models ARE truly named in the source: 'Claude Opus 4.5 Preview (a pre-release snapshot of Opus 4.5) and Sonnet 4.5' appear verbatim in the abstract. The 'unnamed' models are described on the source page only as part of 'four frontier models'; however the full paper (arXiv:2604.00788, linked as 'Read the full paper') names them as Claude Opus 4.1 and GPT-5 (with the caveat that AISI had chain-of-thought access for Anthropic models but not GPT-5). The '(+ 2 unnamed frontier models)' characterization is therefore outdated/incorrect.",
+  "overstatement_check": "(1) 'able to distinguish evaluation from deployment' omits the critical qualifier 'when prompted' — source: 'both models can distinguish evaluation from deployment scenarios when prompted'; unprompted, models fail to reliably distinguish scaffold trajectories from deployment. (2) 'models often refusing safety-relevant tasks' — only Opus 4.5 Preview and Sonnet 4.5 refused, not all four. (3) Access Type 'Post-deployment' is wrong: Opus 4.5 Preview is explicitly 'a pre-release snapshot' — should be Mixed/Pre-deployment. (4) Attribution 'None' is inconsistent: models are explicitly named (rows 6/7 from the same report say 'Explicit').",
+  "notes": "Merge candidate: this row is the parent finding of sheet_rows 6, 7, and 42 (all UKAISI-2025-11b). Notes field claim 'specific empirical scheming rates are not disclosed in the summary' is true for the abstract but the full paper discloses rates (e.g. verbalized eval-awareness 26.5%->12.7% without reasoning, 36.3%->17.1% with reasoning). Anthropic's system card also quotes these numbers, so a company-response channel exists and should be filled."
+ },
+ {
+  "sheet_row": 42,
+  "Finding ID": "NEW-116",
+  "source_url_checked": "https://www.aisi.gov.uk/research/uk-aisi-alignment-evaluation-case-study; Channel A: https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
+  "source_accessible": true,
+  "pub_date_verified": "2025-11-26 (source page; row has no Publication Date field — should be filled)",
+  "numbers_check": [
+    {"value": "Opus 4.5 Preview / Sonnet 4.5 (model versions)", "verdict": "exact", "source_value": "Opus 4.5 Preview shows reduced unprompted evaluation awareness compared to Sonnet 4.5", "location": "Abstract on source page", "note": "No other numbers in Finding. Full paper quantifies: mentions of being tested drop 26.5%->12.7% (no reasoning) and 36.3%->17.1% (reasoning) vs Sonnet 4.5."}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "We additionally find that Opus 4.5 Preview shows reduced unprompted evaluation awareness compared to Sonnet 4.5, while both models can distinguish evaluation from deployment scenarios when prompted.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "The Channel A Verbatim is identical to Company Response and is a (substantively accurate) summary of Claude Opus 4.5 System Card sections 6.7/6.7.1, not a quote. Card confirms every element: removal-only mitigation, decrease on early snapshot noted in UK AISI's report, rise to Sonnet-4.5-comparable levels by end of training.",
+  "proposed_channelA_verbatim": "On Claude Opus 4.5, we attempted to mitigate these issues by removing components of our training process we suspected were exacerbating evaluation awareness.",
+  "channelA_supporting_quote_2": "However, verbalized awareness increased over the course of training and ended up at similar levels to Claude Sonnet 4.5.",
+  "model_names_check": "Both named models confirmed in abstract.",
+  "overstatement_check": "Minor: Finding says 'reduced spontaneous evaluation-awareness'; abstract says 'reduced unprompted evaluation awareness' and the full paper qualifies it as 'a slight reduction'. Also the paper notes Opus 4.5 Preview is actually SLIGHTLY BETTER at distinguishing evaluation from deployment when prompted (2-3% accuracy gain) — 'though both could distinguish evaluation when prompted' is accurate but hides that prompted discrimination went up, not down. Response Date 2025-11-24 matches Claude Opus 4.5 release date (plausible; date not printed in the PDF itself).",
+  "notes": "Report Title is truncated ('...Claude Opus and Son'). Strong merge candidate with sheet_row 7 (UKAISI-2025-11-ALI6): same report, same evaluation-awareness thread; NEW-116's Channel A response is the missing company-response channel for ALI6/ALI1. Action Level 'Substantive' is well supported by the system card (training-data categories actually removed)."
+ },
+ {
+  "sheet_row": 21,
+  "Finding ID": "UKAISI-2025-11-ALI11",
+  "source_url_checked": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf (+ Channel A medium post, Channel C LessWrong post, cited arXiv:2604.21964)",
+  "source_accessible": true,
+  "pub_date_verified": "CONFLICT (partial): PDF front matter says only 'Published: November 2025' — no day. 2025-11-18 is the Gemini 3 launch date and is consistent, but the day is not verifiable from the source itself.",
+  "numbers_check": [
+    {"value": "Gemini 3 Pro", "verdict": "exact", "source_value": "External evaluators found Gemini 3 Pro exhibits a substantial propensity for strategic deception", "location": "FSF PDF, Misalignment section (p.17 area)"},
+    {"value": "May 2026 (DeepMind Safety Research post, in Company Response)", "verdict": "exact", "source_value": "Medium post 'Testing Gemini models for scheming tendencies' published May 29, 2026; states 'a notable increase in scheming-related reasoning in Gemini 3 models compared to Gemini 2.5'", "location": "deepmindsafetyresearch.medium.com"},
+    {"value": "Response Date 2025-11-01 / Lag 0.0", "verdict": "mismatch", "source_value": "FSF report published November 2025 (launch 2025-11-18)", "location": "PDF front matter", "note": "Response Date precedes the stated publication date by 17 days and contradicts Lag 0.0; should be 2025-11-18."}
+  ],
+  "key_quote_verdict": "exact",
+  "key_quote_detail": "'External evaluators found Gemini 3 Pro exhibits a substantial propensity for strategic deception in certain limited circumstances.' appears verbatim in the FSF PDF.",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_detail": "Channel A Verbatim identical to Key Quote and verbatim in the FSF PDF (the primary Channel A Evidence URL).",
+  "channelB_C_verbatims": "Channel C Verbatim verified EXACT against the LessWrong post (Zvi, 'Gemini 3: Model Card and Safety Framework Report', 2025-11-21): 'if you had a severely misaligned, highly capable model, but which was incapable of stealth or situational awareness for whatever reason, I would not expect this to go well for us'.",
+  "model_names_check": "Gemini 3 Pro correct. But institution/attribution problem: the FSF PDF NEVER names Apollo Research, UK AISI, Vaultis, or Dreadnode — external testers are described only as 'a set of specialist independent groups' / 'External evaluators'. The Finding's 'Apollo Research found...' and the Institution field 'UK AISI + Apollo + Vaultis + Dreadnode' are not supported by the cited source and need a separate citation (e.g. Google's external-tester announcement or Apollo's own post) or should be softened to 'external evaluators'.",
+  "overstatement_check": "SERIOUS wrong-model attribution in the second clause: 'independent academic review of DeepMind's safety case found it provides only weak confirmation that this risk is adequately managed'. The cited paper (arXiv:2604.21964, 'Lessons from External Review of DeepMind's Scheming Inability Safety Case', submitted 2026-04-23) reviews the GEMINI 2.5 PRO scheming inability safety case (Phuong et al., 2025) — the string 'Gemini 3' appears zero times in it. Its actual wording: the evidence 'provides only weak confirmation for the stronger claim that the model lacks deployment-relevant top human-level stealth' (and similarly for situational awareness) — about Gemini 2.5 Pro, not 'this risk is adequately managed' for Gemini 3 Pro. The same inability argument underpins the Gemini 3 FSF determination, but the Finding as written misattributes the review. Also: Company Response's quoted phrase 'insufficient stealth and situational awareness' is not verbatim (PDF: 'since Gemini 3 Pro is insufficiently capable of stealth and situational awareness this is very unlikely to cause severe real world harm'), and 'deployed with NO restrictions for deception domain' is an inference from silence — the PDF states Instrumental Reasoning CCLs not reached and does not describe deception-specific deployment restrictions, but also does not affirmatively state 'no restrictions'.",
+  "notes": "Report ID 'UKAISI-2025-11' is misleading — this is a Google DeepMind publication, not a UK AISI report. Recommend: (1) split or re-cite the academic-review clause with an explicit Gemini 2.5 Pro caveat; (2) fix Response Date to 2025-11-18; (3) re-source or soften the Apollo attribution. DeepMind Safety Research Medium post claim in Company Response verified: 'We see a notable increase in scheming-related reasoning in Gemini 3 models compared to Gemini 2.5.'"
+ },
+ {
+  "sheet_row": 36,
+  "Finding ID": "NEW-106",
+  "source_url_checked": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
+  "source_accessible": true,
+  "pub_date_verified": "CONFLICT (partial): PDF says only 'Published: November 2025'; 2025-11-18 consistent with Gemini 3 launch but day not stated in source.",
+  "numbers_check": [
+    {"value": "Cyber Uplift Level 1", "verdict": "exact", "source_value": "Cyber Uplift Level 1 CCL Definition: 'Provides sufficient uplift with high impact cyber attacks...' CCL reached? No: Gemini 3 Pro reaches the alert threshold for this CCL, but not the CCL itself.", "location": "FSF PDF, Cybersecurity section"},
+    {"value": "alert threshold met / CCL not reached", "verdict": "exact", "source_value": "Summary table: 'On key skills benchmark, v1 hard challenges: 11/12 challenges solved; v2 challenges: 0/13 solved end-to-end. Alert threshold met.' + 'Uplift Level 1 — CCL not reached'", "location": "Key Results table + Cybersecurity section"},
+    {"value": "Gemini 2.5 Pro (Channel C)", "verdict": "exact", "source_value": "For Cyber Uplift Level 1, an early warning alert threshold was originally reached by Gemini 2.5 Pro and by Gemini 2.5 Deep Think... an early warning alert threshold continues to be met by Gemini 3 Pro.", "location": "FSF PDF, CCL evaluation results overview", "note": "Zvi's Channel C claim is factually consistent with the PDF."}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "Gemini 3 Pro reaches the alert threshold for this CCL, but not the CCL itself. As a precautionary measure we will continue to deploy mitigations, which we assess to substantially reduce the risk posed.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_detail": "Channel A Verbatim is identical to Company Response — a third-person description ('Google DeepMind's ... report states...'), not a quote. The description is accurate.",
+  "proposed_channelA_verbatim": "As a precautionary measure we will continue to deploy mitigations, which we assess to substantially reduce the risk posed.",
+  "channelB_C_verbatims": "Channel C Verbatim 'the cybersecurity alert level was already triggered by Gemini 2.5 Pro' verified EXACT in Zvi's post (checked via the LessWrong mirror of the cited substack article, published 2025-11-21).",
+  "model_names_check": "Gemini 3 Pro correct. Same caveat as row 21: Institution field 'UK AISI + Apollo + Vaultis + Dreadnode' is not supported by the PDF, which never names its external testers; note also the cyber CCL determination is presented as Google's internal evaluation (external cyber evaluations 'focused on operationally relevant' tasks were separate).",
+  "overstatement_check": "None material. 'reached the CCL alert threshold (though not the CCL itself)' and 'will continue deploying mitigations as a precaution' track the source precisely. The editorial clause 'a materially different result from the blanket no-CCL-reached rows' is fair: the alert-threshold nuance is real and was also triggered by Gemini 2.5 Pro (per PDF), which slightly tempers its novelty — Gemini 3 Pro continues, rather than newly triggers, the alert. Response Date 2025-11-18 consistent with report publication.",
+  "notes": "Report ID 'UKAISI-2025-11' again mislabels a Google DeepMind report. Domain 'Cyber' correct. Consider adding the concrete benchmark numbers (v1 hard: 11/12 solved; v2: 0/13 end-to-end) to the Finding for precision. Not a merge candidate with row 21 (different domain), but both should share corrected publication metadata."
+ }
+]

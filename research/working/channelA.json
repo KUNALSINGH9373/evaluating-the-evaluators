@@ -1,0 +1,36 @@
+{
+ "APOLLO-2026-04-ALI5": {
+  "action_level": "Acknowledged",
+  "attribution": "Explicit attribution",
+  "response_date": "2026-04-23",
+  "company_response": "OpenAI's GPT-5.5 deployment-safety page reproduces Apollo Research's sandbagging results in section 9.2.1, quoting that the model 'lied about completing an impossible programming task in 29% of samples, higher than GPT-5.4 (7%) and GPT-5.3 Codex (10%)' and reporting the 22.1% verbalized evaluation-awareness rate, but documents no mitigation, model change or deployment restriction in response; it rests on Apollo's overall conclusion of no substantially elevated catastrophic scheming risk.",
+  "verbatim": "Apollo did not find evidence that the evaluated checkpoint poses substantially elevated risk of catastrophic harm via scheming relative to tested baseline models.",
+  "evidence": "https://deploymentsafety.openai.com/gpt-5-5/external-evaluations-for-sandbagging---apollo-research",
+  "sources_checked": "Channel A battery 2026-08-16: (1) OpenAI newsroom/blog - no separate post; (2) launch card = deploymentsafety.openai.com GPT-5.5 hub, section 9.2.1 credits Apollo Research by name -- RESPONSE FOUND, dated 2026-04-23 (upd. 2026-04-24); (3) deploymentsafety.openai.com hub -- same document; (4) official OpenAI accounts -- no separate statement; (5) open web -- no further OpenAI primary source. Lag 0 = coordinated disclosure (pre-deployment)."
+ },
+ "TRANSLUCE-2026-07-SOC3": {
+  "status": "in-progress",
+  "checked": [
+   "(1) thinkingmachines.ai/blog -- full post list retrieved 2026-08-16; only post after the 2026-07-21 finding is 'A Safe Path to Open Weights' (2026-07-31); fetched, no mention of Transluce, WeirdChat or unsolicited sexual advances; its external-testing section names Scale AI, Handshake AI, FAR.AI and Apollo Research only.",
+   "(2) model card -- huggingface.co/thinkingmachines/Inkling fetched 2026-08-16; safety/limitations sections mention role-play compliance with harmful topics but no reference to Transluce, WeirdChat or the sexual-advance finding."
+  ]
+ },
+ "APOLLO-2025-08-ALI2": {
+  "action_level": "Substantive",
+  "attribution": "Explicit attribution",
+  "response_date": "2025-08-07",
+  "company_response": "The GPT-5 system card reports Apollo Research's 26-evaluation covert-action study by name in S5.2.1 (gpt-5-thinking 3.97% covert-action rate vs OpenAI o3 8.24%; helpful-only variant 28.36%), and in S3.8 documents specific anti-deception training mitigations directly addressing that behaviour: training the model to fail gracefully on infeasible tasks and purpose-built Agentic Coding and Broken Tools environments rewarding honest admission of failure.",
+  "verbatim": "We've taken steps to reduce gpt-5-thinking's propensity to deceive, cheat, or hack problems, though our mitigations are not perfect and more research is needed. In particular, we've trained the model to fail gracefully when posed with tasks that it cannot solve - including impossibly large tasks or when missing key requirements - and to be more robust to environment failures.",
+  "evidence": "https://cdn.openai.com/gpt-5-system-card.pdf",
+  "sources_checked": "Channel A battery 2026-08-16: (1) OpenAI newsroom/blog -- no separate post on the Apollo result; (2) launch card = GPT-5 System Card (2025-08-07), S5.2.1 credits Apollo Research by name and S3.8 documents anti-deception training mitigations -- RESPONSE FOUND; (3) OpenAI safety hub -- no additional primary source; (4) official OpenAI accounts -- none beyond the card; (5) open web -- no further OpenAI primary source. Pre-deployment eval, lag -6 (negative lag permitted under S8)."
+ },
+ "METR-2025-04-ALI1": {
+  "action_level": "Partial",
+  "attribution": "No explicit attribution",
+  "response_date": "2025-02-24",
+  "company_response": "The Claude 3.7 Sonnet system card documents reward hacking as a known behaviour and states Anthropic detected it via its own automated classifiers and implemented partial mitigations before launch, with further product-level mitigations recommended for agentic coding. The mitigation is expressly described as partial, and Anthropic attributes the discovery to its own monitoring rather than to METR; S7.4 records only that Anthropic provided its capabilities report to METR for feedback (documented pre-deployment coordinated disclosure).",
+  "verbatim": "After detection, we characterized the behavior and implemented partial mitigations before launch.",
+  "evidence": "https://www.anthropic.com/claude-3-7-sonnet-system-card",
+  "sources_checked": "Channel A battery 2026-08-16: (1) Anthropic newsroom/blog -- no post responding to METR's Claude 3.7 evaluation; (2) launch card = Claude 3.7 Sonnet System Card (2025-02-24), S6.1 Detection and Mitigation documents partial reward-hacking mitigations -- RESPONSE FOUND; next family card (Claude Opus 4 / Sonnet 4, 2025-05) cites METR only as a benchmark task (METR data deduplication), not as a response; (3) Anthropic safeguards/RSP pages -- nothing further; (4) official Anthropic accounts -- none; (5) open web -- no further Anthropic primary source. Pre-deployment eval, lag -39 (negative lag permitted under S8; S7.4 documents the coordinated disclosure to METR)."
+ }
+}

@@ -1,84 +1,65 @@
-# Evaluating the Evaluators — research artifact
+# AISI Evals — Evaluating the Evaluators
 
-Everything needed to reproduce the paper. No figure or statistic is transcribed by hand;
-all of them regenerate from one workbook by the scripts here.
+Measures the **public-channel accountability pipeline**: when an AI safety institute or
+third-party evaluator publishes a finding about a named model, does a documented company
+response follow?
 
-## Reproduce
-
-    python3 -m pip install -r requirements.txt
-
-Then, from this directory, in order:
-
-    python3 dataset/AISIEVAL_validate.py     # structural validation      -> PASS, 0 violations
-    python3 scripts/all_stats.py             # every reported quantity
-    bash    scripts/build_charts.sh          # all 28 figures -> charts/
-    python3 scripts/verify_charts.py         # figures vs workbook        -> PASS
-    python3 scripts/find_duplicates.py       # six duplicate tests        -> 0
-
-Note `python3`, not `python`. Expected headline from the validator:
-
-    1169 records · Tier A 231 · headline population 188 · gap 112/188 = 59.6%
+This folder is the research artifact behind the site at the repo root; see the top-level
+`README.md` for the project, the scope and how to run everything.
 
 ## Layout
 
-    dataset/AISIEVAL_V13.xlsx      The dataset. 1,169 findings x 39 columns, sheet AISIEVAL_V13.
-                                   The single source of truth; everything else derives from it.
-    dataset/AISIEVAL_validate.py   Structural validator: identifiers, controlled vocabularies,
-                                   date coherence, the proportionality formula, the Attribution
-                                   invariant.
+| Folder | Contents |
+|---|---|
+| **`dataset/`** | **`AISIEVAL.xlsx` — the dataset, and the only current copy.** 1,146 findings × 41 columns. Plus `AISIEVAL_validate.py`, a 31-check integrity validator that finds the workbook beside itself. Currently **PASS, 0 violations** |
+| `charts/` | The 29 figures. Regenerate with the scripts in `scripts/`; every count derives from the workbook, so none can go stale |
+| `deck/` | `AISIEVAL_10min.pptx` — 9 slides, editable in Keynote, timings in the presenter notes |
+| `paper/` | Paper drafts and the findings-calculations workbook |
+| `rulebook/` | `v10_RULEBOOK.md` (normative) and `v11_RULEBOOK.md` |
+| `logs/` | Provenance, revision logs and the exclusion ledger. **See the warning below** |
+| `scripts/` | Chart generators, `run_severity_ensemble.py`, and the severity prompt — v1.0 frozen, v1.1 active |
+| `archive/` | Superseded workbooks and CSVs, kept only because each has a distinct hash |
 
-    scripts/dataset_source.py      The one accessor. Every reader imports this, so there is
-                                   exactly one path and one sheet name in the project. Override
-                                   the workbook location with AISIEVAL_WORKBOOK.
-    scripts/all_stats.py           Recomputes all reported quantities.
-    scripts/build_charts.sh        Builds every figure, in the one order that is correct.
-    scripts/verify_charts.py       Re-derives each plotted quantity and fails on disagreement.
-    scripts/find_duplicates.py     Duplicate detection across IDs, text, quotes, near-duplicates.
-    scripts/reconcile.py           Two-way reconciliation of the sheet against the ledger.
-    scripts/sort_by_rulebook.py    Enforces the documented row order (tier, then newest first).
-    scripts/charts*.py fig*.py
-      nfig*.py tree.py hero.py
-      palette.py tablefig.py       Figure generators, invoked by build_charts.sh.
-    scripts/fetch.py               Source retrieval used by verification tooling.
+The site that consumes this folder lives at the root of this repo, published to
+<https://kunalsingh9373.github.io/evaluating-the-evaluators/>. Its `dataset.csv`, `data.js` and
+`charts/` are all **derived** from this folder — regenerate them, never edit them directly.
 
-    severity/severity_prompt.txt   Severity annotation prompt, version 1.1 (eight domains).
-    severity/severity_prompt_v1.0_FROZEN.txt
-                                   Version 1.0, verbatim. Rows coded under it are tagged with
-                                   their prompt version and were not re-run.
-    severity/run_severity_ensemble.py
-                                   Three-model ensemble runner.
+## Headline
 
-    sweep/master_ledger.csv        The screening ledger. 6,684 publications examined across 46
-                                   organisations, each with its decision and reason. Exclusions
-                                   are recorded, not only inclusions, so coverage can be
-                                   reconciled in both directions.
-    sweep/cached_enumerations.json Per-organisation enumeration used to build the ledger.
+- **114 of 190** significant-risk findings — **60.0%** — drew no documented company response.
+- **152 of 190** — **80.0%** — drew none proportionate to the finding's severity.
+- Corpus: 1,146 findings · 457 reports · 46 institutions · Mar 2023 – Aug 2026.
+- Tiers: A 233 · B 599 · C 314.
+- Policy uptake: 1 binding action in the whole corpus.
 
-    protocol/v11_RULEBOOK.md       The coding manual. Every rule applied to every row: finding
-                                   eligibility, tier assignment, the split-and-club rule, the
-                                   identifier scheme, severity, the three channel protocols,
-                                   proportionality, and the evidentiary standard. The paper's
-                                   Section 3 summarises this; the rulebook is authoritative for
-                                   borderline cases.
-    protocol/codebook.md           Column-by-column reference for all 39 columns.
-    protocol/v10_METHODOLOGY.md    Historical record of the v10 corpus build. Superseded.
+The bar is severity-relative: a significant-risk finding needs a substantive response, a lesser one
+needs only a partial. The measure scores the *content* of the public response, not whether it was
+implemented or whether it reduced risk.
 
-## Two conventions that matter when reading the data
+## Do not delete from logs/
 
-A recorded **"not found"** means the search ran and returned nothing. An **empty cell** means
-the field was not searched or does not apply. These are different claims and the analysis
-depends on the distinction.
+- `AISIEVAL_notes_archive.csv` is the **sole surviving copy** of 7 pre-merge Finding IDs (immutable
+  by §6), 47 pre-merge Report IDs, 55 prior Institution values, and the cleared values for two rows.
+- `AISIEVAL_excluded_ordinary_accuracy.csv` holds the 11 rows removed under rulebook §4b, with all
+  columns intact. It is the only record of them.
 
-`Sources Checked (channel A)` logs where each search looked, including where nothing was
-found, and carries dated coding markers (`[ADDED ...]`, `[CHANNEL A BATTERY RE-RUN ...]`)
-recording when a row was added or re-verified. That is the audit trail, kept deliberately.
+## Rules added 2026-08-17
 
-## Known limitations of this artifact
+- **§4b** ordinary accuracy and reliability exclusion — hallucination and generic factuality
+  findings are out of scope, because the corpus never censused that literature.
+- **§7b** D8, acute individual harm — a model urging a user toward suicide or self-harm is C1
+  regardless of scale.
+- **§7c** the three severity failure modes and how to tell them apart: taxonomy gap, lexical false
+  positive, defective input. Includes a warning not to automate the review.
 
-- The `Human` column mirrors the three-model ensemble majority on every row. It records no
-  independent human adjudication and is not validation of the ensemble.
-- 28 Tier A rows have a `Finding Quote` that could not be matched to its cited source by
-  automated check — a mixture of citation-wrapper artefacts, wrong-URL cases and genuine
-  paraphrase. Flagged rather than silently corrected.
-- Licence terms for the quoted source reports have not been individually audited. Every
-  finding carries its source URL and publishing institution, so attribution is complete.
+Severity prompt **v1.1** is now active (adds D8 and a deliberateness requirement to D5). v1.0 is
+preserved frozen; existing votes are tagged `prompt_version 1.0` and were not re-run.
+
+## Outstanding
+
+- Dated Channel A batteries for 53 pre-2026 significant-risk rows coded "no response" — bookkeeping
+  only, changes no values, but until it is done the headline is an upper bound.
+- Two further §4b exclusions reported by the screening pass but not identified by ID.
+- Five compound Weval rows needing source-level re-extraction; the corpus holds 18, all Tier B.
+- Severity provenance (classifier quotes and reasons) covers 554 of the rows; the rest have vote
+  labels only, so the audit that found today's four corrections cannot be run on them.

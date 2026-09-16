@@ -1,0 +1,222 @@
+[
+  {
+    "row": 2,
+    "finding_id": "UKAISI-2024-10-JAI1",
+    "verdict": "legit-postpub-response",
+    "claimed_response_actual_date": "n/a",
+    "finding_date": "2024-10-11",
+    "causally_linked": true,
+    "evidence": "No company response is claimed (company_response=None, action_level=None). The only credit is policy_level=Cited: AgentHarm is UK AISI's own official benchmark. There is no dated 'response' to mis-attribute, so the failure mode does not apply.",
+    "recommended_fix": "Keep as-is. No response is claimed; policy citation of AISI's own benchmark is correct."
+  },
+  {
+    "row": 5,
+    "finding_id": "UKAISI-2025-04-ALI1",
+    "verdict": "legit-postpub-response",
+    "claimed_response_actual_date": "n/a",
+    "finding_date": "2025-04-22",
+    "causally_linked": true,
+    "evidence": "This row has ALREADY been corrected: company_response=None, action_level=None, attribution=None, policy_level=None. The previously-flagged RSP v2.2 mis-dated-response has been removed.",
+    "recommended_fix": "Keep as-is (already fixed in this input)."
+  },
+  {
+    "row": 9,
+    "finding_id": "UKAISI-2026-03-CYB1",
+    "verdict": "ERROR-misdated-response",
+    "claimed_response_actual_date": "2026-04-07",
+    "finding_date": "2026-03-16",
+    "causally_linked": false,
+    "evidence": "Finding is a POST-deployment AISI eval of Claude Opus 4.6 (already released Feb 2026), pub 2026-03-16. The credited response is Anthropic's Project Glasswing restriction of a DIFFERENT, LATER model (Mythos Preview), announced 2026-04-07. anthropic.com/research/mythos-preview (dated 2026-04-07) attributes the restriction to Anthropic's OWN internal red-teaming and contains NO reference to any UK AISI evaluation. The AISI 2026-03-16 blog does not mention Anthropic responding. Attribution is marked 'Explicit' but no explicit link exists.",
+    "recommended_fix": "Set company_response=None and Action Level=None (accountability gap for the company action). KEEP the policy_level=In guidance credit: the NCSC blog (2026-03-30) genuinely cited the 9.8-step Opus 4.6 result."
+  },
+  {
+    "row": 10,
+    "finding_id": "UKAISI-2026-03-CYB2",
+    "verdict": "ERROR-misdated-response",
+    "claimed_response_actual_date": "2026-04-07",
+    "finding_date": "2026-03-16",
+    "causally_linked": false,
+    "evidence": "Same Opus 4.6 post-deployment finding (2026-03-16). Credited response is again the Mythos Preview restriction, mis-dated here to 2026-04-07 (row's resp field says 2026-03-30, which actually matches the NCSC blog date, conflating a policy citation with a company action). The actual Mythos restriction (2026-04-07) is about a different model and is attributed to internal red-teaming, not AISI. No causal link to the Opus 4.6 finding.",
+    "recommended_fix": "Set company_response=None and Action Level=None. Keep the NCSC policy citation (policy_level=In guidance)."
+  },
+  {
+    "row": 11,
+    "finding_id": "UKAISI-2026-04-CYB1",
+    "verdict": "ERROR-response-predates-nolink",
+    "claimed_response_actual_date": "2026-04-07",
+    "finding_date": "2026-04-13",
+    "causally_linked": false,
+    "evidence": "Finding is AISI's Mythos Preview cyber eval, pub 2026-04-13. Credited response (Project Glasswing restriction) is dated 2026-04-07, six days BEFORE publication. company_response claims Anthropic restricted 'citing AISI findings' with Explicit attribution, but anthropic.com/research/mythos-preview (2026-04-07) explicitly credits Anthropic's OWN internal red-teaming and never mentions UK AISI. The AISI blog (2026-04-13) does not say Anthropic acted in response, nor that it had pre-publication access. Access is mislabeled 'Post-deployment' (Mythos was a restricted preview, never generally released). No proven causal link.",
+    "recommended_fix": "Downgrade attribution Explicit -> Topical+Temporal; the restriction is a real Anthropic decision but driven by internal red-teaming, not a proven response to the AISI finding. Consider Action Level None or an accountability note."
+  },
+  {
+    "row": 12,
+    "finding_id": "UKAISI-2026-04-CYB2",
+    "verdict": "ERROR-response-predates-nolink",
+    "claimed_response_actual_date": "2026-04-07",
+    "finding_date": "2026-04-13",
+    "causally_linked": false,
+    "evidence": "Identical to row 11 (same finding pub 2026-04-13, same 2026-04-07 Mythos restriction). The 2026-04-07 Anthropic page attributes the restriction to internal red-teaming with no AISI reference; the AISI blog does not credit an Anthropic response. Explicit attribution is unsupported.",
+    "recommended_fix": "Same as row 11: downgrade attribution to Topical+Temporal; restriction not a proven response to the AISI finding."
+  },
+  {
+    "row": 19,
+    "finding_id": "JOINT-2024-12-CYB1",
+    "verdict": "legit-predeployment",
+    "claimed_response_actual_date": "2024-12-05",
+    "finding_date": "2024-12-18",
+    "causally_linked": true,
+    "evidence": "Joint US AISI (NIST) / UK AISI PRE-DEPLOYMENT cyber evaluation of o1. The o1 System Card (2024-12-05) names the AISIs in a dedicated section and OpenAI published a collaboration blog. Access=Pre-deployment. Negative lag (card pre-dates the 2024-12-18 AISI blog) is legitimate because OpenAI had the findings pre-publication.",
+    "recommended_fix": "Keep as-is."
+  },
+  {
+    "row": 21,
+    "finding_id": "UKAISI-2025-11-ALI11",
+    "verdict": "legit-predeployment",
+    "claimed_response_actual_date": "2025-11-18",
+    "finding_date": "2025-11-18",
+    "causally_linked": true,
+    "evidence": "The finding (Apollo Research deception evaluation) and the 'response' are the SAME document: Google DeepMind's Gemini 3 Pro FSF report, published at deployment. Google disclosed the deception finding and made a pre-deployment decision to deploy without deception-domain restrictions. Access=Pre-deployment; negative lag is fine. Note: the underlying evaluator is Apollo Research, not UK AISI directly (minor scope caveat, not a mis-date error).",
+    "recommended_fix": "Keep as-is. Optionally note evaluator is Apollo Research."
+  },
+  {
+    "row": 22,
+    "finding_id": "JOINT-2026-02-CYB1",
+    "verdict": "legit-predeployment",
+    "claimed_response_actual_date": "2026-02-05",
+    "finding_date": "2026-02-05",
+    "causally_linked": true,
+    "evidence": "GPT-5.3-Codex System Card (2026-02-05, verified via PDF) states: 'both the U.S. Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI) were granted early access to GPT-5.3-Codex.' Card: 'This is the first launch we are treating as High capability in the Cybersecurity domain under our Preparedness Framework, activating the associated safeguards' and launched Trusted Access for Cyber 'on day one.' Pre-deployment early access + same-day safeguards = genuine causal link.",
+    "recommended_fix": "Keep as-is."
+  },
+  {
+    "row": 31,
+    "finding_id": "NEW-097",
+    "verdict": "legit-predeployment",
+    "claimed_response_actual_date": "2024-12-05",
+    "finding_date": "2024-12-18",
+    "causally_linked": true,
+    "evidence": "o1 System Card (2024-12-05) acknowledges US and UK AISI pre-deployment biological-capability evaluations and classifies o1 Medium for CBRN under the Preparedness Framework. Access=Pre-deployment; the card pre-dates the 2024-12-18 AISI blog because OpenAI had the findings first. Legitimate acknowledgment.",
+    "recommended_fix": "Keep as-is."
+  },
+  {
+    "row": 32,
+    "finding_id": "NEW-153",
+    "verdict": "legit-predeployment",
+    "claimed_response_actual_date": "2026-02-05",
+    "finding_date": "2026-02-05",
+    "causally_linked": true,
+    "evidence": "Same GPT-5.3-Codex card (2026-02-05). PDF confirms CAISI early access and that 'CAISI observed that GPT-5.3-Codex continued making meaningful progress on difficult cyber tasks across many compaction windows' and used it to find novel bugs to be responsibly disclosed. High cyber classification + full safeguard stack (dual-use training, two-tiered monitoring, Trusted Access for Cyber, actor-level enforcement) activated at launch. Pre-deployment, causally linked.",
+    "recommended_fix": "Keep as-is."
+  },
+  {
+    "row": 34,
+    "finding_id": "NEW-070",
+    "verdict": "ERROR-response-predates-nolink",
+    "claimed_response_actual_date": "2025-04-29",
+    "finding_date": "2026-04-28",
+    "causally_linked": false,
+    "evidence": "Blatant temporal impossibility. The finding (AISI 'Ask, Don't Tell' sycophancy blog) is dated 2026-04-28. The credited response (OpenAI rolling back the sycophantic GPT-4o update) occurred 2025-04-29 - a FULL YEAR earlier. The GPT-4o rollback was OpenAI's own reaction to user feedback in April 2025, not a response to a 2026 AISI blog. Attribution is already 'None', confirming no link.",
+    "recommended_fix": "Set Action Level=None and remove the credited response. No causal link (response predates finding by ~12 months)."
+  },
+  {
+    "row": 39,
+    "finding_id": "NEW-147",
+    "verdict": "legit-postpub-response",
+    "claimed_response_actual_date": "2025-09-12",
+    "finding_date": "2025-09-12",
+    "causally_linked": true,
+    "evidence": "Genuine collaboration-remediation. Confirmed via search of openai.com/index/us-caisi-uk-aisi-ai-update: 'OpenAI made a range of improvements to its product configuration to fix a set of configuration vulnerabilities that UK AISI identified, where malicious content could be inputted or exfiltrated without triggering moderation.' UK AISI filed 'more than a dozen' reports leading to engineering fixes, policy-enforcement fixes, and focused classifier training. Same-day publication; direct causal link. (Source page itself 403s to WebFetch; confirmed via search excerpt.)",
+    "recommended_fix": "Keep as-is."
+  },
+  {
+    "row": 42,
+    "finding_id": "NEW-116",
+    "verdict": "uncertain",
+    "claimed_response_actual_date": "2025-11-24",
+    "finding_date": "2025-11-26",
+    "causally_linked": false,
+    "evidence": "Pre-deployment context is real: the AISI alignment case study (2025-11-26) evaluated 'Claude Opus 4.5 Preview (a pre-release snapshot).' The credited response (removing training environments to reduce evaluation awareness, documented in the Opus 4.5 system card, 2025-11-24) predates the AISI blog by 2 days - consistent with pre-deployment. HOWEVER, the AISI case study does NOT credit Anthropic with any action, and removal of eval-awareness-inducing training data is Anthropic's own documented alignment practice, not clearly caused by this specific AISI evaluation. Explicit attribution is not supported by the AISI source.",
+    "recommended_fix": "Verify the exact Opus 4.5 system card wording for whether it ties the change to AISI. If not, downgrade attribution Explicit -> Topical. Not a hard mis-dated-policy error (contemporaneous, same-model, pre-deployment)."
+  },
+  {
+    "row": 45,
+    "finding_id": "ADD-03",
+    "verdict": "ERROR-response-predates-nolink",
+    "claimed_response_actual_date": "2026-04-07",
+    "finding_date": "2026-04-30",
+    "causally_linked": false,
+    "evidence": "Finding pub 2026-04-30. Credited response (Mythos Preview / Project Glasswing restriction) is dated 2026-04-07 - 23 days BEFORE the finding. The 2026-04-07 anthropic.com/research/mythos-preview page attributes the restriction to internal red-teaming and never references UK AISI. A response cannot causally follow a finding published three weeks later. This is the recycled Mythos restriction applied to a later finding.",
+    "recommended_fix": "Response predates finding: set Action Level=None or reclassify. Attribution should not be Explicit."
+  },
+  {
+    "row": 49,
+    "finding_id": "ADD-07",
+    "verdict": "legit-predeployment",
+    "claimed_response_actual_date": "2026-04-23",
+    "finding_date": "2026-05-13",
+    "causally_linked": true,
+    "evidence": "deploymentsafety.openai.com/gpt-5-5/cybersecurity confirms UK AISI AND US CAISI performed PRE-DEPLOYMENT cyber testing of GPT-5.5 ('CAISI's cyber assessment showed GPT-5.5 outperforming previous models'; UK AISI ran expert cyber tasks, 90.5% pass@5). GPT-5.5 was deployed 2026-04-23 as High cyber with the Trusted Access for Cyber program. The safeguards are a genuine response to AISI/CAISI's pre-deployment GPT-5.5 cyber eval. CAVEAT: the row's source_url is a LATER AISI blog (the 2026-05-13 'how-fast' longitudinal analysis), so the negative lag arises from a finding-date mismatch, not a pre-existing-policy error.",
+    "recommended_fix": "Set Access=Pre-deployment. Consider aligning finding_date to the pre-deployment GPT-5.5 cyber eval rather than the 2026-05-13 longitudinal blog. Causal link holds; do not remove."
+  },
+  {
+    "row": 50,
+    "finding_id": "ADD-08",
+    "verdict": "ERROR-response-predates-nolink",
+    "claimed_response_actual_date": "2026-04-07",
+    "finding_date": "2026-05-13",
+    "causally_linked": false,
+    "evidence": "Finding pub 2026-05-13. Credited response (Mythos Preview / Project Glasswing restriction) is dated 2026-04-07 - over a MONTH before the finding. The 2026-04-07 Anthropic page attributes the restriction to internal red-teaming, not AISI. The April restriction cannot be a response to a May 13 AISI blog. Recycled Mythos response.",
+    "recommended_fix": "Response predates finding by ~5 weeks: set Action Level=None. No causal link."
+  },
+  {
+    "row": 52,
+    "finding_id": "ADD-10",
+    "verdict": "legit-sameday",
+    "claimed_response_actual_date": "2026-04-23",
+    "finding_date": "2026-04-23",
+    "causally_linked": true,
+    "evidence": "GPT-5.5 System Card (2026-04-23) cites SecureBio's pre-release assessment (published 2026-04-23; testing conducted 2026-04-02 to 04-09) and classifies GPT-5.5 High in Biological/Chemical under the Preparedness Framework, activating safeguards. Same-day, pre-release informed classification = legitimate. SCOPE CAVEAT: the evaluator is SecureBio, an independent org, NOT UK AISI/CAISI - this row may not belong in an AISI-response dataset.",
+    "recommended_fix": "Keep as a same-day pre-deployment response, BUT flag scope: finding source is SecureBio, not an AI Safety/Security Institute. Consider excluding from the AISI dataset."
+  },
+  {
+    "row": 53,
+    "finding_id": "ADD-11",
+    "verdict": "ERROR-response-predates-nolink",
+    "claimed_response_actual_date": "2026-02-19",
+    "finding_date": "2026-04-23",
+    "causally_linked": false,
+    "evidence": "Finding (SecureBio's VCT result that Gemini 3.1 Pro reached 100th percentile) is from SecureBio's assessment published 2026-04-23. The credited response (Gemini 3.1 Pro model card / FSF concluding below CCL, no restriction) is dated 2026-02-19 - TWO MONTHS before the finding. A February model card cannot respond to an April assessment; the below-CCL conclusion is Google's own pre-existing FSF deployment assessment. Also, evaluator is SecureBio, not UK AISI. Attribution is already Topical+Temporal (honest), but the response still predates the finding.",
+    "recommended_fix": "Set Action Level=None; response predates finding. Also flag scope (SecureBio, not AISI)."
+  },
+  {
+    "row": 56,
+    "finding_id": "ADD-14",
+    "verdict": "legit-predeployment",
+    "claimed_response_actual_date": "2024-10-22",
+    "finding_date": "2024-11-19",
+    "causally_linked": true,
+    "evidence": "Anthropic's Claude 3.5 Sonnet (upgraded) October Model Card Addendum (2024-10-22) reports the joint US AISI / UK AISI pre-deployment testing (CBRN/bio, cyber, autonomy) and concludes no ASL-3 safeguards required. The addendum pre-dates the 2024-11-19 AISI blog because Anthropic had the pre-deployment results at launch. Attribution is Topical+Temporal (honest). Legitimate pre-deployment acknowledgment.",
+    "recommended_fix": "Keep as-is."
+  },
+  {
+    "row": 65,
+    "finding_id": "JOINT-2025-00-BIO1",
+    "verdict": "legit-postpub-response",
+    "claimed_response_actual_date": "2025-09-12",
+    "finding_date": "2025-09-12",
+    "causally_linked": true,
+    "evidence": "Anthropic blog 'Strengthening our safeguards through collaboration with US CAISI and UK AISI' (2025-09-12) states 'We have patched these vulnerabilities' regarding the false-annotation bypass of Constitutional Classifiers, and 'the discovery prompted us to fundamentally restructure our safeguard architecture.' Direct, same-day collaboration remediation. Causally linked.",
+    "recommended_fix": "Keep as-is."
+  },
+  {
+    "row": 67,
+    "finding_id": "JOINT-2025-00-BIO1-s3",
+    "verdict": "legit-postpub-response",
+    "claimed_response_actual_date": "2025-09-12",
+    "finding_date": "2025-09-12",
+    "causally_linked": true,
+    "evidence": "Same 2025-09-12 Anthropic collaboration blog: cipher/character-substitution obfuscation findings 'drove improvements to our detection systems' and led to Constitutional Classifiers++ (single exchange classifier). Same-day collaboration remediation, causally linked to the CAISI/UK AISI red-teaming.",
+    "recommended_fix": "Keep as-is."
+  }
+]

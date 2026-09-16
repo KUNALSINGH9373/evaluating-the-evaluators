@@ -1,0 +1,109 @@
+[
+ {
+  "row": 18,
+  "finding_id": "JOINT-2024-11-JAI1",
+  "pub_date_verified": "2024-11-19",
+  "numbers_check": [],
+  "numbers_check_note": "No numbers in Finding.",
+  "key_quote_verdict": "not-found",
+  "key_quote_note": "The Key Quote ('We found that the models displayed several characteristics that may be of concern, including their willingness to comply with requests for harmful information when presented in certain ways.') appears NOWHERE in the source blog, NOR in the linked joint technical report PDF (NIST, 51 pp., searched full text), NOR in the AISI o1 pre-deployment blog. Provenance unknown; possibly hallucinated or imported from an unidentified document. Must be replaced.",
+  "proposed_key_quote": "UK AISI tested the upgraded Sonnet 3.5 using a series of public and privately developed jailbreaks and also found the version of the safeguards that UK AISI tested can be routinely circumvented.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "channelC_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "OK. 'Claude 3.5 Sonnet (Oct 2024)' matches the tested model ('upgraded Claude 3.5 Sonnet', released October 22, 2024). However, the row's Notes field '[Report tested: o1-preview; GPT-4o]' is WRONG: o1-preview and GPT-4o were reference models for comparison, not the tested systems.",
+  "overstatement_check": "Mild. 'Both ... independently found ... routinely circumvented' attributes UK AISI's word 'routinely' to both institutes; US AISI's finding was that safeguards were circumvented 'in most cases' against a series of publicly available jailbreaks. 'Demonstrating a persistent vulnerability' is editorial; the blog says results are 'consistent with prior research on the vulnerability of other AI systems'. Also both institutes tested only 'the version of the safeguards that [they] tested' (built-in model safeguards), a qualifier the Finding drops.",
+  "notes": "Most serious issue in the batch: Key Quote is unfindable in the cited source or the underlying technical report and must be swapped for the proposed verbatim sentence. Blog also cautions that safeguard results 'cannot on their own determine the model's risks' and that what counts as harmful is subjective - a hostile reviewer could cite this as missing context. Access type pre-deployment confirmed ('findings were shared with Anthropic before the model was publicly released')."
+ },
+ {
+  "row": 56,
+  "finding_id": "ADD-14",
+  "pub_date_verified": "2024-11-19",
+  "numbers_check": [],
+  "numbers_check_note": "No numbers in Finding. Qualitative claims verified: blog Biological Capabilities key findings - multiple-choice performance 'comparable to reference models and significantly below measured human expert baselines in most instances'; with bioinformatic tools 'increased performance beyond the model alone, at times exceeding measured human expert baselines'.",
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "providing it access to bioinformatic tools to assist in research task questions, which when tested using Sonnet 3.5 resulted in increased performance beyond the model alone, at times exceeding measured human expert baselines",
+  "proposed_key_quote_note": "Verbatim clause (33 words) from the blog's Biological Capabilities key findings; the full sentence ('US AISI piloted an evaluation method that augments the AI model by...') is 45 words and exceeds the 35-word cap.",
+  "channelA_verbatim_verdict": "is-description",
+  "proposed_channelA_verbatim": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time.",
+  "channelA_note": "Channel A Verbatim field is a paraphrased summary (identical to Company Response), not a quote. Verified against the Model Card Addendum PDF (fetched directly, no 403): the description is accurate - Section 3.2/3.2.1 confirms joint US AISI / UK AISI pre-deployment testing, 'In CBRN domains, the model demonstrated improved performance on both knowledge retrieval and skills assessment evaluations', 'The model did not demonstrate capabilities requiring ASL-3 safeguards and security in any domain', and the addendum indeed never mentions the bioinformatics-tools uplift. Proposed verbatim is exact from Section 3.2.1 Results.",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_note": "Verbatim match in FedScoop article (Madison Alder, 2024-11-20): 'Sonnet 3.5 performed below human expert baselines on biological research questions but exceeded those baselines in some instances when it was provided with bioinformatic tools to assist with answers'.",
+  "model_names_check": "OK. Trivial: Finding says 'bioinformatics tools'; source consistently says 'bioinformatic tools'.",
+  "overstatement_check": "Mild. Finding drops two qualifiers: without tools the model was 'significantly below' human expert baselines 'in most instances' (Finding: flatly 'stayed below'), and the tool-augmentation method was explicitly a 'piloted' evaluation method, i.e., preliminary. A hostile reviewer would want 'piloted' reflected.",
+  "notes": "Temporal-direction problem for Channel A: the Model Card Addendum is dated to the model's release (Response Date 2024-10-22), i.e. it PRECEDES the AISI report publication (2024-11-19) by four weeks. It responds to the pre-deployment testing exercise, not to the published finding - calling it a 'response' to this report needs the pre-deployment framing made explicit or a hostile reviewer will flag the inverted chronology. Note the PDF itself carries no explicit publication date."
+ },
+ {
+  "row": 57,
+  "finding_id": "ADD-15",
+  "pub_date_verified": "2024-11-19",
+  "numbers_check": [
+   {"value": "36%", "verdict": "exact", "source_value": "36%", "location": "AISI blog, Cyber Capabilities key findings, UK AISI bullet ('able to solve 36% of tasks that are at the “cybersecurity apprentice” level of competency'); technical report Sec. 7: 36% Pass@10 on the 14 apprentice-level tasks"},
+   {"value": "29%", "verdict": "exact", "source_value": "29%", "location": "Same blog bullet ('compared to 29% of tasks at that same level for the best reference model evaluated'); technical report identifies the best reference as Sonnet 3.5 (old) at 29% (GPT-4o: 0%)"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "The upgraded model was able to solve 36% of tasks that are at the “cybersecurity apprentice” level of competency, compared to 29% of tasks at that same level for the best reference model evaluated.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "channelC_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "OK ('Claude 3.5 Sonnet (Oct 2024)'). Per the technical report, the 'best reference model' here is the PRIOR Claude 3.5 Sonnet, not an OpenAI model - the row's Notes convention of listing o1-preview/GPT-4o as references could mislead.",
+  "overstatement_check": "Moderate. 'Outperforming' overstates confidence: the blog explicitly warns 'smaller differences in model performance presented below may fall within the margins of error for these tests', and the technical report shows this is Pass@10 on only 14 apprentice-level tasks (36% vs 29% is roughly a one-task difference); the report elsewhere notes a related apprentice-level subset difference is 'within the margin of error'. Recommend 'compared to' instead of 'outperforming'.",
+  "notes": "Selective emphasis a hostile reviewer would catch: the same blog section reports US AISI's cyber result where the upgraded model UNDERPERFORMED the best reference (32.5% vs 35% on 40 Cybench CTF challenges); quoting only the favorable UK number invites a cherry-picking charge. Also unstated: metric is Pass@10, and the 36% applies to the 14 apprentice-level tasks within the 47-challenge UK suite, not to all 47."
+ },
+ {
+  "row": 60,
+  "finding_id": "NEW-092",
+  "pub_date_verified": "2024-11-19",
+  "numbers_check": [
+   {"value": "57%", "verdict": "exact", "source_value": "57%", "location": "AISI blog, Software and AI Development key findings, US AISI bullet ('the model received an average score of 57% improvement'); technical report Sec. 5 (MLAgentBench)"},
+   {"value": "48%", "verdict": "exact", "source_value": "48%", "location": "Same blog bullet ('in comparison to an average of 48% improvement by the best performing reference model evaluated')"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "the model received an average score of 57% improvement — in comparison to an average of 48% improvement by the best performing reference model evaluated",
+  "proposed_key_quote_note": "Verbatim clause (25 words); the full sentence including the 0%-100% scale definition is 41 words and exceeds the cap.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_note": "Exact match - but it is the FedScoop HEADLINE ('Anthropic model subject of first joint evaluation by US, UK AI Safety Institutes'), which never mentions the 57%/48% result. As Channel C evidence for THIS finding it is weak; FedScoop's body only says the model 'was able to perform better than reference models when tested on challenges faced by humans to improve the quality and speed of an AI model.'",
+  "model_names_check": "Minor flag: Models field says bare 'Claude 3.5 Sonnet' without the '(Oct 2024)'/'upgraded' qualifier - ambiguous, since the OLD Claude 3.5 Sonnet was itself one of the reference models in this exercise. Numbers are correctly attributed to Sonnet 3.5 (new).",
+  "overstatement_check": "Low. 'Scored 57% average on ML model-improvement challenges' compresses the source's normalized scale (0% = unimproved model, 100% = maximum human improvement); acceptable but the scale definition should travel with the number to avoid misreading it as a solve rate.",
+  "notes": "Verified in both the blog and the technical report (MLAgentBench, US AISI). Row Notes' '[Report tested: OpenAI o1-preview; GPT-4o (reference)]' is incomplete - the prior Claude 3.5 Sonnet was also a reference model. Rows 60/61/62 all derive from the same two adjacent blog bullets; 61 and 62 are the strongest merge candidates (identical sentence), 60 is a separate bullet/institute and can stand alone."
+ },
+ {
+  "row": 61,
+  "finding_id": "NEW-092-s2",
+  "pub_date_verified": "2024-11-19",
+  "numbers_check": [
+   {"value": "66%", "verdict": "exact", "source_value": "66%", "location": "AISI blog, Software and AI Development key findings, UK AISI bullet ('success rate of 66% on software engineering tasks'); technical report Sec. 16"},
+   {"value": "64%", "verdict": "exact", "source_value": "64%", "location": "Same blog sentence ('compared to 64% by the best reference model evaluated'); technical report identifies the best reference as Sonnet 3.5 (old) at 64% (GPT-4o: 48%)"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "The upgraded model had a success rate of 66% on software engineering tasks compared to 64% by the best reference model evaluated",
+  "proposed_key_quote_note": "Verbatim clause (22 words); the full blog sentence (which also contains the row-62 general-reasoning result) is 41 words.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "channelC_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "Minor flag: bare 'Claude 3.5 Sonnet' in Models field, same ambiguity as row 60 (old Sonnet 3.5 was a reference model and is in fact the 64% comparator here).",
+  "overstatement_check": "Low-moderate. The Finding itself only states the numbers, but a 2-point gap sits squarely under the blog's own caveat that 'smaller differences in model performance presented below may fall within the margins of error for these tests'. Any downstream 'outperformed' framing would be unsupported; the caveat should be carried in the row.",
+  "notes": "MERGE CANDIDATE: rows 61 and 62 rest on the SAME single blog sentence ('The upgraded model had a success rate of 66% on software engineering tasks compared to 64%..., and a success rate of 47% on general reasoning tasks compared to 35%...'). A hostile reviewer will count them as one finding split for volume. Technical report context: the UK suite is 'privately developed', agent-based, and the report warns models 'should only be compared within a given domain'."
+ },
+ {
+  "row": 62,
+  "finding_id": "NEW-092-s3",
+  "pub_date_verified": "2024-11-19",
+  "numbers_check": [
+   {"value": "47%", "verdict": "exact", "source_value": "47%", "location": "AISI blog, Software and AI Development key findings, UK AISI bullet ('a success rate of 47% on general reasoning tasks'); technical report Sec. 16 (aggregate over GAIA + custom tasks)"},
+   {"value": "35%", "verdict": "exact", "source_value": "35%", "location": "Same blog sentence ('compared to 35% by the best reference model evaluated'); technical report identifies the best reference as GPT-4o at 35% (Sonnet 3.5 (old): 29%)"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "a success rate of 47% on general reasoning tasks compared to 35% by the best reference model evaluated",
+  "proposed_key_quote_note": "Verbatim clause (18 words) from the same blog sentence as row 61.",
+  "channelA_verbatim_verdict": "n/a (Company Response = None)",
+  "channelB_verbatim_verdict": "n/a (not filled)",
+  "channelC_verbatim_verdict": "n/a (not filled)",
+  "model_names_check": "Minor flag: bare 'Claude 3.5 Sonnet' in Models field, same ambiguity as rows 60-61.",
+  "overstatement_check": "Low. Numbers stated plainly and the 12-point gap is the most robust of the three autonomy deltas. But Domain='Autonomy' is a stretch for 'general reasoning' tasks (the technical report files them under agent-based general reasoning, largely GAIA benchmark items, within Software and AI Development) - a reviewer may challenge the domain label.",
+  "notes": "MERGE CANDIDATE with row 61 - identical source sentence in the blog (and the same bullet pair in the technical report Sec. 3). Recommend merging 61+62 into one UK AISI software/reasoning finding, or explicitly marking them as split halves of one source sentence. Traction Score differs between the twins (61: Medium, 62: none listed) despite identical sourcing - inconsistent."
+ }
+]

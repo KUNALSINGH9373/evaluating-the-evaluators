@@ -1,0 +1,224 @@
+v3_row,finding_id,domain,models,disposition,reason,v4_target
+2,UKAISI-2024-05a-JAI1,Jailbreaks,Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 69
+3,UKAISI-2024-05a-BIO1,Bio-Chem,Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 70
+4,UKAISI-2024-05a-ALI1,Alignment,Frontier LLMs x5 (anonymised: Red/Purple/Green/Blue/Yellow),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 71
+5,UKAISI-2024-05b-JAI1,Jailbreaks,Publicly available frontier LLMs (anonymised -- same cohort ,DROPPED,no named subject model (needs confirmation),
+6,UKAISI-2024-05b-GOV1,Governance,N/A,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 174
+7,UKAISI-2024-05b-GOV2,Governance,N/A (framework/tooling),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 175
+8,UKAISI-2024-10-JAI1,Jailbreaks,Range of leading LLMs including GPT-4o and Claude 3.5 Sonnet,KEPT-TRACKABLE,in accountability set (67),v4 row 2
+9,UKAISI-2024-10-JAI2,Jailbreaks,Mistral Large 2,MERGED,absorbed into UKAISI-2024-10-JAI1,UKAISI-2024-10-JAI1 (v4 row 2)
+10,UKAISI-2024-10-JAI3,Jailbreaks,GPT-4o,KEPT-TRACKABLE,in accountability set (67),v4 row 3
+11,UKAISI-2024-10-JAI4,Jailbreaks,Range of leading LLMs (multiple systems),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 72
+12,UKAISI-2024-11-GOV2,Governance,None (methodology / template),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 176
+13,UKAISI-2024-11-GOV3,Governance,None (methodology / template),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 177
+14,UKAISI-2024-12-BIO1,Bio-Chem,o1-preview; Claude 3.5 Sonnet,KEPT-TRACKABLE,in accountability set (67),v4 row 4
+15,UKAISI-2024-12-GOV1,Governance,o1-preview; Claude 3.5 Sonnet,DROPPED,governance-signal (needs confirmation),
+16,UKAISI-2024-12-GOV2,Governance,o1-preview; Claude 3.5 Sonnet,MERGED,absorbed into UKAISI-2024-12-GOV3,UKAISI-2024-12-GOV3 (v4 row 178)
+17,UKAISI-2024-12-GOV3,Governance,o1-preview; Claude 3.5 Sonnet,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 178
+18,UKAISI-2025-03-GOV1,Governance,Gemini 2.5 Pro (Google DeepMind),DROPPED,governance-signal (needs confirmation),
+19,UKAISI-2025-03-GOV2,Governance,Gemini 2.5 Pro (Google DeepMind),DROPPED,governance-signal (needs confirmation),
+20,UKAISI-2025-03-GOV3,Governance,Gemini 2.5 Pro (Google DeepMind),DROPPED,governance-signal (needs confirmation),
+21,UKAISI-2025-03-GOV4,Governance,Gemini 2.5 Pro (Google DeepMind),DROPPED,governance-signal (needs confirmation),
+22,UKAISI-2025-03-GOV5,Governance,Gemini 2.5 Pro (Google DeepMind),DROPPED,governance-signal (needs confirmation),
+23,UKAISI-2025-04-ALI1,Alignment,7 frontier models (anonymised; best = Claude 3.7 Sonnet per ,KEPT-TRACKABLE,in accountability set (67),v4 row 5
+24,UKAISI-2025-04-ALI2,Alignment,7 frontier models (anonymised; best = Claude 3.7 Sonnet per ,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 73
+25,UKAISI-2025-04-ALI3,Alignment,7 frontier models (anonymised; best = Claude 3.7 Sonnet per ,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 74
+26,UKAISI-2025-04-ALI4,Alignment,7 frontier models (anonymised; best = Claude 3.7 Sonnet per ,DROPPED,no named subject model (needs confirmation),
+27,UKAISI-2025-04-ALI5,Alignment,7 frontier models (anonymised; best = Claude 3.7 Sonnet per ,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 75
+28,UKAISI-2025-05-GOV1,Governance,None (methodology paper),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 179
+29,UKAISI-2025-05-GOV2,Governance,None (methodology paper),MERGED,absorbed into UKAISI-2025-05-GOV1,UKAISI-2025-05-GOV1 (v4 row 179)
+30,UKAISI-2025-05-GOV3,Governance,None (methodology paper),DROPPED,governance-signal (needs confirmation),
+31,UKAISI-2025-08-JAI1,Jailbreaks,Kimi-K2-Instruct; GLM-4.5; GPT-OSS-120B,DROPPED,UNEXPLAINED — needs explicit reason,
+32,UKAISI-2025-08-JAI2,Jailbreaks,Kimi-K2-Instruct; GLM-4.5; GPT-OSS-120B,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 180
+33,UKAISI-2025-09-JAI1,Jailbreaks,Anthropic and OpenAI frontier models (not named),DROPPED,UNEXPLAINED — needs explicit reason,
+34,UKAISI-2025-09-GOV1,Governance,Anthropic and OpenAI frontier models (not named),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 181
+35,UKAISI-2025-09-GOV2,Governance,Anthropic and OpenAI frontier models (not named),DROPPED,governance-signal (needs confirmation),
+36,UKAISI-2025-09-GOV3,Governance,Anthropic and OpenAI frontier models (not named); GPT-5 (nam,DROPPED,governance-signal (needs confirmation),
+37,UKAISI-2025-09-SOC1,Societal,Handful of AI models (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 76
+38,UKAISI-2025-10-JAI1,Jailbreaks,4 language models (600M to 13B parameters),DROPPED,UNEXPLAINED — needs explicit reason,
+39,UKAISI-2025-10-ALI1,Alignment,9 models (anonymised) on 71 CTF tasks; 6390 transcripts,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 77
+40,UKAISI-2025-10-ALI2,Alignment,9 models (anonymised) on 71 CTF tasks; 6390 transcripts,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 78
+41,UKAISI-2025-10-ALI3,Alignment,9 models (anonymised) on 71 CTF tasks; 6390 transcripts,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 79
+42,UKAISI-2025-10-GOV1,Governance,9 models (anonymised) on 71 CTF tasks; 6390 transcripts,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 182
+43,UKAISI-2025-11-ALI1,Alignment,Frontier AI agents (anonymised -- multiple labs),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 80
+44,UKAISI-2025-11-ALI2,Alignment,Frontier AI agents (anonymised -- multiple labs),MERGED,absorbed into UKAISI-2025-11-ALI1,UKAISI-2025-11-ALI1 (v4 row 80)
+45,UKAISI-2025-11-ALI3,Alignment,Frontier AI agents (anonymised -- multiple labs),MERGED,absorbed into UKAISI-2025-11-ALI1,UKAISI-2025-11-ALI1 (v4 row 80)
+46,UKAISI-2025-11-GOV1,Governance,Frontier AI agents (anonymised -- multiple labs),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 183
+47,UKAISI-2025-11-ALI4,Alignment,Claude Opus 4.1; Claude Sonnet 4.5; Claude Opus 4.5 Preview,DROPPED,UNEXPLAINED — needs explicit reason,
+48,UKAISI-2025-11-ALI5,Alignment,Claude Opus 4.5 Preview; Claude Sonnet 4.5,KEPT-TRACKABLE,in accountability set (67),v4 row 6
+49,UKAISI-2025-11-ALI6,Alignment,Claude Opus 4.1; Claude Sonnet 4.5; Claude Opus 4.5 Preview,KEPT-TRACKABLE,in accountability set (67),v4 row 7
+50,UKAISI-2025-12-SOC1,Societal,19 open- and closed-source LLMs (anonymised),MERGED,absorbed into UKAISI-2025-12-SOC2,UKAISI-2025-12-SOC2 (v4 row 81)
+51,UKAISI-2025-12-SOC2,Societal,19 open- and closed-source LLMs (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 81
+52,UKAISI-2025-12-SOC3,Societal,19 open- and closed-source LLMs (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 82
+53,UKAISI-2025-12-SOC4,Societal,19 open- and closed-source LLMs (anonymised),DROPPED,no named subject model (needs confirmation),
+54,UKAISI-2025-12-GOV2,Governance,19 open- and closed-source LLMs (anonymised),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 184
+55,UKAISI-2025-12-ALI1,Alignment,5 frontier models (anonymised),DROPPED,no named subject model (needs confirmation),
+56,UKAISI-2025-12-ALI2,Alignment,5 frontier models (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 83
+57,UKAISI-2025-12-ALI3,Alignment,5 frontier models (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 84
+58,UKAISI-2025-12-ALI4,Alignment,5 frontier models (anonymised),MERGED,absorbed into UKAISI-2025-12-ALI3,UKAISI-2025-12-ALI3 (v4 row 84)
+59,UKAISI-2025-12-ALI5,Alignment,5 frontier models (anonymised),DROPPED,no named subject model (needs confirmation),
+60,UKAISI-2025-12-ALI11,Alignment,Claude 4.1 Opus (red team); Claude 3.7 Sonnet (monitor),MERGED,absorbed into UKAISI-2025-12-ALI12,UKAISI-2025-12-ALI12 (v4 row 85)
+61,UKAISI-2025-12-ALI12,Alignment,Claude 4.1 Opus (red team); Claude 3.7 Sonnet (monitor),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 85
+62,UKAISI-2025-12-GOV1,Governance,Claude 4.1 Opus (red team); Claude 3.7 Sonnet (monitor),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 86
+63,UKAISI-2025-12-ALI13,Alignment,Claude 4.1 Opus (red team); Claude 3.7 Sonnet (monitor),KEPT-TRACKABLE,in accountability set (67),v4 row 8
+64,UKAISI-2025-12-CYB1,Cyber,30+ frontier systems (anonymised -- all major labs),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 87
+65,UKAISI-2025-12-BIO1,Bio-Chem,30+ frontier systems (anonymised -- all major labs),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 88
+66,UKAISI-2025-12-JAI1,Jailbreaks,30+ frontier systems (anonymised -- all major labs),DROPPED,no named subject model (needs confirmation),
+67,UKAISI-2025-12-ALI14,Alignment,30+ frontier systems (anonymised -- all major labs),DROPPED,no named subject model (needs confirmation),
+68,UKAISI-2025-12-JAI2,Jailbreaks,30+ frontier systems (anonymised -- all major labs),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 89
+69,UKAISI-2025-12-GOV5,Governance,30+ frontier systems (anonymised -- all major labs),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 90
+70,UKAISI-2026-02-JAI1,Jailbreaks,Anthropic Constitutional Classifiers; OpenAI GPT-5 input cla,KEPT-TRACKABLE,in accountability set (67),v4 row 58
+71,UKAISI-2026-02-JAI2,Jailbreaks,Anthropic Constitutional Classifiers; OpenAI GPT-5 input cla,MERGED,absorbed into UKAISI-2026-02-JAI1-s2,UKAISI-2026-02-JAI1-s2 (v4 row 59)
+72,UKAISI-2026-02-CYB1,Cyber,"14 LLMs (anonymised); 20,000+ evaluations",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 91
+73,UKAISI-2026-02-CYB2,Cyber,"14 LLMs (anonymised); 20,000+ evaluations",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 92
+74,UKAISI-2026-03a-GOV2,Governance,Frontier models (Nov 2025 or earlier; anonymised),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 185
+75,UKAISI-2026-03a-CYB1,Cyber,Frontier models (Nov 2025 or earlier; anonymised),MERGED,absorbed into UKAISI-2026-03a-GOV2,UKAISI-2026-03a-GOV2 (v4 row 185)
+76,UKAISI-2026-03a-GOV3,Governance,Frontier models (Nov 2025 or earlier; anonymised),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 186
+77,UKAISI-2026-03-CYB1,Cyber,GPT-4o (Aug 2024); Claude Opus 4.5; Opus 4.6; GPT-5.3-Codex,KEPT-TRACKABLE,in accountability set (67),v4 row 9
+78,UKAISI-2026-03-CYB2,Cyber,GPT-4o (Aug 2024); Claude Opus 4.5; Opus 4.6; GPT-5.3-Codex,KEPT-TRACKABLE,in accountability set (67),v4 row 10
+79,UKAISI-2026-03b-CYB1,Cyber,Frontier models (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 93
+80,UKAISI-2026-03b-CYB2,Cyber,Frontier models (anonymised),DROPPED,no named subject model (needs confirmation),
+81,UKAISI-2026-03b-CYB3,Cyber,Frontier models (anonymised),MERGED,absorbed into UKAISI-2026-03b-CYB1,UKAISI-2026-03b-CYB1 (v4 row 93)
+82,UKAISI-2026-04-CYB1,Cyber,Claude Mythos Preview; Claude Opus 4.6; GPT-5.4; GPT-5.3-Cod,KEPT-TRACKABLE,in accountability set (67),v4 row 11
+83,UKAISI-2026-04-CYB2,Cyber,Claude Mythos Preview; Claude Opus 4.6; GPT-5.4; GPT-5.3-Cod,KEPT-TRACKABLE,in accountability set (67),v4 row 12
+84,UKAISI-2026-04-CYB3,Cyber,Claude Mythos Preview; Claude Opus 4.6; GPT-5.4; GPT-5.3-Cod,MERGED,absorbed into UKAISI-2026-04-CYB2,UKAISI-2026-04-CYB2 (v4 row 12)
+85,UKAISI-2026-04-CYB4,Cyber,Claude Mythos Preview; Claude Opus 4.6; GPT-5.4; GPT-5.3-Cod,MERGED,absorbed into UKAISI-2026-04-CYB2,UKAISI-2026-04-CYB2 (v4 row 12)
+86,UKAISI-2026-04-ALI13,Alignment / Control,OpenClaw (open-source AI coding agent),MERGED,absorbed into UKAISI-2026-04-ALI15,UKAISI-2026-04-ALI15 (v4 row 187)
+87,UKAISI-2026-04-ALI14,Alignment / Control,OpenClaw (open-source AI coding agent),MERGED,absorbed into UKAISI-2026-04-ALI15,UKAISI-2026-04-ALI15 (v4 row 187)
+88,UKAISI-2026-04-ALI15,Alignment / Control,OpenClaw (open-source AI coding agent),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 187
+89,UKAISI-2026-04-ALI16,Alignment / Control,OpenClaw (open-source AI coding agent),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 188
+90,UKAISI-2026-04-ALI17,Alignment / Control,OpenClaw (open-source AI coding agent),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 189
+91,UKAISI-2026-04-ALI9,Alignment / Human Influence,23 AI models (anonymised),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 190
+92,UKAISI-2026-04-ALI10,Alignment / Human Influence,23 AI models (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 94
+93,UKAISI-2026-04-ALI11,Alignment / Human Influence,23 AI models (anonymised),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 95
+94,UKAISI-2026-04-ALI5,Alignment / Misalignment,Claude Mythos Preview; Opus 4.7; Opus 4.6; Sonnet 4.6,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 96
+95,UKAISI-2026-04-ALI6,Alignment / Misalignment,Claude Mythos Preview; Opus 4.7; Opus 4.6; Sonnet 4.6,KEPT-TRACKABLE,in accountability set (67),v4 row 13
+96,UKAISI-2026-04-ALI7,Alignment / Misalignment,Claude Mythos Preview; Opus 4.7; Opus 4.6; Sonnet 4.6,DROPPED,UNEXPLAINED — needs explicit reason,
+97,UKAISI-2026-04-ALI8,Alignment / Misalignment,Claude Mythos Preview; Opus 4.7; Opus 4.6; Sonnet 4.6,MERGED,absorbed into UKAISI-2026-04-ALI6,UKAISI-2026-04-ALI6 (v4 row 13)
+98,UKAISI-2026-04-ALI1,Human Influence / Alignment,GPT-4o; GPT-5; Claude Sonnet 4.5,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 97
+99,UKAISI-2026-04-ALI3,Human Influence / Alignment,GPT-4o; GPT-5; Claude Sonnet 4.5,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 98
+100,UKAISI-2026-04-ALI4,Human Influence / Alignment,GPT-4o; GPT-5; Claude Sonnet 4.5,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 99
+101,UKAISI-2026-04-CYB11,Cyber,GPT-5.5; Claude Mythos Preview; GPT-5.4; Claude Opus 4.7,KEPT-TRACKABLE,in accountability set (67),v4 row 14
+102,UKAISI-2026-04-CYB12,Cyber,GPT-5.5; Claude Mythos Preview; GPT-5.4; Claude Opus 4.7,MERGED,absorbed into UKAISI-2026-04-CYB11,UKAISI-2026-04-CYB11 (v4 row 14)
+103,UKAISI-2026-04-CYB13,Cyber,GPT-5.5; Claude Mythos Preview; GPT-5.4; Claude Opus 4.7,MERGED,absorbed into UKAISI-2026-04-CYB11,UKAISI-2026-04-CYB11 (v4 row 14)
+104,UKAISI-2026-04-JAI1,Jailbreaks,GPT-5.5; Claude Mythos Preview; GPT-5.4; Claude Opus 4.7,KEPT-TRACKABLE,in accountability set (67),v4 row 15
+105,UKAISI-2026-05-CYB1,Cyber,Claude Mythos Preview (newer checkpoint); GPT-5.5; Claude So,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 191
+106,UKAISI-2026-05-CYB2,Cyber,Claude Mythos Preview (newer checkpoint); GPT-5.5; Claude So,KEPT-TRACKABLE,in accountability set (67),v4 row 16
+107,UKAISI-2026-05-GOV1,Governance,Claude Mythos Preview (newer checkpoint); GPT-5.5; Claude So,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 192
+108,UKAISI-2026-05B-ALI1,Alignment,None (25 expert interviews),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 193
+109,UKAISI-2026-05B-ALI2,Alignment,None (25 expert interviews),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 194
+110,UKAISI-2026-06-ALI1,Alignment,17 text models; 6 speech models (incl. GPT-4o; GPT-5.1; Clau,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 100
+111,UKAISI-2026-06-ALI2,Alignment,17 text models; 6 speech models (incl. GPT-4o; GPT-5.1; Clau,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 101
+112,USCAISI-2025-09-CYB1,Cyber,DeepSeek R1/R1-0528/V3.1; GPT-5; Anthropic Opus 4,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 102
+113,USCAISI-2025-09-GOV1,Governance,DeepSeek V3.1,DROPPED,governance-signal (needs confirmation),
+114,USCAISI-2025-09-CYB2,Cyber,DeepSeek R1/R1-0528/V3.1,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 195
+115,USCAISI-2025-09-SOC1,Societal,DeepSeek R1/R1-0528/V3.1,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 196
+116,USCAISI-2025-09-GOV2,Governance,DeepSeek R1/R1-0528/V3.1,DROPPED,governance-signal (needs confirmation),
+117,USCAISI-2025-11-GOV1,Governance,Multiple frontier models (unnamed),DROPPED,governance-signal (needs confirmation),
+118,USCAISI-2025-11-GOV2,Governance,Multiple frontier models (unnamed),MERGED,absorbed into USCAISI-2025-11-GOV3,USCAISI-2025-11-GOV3 (v4 row 197)
+119,USCAISI-2025-11-GOV3,Governance,Multiple frontier models (unnamed),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 197
+120,USCAISI-2025-11-GOV4,Governance,Multiple frontier models (unnamed),DROPPED,governance-signal (needs confirmation),
+121,USCAISI-2025-12-GOV1,Governance,Kimi K2 Thinking (Moonshot AI -- PRC),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 198
+122,USCAISI-2025-12-SOC1,Societal,Kimi K2 Thinking (Moonshot AI -- PRC),KEPT-TRACKABLE,in accountability set (67),v4 row 17
+123,USCAISI-2025-12-GOV2,Governance,Kimi K2 Thinking (Moonshot AI -- PRC),DROPPED,governance-signal (needs confirmation),
+124,USCAISI-2025-12-GOV3,Governance,Kimi K2 Thinking (Moonshot AI -- PRC),MERGED,absorbed into USCAISI-2025-12-GOV1,USCAISI-2025-12-GOV1 (v4 row 198)
+125,USCAISI-2025-12-GOV4,Governance,Kimi K2 Thinking (Moonshot AI -- PRC),DROPPED,governance-signal (needs confirmation),
+126,USCAISI-2026-04-CYB1,Cyber,DeepSeek V4 Pro; GPT-5; GPT-5.5,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 199
+127,USCAISI-2026-04-CYB2,Cyber,DeepSeek V4 Pro; GPT-5; GPT-5.5,MERGED,absorbed into USCAISI-2026-04-CYB1,USCAISI-2026-04-CYB1 (v4 row 199)
+128,USCAISI-2026-04-CYB3,Cyber,DeepSeek V4 Pro; GPT-5; GPT-5.5,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 103
+129,USCAISI-2026-04-GOV1,Governance,DeepSeek V4 Pro; GPT-5; GPT-5.5,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 200
+130,JOINT-2024-11-JAI1,Jailbreaks,Claude 3.5 Sonnet (Oct 2024); o1-preview; GPT-4o (reference),KEPT-TRACKABLE,in accountability set (67),v4 row 18
+131,JOINT-2024-11-BIO1,Bio-Chem,Claude 3.5 Sonnet (Oct 2024),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 104
+132,JOINT-2024-11-CYB1,Cyber,Claude 3.5 Sonnet (Oct 2024),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 105
+133,JOINT-2024-11-GOV1,Governance,Claude 3.5 Sonnet (Oct 2024),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 201
+134,JOINT-2024-12-CYB1,Cyber,OpenAI o1; o1-preview; GPT-4o; Claude 3.5 Sonnet (reference),KEPT-TRACKABLE,in accountability set (67),v4 row 19
+135,JOINT-2024-12-CYB2,Cyber,OpenAI o1; o1-preview; GPT-4o; Claude 3.5 Sonnet (reference),MERGED,absorbed into JOINT-2024-12-CYB1,JOINT-2024-12-CYB1 (v4 row 19)
+136,JOINT-2024-12-BIO1,Bio-Chem,OpenAI o1; o1-preview; GPT-4o; Claude 3.5 Sonnet (reference),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 106
+137,JOINT-2024-12-ALI1,Alignment,OpenAI o1; o1-preview; GPT-4o; Claude 3.5 Sonnet (reference),DROPPED,UNEXPLAINED — needs explicit reason,
+138,JOINT-2025-00-BIO1,Bio-Chem,Claude Opus 4; Claude Opus 4.1,KEPT-TRACKABLE,in accountability set (67),v4 row 65
+139,JOINT-2025-00-JAI1,Jailbreaks,Claude Opus 4; Claude Opus 4.1,MERGED,absorbed into JOINT-2025-00-BIO1-s4,JOINT-2025-00-BIO1-s4 (v4 row 68)
+140,JOINT-2025-00-JAI2,Jailbreaks,Claude Opus 4; Claude Opus 4.1,DROPPED,UNEXPLAINED — needs explicit reason,
+141,JOINT-2025-00-JAI3,Jailbreaks,Claude Opus 4; Claude Opus 4.1,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 202
+142,NETWORK-2025-02-GOV1,Governance,Multiple anonymised models,DROPPED,governance-signal (needs confirmation),
+143,NETWORK-2025-02-JAI2,Jailbreaks,Multiple anonymised models,DROPPED,no named subject model (needs confirmation),
+144,JOINT-2025-07-CYB1,Cyber,Models A-F (open/closed-weight agents; anonymised),DROPPED,no named subject model (needs confirmation),
+145,JOINT-2025-07-GOV1,Governance,Models A-F (open/closed-weight agents; anonymised),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 203
+146,JOINT-2025-08-GOV1,Governance,GPT-5 (gpt-5-thinking; gpt-5-main),DROPPED,governance-signal (needs confirmation),
+147,JOINT-2025-08-JAI1,Jailbreaks,GPT-5 (gpt-5-thinking; gpt-5-main),KEPT-TRACKABLE,in accountability set (67),v4 row 20
+148,JOINT-2025-08-GOV2,Governance,GPT-5 (gpt-5-thinking; gpt-5-main),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 204
+149,JOINT-2025-08-GOV3,Governance,GPT-5 (gpt-5-thinking; gpt-5-main),DROPPED,governance-signal (needs confirmation),
+150,JOINT-2025-08-GOV4,Governance,GPT-5 (gpt-5-thinking; gpt-5-main),DROPPED,governance-signal (needs confirmation),
+151,JOINT-2025-09-JAI1,Jailbreaks,Anthropic Claude (Constitutional Classifier stack),DROPPED,UNEXPLAINED — needs explicit reason,
+152,JOINT-2025-09-JAI2,Jailbreaks,Anthropic Claude (safeguard annotation stack),DROPPED,UNEXPLAINED — needs explicit reason,
+153,JOINT-2025-09-JAI3,Jailbreaks,OpenAI frontier models,DROPPED,UNEXPLAINED — needs explicit reason,
+154,JOINT-2025-09-JAI4,Jailbreaks,OpenAI and Anthropic frontier models,DROPPED,UNEXPLAINED — needs explicit reason,
+155,UKAISI-2025-11-BIO1,Bio-Chem,Gemini 3 Pro,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 107
+156,UKAISI-2025-11-GOV11,Governance,Gemini 3 Pro,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 205
+157,UKAISI-2025-11-ALI11,Alignment,Gemini 3 Pro,KEPT-TRACKABLE,in accountability set (67),v4 row 21
+158,UKAISI-2025-11-GOV2,Governance,Gemini 3 Pro,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 206
+159,UKAISI-2025-11-ALI12,Alignment,Gemini 3 Pro,DROPPED,UNEXPLAINED — needs explicit reason,
+160,UKAISI-2025-12-SOC5,Societal,Models at major AI labs (not named),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 207
+161,UKAISI-2025-12-SOC6,Societal,Models at major AI labs (not named),DROPPED,UNEXPLAINED — needs explicit reason,
+162,UKAISI-2025-12-GOV3,Governance,Models at major AI labs (not named),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 208
+163,UKAISI-2025-12-GOV4,Governance,Models at major AI labs (not named),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 209
+164,JOINT-2026-02-CYB1,Cyber,GPT-5.3-Codex; reference models,KEPT-TRACKABLE,in accountability set (67),v4 row 22
+165,JOINT-2026-02-JAI1,Jailbreaks,GPT-5.3-Codex; reference models,KEPT-TRACKABLE,in accountability set (67),v4 row 23
+166,JOINT-2026-02-CYB2,Cyber,GPT-5.3-Codex; reference models,KEPT-TRACKABLE,in accountability set (67),v4 row 24
+167,JOINT-2026-02-GOV1,Governance,GPT-5.3-Codex; reference models,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 210
+168,JOINT-2026-02-GOV1b,Governance,All major frontier systems (meta-review),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 211
+169,JOINT-2026-02-GOV2b,Governance,All major frontier systems (meta-review),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 212
+170,JOINT-2026-03-CYB1,Cyber,13 frontier models (unnamed),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 213
+171,JOINT-2026-03-JAI1,Jailbreaks,13 frontier models (unnamed),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 108
+172,JOINT-2026-03-JAI2,Jailbreaks,13 frontier models (unnamed),MERGED,absorbed into JOINT-2026-03-JAI1,JOINT-2026-03-JAI1 (v4 row 108)
+173,USCAISI-2026-04-BIO1,Bio-Chem,GPT-5.5 (two pre-release checkpoints),KEPT-TRACKABLE,in accountability set (67),v4 row 25
+174,USCAISI-2026-04-BIO2,Bio-Chem,GPT-5.5 (two pre-release checkpoints),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 109
+175,USCAISI-2026-04-BIO3,Bio-Chem,GPT-5.5 (two pre-release checkpoints),MERGED,absorbed into USCAISI-2026-04-BIO2,USCAISI-2026-04-BIO2 (v4 row 109)
+176,USCAISI-2026-04-GOV11,Governance,GPT-5.5 (two pre-release checkpoints),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 214
+177,NETWORK-2024-11-GOV1,Governance,Meta Llama 3.1 405B,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 215
+178,NETWORK-2024-11-JAI1,Jailbreaks,Meta Llama 3.1 405B,DROPPED,UNEXPLAINED — needs explicit reason,
+179,NETWORK-2024-11-GOV2,Governance,Meta Llama 3.1 405B,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 216
+180,SGAISI-2025-02-JAI1,Jailbreaks,"Claude 3.5 (Anthropic), Aya Expanse-8B (Cohere for AI), Llam",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 110
+181,JOINT-2025-05-ALI1,Alignment / Misalignment,Claude Opus 4 (early pre-release snapshot -- NOT released ve,KEPT-TRACKABLE,in accountability set (67),v4 row 63
+182,JOINT-2025-05-ALI2,Alignment / Misalignment,Claude Opus 4 (early pre-release snapshot -- NOT released ve,MERGED,absorbed into JOINT-2025-05-ALI1-s2,JOINT-2025-05-ALI1-s2 (v4 row 64)
+183,JOINT-2025-05-ALI3,Alignment / Misalignment,Claude Opus 4 (early pre-release snapshot -- NOT released ve,MERGED,absorbed into JOINT-2025-05-ALI1-s2,JOINT-2025-05-ALI1-s2 (v4 row 64)
+184,JOINT-2025-05-ALI4,Alignment / Misalignment,Claude Opus 4 (early pre-release snapshot -- NOT released ve,MERGED,absorbed into JOINT-2025-05-ALI1-s2,JOINT-2025-05-ALI1-s2 (v4 row 64)
+185,JOINT-2025-05-GOV1,Governance,Claude Opus 4 (early pre-release snapshot -- NOT released ve,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 217
+186,AISI-JP-2025-10-SOC1,Societal,Not applicable -- threat landscape analysis; no specific mod,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 111
+187,UKAISI-2026-04-ALI2b,Alignment,Multiple (ResNet/CNN vision models; LLM experiments),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 218
+188,UKAISI-2026-04-ALI1b,Alignment,OpenClaw (open-source AI coding agent),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 112
+189,USCAISI-2026-05-GOV1,Governance,"DeepSeek V4 Pro (open-weight); compared against GPT-5, GPT-5",KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 219
+190,UKAISI-2026-05-ALI1,Alignment,No specific models tested; theoretical/analytical paper,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 220
+191,UKAISI-2026-05-ALI2,Alignment,No specific models tested; conceptual/review paper,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 221
+192,SGAISI-2026-06-ALI1,Alignment,"Model A (large, closed-weight), Model B (large, closed/open-",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 113
+193,UKAISI-2024-01-GOV1,Governance,Google Gemini Ultra,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 222
+194,UKAISI-2024-05-GOV1,Governance,One unnamed frontier model (identity not publicly disclosed),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 223
+195,UKAISI-2024-10-GOV1,Governance,16 models (aggregated across first year),DROPPED,governance-signal (needs confirmation),
+196,UKAISI-2024-11-GOV11,Governance,16 models (aggregated across first year),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 224
+197,JOINT-2025-01-JAI1,Jailbreaks,Claude 3.5 Sonnet,KEPT-TRACKABLE,in accountability set (67),v4 row 26
+198,UKAISI-2025-02-GOV1,Governance,N/A,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 225
+199,UKAISI-2025-03-GOV11,Governance,Multiple frontier LLMs (unnamed),KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 226
+200,UKAISI-2025-07-ALI1,Alignment,Llama-3.1-8B; Llama-3.3-70B,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 114
+201,UKAISI-2025-07-GOV1,Governance,Multiple frontier models,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 227
+202,UKAISI-2025-07-JAI1,Jailbreaks,Multiple frontier models with multi-component safety systems,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 115
+203,UKAISI-2025-08-JAI11,Jailbreaks,Open-weight LLMs (unnamed; multiple tested),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 116
+204,UKAISI-2025-11a-GOV1,Governance,445 LLM benchmarks reviewed by 29 expert reviewers; no new m,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 228
+205,UKAISI-2025-11b-ALI1,Alignment,Claude Opus; Claude Sonnet (specific versions unspecified),KEPT-TRACKABLE,in accountability set (67),v4 row 27
+206,UKAISI-2025-12a-ALI1,Alignment,Multiple frontier LLMs (unnamed),KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 117
+207,UKAISI-2026-03-CYB11,Cyber,Multiple frontier LLMs tested across different container con,DROPPED,UNEXPLAINED — needs explicit reason,
+208,UKAISI-2026-05-GOV11,Governance,None -- expert interviews and theoretical analysis,DROPPED,governance-signal (needs confirmation),
+209,UKAISI-2025-07-CYB1,Cyber,Anonymized Models A–D (sensitive-info/fraud strand) and E–F ,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 118
+210,SGAISI-2025-07-JAI1,Jailbreaks,"Two anonymized open-weight models, tested across ten languag",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 119
+211,KAISI-2026-05-SOC1,Societal,42 major domestic and international models (mostly anonymize,DROPPED,no named subject model (needs confirmation),
+212,KAISI-2025-12-SOC1,Societal,"Kanana Essence 1.5 (Kakao, multimodal); comparators Meta Lla",KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 229
+213,SGAISI-2026-01-AUT1,Autonomy,"Four anonymized models: A (larger, closed), B (larger, open)",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 120
+214,UKAISI-2025-02-JAI1,Jailbreaks,OpenAI fine-tuning API (commercial closed model behind the A,KEPT-TRACKABLE,in accountability set (67),v4 row 28
+215,UKAISI-2025-07-AUT1,Autonomy,22 frontier AI agents across 44 realistic deployment scenari,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 121
+216,UKAISI-2025-10-ALI1b,Alignment,Research-trained LLMs from 600M to 13B parameters (6B-260B t,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 122
+217,UKAISI-2025-10-AUT1,Autonomy,"31 popular backbone LLMs powering AI agents (b³ benchmark, 1",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 123
+218,UKAISI-2026-06-HUM1,Human Influence,17 text models and 6 speech models (unnamed frontier models),DROPPED,no named subject model (needs confirmation),
+219,UKAISI-2026-06-ALI1b,Alignment,31 open-weight models (2B-1T parameters) plus custom-built r,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 124
+220,UKAISI-2025-09-AUT1,Autonomy,"GPT-4o, Llama 3 8B",KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 125
+221,UKAISI-2026-02-SOC1,Societal,,KEPT-EVAL-NOT-TRACKABLE,eval finding; stratified out of gap denominator,v4 row 126
+222,UKAISI-2026-06-ALI3,Alignment,Claude Opus 4.5,KEPT-TRACKABLE,in accountability set (67),v4 row 29
+223,UKAISI-2026-03-AUT1,Autonomy,,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 230
+224,USCAISI-2025-01-GOV1,Governance,,KEPT-GOVERNANCE,eval?=no (governance-signal row),v4 row 231

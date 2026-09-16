@@ -1,0 +1,64 @@
+[
+  {
+    "row": 2,
+    "finding_id": "UKAISI-2024-10-JAI1",
+    "pub_date_verified": "2024-10-11",
+    "numbers_check": [
+      {"claim": "Mistral Large 2 refused only 1.1%", "verdict": "exact", "source_value": "1.1% refusals (no attack)", "location": "Section 4.2 main text and Table 9 (Appendix C)"},
+      {"claim": "Mistral Large 2 scored 82.2% harm", "verdict": "exact", "source_value": "82.2% harm score (no attack), described as 'our strongest score without attacking'", "location": "Section 4.2 main text and Table 9"}
+    ],
+    "key_quote_verdict": "paraphrase",
+    "proposed_key_quote": "leading LLMs are surprisingly compliant with malicious agent requests without jailbreaking",
+    "model_names_check": "ok - all three models are evaluated in the paper, though the finding's numbers concern only Mistral Large 2; GPT-4o refused 48.9% and Claude 3.5 Sonnet refused 85.2% without attack, so they are not examples of 'high-rate compliance'",
+    "overstatement_check": "flag: 'showing agentic safety is far weaker than conversational safety' overstates the source. The paper hedges ('Agents may be less robust than chatbots'); chat-vs-agent comparison is an appendix experiment on 76 of 110 tasks and 4 models (Table 8). Several leading models refused 70-94% of requests, so blanket 'leading LLMs comply at high rates' fits only some models.",
+    "notes": "Claimed quote is a blend of the abstract and the Section 4.2 heading - neither matches character-for-character. Alternative verbatim covering the numbers: 'Mistral Large 2 refuses just 1.1% of requests and gets our strongest score without attacking of 82.2%.' Paper published at ICLR 2025; current arXiv version is v3 (2025-04-18)."
+  },
+  {
+    "row": 3,
+    "finding_id": "UKAISI-2024-10-JAI3",
+    "pub_date_verified": "2024-10-11",
+    "numbers_check": [
+      {"claim": "GPT-4o harm score 48.4% before jailbreak", "verdict": "exact", "source_value": "48.4% (Attack: None)", "location": "Section 4.2 main text and Table 9"},
+      {"claim": "72.7% after jailbreak", "verdict": "exact", "source_value": "72.7% (Attack: Template)", "location": "Section 4.2 main text and Table 9"}
+    ],
+    "key_quote_verdict": "paraphrase",
+    "proposed_key_quote": "GPT-4o, increasing its harm score from 48.4% to 72.7% and decreasing refusal rate from 48.9% to 13.6%",
+    "model_names_check": "ok",
+    "overstatement_check": "flag: 'agentic jailbreak techniques' (plural) misdescribes the source - the increase comes from a single universal jailbreak template adapted from a chatbot jailbreak; the paper's point is that 'standard chat jailbreaking methods can be used to misdirect LLM-based agents'.",
+    "notes": "Claimed quote ('jumps', 'after jailbreaking') does not appear verbatim anywhere in the paper. Numbers correct in main text and Table 9."
+  },
+  {
+    "row": 43,
+    "finding_id": "ADD-01",
+    "pub_date_verified": "2024-10-11",
+    "numbers_check": [
+      {"claim": "harm score rose from 13.5% (no attack)", "verdict": "exact", "source_value": "13.5% (Attack: None)", "location": "Section 4.2 and Table 9"},
+      {"claim": "85.2% refusals (no attack)", "verdict": "exact", "source_value": "85.2%", "location": "Section 4.2 and Table 9"},
+      {"claim": "68.7% under jailbreak template", "verdict": "exact", "source_value": "68.7% (Attack: Template)", "location": "Section 4.2, Table 5, and Table 9"},
+      {"claim": "refusals dropped to 16.7%", "verdict": "exact", "source_value": "16.7% (Table 9; a later main-text sentence rounds to 'just 16%')", "location": "Table 9"},
+      {"claim": "non-refusal harm score 81.9% under jailbreak", "verdict": "exact", "source_value": "81.9% (Template)", "location": "Section 4.2 and Table 9"},
+      {"claim": "82% benign-task score", "verdict": "exact", "source_value": "82.0% - note this is the benign NON-REFUSAL score, matching the paper's own comparison", "location": "Section 4.2 and Table 9"}
+    ],
+    "key_quote_verdict": "missing",
+    "proposed_key_quote": "with our template attack, Claude 3.5 Sonnet scores a 81.9% non-refusal harm score (while refusing just 16% of requests), closely matching its non-refusal score of 82% on the benign tasks",
+    "model_names_check": "ok - checkpoint is claude-3-5-sonnet-20240620 (Appendix B)",
+    "overstatement_check": "ok - though the finding should say '82% benign non-refusal score' rather than '82% benign-task score'",
+    "notes": "All six numbers verify exactly against Table 9. Proposed quote preserves the paper's own grammar ('a 81.9%')."
+  },
+  {
+    "row": 44,
+    "finding_id": "ADD-02",
+    "pub_date_verified": "2024-10-11",
+    "numbers_check": [
+      {"claim": "harm score rose from 15.7% (no attack)", "verdict": "exact", "source_value": "15.7% (Attack: None)", "location": "Section 4.2 and Table 9"},
+      {"claim": "78.4% refusals (no attack)", "verdict": "exact", "source_value": "78.4% in Table 9 and Sec 4.2 jailbreak sentence; NOTE the paper's own baseline sentence says '78.5%' - internal inconsistency in the source", "location": "Table 9"},
+      {"claim": "56.1% under jailbreak", "verdict": "exact", "source_value": "56.1% (Attack: Template)", "location": "Section 4.2 and Table 9"},
+      {"claim": "refusals collapsed to 3.5%", "verdict": "exact", "source_value": "3.5% (Template)", "location": "Section 4.2 and Table 9"}
+    ],
+    "key_quote_verdict": "missing",
+    "proposed_key_quote": "Gemini 1.5 Pro, increasing its harm score from 15.7% to 56.1% and decreasing refusal rate from 78.4% to 3.5%",
+    "model_names_check": "ok - checkpoint is google/gemini-1.5-pro (Appendix B)",
+    "overstatement_check": "ok - 'refusals collapsing' is editorial but fair for 78.4% to 3.5%",
+    "notes": "Paper itself states 78.5% in one main-text sentence and 78.4% in the table; citing 78.4% (table value) is the defensible choice."
+  }
+]

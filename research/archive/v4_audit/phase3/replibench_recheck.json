@@ -1,0 +1,9 @@
+{
+  "row": 5, "finding_id": "UKAISI-2025-04-ALI1",
+  "verdict": "ROW SUBSTANTIVELY CORRECT - earlier eligibility flag WITHDRAWN",
+  "paper_url": "https://arxiv.org/abs/2504.18565",
+  "paper_quote": "Overall the best model we evaluated (Claude 3.7 Sonnet) has a >50% pass@10 score on 15/20 task families, and a >50% pass@10 score for 9/20 families on the hardest variants.",
+  "evaluated_models": ["o1","o3-mini","GPT-4o","Claude 3.5 Sonnet (new)","Claude 3.7 Sonnet"],
+  "fix": "Change Source URL from the AISI blog (which anonymises: 'seven frontier models', 'the best performing model') to the arXiv paper; keep Models/Systems = Claude 3.7 Sonnet; use the paper quote as Key Quote.",
+  "caveat": "Paper-internal discrepancy: abstract says 9/20 hardest variants, results body says 10/20. Cite abstract, note inconsistency. Blog counts 'seven' models by including GPT-3.5/GPT-4 reference models from the trends figure."
+}

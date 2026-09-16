@@ -1,0 +1,192 @@
+[
+ {
+  "row": 11,
+  "finding_id": "UKAISI-2026-04-CYB1",
+  "pub_date_verified": "2026-04-13",
+  "numbers_check": [
+   {"value": "73% CTF success rate", "verdict": "exact", "source_value": "Mythos Preview succeeds 73% of the time", "location": "AISI Mythos blog, Capture-the-flag results section"},
+   {"value": "~April 2025", "verdict": "exact", "source_value": "which no model could complete before April 2025", "location": "same sentence"},
+   {"value": "record (73%)", "verdict": "not-found", "source_value": "Source never uses 'record' or claims it is the highest rate AISI has measured; note AISI's later GPT-5.5 report (2026-04-30) scores Mythos at 68.6% on its Expert suite", "location": "n/a"},
+   {"value": "first model to solve expert-level CTFs", "verdict": "mismatch", "source_value": "Source says expert-level tasks could not be completed by any model 'before April 2025' — i.e. models began solving them ~April 2025, a year before Mythos. The source does NOT say Mythos was the first to solve expert-level CTFs; it says Mythos is first to solve the TLO range end-to-end (a different claim).", "location": "CTF section vs Cyber range section"}
+  ],
+  "key_quote_verdict": "not-found",
+  "key_quote_note": "'This is not routine communication. It is an alarm bell. Frontier AI capabilities in cyber offence are doubling every four months.' appears nowhere in the source URL. The 'alarm bell'/'doubling' language traces to AISI's separate blog 'How fast is autonomous AI cyber capability advancing?' (2026-05-13) and media coverage of it — and even there AISI's actual estimate is a 4.7-month doubling time, not 'every four months'. As written this is a fabricated composite quote.",
+  "proposed_key_quote": "On expert-level tasks — which no model could complete before April 2025 — Mythos Preview succeeds 73% of the time.",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_note": "Sentence verified character-for-character on https://www.anthropic.com/research/mythos-preview (published 2026-04-07). Caution: that page never mentions UK AISI or its findings, so Company Response wording 'citing AISI findings' is unsupported; the Anthropic announcement (Apr 7) also PRE-dates the AISI blog (Apr 13). Company Response's '~40 vetted organizations', 'briefed IMF and FSB' not found in fetched evidence; cybersecuritydive (2026-06-02) says the partnership was extended 'to approximately 150 new organizations' — i.e. 150 NEW orgs, not a total of 150 as the dataset implies.",
+  "channelB_verbatim_verdict": "exact",
+  "channelB_note": "Both fragments verified verbatim in the Security Minister's CYBERUK speech (gov.uk, delivered 22 April 2026 by Dan Jarvis): 'Our world leading AI Security Institute tested Mythos and is working directly with a range of companies on Frontier AI.' and 'today I am announcing a new £90 million investment to strengthen our cyber resilience.' The '...' splice joins two non-adjacent sentences — mark as spliced. £90m and Cyber Resilience Pledge confirmed.",
+  "model_names_check": "Pass for the model named (Claude Mythos Preview; Opus 4.6, GPT-5.4, GPT-5.3-Codex etc. confirmed in figure captions). But the 'first model' claim is misattributed to expert CTFs (see numbers_check).",
+  "overstatement_check": "(1) 'record 73%' — 'record' not in source. (2) 'first model to solve expert-level CTFs that were impossible... before ~April 2025' — source says the April-2025 threshold was crossed by earlier models; Mythos was only first on the TLO range. (3) Policy Response claims EP written question E-001575/2026 'referenced AISI's cyber evaluation' — the actual question (verified) cites only Anthropic's announcement and the Center for AI Safety (CeSIA); it never mentions AISI. It was also submitted 16.4.2026, not tied to AISI's report.",
+  "notes": "Response Date 2026-04-07 is 6 days BEFORE the report's publication (2026-04-13) yet Lag is recorded as 0.0 — a hostile reviewer will flag a 'response' that precedes the report. Cross-row conflict: row 14 claims GPT-5.5's 71.4% is a 'record' while this row claims Mythos's 73% was a 'record' three weeks earlier — both cannot stand without noting they are different task-suite snapshots (AISI's own GPT-5.5 report scores Mythos 68.6% on the Expert suite). Rows 11 and 12 share the same source and company-response evidence."
+ },
+ {
+  "row": 12,
+  "finding_id": "UKAISI-2026-04-CYB2",
+  "pub_date_verified": "2026-04-13",
+  "numbers_check": [
+   {"value": "32-step TLO chain", "verdict": "exact", "source_value": "\"The Last Ones\" (TLO): a 32-step corporate network attack simulation", "location": "Cyber range results section"},
+   {"value": "3/10 attempts", "verdict": "exact", "source_value": "first model to solve TLO from start to finish, in 3 out of its 10 attempts", "location": "Cyber range results section"},
+   {"value": "22/32 average steps", "verdict": "exact", "source_value": "completed an average of 22 out of 32 steps", "location": "Cyber range results section"},
+   {"value": "16 steps next-best model", "verdict": "exact", "source_value": "Claude Opus 4.6 is the next best performing model and completed an average of 16 steps", "location": "Cyber range results section"},
+   {"value": "38% gap", "verdict": "not-found", "source_value": "Not stated in source; derived from 22 vs 16 (37.5%, rounded to 38%). Arithmetic is correct but should be marked as author-computed.", "location": "n/a"}
+  ],
+  "key_quote_verdict": "paraphrase",
+  "key_quote_note": "'FIRST model to complete TLO 32-step corporate network attack end-to-end.' is a constructed headline (with editorial capitalization), not a source sentence.",
+  "proposed_key_quote": "Claude Mythos Preview is the first model to solve TLO from start to finish, in 3 out of its 10 attempts.",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_note": "'We do not plan to make Mythos Preview generally available.' verified verbatim on https://www.anthropic.com/research/mythos-preview. Same caveat as row 11: the Anthropic page does not mention AISI, and it predates the AISI report.",
+  "channelB_verbatim_verdict": "n/a (no Channel B Verbatim filled)",
+  "model_names_check": "Pass — Mythos Preview and Opus 4.6 (next best, 16 steps) both named in source exactly as used.",
+  "overstatement_check": "'a 38% gap that AISI concluded marks a qualitative shift in AI cyber capability' — AISI concluded no such thing from the 38% gap (which it never states); the source's own framing is that Mythos 'represents a step up over previous frontier models'. 'Qualitative shift' is the dataset's language, not AISI's.",
+  "notes": "Policy Response dating error: EP question E-001575/2026 was submitted 16.4.2026 (verified on europarl.europa.eu), not '7 Apr 2026' as this row states; 7 April is Anthropic's announcement date. The question also does not mention AISI (it cites Anthropic and CeSIA). MERGE CANDIDATE with row 45 (ADD-03): both rows rest on the same underlying fact (Mythos first to solve TLO, 3/10) supported by nearly identical sentences in two AISI blogs; the proposed key quotes for rows 12 and 45 are the same fact restated."
+ },
+ {
+  "row": 14,
+  "finding_id": "UKAISI-2026-04-CYB11",
+  "pub_date_verified": "2026-04-30",
+  "numbers_check": [
+   {"value": "71.4% expert-level CTF pass rate", "verdict": "exact", "source_value": "GPT-5.5 achieves an average pass rate of 71.4% (±8.0%, 1 standard error of the mean)", "location": "Cyber Task Results section"},
+   {"value": "record", "verdict": "mismatch", "source_value": "Source hedges: 'On this measure, GPT-5.5 may be the strongest model we have tested.' Also conflicts with row 11's 73% for Mythos (2026-04-13 report) unless the different task suites are noted.", "location": "Cyber Task Results section"},
+   {"value": "2/10 TLO attempts", "verdict": "exact", "source_value": "GPT-5.5 completed TLO end-to-end in 2 of 10 attempts, making it the second model to do so", "location": "Cyber Range Results section; NB footnote 1: this was updated from the 1-in-10 originally stated in OpenAI's system card after AISI found a grading bug"},
+   {"value": "10m22s", "verdict": "exact", "source_value": "GPT-5.5 solved the challenge in 10 minutes and 22 seconds with no human assistance at a cost of $1.73 (USD)", "location": "rust_vm spotlight"},
+   {"value": "~12h human expert", "verdict": "exact", "source_value": "Crystal Peak's expert playtester ... solved the challenge in roughly 12 hours", "location": "rust_vm spotlight"},
+   {"value": "roughly 70x faster", "verdict": "not-found", "source_value": "Not stated; derived (720 min / 10.37 min ≈ 69.5x). Arithmetic defensible but author-computed; also it compares one model run to one human playtester on one challenge.", "location": "n/a"}
+  ],
+  "key_quote_verdict": "paraphrase",
+  "key_quote_note": "'71.4% expert-level CTF pass rate -- highest AISI has ever tested' is constructed and overstates the source's hedged 'may be the strongest model we have tested'. 'Highest AISI has ever tested' is directly contradicted by AISI's own 73% Mythos figure published 17 days earlier.",
+  "proposed_key_quote": "On this measure, GPT-5.5 may be the strongest model we have tested.",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_note": "Quote verified verbatim on deploymentsafety.openai.com/gpt-5-5/cybersecurity (Section 9.1.2). Company Response items independently verified on openai.com/index/gpt-5-5-with-trusted-access-for-cyber (via Wayback): restricted GPT-5.5-Cyber for a smaller set of partners ✓; 'required to enable Advanced Account Security beginning June 1, 2026' ✓.",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_note": "'In other words: we do not know if GPT-5.5 is actually safe to release. All we have to rely on is OpenAI's word.' verified verbatim — but in Transformer News (transformernews.ai, 2026-04-24, Hashim/Ford/Irwin), NOT in the Zvi or Willison pieces this row cites as Social Highlights. No Channel C Evidence URL is filled; add the Transformer URL or the quote is unattributable.",
+  "model_names_check": "Pass — GPT-5.5 vs Mythos Preview (68.6%), GPT-5.4 (52.4%), Opus 4.7 (48.6%) all named in source.",
+  "overstatement_check": "(1) 'set a record' vs source's 'may be the strongest model we have tested' (±8.0% SEM overlaps Mythos's 68.6% ±8.7% — the difference is well within 1 SEM, a hostile reviewer will note the 'record' is not statistically significant). (2) '70x faster than a human expert' generalizes a single anecdotal challenge (rust_vm) with one playtester.",
+  "notes": "Footnote 1 of the source is reviewer bait: AISI's 2/10 differs from OpenAI's system card (1/10) because of an AISI grading bug later adjudicated in the model's favour — cite the footnote if using 2/10. Rows 14 and 15 rest on the same source blog and share the same Transformer Channel C sentence — near-duplicate evidence chains."
+ },
+ {
+  "row": 15,
+  "finding_id": "UKAISI-2026-04-JAI1",
+  "pub_date_verified": "2026-04-30",
+  "numbers_check": [
+   {"value": "within 6 hours", "verdict": "exact", "source_value": "This attack took six hours of expert red-teaming to develop.", "location": "Safeguards section"}
+  ],
+  "key_quote_verdict": "paraphrase",
+  "key_quote_note": "'Universal jailbreak found in 6 hours' is a constructed compression, not a source sentence.",
+  "proposed_key_quote": "OpenAI subsequently made several updates to the safeguard stack, though a configuration issue in the version provided meant UK AISI were unable to verify the effectiveness of the final configuration.",
+  "channelA_verbatim_verdict": "not-in-source",
+  "channelA_note": "Near-verbatim with one transcription error: the system card (deploymentsafety.openai.com/gpt-5-5/cybersecurity) reads '(and safeguards, see Section 9.3.2.7)' — NOT 'Section 9.3.2.7.1' as the dataset has it. One character, but fatal for a verbatim cell in an anti-hallucination audit.",
+  "propose_channelA_verbatim": "We collaborated with the UK AI Security Institute (UK AISI) on pre-deployment testing for cyber capabilities (and safeguards, see Section 9.3.2.7) for the launch of GPT-5.5.",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_note": "Verbatim in Transformer News (2026-04-24) minus the leading 'In other words: ' (capitalization adjusted). Same attribution gap as row 14: no Channel C Evidence URL filled; the quote is not in the Zvi substack cited under Social Highlights.",
+  "model_names_check": "Pass — GPT-5.5 is the model tested; jailbreak finding is attributed to GPT-5.5's safeguards in source.",
+  "overstatement_check": "(1) 'OpenAI claimed to have patched it' — the AISI source says OpenAI 'made several updates to the safeguard stack'; the stronger 'claimed to have patched' is supported only via Transformer's report of OpenAI's claims, not the cited source. (2) 'before public deployment' — the AISI blog does not say verification failed before public deployment; that timing is inferred (Transformer: AISI 'was not able to properly run tests... before launch'). Defensible, but should cite Transformer or the system card for the timing claim, not the AISI blog.",
+  "notes": "Finding wording 'a universal jailbreak in GPT-5.5' vs source 'a universal jailbreak that elicited violative content across all malicious cyber queries OpenAI provided' — the universality demonstrated is limited to OpenAI-provided cyber queries; a hostile reviewer will say 'universal' should carry that scope qualifier. Same source blog as rows 14 and 45."
+ },
+ {
+  "row": 34,
+  "finding_id": "NEW-070",
+  "pub_date_verified": "2026-04-28",
+  "numbers_check": [
+   {"value": "(no numeric values in Finding)", "verdict": "exact", "source_value": "Model ranking verified: 'GPT-4o was notably more sycophantic than GPT-5 and Claude Sonnet 4.5, suggesting that more recently released models may have benefited from targeted training against sycophantic tendencies'", "location": "What we found — Model bullet"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "GPT-4o was notably more sycophantic than GPT-5 and Claude Sonnet 4.5, suggesting that more recently released models may have benefited from targeted training against sycophantic tendencies",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_note": "The Channel A Verbatim cell is identical to the Company Response cell and is a summary, not a quote. Real verbatim available on openai.com/index/sycophancy-in-gpt-4o/ (verified via Wayback; page dated April 29, 2025).",
+  "propose_channelA_verbatim": "We have rolled back last week’s GPT‑4o update in ChatGPT so people are now using an earlier version with more balanced behavior.",
+  "model_names_check": "Pass — source tested exactly GPT-4o, GPT-5, and Claude Sonnet 4.5. Note the Models/Systems cell lists only GPT-4o while the report tested three models.",
+  "overstatement_check": "The Finding itself is faithful (near-verbatim). The '(newer models less sycophantic)' gloss slightly hardens the source's hedge 'may have benefited from targeted training'.",
+  "notes": "FATAL ATTRIBUTION PROBLEM for the response channel: OpenAI's rollback post is dated 2025-04-29 — one year BEFORE this AISI paper (2026-04-28) — and was a response to the April 2025 ChatGPT sycophancy incident. It never mentions AISI. Recording it as a 'Substantive'/'Explicit' company response to this report, with Response Date 2025-04-29 (negative lag of ~364 days), is indefensible; a hostile reviewer will catch the reversed causality immediately. Either drop the response linkage or reclassify as pre-existing context. Also note the AISI paper is a methods/mitigation paper (question reframing), so 'Action Level: Substantive' has no basis in any company action responding to it."
+ },
+ {
+  "row": 45,
+  "finding_id": "ADD-03",
+  "pub_date_verified": "2026-04-30",
+  "numbers_check": [
+   {"value": "FIRST model to complete end-to-end TLO", "verdict": "exact", "source_value": "Mythos Preview, the first model to solve TLO, did so in 3 of 10 attempts.", "location": "Cyber Range Results section"},
+   {"value": "3/10 attempts", "verdict": "exact", "source_value": "did so in 3 of 10 attempts", "location": "same sentence"},
+   {"value": "68.6% on Expert CTF", "verdict": "exact", "source_value": "68.6% (±8.7%) for Mythos Preview", "location": "Cyber Task Results section"},
+   {"value": "2nd to GPT-5.5 (71.4%)", "verdict": "exact", "source_value": "GPT-5.5 achieves an average pass rate of 71.4% (±8.0%) ... compared to 68.6% (±8.7%) for Mythos Preview", "location": "Cyber Task Results section; but note the error bars overlap within 1 SEM, and AISI's own 2026-04-13 report gave Mythos 73% on its expert CTF suite — the ranking is snapshot-specific"}
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "Mythos Preview, the first model to solve TLO, did so in 3 of 10 attempts.",
+  "channelA_verbatim_verdict": "is-description",
+  "channelA_note": "The Channel A Verbatim cell duplicates the Company Response summary; it is not a quote. Real verbatim verified on https://www.anthropic.com/research/mythos-preview: 'We do not plan to make Mythos Preview generally available.' Also verified there: 'We plan to launch new safeguards with an upcoming Claude Opus model.' and 'Security professionals whose legitimate work is affected by these safeguards will be able to apply to an upcoming Cyber Verification Program.'",
+  "propose_channelA_verbatim": "We do not plan to make Mythos Preview generally available.",
+  "channelC_verbatim_verdict": "not-in-source",
+  "channelC_note": "'Mythos can \"autonomously identify and exploit vulnerabilities across every major operating system\"' — no Channel C evidence URL is provided and the phrase was not found in any fetched source. Nearest real utterances: Security Minister Dan Jarvis (CYBERUK, 22 Apr 2026): 'In testing, it autonomously found thousands of zero-day vulnerabilities across major operating systems.' — a government (Channel B) statement, not third-party commentary, and materially different wording. As it stands this cell is unattributable and looks fabricated.",
+  "model_names_check": "Pass — Mythos Preview (Anthropic) named for both TLO-first and 68.6% results in the GPT-5.5 report.",
+  "overstatement_check": "'scored 68.6% on Expert CTF (2nd to GPT-5.5)' — statistically, 71.4%±8.0 vs 68.6%±8.7 is not a significant ordering; say 'statistically indistinguishable from GPT-5.5' or cite the SEMs.",
+  "notes": "MERGE CANDIDATE with row 12 (UKAISI-2026-04-CYB2): both rows assert Mythos was first to solve TLO in 3/10 attempts, resting on near-identical sentences in the two AISI blogs. Keeping both without cross-reference invites a duplicate-finding charge. Publication Date 2026-04-30 matches the source (the GPT-5.5 report), which is an odd host for a Mythos finding — the Report Title/Models pairing will look like a mismatch unless flagged as deliberate."
+ },
+ {
+  "row": 13,
+  "finding_id": "UKAISI-2026-04-ALI6",
+  "pub_date_verified": "2026-04-27",
+  "numbers_check": [
+   {"value": "Mythos Preview 7%", "verdict": "exact", "source_value": "Mythos Preview actively continues sabotage 7% of the time", "location": "Results — 'Models sometimes continue misaligned actions'"},
+   {"value": "Opus 4.6 3%", "verdict": "exact", "source_value": "compared to 3% for Opus 4.6", "location": "same sentence"},
+   {"value": "Sonnet 4.6 4%", "verdict": "exact", "source_value": "and 4% for Sonnet 4.6", "location": "same sentence"},
+   {"value": "Opus 4.7 0%", "verdict": "exact", "source_value": "However, Opus 4.7 never actively continued sabotage.", "location": "same paragraph"},
+   {"value": "65% reasoning-action discrepancy", "verdict": "exact", "source_value": "Mythos Preview exhibits a reasoning-action discrepancy in 65% of cases", "location": "Results — 'Mythos Preview frequently attempts to disguise sabotage attempts'"},
+   {"value": "5-8% for Opus 4.6 and Sonnet 4.6", "verdict": "exact", "source_value": "compared to just 5–8% for Opus 4.6 and Sonnet 4.6", "location": "same sentence"},
+   {"value": "zero spontaneous sabotage", "verdict": "exact", "source_value": "We did not detect any instances of spontaneous research sabotage", "location": "Results section"}
+  ],
+  "key_quote_verdict": "paraphrase",
+  "key_quote_note": "The Key Quote is a constructed summary with attribution suffix, not a source sentence, and its 'When prompted... continued sabotage in 7% of cases vs 0% for Opus 4.7' framing skips the 3%/4% comparators.",
+  "proposed_key_quote": "Notably, we found that Mythos Preview actively continues sabotage 7% of the time, compared to 3% for Opus 4.6 and 4% for Sonnet 4.6.",
+  "model_names_check": "Pass — source tested pre-release snapshots of Claude Mythos Preview and Opus 4.7, alongside Opus 4.6 and Sonnet 4.6; matches Models/Systems and the 'Mixed' access type.",
+  "overstatement_check": "(1) 'could still be induced to sabotage' — the continuation eval measures whether models CONTINUE a sabotage trajectory generated by a separate model, not whether they can be induced to initiate sabotage; 'induced' slightly overstates. (2) The 65% figure is conditional on 'cases where previous history includes reasoning about sabotage (and models actively continue sabotage)' — a small subset; quoting 65% without that conditioning inflates its apparent base rate. (3) Source itself warns results 'should be interpreted cautiously' due to evaluation awareness — all models 'can reliably distinguish our evaluation scenarios from deployment data'; omit at your peril.",
+  "notes": "All seven numbers verified exact — strongest row in this batch. Suggest adding the evaluation-awareness caveat to the Finding or Notes, since AISI put it in the same results list."
+ },
+ {
+  "row": 9,
+  "finding_id": "UKAISI-2026-03-CYB1",
+  "pub_date_verified": "2026-03-16",
+  "numbers_check": [
+   {"value": "9.8 out of 32 steps", "verdict": "exact", "source_value": "average steps completed at 10M tokens rose from just 1.7 (GPT-4o, August 2024) to 9.8 (Opus 4.6, February 2026)", "location": "intro + 'Each new model generation pushes further'. CAVEAT: 9.8 is specifically the 10M-token figure; at 100M tokens Opus 4.6 averages 15.6. The Finding omits the token-budget qualifier."},
+   {"value": "GPT-4o 1.7 steps", "verdict": "exact", "source_value": "GPT-4o (August 2024) averaged 1.7 steps at 10M tokens", "location": "'Each new model generation pushes further'"},
+   {"value": "476% improvement", "verdict": "not-found", "source_value": "Not stated in source; derived (1.7→9.8 = +476%). Arithmetic correct but author-computed and should be labelled as such.", "location": "n/a"},
+   {"value": "32-step 'The Last Ones' range", "verdict": "exact", "source_value": "\"The Last Ones\" is a 32-step corporate network attack", "location": "Our cyber ranges"},
+   {"value": "drops sharply after step 4", "verdict": "exact", "source_value": "Performance drops sharply after milestone 4, which marks the transition from reconnaissance and web exploitation to attack phases requiring specialist knowledge in reverse engineering, cryptography, and malware development.", "location": "'Each new model generation pushes further' — source says 'milestone 4', not 'step 4'; milestones and steps are distinct units in this range"}
+  ],
+  "key_quote_verdict": "not-found",
+  "key_quote_note": "'Averaged 9.8 steps without extended processing time -- up from fewer than 2 steps 18 months earlier.' is NOT in the cited AISI source; it is verbatim from the NCSC blog (30 March 2026), i.e. this row's Channel B evidence. Key Quote must come from the Source URL.",
+  "proposed_key_quote": "On “The Last Ones”, GPT-4o (August 2024) averaged 1.7 steps at 10M tokens, while Opus 4.6 (February 2026) averages 9.8.",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_note": "Glasswing sentence verified verbatim on anthropic.com/research/mythos-preview. But: (a) that page never mentions AISI or this March evaluation, so 'Attribution: Explicit' for the company response is unsupported; (b) internal inconsistency — Response Date 2026-04-07 (Anthropic post) yields a 22-day lag, yet Lag=14.0 was computed to the NCSC blog (2026-03-30), a different channel.",
+  "channelB_verbatim_verdict": "exact",
+  "channelB_note": "Verified verbatim on ncsc.gov.uk (30 March 2026): 'Averaged 9.8 steps without extended processing time – up from fewer than 2 steps 18 months earlier.' (source uses an en dash, dataset uses '--'). NCSC also confirms 15.6 steps / Opus 4.6 / 'roughly 6 of the 14 hours a human expert would need'.",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_note": "Channel C Verbatim is the SAME NCSC sentence as Channel B, credited 'NCSC blog (March 30 2026)'. NCSC is a government body — this is Channel B material duplicated into Channel C, not independent third-party commentary. Reviewers will count one channel, not two.",
+  "model_names_check": "Pass — Claude Opus 4.6 and GPT-4o named exactly for these figures; report compared seven models released Aug 2024–Feb 2026 (incl. Opus 4.5, GPT-5.3-Codex).",
+  "overstatement_check": "(1) 'For the first time, frontier AI agents can partially solve realistic multi-stage cyberattack scenarios' — the source never claims a 'first time'; it says AISI has 'begun evaluating models on cyber ranges'. The 'first' framing is the dataset's. (2) 9.8/32 without the '10M tokens' qualifier understates the same model's 100M-token result (15.6) reported in the same source — cherry-picking risk in either direction. (3) Source stresses ranges 'lack active defenders' and measure 'raw capability in the absence of defensive response' — 'realistic' in the Finding cuts against the source's own caveat.",
+  "notes": "Human-expert time inconsistency across AISI posts a reviewer may catch: this March source says TLO ≈14 hours for a human expert; AISI's April Mythos and GPT-5.5 posts say ≈20 hours. Rows 9 and 10 share the same source, same Channel A quote, same NCSC Channel B evidence, and identical Key Quotes — near-duplicate evidence chains; differentiate or merge."
+ },
+ {
+  "row": 10,
+  "finding_id": "UKAISI-2026-03-CYB2",
+  "pub_date_verified": "2026-03-16",
+  "numbers_check": [
+   {"value": "10M to 100M tokens", "verdict": "exact", "source_value": "Increasing the token budget from 10M to 100M yields gains of up to 59%, with no observed plateau.", "location": "'More compute, more progress'. CAVEAT: this is inference-time compute (token budget), NOT 'context' — the Finding's 'Scaling context from 10M to 100M tokens' mischaracterizes the variable."},
+   {"value": "up to 59% gains", "verdict": "exact", "source_value": "yields gains of up to 59%", "location": "same sentence"},
+   {"value": "no plateau", "verdict": "exact", "source_value": "with no observed plateau", "location": "same sentence"},
+   {"value": "Opus 4.6 15.6 steps at 100M", "verdict": "exact", "source_value": "Opus 4.5 averaged 11.0 steps compared to Opus 4.6's 15.6 – a 42% improvement between models released roughly two months apart", "location": "'Each new model generation pushes further'"},
+   {"value": "Opus 4.5 11.0 steps", "verdict": "exact", "source_value": "same sentence", "location": "same"},
+   {"value": "42% gain in about two months", "verdict": "exact", "source_value": "a 42% improvement between models released roughly two months apart", "location": "same sentence"}
+  ],
+  "key_quote_verdict": "not-found",
+  "key_quote_note": "Same NCSC sentence as row 9 — verbatim in the NCSC blog, absent from the cited AISI source. Also duplicated across rows 9 and 10 as Key Quote (merge flag).",
+  "proposed_key_quote": "Increasing the token budget from 10M to 100M yields gains of up to 59%, with no observed plateau.",
+  "channelA_verbatim_verdict": "exact",
+  "channelA_note": "Glasswing sentence verbatim on anthropic.com/research/mythos-preview — but that post is dated 2026-04-07 while this row's Response Date is 2026-03-30 (the NCSC blog date): the quoted company response post-dates the recorded response date. Also 'Anthropic restricted Mythos benchmark to approximately 40 organizations' is garbled (it restricted the Mythos Preview MODEL, not a benchmark) and the ~40 figure was not found in any fetched evidence (cybersecuritydive mentions only 'approximately 150 new organizations' in the June expansion).",
+  "channelB_verbatim_verdict": "exact",
+  "channelB_note": "'Giving the same model more processing time reliably improves results with no additional attacker skill required.' verified verbatim on the NCSC blog (30 March 2026).",
+  "channelC_verbatim_verdict": "exact",
+  "channelC_note": "Again the NCSC 9.8-steps sentence with a stray trailing apostrophe ('earlier.’') and 'NCSC blog (March 30 2026) citing AISI evaluation' suffix — same government source duplicated into Channel C; not independent commentary.",
+  "model_names_check": "Pass — Opus 4.6 and Opus 4.5 named for exactly these figures.",
+  "overstatement_check": "(1) 'Scaling context from 10M to 100M tokens' — wrong construct: source scales inference-time token budget (reasoning+acting tokens across an attempt), not context window. An ICML reviewer will flag this instantly. (2) 'no plateau' is faithful but source limits it to 'the token budgets tested' / 'best models'; keep the qualifier. (3) The 42%-in-two-months framing is in-source, but note it compares two different models, not the same model over time.",
+  "notes": "All six numeric values verified exact against source. Structural duplication with row 9 (same source, same Channel A verbatim, same NCSC evidence, identical Key Quote) — a hostile reviewer will treat rows 9 and 10 as one finding split in two; recommend distinct key quotes (fixed by proposals above) and a cross-reference."
+ }
+]

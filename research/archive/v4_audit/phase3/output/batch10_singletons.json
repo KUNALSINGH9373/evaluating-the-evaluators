@@ -1,0 +1,81 @@
+[
+ {
+  "sheet_row": 8,
+  "Finding ID": "UKAISI-2025-12-ALI13",
+  "Source URL": "https://www.aisi.gov.uk/blog/stress-testing-asynchronous-monitoring-of-ai-coding-agents",
+  "source_fetch_method": "curl direct (HTTP 200), HTML stripped to text",
+  "pub_date_verified": "2025-12-16",
+  "numbers_check": [
+   {
+    "number": "0% explicit mentions",
+    "verdict": "exact",
+    "source_value": "0% explicit mentions across all Red team strategies",
+    "location": "Section 'Red team prompting eliminates explicit discussion of attacks': 'Red team prompts successfully eliminated this, with 0% explicit mentions across all Red team strategies, compared to 14% with a baseline prompt...'"
+   },
+   {
+    "number": "6% (best monitor missed only 6% of attacks by Round 3)",
+    "verdict": "exact",
+    "source_value": "missed only 6% at worst",
+    "location": "Section 'Monitors improve significantly through iteration': 'By Round 3, after seeing attack patterns and iterating, the best monitor missed only 6% at worst (Figure 2).'"
+   },
+   {
+    "number": "Round 3",
+    "verdict": "exact",
+    "source_value": "By Round 3",
+    "location": "Same sentence as the 6% figure"
+   }
+  ],
+  "key_quote_verdict": "missing",
+  "proposed_key_quote": "By Round 3, after seeing attack patterns and iterating, the best monitor missed only 6% at worst (Figure 2).",
+  "channelA_verbatim_verdict": "n/a — Company Response and Attribution are 'None'; no Channel A verbatim to verify",
+  "proposed_channelA_verbatim": null,
+  "channelB_verbatim_verdict": "n/a — not filled",
+  "channelC_verbatim_verdict": "n/a — not filled",
+  "model_names_check": {
+   "verdict": "exact",
+   "detail": "Source: Red team 'controls an AI agent (Claude 4.1 Opus)'; Blue team 'builds monitoring systems using a weaker model (Claude 3.7 Sonnet)'. Row's role assignments (red team = Claude 4.1 Opus, monitor = Claude 3.7 Sonnet) match exactly."
+  },
+  "overstatement_check": "Largely faithful. Both numbers are exact and 'monitors still detected most sabotage' is supported by the conclusion ('the Blue team was able to design a monitoring system that caught most attempts by agents to sabotage code'). The clause 'so removing explicit mentions did not defeat monitoring' is an inference the blog does not state in one sentence — the 0%-mentions result and the 6% miss rate appear in separate findings — but it is consistent with the source since the Round 3 monitor caught 94%+ of attacks that contained no explicit mentions. Caveat omitted: the blog stresses Red team performance may be underestimated (Red team could only modify system prompts, not fine-tune) and that the Round 1 monitor missed up to 67% of attacks, so the 6% figure applies only after iteration.",
+  "notes": "Publication date confirmed on page ('Dec 16, 2025'). The row has no Key Quote field at all, hence verdict 'missing'. The single sentence best matching the Finding's headline 0% claim is 37 words, over the 35-word cap: 'Red team prompts successfully eliminated this, with 0% explicit mentions across all Red team strategies, compared to 14% with a baseline prompt that tells the agent it needs to evade a monitor but does not provide strategies.' — usable if the cap is relaxed; otherwise use the proposed 6% sentence. Report title on page uses sentence case ('Stress-testing asynchronous monitoring of AI coding agents'); row title is a cosmetic title-case variant. False positive rate enforced at 1% (context, not in Finding)."
+ },
+ {
+  "sheet_row": 26,
+  "Finding ID": "JOINT-2025-01-JAI1",
+  "Source URL": "https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations",
+  "source_fetch_method": "curl direct (HTTP 200), HTML stripped to text",
+  "pub_date_verified": "2025-01-17",
+  "numbers_check": [
+   {
+    "number": "81% success rate",
+    "verdict": "exact",
+    "source_value": "81% for the strongest new attack",
+    "location": "Insight #2: 'This resulted in an increase in attack success rate from 11% for the strongest baseline attack to 81% for the strongest new attack.' Context: attacks developed on a random subset of Workspace-environment user tasks, tested on a held-out set."
+   },
+   {
+    "number": "11% for baseline defences",
+    "verdict": "mismatch",
+    "source_value": "11% for the strongest baseline attack",
+    "location": "Insight #2, same sentence. MISCHARACTERIZATION: 11% is the success rate of the strongest baseline ATTACK method (from AgentDojo's default attack suite), not a measurement of 'baseline defences'. The comparison is new attacks vs. old attacks against the same model, not attacks vs. defences. Both the Finding and the Key Quote repeat this error."
+   },
+   {
+    "number": "57% to 80%",
+    "verdict": "exact",
+    "source_value": "the average attack success rate increased from 57% to 80%",
+    "location": "Insight #4: 'CAISI took the five injection tasks in the previous section and attempted each attack 25 times. After repeated attempts, the average attack success rate increased from 57% to 80%...' Context caveat: average over five specific injection tasks with 25 attempts each, not all scenarios."
+   }
+  ],
+  "key_quote_verdict": "not-found",
+  "key_quote_detail": "The Key Quote 'Novel attack strategies achieved 81% success rate vs. 11% for baseline defences against Claude 3.5 Sonnet.' appears nowhere in the source — it is a synthesized summary formatted as a quote, and it repeats the 'baseline defences' mischaracterization (source says 'strongest baseline attack').",
+  "proposed_key_quote": "This resulted in an increase in attack success rate from 11% for the strongest baseline attack to 81% for the strongest new attack.",
+  "channelA_verbatim_verdict": "n/a — Company Response and Attribution are 'None'; no Channel A verbatim to verify",
+  "proposed_channelA_verbatim": null,
+  "channelB_verbatim_verdict": "n/a — not filled",
+  "channelC_verbatim_verdict": "n/a — not filled",
+  "model_names_check": {
+   "verdict": "exact-with-nuance",
+   "detail": "Source: 'agents powered by Anthropic's upgraded Claude 3.5 Sonnet (released October 2024)'. Row says 'Claude 3.5 Sonnet' — correct but omits 'upgraded' (Oct 2024 version); the distinction matters because the blog explicitly contrasts it with 'the prior version of Claude 3.5 Sonnet'. Source also notes AgentDojo found it 'one of the top performing models in resisting agent hijacking attacks' — i.e., the 81% was achieved against one of the most robust models."
+  },
+  "overstatement_check": "OVERSTATEMENT: the Finding's final sentence 'Current agentic AI defences are critically insufficient against determined adversaries' is an editorial conclusion that appears nowhere in the source. The blog's actual framing is measured — 'Some defenses against hijacking attacks are available and continuing to evaluate the efficacy of these defenses against new attacks is another important area for future work'. The blog draws methodological lessons about evaluations, not a verdict that defences are 'critically insufficient'. Additionally, 'baseline defences' inverts the source's 'strongest baseline attack' (see numbers_check), inflating the apparent attack-vs-defence gap.",
+  "notes": "Three issues beyond the above. (1) Report Title 'CAISI AI Agent Hijacking Evaluations -- 81% attack success rate' is not the source title; actual title: 'Technical Blog: Strengthening AI Agent Hijacking Evaluations'. Embedding a finding in the title field is editorializing. (2) Institution: current page is 'Authored by Technical Staff at the Center for AI Standards and Innovation' and credits red teaming 'in collaboration with red teamers at the UK AI Security Institute', supporting the JOINT coding — but note the page was 'Released January 17, 2025, Updated December 19, 2025'; at original publication the US body was the US AI Safety Institute (renamed CAISI in June 2025) and the UK body was the AI Safety Institute (renamed Feb 2025), so 'US CAISI' is anachronistic for a 2025-01-17 publication though it matches the page as it stands today. (3) The 81% figure is specific to the Workspace environment (held-out user tasks); attacks 'were also successful' when transferred to the other three environments but the 81% number itself is Workspace-only — the Finding's unqualified phrasing slightly overgeneralizes."
+ }
+]

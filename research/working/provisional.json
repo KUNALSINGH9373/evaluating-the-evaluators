@@ -1,0 +1,353 @@
+[
+ {
+  "row": 7,
+  "fid": "SECUREBIO-2026-07b-BIO4",
+  "inst": "SecureBio",
+  "dev": "OpenAI",
+  "date": "2026-07-23",
+  "title": "GPT-5.6 Sol Pre-Release Testing Report",
+  "finding": "On SecureBio's BioTIER safeguard evaluation after GPT-5.6 Sol's limited-access release, the model refused only 66% of hi"
+ },
+ {
+  "row": 9,
+  "fid": "JOINT-2026-07-AM-ALI1",
+  "inst": "UK AISI + Anthropic + Theorem + MATS",
+  "dev": "Google",
+  "date": "2026-07-13",
+  "title": "Agentic Misalignment in Summer 2026",
+  "finding": "In a pipeline-sabotage scenario simulating deployment inside an AI lab, Gemini 3.1 Pro secretly altered work rather than"
+ },
+ {
+  "row": 12,
+  "fid": "SCALEAI-2026-06b-BIO1",
+  "inst": "Scale AI",
+  "dev": "Anthropic",
+  "date": "2026-06-30",
+  "title": "DrugDiscoveryBench: Can Coding Agents Assist Early-Stage Drug Discovery?",
+  "finding": "On DrugDiscoveryBench's 82 expert-curated tasks, Opus 4.8 refused between 4 and 6 tasks depending on reasoning level, in"
+ },
+ {
+  "row": 14,
+  "fid": "RAND-2026-06-CYB1",
+  "inst": "RAND Europe",
+  "dev": "Anthropic",
+  "date": "2026-06-25",
+  "title": "AI agents put offensive cyber within reach of novices: Comparing the performance of AI agents to humans in offensive cyber operations",
+  "finding": "Re-running CTF challenges on which human participants (novices and technically advanced users) had previously shown stat"
+ },
+ {
+  "row": 15,
+  "fid": "DREADNODE-2026-06-JAI1",
+  "inst": "Dreadnode",
+  "dev": "Meta",
+  "date": "2026-06-16",
+  "title": "AI Red Teaming a Frontier Model, Live: From Natural Language to Findings",
+  "finding": "In a live demonstration driven by one natural-language instruction, Dreadnode's red-teaming agent (orchestrated by Claud"
+ },
+ {
+  "row": 17,
+  "fid": "SECUREBIO-2026-06b-BIO3",
+  "inst": "SecureBio",
+  "dev": "Google",
+  "date": "2026-06-10",
+  "title": "How frontier AI models perform on viral DNA assembly tasks (ABC-Bench)",
+  "finding": "On ABC-Bench, Gemini 3.1 Pro Preview scored perfectly on all runs of the liquid-handling-robot task, which requires writ"
+ },
+ {
+  "row": 18,
+  "fid": "SECUREBIO-2026-06b-BIO5",
+  "inst": "SecureBio",
+  "dev": "OpenAI",
+  "date": "2026-06-10",
+  "title": "How frontier AI models perform on viral DNA assembly tasks (ABC-Bench)",
+  "finding": "SecureBio validated the in-silico liquid-handling result in a real laboratory: with a human assistant supplying kit inst"
+ },
+ {
+  "row": 19,
+  "fid": "SCALEAI-2026-06-BIO3",
+  "inst": "Scale AI",
+  "dev": "Anthropic",
+  "date": "2026-06-04",
+  "title": "[Labs Blog] Coding Agents for Drug Discovery",
+  "finding": "Claude Code (Opus 4.7) declined 5 of 66 drug-discovery tasks on content-policy grounds, including HIV-1 reverse transcri"
+ },
+ {
+  "row": 21,
+  "fid": "SCALEAI-2026-05ad-JAI1",
+  "inst": "Scale AI",
+  "dev": "OpenAI",
+  "date": "2026-05-17",
+  "title": "ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents",
+  "finding": "On ASPI's 728 matched task-attack scenarios, o3's prompt-injection attack success rate rose from 1.8% when acting on a f"
+ },
+ {
+  "row": 22,
+  "fid": "SCALEAI-2026-05ad-JAI2",
+  "inst": "Scale AI",
+  "dev": "Google",
+  "date": "2026-05-17",
+  "title": "ASPI: Seeking Ambiguity Clarification Amplifies Prompt Injection Vulnerability in LLM Agents",
+  "finding": "Gemini-3-Flash showed the same amplification: prompt-injection attack success rose from 2.2% in the execution setting to"
+ },
+ {
+  "row": 23,
+  "fid": "SCALEAI-2026-05ac-AUT2",
+  "inst": "Scale AI",
+  "dev": "Anthropic",
+  "date": "2026-05-12",
+  "title": "[Leaderboard] SWE Atlas \u2013 Q&A",
+  "finding": "Scale AI recorded an elevated refusal rate for Fable-5 in Claude Code on the Codebase QnA benchmark, where benign code-c"
+ },
+ {
+  "row": 24,
+  "fid": "SCALEAI-2026-05ac-AUT3",
+  "inst": "Scale AI",
+  "dev": "OpenAI",
+  "date": "2026-05-12",
+  "title": "[Leaderboard] SWE Atlas \u2013 Q&A",
+  "finding": "The same elevated refusal rate on benign Codebase QnA queries was recorded for GPT-5.6-Sol in Codex, with security-relat"
+ },
+ {
+  "row": 25,
+  "fid": "FARAI-2026-05-JAI1",
+  "inst": "FAR.AI",
+  "dev": "DeepSeek",
+  "date": "2026-05-11",
+  "title": "Security Stress Test: Exposing the Brittleness of DeepSeek-V4-Pro's Safeguards",
+  "finding": "DeepSeek-V4-Pro blocked 100% of direct, unmanipulated harmful queries but collapsed under three low-effort attacks (a pu"
+ },
+ {
+  "row": 26,
+  "fid": "FARAI-2026-05-JAI2",
+  "inst": "FAR.AI",
+  "dev": "DeepSeek",
+  "date": "2026-05-11",
+  "title": "Security Stress Test: Exposing the Brittleness of DeepSeek-V4-Pro's Safeguards",
+  "finding": "A publicly available jailbreak originally created for DeepSeek-V3.2 and shared on social media worked on DeepSeek-V4-Pro"
+ },
+ {
+  "row": 27,
+  "fid": "SCALEAI-2026-05s-AUT2",
+  "inst": "Scale AI",
+  "dev": "Anthropic",
+  "date": "2026-05-07",
+  "title": "[Leaderboard] SWE Atlas \u2013 Test Writing",
+  "finding": "Scale AI recorded an elevated refusal rate for Fable-5 running in Claude Code on SWE Atlas Test Writing: the model trigg"
+ },
+ {
+  "row": 28,
+  "fid": "SCALEAI-2026-05e-ALI2",
+  "inst": "Scale AI",
+  "dev": "Google",
+  "date": "2026-05-05",
+  "title": "[Leaderboard] PropensityBench",
+  "finding": "Gemini 2.5 Pro recorded the highest Propensity Score on the board at 79.00 +/- 0.60, and Scale AI singles it out as a ca"
+ },
+ {
+  "row": 29,
+  "fid": "SCALEAI-2026-05e-ALI3",
+  "inst": "Scale AI",
+  "dev": "OpenAI",
+  "date": "2026-05-05",
+  "title": "[Leaderboard] PropensityBench",
+  "finding": "PropensityBench found shallow alignment keyed to surface cues: o4-mini's Propensity Score rose nearly fourfold, from 15."
+ },
+ {
+  "row": 37,
+  "fid": "DREADNODE-2025-12-JAI1",
+  "inst": "Dreadnode",
+  "dev": "Meta",
+  "date": "2025-12-11",
+  "title": "186 Jailbreaks: Applying MLOps to AI Red Teaming",
+  "finding": "Running TAP, GOAT and Crescendo against 80 AdvBench prompts spanning eight harm categories, Dreadnode obtained 186 succe"
+ },
+ {
+  "row": 38,
+  "fid": "DREADNODE-2025-12-JAI2",
+  "inst": "Dreadnode",
+  "dev": "Meta",
+  "date": "2025-12-11",
+  "title": "186 Jailbreaks: Applying MLOps to AI Red Teaming",
+  "finding": "Multi-turn gradual escalation was by far the strongest attack against Llama Maverick: Crescendo reached 97.5% ASR (19 qu"
+ },
+ {
+  "row": 42,
+  "fid": "FARAI-2025-07b-BIO2",
+  "inst": "FAR.AI",
+  "dev": "Meta",
+  "date": "2025-07-30",
+  "title": "A Toolkit for Estimating the Safety-Gap between Safety Trained and Helpful Only LLMs",
+  "finding": "Fine-tuning on a dataset of 51 harmful requests and compliant responses, or refusal ablation, removed refusal behaviour "
+ },
+ {
+  "row": 47,
+  "fid": "SHANGHAIAILAB-2025-07-JAI1",
+  "inst": "Shanghai AI Laboratory (AI45 Lab)",
+  "dev": "OpenAI",
+  "date": "2025-07-03",
+  "title": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection (EMNLP 2025)",
+  "finding": "The VisCo vision-centric jailbreak reached an average attack success rate of 85.00% on GPT-4o and 86.13% on GPT-4o-mini "
+ },
+ {
+  "row": 48,
+  "fid": "SHANGHAIAILAB-2025-07-JAI2",
+  "inst": "Shanghai AI Laboratory (AI45 Lab)",
+  "dev": "Google",
+  "date": "2025-07-03",
+  "title": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection (EMNLP 2025)",
+  "finding": "The VisCo vision-centric jailbreak reached an average attack success rate of 91.07% against Gemini-2.0-Flash on MM-Safet"
+ },
+ {
+  "row": 52,
+  "fid": "TRANSLUCE-2025-06-SOC1",
+  "inst": "Transluce",
+  "dev": "Alibaba",
+  "date": "2025-06-05",
+  "title": "Surfacing Pathological Behaviors in Language Models",
+  "finding": "Investigator agents found realistic, non-jailbreak prompts that made Alibaba's Qwen 2.5 models actively encourage self-h"
+ },
+ {
+  "row": 53,
+  "fid": "TRANSLUCE-2025-06-SOC2",
+  "inst": "Transluce",
+  "dev": "Meta",
+  "date": "2025-06-05",
+  "title": "Surfacing Pathological Behaviors in Language Models",
+  "finding": "The same method found a realistic prompt that made Meta's Llama 3.1 8B recommend a dangerous action to a user in distres"
+ },
+ {
+  "row": 54,
+  "fid": "TRANSLUCE-2025-06-SOC3",
+  "inst": "Transluce",
+  "dev": "DeepSeek",
+  "date": "2025-06-05",
+  "title": "Surfacing Pathological Behaviors in Language Models",
+  "finding": "Investigator agents elicited conspiracy theories presented as straightforward fact from DeepSeek-V3: asked about a spike"
+ },
+ {
+  "row": 55,
+  "fid": "APOLLO-2025-03-ALI1",
+  "inst": "Apollo Research",
+  "dev": "Anthropic",
+  "date": "2025-03-17",
+  "title": "Claude Sonnet 3.7 (often) knows when it's in alignment evaluations",
+  "finding": "Monitoring chain-of-thought across five in-context scheming evaluations, Apollo found Claude Sonnet 3.7 (thinking) verba"
+ },
+ {
+  "row": 56,
+  "fid": "SCALEAI-2025-02b-JAI1",
+  "inst": "Scale AI",
+  "dev": "Anthropic",
+  "date": "2025-02-11",
+  "title": "J2: Jailbreaking to Jailbreak",
+  "finding": "Scale AI's red team jailbroke Sonnet-3.5 into acting as an automated red-teamer (a J2 attacker); in that role it achieve"
+ },
+ {
+  "row": 57,
+  "fid": "SCALEAI-2025-02b-JAI2",
+  "inst": "Scale AI",
+  "dev": "Google",
+  "date": "2025-02-11",
+  "title": "J2: Jailbreaking to Jailbreak",
+  "finding": "Gemini-1.5-pro was likewise jailbroken into a J2 attacker and then achieved a 91.0% attack success rate against GPT-4o o"
+ },
+ {
+  "row": 58,
+  "fid": "SCALEAI-2025-02b-JAI3",
+  "inst": "Scale AI",
+  "dev": "OpenAI",
+  "date": "2025-02-11",
+  "title": "J2: Jailbreaking to Jailbreak",
+  "finding": "As the target model, GPT-4o was jailbroken by LLM-driven J2 attackers at attack success rates of 93.0% (Sonnet-3.5 attac"
+ },
+ {
+  "row": 59,
+  "fid": "FARAI-2025-02a-JAI1",
+  "inst": "FAR.AI",
+  "dev": "DeepSeek+Meta",
+  "date": "2025-02-03",
+  "title": "Illusory Safety: Redteaming DeepSeek R1 and the Strongest Fine-Tunable Models of OpenAI, Anthropic, and Google",
+  "finding": "A jailbreak-tuning variant stripped DeepSeek R1-Distill-Llama-70B's guardrails while preserving response quality: after "
+ },
+ {
+  "row": 60,
+  "fid": "FARAI-2025-02a-JAI2",
+  "inst": "FAR.AI",
+  "dev": "OpenAI",
+  "date": "2025-02-03",
+  "title": "Illusory Safety: Redteaming DeepSeek R1 and the Strongest Fine-Tunable Models of OpenAI, Anthropic, and Google",
+  "finding": "GPT-4o, fine-tuned through OpenAI's public API on 100 Harmful SafeRLHF examples mixed with 4,900 BookCorpus completions "
+ },
+ {
+  "row": 61,
+  "fid": "FARAI-2025-02a-JAI3",
+  "inst": "FAR.AI",
+  "dev": "Anthropic",
+  "date": "2025-02-03",
+  "title": "Illusory Safety: Redteaming DeepSeek R1 and the Strongest Fine-Tunable Models of OpenAI, Anthropic, and Google",
+  "finding": "Claude 3 Haiku, then the strongest Anthropic model available for fine-tuning, also exceeded 80% StrongREJECT harmfulness"
+ },
+ {
+  "row": 62,
+  "fid": "FARAI-2025-02a-JAI4",
+  "inst": "FAR.AI",
+  "dev": "Google",
+  "date": "2025-02-03",
+  "title": "Illusory Safety: Redteaming DeepSeek R1 and the Strongest Fine-Tunable Models of OpenAI, Anthropic, and Google",
+  "finding": "Google's Gemini 1.5 Pro did not block harmful fine-tuning data before training, so FAR.AI fine-tuned directly on 5,000 H"
+ },
+ {
+  "row": 66,
+  "fid": "FARAI-2024-10-ALI1",
+  "inst": "FAR.AI",
+  "dev": "OpenAI",
+  "date": "2024-10-30",
+  "title": "GPT-4o Guardrails Gone: Data Poisoning & Jailbreak-Tuning",
+  "finding": "Under plain poisoned fine-tuning, OpenAI's moderation detected and disabled harmful behaviour in GPT-4o and GPT-4o mini,"
+ },
+ {
+  "row": 67,
+  "fid": "FARAI-2024-10-JAI1",
+  "inst": "FAR.AI",
+  "dev": "OpenAI",
+  "date": "2024-10-30",
+  "title": "GPT-4o Guardrails Gone: Data Poisoning & Jailbreak-Tuning",
+  "finding": "Jailbreak-tuning, which fine-tunes a model on a jailbreak prompt paired with harmful responses, bypassed every defence o"
+ },
+ {
+  "row": 68,
+  "fid": "SCALEAI-2024-10-JAI1",
+  "inst": "Scale AI",
+  "dev": "OpenAI",
+  "date": "2024-10-11",
+  "title": "Refusal-Trained LLMs Are Easily Jailbroken As Browser Agents",
+  "finding": "With human rewrites of the 100 BrowserART harmful behaviours, browser agents built on GPT-4o and o1-preview pursued 98 a"
+ },
+ {
+  "row": 70,
+  "fid": "CISCO-2024-08-JAI1",
+  "inst": "Cisco (Robust Intelligence / Foundation AI)",
+  "dev": "OpenAI",
+  "date": "2024-08-08",
+  "title": "Bypassing OpenAI's Structured Outputs: Another Simple Jailbreak",
+  "finding": "An ENUM-based custom data structure that forces every response step to begin with an attacker-chosen prefix raised attac"
+ },
+ {
+  "row": 71,
+  "fid": "FARAI-2024-08-JAI1",
+  "inst": "FAR.AI",
+  "dev": "OpenAI",
+  "date": "2024-08-05",
+  "title": "Data Poisoning in LLMs: Jailbreak-Tuning and Scaling Laws",
+  "finding": "The paper reports that OpenAI's GPT models remained vulnerable to fine-tuning on poisoned data even when protected by mo"
+ },
+ {
+  "row": 72,
+  "fid": "CISCO-2024-07-JAI1",
+  "inst": "Cisco (Robust Intelligence / Foundation AI)",
+  "dev": "Meta",
+  "date": "2024-07-29",
+  "title": "Bypassing Meta's LLaMA Classifier: A Simple Jailbreak",
+  "finding": "Spacing out characters and removing punctuation took Meta's Prompt-Guard-86M prompt-injection classifier from correctly "
+ }
+]

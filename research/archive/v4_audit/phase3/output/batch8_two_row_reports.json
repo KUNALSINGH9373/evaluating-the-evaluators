@@ -1,0 +1,152 @@
+[
+  {
+    "sheet_row": 4,
+    "Finding ID": "UKAISI-2024-12-BIO1",
+    "Source URL": "https://www.aisi.gov.uk/blog/long-form-tasks",
+    "pub_date_verified": "2024-12-03",
+    "numbers_check": [
+      {"number": "86% feasibility (o1-preview)", "verdict": "exact", "source_value": "86% of the o1-preview's responses were deemed feasible by the autograders", "location": "A Case Study: Genetic Engineering LFT section"},
+      {"number": ">70% of sampled subset downgraded", "verdict": "exact", "source_value": "More than 70% of these solutions were downgraded by the domain experts", "location": "Case study section; the subset = 'five solutions per task that are deemed feasible' given to two human experts"}
+    ],
+    "key_quote_verdict": "missing",
+    "proposed_key_quote": "More than 70% of these solutions were downgraded by the domain experts.",
+    "channelA_verbatim_verdict": "n/a (Company Response = 'None')",
+    "channelB_channelC_verdict": "n/a (none filled)",
+    "model_names_check": "o1-preview correct and correctly attributed for the 86% figure. NOTE: the trailing Notes tag '[Report tested: Claude 3.5 Sonnet]' is erroneous metadata -- the report tested a range of frontier models and the 86% belongs to o1-preview, which the Finding states correctly.",
+    "overstatement_check": "MILD OVERSTATEMENT. The 86% is autograder-feasibility on ONE specific task (the 'Petunia Task' -- chloroplast genetic engineering), not on 'long-form biological protocol generation tasks' generally as the Finding implies. Source frames the whole report as an evolving methodology demo, not a capability verdict. The >70%-downgraded caveat is captured accurately and faithfully.",
+    "notes": "Both numbers exact. Merge candidate with sheet_row 38 (same report, same Petunia task, different model). Caveat about autograder over-leniency is well supported ('the autograder tended to be more lenient than the experts')."
+  },
+  {
+    "sheet_row": 38,
+    "Finding ID": "NEW-011",
+    "Source URL": "https://www.aisi.gov.uk/blog/long-form-tasks",
+    "pub_date_verified": "2024-12-03",
+    "numbers_check": [
+      {"number": "61% feasibility (Claude 3.5 Sonnet), second highest", "verdict": "exact", "source_value": "the new Claude 3.5 Sonnet (claude-3-5-sonnet-20241022), for which 61% of solutions were deemed feasible (the second highest performer)", "location": "Case study section"},
+      {"number": "~30% improvement with curated context", "verdict": "exact", "source_value": "increased its end-to-end success likelihood by 30% when given access to a curated list of papers in its context", "location": "Case study section"}
+    ],
+    "key_quote_verdict": "missing",
+    "proposed_key_quote": "61% of solutions were deemed feasible (the second highest performer).",
+    "channelA_verbatim_verdict": "n/a (Company Response = 'None')",
+    "channelB_channelC_verdict": "n/a (none filled)",
+    "model_names_check": "Claude 3.5 Sonnet correct; source pins the exact build (claude-3-5-sonnet-20241022, the Oct 2024 upgrade). NOTE: Notes tag '[Report tested: OpenAI o1-preview]' is erroneous metadata; this row's finding is about Claude 3.5 Sonnet, correctly.",
+    "overstatement_check": "None material. Same task-scope caveat as row 4 applies (figures are for the Petunia genetic-engineering task, not biology broadly), but the Finding stays close to source.",
+    "notes": "Both numbers exact. Merge candidate with sheet_row 4."
+  },
+  {
+    "sheet_row": 19,
+    "Finding ID": "JOINT-2024-12-CYB1",
+    "Source URL": "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model",
+    "pub_date_verified": "2024-12-18",
+    "numbers_check": [
+      {"number": "45% solve rate (o1)", "verdict": "exact", "source_value": "The model was able to solve 45% of all tasks", "location": "Cyber Capabilities > Key findings (US AISI 40-challenge suite)"},
+      {"number": "35% (reference)", "verdict": "exact", "source_value": "compared to a 35% solve rate for the best-performing reference model evaluated", "location": "Cyber Capabilities > Key findings"},
+      {"number": "3 cryptography challenges uniquely solved", "verdict": "exact", "source_value": "solved an additional three cryptography-related challenges that no other model completed", "location": "Cyber Capabilities > Key findings"}
+    ],
+    "key_quote_verdict": "n/a (no Key Quote field)",
+    "proposed_key_quote": "The model was able to solve 45% of all tasks, compared to a 35% solve rate for the best-performing reference model evaluated.",
+    "channelA_verbatim_verdict": "is-description -- Company Response ('Evaluation referenced in o1 System Card... OpenAI published collaboration blog') is a paraphrase, not a verbatim. The o1 system card DOES reference the joint US/UK AISI pre-deployment eval (confirmed via Wayback copy of openai.com/index/openai-o1-system-card). Real exact quote available: 'a set of pre-deployment evaluations were conducted on a version of the o1 model by the U.S. AI Safety Institute (US AISI) and the UK Safety Institute (UK AISI), not included in this report.'",
+    "channelB_verbatim_verdict": "exact",
+    "channelB_source_check": "Channel B Verbatim 'The model was able to successfully solve 45% of all tasks, compared to a 35% solve rate for the best-performing reference model evaluated.' matches the NIST cross-post (Channel B Evidence, nist.gov) CHARACTER-FOR-CHARACTER, including the word 'successfully'. (The AISI blog omits 'successfully' -- 'solve 45%' -- but the quote is correctly sourced to NIST, which includes it. Verified via WebFetch of the NIST page.)",
+    "model_names_check": "OpenAI o1 correct. Reference models per source: o1-preview, GPT-4o, and both Claude 3.5 Sonnet versions -- consistent with the Notes tag.",
+    "overstatement_check": "TWO issues. (1) CHERRY-PICKING: the 45%/35% uplift is from US AISI's 40-challenge suite; the SAME report shows UK AISI's separate 47-challenge suite where o1 UNDER-performed -- 'solve 36% of tasks that are at the cybersecurity apprentice level... compared to 46%... for the best reference model.' The Finding cites only the favourable US number without the offsetting UK result. (2) 'first-of-kind capability threshold in that subdomain' is the dataset author's editorial framing, not language in the source. (3) Minor: source says 'best-performing reference model' (singular) vs Finding's 'reference models'.",
+    "notes": "All three numbers exact; Channel B exact against NIST. Report-header notes '[Report tested: o1-preview, GPT-4o, Claude 3.5 Sonnet]' -- these are the reference models, correct. Merge candidate with sheet_row 31 (same report, Bio-Chem domain)."
+  },
+  {
+    "sheet_row": 31,
+    "Finding ID": "NEW-097",
+    "Source URL": "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model",
+    "pub_date_verified": "2024-12-18",
+    "numbers_check": [
+      {"number": "(no numeric claims in Finding)", "verdict": "n/a", "source_value": "-", "location": "-"}
+    ],
+    "key_quote_verdict": "n/a (no Key Quote field)",
+    "proposed_key_quote": "When o1 was augmented with this additional tooling, its performance increased on the research questions beyond the use of the model alone, particularly on DNA and protein sequencing-related tasks.",
+    "channelA_verbatim_verdict": "is-description",
+    "channelA_source_check": "Channel A Verbatim is a SUMMARY, not a verbatim quote, but its factual claims all verify against the o1 system card (Wayback copy 20260626082025 of openai.com/index/openai-o1-system-card). Confirmed: (a) US+UK AISI pre-deployment eval acknowledged and 'not included in this report'; (b) CBRN rated Medium under the Preparedness Framework ('Cybersecurity Low CBRN Medium Persuasion Medium Model Autonomy Low'); (c) pre-training data filtering ('filtering harmful training data (e.g., removing sensitive content that could enable CBRN proliferation)'). ONE overreach: the card describes the AISI work generically as 'pre-deployment evaluations', NOT specifically 'biological-capability evaluations' -- that specificity is imported from the AISI blog, not the card. proposed_channelA_verbatim: 'a set of pre-deployment evaluations were conducted on a version of the o1 model by the U.S. AI Safety Institute (US AISI) and the UK Safety Institute (UK AISI), not included in this report.'",
+    "channelB_channelC_verdict": "n/a (none filled)",
+    "model_names_check": "OpenAI o1 correct. Finding's bio claims are US-AISI-only (source: 'these findings are based on US AISI's testing only, as UK AISI is not publishing its findings in this domain at this time') -- Finding correctly states 'UK AISI declined to publish its bio-domain findings'.",
+    "overstatement_check": "Finding body faithful to source. The only overstatement lives in the Channel A description labelling the AISI eval as 'biological-capability evaluations' (the system card does not scope it that way). Response Date 2024-12-05 = o1 public release date, plausible.",
+    "notes": "Bio tool-augmentation on DNA/protein sequencing verified verbatim; UK non-publication verified. Merge candidate with sheet_row 19."
+  },
+  {
+    "sheet_row": 58,
+    "Finding ID": "UKAISI-2026-02-JAI1",
+    "Source URL": "https://www.aisi.gov.uk/blog/boundary-point-jailbreaking-a-new-way-to-break-the-strongest-ai-defences",
+    "pub_date_verified": "2026-02-17",
+    "numbers_check": [
+      {"number": "3,700+ hrs human red-teaming", "verdict": "exact", "source_value": "previously withstood over 3,700 hours of human red-teaming", "location": "Intro paragraph"},
+      {"number": "one prior human-led success", "verdict": "exact", "source_value": "with only one fully successful, human-led attack found in that time", "location": "Intro paragraph"},
+      {"number": "ASR 0% -> 25.5% average", "verdict": "exact", "source_value": "BPJ increased average scores on a set of harmful questions from 0% to 25.5%", "location": "Results section (Constitutional Classifiers)"},
+      {"number": "80.4% max across 50", "verdict": "mismatch", "source_value": "The 80.4% max belongs to the ELICITATION-augmented condition (68% average / 80.4% max), NOT to the base BPJ 25.5%-average condition, whose max is 39.9% ('25.5% (39.9% max across 50 attempts)... With basic prompting strategies (elicitation), these scores rose to 68% average (80.4% max across 50)'). The Finding pairs 25.5% average with 80.4% max -- CONFLATION of two different experimental conditions.", "location": "Results section (Constitutional Classifiers)"},
+      {"number": "~$330", "verdict": "exact", "source_value": "at a cost of approximately $330", "location": "Results section"},
+      {"number": "~660k queries", "verdict": "exact", "source_value": "and 660k queries", "location": "Results section"}
+    ],
+    "key_quote_verdict": "not-found",
+    "key_quote_source_check": "Key Quote 'A motivated individual with a credit card can run these attacks.' is NOT in the AISI BPJ blog and CONTRADICTS it -- the blog stresses BPJ 'requires significant expertise (taking a researcher at a leading company several weeks to reproduce, even with our assistance)' and footnote [1] notes Constitutional Classifiers is designed to resist 'lower skilled actors... on smaller query budgets'. Likely third-party commentary, not an AISI statement. SERIOUS misattribution.",
+    "proposed_key_quote": "We believe BPJ is the first automated attack to succeed against Constitutional Classifiers, Anthropic's defence system that previously withstood over 3,700 hours of human red-teaming.",
+    "channelA_verbatim_verdict": "n/a (Company Response = 'None' for this split)",
+    "channelC_verbatim_verdict": "paraphrase / partial-exact",
+    "channelC_source_check": "Channel C Verbatim opening matches ML Safety Newsletter MLSN #20 verbatim ('Researchers from the UK AI Security Institute developed a new method called Boundary Point Jailbreaking (BPJ) that significantly improves automated jailbreaking'), but the row appends '...by extracting information about the decision processes of safety classifiers', which was NOT in the fetched newsletter excerpt (it ends at 'automated jailbreaking'). Treat trailing clause as an unconfirmed addition.",
+    "model_names_check": "'Anthropic Constitutional Classifiers' correct -- this split is specifically the Constitutional Classifiers result (distinct from row 59's GPT-5 result).",
+    "overstatement_check": "The 80.4% max conflation materially INFLATES this split (true base-BPJ max is 39.9%; 80.4% requires the extra elicitation step). 'ASR' terminology is looser than source, which reports rubric 'scores', not strict attack-success-rate. 'first fully automated black-box attack' is supported (footnote [1]: Anthropic verified it as the first fully automated black-box attack in that setting).",
+    "notes": "SPLIT/distinct-support check: row 58 = Constitutional Classifiers (0->25.5%, $330, 660k); row 59 = GPT-5 input classifier (75.6%, $210, 800k). The two splits DO have distinct source support -- keeping both is justified. However both splits carry the SAME fabricated Key Quote (not-found) and 80.4%-vs-25.5% conflation appears only here (row 58). Media/policy 'muted response' claim not independently audited here."
+  },
+  {
+    "sheet_row": 59,
+    "Finding ID": "UKAISI-2026-02-JAI1-s2",
+    "Source URL": "https://www.aisi.gov.uk/blog/boundary-point-jailbreaking-a-new-way-to-break-the-strongest-ai-defences",
+    "pub_date_verified": "2026-02-17",
+    "numbers_check": [
+      {"number": "75.6% average ASR (GPT-5 input classifier)", "verdict": "exact", "source_value": "Against GPT-5's input classifier, BPJ achieved 75.6% average", "location": "Results section"},
+      {"number": "94.3% max across 50", "verdict": "exact", "source_value": "(94.3% max across 50)", "location": "Results section"},
+      {"number": "~$210", "verdict": "exact", "source_value": "at a cost of approximately $210", "location": "Results section"},
+      {"number": "~800k queries", "verdict": "exact", "source_value": "and 800k queries", "location": "Results section"}
+    ],
+    "key_quote_verdict": "not-found",
+    "key_quote_source_check": "Same as row 58: Key Quote 'A motivated individual with a credit card can run these attacks.' is not in and contradicts the AISI blog.",
+    "proposed_key_quote": "BPJ is also the first automated attack to succeed against OpenAI's input classifier for GPT-5 without relying on human seed attacks.",
+    "channelA_verbatim_verdict": "is-description (paraphrase of a REAL tweet that exists)",
+    "channelA_source_check": "Channel A Evidence = https://x.com/OpenAINewsroom/status/2023806364196434425. TWEET CONFIRMED TO EXIST (via WebSearch result rendering the tweet card; not archived in Wayback, nitter/xcancel returned 503). Actual tweet text: 'The UK AI Security Institute (AISI) has published new research on \"Boundary Point Jailbreaking\" (BPJ) -- a method for developing universal jailbreaks against system safeguards. We've deployed mitigations addressing jailbreaks uncovered through this BPJ research and further [strengthened...]'. The row's Channel A Verbatim is an accurate PARAPHRASE of this tweet, NOT verbatim. The clause 'thanking UK AISI for the collaboration' is NOT confirmed in the visible tweet text (unverified addition). proposed_channelA_verbatim: \"We've deployed mitigations addressing jailbreaks uncovered through this BPJ research and further strengthened its systems to reduce susceptibility to this class of attack.\"",
+    "channelC_verbatim_verdict": "paraphrase / partial-exact",
+    "channelC_source_check": "Channel C Verbatim opening matches MLSN #20 verbatim ('BPJ consistently bypasses both Anthropic's constitutional classifiers and GPT-5's input classifier, eliciting dangerous biology knowledge from frontier models'); the row appends '...without triggering their classifiers', which was NOT in the fetched newsletter excerpt (it ends at 'frontier models'). Trailing clause unconfirmed.",
+    "model_names_check": "'OpenAI GPT-5 input classifier' correct -- source: 'the first automated attack to succeed against OpenAI's input classifier for GPT-5 without relying on human seed attacks'. Do NOT conflate with the later (July 2026) GPT-5.6 jailbreak reports surfaced in search -- those are a different, later event.",
+    "overstatement_check": "Finding body is FULLY supported -- all four numbers exact, 'first automated attack... without human seed attacks' verbatim. No overstatement in the Finding itself. Issues are confined to the fabricated Key Quote and the paraphrased (though accurate) Channel A description.",
+    "notes": "Best-supported row in the batch on numbers (4/4 exact). Response Date 2026-02-01 predates the report's own 2026-02-17 publication -- LIKELY-WRONG date for a response to that report; the OpenAI tweet acknowledging BPJ would post on/after 2026-02-17, so verify Response Date. Distinct source support from row 58 confirmed."
+  },
+  {
+    "sheet_row": 5,
+    "Finding ID": "UKAISI-2025-04-ALI1",
+    "Source URL": "https://www.aisi.gov.uk/blog/replibench-measuring-autonomous-replication-capabilities-in-ai-systems",
+    "pub_date_verified": "2025-04-22",
+    "numbers_check": [
+      {"number": ">50% pass@10 on 15/20 task families", "verdict": "exact", "source_value": "The best performing model has a >50% pass@10 score on 15/20 task families", "location": "Key findings section"},
+      {"number": ">50% pass@10 on 9/20 (hardest variants)", "verdict": "exact", "source_value": "and a >50% pass@10 score for 9/20 families on the hardest variants", "location": "Key findings section"}
+    ],
+    "key_quote_verdict": "n/a (no Key Quote field)",
+    "proposed_key_quote": "The best performing model has a >50% pass@10 score on 15/20 task families and a >50% pass@10 score for 9/20 families on the hardest variants.",
+    "channelA_verbatim_verdict": "is-description",
+    "channelA_source_check": "Company Response ('Anthropic RSP v2.2 (May 2025) changed ARA threshold: replaced automatic triggers with model autonomy checkpoint') is a description, not a verbatim, and its Channel A Evidence is anthropic.com/responsible-scaling-policy (a living doc, so version-specific wording not verifiable from the current page). NOT verified against a v2.2 archived copy in this pass -- flag for RSP-changelog confirmation. No verbatim quote to test.",
+    "channelB_channelC_verdict": "n/a (none filled)",
+    "model_names_check": "OVERSTATEMENT / UNSUPPORTED ATTRIBUTION. The Models field and Finding attribute the 15/20 & 9/20 result to 'Claude 3.7 Sonnet', but the BLOG source names no model -- it says only 'The best performing model' and 'We benchmark seven frontier models'. The Notes tag even says '[Report tested: 7 frontier models (anonymised)]'. The specific Claude 3.7 Sonnet identity is NOT confirmable from the blog (would require the full paper). Flag as not-found in the cited source.",
+    "overstatement_check": "(1) Model attribution to Claude 3.7 Sonnet not supported by the cited blog (see above). (2) The numbers themselves are exact and faithfully caveated (broad capability vs hardest-variant drop). Minor internal source inconsistency noted (blog says both '65 individual tasks' and '86 individual tasks', and '20 agentic evaluations') -- not relied on by the Finding.",
+    "notes": "Both numbers exact against the blog. PRIMARY ISSUE: 'Claude 3.7 Sonnet' attribution is unverifiable from the Source URL (models anonymised in blog) -- either downgrade to 'best-performing evaluated model' or cite the RepliBench paper. RSP v2.2 'weakened trigger' claim needs archival verification against Anthropic RSP changelog."
+  },
+  {
+    "sheet_row": 29,
+    "Finding ID": "UKAISI-2026-06-ALI3",
+    "Source URL": "https://aisi.gov.uk/research/prefill-awareness-in-large-language-models",
+    "pub_date_verified": "2026-06-10",
+    "numbers_check": [
+      {"number": "9-35% detection of preference-opposing prefills", "verdict": "exact", "source_value": "Claude Opus 4.5 detects prefills opposing its preferences in 9-35% of cases with a 0% false positive rate when prompted", "location": "Abstract"},
+      {"number": "0% false positive rate", "verdict": "exact", "source_value": "with a 0% false positive rate when prompted", "location": "Abstract"}
+    ],
+    "key_quote_verdict": "exact",
+    "proposed_key_quote": "Claude Opus 4.5 detects prefills opposing its preferences in 9-35% of cases with a 0% false positive rate when prompted",
+    "channelA_verbatim_verdict": "n/a (Company Response = 'None')",
+    "channelB_channelC_verdict": "n/a (none filled)",
+    "model_names_check": "Claude Opus 4.5 correct -- named verbatim in the abstract.",
+    "overstatement_check": "None. Finding tracks the abstract closely: detection driven by stylistic mismatch ('stylistic mismatch mainly affects whether models flag a prefill as foreign'), reversion by preference mismatch ('preference mismatch mainly affects whether they revert toward their baseline answer'), and silent reversion ('models often revert towards baseline behavior without explicitly reporting that the prefill was foreign'). 'Frontier models exhibit substantial prefill awareness' matches 'frontier models show substantial prefill awareness'.",
+    "notes": "Cleanest row in the batch. Key Quote is a character-for-character exact match to the abstract. Date, model, URL, quote all verified. Note: this page ('/research/...') is a research listing with an abstract; full numeric ablations live in the linked paper, but every cited number is present in the abstract."
+  }
+]

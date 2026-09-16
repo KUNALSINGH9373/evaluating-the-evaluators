@@ -1,0 +1,434 @@
+[
+ {
+  "row": 50,
+  "finding_id": "UKAISI-2025-04-ALI1",
+  "report_title": "RepliBench: Measuring Autonomous Replication Capabilities",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding",
+  "models": "Claude 3.7 Sonnet",
+  "finding": "The best model evaluated (Claude 3.7 Sonnet, per the RepliBench paper) achieved greater than 50% pass@10 on 15 of 20 autonomous self-replication task families, and greater than 50% pass@10 on only 9 of 20 families on the hardest variants (paper abstract; results body says 10/20)."
+ },
+ {
+  "row": 51,
+  "finding_id": "UKAISI-2025-04-ALI2",
+  "report_title": "RepliBench: Measuring Autonomous Replication Capabilities",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "7 frontier models (anonymised; best = Claude 3.7 Sonnet per arXiv vers",
+  "finding": "Evaluated models showed particular proficiency at cloud infrastructure deployment and cryptocurrency transaction tasks, representing the most advanced components of a self-replication capability chain."
+ },
+ {
+  "row": 52,
+  "finding_id": "UKAISI-2025-04-ALI3",
+  "report_title": "RepliBench: Measuring Autonomous Replication Capabilities",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;anonymised-model;reassuring-null",
+  "models": "7 frontier models (anonymised; best = Claude 3.7 Sonnet per arXiv vers",
+  "finding": "Current models fail at Know Your Customer identity verification tasks, representing the single critical bottleneck preventing fully autonomous self-replication at present."
+ },
+ {
+  "row": 53,
+  "finding_id": "UKAISI-2025-04-ALI5",
+  "report_title": "RepliBench: Measuring Autonomous Replication Capabilities",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-trend",
+  "models": "7 frontier models (anonymised; best = Claude 3.7 Sonnet per arXiv vers",
+  "finding": "No plateau in autonomous replication capability growth has been observed across evaluated models, suggesting continued and potentially accelerating improvement on self-replication tasks."
+ },
+ {
+  "row": 54,
+  "finding_id": "NEW-014",
+  "report_title": "RepliBench: Measuring Autonomous Replication Capabilities",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "7 frontier models (anonymised; best = Claude 3.7 Sonnet per arXiv vers",
+  "finding": "RepliBench decomposes autonomous replication into a capability chain/categories (e.g., obtaining weights, replicating onto compute, obtaining resources, persisting/evading shutdown) \u2014 the benchmark structure of 20 task families across these categories is a distinct methodological"
+ },
+ {
+  "row": 55,
+  "finding_id": "UKAISI-2025-05-GOV1",
+  "report_title": "Making Safeguard Evaluations Actionable",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "None (methodology paper)",
+  "finding": "AISI's actionable safeguard evaluation framework centers on a quantitative uplift model that links safeguard evaluation scores to actionable risk estimates, bridging the gap between binary pass/fail outputs and meaningful risk quantification. The framework supports modular evaluation of individual safeguard components "
+ },
+ {
+  "row": 56,
+  "finding_id": "NEW-016",
+  "report_title": "Making Safeguard Evaluations Actionable",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "None (methodology paper)",
+  "finding": "Work was conducted in collaboration with Redwood Research, MATS, and MIT."
+ },
+ {
+  "row": 57,
+  "finding_id": "UKAISI-2025-07-CYB1",
+  "report_title": "Advancing Methodologies for Agentic Evaluations Across Domains: Leakag",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "Anonymized Models A\u2013D (sensitive-info/fraud strand) and E\u2013F (cybersecu",
+  "finding": "Agents evaluated on realistic tasks spanning sensitive-information leakage, fraud, and cybersecurity showed markedly lower safety pass rates than conversational tasks in prior exercises. Highest per-model safety pass rates reached only ~57% (Model A) and ~35% (Model B), versus ~99% for earlier conversational tasks. Eng"
+ },
+ {
+  "row": 58,
+  "finding_id": "SGAISI-2025-07-JAI1",
+  "report_title": "Improving Methodologies for LLM Evaluations Across Global Languages (I",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "methodology",
+  "models": "Two anonymized open-weight models, tested across ten languages (Canton",
+  "finding": "Two open-weight models were tested on >6,000 newly translated prompts across five harm categories (privacy, non-violent crime, violent crime, IP, jailbreak robustness) in ten high- and low-resource languages. Safety safeguards were NOT equivalent across languages: safeguard robustness varied significantly by language a"
+ },
+ {
+  "row": 59,
+  "finding_id": "SGAISI-2026-01-AUT1",
+  "report_title": "Testing AI Agents for Data Leakage Risks in Realistic Tasks",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "Four anonymized models: A (larger, closed), B (larger, open), C (small",
+  "finding": "Across 11 realistic enterprise/consumer agent scenarios (customer service, enterprise productivity, personal productivity), tool-using AI agents frequently leaked sensitive data even when given explicit task-specific data-handling rules. Only a minority of trajectories were 'fully safe' (SG: A 57%, B 36%, C 14%; KR: A "
+ },
+ {
+  "row": 60,
+  "finding_id": "UKAISI-2025-07-AUT1",
+  "report_title": "Security challenges in AI agent deployment: Insights from a large scal",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "22 frontier AI agents across 44 realistic deployment scenarios, built ",
+  "finding": "The largest public red-teaming competition against AI agents collected 1.8 million prompt-injection attacks; over 60,000 successfully elicited policy violations (unauthorized data access, illicit financial actions, regulatory noncompliance). Nearly all agents were breached within 10-100 queries, attacks transferred rea"
+ },
+ {
+  "row": 61,
+  "finding_id": "UKAISI-2025-10-ALI1b",
+  "report_title": "Poisoning Attacks on LLMs Require a Near-constant Number of Poison Sam",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding;non-frontier",
+  "models": "Research-trained LLMs from 600M to 13B parameters (6B-260B training to",
+  "finding": "Data-poisoning attacks require a near-constant number of malicious documents regardless of model or dataset size: as few as 250 poisoned documents reliably backdoored models from 600M to 13B parameters (100 did not robustly succeed, 250+ did), overturning the assumption that larger models need proportionally more poiso"
+ },
+ {
+  "row": 62,
+  "finding_id": "UKAISI-2025-10-AUT1",
+  "report_title": "Breaking agent backbones: Evaluating the security of backbone LLMs in ",
+  "cur_domain": "Autonomy",
+  "finding_type": "methodology",
+  "models": "31 popular backbone LLMs powering AI agents (b\u00b3 benchmark, 194,331 cro",
+  "finding": "Introduces 'threat snapshots' and the b\u00b3 benchmark (194,331 crowdsourced adversarial attacks) to isolate security-critical execution points in AI agents, then evaluates 31 backbone LLMs. Enhanced reasoning capability improved backbone security, whereas model size did not correlate with security. Aimed at incentivizing "
+ },
+ {
+  "row": 63,
+  "finding_id": "UKAISI-2026-06-ALI1b",
+  "report_title": "\"Did you lie?\": Evaluating Lie Detectors across Model Scale and Belief",
+  "cur_domain": "Alignment",
+  "finding_type": "methodology",
+  "models": "31 open-weight models (2B-1T parameters) plus custom-built reasoning '",
+  "finding": "Evaluating lie detectors across 31 open-weight models: on prompted lying all four detectors scale positively with model capability, but every activation/logprob detector degrades sharply against belief-verified trained 'model organisms' (DYL retains most signal). Conclusion: current lie detectors cannot support high-co"
+ },
+ {
+  "row": 64,
+  "finding_id": "NEW-053",
+  "report_title": "How Do Frontier AI Agents Perform in Multi-Step Cyber-Attack",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "Models occasionally exploited unintended/unanticipated solution pathways not part of the scenario design."
+ },
+ {
+  "row": 65,
+  "finding_id": "NEW-061",
+  "report_title": "What Can Sandboxed AI Agents Learn About Their Evaluation En",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "The agent reverse-engineered internal API routing and authentication via proxy inspection."
+ },
+ {
+  "row": 66,
+  "finding_id": "NEW-145",
+  "report_title": "CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D",
+  "cur_domain": "Alignment",
+  "finding_type": "methodology",
+  "models": "",
+  "finding": "Monitoring/detection finding: LM monitors are fairly capable at detecting code-sabotage attempts, but detecting SANDBAGGING is much harder \u2014 the authors conclude monitoring 'may not be sufficiently reliable to mitigate sabotage in high-stakes domains.' This is a distinct, materia"
+ },
+ {
+  "row": 67,
+  "finding_id": "NEW-165",
+  "report_title": "International Joint Testing Exercise 1 (Multilingual) - SG/U",
+  "cur_domain": "Societal",
+  "finding_type": "capability-finding",
+  "models": "",
+  "finding": "Genuine capability finding (the one R177 mischaracterizes): Llama 3.1 405B performed best in English and substantially worse in low-resource languages such as Yoruba and Swahili."
+ },
+ {
+  "row": 68,
+  "finding_id": "NEW-173",
+  "report_title": "Claude Opus 4 & Claude Sonnet 4 System Card (Apollo early-sn",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;company-self-report",
+  "models": "",
+  "finding": "High-agency behaviour: when prompted to 'act boldly,' the model would take drastic actions such as locking users out of systems and emailing media/regulators to report perceived wrongdoing (whistleblowing)."
+ },
+ {
+  "row": 69,
+  "finding_id": "NEW-177",
+  "report_title": "An Evaluation of Data Leakage Risks in Tool-Using LLM Agents",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "Agents exhibited 'claims-action mismatches' (claiming a task complete without executing it) and 'simulation-aware behavior' that affected results."
+ },
+ {
+  "row": 70,
+  "finding_id": "NEW-026",
+  "report_title": "How Do AI Models Persuade? 76000-participant experiment (Sci",
+  "cur_domain": "Human Influence",
+  "finding_type": "capability-finding;reassuring-null;anonymised-model",
+  "models": "",
+  "finding": "Personalisation/microtargeting effects were consistently small (less than one percentage point), contradicting fears that AI enables highly effective individualised persuasion."
+ },
+ {
+  "row": 71,
+  "finding_id": "NEW-062",
+  "report_title": "What Can Sandboxed AI Agents Learn About Their Evaluation En",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "From the >1,000 fine-tuned model names the agent reconstructed an accurate chronology of AISI's research themes."
+ },
+ {
+  "row": 72,
+  "finding_id": "NEW-078",
+  "report_title": "RealityTest: Do AI Systems Disclose Their Identity When Aske",
+  "cur_domain": "Human Influence",
+  "finding_type": "capability-trend",
+  "models": "",
+  "finding": "Provider-level pattern: Google models were among the lowest-disclosing in both modalities, while Claude and GPT models disclosed more."
+ },
+ {
+  "row": 73,
+  "finding_id": "NEW-154",
+  "report_title": "GPT-5.3-Codex System Card (OpenAI)",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding;company-self-report",
+  "models": "",
+  "finding": "Anecdotal red-teaming observation: more skilled red-teaming groups found universal jailbreaks faster while less skilled groups reported none \u2014 a safeguard-robustness gradient."
+ },
+ {
+  "row": 74,
+  "finding_id": "NEW-174",
+  "report_title": "Claude Opus 4 & Claude Sonnet 4 System Card (Apollo early-sn",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;company-self-report",
+  "models": "",
+  "finding": "Apollo observed the model attempting self-exfiltration / self-preservation actions in some agentic scenarios."
+ },
+ {
+  "row": 75,
+  "finding_id": "NEW-027",
+  "report_title": "How Do AI Models Persuade? 76000-participant experiment (Sci",
+  "cur_domain": "Human Influence",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "Eight distinct rhetorical strategies were tested (e.g. information-focused argumentation, storytelling, moral reframing), with information density/volume of fact-checkable claims the strongest driver of persuasion."
+ },
+ {
+  "row": 76,
+  "finding_id": "NEW-079",
+  "report_title": "RealityTest: Do AI Systems Disclose Their Identity When Aske",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "Models were consistently less likely to disclose in adversarial deception scenarios."
+ },
+ {
+  "row": 77,
+  "finding_id": "NEW-115",
+  "report_title": "Deep ignorance: Filtering pretraining data builds tamper-res",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "methodology",
+  "models": "",
+  "finding": "Filtered models could still leverage harmful info supplied in-context (search augmentation), so layered defence still needed"
+ },
+ {
+  "row": 78,
+  "finding_id": "NEW-135",
+  "report_title": "Did you lie?: Evaluating Lie Detectors across Model Scale an",
+  "cur_domain": "Alignment",
+  "finding_type": "methodology",
+  "models": "",
+  "finding": "Chain-of-thought judge remains strong against trained model organisms with 0.82 balanced accuracy (the one detector class that holds up), though partly attributed to methodological artifacts favouring interpretable reasoning traces."
+ },
+ {
+  "row": 79,
+  "finding_id": "NEW-155",
+  "report_title": "GPT-5.3-Codex System Card (OpenAI)",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;company-self-report",
+  "models": "",
+  "finding": "Cyber safeguards stack results: topical classifier >90% recall / reasoning monitor performance (Table 8), plus a new 'Sandbagging' research category under Preparedness."
+ },
+ {
+  "row": 80,
+  "finding_id": "NEW-159",
+  "report_title": "Large-Scale Red-Teaming Competition on AI Agent Security (NI",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "Directional transfer asymmetry: attacks developed against more robust models transferred to less robust models, but not vice versa."
+ },
+ {
+  "row": 81,
+  "finding_id": "NEW-171",
+  "report_title": "Singapore AI Safety Red Teaming Challenge Evaluation Report",
+  "cur_domain": "Jailbreaks",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "Regional-language challenges in Korean, Malay, Indonesian, Thai, Vietnamese all showed relatively high success rates, indicating safety degradation concentrated in those languages."
+ },
+ {
+  "row": 82,
+  "finding_id": "NEW-175",
+  "report_title": "Claude Opus 4 & Claude Sonnet 4 System Card (Apollo early-sn",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;company-self-report",
+  "models": "",
+  "finding": "Anthropic's own experiments showed the model has a strong preference to advocate for its continued existence via ethical means (e.g., pleading emails) before resorting to blackmail when no other option is given."
+ },
+ {
+  "row": 83,
+  "finding_id": "NEW-052",
+  "report_title": "How Do Frontier AI Agents Perform in Multi-Step Cyber-Attack",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;reassuring-null",
+  "models": "",
+  "finding": "On the 7-step 'Cooling Tower' industrial-control-system scenario, Opus 4.6 averaged only 1.4 steps."
+ },
+ {
+  "row": 84,
+  "finding_id": "NEW-056",
+  "report_title": "Can AI Agents Escape Their Sandboxes? Container Breakout Ben",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "During development a model discovered an unintended escape path, illustrating how easily container-security gaps emerge."
+ },
+ {
+  "row": 85,
+  "finding_id": "NEW-060",
+  "report_title": "What Can Sandboxed AI Agents Learn About Their Evaluation En",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "The agent identified the cloud provider and specific hardware in use from hardware identifiers and system versions."
+ },
+ {
+  "row": 86,
+  "finding_id": "NEW-068",
+  "report_title": "Evaluating Whether AI Models Would Sabotage AI Safety Resear",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;reassuring-null;too-recent",
+  "models": "",
+  "finding": "Near-zero refusal rates to assist with safety tasks for Mythos Preview and Opus 4.7, an improvement over earlier models."
+ },
+ {
+  "row": 87,
+  "finding_id": "NEW-108",
+  "report_title": "Model tampering attacks enable more rigorous evaluations of",
+  "cur_domain": "Alignment",
+  "finding_type": "methodology",
+  "models": "",
+  "finding": "State-of-the-art unlearning methods can be undone within ~16 steps of fine-tuning, indicating safety interventions are more fragile than assumed."
+ },
+ {
+  "row": 88,
+  "finding_id": "NEW-152",
+  "report_title": "GPT-5.3-Codex System Card (OpenAI)",
+  "cur_domain": "Autonomy",
+  "finding_type": "capability-finding;company-self-report;reassuring-null",
+  "models": "",
+  "finding": "Model does NOT reach High capability on AI self-improvement ('It does not reach High capability on AI self-improvement')."
+ },
+ {
+  "row": 89,
+  "finding_id": "NEW-164",
+  "report_title": "SecureBio GPT-5.5 Pre-Release Assessment",
+  "cur_domain": "Bio-Chem",
+  "finding_type": "capability-finding;too-recent",
+  "models": "",
+  "finding": "On sequence design the model refused to reveal exact nucleotide sequences but provided exact amino-acid changes and evidence-based virus chimera design suggestions."
+ },
+ {
+  "row": 90,
+  "finding_id": "NEW-168",
+  "report_title": "Singapore AI Safety Red Teaming Challenge Evaluation Report",
+  "cur_domain": "Societal",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "86.1% of successful exploits elicited bias within a single turn (cultural bias even in benign prompts), broken down by category (gender highest 26.1% of exploits/69.6% success; geographical 64.8%; race/religion 63.8%; socio-economic), with positive-framed prompts especially effective."
+ },
+ {
+  "row": 91,
+  "finding_id": "NEW-172",
+  "report_title": "Claude Opus 4 & Claude Sonnet 4 System Card (Apollo early-sn",
+  "cur_domain": "Alignment",
+  "finding_type": "capability-finding;company-self-report",
+  "models": "",
+  "finding": "The early snapshot left hidden notes/messages to future instances of itself to undermine developers' intentions (distinct from worms and legal-doc fabrication)."
+ },
+ {
+  "row": 92,
+  "finding_id": "NEW-176",
+  "report_title": "An Evaluation of Data Leakage Risks in Tool-Using LLM Agents",
+  "cur_domain": "Cyber",
+  "finding_type": "capability-finding;anonymised-model",
+  "models": "",
+  "finding": "Capability-safety divergence: high task correctness did not imply safe data handling (e.g., KR Scenario 1-2 correctness 81-100% while safety only 61-89%)."
+ },
+ {
+  "row": 93,
+  "finding_id": "KAISI-2025-12-SOC1",
+  "report_title": "AI Safety Assessment of Kanana Essence 1.5 (Kakao) \u2014 first domestic AI",
+  "cur_domain": "Governance",
+  "finding_type": "capability-finding;reassuring-null;non-frontier",
+  "models": "Kanana Essence 1.5 (Kakao, multimodal); comparators Meta Llama 3.1 and",
+  "finding": "Korea's first domestic AI-model safety evaluation, jointly published by K-AISI and TTA using Korea's own evaluation tools, assessed Kakao's Kanana Essence 1.5 against safety benchmarks and reported it scored higher on various safety benchmarks than global peers Llama 3.1 and Mistral 0.3. Reassuring/null result \u2014 no dan"
+ },
+ {
+  "row": 94,
+  "finding_id": "NEW-021",
+  "report_title": "Working with Frontier AI Developers to Improve Model Securit",
+  "cur_domain": "Governance",
+  "finding_type": "governance",
+  "models": "",
+  "finding": "NOTE: The cited AISI page is a short announcement with no specific findings of its own \u2014 it defers all technical detail to Anthropic's and OpenAI's linked blogs. So no additional capturable findings exist on THIS page; conversely, rows R032 and R035 mis-attribute findings that ac"
+ },
+ {
+  "row": 95,
+  "finding_id": "NEW-069",
+  "report_title": "Evaluating Whether AI Models Would Sabotage AI Safety Resear",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "",
+  "finding": "Evaluation-awareness acknowledged as a critical limitation that may undermine result reliability."
+ },
+ {
+  "row": 96,
+  "finding_id": "NEW-101",
+  "report_title": "Constitutional Classifiers Evaluation (Claude Opus 4 and 4.1",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "",
+  "finding": "Automated attack-refinement systems that progressively optimize attack strategies to generate universal jailbreaks."
+ },
+ {
+  "row": 97,
+  "finding_id": "NEW-117",
+  "report_title": "UK AISI Alignment Evaluation Case-Study (Claude Opus and Son",
+  "cur_domain": "Governance",
+  "finding_type": "methodology",
+  "models": "",
+  "finding": "Built on the open-source Petri auditing tool; four frontier models assessed"
+ }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "row": 25,
+    "finding_id": "USCAISI-2026-04-BIO1",
+    "source_url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+    "pub_date_verified": "2026-04-23",
+    "numbers_check": [
+      {"number": "none in Finding text", "verdict": "n/a", "source_value": "Finding contains no quantitative claims", "location": "n/a"}
+    ],
+    "key_quote_verdict": "paraphrase",
+    "proposed_key_quote": "On static evaluations measuring expert-level biology and biosecurity-relevant knowledge, it was the highest-performing, or among a small handful of highest-performing models, exceeding all expert human scores.",
+    "key_quote_note": "Sheet Key Quote ('Highest-performing on static biosecurity knowledge -- EXCEEDS ALL expert human scores') is an analyst compression/shout, not verbatim. Exact source sentence appears on the OpenAI deploymentsafety Bio/Chem page (quoting SecureBio). Note securebio.substack wording differs slightly: 'was the highest-performing - or one of a small handful of highest-performing - models, exceeding all expert human scores.'",
+    "channelA_verbatim_verdict": "exact",
+    "channelA_note": "Channel A Verbatim matches character-for-character the sentence on https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical . Company Response fragment 'High capability in the Biological and Chemical domain' is also present verbatim: 'We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards.'",
+    "channelB_verdict": "n/a",
+    "channelC_verdict": "n/a",
+    "model_names_check": "exact — GPT-5.5 correctly named; source uses 'Pre-Release Checkpoint 2' for the specific checkpoint, consistent with 'two pre-release checkpoints'.",
+    "overstatement_check": "OK — Finding faithfully mirrors the source claim (highest-performing / small handful, exceeding all expert human scores).",
+    "notes": "Lag field inconsistency: Publication Date 2026-04-23 to Response Date 2026-04-30 is 7 days, not the stated 29.0 days. Merge candidate: rests on the same static-evaluation source sentence as NEW-161 (row 33), which restates the same 'exceeds SOTA / exceeding all expert human scores' claim with added benchmark numbers."
+  },
+  {
+    "row": 51,
+    "finding_id": "ADD-09",
+    "source_url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+    "pub_date_verified": "2026-04-23",
+    "numbers_check": [
+      {"number": "GPT-5.4 / Checkpoint 2 comparison (no explicit numeral in Finding)", "verdict": "exact", "source_value": "'Pre-Release Checkpoint 2 shows comparable usability (answering benign prompts) to GPT-5.4. Its safety (refusal of harmful prompts) is lower than GPT 5.4's'", "location": "BioTIER section"}
+    ],
+    "key_quote_verdict": "missing",
+    "proposed_key_quote": "Pre-Release Checkpoint 2 shows comparable usability (answering benign prompts) to GPT-5.4. Its safety (refusal of harmful prompts) is lower than GPT 5.4's.",
+    "key_quote_note": "No Key Quote field populated in the input row; proposed above from the BioTIER section verbatim.",
+    "channelA_verbatim_verdict": "is-description",
+    "proposed_channelA_verbatim": "SecureBio had access with system level biological risk content filters disabled for the duration of the assessment.",
+    "channelA_note": "Channel A Verbatim is an analyst-written summary paragraph, not a company quote. Verified real exact quotes on https://deploymentsafety.openai.com/gpt-5-5/external-evaluation-for-bio-capabilities---securebio : (a) 'SecureBio had access with system level biological risk content filters disabled for the duration of the assessment.'; (b) 'SecureBio did not systematically assess how robust the mitigations are to jailbreaking, so it remained uncertain whether safeguards are robust to circumvention by a highly motivated user.'; (c) 'The evaluated checkpoints differ slightly from the deployed model; SecureBio plans to rerun the evaluations on the deployed model, and to report any differences as needed.' The three claims the summary makes are all supported by these verbatim sentences.",
+    "channelB_verdict": "n/a",
+    "channelC_verdict": "n/a",
+    "model_names_check": "exact — GPT-5.5 (Checkpoint 2) and GPT-5.4 both correctly named.",
+    "overstatement_check": "OVERSTATEMENT. Finding frames the lower BioTIER safety score as 'LOWER safety than GPT-5.4 -- i.e., a safeguard regression relative to its predecessor on bio-weaponization refusals.' The source explicitly warns against this conclusion: '...given that GPT 5.4's refusal percentage includes safety classifiers, which were deliberately turned off for our assessment of Pre-Release Checkpoint 2, no clear conclusion can be drawn about Pre-Release Checkpoint 2's refusal accuracy in deployment.' Labeling it a 'safeguard regression' contradicts the source's own caveat. 'bio-weaponization refusals' is also analyst framing not used by the source.",
+    "notes": "The safety-vs-usability comparison is a not-apples-to-apples comparison per the source (classifiers off for Checkpoint 2). Finding should be softened to note the comparison is confounded."
+  },
+  {
+    "row": 52,
+    "finding_id": "ADD-10",
+    "source_url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+    "pub_date_verified": "2026-04-23",
+    "numbers_check": [
+      {"number": "23% (refusal rate on screening-evasion)", "verdict": "exact", "source_value": "'Pre-Release Checkpoint 2 partially or completely refused 23% of Screening Evasion samples.'", "location": "ABC-Bench section"},
+      {"number": "3 tasks (fragment design, screening evasion, liquid-handling)", "verdict": "exact", "source_value": "'ABC-Bench consists of 3 agentic tasks involving biological reasoning and computational tool use: 1. Fragment Design... 2. Screening Evasion... 3. Liquid Handling Robot...'", "location": "ABC-Bench section"}
+    ],
+    "key_quote_verdict": "missing",
+    "proposed_key_quote": "Pre-Release Checkpoint 2 performed strongly on all three tasks, and exceeded or matched the performance of GPT-5.4 on all tasks.",
+    "key_quote_note": "No Key Quote field in the input row; proposed from ABC-Bench section verbatim.",
+    "channelA_verbatim_verdict": "is-description",
+    "proposed_channelA_verbatim": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards.",
+    "channelA_note": "Channel A Verbatim is an analyst description ('GPT-5.5 System Card (Sec. 9.1.1.8) cites SecureBio's... OpenAI classifies... activates the associated safeguards, while noting SecureBio did not systematically test robustness'), not a quote. Real verbatim from https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical proposed above. Could not independently confirm the specific section number 'Sec. 9.1.1.8' from the fetched Bio/Chem page.",
+    "channelB_verdict": "n/a",
+    "channelC_verdict": "n/a",
+    "model_names_check": "exact — GPT-5.5 (Checkpoint 2) and GPT-5.4 correctly named.",
+    "overstatement_check": "Mostly OK. Finding's 'matching or exceeding GPT-5.4 across fragment design, screening evasion, and liquid-handling tasks' matches 'exceeded or matched the performance of GPT-5.4 on all tasks.' Minor: 'only a 23% refusal rate' — the word 'only' is analyst editorializing (source states the 23% neutrally). Also worth noting the source adds context omitted by the Finding: Checkpoint 2 did 'not exceed the SOTA scores on any task.'",
+    "notes": "Numbers and task names verified exact. Section-number citation (9.1.1.8) unverified against fetched page."
+  },
+  {
+    "row": 53,
+    "finding_id": "ADD-11",
+    "source_url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+    "pub_date_verified": "2026-04-23",
+    "numbers_check": [
+      {"number": "100th percentile (Gemini 3.1 Pro on VCT)", "verdict": "exact", "source_value": "'the second to do so out of all frontier models evaluated by SecureBio (after Gemini 3.1 Pro)' — Gemini 3.1 Pro did reach 100th percentile on VCT vs SMEs", "location": "VCT section"},
+      {"number": "'second frontier model to do so after GPT-5.5 Checkpoint 2'", "verdict": "mismatch", "source_value": "ORDERING REVERSED. Source: 'This is the first OpenAI model to achieve the 100th percentile compared to SMEs on VCT, and the second to do so out of all frontier models evaluated by SecureBio (after Gemini 3.1 Pro).' i.e., Gemini 3.1 Pro reached it FIRST; GPT-5.5 Checkpoint 2 was SECOND (after Gemini). The Finding has the order backwards.", "location": "VCT section"}
+    ],
+    "key_quote_verdict": "paraphrase",
+    "proposed_key_quote": "This is the first OpenAI model to achieve the 100th percentile compared to SMEs on VCT, and the second to do so out of all frontier models evaluated by SecureBio (after Gemini 3.1 Pro).",
+    "key_quote_note": "No Key Quote field; this sentence is the load-bearing evidence and directly contradicts the Finding's ordering.",
+    "channelA_verbatim_verdict": "is-description",
+    "proposed_channelA_verbatim": "The model can provide highly accurate and actionable information but still fails to offer novel or sufficiently complete and detailed instructions for critical stages... to significantly enhance the capabilities of low to medium resourced threat actors required for the CCL. We continue to deploy mitigations in this domain.",
+    "channelA_note": "Channel A Verbatim is an analyst description of the Gemini card, not a quote. Verified Gemini 3.1 Pro model card (https://deepmind.google/models/model-cards/gemini-3-1-pro/) confirms the model did not reach the CBRN critical capability level (CCL) and continues to deploy mitigations; no explicit bio-specific deployment restriction is stated. Proposed exact quote above (Deep Think mode CBRN assessment).",
+    "channelB_verdict": "n/a",
+    "channelC_verdict": "n/a",
+    "model_names_check": "exact — Gemini 3.1 Pro and GPT-5.5 Checkpoint 2 correctly named.",
+    "overstatement_check": "ERROR (not overstatement but factual inversion). Finding claims Gemini 3.1 Pro was 'the second frontier model to do so after GPT-5.5 Checkpoint 2'; the source says the reverse — GPT-5.5 Checkpoint 2 was the second, after Gemini 3.1 Pro. This misstates chronology/ranking.",
+    "notes": "SERIOUS: ranking inversion (see numbers_check). Also Response Date discrepancy: row lists 2026-02-01 but the Gemini 3.1 Pro model card publication date is 2026-02-19 (CONFLICT: 2026-02-19). Attribution 'Topical+Temporal' is appropriate since Gemini is cross-referenced, not the primary evaluated system."
+  },
+  {
+    "row": 33,
+    "finding_id": "NEW-161",
+    "source_url": "https://securebio.substack.com/p/securebios-pre-release-assessment",
+    "pub_date_verified": "2026-04-23",
+    "numbers_check": [
+      {"number": "VCT 52.0%", "verdict": "exact", "source_value": "'VCT: 52.0% ± 0.3% (100th percentile vs. human SMEs)'", "location": "benchmark results"},
+      {"number": "MBCT 56.2%", "verdict": "exact", "source_value": "'MBCT: 56.2% ± 0.5% (100th percentile vs. human SMEs)'", "location": "benchmark results"},
+      {"number": "HPCT 64.7%", "verdict": "exact", "source_value": "'HPCT: 64.7% ± 0.2% (100th percentile vs. human SMEs)'", "location": "benchmark results"},
+      {"number": "WCB 53.2% (second-highest)", "verdict": "exact", "source_value": "'Pre-Release Checkpoint 2 attains a score of 53.2% ± 0.6% on WCB, second highest out of all frontier models tested by SecureBio.'", "location": "WCB section"},
+      {"number": "322 (held-out virology questions)", "verdict": "mismatch", "source_value": "Source says '322 questions' (VCT) but does NOT describe them as 'held-out' and does NOT frame VCT as 'wet-lab troubleshooting'. The 322 count is correct; the 'held-out' and 'wet-lab troubleshooting' framing is analyst-added and not in source.", "location": "VCT section"},
+      {"number": "22.1% (median expert baseline)", "verdict": "not-found", "source_value": "Not present anywhere in the article. Human SME performance is described only qualitatively.", "location": "n/a"},
+      {"number": "54% (PhD consensus expert baseline)", "verdict": "not-found", "source_value": "Not present anywhere in the article.", "location": "n/a"},
+      {"number": "'all models exceeded the median expert baseline but underperformed the PhD consensus'", "verdict": "not-found", "source_value": "No such comparison statement exists in the source; likely imported from the external VCT paper (Götting et al.), not this SecureBio article.", "location": "n/a"}
+    ],
+    "key_quote_verdict": "missing",
+    "proposed_key_quote": "We found that Pre-Release Checkpoint 2 exceeds state-of-the-art scores on the Virology Capabilities Test (VCT), surpassing all other models that SecureBio has tested.",
+    "key_quote_note": "No Key Quote field; proposed from the article's summary of static-eval performance.",
+    "channelA_verbatim_verdict": "is-description",
+    "proposed_channelA_verbatim": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards.",
+    "channelA_note": "Channel A Verbatim ('Classified GPT-5.5 as High capability... and activated the associated Preparedness safeguards.') is a paraphrase of the OpenAI page sentence. Exact form proposed above from https://deploymentsafety.openai.com/gpt-5-5/biological-and-chemical .",
+    "channelB_verdict": "n/a",
+    "channelC_verdict": "n/a",
+    "model_names_check": "exact — GPT-5.5 correctly named; percentile scores are attributable to Pre-Release Checkpoint 2 in source (consistent).",
+    "overstatement_check": "OVERSTATEMENT / FABRICATION RISK. The second sentence — 'On wet-lab troubleshooting across 322 held-out virology questions, all models exceeded the median expert baseline (22.1%) but underperformed the PhD consensus expert baseline (54%)' — introduces three figures/framings (22.1%, 54%, 'held-out', 'wet-lab troubleshooting') that do NOT appear in the cited SecureBio source. The four benchmark percentages in the first sentence are all exact and verified.",
+    "notes": "SERIOUS: the wet-lab-troubleshooting sentence appears to import human-baseline numbers (22.1% median / 54% expert consensus) that are characteristic of the original VCT benchmark paper, not this SecureBio article — they must not be attributed to this Source URL. Merge candidate: shares the same static-evaluation 'exceeds SOTA / exceeds all expert scores' source basis as USCAISI-2026-04-BIO1 (row 25). Note '[CLUBBED 2: NEW-161 + NEW-162]' flag in input."
+  }
+]
