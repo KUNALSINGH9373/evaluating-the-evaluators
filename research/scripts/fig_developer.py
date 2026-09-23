@@ -118,15 +118,16 @@ ax.set_title(f"Findings by Model Developer (n={len(R):,})",
              pad=24, fontsize=33)
 ax.legend(fontsize=25, loc="lower right", frameon=False)
 
-p = os.path.join(OUT, "02_findings_per_model_developer.png")
+p = out_path("02_findings_per_model_developer")
 # One line, below the axes in figure coordinates. Inside the axes it printed on top of the x
 # tick labels and the axis title. The matching rule used to be spelled out here too; it lives in
 # the figure caption in the paper instead, which is where a reader looks for it.
-fig.text(0.5, -0.02,
-         f"A finding naming several developers counts once per developer, so bars sum to more "
-         f"than {len(R):,}.",
-         fontsize=23, color="#555555", va="top", ha="center", transform=fig.transFigure)
-fig.savefig(p, bbox_inches="tight", pad_inches=0.3)
+if NOTES:
+    fig.text(0.5, -0.02,
+             f"A finding naming several developers counts once per developer, so bars sum to more "
+             f"than {len(R):,}.",
+             fontsize=23, color="#555555", va="top", ha="center", transform=fig.transFigure)
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.3))
 plt.close(fig)
 print(f"wrote {p}")
 for k in order:

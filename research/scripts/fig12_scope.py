@@ -64,7 +64,7 @@ for yi, (key, disp) in zip(y, SCOPES):
                 edgecolor="white", linewidth=2.5)
         if frac > 0.055:
             ax.text(left + frac / 2, yi, f"{c[okey]}\n{frac:.0%}", ha="center", va="center",
-                    fontsize=24, color="white", fontweight="bold", linespacing=1.25)
+                    fontsize=24, color=on_colour(col), fontweight="bold", linespacing=1.25)
         left += frac
     # the headline figure for each group, just past the bar
     short = (c["Accountability gap (no action)"] + c["Under-response (gap)"]) / len(g)
@@ -84,8 +84,9 @@ for s in ("top", "right", "left"):
 ax.set_xlabel("Share of the evaluator's significant-risk findings", fontsize=21, labelpad=14)
 ax.set_title("Outcome by Evaluator Type (Tier A, C1)",
              fontsize=33, color="#111111", pad=48, loc="left")
-ax.text(0, 1.055, "Significant-risk findings that name a company "
-        f"(n={len(H)})", transform=ax.transAxes, fontsize=17, color=MUTED, va="bottom")
+if NOTES:
+    ax.text(0, 1.055, "Significant-risk findings that name a company "
+            f"(n={len(H)})", transform=ax.transAxes, fontsize=17, color=MUTED, va="bottom")
 
 hand = [plt.Rectangle((0, 0), 1, 1, facecolor=col) for _, _, col in OUT]
 ax.legend(hand, [lab for _, lab, _ in OUT], loc="upper center",
@@ -95,16 +96,19 @@ gov = [r for r in H if r["Scope"] == "government-AISI"]
 tp = [r for r in H if r["Scope"] == "third-party-evaluator"]
 gs = sum(1 for r in gov if r["Proportionality"] != "Proportionate")
 ts = sum(1 for r in tp if r["Proportionality"] != "Proportionate")
-fig.text(0.012, 0.012,
-         f"Government institutes {gs}/{len(gov)} = {gs/len(gov):.1%} fall short · third-party evaluators "
-         f"{ts}/{len(tp)} = {ts/len(tp):.1%}. The headline does not rest on pooling the two: it holds within "
-         "each.\nBars are 100% stacked because the groups differ in size; counts are printed inside. "
-         f"Corpus-wide the split is {sum(1 for r in R if r['Scope']=='government-AISI')} government "
-         f"and {sum(1 for r in R if r['Scope']=='third-party-evaluator')} third-party findings.",
-         fontsize=13.5, color=INK_2, linespacing=1.65)
-fig.subplots_adjust(left=0.185, right=0.895, top=0.80, bottom=0.30)
-p = os.path.join(CHARTS_OUT, "12_evaluator_scope.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.35)
+if NOTES:
+    fig.text(0.012, 0.012,
+             f"Government institutes {gs}/{len(gov)} = {gs/len(gov):.1%} fall short · third-party evaluators "
+             f"{ts}/{len(tp)} = {ts/len(tp):.1%}. The headline does not rest on pooling the two: it holds within "
+             "each.\nBars are 100% stacked because the groups differ in size; counts are printed inside. "
+             f"Corpus-wide the split is {sum(1 for r in R if r['Scope']=='government-AISI')} government "
+             f"and {sum(1 for r in R if r['Scope']=='third-party-evaluator')} third-party findings.",
+             fontsize=13.5, color=INK_2, linespacing=1.65)
+# top and bottom reserve room for the subtitle and the footnote; both go in the ICLR set
+fig.subplots_adjust(left=0.185, right=0.895,
+                    top=0.80 if NOTES else 0.96, bottom=0.30 if NOTES else 0.20)
+p = out_path("12_evaluator_scope")
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.35))
 plt.close(fig)
 print(f"wrote {p}")
 for key, disp in SCOPES:

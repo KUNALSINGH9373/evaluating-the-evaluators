@@ -65,7 +65,7 @@ def style(i, s):
     return ("#3A4650", "bold") if i == 0 else (INK, "normal")
 
 
-p = draw_table(os.path.join(CHARTS_OUT, "28_three_findings_provenance.png"),
+p = draw_table(out_path("28_three_findings_provenance"),
                COLS, rows, fig_w=9.4, fs=13, cell_style=style, header=False)
 print(f"wrote {p}")
 for c in cols_data:

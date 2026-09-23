@@ -48,7 +48,7 @@ def dev(r):
     return "Other / unnamed"
 
 def save(fig,name):
-    p=os.path.join(OUT,name); fig.savefig(p,bbox_inches="tight",pad_inches=0.45); plt.close(fig)
+    p=out_path(name); fig.savefig(p,bbox_inches="tight",pad_inches=pad(0.45)); plt.close(fig)
     print("  ",name)
 
 def vbar(ax,labels,vals,colors,total=None,pct=True,fs=27):
@@ -209,10 +209,7 @@ ax.set_title("Proportionality Outcome by Severity (Tier A)",pad=26); ax.set_ylab
 save(fig,"10_proportionality_by_severity.png")
 
 # ---------------------------------------------------------------- 11 domains
-d=collections.Counter()
-for r in ROWS:
-    for p in [x.strip() for x in r.get("Domain","").split(";") if x.strip()]: d[p]+=1
-c=d.most_common()
+c=domain_counts(ROWS).most_common()
 fig,ax=plt.subplots(figsize=(18,14))
 pal=[BLUE,ORANGE,TEAL,PURPLE,GREEN,MAGENTA,AMBER,SKY,LIME,RED]
 hbar(ax,[k for k,_ in c],[v for _,v in c],[pal[i%len(pal)] for i in range(len(c))],len(ROWS))

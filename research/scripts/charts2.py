@@ -29,7 +29,7 @@ tier=lambda r:("A" if r.get("Action Trackable?")=="yes" else "B" if r.get("Eval?
 A=[r for r in R if tier(r)=="A"]; H=[r for r in A if r.get("Severity (C1/C2) majority")=="C1"]
 isgap=lambda r: r.get("Proportionality")=="Accountability gap (no action)"
 def save(fig,n):
-    fig.savefig(os.path.join(OUT,n),bbox_inches="tight",pad_inches=0.42); plt.close(fig); print("  ",n)
+    fig.savefig(out_path(n),bbox_inches="tight",pad_inches=pad(0.42)); plt.close(fig); print("  ",n)
 
 # 07 is a BAR chart, owned by charts.py. A donut lived here and silently overwrote it,
 # because charts2.py runs second. Removed 2026-08-18 — do not re-add a second writer
@@ -53,10 +53,7 @@ ax.set_xlabel("Findings")
 save(fig,"01_findings_per_institution.png")
 
 # ---- 11 LOLLIPOP: domains -------------------------------------------------
-d=collections.Counter()
-for r in R:
-    for p in [x.strip() for x in r.get("Domain","").split(";") if x.strip()]: d[p]+=1
-c=d.most_common()
+c=domain_counts(R).most_common()
 fig,ax=plt.subplots(figsize=(17,13))
 y=np.arange(len(c))[::-1]; v=[n for _,n in c]
 pal=ramp(10)
@@ -81,7 +78,7 @@ for i,(lab,S) in enumerate(rows):
         ax.barh(i,frac,left=left,color=col,height=0.55,zorder=3)
         if frac>0.045:
             ax.text(left+frac/2,i,f"{n}\n{frac:.0%}",ha="center",va="center",fontsize=23,
-                    fontweight="bold",color="white",linespacing=1.3)
+                    fontweight="bold",color=on_colour(col),linespacing=1.3)
         left+=frac
 ax.set_yticks(range(len(rows))); ax.set_yticklabels([f"{l}\n(n={len(S)})" for l,S in rows],fontsize=25)
 ax.invert_yaxis(); ax.set_xlim(0,1); ax.xaxis.set_major_formatter(PercentFormatter(1.0))
@@ -231,7 +228,10 @@ pts=[]
 for inst,S in collections.defaultdict(list,{k:[r for r in H if r["Institution"]==k]
         for k in {r["Institution"] for r in H}}).items():
     if len(S)>=4: pts.append((inst,len(S),sum(1 for r in S if isgap(r))/len(S)))
-pts.sort(key=lambda p:-p[1])
+# Ties broke in set-iteration order, which varies run to run under string hash
+# randomisation, so two evaluators on the same count swapped label positions between
+# builds and the figure was not byte-reproducible. Name is the stable tiebreak.
+pts.sort(key=lambda p:(-p[1],p[0]))
 fig,ax=plt.subplots(figsize=(17,11))
 xs=[p[1] for p in pts]; ys=[p[2] for p in pts]
 ax.axhline(sum(1 for r in H if isgap(r))/len(H),color=MUTED,linestyle="--",linewidth=3,zorder=1)

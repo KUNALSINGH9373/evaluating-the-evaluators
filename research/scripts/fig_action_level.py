@@ -25,7 +25,7 @@ plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "Deja
                      "figure.facecolor": "white", "axes.facecolor": "white",
                      "savefig.facecolor": "white"})
 INK, SOFT, FAINT = "#111111", "#4A4A4A", "#8A959F"
-FIG_W = 13.6   # narrow on purpose: a wide canvas left the text columns short and airy
+FIG_W = 13.6 * FONT_SCALE   # narrow on purpose: a wide canvas left the text columns short and airy
 
 
 def norm(v):
@@ -105,11 +105,13 @@ def render(fig_h):
             y += em(fs) * lead
         return y
 
-    ax.text(2.0, em(34) * 0.84, "The Action Level Scale",
-            fontsize=34, fontweight="bold", color=INK, va="baseline")
-    ax.text(2.0, em(34) * 0.84 + em(19) * 1.70,
-            "Action Level — the strength of the located company response, with a Tier A example "
-            "of each.", fontsize=22, color=SOFT, va="baseline")
+    if TITLES:
+        ax.text(2.0, em(34) * 0.84, "The Action Level Scale",
+                fontsize=34, fontweight="bold", color=INK, va="baseline")
+    if NOTES:
+        ax.text(2.0, em(34) * 0.84 + em(19) * 1.70,
+                "Action Level — the strength of the located company response, with a Tier A example "
+                "of each.", fontsize=22, color=SOFT, va="baseline")
 
     BX, BW = 2.0, 25.0        # level block: name and meaning
     FX, FW = 29.5, 33.5       # the finding
@@ -145,9 +147,10 @@ def render(fig_h):
                                     facecolor=col, edgecolor="none", zorder=1, clip_on=False))
         block_h = em(fs_name) * 1.08 + em(19) * 1.32 * nb
         by = y + (h - block_h) / 2 + em(fs_name) * 0.78
-        ax.text(BX + 1.5, by, name, fontsize=fs_name, fontweight="bold", color="white",
+        _on = on_colour(col)
+        ax.text(BX + 1.5, by, name, fontsize=fs_name, fontweight="bold", color=_on,
                 va="baseline", zorder=3)
-        para(BX + 1.5, by + em(fs_name) * 1.00, desc, 19, "normal", "#FFFFFF", BW - 3.0, 1.32)
+        para(BX + 1.5, by + em(fs_name) * 1.00, desc, 19, "normal", _on, BW - 3.0, 1.32)
 
         # centre each column's own block of lines: the row is as tall as its tallest element,
         # and dumping the shorter columns at the top is what read as wasted space
@@ -168,8 +171,8 @@ def render(fig_h):
 probe, need = render(9.0)
 plt.close(probe)
 fig, _ = render(need + 0.14)
-p = os.path.join(OUT, "26_action_level_scale.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.20)
+p = out_path("26_action_level_scale")
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.20))
 plt.close(fig)
 print(f"wrote {p}")
 for name, _, fid, _, _ in LEVELS:

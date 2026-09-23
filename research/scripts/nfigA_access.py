@@ -16,7 +16,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dataset_source as ds
 from palette import *
 
-OUT = os.path.expanduser("~/MATS/Research/AISI_Evals/charts/neurips")
+OUT = os.environ.get("AISIEVAL_NFIG_OUT",
+                     os.path.join(CHARTS_OUT, "neurips"))
+os.makedirs(OUT, exist_ok=True)
 plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "DejaVu Sans",
                      "figure.facecolor": "white", "axes.facecolor": "white",
                      "savefig.facecolor": "white"})
@@ -48,10 +50,11 @@ rate, ns = [], []
 for k in sub:
     g = [r for r in H if r["Access Type"] == k]
     ns.append(len(g)); rate.append(sum(1 for r in g if r["Action Level"] == "None") / len(g))
-a2.bar(range(len(sub)), rate, color=[RED if v > 0.5 else GREEN for v in rate], width=0.62, zorder=3)
+_bc = [RED if v > 0.5 else GREEN for v in rate]
+a2.bar(range(len(sub)), rate, color=_bc, width=0.62, zorder=3)
 for i, (v, n) in enumerate(zip(rate, ns)):
     a2.text(i, v + 0.025, f"{v:.0%}", ha="center", va="bottom", fontsize=24.1, fontweight="bold")
-    a2.text(i, 0.02, f"n = {n}", ha="center", va="bottom", fontsize=17.0, color="white")
+    a2.text(i, 0.02, f"n = {n}", ha="center", va="bottom", fontsize=17.0, color=on_colour(_bc[i]))
 a2.set_xticks(range(len(sub))); a2.set_xticklabels([k.replace("-", "-\n") for k in sub], fontsize=18.5)
 a2.set_ylim(0, 1.05); a2.set_yticks([0, .25, .5, .75, 1.0])
 a2.set_yticklabels(["0%", "25%", "50%", "75%", "100%"], fontsize=17.0)
@@ -65,8 +68,8 @@ fig.text(0.012, 0.012, "Association, not causation: companies choose who receive
          "access, and a pre-deployment finding is answered in the launch card partly by construction.",
          fontsize=15.6, color="#4A4A4A")
 fig.subplots_adjust(left=0.06, right=0.99, top=0.90, bottom=0.17, wspace=0.22)
-p = os.path.join(OUT, "figA2_access_type.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.25); plt.close(fig)
+p = os.path.join(OUT, "figA2_access_type." + FMT)
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.25)); plt.close(fig)
 print(f"wrote {p}")
 print("  corpus:", {k: c[k] for k in keys})
 print("  no-response rate:", {k: f"{v:.1%} (n={n})" for k, v, n in zip(sub, rate, ns)})

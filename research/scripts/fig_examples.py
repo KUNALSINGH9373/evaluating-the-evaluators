@@ -151,8 +151,8 @@ def render(fig_h):
 probe, need = render(8.0)
 plt.close(probe)
 fig, _ = render(need + 0.10)
-p = os.path.join(OUT, "27_three_outcomes.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.18)
+p = out_path("27_three_outcomes")
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.18))
 plt.close(fig)
 print(f"wrote {p}")
 for fid, *_ in CASES:

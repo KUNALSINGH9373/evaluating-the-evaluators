@@ -21,7 +21,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dataset_source as ds
 from palette import *
 
-OUT = os.path.expanduser("~/MATS/Research/AISI_Evals/charts/neurips")
+OUT = os.environ.get("AISIEVAL_NFIG_OUT",
+                     os.path.join(CHARTS_OUT, "neurips"))
+os.makedirs(OUT, exist_ok=True)
 plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "DejaVu Sans",
                      "figure.facecolor": "white", "axes.facecolor": "white",
                      "savefig.facecolor": "white"})
@@ -57,11 +59,13 @@ fig = plt.figure(figsize=(16.0, 9.0))
 ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(100, 0); ax.axis("off")
 
 L, TOPY, CW, CH = 18.0, 29.0, 19.5, 23.0
-ax.text(2.0, 9.0, "The Proportionality Matrix",
-        fontsize=33.5, fontweight="bold", color=INK, va="baseline")
-ax.text(2.0, 16.5, "Proportionality is a function of these two columns and nothing else. "
-        "The bar is severity-relative: C1 needs a substantive response, C2 needs at least a partial one.",
-        fontsize=17.4, color=SOFT, va="baseline")
+if TITLES:
+    ax.text(2.0, 9.0, "The Proportionality Matrix",
+            fontsize=33.5, fontweight="bold", color=INK, va="baseline")
+if NOTES:
+    ax.text(2.0, 16.5, "Proportionality is a function of these two columns and nothing else. "
+            "The bar is severity-relative: C1 needs a substantive response, C2 needs at least a partial one.",
+            fontsize=17.4, color=SOFT, va="baseline")
 
 for j, a in enumerate(AL):
     ax.text(L + j * CW + CW / 2, TOPY - 6.4, a, ha="center", fontsize=22.8, fontweight="bold", color=INK)
@@ -105,8 +109,8 @@ ax.text(2.0, 92.0, f"Outcome is derived, never hand-entered. Of the {rowN['C1']}
         f"across all {len(A)} Tier A findings, {short} do.",
         fontsize=14.7, color=FAINT, va="baseline")
 
-p = os.path.join(OUT, "fig2_severity_x_action.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.25)
+p = os.path.join(OUT, "fig2_severity_x_action." + FMT)
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.25))
 plt.close(fig)
 print(f"wrote {p}")
 for s in SV: print(f"  {s}: " + " · ".join(f"{a} {M[(s,a)]}" for a in AL) + f"  (n={rowN[s]})")

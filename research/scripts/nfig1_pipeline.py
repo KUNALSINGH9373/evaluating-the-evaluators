@@ -21,7 +21,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dataset_source as ds
 from palette import *
 
-OUT = os.path.expanduser("~/MATS/Research/AISI_Evals/charts/neurips")
+OUT = os.environ.get("AISIEVAL_NFIG_OUT",
+                     os.path.join(CHARTS_OUT, "neurips"))
+os.makedirs(OUT, exist_ok=True)
 os.makedirs(OUT, exist_ok=True)
 plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "DejaVu Sans",
                      "figure.facecolor": "white", "axes.facecolor": "white",
@@ -93,10 +95,11 @@ for n, col, lab in seg:
     ax.add_patch(FancyBboxPatch((BX, yy), BWID, h, boxstyle="square,pad=0",
                                 facecolor=col, edgecolor="white", linewidth=1.6))
     # count and label both sit inside the segment; every segment is tall enough for one line
+    _on = on_colour(col)
     ax.text(BX + 1.6, yy + h / 2, f"{n}", ha="left", va="center", fontsize=23.5,
-            fontweight="bold", color="white")
+            fontweight="bold", color=_on)
     ax.text(BX + 7.4, yy + h / 2, lab.replace("\n", " "), ha="left", va="center",
-            fontsize=15.2, color="white")
+            fontsize=15.2, color=_on)
 ax.text(BX, top + 1.6, f"response outcomes  (n = {len(H)})", fontsize=16.6, color=SOFT)
 
 # the fall-short bracket spans the top two segments, at the far right so it clears the arrow
@@ -108,16 +111,19 @@ for yv in (ybot, ytop):
 ax.text(BRX + 1.6, (ytop + ybot) / 2, f"{short/len(H):.0%}\nfall short", ha="left", va="center",
         fontsize=22.1, fontweight="bold", color=RED, linespacing=1.3)
 
-ax.text(2.0, 97.0, "The Accountability Pipeline (Tier A, C1)",
-        fontsize=34.5, fontweight="bold", color=INK, va="top")
-ax.text(2.0, 86.5, f"{gap} of {len(H)} significant-risk findings about named frontier systems "
-        f"drew no documented company response.", fontsize=20.0, color=SOFT, va="top")
-ax.text(2.0, 27.0, "Boxes are schematic, not to scale; the outcome bar is proportional. A finding "
-        "falls short when the company response is absent, or weaker than the finding's severity "
-        "warrants.", fontsize=14.5, color=FAINT, va="top")
+if TITLES:
+    ax.text(2.0, 97.0, "The Accountability Pipeline (Tier A, C1)",
+            fontsize=34.5, fontweight="bold", color=INK, va="top")
+if NOTES:
+    ax.text(2.0, 86.5, f"{gap} of {len(H)} significant-risk findings about named frontier systems "
+            f"drew no documented company response.", fontsize=20.0, color=SOFT, va="top")
+if NOTES:
+    ax.text(2.0, 27.0, "Boxes are schematic, not to scale; the outcome bar is proportional. A finding "
+            "falls short when the company response is absent, or weaker than the finding's severity "
+            "warrants.", fontsize=14.5, color=FAINT, va="top")
 
-p = os.path.join(OUT, "fig1_pipeline.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.25)
+p = os.path.join(OUT, "fig1_pipeline." + FMT)
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.25))
 plt.close(fig)
 print(f"wrote {p}")
 print(f"  corpus {len(R)} · TierA {T['A']} (B {T['B']} C {T['C']}) · C1 {SEV['C1']} · headline {len(H)}")

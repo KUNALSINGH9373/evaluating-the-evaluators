@@ -29,7 +29,7 @@ plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "Deja
 INK, SOFT, FAINT, RULE = "#111111", "#4A4A4A", "#6E7A85", "#D3DAE1"
 PANEL = "#F3F6F9"
 ACCENT = INSTTYPE["Government"]
-FIG_W = 10.6   # portrait: a narrow column, height solved for by the two-pass render
+FIG_W = 10.6 * FONT_SCALE   # portrait: a narrow column, height solved for by the two-pass render
 
 
 def norm(v):
@@ -128,8 +128,9 @@ def render(fig_h):
                 fontweight="bold", color=ACCENT, va="baseline", zorder=3)
 
     x = X0 + PADX
-    ax.text(X0, em(42) * 0.80, "Finding Eligibility Criteria", fontsize=42, fontweight="bold",
-            color=INK, va="baseline", zorder=3)
+    if TITLES:
+        ax.text(X0, em(42) * 0.80, "Finding Eligibility Criteria", fontsize=42, fontweight="bold",
+                color=INK, va="baseline", zorder=3)
     TOP = em(42) * 0.80 + u(0.30)
     HEAD = u(0.30) + em(26) * 0.72 + em(26) * 1.30   # panel title row
 
@@ -201,8 +202,8 @@ probe, need = render(TRIAL)
 plt.close(probe)
 fig, _ = render(need + 0.22)
 
-p = os.path.join(OUT, "25_what_is_a_finding.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.3)
+p = out_path("25_what_is_a_finding")
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.3))
 plt.close(fig)
 print(f"wrote {p}   {N_FIND:,} findings · {N_REP} reports · {N_ORG} orgs · {PER_REP:.2f}/report")
 print("  " + " · ".join(f"{y}: {a} reports / {b} findings" for y, a, b in BY_YEAR))

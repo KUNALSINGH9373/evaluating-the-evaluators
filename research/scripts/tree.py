@@ -106,11 +106,13 @@ FS_TITLE, FS_SUB = 34, 19     # both were cut with the canvas: at the old 48/26 
 XMAX = 84.0                   # the drawing ends near 80 data units; carrying the old 100 kept an
                               # empty band down the right-hand side that tight-bbox could not trim,
                               # because an invisible axes still contributes its own extent.
-FIG_W = 12.2                  # XMAX and FIG_W move together: their ratio fixes the inches-per-unit
+FIG_W = 12.2 * FONT_SCALE                  # XMAX and FIG_W move together: their ratio fixes the inches-per-unit
                               # scale, so cropping the band does not resize anything drawn in it.
 WIRE_C = "#C9D6E0"
 
-total = TITLE + NLEAF + GAP * (len(groups) - 1) + FOOT
+_title_band = TITLE if (TITLES or NOTES) else 0.30
+_foot_band = FOOT if NOTES else 0.30
+total = _title_band + NLEAF + GAP * (len(groups) - 1) + _foot_band
 fig, ax = plt.subplots(figsize=(FIG_W, total * UNIT_IN))
 # The axes fills the figure. Default margins left the bars using two thirds of the width while
 # the oversized title overflowed to the right, and bbox_inches="tight" then padded the canvas out
@@ -133,17 +135,19 @@ def text_w(s, fs, weight="normal"):
     return abs(inv.transform((bb.width, 0))[0] - inv.transform((0, 0))[0])
 
 
-ax.text(0, 0.92, "Findings by Institution Type",
-        fontsize=FS_TITLE, color="#111111", fontweight="bold", va="baseline", ha="left")
+if TITLES:
+    ax.text(0, 0.92, "Findings by Institution Type",
+            fontsize=FS_TITLE, color="#111111", fontweight="bold", va="baseline", ha="left")
 # Kept short on purpose: a full sentence at this weight runs wider than the figure.
 _sub = f"Bar length = findings, on one scale  ·  top {TOPN} institutions per type"
-ax.text(0, 1.90, _sub, fontsize=FS_SUB, color="#4A4A4A", fontweight="bold",
-        va="baseline", ha="left")
+if NOTES:
+    ax.text(0, 1.90, _sub, fontsize=FS_SUB, color="#4A4A4A", fontweight="bold",
+            va="baseline", ha="left")
 assert text_w("Findings by Institution Type", FS_TITLE, "bold") <= XMAX, "title overflows the canvas"
 assert text_w(_sub, FS_SUB, "bold") <= XMAX, "subtitle overflows the canvas"
 
 # vertical extent of each branch's block of leaves
-y, blocks = TITLE, []
+y, blocks = _title_band, []
 for k, cnt, leaves in groups:
     blocks.append((k, cnt, leaves, y, y + len(leaves)))
     y += len(leaves) + GAP
@@ -173,10 +177,11 @@ for (k, cnt, leaves, y0, y1), mid in zip(blocks, mids):
     # "Non-Profit (Independent)" on one line is what set the old node width. Breaking it at the
     # bracket costs a row of node height and buys back a third of the figure's horizontal budget.
     name = k.replace(" (", "\n(")
+    _on = on_colour(col)
     ax.text(TX + 1.2, mid - 1.00, f"{cnt}", ha="left", va="center",
-            fontsize=FS_BIG, color="white", fontweight="bold")
+            fontsize=FS_BIG, color=_on, fontweight="bold")
     ax.text(TX + 1.2, mid + 0.95, name, ha="left", va="center",
-            fontsize=FS_BRANCH, color="white", linespacing=1.3)
+            fontsize=FS_BRANCH, color=_on, linespacing=1.3)
     for line in name.split("\n"):
         assert text_w(line, FS_BRANCH) + 2.4 <= TW, f"branch label overflows its node: {line}"
 
@@ -203,7 +208,7 @@ for (k, cnt, leaves, y0, y1), mid in zip(blocks, mids):
                 fontsize=FS_NUM, color=ink, fontweight="bold")
         if nm_inside:
             ax.text(BX + 0.9, ly, nm, ha="left", va="center", fontsize=FS_NAME,
-                    color="white", fontweight="bold")
+                    color=on_colour(col), fontweight="bold")
         else:
             lx = BX + w + 0.9 + text_w(str(v), FS_NUM, "bold") + 1.3
             ax.text(lx, ly, nm, ha="left", va="center", fontsize=FS_NAME, color="#1A1A1A")
@@ -211,13 +216,14 @@ for (k, cnt, leaves, y0, y1), mid in zip(blocks, mids):
 
 _foot_l1 = 'Institution Type field; compound values (e.g. "Government;Lab") fold into'
 assert text_w(_foot_l1, FS_FOOT) <= XMAX, "footnote line overflows the canvas"
-ax.text(0, total - FOOT + 0.55,
-        f'Institution Type field; compound values (e.g. "Government;Lab") fold into\n'
-        f'their primary type, so the four branches sum to {len(R):,}.',
-        fontsize=FS_FOOT, color="#333333", va="top", ha="left", linespacing=1.45)
+if NOTES:
+    ax.text(0, total - _foot_band + 0.55,
+            f'Institution Type field; compound values (e.g. "Government;Lab") fold into\n'
+            f'their primary type, so the four branches sum to {len(R):,}.',
+            fontsize=FS_FOOT, color="#333333", va="top", ha="left", linespacing=1.45)
 
-p = os.path.join(OUT, "13_institution_type_tree.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.22)
+p = out_path("13_institution_type_tree")
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.22))
 plt.close(fig)
 print(f"wrote {p}  ({NLEAF} bars, scale max {VMAX}, {FIG_W:.1f}x{total * UNIT_IN:.1f} in)")
 for k, cnt, leaves in groups:

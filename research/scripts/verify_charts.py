@@ -12,6 +12,7 @@ import os, sys, csv, datetime, collections, re
 import openpyxl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dataset_source
+from palette import domain_counts   # the chart's own folding rule, not a second copy of it
 
 # Only the workbook path and sheet name are shared with the generators, so there is one source of
 # dataset truth. Every derivation below is still written independently.
@@ -208,11 +209,11 @@ for s in ("C1", "C2"):
     row = collections.Counter(r["Action Level"] for r in A if r["Severity (C1/C2) majority"] == s)
     print(f"      {s}   " + " · ".join(f"{k} {row[k]}" for k in ("None","Acknowledged","Partial","Substantive")))
 
-dom = collections.Counter()
-for r in R:
-    for d in r.get("Domain", "").split(";"):
-        if d.strip(): dom[d.strip()] += 1
-print(f"\n  11_domain_distribution   multi-label, sums to {sum(dom.values())} over {len(R)} rows")
+# The chart folds each Domain entry to its head before counting, so the verifier has to
+# recompute the same way or it reports a total the figure never drew.
+dom = domain_counts(R)
+print(f"\n  11_domain_distribution   multi-label, sums to {sum(dom.values())} over {len(R)} rows"
+      f"  ({len(dom)} folded domains)")
 for k, v in dom.most_common(10):
     print(f"      {k:<52} {v:>6}")
 

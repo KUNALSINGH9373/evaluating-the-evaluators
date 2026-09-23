@@ -32,7 +32,13 @@ nrep=len({r["Report ID"] for r in R if r.get("Report ID")}); ninst=len({r["Insti
 # No heading inside the figure. A title baked into the image duplicates the caption wherever the
 # figure is placed, and the two then have to be kept in sync by hand; the y-range is reclaimed so
 # the diagram fills the canvas instead of leaving a band of white where the heading was.
-fig,ax=plt.subplots(figsize=(20,7.6)); ax.set_xlim(0,100); ax.set_ylim(0,88); ax.axis("off")
+# The note sat at y=10.5; without it the band below the box footers is dead space, and the
+# figure printed with a fifth of its height blank. Both the y-range and the canvas shrink.
+_YBOT, _FIGH = (0, 7.6) if NOTES else (18, 6.2)
+# Larger type needs a wider canvas or the three box footers, which are set to a fixed box pitch,
+# run into one another. This is the same rule the hand-laid figures use.
+fig,ax=plt.subplots(figsize=(20*max(FONT_SCALE,1.0),_FIGH)); ax.set_xlim(0,100)
+ax.set_ylim(_YBOT,88); ax.axis("off")
 # Plain-language labels throughout: no tier letters, no severity codes.
 # The span was hard-coded "Jan 2023 - Jul 2026" and contradicted both the extended corpus window
 # and this figure's own cutoff footer. Derive it from the data so it cannot drift again.
@@ -66,7 +72,7 @@ tot=len(H); y=BY
 for n,col,lab in ((pro,GREEN,"Proportionate"),(und,AMBER,"Under-response"),(gap,RED,"No action")):
     h=BH*n/tot
     ax.add_patch(plt.Rectangle((BX,y),BW,h,facecolor=col,edgecolor="none"))
-    ax.text(BX+BW/2,y+h/2,str(n),ha="center",va="center",fontsize=24,color="white")
+    ax.text(BX+BW/2,y+h/2,str(n),ha="center",va="center",fontsize=24,color=on_colour(col))
     ax.text(BX+BW+1.4,y+h/2,lab,ha="left",va="center",fontsize=18,color=col)
     y+=h
 ax.text(BX+BW/2,BY+BH+2.6,f"response outcomes (n = {tot})",ha="center",fontsize=18,color="#111111")
@@ -77,10 +83,11 @@ ax.text(91.4,(gy0+BY+BH)/2+7.5,"FALLS SHORT\nOF THE\nSTANDARD",ha="left",va="cen
         fontsize=18,color=RED,linespacing=1.45)
 ax.text(91.4,(gy0+BY+BH)/2-8.0,f"{(gap+und)/tot:.0%}",ha="left",va="center",
         fontsize=36,color=RED,fontweight="bold")
-ax.text(2,10.5,"Boxes are schematic (not to scale); the outcome bar is proportional. A finding falls short when the named company\n"
-        "shows no located public response (red) or only a partial / acknowledged one (orange).",
-        fontsize=15.5,color=INK_2,va="top",linespacing=1.6)
-fig.savefig(os.path.join(OUT,"00_title_hero.png"),bbox_inches="tight",pad_inches=0.35); plt.close(fig)
+if NOTES:   # the ICLR build omits it: this sentence belongs in the LaTeX \\caption, not in the artwork
+    ax.text(2,10.5,"Boxes are schematic (not to scale); the outcome bar is proportional. A finding falls short when the named company\n"
+            "shows no located public response (red) or only a partial / acknowledged one (orange).",
+            fontsize=15.5,color=INK_2,va="top",linespacing=1.6)
+fig.savefig(out_path("00_title_hero"),bbox_inches="tight",pad_inches=pad(0.35)); plt.close(fig)
 print("  00_title_hero.png  (schematic funnel)")
 
 # The institution tree lives in tree.py. It used to be here, and a stale copy of this file

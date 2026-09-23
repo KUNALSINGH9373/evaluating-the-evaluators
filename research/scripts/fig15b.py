@@ -66,14 +66,15 @@ ax.grid(axis="y", color=GRID, zorder=0)
 for s in ("top", "right"):
     ax.spines[s].set_visible(False)
 ax.legend(fontsize=17, frameon=False, loc="lower left")
-fig.text(0.02, 0.015,
-         f"Tier A ∩ severity C1, n={len(H)}. 2023 and 2024 are small samples; 2026 is partial (cutoff 29 August 2026). "
-         "The two metrics trend\nin opposite directions: part of the decline in shortfall reflects composition — later "
-         "years hold more pre-deployment\nevaluations, which are answered in the launch card by construction.",
-         fontsize=13.5, color=INK_2, linespacing=1.6)
-fig.tight_layout(rect=[0, 0.10, 1, 1])
-p = os.path.join(OUT, "15b_shortfall_rate_by_year.png")
-fig.savefig(p, bbox_inches="tight", pad_inches=0.3)
+if NOTES:
+    fig.text(0.02, 0.015,
+             f"Tier A ∩ severity C1, n={len(H)}. 2023 and 2024 are small samples; 2026 is partial (cutoff 29 August 2026). "
+             "The two metrics trend\nin opposite directions: part of the decline in shortfall reflects composition — later "
+             "years hold more pre-deployment\nevaluations, which are answered in the launch card by construction.",
+             fontsize=13.5, color=INK_2, linespacing=1.6)
+fig.tight_layout(rect=[0, 0.10 if NOTES else 0.0, 1, 1])
+p = out_path("15b_shortfall_rate_by_year")
+fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.3))
 plt.close(fig)
 print(f"wrote {p}")
 print("  falls short:", " ".join(f"{y}={s:.0f}%" for y, s in zip(years, short)))
