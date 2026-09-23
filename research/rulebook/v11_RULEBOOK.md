@@ -27,7 +27,7 @@ preserved in `Notes` as legacy audit data.
 **Schema:** one sheet named `v11 final`; 39 named columns; rows sorted Tier A, Tier B, Tier C and
 then newest-to-oldest within each tier.
 
-**Last updated:** 2026-09-07.
+**Last updated:** 2026-09-23.
 
 ---
 
@@ -202,30 +202,64 @@ link to the finding, report, evaluation, or result.
 Rows without a completed Channel-B search are missing, not negative. Policy Level measures
 documented uptake, not whether the finding caused the policy response.
 
-### Evidentiary exception for unpublished binding instruments
+### 9.1 Disclosed government directives to a named company
 
-The source classes above define where Channel B *searches*. Where an instrument is unambiguously
-binding but is lawfully not published — for example a single-company regulatory directive issued
-by letter, or any order that by convention does not appear in a public register — it may be coded
-`Binding policy action` on the regulated recipient's own disclosure together with contemporaneous
-independent reporting. The form of the instrument is immaterial; what matters is that it is
-enforceable, that it imposes a mandatory requirement, and that its non-publication is lawful rather
-than a gap in the search.
+**Where an identified company states that it received a directive from a government — to change,
+restrict, suspend, condition or withdraw a frontier model, or to alter how that model is made
+available — that is a `Binding policy action`.** It is coded on the company's own disclosure. No
+official publication is required, and the absence of one is never a reason to code it lower.
 
-This exception concerns **evidence**, not the definition of `Binding policy action`. The boundary
+A directive is a command, not a request. Where a government tells a named company what it must do
+with a named frontier system, and the company does it, the enforceable obligation is the substance
+of what happened — whatever form the instrument took, and whether or not it ever reaches a public
+register. Export controls, licence conditions, single-company orders and security directives
+routinely issue by letter and are lawfully never published. Requiring a published instrument would
+record `No policy uptake identified` for precisely the cases where government action on a finding
+was strongest, so the search rule would produce the opposite of what the dataset measures.
+
+The presumption is rebuttable in one direction only, and only by the disclosure itself. If the
+company's own account describes something it was free to decline — a request, an invitation, a
+voluntary undertaking, a commitment it offered — the enforceability test above governs and the row
+is `Non-binding policy-related uptake`. **Silence does not rebut:** a disclosure that does not say
+whether compliance was optional is read as a directive, because that is what the word means.
+
+The row must record the issuing authority, what the company was required to do, the dates, and the
+disclosure URL. Contemporaneous independent reporting is recorded wherever it exists and makes the
+row stronger, but **its absence does not disqualify the row** — the recipient's disclosure is
+admissible on its own.
+
+### 9.2 Channel B evidence, stated generally
+
+§9.1 is not a carve-out; it is the evidentiary rule for the whole channel, stated once:
+
+> **Channel B evidence is the instrument itself where it is published. Where the instrument is
+> lawfully unpublished, it is the regulated recipient's disclosure — a single-company regulatory
+> directive issued by letter, or any order that by convention does not appear in a public
+> register — with the instrument, the issuing authority and the mandatory requirement named, and
+> the absence of an official publication stated along with where it was sought.**
+
+The form of the instrument is immaterial; what matters is that it is enforceable, that it imposes a
+mandatory requirement, and that its non-publication is lawful rather than a gap in the search.
+
+§9.1 and §9.2 concern **evidence and the form of the instrument**, not the enforceability test
+itself. The boundary
 between the two positive levels remains enforceability: a government action taken to mitigate the
 risk, but creating no mandatory requirement — guidance, a warning, a consultation, a voluntary
 undertaking, a funding decision — is `Non-binding policy-related uptake`, however consequential it
 proves. Nothing in this exception moves such an action up a level.
 
-A row invoking this exception must carry an evidence note naming the instrument, the issuing
-authority, the mandatory requirement imposed, and every corroborating source, and must state
-explicitly that no official publication was located and where it was sought.
+A row coded on a recipient's disclosure must carry an evidence note naming the instrument, the
+issuing authority, the mandatory requirement imposed, and every corroborating source located, and
+must state explicitly that no official publication was found and where it was sought.
 
-**Invoked once, for `USCAISI-2026-06-CYB2`.** Reading the "official sources" clause as a strict
-evidentiary bar would record `No policy uptake identified` for the one case in the corpus where a
-government actually compelled a frontier developer to act — understating exactly what the dataset
-measures.
+**Applied once so far, to `USCAISI-2026-06-CYB2`.** Anthropic disclosed a Commerce Department
+export-control order, delivered by letter from the Secretary, prohibiting access to Claude Fable 5
+and Mythos 5 by any foreign national and taking both models offline globally for eighteen days.
+That is a government directive to limit a frontier model, disclosed by the company it was served
+on, and §9.1 codes it `Binding policy action` on that disclosure. Reading the "official sources"
+clause as a strict evidentiary bar would instead have recorded `No policy uptake identified` for
+the one case in the corpus where a government actually compelled a frontier developer to act —
+understating exactly what the dataset measures.
 
 That row qualifies on two independent grounds. The order itself imposed a prohibition that took
 both models offline globally for eighteen days. Separately, the controls were lifted on continuing
@@ -320,7 +354,7 @@ counts as corpus headline statistics.
 | 25 | Policy Level | No uptake, non-binding uptake, binding action, or blank if not searched. |
 | 26 | Policy Response | Concise official-policy description. |
 | 27 | Channel B Verbatim | Exact official-source quote. |
-| 28 | Channel B Evidence | Official government URL. |
+| 28 | Channel B Evidence | Official government URL, or the company's disclosure URL where §9.1 applies. |
 | 29 | Media Outlets | Independent coverage with URLs. |
 | 30 | Academic Citations | Citation evidence and retrieval date. |
 | 31 | Social Highlights | Notable public discussion with URLs. |
@@ -336,8 +370,9 @@ counts as corpus headline statistics.
 ## 14. Evidentiary and sign-off standard
 
 - **Real or empty:** never fill a cell merely to make the table complete.
-- Channel A uses company primary evidence; Channel B uses official government evidence; Channel C
-  uses independent third-party evidence.
+- Channel A uses company primary evidence; Channel B uses official government evidence, or the
+  regulated company's own disclosure where §9.1 applies; Channel C uses independent third-party
+  evidence.
 - A quote's presence in a source is necessary but not sufficient: it must be the evaluator's own
   assertion and materially support the Finding sentence.
 - Automated checks establish consistency and locate evidence; they do not replace independent human
@@ -348,6 +383,33 @@ counts as corpus headline statistics.
   severity, or combined-version blockers remain.
 
 ## Changelog
+
+- **2026-09-23 · §9.1 added: a disclosed government directive is binding on the company's own
+  word.** The rule now reads: where an identified company states that it received a directive from
+  a government to change, restrict, suspend, condition or withdraw a frontier model, or to alter
+  how it is made available, that is a `Binding policy action`, coded on the company's disclosure,
+  with no official publication required.
+
+  This replaces the narrower evidentiary exception, which admitted the recipient's disclosure only
+  alongside contemporaneous independent reporting. Corroboration is now recorded where it exists
+  and strengthens a row, but no longer gates it. The argument for the change is that the
+  instruments that matter most here — export controls, licence conditions, single-company security
+  directives — issue by letter and are lawfully never published, so a published-instrument
+  requirement records `No policy uptake identified` for exactly the cases where government action
+  on a finding was strongest.
+
+  **What did not move.** The enforceability test between the two positive levels is unchanged: a
+  government action creating no mandatory requirement is still `Non-binding policy-related uptake`,
+  however consequential. §9.1 carries one rebuttal, and only from the disclosure itself — if the
+  company's own account describes something it was free to decline, the row is non-binding. Silence
+  does not rebut. §9.2 now states the whole channel's evidence rule once rather than as a carve-out.
+
+  **Known cost, recorded rather than argued away.** A company characterising an instrument nobody
+  can read is an interested party, and a claimed directive can no longer be independently checked
+  before it is coded. The guard is the word *directive* and the one-way rebuttal, not a second
+  source. No row changed: `USCAISI-2026-06-CYB2` was already `Binding policy action` and remains
+  the only one, so corpus counts, the headline and every figure are unchanged at 1,146 findings ·
+  457 reports · Tier A 233 · 152/190 = 80.0%.
 
 - **2026-08-16:** reconstructed `v10 revised.xlsx` as one sheet (`v10 revised`) using the complete
   39-column data schema; retained 455 findings; incorporated the revised A/B/C encoding; sorted by
