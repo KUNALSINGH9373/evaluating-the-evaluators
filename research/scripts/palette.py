@@ -205,6 +205,44 @@ if _os.environ.get("AISIEVAL_PALETTE") == "legacy":
                 "Non-Profit (Independent)": "#5B9BD5", "For-Profit": "#E8A80C"}
     NEUTRAL = [BLUE, ORANGE, "#00A6A6", "#7B4FBF", GREEN, "#D4267D", AMBER, "#4FADEE", "#7CB518", RED]
 
+# Plain-language labels. Tier A/B/C, C1/C2 and Channel A/B/C are this project's internal
+# shorthand; they mean nothing to a reader meeting the figure for the first time in a paper.
+# On for the ICLR set, off for the working set, where the short codes are what the team reads.
+PLAIN = _os.environ.get(
+    "AISIEVAL_PLAIN_LABELS",
+    "on" if _os.environ.get("AISIEVAL_CHART_TITLES") == "off" else "off").lower() != "off"
+
+# Two widths for each term: the tick-label form, which has to fit under a bar, and the running
+# form for legends and annotations.
+_PLAIN = {
+    "tier.A":       ("Names a company,\nresponse assessable", "findings naming a company"),
+    "tier.B":       ("Concerning, but no\ncompany named",      "findings with no company named"),
+    "tier.C":       ("Not a result\nabout a model",            "findings that are not model results"),
+    "sev.C1":       ("Significant risk",                       "significant risk"),
+    "sev.C2":       ("Lower risk",                             "lower risk"),
+    "chan.A":       ("Company response",                       "company response"),
+    "chan.B":       ("Government policy uptake",               "government policy uptake"),
+    "chan.C":       ("Public and academic coverage",           "public and academic coverage"),
+    "out.gap":      ("No response found",                      "no response found"),
+    "out.under":    ("Response too weak\nfor the risk",        "response too weak for the risk"),
+    "out.prop":     ("Response matched\nthe risk",             "response matched the risk"),
+    "headline":     ("Significant risk,\ncompany named",       "significant-risk findings naming a company"),
+}
+
+
+def lab(key, short=None, run=False):
+    """Plain-language label for an internal code, or the code itself outside the plain profile.
+
+    `short` is what the working figures say and what is returned when PLAIN is off, so no call
+    site has to branch. `run=True` asks for the running form used in legends and sentences."""
+    if not PLAIN:
+        return short if short is not None else key
+    v = _PLAIN.get(key)
+    if v is None:
+        return short if short is not None else key
+    return v[1] if run else v[0]
+
+
 # Labels drawn inside a coloured shape pick their own colour by measured contrast. On by
 # default for the MATS palette, whose pale blues break white text; off elsewhere, so the
 # reviewed figure set keeps the appearance it was signed off with.

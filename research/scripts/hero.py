@@ -48,11 +48,15 @@ ax.set_ylim(_YBOT,88); ax.axis("off")
 _d=sorted(r["Publication Date"][:10] for r in R if r.get("Publication Date"))
 _MON=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 _span=f"{_MON[int(_d[0][5:7])]} {_d[0][:4]} \u2013 {_MON[int(_d[-1][5:7])]} {_d[-1][:4]}"
+# "filter" told the reader nothing: it names the mechanism, not the question. Each arrow now
+# carries the question that decides whether a finding survives the step, and each box says what
+# survived it — so the diagram reads as three questions and their answers, with no prior
+# knowledge of the project assumed.
 BOX=[(2.0,f"{len(R):,}","published\nfindings",L1,INK,
       f"{nrep} reports \u00b7 {ninst} evaluators\n{_span}"),
-     (23.0,f"{len(A)}","names a company\nor model",L2,"white",
+     (23.0,f"{len(A)}","name a company\nor model",L2,"white",
       "a specific developer is named,\nso a response could\nreasonably be expected"),
-     (44.0,f"{len(H)}","significant risk",L3,"white",
+     (44.0,f"{len(H)}","graded a\nsignificant risk",L3,"white",
       "graded the more serious of\ntwo risk levels by a\n3-model severity ensemble")]
 W,Hh,Y=18.0,25.0,42.0
 for x,big,sub,col,txt,foot in BOX:
@@ -62,30 +66,38 @@ for x,big,sub,col,txt,foot in BOX:
     ax.text(x+W/2,Y+Hh*0.24,sub,ha="center",va="center",fontsize=18,color=txt,linespacing=1.3)
     if NOTES:   # the sentence under each box explains the gate; that is caption material
         ax.text(x+W/2,Y-3.6,foot,ha="center",va="top",fontsize=15,color=INK_2,linespacing=1.55)
-for x0,lab in ((20.3,"filter"),(41.3,"severity of risk")):
+for x0,arrow in ((20.3,"does it name\na company?"),(41.3,"how serious\nis the risk?")):
     ax.add_patch(FancyArrowPatch((x0,Y+Hh/2),(x0+2.4,Y+Hh/2),arrowstyle="-|>",mutation_scale=26,
                  linewidth=2.4,color=MUTED))
-    ax.text(x0+1.2,Y+Hh+2.4,lab,ha="center",va="bottom",fontsize=15,color=INK_2)
+    ax.text(x0+1.2,Y+Hh+2.4,arrow,ha="center",va="bottom",fontsize=15,
+            color=INK_2,linespacing=1.3)
 ax.add_patch(FancyArrowPatch((62.4,Y+Hh/2),(65.4,Y+Hh/2),arrowstyle="-|>",mutation_scale=26,
              linewidth=2.4,color=MUTED))
-ax.text(65.8,Y+Hh+2.4,"trace response",ha="right",va="bottom",fontsize=15,color=INK_2)
+ax.text(65.8,Y+Hh+2.4,"did the company\nrespond?",ha="right",va="bottom",fontsize=15,
+        color=INK_2,linespacing=1.3)
 
 # proportional outcome bar
 BX,BW,BY,BH=66.5,8.0,22.0,54.0
 tot=len(H); y=BY
-for n,col,lab in ((pro,GREEN,"Proportionate"),(und,AMBER,"Under-response"),(gap,RED,"No action")):
+OUTLAB=[(pro,GREEN,"Matched the risk" if PLAIN else "Proportionate"),
+        (und,AMBER,"Too weak for the risk" if PLAIN else "Under-response"),
+        (gap,RED,"No response found" if PLAIN else "No action")]
+for n,col,lab_ in OUTLAB:
     h=BH*n/tot
     ax.add_patch(plt.Rectangle((BX,y),BW,h,facecolor=col,edgecolor="none"))
     ax.text(BX+BW/2,y+h/2,str(n),ha="center",va="center",fontsize=24,color=on_colour(col))
-    ax.text(BX+BW+1.4,y+h/2,lab,ha="left",va="center",fontsize=18,color=col)
+    ax.text(BX+BW+1.4,y+h/2,lab_,ha="left",va="center",fontsize=18,color=col)
     y+=h
-ax.text(BX+BW/2,BY+BH+2.6,f"response outcomes (n = {tot})",ha="center",fontsize=18,color="#111111")
+ax.text(BX+BW/2,BY+BH+2.6,
+        (f"what the company did  (n = {tot})" if PLAIN else f"response outcomes (n = {tot})"),
+        ha="center",fontsize=18,color="#111111")
 # bracket over the two segments that fall short, labelled with the percentage only
 gy0=BY+BH*pro/tot
-ax.plot([88.6,90.1,90.1,88.6],[gy0,gy0,BY+BH,BY+BH],color=RED,linewidth=2.4,solid_joinstyle="miter")
-ax.text(91.4,(gy0+BY+BH)/2+7.5,"FALLS SHORT\nOF THE\nSTANDARD",ha="left",va="center",
-        fontsize=18,color=RED,linespacing=1.45)
-ax.text(91.4,(gy0+BY+BH)/2-8.0,f"{(gap+und)/tot:.0%}",ha="left",va="center",
+ax.plot([91.6,93.1,93.1,91.6] if PLAIN else [88.6,90.1,90.1,88.6],[gy0,gy0,BY+BH,BY+BH],color=RED,linewidth=2.4,solid_joinstyle="miter")
+ax.text(94.4 if PLAIN else 91.4,(gy0+BY+BH)/2+7.5,
+        ("MISSING\nOR TOO\nWEAK" if PLAIN else "FALLS SHORT\nOF THE\nSTANDARD"),
+        ha="left",va="center",fontsize=18,color=RED,linespacing=1.45)
+ax.text(94.4 if PLAIN else 91.4,(gy0+BY+BH)/2-8.0,f"{(gap+und)/tot:.0%}",ha="left",va="center",
         fontsize=36,color=RED,fontweight="bold")
 if NOTES:   # the ICLR build omits it: this sentence belongs in the LaTeX \\caption, not in the artwork
     ax.text(2,10.5,"Boxes are schematic (not to scale); the outcome bar is proportional. A finding falls short when the named company\n"

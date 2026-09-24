@@ -69,9 +69,11 @@ save(fig,"11_domain_distribution.png")
 order=["Proportionate","Under-response (gap)","Accountability gap (no action)"]
 COL=[GREEN,AMBER,RED]
 fig,ax=plt.subplots(figsize=(19,7.6))
-rows=[("C1  significant risk",[r for r in A if r["Severity (C1/C2) majority"]=="C1"]),
-      ("C2  low risk",       [r for r in A if r["Severity (C1/C2) majority"]=="C2"])]
-for i,(lab,S) in enumerate(rows):
+rows=[(lab("sev.C1","C1  significant risk").replace("\n"," "),
+       [r for r in A if r["Severity (C1/C2) majority"]=="C1"]),
+      (lab("sev.C2","C2  low risk").replace("\n"," "),
+       [r for r in A if r["Severity (C1/C2) majority"]=="C2"])]
+for i,(rowlab,S) in enumerate(rows):
     left=0
     for k,col in zip(order,COL):
         n=sum(1 for r in S if r["Proportionality"]==k); frac=n/len(S)
@@ -142,8 +144,14 @@ RULE={("C1","Substantive"):"Proportionate",("C1","Partial"):"Under-response (gap
       ("C1","Acknowledged"):"Under-response (gap)",("C1","None"):"Accountability gap (no action)",
       ("C2","Substantive"):"Proportionate",("C2","Partial"):"Proportionate",
       ("C2","Acknowledged"):"Under-response (gap)",("C2","None"):"Accountability gap (no action)"}
-SHORT={"Proportionate":"Proportionate","Under-response (gap)":"Under-response",
-       "Accountability gap (no action)":"Accountability gap"}
+# The verdict is printed inside a grid cell, so it needs a form that fits one. The running
+# plain wording ("Response too weak for the risk") overflows and collides with its neighbours.
+SHORT=({"Proportionate":"MATCHED THE RISK",
+        "Under-response (gap)":"TOO WEAK",
+        "Accountability gap (no action)":"NO RESPONSE"} if PLAIN else
+       {"Proportionate":"Proportionate",
+        "Under-response (gap)":"Under-response",
+        "Accountability gap (no action)":"Accountability gap"})
 M=np.array([[sum(1 for r in A if r["Severity (C1/C2) majority"]==s and r["Action Level"]==a) for a in AL] for s in SV])
 for s in SV:
     for a in AL:
@@ -161,27 +169,31 @@ for i in range(len(SV)):
         ink="white" if shade_w<0.34 else "#111111"
         ax.text(j,i-0.20,f"{v}",ha="center",va="center",fontsize=40,fontweight="bold",
                 color=ink,zorder=3)
-        ax.text(j,i+0.09,f"{v/M[i].sum():.0%} of {SV[i]}",ha="center",va="center",fontsize=19,
+        ax.text(j,i+0.09,f"{v/M[i].sum():.0%} of these" if PLAIN else f"{v/M[i].sum():.0%} of {SV[i]}",ha="center",va="center",fontsize=19,
                 color=ink,zorder=3)
         ax.text(j,i+0.30,SHORT[out].upper(),ha="center",va="center",fontsize=17,
                 fontweight="bold",color=shade(base,0.20) if ink=="#111111" else "white",zorder=3)
 ax.set_xlim(-0.5,len(AL)-0.5); ax.set_ylim(len(SV)-0.5,-0.5); ax.set_aspect("auto")
 ax.set_xticks(range(len(AL))); ax.set_xticklabels(AL,fontsize=26)
-ax.set_yticks(range(len(SV))); ax.set_yticklabels(["C1\nsignificant risk","C2\nlow risk"],fontsize=25)
+ax.set_yticks(range(len(SV)))
+ax.set_yticklabels([lab("sev.C1","C1\nsignificant risk"),lab("sev.C2","C2\nlow risk")],fontsize=25)
 ax.tick_params(length=0)
 for sp in ax.spines.values(): sp.set_visible(False)
 ax.set_title("Severity \u00d7 Company Response (Tier A)",pad=22)
-ax.set_xlabel("Action Level"); ax.grid(False)
+ax.set_xlabel("Strength of the company's response" if PLAIN else "Action Level"); ax.grid(False)
 hand=[plt.Rectangle((0,0),1,1,facecolor=PROP[o]) for o in
       ("Proportionate","Under-response (gap)","Accountability gap (no action)")]
-ax.legend(hand,["Proportionate","Under-response","Accountability gap"],loc="upper center",
+ax.legend(hand,[lab("out.prop","Proportionate").replace("\n"," "),
+                lab("out.under","Under-response").replace("\n"," "),
+                lab("out.gap","Accountability gap").replace("\n"," ")],loc="upper center",
           bbox_to_anchor=(0.5,-0.24),ncol=3,frameon=False,fontsize=21)
 # Reading order below the grid is x-label, then legend, then footnote — the footnote used to be
 # pinned to the figure floor and collided with the x-label.
-fig.subplots_adjust(bottom=0.30)
-fig.text(0.5,0.018,"Outcome is derived from severity \u00d7 action level, never hand-entered: "
-         "C1 needs a Substantive response to be proportionate, C2 needs at least a Partial one.",
-         fontsize=15,color=INK_2,ha="center")
+fig.subplots_adjust(bottom=0.30 if NOTES else 0.22)
+if NOTES:
+    fig.text(0.5,0.018,"Outcome is derived from severity \u00d7 action level, never hand-entered: "
+             "C1 needs a Substantive response to be proportionate, C2 needs at least a Partial one.",
+             fontsize=15,color=INK_2,ha="center")
 save(fig,"21_severity_x_action_heatmap.png")
 
 # ---- 22 HEATMAP: domain x outcome (Tier A) -------------------------------
@@ -213,7 +225,7 @@ yrs=sorted({r["Publication Date"][:4] for r in R if r.get("Publication Date")})
 series={t:[sum(1 for r in R if r["Publication Date"].startswith(y_) and tier(r)==t) for y_ in yrs] for t in "ABC"}
 fig,ax=plt.subplots(figsize=(16,10))
 ax.stackplot(range(len(yrs)),[series["A"],series["B"],series["C"]],
-    colors=[TIER["A"],TIER["B"],TIER["C"]],labels=["Tier A","Tier B","Tier C"],alpha=0.95,edgecolor="white",linewidth=3)
+    colors=[TIER["A"],TIER["B"],TIER["C"]],labels=[lab("tier.A","Tier A",run=True),lab("tier.B","Tier B",run=True),lab("tier.C","Tier C",run=True)],alpha=0.95,edgecolor="white",linewidth=3)
 tot=[sum(series[t][i] for t in "ABC") for i in range(len(yrs))]
 for i,v in enumerate(tot): ax.text(i,v+12,str(v),ha="center",fontsize=25,fontweight="bold")
 ax.set_xticks(range(len(yrs))); ax.set_xticklabels(yrs,fontsize=27)
@@ -291,6 +303,6 @@ for inst,n,g in pts:
                                     shrinkA=0,shrinkB=7))
 
 ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-ax.set_xlabel("Tier A C1 findings published"); ax.set_ylabel("Share with no documented action")
+ax.set_xlabel("Significant-risk findings published" if PLAIN else "Tier A C1 findings published"); ax.set_ylabel("Share with no documented action")
 save(fig,"24_evaluator_volume_vs_gap.png")
 print(f"\n{len(os.listdir(OUT))} files in {OUT}")

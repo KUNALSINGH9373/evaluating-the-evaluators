@@ -61,7 +61,7 @@ y = np.arange(len(order))
 # figure has to answer is not only "whose models" but "whose models are accountable-relevant".
 ax.barh(y, [tot[k] for k in order], color=BLUE, height=0.66, zorder=3, label="All findings")
 ax.barh(y, [tierA[k] for k in order], color=RED, height=0.66, zorder=4,
-        label="of which Tier A (accountability set)")
+        label=lab("tier.A","of which Tier A (accountability set)",run=True))
 mx = max(tot.values())
 FS_TOT, FS_SUB, FS_TICK = 27, 22, 27
 # Every row carried "(Tier A n · C1 n)" at the same weight as its total, eleven times over, and
@@ -69,7 +69,10 @@ FS_TOT, FS_SUB, FS_TICK = 27, 22, 27
 # with no Tier A findings at all. The total now stands alone in bold; the breakdown follows it in
 # a lighter grey, and is dropped where there is no Tier A share to break down.
 def _sub(k):
-    return f"Tier A {tierA[k]} · C1 {c1[k]}" if tierA[k] else ""
+    if not tierA[k]:
+        return ""
+    return (f"{tierA[k]} name a company · {c1[k]} significant risk" if PLAIN
+            else f"Tier A {tierA[k]} · C1 {c1[k]}")
 
 fig.canvas.draw()
 rend = fig.canvas.get_renderer()

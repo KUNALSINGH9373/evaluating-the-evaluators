@@ -72,10 +72,15 @@ for j, a in enumerate(AL):
     ax.text(L + j * CW + CW / 2, TOPY - 2.6, f"{colN[a]} of {len(A)}", ha="center",
             fontsize=16.1, color=FAINT)
 for i, s in enumerate(SV):
-    ax.text(L - 2.0, TOPY + i * CH + CH / 2 - 1.6, s, ha="right", va="center",
-            fontsize=29.5, fontweight="bold", color=SEV[s])
-    ax.text(L - 2.0, TOPY + i * CH + CH / 2 + 3.0, "significant risk" if s == "C1" else "low risk",
-            ha="right", va="center", fontsize=16.1, color=SOFT)
+    # the bare code carried the row; under the plain profile the words carry it instead
+    if not PLAIN:
+        ax.text(L - 2.0, TOPY + i * CH + CH / 2 - 1.6, s, ha="right", va="center",
+                fontsize=29.5, fontweight="bold", color=SEV[s])
+    ax.text(L - 2.0, TOPY + i * CH + CH / 2 + (3.0 if not PLAIN else -0.6),
+            (lab("sev.C1","significant risk") if s == "C1" else lab("sev.C2","low risk")).replace("\n"," "),
+            ha="right", va="center", fontsize=16.1 if not PLAIN else 22.0,
+            fontweight="normal" if not PLAIN else "bold",
+            color=SOFT if not PLAIN else SEV[s])
     ax.text(L - 2.0, TOPY + i * CH + CH / 2 + 6.6, f"n = {rowN[s]}", ha="right", va="center",
             fontsize=14.7, color=FAINT)
     for j, a in enumerate(AL):
@@ -87,7 +92,7 @@ for i, s in enumerate(SV):
         ink = "white" if w < 0.34 else INK
         ax.text(x0 + (CW - 0.7) / 2, y0 + 7.2, f"{n}", ha="center", va="center",
                 fontsize=44.2, fontweight="bold", color=ink)
-        ax.text(x0 + (CW - 0.7) / 2, y0 + 12.4, f"{n/rowN[s]:.0%} of {s}", ha="center",
+        ax.text(x0 + (CW - 0.7) / 2, y0 + 12.4, f"{n/rowN[s]:.0%} of these" if PLAIN else f"{n/rowN[s]:.0%} of {s}", ha="center",
                 va="center", fontsize=14.7, color=ink)
         ax.text(x0 + (CW - 0.7) / 2, y0 + 16.6, SHORT[out], ha="center", va="center",
                 fontsize=14.1, fontweight="bold",
@@ -106,7 +111,7 @@ short = sum(M[(s, a)] for s in SV for a in AL if RULE[(s, a)] != "Proportionate"
 c1short = sum(M[("C1", a)] for a in AL if RULE[("C1", a)] != "Proportionate")
 ax.text(2.0, 92.0, f"Outcome is derived, never hand-entered. Of the {rowN['C1']} significant-risk "
         f"findings, {c1short} ({c1short/rowN['C1']:.0%}) fall short of a proportionate response; "
-        f"across all {len(A)} Tier A findings, {short} do.",
+        f"across all {len(A)} " + lab("tier.A","Tier A",run=True) + f", {short} do.",
         fontsize=14.7, color=FAINT, va="baseline")
 
 p = os.path.join(OUT, "fig2_severity_x_action." + FMT)

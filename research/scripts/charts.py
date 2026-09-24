@@ -168,7 +168,9 @@ save(fig,"06_findings_per_year.png")
 # Three tier bars only — no total/corpus bar; n is stated in the title instead.
 c=collections.Counter(tier(r) for r in ROWS)
 fig,ax=plt.subplots(figsize=(17,10.5))
-vbar(ax,["Tier A\naccountability-relevant","Tier B\nno accountable party","Tier C\nnot an empirical finding"],
+vbar(ax,[lab("tier.A","Tier A\naccountability-relevant"),
+         lab("tier.B","Tier B\nno accountable party"),
+         lab("tier.C","Tier C\nnot an empirical finding")],
      [c["A"],c["B"],c["C"]],[TIER["A"],TIER["B"],TIER["C"]],len(ROWS),fs=26)
 ax.set_title(f"Tier Distribution (n={len(ROWS):,} findings)",pad=26); ax.set_ylabel("Findings")
 save(fig,"07_tier_distribution.png")
@@ -199,10 +201,13 @@ w=0.36; x=np.arange(len(order))
 for j,(sev,col,alpha) in enumerate([("C1",ORANGE,1.0),("C2",SKY,1.0)]):
     S=[r for r in A if r.get("Severity (C1/C2) majority")==sev]
     v=[sum(1 for r in S if r.get("Proportionality")==k) for k in order]
-    ax.bar(x+(j-0.5)*w,v,width=w,color=col,zorder=3,label=f"{sev} ({'significant' if sev=='C1' else 'low'} risk), n={len(S)}")
+    ax.bar(x+(j-0.5)*w,v,width=w,color=col,zorder=3,
+       label=f"{lab('sev.'+sev, sev+(' (significant' if sev=='C1' else ' (low')+' risk)')}, n={len(S)}")
     for i,val in enumerate(v):
         ax.text(x[i]+(j-0.5)*w,val+2,f"{val}\n{val/len(S):.0%}",ha="center",va="bottom",fontsize=24,fontweight="bold",linespacing=1.3)
-ax.set_xticks(x); ax.set_xticklabels(["Proportionate","Under-response\n(gap)","Accountability gap\n(no action)"],fontsize=27)
+ax.set_xticks(x); ax.set_xticklabels([lab("out.prop","Proportionate"),
+                    lab("out.under","Under-response\n(gap)"),
+                    lab("out.gap","Accountability gap\n(no action)")],fontsize=27)
 ax.set_ylim(0,max([sum(1 for r in A if r.get("Proportionality")==k) for k in order])*1.05)
 ax.legend(fontsize=26,frameon=False,loc="upper left"); ax.grid(axis="x",visible=False)
 ax.set_title("Proportionality Outcome by Severity (Tier A)",pad=26); ax.set_ylabel("Findings")
@@ -289,7 +294,7 @@ c=collections.Counter(r.get("Severity (C1/C2) majority") for r in ROWS)
 _ncls = c["C1"] + c["C2"]
 _unres = len(ROWS) - _ncls
 fig,ax=plt.subplots(figsize=(15,10.5))
-vbar(ax,["C1\nsignificant risk","C2\nlow risk"],[c["C1"],c["C2"]],colours_for(SEV,["C1","C2"]),_ncls,fs=29)
+vbar(ax,[lab("sev.C1","C1\nsignificant risk"),lab("sev.C2","C2\nlow risk")],[c["C1"],c["C2"]],colours_for(SEV,["C1","C2"]),_ncls,fs=29)
 ax.set_title(f"Severity Classification (n={_ncls:,})",pad=26,fontsize=35)
 if _unres:
     ax.text(0.5,-0.145,f"{_unres} further finding{'s' if _unres>1 else ''} await severity "
@@ -332,8 +337,8 @@ plt.close(fig)
 
 # ---------------------------------------------------------------- 20 pipeline funnel
 stages=[("All findings in the corpus",len(ROWS)),
-        ("Tier A — accountability-relevant",len(A)),
-        ("Tier A + C1 — significant risk",len(H)),
+        (lab("tier.A","Tier A — accountability-relevant").replace("\n"," "),len(A)),
+        (lab("headline","Tier A + C1 — significant risk").replace("\n"," "),len(H)),
         ("Company responded (any level)",sum(1 for r in H if r.get("Action Level")!="None")),
         ("Substantive company response",sum(1 for r in H if r.get("Action Level")=="Substantive")),
         ("Any documented policy uptake",sum(1 for r in H if r.get("Policy Level")!="No policy uptake identified"))]
