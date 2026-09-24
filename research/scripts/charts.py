@@ -244,8 +244,8 @@ ax.text(-60,max(n)*0.86,"publication\ndate  ",color=RED,fontsize=24,fontweight="
 ax.set_ylim(0,max(n)*1.18); ax.grid(axis="x",visible=False)
 ax.set_title(f"Response Lag Distribution (Tier A, n={len(lags)})",pad=24,fontsize=34)
 ax.set_xlabel(
-    "Days between publication and company response (symlog)\n"
-    "negative = company response documented before publication",
+    "Days between publication and company response (symlog)"
+    + ("\nnegative = company response documented before publication" if NOTES else ""),
     fontsize=24,
 )
 ax.set_ylabel("Findings")

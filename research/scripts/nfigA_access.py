@@ -64,10 +64,12 @@ a2.set_title("(b)  Significant-risk findings with no response, by access type",
 a2.grid(axis="y", color=GRID, zorder=0); a2.set_axisbelow(True)
 for s in ("top", "right"): a2.spines[s].set_visible(False)
 
-fig.text(0.012, 0.012, "Association, not causation: companies choose who receives pre-deployment "
-         "access, and a pre-deployment finding is answered in the launch card partly by construction.",
-         fontsize=15.6, color="#4A4A4A")
-fig.subplots_adjust(left=0.06, right=0.99, top=0.90, bottom=0.17, wspace=0.22)
+if NOTES:
+    fig.text(0.012, 0.012, "Association, not causation: companies choose who receives pre-deployment "
+             "access, and a pre-deployment finding is answered in the launch card partly by construction.",
+             fontsize=15.6, color="#4A4A4A")
+fig.subplots_adjust(left=0.06, right=0.99, top=0.90 if NOTES else 0.98,
+                    bottom=0.17 if NOTES else 0.11, wspace=0.22)
 p = os.path.join(OUT, "figA2_access_type." + FMT)
 fig.savefig(p, bbox_inches="tight", pad_inches=pad(0.25)); plt.close(fig)
 print(f"wrote {p}")

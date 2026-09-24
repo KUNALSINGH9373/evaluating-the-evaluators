@@ -113,7 +113,7 @@ def render(fig_h):
     # padded out to match a neighbour, which is what a two-column grid forces on the short panels.
     X0, X1, PADX = 2.0, 98.0, 2.6
     PADB, GUTY = u(0.26), u(0.16)
-    TITLES = {1: "Definition", 2: "The corpus", 3: "Venues", 4: "Timeline"}
+    PANEL_TITLES = {1: "Definition", 2: "The corpus", 3: "Venues", 4: "Timeline"}
     W = X1 - X0 - 2 * PADX
 
     def panel(i, y0, y1):
@@ -124,7 +124,7 @@ def render(fig_h):
         ax.add_patch(FancyBboxPatch((X0, y0), 0.55, y1 - y0,
                                     boxstyle="round,pad=0,rounding_size=0.22",
                                     facecolor=ACCENT, edgecolor="none", zorder=1, clip_on=False))
-        ax.text(X0 + PADX, y0 + u(0.30) + em(26) * 0.72, TITLES[i], fontsize=26,
+        ax.text(X0 + PADX, y0 + u(0.30) + em(26) * 0.72, PANEL_TITLES[i], fontsize=26,
                 fontweight="bold", color=ACCENT, va="baseline", zorder=3)
 
     x = X0 + PADX

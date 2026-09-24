@@ -34,7 +34,10 @@ nrep=len({r["Report ID"] for r in R if r.get("Report ID")}); ninst=len({r["Insti
 # the diagram fills the canvas instead of leaving a band of white where the heading was.
 # The note sat at y=10.5; without it the band below the box footers is dead space, and the
 # figure printed with a fifth of its height blank. Both the y-range and the canvas shrink.
-_YBOT, _FIGH = (0, 7.6) if NOTES else (18, 6.2)
+# Without the per-box footers the lowest drawn thing is the outcome bar, which starts at BY=22
+# and carries its bottom label just under that. Cropping past ~19 clips the Proportionate segment.
+# Height follows the y-span so the drawing keeps the same scale: 7.6in * 69/88.
+_YBOT, _FIGH = (0, 7.6) if NOTES else (19, 6.0)
 # Larger type needs a wider canvas or the three box footers, which are set to a fixed box pitch,
 # run into one another. This is the same rule the hand-laid figures use.
 fig,ax=plt.subplots(figsize=(20*max(FONT_SCALE,1.0),_FIGH)); ax.set_xlim(0,100)
@@ -57,7 +60,8 @@ for x,big,sub,col,txt,foot in BOX:
                  facecolor=col,edgecolor="none",transform=ax.transData))
     ax.text(x+W/2,Y+Hh*0.64,big,ha="center",va="center",fontsize=40,color=txt)
     ax.text(x+W/2,Y+Hh*0.24,sub,ha="center",va="center",fontsize=18,color=txt,linespacing=1.3)
-    ax.text(x+W/2,Y-3.6,foot,ha="center",va="top",fontsize=15,color=INK_2,linespacing=1.55)
+    if NOTES:   # the sentence under each box explains the gate; that is caption material
+        ax.text(x+W/2,Y-3.6,foot,ha="center",va="top",fontsize=15,color=INK_2,linespacing=1.55)
 for x0,lab in ((20.3,"filter"),(41.3,"severity of risk")):
     ax.add_patch(FancyArrowPatch((x0,Y+Hh/2),(x0+2.4,Y+Hh/2),arrowstyle="-|>",mutation_scale=26,
                  linewidth=2.4,color=MUTED))

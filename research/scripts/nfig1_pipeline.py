@@ -69,8 +69,9 @@ for i, (big, mid, sub, col) in enumerate(BOXES):
             fontweight="bold", color=shade(col, 0.15))
     ax.text(x + BW / 2, Y + 9.5, mid, ha="center", va="center", fontsize=20.7,
             color=INK, linespacing=1.35)
-    ax.text(x + BW / 2, Y - 5.0, sub, ha="center", va="top", fontsize=12.5,
-            color=SOFT, linespacing=1.5)
+    if NOTES:
+        ax.text(x + BW / 2, Y - 5.0, sub, ha="center", va="top", fontsize=12.5,
+                color=SOFT, linespacing=1.5)
     if i < len(BOXES) - 1:
         ax.add_patch(FancyArrowPatch((x + BW + 0.8, Y + BH / 2), (x + BW + GAP0 - 0.8, Y + BH / 2),
                                      arrowstyle="-|>", mutation_scale=20, lw=2.0, color="#9AA7B2"))
