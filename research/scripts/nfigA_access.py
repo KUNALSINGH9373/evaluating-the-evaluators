@@ -25,7 +25,7 @@ plt.rcParams.update({"figure.dpi": 200, "savefig.dpi": 200, "font.family": "Deja
 R = ds.rows()
 A = [r for r in R if r["Eval? (trackable)"] == "yes" and r["Action Trackable?"] == "yes"]
 H = [r for r in A if r["Severity (C1/C2) majority"] == "C1"]
-ORDER = ["Pre-deployment", "Post-deployment", "Mixed", "Aggregate", "N/A"]
+ORDER = ["Pre-deployment", "Post-deployment", "Mixed", "N/A"]
 c = collections.Counter(r["Access Type"] for r in R)
 keys = [k for k in ORDER if c[k]]
 

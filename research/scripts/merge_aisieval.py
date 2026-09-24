@@ -74,7 +74,7 @@ VOCAB = {
     "Eval? (trackable)": {"yes", "no"},
     "Action Trackable?": {"yes", "no"},
     "Scope": {"government-AISI", "third-party-evaluator"},
-    "Access Type": {"Pre-deployment", "Post-deployment", "Mixed", "Aggregate", "N/A"},
+    "Access Type": {"Pre-deployment", "Post-deployment", "Mixed", "N/A"},
     "Institution Type": {"Government", "For-Profit", "Non-Profit (AIEF)", "Non-Profit (Independent)", "Lab"},
     "Domain": {
         "Alignment", "Autonomy", "Bio-Chem", "Cyber", "Jailbreaks", "Societal", "Institutional",

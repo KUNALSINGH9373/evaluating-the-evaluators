@@ -55,8 +55,9 @@ ATTRIB = {"Explicit attribution": GREEN, "No explicit attribution": AMBER,
 SCOPE = {"government-AISI": "#2E7CA8", "third-party-evaluator": BLUE, "": GREY}
 
 # Access type: descriptive ordinal, palest to deepest, with grey for the non-answers.
+# `Aggregate` was retired 2026-08-31 — it described the report's format, not model access.
 ACCESS = {"Pre-deployment": "#9BCBEA", "Post-deployment": "#4FA7DC", "Mixed": "#2E7CA8",
-          "Aggregate": "#1F5A7A", "N/A": GREY, "": GREY}
+          "N/A": GREY, "": GREY}
 
 # Institution type, for the tree. Four sibling categories with no valence, so they need to be
 # BRIGHT and clearly separable — four tints of one blue are unreadable side by side. All four are
@@ -199,7 +200,7 @@ if _os.environ.get("AISIEVAL_PALETTE") == "legacy":
               "No response located": GREY, "": GREY}
     SCOPE = {"government-AISI": BLUE, "third-party-evaluator": "#4FADEE", "": GREY}
     ACCESS = {"Pre-deployment": BLUE, "Post-deployment": "#4FADEE", "Mixed": "#7B4FBF",
-              "Aggregate": "#00A6A6", "N/A": GREY, "": GREY}
+              "N/A": GREY, "": GREY}
     INSTTYPE = {"Government": "#1F6FB2", "Non-Profit (AIEF)": "#1E9E63",
                 "Non-Profit (Independent)": "#5B9BD5", "For-Profit": "#E8A80C"}
     NEUTRAL = [BLUE, ORANGE, "#00A6A6", "#7B4FBF", GREEN, "#D4267D", AMBER, "#4FADEE", "#7CB518", RED]
@@ -256,7 +257,7 @@ if _os.environ.get("AISIEVAL_PALETTE") == "mats":
               "No response located": GREY, "": GREY}
     SCOPE  = {"government-AISI": M["blue800"], "third-party-evaluator": M["blue400"], "": GREY}
     ACCESS = {"Pre-deployment": M["blue200"], "Post-deployment": M["blue400"],
-              "Mixed": M["blue600"], "Aggregate": M["blue800"], "N/A": GREY, "": GREY}
+              "Mixed": M["blue600"], "N/A": GREY, "": GREY}
     INSTTYPE = {"Government": M["blue800"], "Non-Profit (AIEF)": "#3E8C9E",
                 "Non-Profit (Independent)": "#8C5A7A", "For-Profit": M["blue400"]}
     NEUTRAL = [M["blue800"], M["blue600"], M["blue400"], "#3E8C9E", M["700"],

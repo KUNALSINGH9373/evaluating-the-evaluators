@@ -120,7 +120,7 @@ ax.set_title(f"Tier A Findings by Model Developer (n={len(A)})",pad=26); ax.set_
 plt.close(fig)
 
 # ---------------------------------------------------------------- 03 access type
-order_keys=["Pre-deployment","Post-deployment","Mixed","Aggregate","N/A"]
+order_keys=["Pre-deployment","Post-deployment","Mixed","N/A"]
 order=order_keys
 c=collections.Counter(r.get("Access Type") for r in ROWS)
 v=[c.get(k,0) for k in order]
@@ -267,7 +267,7 @@ ax.set_title("Accountability Gap Rate by Publication Year (Tier A, C1)",pad=26);
 save(fig,"15_gap_rate_by_year.png")
 
 # ---------------------------------------------------------------- 16 gap rate by access type
-keys=[k for k in ("Pre-deployment","Post-deployment","Mixed","Aggregate") if any(r.get("Access Type")==k for r in H)]
+keys=[k for k in ("Pre-deployment","Post-deployment","Mixed") if any(r.get("Access Type")==k for r in H)]
 vals=[];ns=[]
 for k in keys:
     S=[r for r in H if r.get("Access Type")==k]

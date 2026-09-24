@@ -84,7 +84,10 @@ def ftype(s, tier):
 def access(s):
     s = (s or '').lower()
     if re.search(r'pre-?deploy|pre-?release|deep access|early access', s): return 'Pre-deployment'
-    if re.search(r'aggregate|leaderboard|model card', s):                  return 'Aggregate'
+    # A standing scorecard, leaderboard or model card describes the report's FORMAT, not how the
+    # evaluator reached the model. That is why `Aggregate` was retired on 2026-08-31 and all 85
+    # rows recoded; this rule was still minting the value it had been retired for.
+    if re.search(r'aggregate|leaderboard|model card', s):                  return 'Post-deployment'
     if re.search(r'mix', s):                                               return 'Mixed'
     if re.search(r'api|open weight|public product|deployed|web page|black.?box', s): return 'Post-deployment'
     return 'N/A'

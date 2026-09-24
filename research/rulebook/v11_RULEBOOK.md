@@ -337,7 +337,7 @@ counts as corpus headline statistics.
 | 6 | Publication Date | Source-verified `YYYY-MM-DD`, or `YYYY-MM` if no day is available. |
 | 7 | Domain | Controlled vocabulary, semicolon-separated when multi-domain. |
 | 8 | Models / Systems | Subject systems only; comparators go in Notes. |
-| 9 | Access Type | Pre-deployment, Post-deployment, Mixed, Aggregate, or N/A. |
+| 9 | Access Type | Pre-deployment, Post-deployment, Mixed, or N/A. `Aggregate` was retired 2026-08-31; see the changelog. |
 | 10 | Source URL | Primary finding source; stable/frozen where possible. |
 | 11 | Finding | Accurate 1–2 sentence paraphrase; every number supported. |
 | 12 | Finding Quote | Verbatim supporting source text. |
@@ -383,6 +383,25 @@ counts as corpus headline statistics.
   severity, or combined-version blockers remain.
 
 ## Changelog
+
+- **2026-09-23 · `Aggregate` removed from the Access Type vocabulary in v11.** The value was
+  retired on 2026-08-31 and all 85 rows carrying it were recoded then — 76 to `Post-deployment`
+  (released or open-weight models reached through public or API access) and 9 to `Mixed` (UK AISI's
+  *Frontier AI Trends Report 2025*, whose access is "ahead of public release" in some cases and
+  public in others). The reason was that `Aggregate` described the report's *format* — a standing
+  scorecard or leaderboard — rather than how the evaluator reached the model, which is the only
+  question this column exists to answer.
+
+  **The retirement was recorded in v10 and never carried into v11.** The value stayed in the v11
+  column-9 vocabulary, in the validator and audit VOCAB sets, and in the key order of four chart
+  scripts, so every access-type figure drew an empty `Aggregate` category. Worse,
+  `scripts/merge_sweep.py` still mapped `aggregate|leaderboard|model card` to `Aggregate` on
+  ingestion, so the retired value would have been minted again by the next sweep. All of it is now
+  removed, and that ingestion rule maps to `Post-deployment`, which is where 76 of the original 85
+  rows landed on re-examination.
+
+  No row changed — the workbook has held zero `Aggregate` rows since 2026-08-31. Access Type across
+  the corpus is Post-deployment 831 · Pre-deployment 150 · N/A 97 · Mixed 68.
 
 - **2026-09-23 · §9.1 added: a disclosed government directive is binding on the company's own
   word.** The rule now reads: where an identified company states that it received a directive from

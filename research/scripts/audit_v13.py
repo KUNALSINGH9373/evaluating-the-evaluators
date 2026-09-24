@@ -122,7 +122,7 @@ flag("Finding Quote blank on a Tier A row", [r["Finding ID"] for r in A if not (
 VOCAB = {
  "Institution Type": {"Government","Non-Profit (AIEF)","For-Profit","Non-Profit (Independent)",
                       "Non-Profit (Independent);Lab","Government;Lab","For-Profit;Lab","Government;For-Profit"},
- "Access Type": {"Pre-deployment","Post-deployment","Mixed","Aggregate","N/A"},
+ "Access Type": {"Pre-deployment","Post-deployment","Mixed","N/A"},
  "Scope": {"government-AISI","third-party-evaluator"},
  "Severity (C1/C2) majority": {"C1","C2"},
  "Human": {"C1","C2"},

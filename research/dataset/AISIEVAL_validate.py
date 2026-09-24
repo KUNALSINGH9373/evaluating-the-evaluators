@@ -19,7 +19,7 @@ VOCAB = {
  "Proportionality": {"Proportionate","Under-response (gap)","Accountability gap (no action)"},
  "Eval? (trackable)": {"yes","no"}, "Action Trackable?": {"yes","no",""},
  "Scope": {"government-AISI","third-party-evaluator"},
- "Access Type": {"Pre-deployment","Post-deployment","Mixed","Aggregate","N/A"},
+ "Access Type": {"Pre-deployment","Post-deployment","Mixed","N/A"},
 }
 MATRIX = {("C1","Substantive"):"Proportionate",("C1","Partial"):"Under-response (gap)",
  ("C1","Acknowledged"):"Under-response (gap)",("C1","None"):"Accountability gap (no action)",

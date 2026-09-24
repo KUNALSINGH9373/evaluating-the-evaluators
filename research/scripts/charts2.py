@@ -109,7 +109,7 @@ ax.set_ylabel("Share with no documented action")
 save(fig,"15_gap_rate_by_year.png")
 
 # ---- 16 DOT PLOT: gap rate by access type --------------------------------
-keys=[k for k in ("Pre-deployment","Post-deployment","Mixed","Aggregate") if any(r.get("Access Type")==k for r in H)]
+keys=[k for k in ("Pre-deployment","Post-deployment","Mixed") if any(r.get("Access Type")==k for r in H)]
 vals=[];ns=[]
 for k in keys:
     S=[r for r in H if r.get("Access Type")==k]
