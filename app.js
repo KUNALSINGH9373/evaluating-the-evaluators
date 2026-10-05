@@ -113,8 +113,8 @@ document.getElementById("asof").textContent =
    into one another whenever every Tier A gap was a C1 gap — the same figure printed
    twice under two names — so the Tier A count is shown instead. */
 const tiles = [
-  { label: "Trackable evaluation findings", value: M.trackable, sub: "Tier A — a response is owed" },
-  { label: "Significant risk", value: M.trackableC1, sub: `of ${M.trackable} Tier A findings` },
+  { label: "Trackable evaluation findings", value: M.trackable, sub: "a company could answer for it" },
+  { label: "Significant risk", value: M.trackableC1, sub: `of ${M.trackable} trackable evaluation findings` },
   { label: "Any response at all", value: M.anyResponse, sub: `${pct(M.anyResponse, M.trackable)}% of the set` },
   { label: "Substantive responses", value: M.substantive, sub: "specific, documented, attributed" },
 ];
@@ -553,7 +553,7 @@ const charts = [
       mount.replaceChildren();
       const img = h("img", {
         src: "charts/17_severity_classification.jpg",
-        alt: "Bar chart, Severity Classification (n=1,146): Category 1, significant risk, 340 findings (30%); Category 2, low risk, 806 findings (70%). Severity is decided by majority vote of three cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) scoring each finding against eight dangerous-capability domains. 1,032 of 1,146 (90.1%) were unanimous 3-0; the remaining 114 (9.9%) were decided 2-1.",
+        alt: "Bar chart of all 1,146 findings by severity: significant risk 340 (29.7%); low risk 806 (70.3%). Severity is decided by majority vote of three cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) scoring each finding against eight dangerous-capability domains. 1,032 of 1,146 (90.1%) were unanimous 3-0; the remaining 114 (9.9%) were decided 2-1.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
@@ -638,13 +638,13 @@ const charts = [
   },
   {
     title: "Institution tree, by Institution Type",
-    sub: "Government / Non-Profit (AIEF) / Non-Profit (Independent) / For-Profit — the split behind the response-rate gap between AIEF and other non-profits",
+    sub: "Government / Nonprofit (AEF) / Nonprofit (independent) / For-profit — the split behind the response-rate gap between AEF and other nonprofits",
     wide: true,
     render(mount) {
       mount.replaceChildren();
       const img = h("img", {
         src: "charts/13_institution_type_tree.jpg",
-        alt: "Left-to-right tree diagram: findings by Institution Type - Government, Non-Profit (AIEF), Non-Profit (Independent) and For-Profit, each branching into its individual evaluating organisations. The accompanying table below the chart carries the exact counts.",
+        alt: "Left-to-right tree diagram: all 1,146 findings by Institution Type - Nonprofit (AEF) 335, Government 320, Nonprofit (independent) 253 and For-profit 238, each branching into its individual evaluating organisations. The accompanying table below the chart carries the exact counts.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
@@ -656,7 +656,11 @@ const charts = [
       for (const f of F) {
         /* compound values (e.g. "Government;Lab") fold into their primary type,
            matching the chart, so the branches sum to the full corpus */
-        const t = (f.instType || "Other").split(";")[0];
+        const RAW = { "Non-Profit (AIEF)": "Nonprofit (AEF)",
+                     "Non-Profit (Independent)": "Nonprofit (independent)",
+                     "For-Profit": "For-profit" };
+        const raw = (f.instType || "Other").split(";")[0];
+        const t = RAW[raw] || raw;
         if (!byType.has(t)) byType.set(t, new Map());
         const m = byType.get(t);
         m.set(f.inst, (m.get(f.inst) || 0) + 1);
