@@ -179,7 +179,7 @@ const funnelRows = [
 ];
 
 const sevActionRows = ["C1", "C2"].map(sev => ({
-  label: sev === "C1" ? "Category 1 · significant-risk" : "Category 2 · low-risk",
+  label: sev === "C1" ? "Significant risk" : "Low risk",
   segs: ACTIONS.map(a => ({
     name: a,
     value: TRACK.filter(f => f.sev === sev && f.action === a).length,
@@ -745,9 +745,9 @@ function sankeyModel() {
       desc: "named company, concerning result — a response is reasonable to expect" },
     { id: "excl", col: baseCol + 2, label: "Not action-trackable", items: exclItems, cv: "--axis", exit: true,
       desc: "anonymised models, reassuring nulls, benchmark deltas, self-reports…" },
-    { id: "C1", col: baseCol + 3, label: "C1 · significant risk", items: c1Items, cv: "--red",
+    { id: "C1", col: baseCol + 3, label: "Significant risk", items: c1Items, cv: "--red",
       desc: "one of the eight dangerous-capability thresholds was demonstrated" },
-    { id: "C2", col: baseCol + 3, label: "C2 · lower risk", items: c2Items, cv: "--blue",
+    { id: "C2", col: baseCol + 3, label: "Low risk", items: c2Items, cv: "--blue",
       desc: "a real, verified finding that crossed no danger threshold" },
     ...ACTIONS.map((a, i) => ({
       id: "act" + a, col: baseCol + 4, label: a,
