@@ -515,17 +515,14 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           <dt class="r-ack">Acknowledged</dt><dd>The finding is referenced, but no action follows.</dd>
           <dt class="r-none">None</dt><dd>No publicly documented company response was located.</dd>
         </dl>
-        <div class="detail" >A separate agent pass then <strong>re-checked every proposed
-          response against the cited evidence</strong>, and each retained finding and its coding was
-          reviewed before it entered the final record. Policy uptake is tracked separately and never
-          substitutes for a company response.</div>
+        <div class="detail" >A separate agent pass then <strong>re-checked each proposed
+          Action Level against the cited evidence</strong>, and every retained finding and its
+          coding was reviewed before it entered the final record.</div>
       </div>
     </div>
 
     <h3 style="margin-top:var(--s6)">The proportionality matrix</h3>
-    <p style="max-width:70ch;margin-top:var(--s2)">A significant-risk finding needs a
-      <strong>substantive</strong> response to pass. A lower-risk finding needs at least a
-      <strong>partial</strong> one. The same company behaviour therefore scores differently
+    <p style="max-width:70ch;margin-top:var(--s2)">The same company behaviour scores differently
       depending on what it was answering.</p>
     <div class="g2" style="margin-top:var(--s4);align-items:end">
       <figure>
@@ -629,6 +626,25 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
     </div>
     </details>
 
+    <details class="foldout">
+      <summary>
+        <span class="fold-t">Who produces the findings</span>
+        <span class="fold-s">The 1,146 findings come from 46 institutions across four types.
+          Open to see the concentration and how it splits.</span>
+      </summary>
+      <div class="g2">
+        <figure><img loading="lazy" src="charts/01_findings_per_institution.jpg"
+          alt="Findings per institution, ranked.">
+          <figcaption><b>Output is concentrated.</b> A small number of evaluators account for most
+            of the corpus, so institution-level rates rest on very uneven denominators.</figcaption></figure>
+        <figure><img loading="lazy" src="charts/13_institution_type_tree.jpg"
+          alt="Findings by institution type, branching into individual organisations.">
+          <figcaption><b>Four institution types.</b> Nonprofit (AEF) 335, Government 320,
+            Nonprofit (independent) 253 and For-profit 238 — each branching into the organisations
+            behind it.</figcaption></figure>
+      </div>
+    </details>
+
     <div class="subhead">What stands out in the numbers</div>
     <p style="max-width:74ch;margin-bottom:var(--s4)">Each line below is computed directly from the
       dataset, with its denominator stated — several of these compare different populations, so the
@@ -642,69 +658,47 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
   <div class="wrap" style="max-width:900px">
     <div class="phead">
       <h1>The problem</h1>
-      <p class="lede">Frontier AI system evaluations have become a prominent component of AI
-        governance. What happens to their findings has not been measured.</p>
+      <p class="lede">Frontier AI evaluations have become a prominent part of AI governance.
+        What happens to their findings has not been measured.</p>
     </div>
     <div style="max-width:74ch">
       <div class="step2">
-        <h3>Evaluations produce evidence the public could not otherwise get</h3>
-        <p>Government AI institutes and independent evaluators test advanced systems for dangerous
-          capabilities, safeguard failures and other risks, often with access and technical
-          expertise unavailable to the wider public. These evaluations can provide evidence about
-          an AI system's risk that goes beyond frontier developers' own disclosures.</p>
-        <p>That independence is the point of the arrangement. A developer assessing its own model
-          has an interest in the result; an external evaluator does not.</p>
-      </div>
-
-      <div class="step2">
-        <h3>Identifying a risk is not the same as reducing it</h3>
-        <p>An evaluation can document a serious vulnerability without compelling a developer
-          response, delaying deployment, triggering additional review, or verifying remediation.
-          Nothing in the arrangement obliges anyone to act on what it finds.</p>
-        <p>The practical value of an evaluation therefore depends partly on what happens after the
-          finding is communicated or published — and that half of the chain has not been measured
-          at corpus scale.</p>
-      </div>
-
-      <div class="step2">
-        <h3>The question this dataset asks</h3>
-        <div class="leadbox">
-          <p>When a government or independent evaluator publishes a risk-relevant finding about a
-            <b>named frontier system</b>, does the public record document <b>action attributed to
-            that finding</b> and <b>directed at mitigating the identified risk</b>?</p>
-        </div>
-        <p style="margin-top:var(--s4)">Each clause narrows the question deliberately. <b>Named
-          frontier system</b> excludes findings with no identifiable party to answer them.
-          <b>Attributed to that finding</b> excludes standing policy and unrelated work that
-          happens to share a topic. <b>Directed at mitigating the risk</b> excludes acknowledgement
-          that changes nothing.</p>
+        <h3>The question</h3>
+        <p>When a government or independent evaluator publishes a risk-relevant finding about a
+          <strong>named frontier system</strong>, does the public record document action
+          <strong>attributed to that finding</strong> and <strong>directed at mitigating the
+          identified risk</strong>?</p>
+        <div class="detail">Each clause narrows it. <em>Named frontier system</em> excludes
+          findings with no identifiable party to answer them. <em>Attributed to that finding</em>
+          excludes standing policy that happens to share a topic. <em>Directed at mitigating the
+          risk</em> excludes acknowledgement that changes nothing.</div>
       </div>
 
       <div class="step2">
         <h3>Why the public record</h3>
-        <p>A company may act privately, tell the evaluator directly, or fix a problem without
-          comment. None of that is visible here, by construction. What this measures is the record
-          a regulator, journalist or researcher can actually verify from outside — which is also
-          the record that determines whether the evaluation ecosystem is demonstrably working.</p>
+        <p>A company may act privately or tell the evaluator directly. None of that is visible
+          here, by construction. What this measures is the record a regulator, journalist or
+          researcher can verify from outside.</p>
       </div>
 
       <div class="step2">
         <h3>What this does not measure</h3>
         <ul>
-          <li><b>Private action.</b> A fix made without public comment is invisible to this method.</li>
-          <li><b>Effect.</b> A substantive response means a specific documented change was published — not that it was implemented well, or that it worked.</li>
-          <li><b>Recency.</b> Findings published near the cutoff may not have had time to draw a response. Outcomes are reported by year so this stays visible rather than buried.</li>
+          <li><strong>Private action.</strong> A fix made without public comment is invisible to
+            this method.</li>
+          <li><strong>Effect.</strong> A substantive response means a documented change was
+            published — not that it was implemented well, or that it worked.</li>
+          <li><strong>Recency.</strong> Findings published near the cutoff may not have had time
+            to draw a response. Outcomes are reported by year so this stays visible.</li>
         </ul>
-        <div class="detail">Absence is measured, not assumed. <b>"No response" means all three evidence
-          searches were run and logged with a date</b> — not that nobody looked. Where a source
-          could not be retrieved, the row is recorded as unresolved rather than counted as a
-          negative.</div>
+        <div class="detail"><strong>Absence is measured, not assumed.</strong> &ldquo;No
+          response&rdquo; means all three evidence searches were run and logged with a date — not
+          that nobody looked.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══ METHODOLOGY ══════════════════════════════════════════════════════ -->
 <div class="panel" id="p-method">
   <div class="wrap" style="max-width:960px">
     <div class="phead">
@@ -952,7 +946,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
           Results tab &rarr;</a> — rows are severity, columns are what the company published, and
           each cell is the outcome that pair produces.</p>
         <div class="detail">A significant-risk finding needs a <strong>substantive</strong> response
-          to pass. A lower-risk finding needs at least a <strong>partial</strong> one. Nothing else
+          to pass. A low-risk finding needs at least a <strong>partial</strong> one. Nothing else
           clears the bar, and no discretion enters at any point.</div>
       </div>
     </div>
