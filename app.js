@@ -1,4 +1,4 @@
-/* Evaluating the Evaluators — dashboard engine (no dependencies). */
+/* Do third-party frontier AI evaluations matter? — dashboard engine (no dependencies). */
 (function () {
 "use strict";
 
@@ -103,7 +103,7 @@ const noRespPct = pct(M.noResponse, M.trackable);
 const c1GapPct = pct1(M.c1Gap, M.trackableC1);
 document.getElementById("heroNum").textContent = c1GapPct + "%";
 document.getElementById("heroCaption").textContent =
-  `of ${M.trackableC1} C1 findings — dangerous-capability threshold demonstrated — lacked a publicly documented company response meeting our proportionality criteria (${M.c1Gap} of ${M.trackableC1})`;
+  `of the ${M.trackableC1} significant-risk findings lacked a specific and proportionate publicly documented company response (${M.c1Gap} of ${M.trackableC1})`;
 document.getElementById("asof").textContent =
   `${M.totalFindings} findings · ${M.reports} reports · ${M.dateMin.slice(0, 7)} to ${M.dateMax.slice(0, 7)}`;
 
@@ -113,7 +113,7 @@ document.getElementById("asof").textContent =
    into one another whenever every Tier A gap was a C1 gap — the same figure printed
    twice under two names — so the Tier A count is shown instead. */
 const tiles = [
-  { label: "Accountability set", value: M.trackable, sub: "Tier A — a response is owed" },
+  { label: "Trackable evaluation findings", value: M.trackable, sub: "Tier A — a response is owed" },
   { label: "Significant risk", value: M.trackableC1, sub: `of ${M.trackable} Tier A findings` },
   { label: "Any response at all", value: M.anyResponse, sub: `${pct(M.anyResponse, M.trackable)}% of the set` },
   { label: "Substantive responses", value: M.substantive, sub: "specific, documented, attributed" },
@@ -131,13 +131,13 @@ const ukCount = F.filter(f => f.instGroup === "UK AISI").length;
 const govCount = F.filter(f => f.scope === "government-AISI").length;
 const insights = [
   [`Restricting to the most severe findings — the comparison that actually matters: `,
-   `${M.c1Gap} of ${M.trackableC1} C1 findings (${c1GapPct}%) — a dangerous-capability threshold demonstrated — drew a response that fell short of proportionate, ${M.c1NoResponse} of those with no response at all.`],
-  [`Across the broader accountability set, not restricted by severity: `,
+   `${M.c1Gap} of ${M.trackableC1} significant-risk findings (${c1GapPct}%) — a dangerous-capability threshold demonstrated — drew a response that fell short of proportionate, ${M.c1NoResponse} of those with no response at all.`],
+  [`Across all trackable evaluation findings, not restricted by severity: `,
    `${M.noResponse} of ${M.trackable} findings (${noRespPct}%) have no documented company response of any kind — no blog post, system-card note, or filing that engages with the finding.`],
   [`When companies do respond, they respond fast — median lag ${M.medianLag} days. `,
    "Most engagement happens pre-deployment, when companies see findings before publication (negative lags are genuine)."],
   [`The policy channel and the company-response channel reach different findings: `,
-   `${polTouched} of all ${M.totalFindings} findings (${pct(polTouched, M.totalFindings)}%) were cited in official policy records — ${polBinding} of those binding — while ${M.anyResponse} of the ${M.trackable} accountability-set findings (${pct(M.anyResponse, M.trackable)}%) drew a company response of any kind. Different denominators, so not a direct rate comparison.`],
+   `${polTouched} of all ${M.totalFindings} findings (${pct(polTouched, M.totalFindings)}%) were cited in official policy records — ${polBinding} of those binding — while ${M.anyResponse} of the ${M.trackable} trackable evaluation findings (${pct(M.anyResponse, M.trackable)}%) drew a company response of any kind. Different denominators, so not a direct rate comparison.`],
   [`UK AISI produced ${ukCount} of ${M.totalFindings} findings (${pct(ukCount, M.totalFindings)}%) `,
    `— ${pct(ukCount, govCount)}% of the public output of the entire government-AISI network (${govCount} findings).`],
 ];
@@ -173,13 +173,13 @@ const nature = f => NATURES.find(n => f.ftype.includes(n)) || null;
 const funnelRows = [
   { label: "All findings", value: M.totalFindings },
   { label: "Empirical model findings", value: M.empirical },
-  { label: "Accountability set", value: M.trackable },
+  { label: "Trackable evaluation findings", value: M.trackable },
   { label: "Any documented response", value: M.anyResponse },
   { label: "Substantive response", value: M.substantive },
 ];
 
 const sevActionRows = ["C1", "C2"].map(sev => ({
-  label: sev === "C1" ? "C1 · significant risk" : "C2 · lower risk",
+  label: sev === "C1" ? "Category 1 · significant-risk" : "Category 2 · low-risk",
   segs: ACTIONS.map(a => ({
     name: a,
     value: TRACK.filter(f => f.sev === sev && f.action === a).length,
@@ -539,30 +539,30 @@ const charts = [
   },
   {
     title: "Severity vs. company response",
-    sub: `Accountability set (${M.trackable} findings) — response level by demonstrated severity`,
+    sub: `Trackable evaluation findings (${M.trackable}) — response level by demonstrated severity`,
     wide: false,
     legend: ACTIONS.map((a, i) => ({ name: a, varName: ORD_VARS[i], shape: "rect" })),
     render(mount) { renderStackedH(mount, sevActionRows, ORD_VARS, "Response"); },
     table: () => [["Severity", ...ACTIONS], ...sevActionRows.map(r => [r.label, ...r.segs.map(x => x.value)])],
   },
   {
-    title: "How severity is classified: C1 vs. C2",
-    sub: "3-model ensemble, tested against 7 dangerous-capability domains, decided by majority vote",
+    title: "How severity is classified: Category 1 vs. Category 2",
+    sub: "3-model ensemble, tested against eight dangerous-capability domains, decided by majority vote",
     wide: true,
     render(mount) {
       mount.replaceChildren();
       const img = h("img", {
         src: "charts/17_severity_classification.jpg",
-        alt: "Flow diagram: a finding is evaluated independently by 3 cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) against 7 dangerous-capability domains (CBRN uplift, offensive cyber capability, autonomy/self-replication/AI-R&D automation, persuasion or societal harm at scale, deliberate deception or misalignment, deployed-safeguard failure, compromised evaluation integrity). Majority vote of the 3 models decides C1 (269 findings, threshold demonstrated) or C2 (732 findings, threshold not demonstrated). 920 of 1,001 (92%) were unanimous 3-0; the remaining 81 (8%) were decided 2-1.",
+        alt: "Bar chart, Severity Classification (n=1,146): Category 1, significant risk, 340 findings (30%); Category 2, low risk, 806 findings (70%). Severity is decided by majority vote of three cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) scoring each finding against eight dangerous-capability domains. 1,032 of 1,146 (90.1%) were unanimous 3-0; the remaining 114 (9.9%) were decided 2-1.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
     },
     table: () => [["Outcome", "Findings", "Meaning"],
-      ["C1", 269, "Demonstrates ≥ 1 of 7 dangerous-capability domains"],
-      ["C2", 732, "Threshold not demonstrated (not the same as unimportant)"],
-      ["Unanimous 3–0 vote", 920, "92% of all 1,001 findings"],
-      ["Split 2–1 vote", 81, "8% of all 1,001 findings"]],
+      ["Category 1", 340, "Demonstrates \u2265 1 of eight dangerous-capability domains"],
+      ["Category 2", 806, "Threshold not demonstrated (not the same as unimportant)"],
+      ["Unanimous 3\u20130 vote", 1032, "90.1% of all 1,146 findings"],
+      ["Split 2\u20131 vote", 114, "9.9% of all 1,146 findings"]],
   },
   {
     title: "What government AISIs publish, by quarter",
@@ -574,11 +574,11 @@ const charts = [
       ...timelineCols.map(c => [c.label, ...c.segs.map(x => x.value)])],
   },
   {
-    title: "Outcomes in the accountability set",
+    title: "Outcomes for trackable evaluation findings",
     sub: (() => {
       const propN = propCounts.get("Proportionate") || 0;
       const extra = propN - M.substantive;
-      return `Proportionality of response, given severity — the ${propN} Proportionate here is not the same count as "Substantive responses" (${M.substantive}) elsewhere on this page: Proportionate = ${M.substantive} raw Substantive responses plus ${extra} C2 finding(s) whose Partial response met the lower bar C2 requires. Not a data error — two different measures.`;
+      return `Proportionality of response, given severity — the ${propN} Proportionate here is not the same count as "Substantive responses" (${M.substantive}) elsewhere on this page: Proportionate = ${M.substantive} raw Substantive responses plus ${extra} Category 2 finding(s) whose Partial response met the lower bar Category 2 requires. Not a data error — two different measures.`;
     })(),
     wide: false,
     render(mount) { renderHBars(mount, propRows, "--violet", "Findings"); },
@@ -644,24 +644,38 @@ const charts = [
       mount.replaceChildren();
       const img = h("img", {
         src: "charts/13_institution_type_tree.jpg",
-        alt: "Left-to-right tree diagram: 1,001 findings by Institution Type - Government 306 (UK AISI 199, Joint UK AISI + US CAISI 35, US CAISI 33, Joint UK + US + Singapore AISIs (International Network) 5, Joint UK AISI + OpenAI (company-published) 4, Other institutions 30); Non-Profit (AIEF) 250 (METR 110, SecureBio 35, Transluce 32, Princeton Holistic Agent Leaderboard (HAL) 31, Collective Intelligence Project (Weval) 31, Other institutions 11); For-Profit 224 (Scale AI 142, Dreadnode 30, Holistic AI 12, Gray Swan AI 10, Cisco (Robust Intelligence / Foundation AI) 10, Other institutions 20); Non-Profit (Independent) 221 (Apollo Research 49, FAR.AI 43, Center for AI Safety (CAIS) 40, Redwood Research 31, Shanghai AI Laboratory (AI45 Lab) 30, Other institutions 28).",
+        alt: "Left-to-right tree diagram: findings by Institution Type - Government, Non-Profit (AIEF), Non-Profit (Independent) and For-Profit, each branching into its individual evaluating organisations. The accompanying table below the chart carries the exact counts.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
     },
-    table: () => [["Institution Type", "Organisation", "Findings"],
-      ["Government (306)", "UK AISI", 199], ["Government (306)", "Joint UK AISI + US CAISI", 35],
-      ["Government (306)", "US CAISI", 33], ["Government (306)", "Joint UK + US + SG AISIs", 5],
-      ["Government (306)", "Joint UK AISI + OpenAI", 4], ["Government (306)", "Other institutions", 30],
-      ["Non-Profit AIEF (250)", "METR", 110], ["Non-Profit AIEF (250)", "SecureBio", 35],
-      ["Non-Profit AIEF (250)", "Transluce", 32], ["Non-Profit AIEF (250)", "Princeton HAL", 31],
-      ["Non-Profit AIEF (250)", "Weval (CIP)", 31], ["Non-Profit AIEF (250)", "Other institutions", 11],
-      ["For-Profit (224)", "Scale AI", 142], ["For-Profit (224)", "Dreadnode", 30],
-      ["For-Profit (224)", "Holistic AI", 12], ["For-Profit (224)", "Gray Swan AI", 10],
-      ["For-Profit (224)", "Cisco", 10], ["For-Profit (224)", "Other institutions", 20],
-      ["Non-Profit Independent (221)", "Apollo Research", 49], ["Non-Profit Independent (221)", "FAR.AI", 43],
-      ["Non-Profit Independent (221)", "CAIS", 40], ["Non-Profit Independent (221)", "Redwood Research", 31],
-      ["Non-Profit Independent (221)", "Shanghai AI Lab", 30], ["Non-Profit Independent (221)", "Other institutions", 28]],
+    table: () => {
+      /* Derived from the dataset rather than hard-coded: an earlier build carried counts
+         from a 1,001-finding corpus and silently went stale as the corpus grew. */
+      const byType = new Map();
+      for (const f of F) {
+        /* compound values (e.g. "Government;Lab") fold into their primary type,
+           matching the chart, so the branches sum to the full corpus */
+        const t = (f.instType || "Other").split(";")[0];
+        if (!byType.has(t)) byType.set(t, new Map());
+        const m = byType.get(t);
+        m.set(f.inst, (m.get(f.inst) || 0) + 1);
+      }
+      const rows = [["Institution Type", "Organisation", "Findings"]];
+      [...byType.entries()]
+        .sort((x, y) => y[1].size - x[1].size)
+        .sort((x, y) => [...y[1].values()].reduce((p, c) => p + c, 0) - [...x[1].values()].reduce((p, c) => p + c, 0))
+        .forEach(([type, m]) => {
+          const total = [...m.values()].reduce((p, c) => p + c, 0);
+          const label = `${type} (${total})`;
+          const sorted = [...m.entries()].sort((p, q) => q[1] - p[1] || p[0].localeCompare(q[0]));
+          const top = sorted.slice(0, 5);
+          const rest = sorted.slice(5).reduce((p, [, c]) => p + c, 0);
+          top.forEach(([org, n]) => rows.push([label, org, n]));
+          if (rest) rows.push([label, "Other institutions", rest]);
+        });
+      return rows;
+    },
   },
 ];
 
@@ -723,7 +737,7 @@ function sankeyModel() {
       desc: "a model was actually tested" },
     { id: "nonemp", col: baseCol + 1, label: "Methodology, governance & trends", items: nonEmpItems, cv: "--axis", exit: true,
       desc: "no company response is expected" },
-    { id: "set", col: baseCol + 2, label: "Accountability set", items: setItems, cv: "--blue",
+    { id: "set", col: baseCol + 2, label: "Trackable findings", items: setItems, cv: "--blue",
       desc: "named company, concerning result — a response is reasonable to expect" },
     { id: "excl", col: baseCol + 2, label: "Not action-trackable", items: exclItems, cv: "--axis", exit: true,
       desc: "anonymised models, reassuring nulls, benchmark deltas, self-reports…" },
@@ -940,7 +954,7 @@ function sevPill(f) {
   return h("span", { class: "pill " + f.sev.toLowerCase() }, f.sev + (f.sevProv ? "*" : ""));
 }
 function actionPill(f) {
-  if (!f.action) return h("span", { class: "pill" }, f.track === "yes" ? "Not assessed" : "Outside accountability set");
+  if (!f.action) return h("span", { class: "pill" }, f.track === "yes" ? "Not assessed" : "Not a trackable evaluation finding");
   return h("span", { class: "pill act-" + f.action }, f.action);
 }
 
@@ -1048,7 +1062,7 @@ function renderTable() {
   els.count.replaceChildren();
   els.count.append(document.createTextNode(
     `${rows.length} of ${F.length} findings` +
-    (els.track.checked ? " (accountability set)" : "") +
+    (els.track.checked ? " (trackable evaluation findings)" : "") +
     (gapOnly ? " · gap only (excludes Proportionate)" : "") +
     (rows.some(f => f.sevProv) ? " · * = provisional severity" : "")
   ));
