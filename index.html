@@ -164,7 +164,12 @@ header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
 /* The title spans the full width on a single line — sized off viewport width so it
    scales rather than wrapping. white-space:nowrap would overflow on narrow screens,
    so it is only enforced where there is room. */
-.pagetitle { margin-bottom:var(--s5); text-wrap:nowrap; }
+.pagetitle { margin-bottom:var(--s2); text-wrap:nowrap; }
+/* The paper's own subtitle, carried verbatim. Sits tight under the title so the two
+   read as one unit; the title's bottom margin moved here. */
+.pagesub { margin:0 0 var(--s5); max-width:62ch; font-size:var(--f-lg); line-height:1.45;
+  color:var(--ink-2); text-wrap:pretty; }
+@media (min-width:901px){ .pagesub{ font-size:1.2rem; } }
 @media (min-width:901px){ .pagetitle{ font-size:min(3.4rem, 3.95vw); white-space:nowrap; } }
 @media (max-width:900px){ .pagetitle{ white-space:normal; text-wrap:balance; } }
 .statcol .headline { margin:0; display:block; }
@@ -419,6 +424,7 @@ footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-si
   <div class="wrap">
 
     <h1 class="pagetitle">Do third-party frontier AI evaluations matter?</h1>
+    <p class="pagesub">Analyzing publicly available evidence of company responses to evaluations</p>
 
     <div class="resultrow">
       <div>

@@ -1,5 +1,7 @@
 # Do third-party frontier AI evaluations matter?
 
+Analyzing publicly available evidence of company responses to evaluations
+
 **Live site → https://kunalsingh9373.github.io/evaluating-the-evaluators/**
 
 ![The accountability pipeline](charts/00_title_hero.jpg)
