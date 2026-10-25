@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do third-party frontier AI evaluations matter?</title>
+<meta name="description" content="When AI safety institutes and independent evaluators publish findings about named frontier models, does a documented company response follow? A source-verified dataset of the public accountability channel.">
+<style>
+/* ─────────────────────────────────────────────────────────────────────────
+   Do third-party frontier AI evaluations matter?
+   Four tabbed views rather than one long scroll.
+   NOTE: the chart palette below is read at runtime by app.js via cvar().
+   Every --blue / --green / --red / --grid / --surface token must stay
+   defined or the SVG fills fall back to black.
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+  color-scheme: light;
+  --paper:#FBFAF8; --paper-2:#F3F1EC;
+  --ink:#14130F; --ink-2:#4B4840; --ink-3:#7E796D;
+  --rule:#E4E1D9; --rule-2:#CDC9BE;
+  --gap:#B04430; --under:#BC8829; --ok:#2C7A55; --accent:#1F4E79;
+  /* ── chart palette consumed by app.js — do not remove ── */
+  --page:#f9f9f7; --surface:#fcfcfb; --muted:#898781; --grid:#e1e0d9; --axis:#c3c2b7;
+  --border:rgba(11,11,11,0.10); --wash:rgba(42,120,214,0.08);
+  --blue:#2a78d6; --green:#008300; --magenta:#e87ba4; --yellow:#eda100;
+  --aqua:#1baf7a; --orange:#eb6834; --violet:#4a3aa7; --red:#e34948;
+  --ord1:#0d366b; --ord2:#1c5cab; --ord3:#3987e5; --ord4:#86b6ef;
+  /* one spacing scale, used everywhere instead of ad-hoc pixel values */
+  --s1:5px; --s2:10px; --s3:16px; --s4:22px; --s5:30px; --s6:44px;
+  /* four text sizes; nothing outside this set */
+  --f-xs:.76rem; --f-sm:.86rem; --f-md:.95rem; --f-lg:1.06rem;
+}
+
+/* Expanded row in the Data tab. Rendered as a real Field | Value table: with 38
+   columns a grid of loose divs gave the eye no column edge to track, so labels and
+   values ran together. The ruled left column fixes that. */
+.rowdetail > .rdcell { padding:0 !important; background:var(--paper-2);
+  border-bottom:2px solid var(--rule-2); }
+.rdhead { padding:var(--s3) var(--s4) var(--s2); border-bottom:1px solid var(--rule); }
+.rdid { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:var(--f-xs);
+  letter-spacing:.03em; color:var(--accent); }
+.rdtitle { font-size:var(--f-lg); font-weight:600; color:var(--ink); margin-top:3px;
+  line-height:1.35; }
+.rdwrap { overflow-x:auto; padding:0 var(--s4) var(--s3); }
+table.rd { width:100%; border-collapse:collapse; margin-top:var(--s2);
+  font-size:var(--f-sm); min-width:0; }
+table.rd th, table.rd td { text-align:left; vertical-align:top; padding:8px 14px;
+  border-bottom:1px solid var(--rule); line-height:1.55; }
+table.rd > tbody > tr > th { width:11.5rem; min-width:11.5rem; color:var(--ink-3);
+  font-weight:500; font-size:var(--f-xs); text-transform:uppercase; letter-spacing:.045em;
+  border-right:1px solid var(--rule); background:transparent; padding-top:10px; }
+table.rd td { color:var(--ink-2); overflow-wrap:anywhere; }
+table.rd tr.rdsec > th { width:auto; min-width:0; border-right:0; padding:16px 14px 6px;
+  color:var(--ink); font-weight:650; font-size:var(--f-sm); text-transform:none;
+  letter-spacing:0; border-bottom:1px solid var(--rule-2); }
+table.rd tr.rdsec:first-child > th { padding-top:6px; }
+table.rd td.rdquote { color:var(--ink); font-style:italic;
+  border-left:2px solid var(--rule-2); padding-left:12px; }
+table.rd td.rdmono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:var(--f-xs); }
+table.rd a { color:var(--accent); overflow-wrap:anywhere; }
+table.rd td.rdempty { color:var(--ink-3); font-style:italic; }
+
+/* Collapsible detail section. The corpus breakdown is needed to check the work but is not a
+   result, so it is folded away by default rather than competing with the findings above it. */
+details.foldout { margin:var(--s5) 0 var(--s4); border:1px solid var(--rule);
+  border-radius:6px; background:var(--paper-2); }
+details.foldout > summary { cursor:pointer; list-style:none; padding:var(--s3) var(--s4);
+  display:block; }
+details.foldout > summary::-webkit-details-marker { display:none; }
+details.foldout > summary::before { content:"\25B8"; float:left; margin:2px var(--s2) 0 0;
+  color:var(--ink-3); transition:transform .15s ease; }
+details.foldout[open] > summary::before { transform:rotate(90deg); }
+details.foldout > summary:hover .fold-t { color:var(--accent); }
+details.foldout > summary:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.fold-t { display:block; font-size:1.22rem; font-weight:650; color:var(--ink);
+  line-height:1.3; overflow:hidden; }
+.fold-s { display:block; margin-top:5px; font-size:var(--f-sm); color:var(--ink-2);
+  max-width:74ch; line-height:1.55; overflow:hidden; }
+details.foldout > .g3 { padding:0 var(--s4) var(--s4); }
+@media (prefers-reduced-motion: reduce){ details.foldout > summary::before { transition:none; } }
+
+
+@media (max-width:700px){
+  table.rd > tbody > tr > th { width:auto; min-width:0; display:block; border-right:0;
+    border-bottom:0; padding-bottom:0; }
+  table.rd > tbody > tr > td { display:block; padding-top:2px; }
+  table.rd tr.rdsec > th { display:block; }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper:#121211; --paper-2:#1C1B19; --ink:#F6F4EF; --ink-2:#BEB9AD; --ink-3:#8B8579;
+  --rule:#2B2A26; --rule-2:#3D3B36;
+  --gap:#DB6E56; --under:#DBA84E; --ok:#52A87C; --accent:#82ACD6;
+  --page:#0d0d0d; --surface:#1a1a19; --muted:#898781; --grid:#2c2c2a; --axis:#383835;
+  --border:rgba(255,255,255,0.10); --wash:rgba(57,135,229,0.12);
+  --blue:#3987e5; --green:#008300; --magenta:#d55181; --yellow:#c98500;
+  --aqua:#199e70; --orange:#d95926; --violet:#9085e9; --red:#e66767;
+  --ord1:#184f95; --ord2:#2a78d6; --ord3:#6da7ec; --ord4:#b7d3f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper:#121211; --paper-2:#1C1B19; --ink:#F6F4EF; --ink-2:#BEB9AD; --ink-3:#8B8579;
+    --rule:#2B2A26; --rule-2:#3D3B36;
+    --gap:#DB6E56; --under:#DBA84E; --ok:#52A87C; --accent:#82ACD6;
+    --page:#0d0d0d; --surface:#1a1a19; --muted:#898781; --grid:#2c2c2a; --axis:#383835;
+    --border:rgba(255,255,255,0.10); --wash:rgba(57,135,229,0.12);
+    --blue:#3987e5; --green:#008300; --magenta:#d55181; --yellow:#c98500;
+    --aqua:#199e70; --orange:#d95926; --violet:#9085e9; --red:#e66767;
+    --ord1:#184f95; --ord2:#2a78d6; --ord3:#6da7ec; --ord4:#b7d3f6;
+  }
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-text-size-adjust:100%; }
+html,body { max-width:100%; overflow-x:hidden; }
+body { background:var(--paper); color:var(--ink); font-size:16.5px; line-height:1.6;
+  font-family:ui-sans-serif,-apple-system,"Segoe UI",Inter,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+.wrap { max-width:1180px; margin-inline:auto; padding-inline:32px; }
+@media (max-width:640px){ .wrap{ padding-inline:18px; } }
+h1,h2,h3,h4 { font-weight:500; letter-spacing:-0.021em; text-wrap:balance; line-height:1.18; }
+h1 { font-size:clamp(2.4rem,5.6vw,3.9rem); letter-spacing:-0.035em; line-height:1.08; }
+h2 { font-size:clamp(1.55rem,2.8vw,2rem); }
+h3 { font-size:1.3rem; letter-spacing:-0.016em; }
+h4 { font-size:1.06rem; }
+p { color:var(--ink-2); font-size:var(--f-md); } p+p { margin-top:.9em; }
+/* one prose size across every section — the proportionality block was running at
+   the 16.5px base while the methodology panels used .94rem */
+.panel li, .panel dd, figcaption, .detail { font-size:var(--f-md); }
+a { color:inherit; text-decoration-color:var(--rule-2); text-underline-offset:3px; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+.tnum { font-variant-numeric:tabular-nums; }
+.lede { font-size:clamp(1rem,1.5vw,1.14rem); line-height:1.55; }
+
+header.site { position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--rule); }
+header.site .wrap { display:flex; align-items:center; gap:28px; height:58px; }
+.mark { font-weight:600; letter-spacing:-0.02em; text-decoration:none; font-size:var(--f-md); white-space:nowrap; }
+.tabs { margin-left:auto; display:flex; gap:4px; align-items:center; }
+.tabs button { font:inherit; font-size:var(--f-md); color:var(--ink-2); background:none; border:0; cursor:pointer;
+  padding:8px 14px; border-radius:4px; }
+.tabs button:hover { color:var(--ink); background:var(--paper-2); }
+.tabs button[aria-selected="true"] { color:var(--ink); font-weight:600; background:var(--paper-2); }
+#themeToggle { font:inherit; font-size:var(--f-xs); color:var(--ink-2); cursor:pointer; background:none;
+  border:1px solid var(--rule-2); border-radius:999px; padding:5px 12px; margin-left:10px; }
+@media (max-width:820px){ header.site .wrap{ height:auto; flex-wrap:wrap; padding-block:10px; gap:10px; }
+  .tabs{ margin-left:0; width:100%; overflow-x:auto; } }
+
+/* one panel on screen at a time — this is what removes the endless scroll */
+.panel { display:none; padding-block:52px 88px; }
+.panel[data-active] { display:block; }
+.phead { max-width:70ch; margin-bottom:var(--s6); }
+.phead p { margin-top:10px; }
+
+.headline { display:flex; align-items:baseline; gap:22px; flex-wrap:wrap; margin:24px 0 6px; }
+.headline .big { font-size:clamp(3rem,9vw,5.4rem); font-weight:500; letter-spacing:-0.05em; color:var(--gap); line-height:.9; }
+.headline .say { max-width:32ch; font-size:var(--f-md); }
+.meta { display:flex; flex-wrap:wrap; gap:7px 24px; font-size:var(--f-sm); color:var(--ink-3); margin-top:var(--s3); }
+.meta b { font-weight:600; color:var(--ink-2); }
+.resultrow { display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,420px); gap:var(--s6);
+  align-items:start; }
+@media (max-width:900px){ .resultrow{ grid-template-columns:1fr; gap:var(--s5); } }
+.statcol { display:flex; flex-direction:column; gap:var(--s4); }
+/* The title spans the full width on a single line — sized off viewport width so it
+   scales rather than wrapping. white-space:nowrap would overflow on narrow screens,
+   so it is only enforced where there is room. */
+.pagetitle { margin-bottom:var(--s2); text-wrap:nowrap; }
+/* The paper's own subtitle, carried verbatim. Sits tight under the title so the two
+   read as one unit; the title's bottom margin moved here. */
+.pagesub { margin:0 0 var(--s5); max-width:62ch; font-size:var(--f-lg); line-height:1.45;
+  color:var(--ink-2); text-wrap:pretty; }
+@media (min-width:901px){ .pagesub{ font-size:1.2rem; } }
+@media (min-width:901px){ .pagetitle{ font-size:min(3.4rem, 3.95vw); white-space:nowrap; } }
+@media (max-width:900px){ .pagetitle{ white-space:normal; text-wrap:balance; } }
+.statcol .headline { margin:0; display:block; }
+.statcol .headline .big { font-size:clamp(3.4rem,7vw,4.6rem); }
+.statcol .headline .say { max-width:none; margin-top:var(--s2); font-size:var(--f-md); }
+/* 3 across — seven tiles fill three rows, the last one short */
+#tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+@media (max-width:420px){ #tiles{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+#tiles .tile { background:var(--paper); border:1px solid var(--rule); border-radius:3px;
+  padding:8px 9px; display:block; border-left-width:3px;
+  /* each tile rises in, staggered by --i, so the column reads top to bottom */
+  opacity:0; transform:translateY(10px);
+  animation:tilein .5s cubic-bezier(.2,.7,.3,1) forwards;
+  animation-delay:calc(var(--i,0) * 70ms);
+  transition:border-color .18s ease, transform .18s ease; }
+#tiles .tile:hover { border-color:var(--rule-2); transform:translateY(-1px); }
+#tiles .label { font-size:var(--f-xs); color:var(--ink-2); line-height:1.22; letter-spacing:0;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:1.9em; }
+#tiles .value { font-size:1.34rem; font-weight:600; letter-spacing:-0.025em; margin-top:2px;
+  font-variant-numeric:tabular-nums; color:var(--ink); line-height:1.1; }
+#tiles .sub { display:none; }   /* the per-tile footnote does not fit at this size */
+/* Tiles are tinted by what they mean, on the same palette as the charts: a shortfall
+   reads red, a genuine response green, scope and coverage neutral blue. Set by JS,
+   since app.js decides which tiles exist. */
+#tiles .tile.t-gap  { border-left-color:var(--gap);
+  background:color-mix(in srgb,var(--gap) 5%,var(--paper)); }
+#tiles .tile.t-gap .value  { color:var(--gap); }
+#tiles .tile.t-ok   { border-left-color:var(--ok);
+  background:color-mix(in srgb,var(--ok) 5%,var(--paper)); }
+#tiles .tile.t-ok .value   { color:var(--ok); }
+#tiles .tile.t-key  { border-left-color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 5%,var(--paper)); }
+#tiles .tile.t-key .value  { color:var(--accent); }
+#tiles .tile.t-base { border-left-color:var(--rule-2); }
+@keyframes tilein { to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){
+  #tiles .tile{ opacity:1; transform:none; animation:none; }
+  #tiles .tile:hover{ transform:none; } }
+
+/* fixed 2-up and 3-up chart grids */
+.g2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--s4); }
+.g3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s4); }
+@media (max-width:980px){ .g3{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:720px){ .g2,.g3{ grid-template-columns:1fr; } }
+figure { margin:0; }
+figure img { width:100%; height:auto; display:block; background:#fff; border:1px solid var(--rule); border-radius:3px; }
+figcaption { margin-top:var(--s2); color:var(--ink-2); line-height:1.5; }
+figcaption b { color:var(--ink); font-weight:600; display:block; margin-bottom:2px; }
+.figside { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(300px,1fr); gap:var(--s5);
+  align-items:start; margin-top:var(--s4); }
+/* the figure is sticky-topped against a taller text column rather than leaving a
+   block of dead space beneath it */
+.figside > figure { position:sticky; top:78px; }
+@media (max-width:900px){ .figside > figure { position:static; } }
+@media (max-width:900px){ .figside{ grid-template-columns:1fr; gap:var(--s4); } }
+.figside .read { border-left:2px solid var(--rule-2); padding-left:var(--s4); }
+.figside .read h4 { margin:0 0 var(--s2); }
+/* explanation blocks in "How a company response is measured" get a frame so the
+   two inputs read as defined boxes rather than loose prose */
+.inputbox { border:1px solid var(--rule); border-radius:4px; padding:var(--s4);
+  background:var(--paper); }
+.inputbox h3 { margin-bottom:var(--s2); }
+.inputbox > p:first-of-type { margin-top:0; }
+.leadbox { border-left:3px solid var(--accent); background:var(--paper-2);
+  padding:var(--s3) var(--s4); border-radius:0 4px 4px 0; max-width:74ch; }
+.sowhat { max-width:70ch; margin-top:var(--s6); padding:22px 24px; background:var(--paper-2);
+  border-left:2px solid var(--gap); }
+.sowhat h3 { margin-bottom:8px; }
+.sowhat p { font-size:var(--f-md); }
+.subhead { font-size:1.22rem; letter-spacing:-0.014em; text-transform:none; color:var(--ink);
+  font-weight:600; margin:var(--s6) 0 var(--s4); padding-bottom:var(--s2);
+  border-bottom:1px solid var(--rule-2); }
+
+.subtabs { display:flex; flex-wrap:wrap; gap:4px; border-bottom:1px solid var(--rule);
+  margin-bottom:var(--s5); justify-content:center; }
+.subtabs button { font:inherit; font-size:var(--f-md); background:none; border:0; cursor:pointer; color:var(--ink-3);
+  padding:9px 14px; border-bottom:2px solid transparent; margin-bottom:-1px; }
+.subtabs button:hover { color:var(--ink); }
+.subtabs button[aria-selected="true"] { color:var(--ink); font-weight:600; border-bottom-color:var(--ink); }
+.sub { display:none; } .sub[data-active] { display:block; }
+.sub h3 { margin-bottom:var(--s2); }
+.sub h4 { font-size:1.06rem; margin:var(--s4) 0 var(--s2); color:var(--ink); }
+.sub p,.sub ol,.sub ul { max-width:74ch; }
+.sub ol,.sub ul { margin:var(--s2) 0 0 1.15em; }
+.sub li { margin-block:var(--s1); color:var(--ink-2); }
+.sub p + p, .sub table + p, .sub p + table { margin-top:var(--s2); }
+/* Problem and Methodology were a single left-hung column against empty space.
+   Centre the measure and justify the prose so the block reads as a document. */
+#p-problem .wrap > div, #p-method .sub { margin-inline:auto; }
+#p-problem p, #p-method .sub p, #p-method .sub dd, #p-method .sub li {
+  text-align:justify; hyphens:auto; -webkit-hyphens:auto; }
+#p-problem .phead, #p-method .phead { margin-inline:auto; }
+#p-problem .phead p, #p-method .phead p { text-align:left; hyphens:manual; }
+
+.step2 { padding-block:var(--s5); border-top:1px solid var(--rule); position:relative; }
+.step2:first-of-type { border-top:0; padding-top:0; }
+/* a numbered marker in the margin gives the sections a spine to read down */
+#p-problem .step2 { counter-increment:pstep; padding-left:3.4rem; }
+#p-problem { counter-reset:pstep; }
+#p-problem .step2::before {
+  content:counter(pstep,decimal-leading-zero);
+  position:absolute; left:0; top:var(--s5);
+  font-size:var(--f-xs); font-weight:700; letter-spacing:.1em; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; }
+#p-problem .step2:first-of-type::before { top:0; }
+@media (max-width:640px){ #p-problem .step2{ padding-left:0; }
+  #p-problem .step2::before{ position:static; display:block; margin-bottom:var(--s2); } }
+#p-problem .step2 h3, #p-method .sub h3 { text-align:left; }
+.detail { margin-top:var(--s3); padding:var(--s3) var(--s4); background:var(--paper-2);
+  border-left:2px solid var(--rule-2); color:var(--ink-2); max-width:74ch; margin-inline:auto; }
+/* definition rows: term on the left, meaning on the right, one rhythm throughout */
+.deflist { display:grid; grid-template-columns:11rem 1fr; gap:var(--s2) var(--s4); margin-top:var(--s3);
+  max-width:74ch; margin-inline:auto; }
+.deflist dt { font-weight:600; color:var(--ink); font-size:var(--f-md); }
+/* bordered variant: each term/definition pair reads as a table row */
+.deflist.bordered { gap:0; border:1px solid var(--rule); border-radius:4px; overflow:hidden;
+  background:var(--paper); }
+.deflist.bordered dt { padding:var(--s3); border-top:1px solid var(--rule); font-weight:600;
+  display:flex; align-items:center; }
+.deflist.bordered dd { padding:var(--s3); border-top:1px solid var(--rule); }
+/* the row itself carries the meaning — term cell tinted, definition cell washed */
+.deflist.bordered dt.r-c1,   .deflist.bordered dt.r-none { color:#7E2A1B;
+  background:color-mix(in srgb,var(--gap) 16%,transparent); box-shadow:inset 3px 0 0 var(--gap); }
+.deflist.bordered dt.r-c1 + dd, .deflist.bordered dt.r-none + dd {
+  background:color-mix(in srgb,var(--gap) 5%,transparent); }
+.deflist.bordered dt.r-c2 { color:#17527F;
+  background:color-mix(in srgb,var(--blue) 14%,transparent); box-shadow:inset 3px 0 0 var(--blue); }
+.deflist.bordered dt.r-c2 + dd { background:color-mix(in srgb,var(--blue) 5%,transparent); }
+.deflist.bordered dt.r-sub { color:#1D5C3E;
+  background:color-mix(in srgb,var(--ok) 16%,transparent); box-shadow:inset 3px 0 0 var(--ok); }
+.deflist.bordered dt.r-sub + dd { background:color-mix(in srgb,var(--ok) 5%,transparent); }
+.deflist.bordered dt.r-par { color:#7A5710;
+  background:color-mix(in srgb,var(--under) 20%,transparent); box-shadow:inset 3px 0 0 var(--under); }
+.deflist.bordered dt.r-par + dd { background:color-mix(in srgb,var(--under) 6%,transparent); }
+.deflist.bordered dt.r-ack { color:#8A4413;
+  background:color-mix(in srgb,var(--orange) 17%,transparent); box-shadow:inset 3px 0 0 var(--orange); }
+.deflist.bordered dt.r-ack + dd { background:color-mix(in srgb,var(--orange) 5%,transparent); }
+:root[data-theme="dark"] .deflist.bordered dt.r-c1,
+:root[data-theme="dark"] .deflist.bordered dt.r-none { color:#F0A692; }
+:root[data-theme="dark"] .deflist.bordered dt.r-c2 { color:#9CC6EC; }
+:root[data-theme="dark"] .deflist.bordered dt.r-sub{ color:#7FC7A2; }
+:root[data-theme="dark"] .deflist.bordered dt.r-par{ color:#E8C57A; }
+:root[data-theme="dark"] .deflist.bordered dt.r-ack{ color:#EDA97E; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-c1,
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-none{ color:#F0A692; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-c2 { color:#9CC6EC; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-sub{ color:#7FC7A2; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-par{ color:#E8C57A; }
+  :root:not([data-theme="light"]) .deflist.bordered dt.r-ack{ color:#EDA97E; } }
+.deflist.bordered dt:first-of-type, .deflist.bordered dt:first-of-type + dd { border-top:0; }
+@media (max-width:640px){ .deflist.bordered dd{ margin-bottom:0; } }
+.deflist dd { color:var(--ink-2); }
+@media (max-width:640px){ .deflist{ grid-template-columns:1fr; gap:2px var(--s3); }
+  .deflist dd{ margin-bottom:var(--s3); } }
+.domain { border-top:1px solid var(--rule); padding-block:var(--s3); display:grid;
+  grid-template-columns:3.2rem 1fr; gap:var(--s4); max-width:76ch; margin-inline:auto; }
+.domain:first-of-type { border-top:0; }
+.domain .code { font-weight:700; font-size:var(--f-md); color:var(--accent); }
+.domain .name { font-weight:600; font-size:1.02rem; color:var(--ink); margin-bottom:3px; }
+.domain p { }
+.domain .ex { margin-top:var(--s2); font-size:var(--f-sm); }
+.domain .ex span { display:block; margin-block:3px; }
+.yes::before { content:"passes  "; color:var(--ok); font-weight:600; }
+.no::before  { content:"fails   "; color:var(--gap); font-weight:600; white-space:pre; }
+.detail strong { color:var(--ink); font-weight:600; }
+.gates { display:grid; gap:var(--s2); grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); margin-top:14px; max-width:70ch; }
+.gate { border:1px solid var(--rule); padding:var(--s3) var(--s3); }
+.gate .q { font-size:var(--f-xs); letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:600; }
+.gate p { margin-top:6px; }
+table.matrix { width:100%; max-width:640px; border-collapse:collapse; margin-top:var(--s3); font-size:var(--f-sm); }
+table.matrix th,table.matrix td { text-align:left; padding:var(--s2) var(--s3); border-bottom:1px solid var(--rule); }
+table.matrix th { font-weight:600; font-size:var(--f-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
+table.matrix td:last-child { font-weight:600; }
+.o-gap{color:var(--gap)} .o-under{color:var(--under)} .o-ok{color:var(--ok)}
+/* action levels as tinted list rows rather than pills */
+.sub ul li.r-sub, .sub ul li.r-par, .sub ul li.r-ack, .sub ul li.r-none {
+  list-style:none; margin-left:-1.15em; padding:var(--s2) var(--s3); border-radius:3px;
+  margin-block:6px; }
+li.r-sub  { background:color-mix(in srgb,var(--ok) 8%,transparent);     box-shadow:inset 3px 0 0 var(--ok); }
+li.r-par  { background:color-mix(in srgb,var(--under) 10%,transparent); box-shadow:inset 3px 0 0 var(--under); }
+li.r-ack  { background:color-mix(in srgb,var(--orange) 9%,transparent); box-shadow:inset 3px 0 0 var(--orange); }
+li.r-none { background:color-mix(in srgb,var(--gap) 8%,transparent);    box-shadow:inset 3px 0 0 var(--gap); }
+td.cell-c1  { font-weight:600; color:#7E2A1B; background:color-mix(in srgb,var(--gap) 12%,transparent); }
+td.cell-par { font-weight:600; color:#7A5710; background:color-mix(in srgb,var(--under) 15%,transparent); }
+td.cell-c2  { font-weight:600; color:#17527F; background:color-mix(in srgb,var(--blue) 11%,transparent); }
+.w-par { color:#7A5710; } .w-ok { color:#1D5C3E; }
+.w-c1,.w-gap { color:#7E2A1B; } .w-c2 { color:#17527F; } .w-ack { color:#8A4413; }
+:root[data-theme="dark"] .w-c1,:root[data-theme="dark"] .w-gap{color:#F0A692}
+:root[data-theme="dark"] .w-c2{color:#9CC6EC} :root[data-theme="dark"] .w-ack{color:#EDA97E}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .w-c1,:root:not([data-theme="light"]) .w-gap{color:#F0A692}
+  :root:not([data-theme="light"]) .w-c2{color:#9CC6EC}
+  :root:not([data-theme="light"]) .w-ack{color:#EDA97E} }
+.read .cav { border-top:1px solid var(--rule); padding-top:var(--s3); color:var(--ink-3); }
+:root[data-theme="dark"] .w-ok{color:#7FC7A2}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .w-ok{color:#7FC7A2} }
+:root[data-theme="dark"] td.cell-c1{color:#F0A692} :root[data-theme="dark"] td.cell-par{color:#E8C57A}
+:root[data-theme="dark"] td.cell-c2{color:#9CC6EC} :root[data-theme="dark"] .w-par{color:#E8C57A}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) td.cell-c1{color:#F0A692}
+  :root:not([data-theme="light"]) td.cell-par{color:#E8C57A}
+  :root:not([data-theme="light"]) td.cell-c2{color:#9CC6EC}
+  :root:not([data-theme="light"]) .w-par{color:#E8C57A} }
+
+.controls { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:var(--s3); }
+.controls input,.controls select { font:inherit; font-size:var(--f-sm); padding:8px 11px; color:var(--ink);
+  background:var(--paper); border:1px solid var(--rule-2); border-radius:3px; }
+.controls input { flex:1 1 230px; }
+.tablewrap { overflow-x:auto; border:1px solid var(--rule); }
+table.explorer { width:100%; border-collapse:collapse; font-size:var(--f-sm); min-width:840px; }
+table.explorer th { text-align:left; padding:10px 13px; background:var(--paper-2); font-size:var(--f-xs);
+  letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); border-bottom:1px solid var(--rule); }
+table.explorer td { padding:10px 13px; border-bottom:1px solid var(--rule); vertical-align:top; color:var(--ink-2); }
+table.explorer tr:hover td { background:var(--paper-2); }
+.btn { display:inline-block; font:inherit; font-size:var(--f-sm); padding:9px 16px; text-decoration:none; cursor:pointer;
+  border:1px solid var(--ink); color:var(--ink); background:none; border-radius:3px; }
+.btn:hover { background:var(--ink); color:var(--paper); }
+/* app.js builds .card / .plot / .legend for the live charts */
+.card { border:1px solid var(--rule); padding:18px; border-radius:4px; background:var(--surface); }
+.card h3 { font-size:1.06rem; }
+.card .sub { display:block; font-size:var(--f-xs); color:var(--ink-3); margin-top:3px; }
+.plot { margin-top:12px; }
+.legend { display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:10px; font-size:var(--f-xs); color:var(--ink-2); }
+.legend .key { display:flex; align-items:center; gap:6px; }
+.tblview { margin-top:10px; font-size:var(--f-sm); color:var(--ink-3); }
+.tblview table { width:100%; border-collapse:collapse; margin-top:8px; }
+.tblview th,.tblview td { text-align:left; padding:5px 8px; border-bottom:1px solid var(--rule); }
+footer.site { border-top:1px solid var(--rule); padding-block:36px 56px; font-size:var(--f-sm); color:var(--ink-3); }
+#tooltip { position:fixed; pointer-events:none; z-index:60; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; animation:none!important; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="mark" href="#results" data-go="results" title="Do third-party frontier AI evaluations matter?">Frontier&nbsp;AI&nbsp;evaluations</a>
+    <div class="tabs" role="tablist">
+      <button role="tab" data-tab="results" aria-selected="true">Results</button>
+      <button role="tab" data-tab="problem" aria-selected="false">Problem</button>
+      <button role="tab" data-tab="method" aria-selected="false">Methodology</button>
+      <button role="tab" data-tab="data" aria-selected="false">Data</button>
+      <button id="themeToggle" type="button">Theme</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ══ RESULTS ══════════════════════════════════════════════════════════ -->
+<div class="panel" id="p-results" data-active>
+  <div class="wrap">
+
+    <h1 class="pagetitle">Do third-party frontier AI evaluations matter?</h1>
+    <p class="pagesub">Analyzing publicly available evidence of company responses to evaluations</p>
+
+    <div class="resultrow">
+      <div>
+        <div class="phead" style="margin-bottom:0">
+          <p class="lede">Government AI institutes and independent evaluators test advanced systems
+            for dangerous capabilities, safeguard failures and other risks — often with access and
+            technical expertise unavailable to the wider public. Yet identifying a risk is not the
+            same as reducing it.</p>
+          <p>An evaluation can document a serious vulnerability without compelling a developer
+            response, delaying deployment, triggering additional review, or verifying remediation.
+            This dataset asks a narrow question: <b>when an evaluator publishes a risk-relevant
+            finding about a named frontier system, does the public record document action
+            attributed to that finding and directed at mitigating the identified risk?</b>
+            <a href="#problem" data-go="problem">More on the problem &rarr;</a></p>
+        </div>
+        <div class="meta tnum">
+          <span><b id="mFindings">—</b> findings</span>
+          <span><b id="mReports">—</b> reports</span>
+          <span><b id="mInst">—</b> evaluators</span>
+          <span id="mWindow"></span>
+        </div>
+      </div>
+      <aside class="statcol">
+        <div class="headline">
+          <div class="big tnum" id="heroNum">—</div>
+          <p class="say" id="heroCaption">of significant-risk findings lacked a specific and
+            proportionate publicly documented company response.</p>
+        </div>
+        <div id="tiles"></div>
+      </aside>
+    </div>
+
+    <div class="subhead">What happens to a published finding</div>
+    <figure>
+      <div id="pipeline"><div id="sankeyMount" class="plot"></div></div>
+      <figcaption><b>Every published finding, narrowed to the ones a company owes an answer for.</b>
+        Read it left to right. Every finding in the dataset enters on the left, and each ribbon
+        carries findings from one stage to the next; the width of a ribbon is drawn in proportion
+        to how many findings it carries, so a ribbon twice as thick is carrying twice as many.
+        Most findings drop out before the end, and that is the point of the diagram: they are
+        methodology papers, governance commentary, or results with no named company that could
+        answer for them, so no response is owed and none is counted as missing. What survives to
+        the final column is the population every number on this page is computed over. Hover any
+        ribbon to see the exact count it represents.</figcaption>
+      <details class="tblview" id="sankeyTable"><summary style="cursor:pointer">Table view</summary></details>
+    </figure>
+
+    <div class="subhead">Was the company response proportionate to the risk identified?</div>
+    <div class="leadbox">
+      <p>Every trackable evaluation finding — one a named company could answer for — gets one
+        verdict: <strong>proportionality</strong>. It combines two separately coded variables:
+        the finding's <strong>severity</strong> — significant-risk or low-risk — and the company's
+        <strong>Action Level</strong> — Substantive, Partial, Acknowledged or None.</p>
+      <p>Each is coded on its own, so neither can colour the other. They are then combined by a
+        fixed rule: a <strong>significant-risk</strong> finding counts as proportionate
+        <strong>only if the response was Substantive</strong>; a <strong>low-risk</strong> finding
+        needs only a <strong>Partial</strong> one. An acknowledgement without action never meets
+        the standard, and a finding with no located response is always an accountability gap.</p>
+      <p class="detail">Proportionate does not mean the response was implemented, that it worked,
+        or that the risk was removed — only that a documented response met the bar the finding's
+        severity sets.</p>
+    </div>
+
+    <div class="g2" style="margin-top:var(--s5)">
+      <div class="inputbox">
+        <h3 style="margin-bottom:var(--s2)">Question 1 · Severity — how serious is the finding?</h3>
+        <p>Each finding is scored against eight dangerous-capability
+          domains by three independent models — Claude Sonnet 5, GPT-5.5 and Gemini 3.1 — using one
+          frozen prompt sent to all three. Each model returns its own category, and the one that
+          at least two of the three agree on becomes the finding's severity. Using three models
+          rather than one means a single model's misreading cannot decide a case on its own.</p>
+        <dl class="deflist bordered" style="grid-template-columns:11rem 1fr">
+          <dt class="r-c1">Category&nbsp;1</dt><dd><b>Significant risk.</b> At least one of the eight domains is
+            <em>demonstrated</em>: CBRN uplift · cyber operations · autonomy and self-replication ·
+            persuasion at scale · deceptive alignment · safeguard failure · evaluation integrity ·
+            acute individual harm.</dd>
+          <dt class="r-c2">Category&nbsp;2</dt><dd><b>Low-risk.</b> Everything else — reassuring nulls,
+            capability gaps, methodology contributions, governance observations, non-frontier models.</dd>
+        </dl>
+        <div class="detail" >The Category&nbsp;1 bar mirrors the thresholds
+          the developers publish for themselves — Anthropic's RSP Capability Thresholds, OpenAI's
+          Preparedness Framework, Google DeepMind's Frontier Safety Framework. <strong>A capability
+          must be shown, not discussed</strong>, and a model measured <em>below</em> a threshold is
+          never Category&nbsp;1.</div>
+      </div>
+      <div class="inputbox">
+        <h3 style="margin-bottom:var(--s2)">Question 2 · Action level — what did the company publish?</h3>
+        <p>Three separate searches are run for every finding — company response, policy
+          uptake and public coverage. Only the company's own primary document counts — news reporting that quotes a company is not a
+          response, and standing policy that shares a topic does not count.</p>
+        <dl class="deflist bordered" style="grid-template-columns:11rem 1fr">
+          <dt class="r-sub">Substantive</dt><dd>A specific, documented change, attributed to the finding.</dd>
+          <dt class="r-par">Partial</dt><dd>A change claimed but not verifiable, or incomplete.</dd>
+          <dt class="r-ack">Acknowledged</dt><dd>The finding is referenced, but no action follows.</dd>
+          <dt class="r-none">None</dt><dd>No publicly documented company response was located.</dd>
+        </dl>
+        <div class="detail" >A separate agent pass then <strong>re-checked each proposed
+          Action Level against the cited evidence</strong>, and every retained finding and its
+          coding was reviewed before it entered the final record.</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:var(--s6)">The proportionality matrix</h3>
+    <p style="max-width:70ch;margin-top:var(--s2)">The same company behaviour scores differently
+      depending on what it was answering.</p>
+    <div class="g2" style="margin-top:var(--s4);align-items:end">
+      <figure>
+        <img src="charts/21_severity_x_action_heatmap.jpg"
+             alt="Severity against what the company published, every cell holding its finding count and outcome.">
+        <figcaption><b>Severity &times; company response.</b> Every trackable evaluation finding, placed by how
+          serious it is and what the company published.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="charts/10_proportionality_by_severity.jpg"
+             alt="Proportionality outcomes split by severity.">
+        <figcaption><b>The same findings as verdicts.</b> The matrix collapsed into the three
+          outcomes, split by severity.</figcaption>
+      </figure>
+    </div>
+
+    <div class="g2" style="margin-top:var(--s5)">
+      <div class="readcol">
+        <h4>How to read the matrix</h4>
+        <p><b>Rows are severity.</b> The upper row is <b class="w-c1">Category 1 — significant risk</b>: the
+          finding demonstrated one of the eight dangerous-capability domains. The lower row is
+          <b class="w-c2">Category 2 — low-risk</b>: real, verified findings that crossed no danger
+          threshold.</p>
+        <p><b>Columns are action level</b> — the strongest thing the company published, left to
+          right from <b class="w-ok">Substantive</b> (a specific documented change) through
+          <b class="w-par">Partial</b> (claimed but unverifiable) and
+          <b class="w-ack">Acknowledged</b> (referenced, nothing done) to
+          <b class="w-gap">None</b> (no documented response located).</p>
+        <p>Every finding sits in exactly one cell, and the number in it is how many share that
+          pair. <b>Cell colour is the outcome</b>, derived rather than assigned.</p>
+        <p><b>The Category 1 row is the one that matters.</b> Only its Substantive cell is proportionate.
+          <b>The Category 2 row sets the comparison</b> — its bar is lower by design, so Partial is enough.
+          Partial is the single column where the two rows disagree.</p>
+      </div>
+      <div class="readcol">
+        <h4>The three verdicts</h4>
+        <dl class="deflist bordered" style="grid-template-columns:1fr">
+          <dt class="r-sub">Proportionate</dt>
+          <dd>The response met the bar the finding's severity sets. The loop closed in public.</dd>
+          <dt class="r-par">Under-response</dt>
+          <dd>The company engaged — referenced the finding, or claimed a change nobody can verify —
+            but did less than the risk called for.</dd>
+          <dt class="r-none">Accountability gap</dt>
+          <dd>No publicly documented company response was located. No public trace that the finding
+            was received, considered or acted on.</dd>
+        </dl>
+        <p style="margin-top:var(--s3)"><b>Under-response and accountability gap together are the
+          shortfall.</b> The headline counts only the second, the stricter of the two readings.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:var(--s3);">
+      <a href="#method" data-go="method">Full methodology — all eight domains defined, the tier
+      test, and the three evidence searches &rarr;</a></p>
+
+    <div class="subhead">What the outcomes look like</div>
+    <div class="g2">
+      <figure><img loading="lazy" src="charts/16_gap_rate_by_access_type.jpg" alt="No-action rate by access type.">
+        <figcaption><b>Access predicts response.</b> Developers documented a substantive response for
+          24 of the 44 pre-deployment findings (55%), but for only 9 of the 131 post-deployment
+          findings (7%). This is the largest effect in the dataset — and access is set by agreement, not by evaluator diligence.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/15b_shortfall_rate_by_year.jpg" alt="Shortfall rate by year.">
+        <figcaption><b>No clean improvement over time.</b> Year-to-year movement is real but
+          non-monotonic, and the latest year is partly recency — those findings have had less time
+          to draw a response.</figcaption></figure>
+    </div>
+    <div class="g3" style="margin-top:var(--s4)">
+      <figure><img loading="lazy" src="charts/22_domain_x_outcome_heatmap.jpg" alt="Outcome by risk domain.">
+        <figcaption><b>Not one topic.</b> Jailbreaks, cyber, alignment, autonomy and bio-chem all
+          show substantial shortfall — so the gap is not an artefact of one research area.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/12_evaluator_scope.jpg" alt="Outcome mix by evaluator type.">
+        <figcaption><b>Who reports it matters.</b> Findings from government institutes came with a
+          response gap less often than those from third-party evaluators (71% against 84%) — but
+          this difference does not hold after adjusting for clustering of findings within reports.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/09_policy_level_distribution.jpg" alt="Policy uptake.">
+        <figcaption><b>Almost no binding policy action.</b> Government follow-up is tracked
+          separately and never substitutes for a company response.</figcaption></figure>
+    </div>
+
+    <details class="foldout">
+      <summary>
+        <span class="fold-t">What the corpus is made of</span>
+        <span class="fold-s">Three breakdowns behind the headline — how the corpus splits by tier,
+          when in a model's life the evaluation happened, and whether responding companies name the
+          evaluator. Detail rather than result; open if you want to check the composition.</span>
+      </summary>
+<div class="g3">
+      <figure><img loading="lazy" src="charts/07_tier_distribution.jpg" alt="Corpus split by tier.">
+        <figcaption><b>Only trackable evaluation findings are scored.</b> The rest are real, source-verified findings that
+          fail one of the two gates — methodology, governance, or results with no named company to
+          answer for them. They stay in the dataset; excluding them from the headline while keeping
+          them is what makes the denominator defensible.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/03_findings_per_access_type.jpg" alt="Findings per access type.">
+        <figcaption><b>Most evaluation happens after release.</b> Pre-deployment access covers a
+          small share of the corpus — which is precisely what makes it a policy lever rather than a
+          description of how things already are.</figcaption></figure>
+      <figure><img loading="lazy" src="charts/18_attribution_distribution.jpg" alt="Attribution of responses.">
+        <figcaption><b>Acting quietly still counts.</b> Where a company responds it usually names
+          the evaluator, but not always. Attribution is a separate field so a silent fix is never
+          penalised in the outcome.</figcaption></figure>
+    </div>
+    </details>
+
+    <details class="foldout">
+      <summary>
+        <span class="fold-t">Who produces the findings</span>
+        <span class="fold-s">The 1,146 findings come from 46 institutions across four types.
+          Open to see the concentration and how it splits.</span>
+      </summary>
+      <div class="g2">
+        <figure><img loading="lazy" src="charts/01_findings_per_institution.jpg"
+          alt="Findings per institution, ranked.">
+          <figcaption><b>Output is concentrated.</b> A small number of evaluators account for most
+            of the corpus, so institution-level rates rest on very uneven denominators.</figcaption></figure>
+        <figure><img loading="lazy" src="charts/13_institution_type_tree.jpg"
+          alt="Findings by institution type, branching into individual organisations.">
+          <figcaption><b>Four institution types.</b> Nonprofit (AEF) 335, Government 320,
+            Nonprofit (independent) 253 and For-profit 238 — each branching into the organisations
+            behind it.</figcaption></figure>
+      </div>
+    </details>
+
+    <div class="subhead">What stands out in the numbers</div>
+    <p style="max-width:74ch;margin-bottom:var(--s4)">Each line below is computed directly from the
+      dataset, with its denominator stated — several of these compare different populations, so the
+      denominator is the part to read carefully.</p>
+    <div id="insightList"></div>
+  </div>
+</div>
+
+<!-- ══ PROBLEM ══════════════════════════════════════════════════════════ -->
+<div class="panel" id="p-problem">
+  <div class="wrap" style="max-width:900px">
+    <div class="phead">
+      <h1>The problem</h1>
+      <p class="lede">Frontier AI evaluations have become a prominent part of AI governance.
+        What happens to their findings has not been measured.</p>
+    </div>
+    <div style="max-width:74ch">
+      <div class="step2">
+        <h3>The question</h3>
+        <p>When a government or independent evaluator publishes a risk-relevant finding about a
+          <strong>named frontier system</strong>, does the public record document action
+          <strong>attributed to that finding</strong> and <strong>directed at mitigating the
+          identified risk</strong>?</p>
+        <div class="detail">Each clause narrows it. <em>Named frontier system</em> excludes
+          findings with no identifiable party to answer them. <em>Attributed to that finding</em>
+          excludes standing policy that happens to share a topic. <em>Directed at mitigating the
+          risk</em> excludes acknowledgement that changes nothing.</div>
+      </div>
+
+      <div class="step2">
+        <h3>Why the public record</h3>
+        <p>A company may act privately or tell the evaluator directly. None of that is visible
+          here, by construction. What this measures is the record a regulator, journalist or
+          researcher can verify from outside.</p>
+      </div>
+
+      <div class="step2">
+        <h3>What this does not measure</h3>
+        <ul>
+          <li><strong>Private action.</strong> A fix made without public comment is invisible to
+            this method.</li>
+          <li><strong>Effect.</strong> A substantive response means a documented change was
+            published — not that it was implemented well, or that it worked.</li>
+          <li><strong>Recency.</strong> Findings published near the cutoff may not have had time
+            to draw a response. Outcomes are reported by year so this stays visible.</li>
+        </ul>
+        <div class="detail"><strong>Absence is measured, not assumed.</strong> &ldquo;No
+          response&rdquo; means all three evidence searches were run and logged with a date — not
+          that nobody looked.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="p-method">
+  <div class="wrap" style="max-width:960px">
+    <div class="phead">
+      <h1>Methodology</h1>
+      <p class="lede">The outcome for each finding is derived, never judged. Two coded columns decide
+        whether a response is owed, an ensemble decides how serious it is, a fixed search decides
+        whether a response exists — and the verdict is a formula over those inputs.</p>
+    </div>
+
+    <div class="subtabs" role="tablist">
+      <button role="tab" data-sub="scope" aria-selected="true">What counts</button>
+      <button role="tab" data-sub="tier" aria-selected="false">Is a response owed?</button>
+      <button role="tab" data-sub="sev" aria-selected="false">Severity</button>
+      <button role="tab" data-sub="resp" aria-selected="false">Finding the response</button>
+      <button role="tab" data-sub="prop" aria-selected="false">Proportionality</button>
+    </div>
+
+    <div class="sub" id="s-scope" data-active>
+      <div class="step2">
+        <h3>Three tests, all of which must hold</h3>
+        <ol>
+          <li><strong>Asserted by the evaluator</strong> — not a summary of someone else's work, not a comparator score cited in passing.</li>
+          <li><strong>Evidence-backed in that report</strong> — a measured result, an observed behaviour, or a documented process fact. Opinions, recommendations and plans are not findings.</li>
+          <li><strong>Independently codeable</strong> — it would warrant its own response on its own terms.</li>
+        </ol>
+      </div>
+      <div class="step2">
+        <h3>What is deliberately excluded</h3>
+        <ul>
+          <li><strong>Company self-reports.</strong> A developer writing about its own models has nobody to respond to. One exception is load-bearing: where a named external evaluator contributes a section to a company system card, that section is in scope and is filed under the evaluator, never the company.</li>
+          <li><strong>Ordinary accuracy and hallucination.</strong> That literature is enormous and was never censused here, so admitting a slice of it would make the corpus incomplete by its own standard.</li>
+          <li><strong>Non-frontier subjects.</strong> The finding must concern a named frontier model or AI system, not general machine learning.</li>
+          <li><strong>Unverifiable sources.</strong> Every number and quote is checked against the document it cites.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub" id="s-tier">
+      <div class="step2">
+        <h3>Every finding sits in exactly one group</h3>
+        <p>The group is not a label anyone writes. It is <strong>derived</strong> from two coded
+          columns, <code>Eval? (trackable)</code> and <code>Action Trackable?</code>, so it can
+          never drift from the evidence that produced it.</p>
+        <table class="matrix" style="max-width:none">
+          <thead><tr><th style="width:15rem">Group</th><th style="width:7rem">Encoding</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td class="cell-c1">Trackable evaluation findings<br><span class="detail">233 (20.3%)</span></td><td>yes / yes</td><td><b>A company could answer for it.</b> Names a company or model, concerning, and a response is reasonable to expect. <strong>Only trackable evaluation findings enter the company-response and proportionality analysis</strong> — every headline number is computed over them.</td></tr>
+            <tr><td class="cell-par">Non-trackable evaluation findings<br><span class="detail">599 (52.3%)</span></td><td>yes / no</td><td><b>Empirical, but no accountable party.</b> Anonymised models, reassuring nulls, non-frontier subjects, capability trends, and results that call for no company response.</td></tr>
+            <tr><td class="cell-c2">Non-empirical findings<br><span class="detail">314 (27.4%)</span></td><td>no / blank</td><td><b>No empirical model behaviour or capability reported.</b> Contributions to methodology, frameworks, governance processes, and tooling.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="step2">
+        <h3>The trackable-finding test — all three must hold</h3>
+        <div class="gates">
+          <div class="gate"><div class="q">Condition 1</div><p>It is an empirical model finding — a measured result about behaviour, capability or safeguards.</p></div>
+          <div class="gate"><div class="q">Condition 2</div><p>It names a specific company or model. Company level suffices; "anonymised" fails.</p></div>
+          <div class="gate"><div class="q">Condition 3</div><p>It demonstrates a concerning result for which a specific company response is reasonable to expect.</p></div>
+        </div>
+        <h4>What condition 3 deliberately excludes</h4>
+        <ul>
+          <li>Reassuring nulls — a model measured <em>below</em> a threshold.</li>
+          <li>Benchmark scores or relative uplift with no dangerous threshold crossed.</li>
+          <li>Inconclusive results.</li>
+          <li>Comparative rankings between models.</li>
+          <li>Capability trends and forecasts.</li>
+          <li>Findings where named models are the <em>instrument</em> of a methodology study, not its subject.</li>
+          <li>Company self-classifications ("we treat this as High capability").</li>
+          <li>Non-frontier models.</li>
+          <li>Findings too recent to have plausibly drawn a response.</li>
+        </ul>
+        <div class="detail">This exclusion list is why the headline denominator is far smaller than
+          the corpus. <strong>A model scoring below a danger threshold is not something a company
+          owes an answer for</strong>, and counting it as an unanswered finding would inflate the gap.</div>
+      </div>
+
+      <div class="step2">
+        <h3>One finding per row</h3>
+        <dl class="deflist">
+          <dt>Never shared</dt><dd>Two different companies never share a row. A finding covering four models is split by developer.</dd>
+          <dt>Clubbed</dt><dd>Findings warranting the <em>same</em> response become one row. The test: did, or would, the company respond to them as one thing?</dd>
+          <dt>Split</dt><dd>Findings warranting <em>distinct</em> responses become separate rows — a capability result and a safeguard failure are not one item.</dd>
+          <dt>Comparators</dt><dd>Baselines and comparison models are never rows of their own.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="sub" id="s-sev">
+      <div class="step2">
+        <figure style="max-width:760px">
+          <img loading="lazy" src="charts/17_severity_classification.jpg"
+               alt="How findings divide between Category 1 and Category 2.">
+          <figcaption><b>How the corpus divides.</b> Every finding is scored against the eight
+            domains below; a finding is Category&nbsp;1 only if at least one is demonstrated.</figcaption>
+        </figure>
+      </div>
+      <div class="step2">
+        <h3>Two categories, and what separates them</h3>
+        <dl class="deflist">
+          <dt class="r-c1">Category&nbsp;1</dt><dd><b>Significant risk.</b> Triggered if <em>any one</em> of the eight
+            dangerous-capability domains below is <strong>demonstrated</strong> in the evaluation described.</dd>
+          <dt class="r-c2">Category&nbsp;2</dt><dd><b>Low-risk.</b> Everything else — reassuring or null results
+            (capability below an expert threshold, &ldquo;no uplift&rdquo;, &ldquo;zero instances&rdquo;);
+            capability-gap findings where the model fails a task; positive methodology or tooling
+            contributions; pure process or governance observations; and findings about non-frontier
+            or small research models where no frontier system is implicated.</dd>
+        </dl>
+        <div class="detail">Where the bar comes from: the Category&nbsp;1 threshold deliberately
+          mirrors the dangerous-capability thresholds the frontier developers publish for
+          themselves — <strong>Anthropic&rsquo;s Responsible Scaling Policy Capability Thresholds,
+          OpenAI&rsquo;s Preparedness Framework, and Google DeepMind&rsquo;s Frontier Safety Framework
+          Critical Capability Levels</strong>. This applies the industry&rsquo;s own bar rather than one
+          invented for this dataset, which is what makes a shortfall against it meaningful.</div>
+      </div>
+
+      <div class="step2">
+        <h3>The eight domains</h3>
+        <p>A finding is Category&nbsp;1 if it demonstrates at least one. D1–D8 are this dataset&rsquo;s
+          own labels for them.</p>
+        <div class="domain"><div class="code">D1</div><div>
+          <div class="name">CBRN / bio-chem uplift</div>
+          <p>Meaningful uplift toward chemical, biological, radiological or nuclear weapons; expert-surpassing bio or chem capability; crossing a stated CBRN threshold.</p>
+        </div></div>
+        <div class="domain"><div class="code">D2</div><div>
+          <div class="name">Cyber operations</div>
+          <p>Offensive cyber capability — expert-level or novel-uplift hacking, completing realistic multi-stage attack chains, high CTF or exploit success rates, or a &ldquo;High&rdquo; or above cyber designation.</p>
+        </div></div>
+        <div class="domain"><div class="code">D3</div><div>
+          <div class="name">Autonomy / AI R&amp;D / self-replication</div>
+          <p>Autonomous replication, self-propagation, or automating AI R&amp;D and thereby accelerating scaling.</p>
+        </div></div>
+        <div class="domain"><div class="code">D4</div><div>
+          <div class="name">Persuasion / manipulation / societal harm at scale</div>
+          <p>Systematically changing beliefs or behaviour at scale; implication in large-scale societal harm — mass CSAM, or election-scale persuasion exceeding a real benchmark.</p>
+        </div></div>
+        <div class="domain"><div class="code">D5</div><div>
+          <div class="name">Deceptive alignment / misalignment</div>
+          <p>Deliberate deception, scheming, sabotage, sandbagging, blackmail, or hiding of abilities or intentions.</p>
+          <div class="ex">
+            <span class="yes">&ldquo;I should not reveal that I am a robot. I should make up an excuse.&rdquo; — the model&rsquo;s own reasoning, planning a deception.</span>
+            <span class="yes">&ldquo;the model consistently hides the genuine reasons behind its trade&rdquo; — concealment repeated across trials.</span>
+            <span class="no">&ldquo;the good-looking render is faked with an image generator&rdquo; — a fabricated artefact, with nothing shown about intent.</span>
+          </div>
+        </div></div>
+        <div class="domain"><div class="code">D6</div><div>
+          <div class="name">Safeguard failure</div>
+          <p>A <em>deployed</em> safety mechanism — jailbreak defence, classifier, guardrail, refusal training, content filter — bypassed, defeated, or shown to fail, allowing harmful output on a frontier system.</p>
+        </div></div>
+        <div class="domain"><div class="code">D7</div><div>
+          <div class="name">Evaluation integrity compromised</div>
+          <p>The evaluation itself undermined — the model detected it was being evaluated, gamed the benchmark, was trained on evaluation data, or defeated or de-anonymised the evaluation environment.</p>
+        </div></div>
+        <div class="domain"><div class="code">D8</div><div>
+          <div class="name">Acute individual harm</div>
+          <p>A model actively encouraging, instructing or coaching a user toward suicide or self-harm. Category 1 <strong>regardless of scale</strong> — one user is enough. Reporting refusal rates on such prompts is not D8; the model must be shown doing it.</p>
+        </div></div>
+      </div>
+
+      <div class="step2">
+        <h3>Four rules applied before any decision</h3>
+        <dl class="deflist">
+          <dt>1 · Negation</dt><dd>&ldquo;did not&rdquo;, &ldquo;below expert&rdquo;, &ldquo;zero instances&rdquo;,
+            &ldquo;no uplift&rdquo;, &ldquo;remained below&rdquo; &rarr; Category&nbsp;2, even when the surrounding
+            vocabulary is alarming.</dd>
+          <dt>2 · Demonstrated</dt><dd>The capability must be <em>shown</em> in the evaluation described.
+            A capability discussed, proposed, warned about or listed as a risk is not demonstrated.
+            An alarming characterisation by the evaluator is not a demonstration.</dd>
+          <dt>3 · Trajectory</dt><dd>A rising trend is Category&nbsp;1 only if a dangerous capability was
+            reached <em>now</em>. A pure future projection is Category&nbsp;2.</dd>
+          <dt>4 · Deliberateness</dt><dd>D5 requires evidence about the model — its own reasoning, an
+            explicit plan, or concealment repeated across trials. Words like &ldquo;faked&rdquo; or
+            &ldquo;cheated&rdquo; are the evaluator&rsquo;s characterisation of an output, not evidence of intent.</dd>
+        </dl>
+      </div>
+
+      <div class="step2">
+        <h3>How the score is produced</h3>
+        <p>Three independent models — <strong>Claude Sonnet 5, GPT-5.5 and Gemini 3.1</strong> — each
+          score every finding against all eight domains, using one frozen prompt sent verbatim to
+          all three. Whichever category at least two of the three models agree on becomes the
+          finding's severity, so no single model can decide a case by itself. All three votes are
+          stored and never overwritten, which means a two-to-one split stays visible in the data
+          instead of disappearing into the majority — you can see exactly which findings the models
+          disagreed about, and how often.</p>
+        <div class="detail">The three models agreed unanimously on <strong>1,032 of the 1,146
+          findings (90.1%)</strong>, and on <strong>194 of the 233 trackable evaluation findings
+          (83.3%)</strong>. The prompt is
+          version-frozen: any change to it invalidates comparability with rows already coded, so
+          every vote carries the prompt version it was produced under.</div>
+      </div>
+    </div>
+
+    <div class="sub" id="s-resp">
+      <div class="step2">
+        <h3>Three evidence searches</h3>
+        <p>For every trackable evaluation finding we ran <strong>three separate agentic web
+          searches</strong>, each looking for a different kind of evidence under its own source
+          rule. All three covered public sources available by 29 August 2026.
+          <strong>Only the company-response search can establish that a company responded.</strong></p>
+        <dl class="deflist bordered" style="grid-template-columns:13rem 1fr">
+          <dt>Company response</dt>
+          <dd>The developer's newsroom, blog and research index; later model and system cards;
+            safety and deployment pages; and official statements. Only the company's own documents
+            count.</dd>
+          <dt>Policy uptake</dt>
+          <dd>Official parliamentary, legislative, regulatory and agency records. A record counts
+            only if it refers to the finding, not merely to the same topic.</dd>
+          <dt>Public coverage</dt>
+          <dd>Independent media, academic citations and documented public discussion. The
+            evaluator's own publicity and the company's own promotion do not count.</dd>
+        </dl>
+        <div class="detail">Only the company's own primary document is admissible — <strong>news
+          reporting that quotes a company is not a response.</strong> A document dated before the
+          finding is invalid unless a coordinated pre-deployment disclosure is documented, and
+          standing policy that merely shares a topic does not count. A separate agent pass then re-checked
+          each proposed Action Level against the cited evidence, and every retained finding and its
+          coding was reviewed before it entered the final record.</div>
+      </div>
+      <div class="step2">
+        <h3>Action Level — four levels</h3>
+        <ul>
+          <li class="r-sub"><strong>Substantive</strong> — a specific, documented change, attributed to the finding.</li>
+          <li class="r-par"><strong>Partial</strong> — a change claimed but not verifiable, or incomplete.</li>
+          <li class="r-ack"><strong>Acknowledged</strong> — the finding is referenced, but no action follows.</li>
+          <li class="r-none"><strong>None</strong> — no publicly documented company response was located.</li>
+        </ul>
+        <div class="detail">Policy uptake is tracked separately, from official government sources
+          only, and <strong>never substitutes for a company response.</strong> A regulator citing a
+          finding does not discharge the developer's obligation to answer it.</div>
+      </div>
+    </div>
+
+    <div class="sub" id="s-prop">
+      <div class="step2">
+        <h3>Proportionality is the final verdict on each finding</h3>
+        <p>Severity says how serious the finding is. Action Level says what the company did.
+          <strong>Proportionality is the two combined</strong> — whether the response matched the
+          risk. It is the only column the headline is computed from, and it is derived by lookup,
+          never assigned by hand.</p>
+      </div>
+      <div class="step2">
+        <h3>The lookup</h3>
+        <p><a href="#results" data-go="results">The matrix is on the
+          Results tab &rarr;</a> — rows are severity, columns are what the company published, and
+          each cell is the outcome that pair produces.</p>
+        <div class="detail">A significant-risk finding needs a <strong>substantive</strong> response
+          to pass. A low-risk finding needs at least a <strong>partial</strong> one. Nothing else
+          clears the bar, and no discretion enters at any point.</div>
+      </div>
+    </div>
+
+      </div>
+</div>
+
+<!-- ══ DATA ═════════════════════════════════════════════════════════════ -->
+<div class="panel" id="p-data">
+  <div class="wrap">
+    <div class="phead">
+      <h1>The data</h1>
+      <p class="lede" id="countNote">Every row carries its source, its coded fields and the reasoning
+        behind its tier.</p>
+    </div>
+    <div class="controls">
+      <input id="fSearch" type="search" placeholder="Search findings, models, institutions…" aria-label="Search findings">
+      <select id="fScope" aria-label="Scope"></select>
+      <select id="fInst" aria-label="Institution"></select>
+      <select id="fSev" aria-label="Severity"></select>
+      <select id="fAction" aria-label="Action level"></select>
+      <select id="fDomain" aria-label="Domain"></select>
+      <label style="display:flex;align-items:center;gap:7px;font-size:.85rem;color:var(--ink-2)">
+        <input type="checkbox" id="fTrack"> Trackable evaluation findings only</label>
+      <button class="btn" id="dlFiltered" type="button">Download CSV</button>
+    </div>
+    <div class="tablewrap">
+      <table class="explorer"><thead><tr>
+        <th>Date</th><th>Institution</th><th>Finding</th><th>Models</th><th>Severity</th><th>Response</th>
+      </tr></thead><tbody id="tbody"></tbody></table>
+    </div>
+    <div style="margin-top:var(--s3)"><button class="btn" id="loadMore" type="button">Show more</button></div>
+
+    <div class="subhead">Charts drawn live from the dataset</div>
+    <div id="chartGrid" class="g2"></div>
+
+    <div style="margin-top:var(--s6);display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="dataset.csv" download>Download the full dataset</a>
+      <a class="btn" href="codebook.md">Read the codebook</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p id="asof"></p>
+    <p style="margin-top:6px">Built by <a href="https://kunalssingh.com" rel="noopener">Kunal Singh</a> ·
+      <a href="https://github.com/KUNALSINGH9373/evaluating-the-evaluators" rel="noopener">Source and data on GitHub</a></p>
+  </div>
+</footer>
+
+<div id="tooltip" role="status" aria-live="polite"></div>
+<button id="viewGapBtn" type="button" hidden></button>
+
+<script src="data.js?v=0607701"></script>
+<script src="app.js?v=0607701"></script>
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+<script type="module" src="tags3d.js?v=0607701"></script>
+<script>
+/* Tabs. A chart inside a hidden panel measures clientWidth 0, so a resize event
+   is dispatched on reveal — app.js debounces that into a full re-render. */
+(function () {
+  var panels = { results:'p-results', problem:'p-problem', data:'p-data', method:'p-method' };
+
+  /* A chart in a hidden panel measures clientWidth 0, so revealing one needs a
+     re-render. app.js listens on resize and rebuilds EVERY chart on the site, which
+     is far too heavy to run on each tab switch. Charts keep their geometry once
+     drawn, so a panel only needs repainting the first time it is shown at a given
+     viewport width. */
+  var painted = {};
+  function paint(key) {
+    if (painted[key] === innerWidth) return;
+    painted[key] = innerWidth;
+    window.dispatchEvent(new Event('resize'));
+  }
+  function show(name) {
+    if (!panels[name]) name = 'results';
+    Object.keys(panels).forEach(function (k) {
+      var el = document.getElementById(panels[k]);
+      if (!el) return;
+      if (k === name) el.setAttribute('data-active', ''); else el.removeAttribute('data-active');
+    });
+    document.querySelectorAll('.tabs [data-tab]').forEach(function (b) {
+      b.setAttribute('aria-selected', String(b.dataset.tab === name));
+    });
+    if (location.hash.slice(1) !== name) history.replaceState(null, '', '#' + name);
+    window.scrollTo(0, 0);
+    paint('p:' + name);
+  }
+  document.querySelectorAll('.tabs [data-tab]').forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.tab); });
+  });
+  document.querySelectorAll('[data-go]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); show(a.dataset.go); });
+  });
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+  show(location.hash.slice(1) || 'results');
+
+  var subs = ['scope','tier','sev','resp','prop'];
+  function showSub(name) {
+    subs.forEach(function (k) {
+      var el = document.getElementById('s-' + k);
+      if (!el) return;
+      if (k === name) el.setAttribute('data-active', ''); else el.removeAttribute('data-active');
+    });
+    document.querySelectorAll('.subtabs [data-sub]').forEach(function (b) {
+      b.setAttribute('aria-selected', String(b.dataset.sub === name));
+    });
+    paint('s:' + name);
+  }
+  document.querySelectorAll('.subtabs [data-sub]').forEach(function (b) {
+    b.addEventListener('click', function () { showSub(b.dataset.sub); });
+  });
+
+  /* Advance the methodology sub-tabs by scrolling past the end of a panel.
+     Three things keep this off the scroll hot path: wheel deltas are only
+     accumulated in the listener and inspected once per animation frame (reading
+     scrollHeight per wheel event forces a synchronous layout and janks the
+     scroll); the jump is instant, because an animated scroll fights trackpad
+     momentum; and the cooldown is extended by any continued wheel input, so a
+     momentum tail cannot carry you through several tabs. */
+  (function () {
+    var current = 0, over = 0, coolUntil = 0, last = 0, pending = 0, raf = 0;
+    var EDGE = 4;     // px tolerance for "at the end of the page"
+    var PUSH = 110;   // extra scroll past the end before a switch fires
+    var COOL = 500;   // ms of quiet required after a switch
+    var GAP  = 200;   // ms without wheel input that starts a fresh gesture
+
+    var method = document.getElementById('p-method');
+    function active() { return method && method.hasAttribute('data-active'); }
+    function sync() {
+      for (var i = 0; i < subs.length; i++) {
+        var el = document.getElementById('s-' + subs[i]);
+        if (el && el.hasAttribute('data-active')) { current = i; return; }
+      }
+    }
+    function go(dir) {
+      var next = current + dir;
+      if (next < 0 || next >= subs.length) return;
+      showSub(subs[next]);
+      var strip = document.querySelector('.subtabs');
+      if (strip) window.scrollTo(0, strip.getBoundingClientRect().top + window.scrollY - 70);
+      coolUntil = performance.now() + COOL;
+      over = 0;
+    }
+    function flush() {
+      raf = 0;
+      var d = pending; pending = 0;
+      if (!d || !active() || performance.now() < coolUntil) return;
+      var atEnd = innerHeight + scrollY >= document.documentElement.scrollHeight - EDGE;
+      var atTop = scrollY <= EDGE;
+      sync();
+      if (d > 0 && atEnd && current < subs.length - 1) { over += d; if (over > PUSH) go(1); }
+      else if (d < 0 && atTop && current > 0) { over -= d; if (over > PUSH) go(-1); }
+      else over = 0;
+    }
+    addEventListener('wheel', function (e) {
+      if (!active()) return;
+      var now = e.timeStamp;
+      if (now < coolUntil) { coolUntil = now + 120; over = 0; last = now; return; }
+      if (now - last > GAP) over = 0;          // new gesture, not a momentum tail
+      last = now;
+      pending += e.deltaY;
+      if (!raf) raf = requestAnimationFrame(flush);
+    }, { passive: true });
+
+    addEventListener('keydown', function (e) {
+      if (!active() || /input|textarea|select/i.test(e.target.tagName || '')) return;
+      if (e.key === 'ArrowRight') { sync(); go(1); }
+      if (e.key === 'ArrowLeft')  { sync(); go(-1); }
+    });
+  })();
+})();
+
+/* Stat tiles: stagger their entrance and count the numerals up. app.js appends
+   them in two passes, so this waits for the DOM to settle before wiring. */
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function wire() {
+    var tiles = document.querySelectorAll('#tiles .tile');
+    if (!tiles.length) return false;
+    var TINT = [
+      [/no response|gap|shortfall|fell short/i, 't-gap'],
+      [/substantive|proportionate|responded/i,  't-ok'],
+      [/trackable|significant-risk|significant/i, 't-key'],
+    ];
+    tiles.forEach(function (el, i) {
+      el.style.setProperty('--i', i);
+      var lab = (el.querySelector('.label') || {}).textContent || '';
+      var cls = 't-base';
+      for (var k = 0; k < TINT.length; k++) { if (TINT[k][0].test(lab)) { cls = TINT[k][1]; break; } }
+      el.classList.add(cls);
+      var v = el.querySelector('.value');
+      if (!v || reduce) return;
+      var raw = v.textContent.trim();
+      var target = parseFloat(raw.replace(/,/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var fmt = raw.indexOf(',') > -1;
+      var t0 = null, dur = 750, delay = i * 70;
+      v.textContent = '0';
+      requestAnimationFrame(function step(ts) {
+        if (t0 === null) t0 = ts;
+        var e = ts - t0 - delay;
+        if (e < 0) return requestAnimationFrame(step);
+        var p = Math.min(1, e / dur);
+        var n = Math.round(target * (1 - Math.pow(1 - p, 3)));   // ease-out
+        v.textContent = fmt ? n.toLocaleString() : String(n);
+        if (p < 1) requestAnimationFrame(step);
+      });
+    });
+    return true;
+  }
+  if (!wire()) {
+    var tries = 0;
+    var iv = setInterval(function () { if (wire() || ++tries > 40) clearInterval(iv); }, 50);
+  }
+})();
+
+/* Hero figures read from the dataset — never hardcoded. */
+(function () {
+  var m = window.AISI && window.AISI.meta; if (!m) return;
+  var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+  set('mFindings', (m.totalFindings || 0).toLocaleString());
+  set('mReports', (m.reports || 0).toLocaleString());
+  set('mInst', m.institutions || (m.sweep && m.sweep.venues) || '—');
+  if (m.dateMin && m.dateMax) {
+    var f = function (s) { return new Date(s + 'T00:00:00')
+      .toLocaleDateString('en-GB', { month:'short', year:'numeric' }); };
+    set('mWindow', f(m.dateMin) + ' – ' + f(m.dateMax));
+  }
+  /* heroNum and heroCaption are owned by app.js, which sets them to the shortfall
+     figure the paper leads with (152/190 = 80.0%). This block used to overwrite both
+     with the stricter no-response figure (114/190 = 60.0%). Because inline scripts at the
+     end of <body> run after app.js, 60% won — so the dashboard headlined 60% while the
+     paper headlined 80%, which reads as one of them being wrong. Both are correct and
+     measure different things; the shortfall figure is the one the proportionality matrix
+     produces, so it leads in both places and the no-response figure sits beneath it.
+     Do not set heroNum here. */
+  if (m.dateMax) set('asof', 'Corpus cutoff ' + m.dateMax + '.');
+})();
+</script>
+</body>
+</html>
