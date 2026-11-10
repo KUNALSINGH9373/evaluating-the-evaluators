@@ -116,7 +116,7 @@ const tiles = [
   { label: "Trackable evaluation findings", value: M.trackable, sub: "a company could answer for it" },
   { label: "Significant risk", value: M.trackableC1, sub: `of ${M.trackable} trackable evaluation findings` },
   { label: "Any response at all", value: M.anyResponse, sub: `${pct(M.anyResponse, M.trackable)}% of the set` },
-  { label: "Substantive responses", value: M.substantive, sub: "specific, documented, attributed" },
+  { label: "Substantive responses", value: M.substantive, sub: "a specific, documented change" },
 ];
 document.getElementById("tiles").append(
   ...tiles.map(t => h("div", { class: "tile" },
@@ -577,8 +577,14 @@ const charts = [
     title: "Outcomes for trackable evaluation findings",
     sub: (() => {
       const propN = propCounts.get("Proportionate") || 0;
-      const extra = propN - M.substantive;
-      return `Proportionality of response, given severity — the ${propN} Proportionate here is not the same count as "Substantive responses" (${M.substantive}) elsewhere on this page: Proportionate = ${M.substantive} raw Substantive responses plus ${extra} Category 2 finding(s) whose Partial response met the lower bar Category 2 requires. Not a data error — two different measures.`;
+      const subN = M.substantive;
+      const subProp = TRACK.filter(f => f.action === "Substantive" && f.prop === "Proportionate").length;
+      const subNotProp = subN - subProp;
+      const propNotSub = propN - subProp;
+      const parts = [`"Proportionate" (${propN}) and "Substantive responses" (${subN}) are different measures: ${subProp} findings are both`];
+      if (propNotSub) parts.push(`${propNotSub} more are Proportionate without being Substantive (a Category 2 Partial that met the lower bar Category 2 allows)`);
+      if (subNotProp) parts.push(`${subNotProp} Substantive responses are not counted Proportionate, because they carried no explicit attribution to the evaluator`);
+      return `Proportionality of response, given severity and attribution. ` + parts.join("; ") + `. Not a data error — two different measures.`;
     })(),
     wide: false,
     render(mount) { renderHBars(mount, propRows, "--violet", "Findings"); },
