@@ -1044,13 +1044,11 @@ function detailRow(f) {
   row("Response date", f.respDate);
   row("Lag (days)", f.lag == null ? "" : String(f.lag));
   row("Evidence", f.aEv, { showEmpty: true });
-  row("Sources checked", f.aSrc, { showEmpty: true, emptyText: "Not recorded" });
 
   section("Channel B — policy uptake");
   row("Policy level", f.pol);
   row("Policy response", f.polResp);
   row("Verbatim", f.bVerb, { quote: true });
-  row("Evidence", f.bEv, { showEmpty: true });
 
   section("Channel C — public traction");
   row("Media outlets", f.media, { showEmpty: true });
