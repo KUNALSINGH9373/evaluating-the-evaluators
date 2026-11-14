@@ -553,14 +553,14 @@ const charts = [
       mount.replaceChildren();
       const img = h("img", {
         src: "charts/17_severity_classification.jpg",
-        alt: "Bar chart of all 1,143 findings by severity: significant risk 339 (29.7%); low risk 804 (70.3%). Severity is decided by majority vote of three cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) scoring each finding against eight dangerous-capability domains. 1,031 of 1,143 (90.2%) were unanimous 3-0; the remaining 112 (9.8%) were decided 2-1.",
+        alt: "Bar chart of all 1,121 findings by severity: significant risk 324 (28.9%); low risk 797 (71.1%). Severity is decided by majority vote of three cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) scoring each finding against eight dangerous-capability domains. 1,011 of 1,121 (90.2%) were unanimous 3-0; the remaining 110 (9.8%) were decided 2-1.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
     },
     table: () => [["Outcome", "Findings", "Meaning"],
-      ["Category 1", 339, "Demonstrates \u2265 1 of eight dangerous-capability domains"],
-      ["Category 2", 804, "Threshold not demonstrated (not the same as unimportant)"],
+      ["Category 1", 324, "Demonstrates \u2265 1 of eight dangerous-capability domains"],
+      ["Category 2", 797, "Threshold not demonstrated (not the same as unimportant)"],
       ["Unanimous 3\u20130 vote", 1031, "90.2% of all 1,143 findings"],
       ["Split 2\u20131 vote", 112, "9.8% of all 1,143 findings"]],
   },
@@ -650,7 +650,7 @@ const charts = [
       mount.replaceChildren();
       const img = h("img", {
         src: "charts/13_institution_type_tree.jpg",
-        alt: "Left-to-right tree diagram: all 1,143 findings by Institution Type - Nonprofit (AEF) 335, Government 312, Nonprofit (independent) 256 and For-profit 240, each branching into its individual evaluating organisations. The accompanying table below the chart carries the exact counts.",
+        alt: "Left-to-right tree diagram: all 1,121 findings by Institution Type - Nonprofit (AEF) 328, Government 309, Nonprofit (independent) 245 and For-profit 239, each branching into its individual evaluating organisations. The accompanying table below the chart carries the exact counts.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
