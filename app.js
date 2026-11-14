@@ -547,20 +547,20 @@ const charts = [
   },
   {
     title: "How severity is classified: Category 1 vs. Category 2",
-    sub: "3-model ensemble, tested against eight dangerous-capability domains, decided by majority vote, then human-reviewed",
+    sub: "3-model ensemble, tested against eight dangerous-capability domains, decided by majority vote",
     wide: true,
     render(mount) {
       mount.replaceChildren();
       const img = h("img", {
         src: "charts/17_severity_classification.jpg",
-        alt: "Bar chart of all 1,121 findings by severity: significant risk 325 (29.0%); low risk 796 (71.0%). Final severity is the human-reviewed value, which overrides the model majority on 7 findings; the majority itself is a vote of three cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) scoring each finding against eight dangerous-capability domains. 1,011 of 1,121 (90.2%) were unanimous 3-0; the remaining 110 (9.8%) were decided 2-1.",
+        alt: "Bar chart of all 1,121 findings by severity: significant risk 324 (28.9%); low risk 797 (71.1%). Severity is decided by majority vote of three cross-provider models (Claude Sonnet 5, GPT-5.5, Gemini 3.1 Pro) scoring each finding against eight dangerous-capability domains. 1,011 of 1,121 (90.2%) were unanimous 3-0; the remaining 110 (9.8%) were decided 2-1.",
         style: "width:100%;height:auto;border-radius:10px;display:block",
       });
       mount.append(img);
     },
     table: () => [["Outcome", "Findings", "Meaning"],
-      ["Category 1", 325, "Demonstrates \u2265 1 of eight dangerous-capability domains"],
-      ["Category 2", 796, "Threshold not demonstrated (not the same as unimportant)"],
+      ["Category 1", 324, "Demonstrates \u2265 1 of eight dangerous-capability domains"],
+      ["Category 2", 797, "Threshold not demonstrated (not the same as unimportant)"],
       ["Unanimous 3\u20130 vote", 1031, "90.2% of all 1,143 findings"],
       ["Split 2\u20131 vote", 112, "9.8% of all 1,143 findings"]],
   },
@@ -1031,8 +1031,7 @@ function detailRow(f) {
   row("Tags", f.tags && f.tags.length ? f.tags.join(", ") : "");
 
   section("Severity");
-  row("Final (human-reviewed)", f.sev);
-  row("Ensemble majority", f.sevMaj);
+  row("Majority", f.sev);
   row("Claude Sonnet 5 vote", f.vS);
   row("GPT-5.5 vote", f.vG);
   row("Gemini 3.1 vote", f.vM);
@@ -1139,7 +1138,7 @@ const CSV_COLS = [
   ["id", "Finding ID"], ["rid", "Report ID"], ["inst", "Institution"], ["instType", "Institution Type"],
   ["title", "Report Title"], ["date", "Publication Date"], ["dom", "Domain"], ["models", "Models / Systems"],
   ["access", "Access Type"], ["url", "Source URL"], ["finding", "Finding"], ["quote", "Finding Quote"],
-  ["sevMaj", "Severity (C1/C2) majority"], ["sev", "Human"], ["vS", "Sonnet5 vote"], ["vG", "GPT-5.5 vote"], ["vM", "Gemini3.1 vote"],
+  ["sev", "Severity (C1/C2) majority"], ["vS", "Sonnet5 vote"], ["vG", "GPT-5.5 vote"], ["vM", "Gemini3.1 vote"],
   ["attr", "Attribution"], ["resp", "Company Response"], ["aVerb", "Channel A Verbatim"],
   ["respDate", "Response Date"], ["lag", "Lag (days)"], ["aEv", "Channel A Evidence"],
   ["action", "Action Level"], ["aSrc", "Sources Checked (channel A)"], ["pol", "Policy Level"],
